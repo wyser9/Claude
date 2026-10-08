@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
  *     wp bexio products
  *     wp bexio products --id=123
  *     wp bexio order 456
+ *     wp bexio import-stock
  */
 class BWS_CLI {
 
@@ -56,6 +57,20 @@ class BWS_CLI {
 		} while ( ! $ids && count( $batch ) === 100 );
 
 		WP_CLI::success( sprintf( '%d übertragen, %d Fehler.', $ok, $err ) );
+	}
+
+	/**
+	 * Übernimmt den Lagerstatus aus bexio (Bestand > 0 = Vorrätig, <= 0 = Lieferrückstand).
+	 *
+	 * @subcommand import-stock
+	 */
+	public function import_stock() {
+		try {
+			$s = BWS_Stock_Import::run();
+			WP_CLI::success( sprintf( '%d Artikel: %d Vorrätig, %d Lieferrückstand, %d unverändert, %d nicht im Shop, %d übersprungen, %d Fehler.', $s['articles'], $s['instock'], $s['backorder'], $s['unchanged'], $s['not_found'], $s['skipped'], $s['errors'] ) );
+		} catch ( BWS_Exception $e ) {
+			WP_CLI::error( $e->getMessage() );
+		}
 	}
 
 	/**

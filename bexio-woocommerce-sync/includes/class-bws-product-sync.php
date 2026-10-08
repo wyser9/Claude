@@ -18,12 +18,22 @@ class BWS_Product_Sync {
 	/** @var array<int,bool> Bereits in diesem Request eingeplante Produkte. */
 	private static $queued = array();
 
+	/** @var bool Während des Lagerimports aus bexio keine Rück-Übertragung auslösen. */
+	public static $suspended = false;
+
+	/** @var array<int,bool> Produkte, die gerade nur wegen einer Bestandsänderung gespeichert werden. */
+	private static $stock_only = array();
+
 	public static function init() {
 		add_action( 'woocommerce_new_product', array( __CLASS__, 'on_product_change' ), 20, 1 );
 		add_action( 'woocommerce_update_product', array( __CLASS__, 'on_product_change' ), 20, 1 );
 		add_action( 'woocommerce_new_product_variation', array( __CLASS__, 'on_product_change' ), 20, 1 );
 		add_action( 'woocommerce_update_product_variation', array( __CLASS__, 'on_product_change' ), 20, 1 );
 
+		// wc_update_product_stock() speichert das Produkt (z.B. bei jedem Verkauf). Diese reinen
+		// Bestandsänderungen sollen keinen kompletten Artikelabgleich auslösen.
+		add_action( 'woocommerce_product_before_set_stock', array( __CLASS__, 'before_stock_change' ), 10, 1 );
+		add_action( 'woocommerce_variation_before_set_stock', array( __CLASS__, 'before_stock_change' ), 10, 1 );
 		add_action( 'woocommerce_product_set_stock', array( __CLASS__, 'on_stock_change' ), 20, 1 );
 		add_action( 'woocommerce_variation_set_stock', array( __CLASS__, 'on_stock_change' ), 20, 1 );
 
@@ -31,14 +41,23 @@ class BWS_Product_Sync {
 		add_action( 'bws_bulk_sync_products', array( __CLASS__, 'run_bulk_job' ), 10, 1 );
 	}
 
+	public static function before_stock_change( $product ) {
+		if ( $product instanceof WC_Product ) {
+			self::$stock_only[ $product->get_id() ] = true;
+		}
+	}
+
 	public static function on_product_change( $product_id ) {
-		if ( BWS_Settings::enabled( 'sync_products' ) ) {
+		if ( BWS_Settings::enabled( 'sync_products' ) && ! self::$suspended && ! isset( self::$stock_only[ (int) $product_id ] ) ) {
 			self::enqueue( (int) $product_id );
 		}
 	}
 
 	public static function on_stock_change( $product ) {
-		if ( BWS_Settings::enabled( 'sync_stock' ) && $product instanceof WC_Product ) {
+		if ( $product instanceof WC_Product ) {
+			unset( self::$stock_only[ $product->get_id() ] );
+		}
+		if ( 'to_bexio' === BWS_Settings::stock_mode() && ! self::$suspended && $product instanceof WC_Product ) {
 			self::enqueue( $product->get_id() );
 		}
 	}
@@ -53,6 +72,11 @@ class BWS_Product_Sync {
 			return;
 		}
 		self::$queued[ $product_id ] = true;
+
+		$product = wc_get_product( $product_id );
+		if ( ! $product || ! self::is_syncable( $product ) ) {
+			return;
+		}
 
 		if ( ! function_exists( 'as_enqueue_async_action' ) ) {
 			self::run_job( $product_id );
@@ -312,7 +336,8 @@ class BWS_Product_Sync {
 		}
 
 		$manages_stock = $product->managing_stock() && ! $product->is_virtual();
-		if ( $manages_stock && BWS_Settings::enabled( 'sync_stock' ) ) {
+		// Bestand nur senden, wenn WooCommerce das Lager führt – sonst würde der bexio-Bestand überschrieben.
+		if ( $manages_stock && 'to_bexio' === BWS_Settings::stock_mode() ) {
 			$payload['is_stock'] = true;
 			$payload['stock_nr'] = max( 0, (int) $product->get_stock_quantity() );
 			if ( BWS_Settings::id( 'stock_id' ) ) {

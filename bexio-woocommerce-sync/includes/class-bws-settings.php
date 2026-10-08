@@ -17,7 +17,9 @@ class BWS_Settings {
 		return array(
 			'api_token'          => '',
 			'sync_products'      => 'yes',
-			'sync_stock'         => 'yes',
+			'stock_mode'         => 'from_bexio', // from_bexio | to_bexio | off.
+			'stock_import_time'  => '03:00',
+			'stock_field'        => 'stock_nr', // stock_nr | stock_available_nr.
 			'sync_orders'        => 'yes',
 			'order_statuses'     => array( 'processing', 'completed' ),
 			'price_mode'         => function_exists( 'wc_prices_include_tax' ) && wc_prices_include_tax() ? 'gross' : 'net',
@@ -69,6 +71,16 @@ class BWS_Settings {
 	 */
 	public static function enabled( $key ) {
 		return 'yes' === self::get( $key );
+	}
+
+	/**
+	 * Richtung des Lagerabgleichs: "from_bexio" (bexio führt), "to_bexio" (WooCommerce führt) oder "off".
+	 *
+	 * @return string
+	 */
+	public static function stock_mode() {
+		$mode = self::get( 'stock_mode' );
+		return in_array( $mode, array( 'from_bexio', 'to_bexio', 'off' ), true ) ? $mode : 'from_bexio';
 	}
 
 	/**

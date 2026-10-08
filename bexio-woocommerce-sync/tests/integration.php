@@ -19,6 +19,7 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	if ( 'GET' === $m && '3.0/taxes' === $path ) return resp( array( array( 'id' => 11, 'value' => 8.1, 'name' => 'UN81' ), array( 'id' => 12, 'value' => 2.6, 'name' => 'UR26' ), array( 'id' => 14, 'value' => 0, 'name' => 'UN00' ) ) );
 	if ( 'GET' === $m && '2.0/country' === $path ) return resp( array( array( 'id' => 1, 'name' => 'Schweiz', 'name_short' => 'CH', 'iso3166_alpha2' => 'CH' ), array( 'id' => 2, 'name' => 'Deutschland', 'name_short' => 'DE', 'iso3166_alpha2' => 'DE' ) ) );
 	if ( 'GET' === $m && '3.0/currencies' === $path ) return resp( array( array( 'id' => 1, 'name' => 'CHF' ), array( 'id' => 2, 'name' => 'EUR' ) ) );
+	if ( 'GET' === $m && '2.0/article' === $path ) return resp( $GLOBALS['bws_bexio_articles'] ?? array() );
 	if ( 'POST' === $m && '2.0/article/search' === $path ) return resp( 'EXIST-1' === $body[0]['value'] ? array( array( 'id' => 55, 'intern_code' => 'EXIST-1' ) ) : array() );
 	if ( 'POST' === $m && '2.0/article' === $path ) return resp( array_merge( $body, array( 'id' => ++$GLOBALS['bws_next_id'] ) ) );
 	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
@@ -44,7 +45,7 @@ update_option( 'woocommerce_tax_based_on', 'base' );
 WC_Tax::_insert_tax_rate( array( 'tax_rate_country' => 'CH', 'tax_rate' => '8.1', 'tax_rate_name' => 'MWST', 'tax_rate_priority' => 1, 'tax_rate_shipping' => 1, 'tax_rate_class' => '' ) );
 WC_Tax::_insert_tax_rate( array( 'tax_rate_country' => 'CH', 'tax_rate' => '2.6', 'tax_rate_name' => 'MWST red.', 'tax_rate_priority' => 1, 'tax_rate_shipping' => 0, 'tax_rate_class' => 'reduced-rate' ) );
 
-BWS_Settings::save( array( 'api_token' => 'test-token', 'unit_id' => '3', 'stock_id' => '1', 'stock_place_id' => '2', 'price_mode' => 'gross' ) );
+BWS_Settings::save( array( 'api_token' => 'test-token', 'unit_id' => '3', 'stock_id' => '1', 'stock_place_id' => '2', 'price_mode' => 'gross', 'stock_mode' => 'to_bexio' ) );
 BWS_Lookup::flush();
 
 // --- Artikel ---
@@ -174,5 +175,71 @@ t( 'Firmenkontakt', 1 === $contact['contact_type_id'] && 'Muster AG' === $contac
 t( 'Netto-Modus', true === $kb['mwst_is_net'] && 0 === $kb['delivery_address_type'] );
 $net = 0; foreach ( $kb['positions'] as $p ) { $net += (float) $p['amount'] * (float) $p['unit_price']; }
 t( 'Netto-Summe = Total exkl. MWST', abs( $net - ( (float) $o2->get_total() - (float) $o2->get_total_tax() ) ) < 0.011, "$net" );
+
+
+// --- Lagerimport bexio -> WooCommerce ---
+BWS_Settings::save( array( 'stock_mode' => 'from_bexio', 'price_mode' => 'gross' ) );
+update_option( 'woocommerce_prices_include_tax', 'yes' );
+
+t( 'Artikel-Payload ohne Bestand, wenn bexio das Lager führt', ! isset( BWS_Product_Sync::build_payload( wc_get_product( $p1->get_id() ) )['stock_nr'] ) );
+
+as_unschedule_all_actions( 'bws_sync_product' );
+$rp->setValue( null, array() );
+wc_update_product_stock( wc_get_product( $p1->get_id() ), 9 );
+t( 'Keine Bestandsübertragung an bexio im Modus "bexio führt"', ! as_has_scheduled_action( 'bws_sync_product', array( $p1->get_id() ), BWS_AS_GROUP ) );
+
+$p2o = wc_get_product( $p2->get_id() ); $p2o->set_stock_status( 'outofstock' ); $p2o->save();
+$p4 = new WC_Product_Simple(); $p4->set_props( array( 'name' => 'Ohne Lagerverwaltung', 'sku' => 'UNM-1', 'regular_price' => '3' ) ); $p4->save();
+$p5 = new WC_Product_Simple(); $p5->set_props( array( 'name' => 'Nur verknüpft', 'sku' => 'ALT-SKU', 'regular_price' => '3' ) ); $p5->save();
+update_post_meta( $p5->get_id(), '_bws_article_id', 777 );
+$p5o = wc_get_product( $p5->get_id() ); $p5o->set_stock_status( 'onbackorder' ); $p5o->save();
+
+$GLOBALS['bws_bexio_articles'] = array(
+	array( 'id' => $id1, 'intern_code' => 'KAF-1000', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 55, 'intern_code' => 'EXIST-1', 'is_stock' => true, 'stock_nr' => 5, 'stock_available_nr' => 5 ),
+	array( 'id' => $vid, 'intern_code' => 'TS-M', 'is_stock' => true, 'stock_nr' => -2, 'stock_available_nr' => -2 ),
+	array( 'id' => 300, 'intern_code' => 'UNM-1', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 777, 'intern_code' => 'NEUE-NR', 'is_stock' => true, 'stock_nr' => 4, 'stock_available_nr' => 4 ),
+	array( 'id' => 301, 'intern_code' => 'NICHT-IM-SHOP', 'is_stock' => true, 'stock_nr' => 3, 'stock_available_nr' => 3 ),
+	array( 'id' => 302, 'intern_code' => 'DIENSTLEISTUNG', 'is_stock' => false, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 303, 'intern_code' => 'TS', 'is_stock' => true, 'stock_nr' => 3, 'stock_available_nr' => 3 ),
+);
+
+as_unschedule_all_actions( 'bws_sync_product' );
+$rp->setValue( null, array() );
+$GLOBALS['bws_requests'] = array();
+$stats = BWS_Stock_Import::run();
+WC_Post_Data::do_deferred_product_sync(); // läuft sonst beim Shutdown des Requests
+
+t( 'Import: keine Schreibzugriffe auf bexio', ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' !== $r[0]; } ) );
+t( 'Import: keine Rück-Übertragung eingeplant', ! as_has_scheduled_action( 'bws_sync_product', null, BWS_AS_GROUP ) );
+
+$k = wc_get_product( $p1->get_id() );
+t( 'Bestand 0, Lagerverwaltung -> Lieferrückstand', 'onbackorder' === $k->get_stock_status() && 0 === $k->get_stock_quantity() && 'no' !== $k->get_backorders(), $k->get_stock_status() );
+t( 'Bestand 5, ohne Lagerverwaltung -> Vorrätig', 'instock' === wc_get_product( $p2->get_id() )->get_stock_status() );
+$vv = wc_get_product( $v->get_id() );
+t( 'Variante Bestand -2 -> Lieferrückstand', 'onbackorder' === $vv->get_stock_status() && -2 === $vv->get_stock_quantity(), $vv->get_stock_status() . ' ' . $vv->get_stock_quantity() );
+t( 'Elternprodukt übernimmt Variantenstatus', 'onbackorder' === wc_get_product( $var_parent->get_id() )->get_stock_status(), wc_get_product( $var_parent->get_id() )->get_stock_status() );
+t( 'Bestand 0, ohne Lagerverwaltung -> Lieferrückstand', 'onbackorder' === wc_get_product( $p4->get_id() )->get_stock_status() );
+t( 'Zuordnung über verknüpfte Artikel-ID', 'instock' === wc_get_product( $p5->get_id() )->get_stock_status() );
+t( 'Statistik', 1 === $stats['not_found'] && 2 === $stats['skipped'] && 2 === $stats['instock'] && 3 === $stats['backorder'] && 0 === $stats['errors'], wp_json_encode( $stats ) );
+
+$stats2 = BWS_Stock_Import::run();
+t( 'Zweiter Lauf: alles unverändert', 5 === $stats2['unchanged'] && 0 === $stats2['instock'] + $stats2['backorder'], wp_json_encode( $stats2 ) );
+
+// Bestand wieder > 0 -> Vorrätig.
+$GLOBALS['bws_bexio_articles'][0]['stock_nr'] = 12;
+BWS_Stock_Import::run();
+$k = wc_get_product( $p1->get_id() );
+t( 'Bestand 12 -> Vorrätig', 'instock' === $k->get_stock_status() && 12 === $k->get_stock_quantity() );
+
+// Zeitplan.
+BWS_Stock_Import::ensure_schedule();
+$next = as_next_scheduled_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP );
+t( 'Täglicher Import eingeplant', is_int( $next ) && $next > time() && $next <= time() + DAY_IN_SECONDS );
+BWS_Settings::save( array( 'stock_mode' => 'to_bexio' ) );
+BWS_Stock_Import::ensure_schedule();
+t( 'Zeitplan entfernt, wenn WooCommerce führt', false === as_next_scheduled_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP ) );
+t( 'Uhrzeit-Validierung', '07:05' === BWS_Stock_Import::normalize_time( '7:05' ) && '03:00' === BWS_Stock_Import::normalize_time( '25:00' ) );
 
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

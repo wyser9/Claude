@@ -5,11 +5,11 @@ WordPress-Plugin, das einen WooCommerce-Shop mit dem ERP **bexio** verbindet.
 | Was | Richtung | Wann |
 |---|---|---|
 | Artikel (Produkte & Varianten) | WooCommerce → bexio | bei jedem Speichern eines Produkts |
-| Lagerbestände | WooCommerce → bexio | bei jeder Bestandsänderung (Verkauf, Storno, manuell) |
+| **Lagerstatus** | **bexio → WooCommerce** | **täglich** (Uhrzeit einstellbar), Standard |
 | Bestellungen als **Auftrag** | WooCommerce → bexio | bei Status „In Bearbeitung“ / „Abgeschlossen“ (konfigurierbar) |
 | Besteller als **Kontakt** | WooCommerce → bexio | zusammen mit der Bestellung |
 
-WooCommerce ist das führende System für Artikel und Bestand. Alle Übertragungen laufen im Hintergrund über den Action Scheduler von WooCommerce. Der Checkout wird dadurch nicht langsamer, und fehlgeschlagene Jobs bleiben sichtbar.
+WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führt das Lager**. Alle Übertragungen laufen im Hintergrund über den Action Scheduler von WooCommerce. Der Checkout wird dadurch nicht langsamer, und fehlgeschlagene Jobs bleiben sichtbar.
 
 ## Installation
 
@@ -22,7 +22,8 @@ WooCommerce ist das führende System für Artikel und Bestand. Alle Übertragung
    define( 'BEXIO_API_TOKEN', 'eyJ...' );
    ```
 5. Danach die Zuordnungen wählen: **Einheit** (z. B. „Stk.“), **Lager**/**Lagerplatz**, optional Ertragskonto, Kontaktgruppe und Sprache.
-6. **„Alle Artikel & Bestände jetzt übertragen“** klicken, um den Artikelstamm einmalig abzugleichen.
+6. **„Alle Artikel jetzt an bexio übertragen“** klicken, um den Artikelstamm einmalig abzugleichen.
+7. Uhrzeit für den täglichen Lagerimport prüfen (Standard 03:00) und einmal **„Lagerstatus jetzt aus bexio holen“** klicken.
 
 ## Wie die Daten zugeordnet werden
 
@@ -33,9 +34,23 @@ WooCommerce ist das führende System für Artikel und Bestand. Alle Übertragung
 - Virtuelle Produkte werden als Dienstleistung angelegt, alle anderen als physischer Artikel.
 - Die Verknüpfung wird am Produkt gespeichert (Meta `_bws_article_id`).
 
-### Lagerbestand
-- Nur bei Produkten mit aktivierter **Lagerverwaltung** in WooCommerce. Der aktuelle Bestand wird als `stock_nr` an den bexio-Artikel gesendet (Lagerartikel mit gewähltem Lager/Lagerplatz).
-- Übernimmt bexio den Bestand nicht (z. B. weil im bexio-Konto keine Lagerverwaltung aktiv ist), steht eine Warnung im Log.
+### Lagerbestand (bexio → WooCommerce, täglich)
+bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio und sucht das passende Produkt im Shop, zuerst über **SKU = Artikel-Nr.**, sonst über einen bereits verknüpften Artikel:
+
+| bexio | WooCommerce |
+|---|---|
+| Produkt im Shop nicht vorhanden | nichts |
+| Bestand **> 0** | **Vorrätig** |
+| Bestand **<= 0** | **Lieferrückstand** (Kunden können weiterhin bestellen) |
+
+- Berücksichtigt werden nur bexio-**Lagerartikel**. Artikel ohne Lagerführung, z. B. Dienstleistungen, haben in bexio immer Bestand 0 und werden übersprungen.
+- **Produkte mit aktivierter Lagerverwaltung in WooCommerce:** WooCommerce berechnet den Status dort selbst aus der Menge. Darum wird zusätzlich die **Menge aus bexio** übernommen und „Lieferrückstand erlauben (mit Hinweis)“ aktiviert, falls nötig. Ergebnis: gleiche Regel, und im Shop steht die bexio-Menge.
+- **Produkte ohne Lagerverwaltung:** Nur der Status wird gesetzt.
+- Bei Varianten wird der Status pro Variante gesetzt. Das variable Hauptprodukt berechnet WooCommerce daraus automatisch.
+- Wahlweise zählt der physische Bestand (`stock_nr`) oder der verfügbare Bestand abzüglich Reservierungen (`stock_available_nr`).
+- Der Import schickt nichts an bexio zurück. Bestände werden nie von WooCommerce nach bexio übertragen, solange „bexio führt das Lager“ eingestellt ist.
+- Das Ergebnis des letzten Laufs und den nächsten Termin zeigt die Einstellungsseite an. Details stehen im Log.
+- Alternativ lässt sich unter *Lagerbestand* „WooCommerce führt das Lager“ wählen. Dann wird der Woo-Bestand bei jeder Änderung an bexio gesendet (umgekehrte Richtung).
 
 ### Besteller → Kontakt
 1. Kontakt-ID am Kundenkonto (bei Stammkunden)
@@ -65,6 +80,7 @@ wp bexio test                 # Verbindung prüfen
 wp bexio products             # alle Artikel/Bestände synchron übertragen
 wp bexio products --id=123    # einzelnes Produkt
 wp bexio order 456            # einzelne Bestellung übertragen
+wp bexio import-stock         # Lagerstatus sofort aus bexio übernehmen
 ```
 
 ## Anpassen (Filter)
@@ -79,7 +95,7 @@ Weitere Filter: `bws_contact_payload`, `bws_order_payload`, `bws_order_item_posi
 
 ## Vor dem Live-Betrieb testen
 1. Mit einer Testbestellung prüfen, ob in bexio Total, MWST und Positionen stimmen (Brutto/Netto-Einstellung).
-2. Bei einem Lagerartikel den Bestand ändern und in bexio kontrollieren.
+2. „Lagerstatus jetzt aus bexio holen“ ausführen und bei einigen Produkten mit Bestand > 0 bzw. 0 den Status im Shop kontrollieren.
 3. Gibt es in bexio schon Artikel: Stimmen deren Artikel-Nr. mit den SKUs im Shop überein? Nur dann werden sie verknüpft statt doppelt angelegt.
 
 ## Tests

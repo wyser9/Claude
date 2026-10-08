@@ -119,11 +119,45 @@ class BWS_Admin {
 				<table class="form-table">
 					<?php
 					self::checkbox( 'sync_products', 'Artikel übertragen', 'Produkte und Varianten werden bei jeder Änderung als bexio-Artikel angelegt/aktualisiert (Zuordnung über SKU = Artikel-Nr.).', $s );
-					self::checkbox( 'sync_stock', 'Lagerbestände übertragen', 'Bei Bestandsänderungen (Verkauf, Storno, manuelle Änderung) wird der Bestand an bexio übermittelt. Nur für Produkte mit aktivierter Lagerverwaltung.', $s );
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
 					self::checkbox( 'sku_fallback', 'Ohne SKU übertragen', 'Produkte ohne SKU erhalten in bexio die Artikel-Nr. "WC-&lt;ID&gt;".', $s );
 					self::checkbox( 'update_contacts', 'Bestehende Kontakte aktualisieren', 'Adressdaten bereits vorhandener bexio-Kontakte mit den Angaben der Bestellung überschreiben.', $s );
 					?>
+					<tr>
+						<th><label for="bws_stock_mode">Lagerbestand</label></th>
+						<td>
+							<select id="bws_stock_mode" name="stock_mode">
+								<option value="from_bexio" <?php selected( BWS_Settings::stock_mode(), 'from_bexio' ); ?>>bexio führt das Lager – täglich Lagerstatus aus bexio übernehmen</option>
+								<option value="to_bexio" <?php selected( BWS_Settings::stock_mode(), 'to_bexio' ); ?>>WooCommerce führt das Lager – Bestand an bexio senden</option>
+								<option value="off" <?php selected( BWS_Settings::stock_mode(), 'off' ); ?>>Kein Lagerabgleich</option>
+							</select>
+							<p class="description">bexio führt: Für jeden bexio-Lagerartikel mit passender SKU im Shop wird bei Bestand &gt; 0 „Vorrätig“, bei Bestand &lt;= 0 „Lieferrückstand“ gesetzt. Artikel, die es im Shop nicht gibt, werden ignoriert.</p>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="bws_stock_import_time">Lagerimport täglich um</label></th>
+						<td>
+							<input type="time" id="bws_stock_import_time" name="stock_import_time" value="<?php echo esc_attr( BWS_Stock_Import::normalize_time( $s['stock_import_time'] ) ); ?>">
+							<select name="stock_field">
+								<option value="stock_nr" <?php selected( $s['stock_field'], 'stock_nr' ); ?>>Lagerbestand (physisch)</option>
+								<option value="stock_available_nr" <?php selected( $s['stock_field'], 'stock_available_nr' ); ?>>Verfügbarer Bestand (abzüglich reserviert)</option>
+							</select>
+							<?php
+							$last = get_option( BWS_Stock_Import::OPTION_LAST );
+							$next = function_exists( 'as_next_scheduled_action' ) ? as_next_scheduled_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP ) : false;
+							?>
+							<p class="description">
+								<?php if ( is_int( $next ) ) : ?>
+									Nächster Lauf: <?php echo esc_html( wp_date( 'd.m.Y H:i', $next ) ); ?>.
+								<?php endif; ?>
+								<?php if ( is_array( $last ) && ! empty( $last['error'] ) ) : ?>
+									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?> fehlgeschlagen: <?php echo esc_html( $last['error'] ); ?>
+								<?php elseif ( is_array( $last ) ) : ?>
+									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?>: <?php echo (int) $last['instock']; ?> auf Vorrätig, <?php echo (int) $last['backorder']; ?> auf Lieferrückstand, <?php echo (int) $last['unchanged']; ?> unverändert, <?php echo (int) $last['not_found']; ?> nicht im Shop, <?php echo (int) $last['errors']; ?> Fehler.
+								<?php endif; ?>
+							</p>
+						</td>
+					</tr>
 					<tr>
 						<th>Bestellungen übertragen bei Status</th>
 						<td>
@@ -177,7 +211,10 @@ class BWS_Admin {
 				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" style="display:inline">
 					<input type="hidden" name="action" value="bws_tool">
 					<?php wp_nonce_field( 'bws_tool' ); ?>
-					<button class="button button-primary" name="tool" value="sync_all_products">Alle Artikel &amp; Bestände jetzt übertragen</button>
+					<button class="button button-primary" name="tool" value="sync_all_products">Alle Artikel jetzt an bexio übertragen</button>
+					<?php if ( 'from_bexio' === BWS_Settings::stock_mode() ) : ?>
+						<button class="button" name="tool" value="import_stock">Lagerstatus jetzt aus bexio holen</button>
+					<?php endif; ?>
 					<button class="button" name="tool" value="flush_cache">bexio-Stammdaten neu laden</button>
 				</form>
 				<p class="description">Die Übertragung läuft im Hintergrund (WooCommerce &rarr; Status &rarr; Geplante Aktionen, Gruppe "bexio-sync"). Protokoll: WooCommerce &rarr; Status &rarr; Logs, Quelle "bexio-sync".</p>
@@ -242,7 +279,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_stock', 'sync_orders', 'sku_fallback', 'update_contacts' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -250,6 +287,9 @@ class BWS_Admin {
 			$values['api_token'] = $token;
 			BWS_Lookup::flush();
 		}
+		$values['stock_mode']         = ( isset( $_POST['stock_mode'] ) && in_array( $_POST['stock_mode'], array( 'from_bexio', 'to_bexio', 'off' ), true ) ) ? sanitize_key( $_POST['stock_mode'] ) : 'from_bexio';
+		$values['stock_import_time']  = BWS_Stock_Import::normalize_time( isset( $_POST['stock_import_time'] ) ? sanitize_text_field( wp_unslash( $_POST['stock_import_time'] ) ) : '' );
+		$values['stock_field']        = ( isset( $_POST['stock_field'] ) && 'stock_available_nr' === $_POST['stock_field'] ) ? 'stock_available_nr' : 'stock_nr';
 		$values['order_statuses']     = isset( $_POST['order_statuses'] ) ? array_map( 'sanitize_key', (array) wp_unslash( $_POST['order_statuses'] ) ) : array();
 		$values['price_mode']         = ( isset( $_POST['price_mode'] ) && 'net' === $_POST['price_mode'] ) ? 'net' : 'gross';
 		$values['order_title_prefix'] = isset( $_POST['order_title_prefix'] ) ? sanitize_text_field( wp_unslash( $_POST['order_title_prefix'] ) ) : '';
@@ -262,6 +302,7 @@ class BWS_Admin {
 		}
 
 		BWS_Settings::save( $values );
+		BWS_Stock_Import::ensure_schedule();
 		self::redirect( 'Einstellungen gespeichert.' );
 	}
 
@@ -275,6 +316,10 @@ class BWS_Admin {
 		if ( 'sync_all_products' === $tool ) {
 			as_enqueue_async_action( 'bws_bulk_sync_products', array( 1 ), BWS_AS_GROUP );
 			self::redirect( 'Übertragung aller Artikel wurde im Hintergrund gestartet.' );
+		}
+		if ( 'import_stock' === $tool ) {
+			as_enqueue_async_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP );
+			self::redirect( 'Lagerimport aus bexio wurde im Hintergrund gestartet.' );
 		}
 		if ( 'flush_cache' === $tool ) {
 			BWS_Lookup::flush();
