@@ -50,7 +50,7 @@ bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio u
 - Wahlweise zählt der physische Bestand (`stock_nr`) oder der verfügbare Bestand abzüglich Reservierungen (`stock_available_nr`).
 - Der Import schickt nichts an bexio zurück. Bestände werden nie von WooCommerce nach bexio übertragen, solange „bexio führt das Lager“ eingestellt ist.
 - Das Ergebnis des letzten Laufs und den nächsten Termin zeigt die Einstellungsseite an. Details stehen im Log.
-- Alternativ lässt sich unter *Lagerbestand* „WooCommerce führt das Lager“ wählen. Dann wird der Woo-Bestand bei jeder Änderung an bexio gesendet (umgekehrte Richtung).
+- Alternativ lässt sich unter *Lagerbestand* „WooCommerce führt das Lager“ wählen. Dann wird der Woo-Bestand bei jeder Änderung an bexio gesendet. **Einschränkung laut bexio-API:** Der Bestand eines Artikels lässt sich nur setzen, solange in bexio noch keine Lagerbuchungen für ihn existieren. Für den Normalbetrieb ist deshalb „bexio führt das Lager“ die richtige Wahl.
 
 ### Besteller → Kontakt
 1. Kontakt-ID am Kundenkonto (bei Stammkunden)

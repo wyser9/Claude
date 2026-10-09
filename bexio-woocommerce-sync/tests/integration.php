@@ -136,7 +136,7 @@ t( 'Auftrag erstellt', 900 === (int) $order->get_meta( '_bws_order_id' ) && 'AU-
 t( 'Auftrag Kontakt/Währung', 500 === $kb['contact_id'] && 1 === $kb['currency_id'] );
 t( 'Brutto-Modus', 0 === $kb['mwst_type'] && false === $kb['mwst_is_net'] );
 t( 'api_reference', 'woocommerce-' . $order->get_id() === $kb['api_reference'] );
-t( 'Lieferadresse abweichend', 1 === $kb['delivery_address_type'] && false !== strpos( $kb['delivery_address'], 'Seeweg 3' ) );
+t( 'Lieferadresse abweichend', 1 === $kb['delivery_address_type'] && false !== strpos( $kb['delivery_address_manual'], 'Seeweg 3' ) && ! isset( $kb['delivery_address'] ) );
 $types = array_column( $kb['positions'], 'type' );
 t( 'Positionstypen', array( 'KbPositionArticle', 'KbPositionArticle', 'KbPositionDiscount', 'KbPositionCustom' ) === $types, implode( ',', $types ) );
 t( 'Artikelposition verknüpft', $id1 === $kb['positions'][0]['article_id'] && '2' === $kb['positions'][0]['amount'] && '32.5' === $kb['positions'][0]['unit_price'] && 12 === $kb['positions'][0]['tax_id'], wp_json_encode( $kb['positions'][0] ) );
@@ -176,6 +176,12 @@ t( 'Netto-Modus', true === $kb['mwst_is_net'] && 0 === $kb['delivery_address_typ
 $net = 0; foreach ( $kb['positions'] as $p ) { $net += (float) $p['amount'] * (float) $p['unit_price']; }
 t( 'Netto-Summe = Total exkl. MWST', abs( $net - ( (float) $o2->get_total() - (float) $o2->get_total_tax() ) ) < 0.011, "$net" );
 
+
+// Nur Adresszeile 2 ausgefüllt -> wird zur Strasse (bexio verlangt street_name).
+$o3 = wc_create_order();
+$o3->set_address( array( 'first_name' => 'Eva', 'last_name' => 'Nur', 'address_1' => '', 'address_2' => 'Postfach 12', 'postcode' => '3000', 'city' => 'Bern', 'country' => 'CH', 'email' => 'eva@example.ch' ), 'billing' );
+$c3 = BWS_Contact_Sync::build_payload( $o3 );
+t( 'Adresszusatz ohne Strasse wird zur Strasse', 'Postfach 12' === $c3['street_name'] && ! isset( $c3['address_addition'] ) && ! isset( $c3['house_number'] ), wp_json_encode( $c3 ) );
 
 // --- Lagerimport bexio -> WooCommerce ---
 BWS_Settings::save( array( 'stock_mode' => 'from_bexio', 'price_mode' => 'gross' ) );

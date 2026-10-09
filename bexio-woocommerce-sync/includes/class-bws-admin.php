@@ -128,7 +128,7 @@ class BWS_Admin {
 						<td>
 							<select id="bws_stock_mode" name="stock_mode">
 								<option value="from_bexio" <?php selected( BWS_Settings::stock_mode(), 'from_bexio' ); ?>>bexio führt das Lager – täglich Lagerstatus aus bexio übernehmen</option>
-								<option value="to_bexio" <?php selected( BWS_Settings::stock_mode(), 'to_bexio' ); ?>>WooCommerce führt das Lager – Bestand an bexio senden</option>
+								<option value="to_bexio" <?php selected( BWS_Settings::stock_mode(), 'to_bexio' ); ?>>WooCommerce führt das Lager – Bestand an bexio senden (nur ohne Lagerbuchungen in bexio)</option>
 								<option value="off" <?php selected( BWS_Settings::stock_mode(), 'off' ); ?>>Kein Lagerabgleich</option>
 							</select>
 							<p class="description">bexio führt: Für jeden bexio-Lagerartikel mit passender SKU im Shop wird bei Bestand &gt; 0 „Vorrätig“, bei Bestand &lt;= 0 „Lieferrückstand“ gesetzt. Artikel, die es im Shop nicht gibt, werden ignoriert.</p>

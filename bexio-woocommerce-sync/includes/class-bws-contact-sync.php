@@ -85,6 +85,15 @@ class BWS_Contact_Sync {
 		$last    = trim( $order->get_billing_last_name() );
 
 		list( $street, $number ) = BWS_Util::split_street( $order->get_billing_address_1() );
+		$addition                = trim( $order->get_billing_address_2() );
+		// bexio verlangt eine Strasse, sobald Hausnummer oder Adresszusatz gesetzt sind.
+		if ( '' === $street ) {
+			$street   = $addition;
+			$addition = '';
+			if ( '' === $street ) {
+				$number = '';
+			}
+		}
 
 		if ( '' !== $company ) {
 			$payload = array(
@@ -107,7 +116,7 @@ class BWS_Contact_Sync {
 		$payload += array(
 			'street_name'      => BWS_Util::truncate( $street, 255 ),
 			'house_number'     => BWS_Util::truncate( $number, 255 ),
-			'address_addition' => BWS_Util::truncate( $order->get_billing_address_2(), 255 ),
+			'address_addition' => BWS_Util::truncate( $addition, 255 ),
 			'postcode'         => BWS_Util::truncate( $order->get_billing_postcode(), 255 ),
 			'city'             => BWS_Util::truncate( $order->get_billing_city(), 255 ),
 			'mail'             => $order->get_billing_email(),

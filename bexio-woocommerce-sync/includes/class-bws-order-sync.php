@@ -185,8 +185,8 @@ class BWS_Order_Sync {
 
 		$delivery = self::delivery_address( $order );
 		if ( $delivery ) {
-			$payload['delivery_address_type'] = 1; // Abweichende Lieferadresse.
-			$payload['delivery_address']      = $delivery;
+			$payload['delivery_address_type']   = 1; // Abweichende Lieferadresse.
+			$payload['delivery_address_manual'] = $delivery; // "delivery_address" ist in bexio nur lesbar.
 		} else {
 			$payload['delivery_address_type'] = 0;
 		}
