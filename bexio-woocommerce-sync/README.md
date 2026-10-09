@@ -34,6 +34,13 @@ WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führ
 - Virtuelle Produkte werden als Dienstleistung angelegt, alle anderen als physischer Artikel.
 - Die Verknüpfung wird am Produkt gespeichert (Meta `_bws_article_id`).
 
+### Artikelgruppen (Produktkategorien)
+- In den Einstellungen unter **Artikelgruppen** steht jede Hauptkategorie des Shops mit einem Feld für die **bexio Artikelgruppen-ID**.
+- Die Artikelgruppen müssen zuerst **in bexio angelegt** werden. Die bexio-API bietet keine Schnittstelle zum Anlegen oder Auflisten von Artikelgruppen.
+- Unterkategorien übernehmen die Gruppe ihrer Hauptkategorie. Kategorien ohne ID (z. B. „Hersteller“, „Sale %“) werden ignoriert. Varianten übernehmen die Kategorien des Hauptprodukts.
+- Liegt ein Produkt in mehreren zugeordneten Kategorien, gewinnt die genaueste Zuordnung, bei Gleichstand die kleinere Kategorie-ID.
+- Nach dem Eintragen der IDs einmal **„Alle Artikel jetzt an bexio übertragen“** ausführen, damit auch bestehende Artikel ihre Gruppe erhalten.
+
 ### Lagerbestand (bexio → WooCommerce, täglich)
 bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio und sucht das passende Produkt im Shop, zuerst über **SKU = Artikel-Nr.**, sonst über einen bereits verknüpften Artikel:
 

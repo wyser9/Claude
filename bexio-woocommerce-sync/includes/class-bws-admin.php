@@ -204,6 +204,27 @@ class BWS_Admin {
 					</table>
 				<?php endif; ?>
 
+				<h2>Artikelgruppen</h2>
+				<p>bexio-Artikelgruppe je Hauptkategorie. Die Gruppen zuerst in bexio anlegen und hier deren ID eintragen. Unterkategorien übernehmen die Gruppe ihrer Hauptkategorie. Leer = keine Gruppe (z. B. für „Hersteller“ oder „Sale“).</p>
+				<table class="form-table">
+					<?php
+					$top_cats = get_terms(
+						array(
+							'taxonomy'   => 'product_cat',
+							'parent'     => 0,
+							'hide_empty' => false,
+						)
+					);
+					$groups   = (array) $s['category_groups'];
+					foreach ( is_array( $top_cats ) ? $top_cats : array() as $cat ) :
+						?>
+						<tr>
+							<th><label for="bws_cat_<?php echo (int) $cat->term_id; ?>"><?php echo esc_html( $cat->name ); ?></label></th>
+							<td><input type="number" min="1" id="bws_cat_<?php echo (int) $cat->term_id; ?>" name="category_groups[<?php echo (int) $cat->term_id; ?>]" value="<?php echo esc_attr( $groups[ $cat->term_id ] ?? '' ); ?>" class="small-text"> <span class="description">bexio Artikelgruppen-ID</span></td>
+						</tr>
+					<?php endforeach; ?>
+				</table>
+
 				<?php submit_button( 'Einstellungen speichern' ); ?>
 			</form>
 
@@ -294,6 +315,15 @@ class BWS_Admin {
 		$values['order_statuses']     = isset( $_POST['order_statuses'] ) ? array_map( 'sanitize_key', (array) wp_unslash( $_POST['order_statuses'] ) ) : array();
 		$values['price_mode']         = ( isset( $_POST['price_mode'] ) && 'net' === $_POST['price_mode'] ) ? 'net' : 'gross';
 		$values['order_title_prefix'] = isset( $_POST['order_title_prefix'] ) ? sanitize_text_field( wp_unslash( $_POST['order_title_prefix'] ) ) : '';
+
+		$values['category_groups'] = array();
+		if ( isset( $_POST['category_groups'] ) && is_array( $_POST['category_groups'] ) ) {
+			foreach ( wp_unslash( $_POST['category_groups'] ) as $term_id => $group_id ) {
+				if ( absint( $term_id ) && absint( $group_id ) ) {
+					$values['category_groups'][ absint( $term_id ) ] = absint( $group_id );
+				}
+			}
+		}
 
 		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {

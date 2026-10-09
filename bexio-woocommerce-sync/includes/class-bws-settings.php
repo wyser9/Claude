@@ -29,6 +29,7 @@ class BWS_Settings {
 			'stock_id'           => '',
 			'stock_place_id'     => '',
 			'account_id'         => '',
+			'category_groups'    => array(), // Produktkategorie-ID => bexio Artikelgruppen-ID.
 			'default_tax_id'     => '',
 			'contact_group_id'   => '',
 			'language_id'        => '',

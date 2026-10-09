@@ -309,6 +309,44 @@ class BWS_Product_Sync {
 	}
 
 	/**
+	 * bexio-Artikelgruppe aus den Produktkategorien (Einstellung "category_groups").
+	 *
+	 * Jede Kategorie wird bis zur ersten zugeordneten (Ober-)Kategorie hochgegangen. Passen mehrere,
+	 * gewinnt die genaueste Zuordnung, bei Gleichstand die kleinere Kategorie-ID.
+	 *
+	 * @param WC_Product $product Produkt oder Variante.
+	 * @return int|null
+	 */
+	public static function article_group_id( WC_Product $product ) {
+		$map = array_filter( array_map( 'intval', (array) BWS_Settings::get( 'category_groups' ) ) );
+		if ( ! $map ) {
+			return null;
+		}
+		$cat_ids = $product->get_category_ids();
+		if ( ! $cat_ids && $product->get_parent_id() ) {
+			$parent  = wc_get_product( $product->get_parent_id() );
+			$cat_ids = $parent ? $parent->get_category_ids() : array();
+		}
+
+		$best = null;
+		foreach ( $cat_ids as $cat_id ) {
+			$chain = array_merge( array( (int) $cat_id ), array_map( 'intval', get_ancestors( (int) $cat_id, 'product_cat', 'taxonomy' ) ) );
+			$depth = count( $chain );
+			foreach ( $chain as $term_id ) {
+				if ( isset( $map[ $term_id ] ) ) {
+					$candidate = array( $depth, -$term_id, $map[ $term_id ] );
+					if ( null === $best || $candidate > $best ) {
+						$best = $candidate;
+					}
+					break;
+				}
+				$depth--;
+			}
+		}
+		return $best ? $best[2] : null;
+	}
+
+	/**
 	 * Baut die bexio-Artikeldaten.
 	 *
 	 * @param WC_Product $product Produkt.
@@ -347,6 +385,10 @@ class BWS_Product_Sync {
 		}
 		if ( BWS_Settings::id( 'account_id' ) ) {
 			$payload['account_id'] = BWS_Settings::id( 'account_id' );
+		}
+		$group_id = self::article_group_id( $product );
+		if ( $group_id ) {
+			$payload['article_group_id'] = $group_id;
 		}
 		if ( $product->get_weight() ) {
 			// bexio akzeptiert nur ganze Gramm ("weight: 154.5 is not an integer").

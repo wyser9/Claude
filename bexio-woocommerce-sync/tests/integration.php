@@ -273,6 +273,25 @@ $o3->set_address( array( 'first_name' => 'Eva', 'last_name' => 'Nur', 'address_1
 $c3 = BWS_Contact_Sync::build_payload( $o3 );
 t( 'Adresszusatz ohne Strasse wird zur Strasse', 'Postfach 12' === $c3['street_name'] && ! isset( $c3['address_addition'] ) && ! isset( $c3['house_number'] ), wp_json_encode( $c3 ) );
 
+// --- Artikelgruppen aus Hauptkategorien ---
+$mkcat = function ( $name, $parent = 0 ) { $t = wp_insert_term( $name, 'product_cat', array( 'parent' => $parent ) ); return (int) $t['term_id']; };
+$c_mun = $mkcat( 'Munition' ); $c_308 = $mkcat( '.308 Winchester', $c_mun );
+$c_wl = $mkcat( 'Wiederladen' ); $c_ges = $mkcat( 'Geschosse', $c_wl );
+$c_her = $mkcat( 'Hersteller' ); $c_horn = $mkcat( 'Hornady', $c_her ); $c_sale = $mkcat( 'Sale %' );
+BWS_Settings::save( array( 'category_groups' => array( $c_mun => 7, $c_wl => 9 ) ) );
+$pc1 = new WC_Product_Simple(); $pc1->set_props( array( 'name' => 'Patrone', 'sku' => 'CAT-1', 'regular_price' => '1', 'category_ids' => array( $c_horn, $c_308, $c_sale ) ) ); $pc1->save();
+$pc2 = new WC_Product_Simple(); $pc2->set_props( array( 'name' => 'Geschoss', 'sku' => 'CAT-2', 'regular_price' => '1', 'category_ids' => array( $c_ges ) ) ); $pc2->save();
+$pc3 = new WC_Product_Simple(); $pc3->set_props( array( 'name' => 'Nur Marke', 'sku' => 'CAT-3', 'regular_price' => '1', 'category_ids' => array( $c_horn, $c_sale ) ) ); $pc3->save();
+t( 'Unterkategorie erbt Gruppe der Hauptkategorie (Hersteller/Sale ignoriert)', 7 === BWS_Product_Sync::build_payload( wc_get_product( $pc1->get_id() ) )['article_group_id'] );
+t( 'Wiederladen > Geschosse -> Gruppe 9', 9 === BWS_Product_Sync::build_payload( wc_get_product( $pc2->get_id() ) )['article_group_id'] );
+t( 'Ohne zugeordnete Kategorie keine Gruppe', ! isset( BWS_Product_Sync::build_payload( wc_get_product( $pc3->get_id() ) )['article_group_id'] ) );
+$vp = wc_get_product( $var_parent->get_id() ); $vp->set_category_ids( array( $c_308 ) ); $vp->save();
+t( 'Variante übernimmt Kategorie des Elternprodukts', 7 === BWS_Product_Sync::article_group_id( wc_get_product( $v->get_id() ) ) );
+BWS_Settings::save( array( 'category_groups' => array( $c_mun => 7, $c_308 => 8 ) ) );
+t( 'Genauere Zuordnung gewinnt', 8 === BWS_Product_Sync::article_group_id( wc_get_product( $pc1->get_id() ) ) );
+BWS_Settings::save( array( 'category_groups' => array() ) );
+t( 'Ohne Zuordnungen kein Feld', ! isset( BWS_Product_Sync::build_payload( wc_get_product( $pc1->get_id() ) )['article_group_id'] ) );
+
 // --- Lagerimport bexio -> WooCommerce ---
 BWS_Settings::save( array( 'stock_mode' => 'from_bexio', 'price_mode' => 'gross' ) );
 update_option( 'woocommerce_prices_include_tax', 'yes' );
