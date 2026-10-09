@@ -349,7 +349,8 @@ class BWS_Product_Sync {
 			$payload['account_id'] = BWS_Settings::id( 'account_id' );
 		}
 		if ( $product->get_weight() ) {
-			$payload['weight'] = (float) wc_get_weight( $product->get_weight(), 'g' );
+			// bexio akzeptiert nur ganze Gramm ("weight: 154.5 is not an integer").
+			$payload['weight'] = (int) round( (float) wc_get_weight( $product->get_weight(), 'g' ) );
 		}
 
 		$manages_stock = $product->managing_stock() && ! $product->is_virtual();

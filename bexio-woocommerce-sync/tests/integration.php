@@ -93,7 +93,9 @@ t( 'intern_code = SKU', 'KAF-1000' === $create['intern_code'] );
 t( 'Steuer 2.6 % gemappt', 12 === $create['tax_income_id'] );
 t( 'Lagerbestand gesendet', 20 === $create['stock_nr'] && true === $create['is_stock'] && 1 === $create['stock_id'] && 2 === $create['stock_place_id'] );
 t( 'Preis', '32.5' === $create['sale_price'] );
-t( 'Gewicht in g', 1000.0 === (float) $create['weight'], var_export( $create['weight'] ?? null, true ) );
+t( 'Gewicht in g (ganze Zahl)', 1000 === $create['weight'], var_export( $create['weight'] ?? null, true ) );
+$pw = new WC_Product_Simple(); $pw->set_props( array( 'name' => 'Krumm', 'sku' => 'W-1', 'regular_price' => '1', 'weight' => '0.1545' ) ); $pw->save();
+t( 'Gewicht gerundet (154.5 g -> 155)', 155 === BWS_Product_Sync::build_payload( wc_get_product( $pw->get_id() ) )['weight'] );
 t( 'Artikel-ID gespeichert', (int) get_post_meta( $p1->get_id(), '_bws_article_id', true ) === $id1 );
 
 $GLOBALS['bws_requests'] = array();
