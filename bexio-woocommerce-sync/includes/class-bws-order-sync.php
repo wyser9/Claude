@@ -14,6 +14,9 @@ class BWS_Order_Sync {
 	const META_ERROR     = '_bws_last_error';
 	const META_CONTACT   = '_bws_contact_id';
 
+	/** @var string[] Hinweise beim Aufbau der Positionen (z.B. Artikel nicht verknüpfbar). */
+	private static $warnings = array();
+
 	public static function init() {
 		add_action( 'woocommerce_order_status_changed', array( __CLASS__, 'on_status_changed' ), 20, 3 );
 		add_action( 'bws_sync_order', array( __CLASS__, 'run_job' ), 10, 1 );
@@ -118,6 +121,9 @@ class BWS_Order_Sync {
 		$order->delete_meta_data( self::META_ERROR );
 
 		$note = sprintf( 'An bexio übertragen: Auftrag %s (Kontakt-ID %d).', $nr, $contact_id );
+		if ( self::$warnings ) {
+			$note .= ' Hinweis: ' . implode( '; ', self::$warnings ) . '.';
+		}
 		if ( isset( $result['total'] ) && abs( (float) $result['total'] - (float) $order->get_total() ) > 0.05 ) {
 			$note .= sprintf( ' Achtung: Total in bexio %s weicht vom Bestelltotal %s ab – bitte Steuereinstellungen prüfen.', $result['total'], $order->get_total() );
 			bws_log( 'warning', sprintf( 'Bestellung #%s: Total-Abweichung bexio %s / Woo %s', $order->get_order_number(), $result['total'], $order->get_total() ) );
@@ -282,6 +288,7 @@ class BWS_Order_Sync {
 	 * @return array
 	 */
 	public static function build_positions( WC_Order $order ) {
+		self::$warnings = array();
 		$gross     = self::is_gross();
 		$unit_id   = BWS_Settings::id( 'unit_id' );
 		$account   = BWS_Settings::id( 'account_id' );
@@ -320,11 +327,17 @@ class BWS_Order_Sync {
 			);
 
 			$product = $item->get_product();
-			if ( $product && BWS_Settings::enabled( 'sync_products' ) && BWS_Product_Sync::is_syncable( $product ) ) {
-				$article_id = BWS_Product_Sync::ensure_article( $product );
-				if ( $article_id ) {
-					$position['type']       = 'KbPositionArticle';
-					$position['article_id'] = $article_id;
+			if ( $product && BWS_Product_Sync::is_syncable( $product ) ) {
+				try {
+					$article_id = BWS_Product_Sync::ensure_article( $product, BWS_Settings::enabled( 'sync_products' ) );
+					if ( $article_id ) {
+						$position['type']       = 'KbPositionArticle';
+						$position['article_id'] = $article_id;
+					}
+				} catch ( BWS_Exception $e ) {
+					// Ein Artikelproblem darf die Bestellung nicht blockieren -> freie Position.
+					self::$warnings[] = sprintf( '„%s“ als freie Position übertragen (Artikel nicht verknüpfbar: %s)', $item->get_name(), $e->getMessage() );
+					bws_log( 'warning', sprintf( 'Bestellung #%s: %s', $order->get_order_number(), end( self::$warnings ) ) );
 				}
 			}
 

@@ -20,9 +20,17 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	if ( 'GET' === $m && '2.0/country' === $path ) return resp( array( array( 'id' => 1, 'name' => 'Schweiz', 'name_short' => 'CH', 'iso3166_alpha2' => 'CH' ), array( 'id' => 2, 'name' => 'Deutschland', 'name_short' => 'DE', 'iso3166_alpha2' => 'DE' ) ) );
 	if ( 'GET' === $m && '3.0/currencies' === $path ) return resp( array( array( 'id' => 1, 'name' => 'CHF' ), array( 'id' => 2, 'name' => 'EUR' ) ) );
 	if ( 'GET' === $m && '2.0/article' === $path ) return resp( $GLOBALS['bws_bexio_articles'] ?? array() );
-	if ( 'POST' === $m && '2.0/article/search' === $path ) return resp( 'EXIST-1' === $body[0]['value'] ? array( array( 'id' => 55, 'intern_code' => 'EXIST-1' ) ) : array() );
+	if ( 'POST' === $m && '2.0/article/search' === $path ) {
+		if ( 'KAPUTT-1' === $body[0]['value'] ) return resp( array( 'message' => 'Serverfehler' ), 400 );
+		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575 );
+		return resp( isset( $known[ $body[0]['value'] ] ) ? array( array( 'id' => $known[ $body[0]['value'] ], 'intern_code' => $body[0]['value'] ) ) : array() );
+	}
 	if ( 'POST' === $m && '2.0/article' === $path ) return resp( array_merge( $body, array( 'id' => ++$GLOBALS['bws_next_id'] ) ) );
-	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
+	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) {
+		// Wie das echte bexio: Artikelart ist beim Bearbeiten nicht erlaubt.
+		if ( isset( $body['article_type_id'] ) ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'Widget schema does not include the following field(s): article_type_id' ) ), 422 );
+		return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
+	}
 	if ( 'POST' === $m && '2.0/contact/search' === $path ) return resp( array() );
 	if ( 'POST' === $m && '2.0/contact' === $path ) return resp( array_merge( $body, array( 'id' => 500 ) ) );
 	if ( 'POST' === $m && '2.0/kb_order/search' === $path ) {
@@ -226,6 +234,36 @@ $o4 = $mk( 'fehler@example.ch' );
 $GLOBALS['bws_requests'] = array();
 try { BWS_Order_Sync::sync( $o4 ); t( 'Fehler bei Duplikatsuche bricht ab', false ); } catch ( BWS_Exception $e ) { t( 'Fehler bei Duplikatsuche bricht ab', ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return '2.0/kb_order' === $r[1]; } ) ); }
 remove_filter( 'pre_http_request', $fail_search, 20 );
+
+// --- Bestellung mit bestehendem bexio-Artikel (Fall armatum.ch: Fehler 422 bei article_type_id) ---
+remove_all_actions( 'woocommerce_update_product' ); // Hintergrund-Sync hier nicht relevant
+$pb = new WC_Product_Simple(); $pb->set_props( array( 'name' => 'Schon in bexio', 'sku' => 'BEXIO-2575', 'regular_price' => '40' ) ); $pb->save();
+$pk = new WC_Product_Simple(); $pk->set_props( array( 'name' => 'Kaputter Artikel', 'sku' => 'KAPUTT-1', 'regular_price' => '10' ) ); $pk->save();
+$o5 = $mk( 'artikel@example.ch' );
+foreach ( $o5->get_items() as $iid => $it ) { $o5->remove_item( $iid ); }
+$o5->add_product( wc_get_product( $pb->get_id() ), 2 );
+$o5->add_product( wc_get_product( $pk->get_id() ), 1 );
+$o5->calculate_totals(); $o5->save();
+$GLOBALS['bws_requests'] = array();
+$r5 = BWS_Order_Sync::sync( wc_get_order( $o5->get_id() ) );
+$kb5 = null; $art_writes = array();
+foreach ( $GLOBALS['bws_requests'] as $r ) {
+	if ( '2.0/kb_order' === $r[1] ) $kb5 = $r[2];
+	if ( preg_match( '#^2\.0/article(/\d+)?$#', $r[1] ) ) $art_writes[] = $r[1];
+}
+t( 'Bestellung trotz Artikelproblem übertragen', 900 === $r5 && $kb5 );
+t( 'Bestehender Artikel nur verknüpft (article_id 2575)', 'KbPositionArticle' === $kb5['positions'][0]['type'] && 2575 === $kb5['positions'][0]['article_id'], wp_json_encode( $kb5['positions'][0] ) );
+t( 'Bestehender bexio-Artikel wird bei Bestellung nicht überschrieben', ! in_array( '2.0/article/2575', $art_writes, true ), implode( ',', $art_writes ) );
+t( 'Verknüpfung am Produkt gespeichert', 2575 === (int) get_post_meta( $pb->get_id(), '_bws_article_id', true ) );
+t( 'Kaputter Artikel als freie Position', 'KbPositionCustom' === $kb5['positions'][1]['type'] && ! isset( $kb5['positions'][1]['article_id'] ) );
+$n5 = wc_get_order_notes( array( 'order_id' => $o5->get_id() ) );
+t( 'Notiz nennt freie Position', false !== strpos( $n5[0]->content, 'Kaputter Artikel' ) && false !== strpos( $n5[0]->content, 'freie Position' ), $n5[0]->content );
+
+// Produktaktualisierung eines verknüpften Artikels: ohne article_type_id.
+$GLOBALS['bws_requests'] = array();
+BWS_Product_Sync::sync( wc_get_product( $pb->get_id() ) );
+$upd = end( $GLOBALS['bws_requests'] );
+t( 'Artikel-Update ohne article_type_id', '2.0/article/2575' === $upd[1] && ! isset( $upd[2]['article_type_id'] ), wp_json_encode( $upd ) );
 
 // Nur Adresszeile 2 ausgefüllt -> wird zur Strasse (bexio verlangt street_name).
 $o3 = wc_create_order();

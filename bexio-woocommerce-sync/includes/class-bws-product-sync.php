@@ -186,7 +186,10 @@ class BWS_Product_Sync {
 
 		if ( $article_id ) {
 			try {
-				$result = $client->post( '2.0/article/' . $article_id, $payload );
+				// bexio akzeptiert die Artikelart nur beim Anlegen, beim Bearbeiten führt sie zu Fehler 422.
+				$update = $payload;
+				unset( $update['article_type_id'] );
+				$result = $client->post( '2.0/article/' . $article_id, $update );
 			} catch ( BWS_Exception $e ) {
 				if ( 404 !== $e->getCode() ) {
 					throw $e;
@@ -227,17 +230,31 @@ class BWS_Product_Sync {
 	}
 
 	/**
-	 * Liefert die bexio Artikel-ID, legt den Artikel bei Bedarf an.
+	 * Liefert die bexio Artikel-ID: gespeicherte Verknüpfung, sonst Suche per SKU, sonst (optional) Neuanlage.
 	 *
-	 * @param WC_Product $product Produkt.
+	 * @param WC_Product $product      Produkt.
+	 * @param bool       $allow_create Artikel anlegen, wenn in bexio keiner mit dieser SKU existiert.
 	 * @return int|null
 	 */
-	public static function ensure_article( WC_Product $product ) {
+	public static function ensure_article( WC_Product $product, $allow_create = true ) {
 		$article_id = (int) $product->get_meta( self::META_ARTICLE_ID, true );
 		if ( $article_id ) {
 			return $article_id;
 		}
-		return self::sync( $product );
+
+		// Bestehenden bexio-Artikel nur verknüpfen, nicht überschreiben (bexio-Daten bleiben unverändert).
+		$sku = trim( (string) $product->get_sku() );
+		if ( '' !== $sku ) {
+			$article_id = self::find_article_id( $sku );
+			if ( $article_id ) {
+				update_post_meta( $product->get_id(), self::META_ARTICLE_ID, $article_id );
+				$product->update_meta_data( self::META_ARTICLE_ID, $article_id );
+				bws_log( 'info', sprintf( 'Produkt #%d mit bestehendem bexio-Artikel %d (%s) verknüpft.', $product->get_id(), $article_id, $sku ) );
+				return $article_id;
+			}
+		}
+
+		return $allow_create ? self::sync( $product ) : null;
 	}
 
 	/**
