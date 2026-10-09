@@ -65,6 +65,8 @@ bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio u
 - **MWST:** Jede Position bekommt die bexio-Umsatzsteuer mit dem passenden Satz (8.1 %, 2.6 %, 3.8 %, 0 %). Die Zuordnung erfolgt automatisch über den Prozentsatz.
 - **Preise brutto oder netto** (Einstellung). Brutto (inkl. MWST) ist der Standard für Schweizer B2C-Shops. Nach dem Anlegen vergleicht das Plugin das Total in bexio mit dem Bestelltotal und schreibt eine Bestellnotiz, falls sie abweichen.
 - Zahlungsart, Transaktions-ID und Kundenbemerkung landen im Kopftext, eine abweichende Lieferadresse im Feld Lieferadresse.
+- **Keine Duplikate:** Vor dem Anlegen sucht das Plugin in bexio nach einem Auftrag, dessen **Titel die Bestellnummer enthält** (z. B. „12345“ oder „12345 Max Muster“). Gibt es ihn schon, wird die Bestellung nur verknüpft. Es wird weder ein Auftrag noch ein Kontakt angelegt, eine Bestellnotiz hält das fest. Die Nummer muss als eigene Zahl vorkommen: „123456“ zählt nicht als Bestellung 12345. Schlägt die Suche fehl, wird sicherheitshalber nichts angelegt.
+- Auftragstitel: Ist das Feld *Auftragstitel* leer, besteht der Titel nur aus der Bestellnummer.
 - Jede Bestellung wird **genau einmal** übertragen. Die Auftragsnummer erscheint in der Bestellnotiz und in der Box „bexio“ (mit Link zu bexio).
 - Manuell senden: In der Bestellung die Aktion **„An bexio übertragen“** wählen oder in der Bestellübersicht die gleichnamige Sammelaktion verwenden.
 

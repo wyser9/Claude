@@ -82,6 +82,23 @@ class BWS_Util {
 	}
 
 	/**
+	 * Ob ein Auftragstitel die Bestellnummer als eigenständige Zahl enthält.
+	 * "12345", "12345 Max Muster", "WooCommerce Bestellung #12345" => ja; "123456" oder "A-112345" => nein.
+	 *
+	 * @param string $title        Auftragstitel aus bexio.
+	 * @param string $order_number WooCommerce-Bestellnummer.
+	 * @return bool
+	 */
+	public static function title_matches_order_number( $title, $order_number ) {
+		$order_number = trim( (string) $order_number );
+		if ( '' === $order_number ) {
+			return false;
+		}
+		$pattern = '/(?<![0-9A-Za-z])' . preg_quote( $order_number, '/' ) . '(?![0-9A-Za-z])/u';
+		return 1 === preg_match( $pattern, (string) $title );
+	}
+
+	/**
 	 * Kürzt einen String auf die maximale Feldlänge von bexio.
 	 *
 	 * @param string $value Text.

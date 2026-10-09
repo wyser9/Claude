@@ -92,6 +92,12 @@ class BWS_Order_Sync {
 		set_transient( $lock, 1, 5 * MINUTE_IN_SECONDS );
 
 		try {
+			// Bereits vorhandenen Auftrag (z.B. früher manuell erfasst) verknüpfen statt neu anlegen.
+			$duplicate = $force ? null : self::find_existing_order( $order );
+			if ( $duplicate ) {
+				return self::link_existing( $order, $duplicate );
+			}
+
 			$contact_id = BWS_Contact_Sync::ensure_contact( $order );
 			$payload    = self::build_payload( $order, $contact_id );
 			$result     = BWS_Client::instance()->post( '2.0/kb_order', $payload );
@@ -127,6 +133,64 @@ class BWS_Order_Sync {
 	}
 
 	/**
+	 * Sucht in bexio einen Auftrag, dessen Titel die Bestellnummer enthält
+	 * (z.B. "12345" oder "12345 Max Muster") oder der von diesem Plugin stammt.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @return array|null bexio-Auftrag.
+	 * @throws BWS_Exception Wenn die Suche fehlschlägt – dann wird sicherheitshalber nichts angelegt.
+	 */
+	public static function find_existing_order( WC_Order $order ) {
+		$number = (string) $order->get_order_number();
+		$client = BWS_Client::instance();
+
+		$hits = $client->post(
+			'2.0/kb_order/search',
+			array(
+				array(
+					'field'    => 'title',
+					'value'    => $number,
+					'criteria' => 'like',
+				),
+			),
+			array( 'limit' => 100 )
+		);
+
+		foreach ( is_array( $hits ) ? $hits : array() as $hit ) {
+			$reference = isset( $hit['api_reference'] ) ? (string) $hit['api_reference'] : '';
+			if ( 'woocommerce-' . $order->get_id() === $reference ) {
+				return $hit;
+			}
+			if ( isset( $hit['title'] ) && BWS_Util::title_matches_order_number( $hit['title'], $number ) ) {
+				return $hit;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Verknüpft die Bestellung mit einem bereits vorhandenen bexio-Auftrag.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @param array    $hit   bexio-Auftrag.
+	 * @return int bexio Auftrags-ID.
+	 */
+	private static function link_existing( WC_Order $order, array $hit ) {
+		$bexio_id = (int) $hit['id'];
+		$nr       = isset( $hit['document_nr'] ) ? (string) $hit['document_nr'] : (string) $bexio_id;
+
+		$order->update_meta_data( self::META_ORDER_ID, $bexio_id );
+		$order->update_meta_data( self::META_ORDER_NR, $nr );
+		$order->delete_meta_data( self::META_ERROR );
+		$order->add_order_note( sprintf( 'In bexio existiert bereits Auftrag %s („%s“) – kein neuer Auftrag angelegt, Bestellung verknüpft.', $nr, $hit['title'] ?? '' ) );
+		$order->save();
+
+		bws_log( 'info', sprintf( 'Bestellung #%s: bestehender bexio-Auftrag %s (ID %d) verknüpft, nichts angelegt.', $order->get_order_number(), $nr, $bexio_id ) );
+
+		return $bexio_id;
+	}
+
+	/**
 	 * Ob Positionspreise brutto (inkl. MWST) übertragen werden.
 	 *
 	 * @return bool
@@ -147,7 +211,7 @@ class BWS_Order_Sync {
 		$created = $order->get_date_created();
 
 		$payload = array(
-			'title'               => BWS_Util::truncate( trim( BWS_Settings::get( 'order_title_prefix' ) . ' #' . $order->get_order_number() ), 255 ),
+			'title'               => BWS_Util::truncate( self::title( $order ), 255 ),
 			'contact_id'          => (int) $contact_id,
 			'user_id'             => BWS_Lookup::user_id(),
 			'api_reference'       => 'woocommerce-' . $order->get_id(),
@@ -198,6 +262,17 @@ class BWS_Order_Sync {
 		 * @param WC_Order $order   Bestellung.
 		 */
 		return apply_filters( 'bws_order_payload', $payload, $order );
+	}
+
+	/**
+	 * Auftragstitel: "<Präfix> #<Nr>" bzw. nur "<Nr>", wenn kein Präfix gesetzt ist.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @return string
+	 */
+	public static function title( WC_Order $order ) {
+		$prefix = trim( (string) BWS_Settings::get( 'order_title_prefix' ) );
+		return '' === $prefix ? (string) $order->get_order_number() : $prefix . ' #' . $order->get_order_number();
 	}
 
 	/**

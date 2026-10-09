@@ -46,6 +46,15 @@ check( 'Betrag Dezimal', '10.833333', BWS_Util::amount( 32.5 / 3 ) );
 check( 'Betrag 2 Stellen', '19.9', BWS_Util::amount( 19.9, 2 ) );
 check( 'Betrag 0', '0', BWS_Util::amount( -0.0000001 ) );
 
+check( 'Titel = Nummer', true, BWS_Util::title_matches_order_number( '12345', '12345' ) );
+check( 'Titel mit Beschreibung', true, BWS_Util::title_matches_order_number( '12345 Max Muster Kaffee', '12345' ) );
+check( 'Titel mit Präfix', true, BWS_Util::title_matches_order_number( 'WooCommerce Bestellung #12345', '12345' ) );
+check( 'Titel Nummer am Ende', true, BWS_Util::title_matches_order_number( 'Shop 12345', '12345' ) );
+check( 'Längere Nummer passt nicht', false, BWS_Util::title_matches_order_number( '123456 Muster', '12345' ) );
+check( 'Nummer in anderer Zahl', false, BWS_Util::title_matches_order_number( 'A-112345', '12345' ) );
+check( 'Kurze Nummer nicht in langer', false, BWS_Util::title_matches_order_number( '1234 Muster', '123' ) );
+check( 'Leere Nummer', false, BWS_Util::title_matches_order_number( '12345', '' ) );
+
 check( 'Kürzen', 'abc', BWS_Util::truncate( ' abcdef ', 3 ) );
 
 echo $failures ? "\n$failures Fehler\n" : "\nAlle Tests bestanden.\n";

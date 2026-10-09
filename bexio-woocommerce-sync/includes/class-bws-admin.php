@@ -178,7 +178,8 @@ class BWS_Admin {
 					</tr>
 					<tr>
 						<th><label for="bws_order_title_prefix">Auftragstitel</label></th>
-						<td><input type="text" id="bws_order_title_prefix" name="order_title_prefix" value="<?php echo esc_attr( $s['order_title_prefix'] ); ?>" class="regular-text"> <code>#&lt;Bestellnummer&gt;</code></td>
+						<td><input type="text" id="bws_order_title_prefix" name="order_title_prefix" value="<?php echo esc_attr( $s['order_title_prefix'] ); ?>" class="regular-text"> <code>#&lt;Bestellnummer&gt;</code>
+							<p class="description">Leer lassen, damit der Auftrag nur die Bestellnummer als Titel erhält. Vor dem Anlegen prüft das Plugin, ob in bexio schon ein Auftrag mit dieser Nummer im Titel existiert, und verknüpft dann nur.</p></td>
 					</tr>
 				</table>
 

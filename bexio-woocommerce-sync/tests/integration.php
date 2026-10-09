@@ -25,6 +25,10 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
 	if ( 'POST' === $m && '2.0/contact/search' === $path ) return resp( array() );
 	if ( 'POST' === $m && '2.0/contact' === $path ) return resp( array_merge( $body, array( 'id' => 500 ) ) );
+	if ( 'POST' === $m && '2.0/kb_order/search' === $path ) {
+		// bexio "like" = Teilstring-Suche.
+		return resp( array_values( array_filter( $GLOBALS['bws_bexio_orders'] ?? array(), function ( $o ) use ( $body ) { return false !== strpos( $o['title'], (string) $body[0]['value'] ); } ) ) );
+	}
 	if ( 'POST' === $m && '2.0/kb_order' === $path ) {
 		$total = 0;
 		foreach ( $body['positions'] as $p ) {
@@ -176,6 +180,52 @@ t( 'Netto-Modus', true === $kb['mwst_is_net'] && 0 === $kb['delivery_address_typ
 $net = 0; foreach ( $kb['positions'] as $p ) { $net += (float) $p['amount'] * (float) $p['unit_price']; }
 t( 'Netto-Summe = Total exkl. MWST', abs( $net - ( (float) $o2->get_total() - (float) $o2->get_total_tax() ) ) < 0.011, "$net" );
 
+
+// --- Bereits vorhandene Aufträge in bexio ---
+$mk = function ( $email ) use ( $p1 ) {
+	$o = wc_create_order();
+	$o->add_product( wc_get_product( $p1->get_id() ), 1 );
+	$o->set_address( array( 'first_name' => 'Alt', 'last_name' => 'Kunde', 'address_1' => 'Weg 1', 'postcode' => '8000', 'city' => 'Zürich', 'country' => 'CH', 'email' => $email ), 'billing' );
+	$o->calculate_totals();
+	$o->save();
+	return $o;
+};
+$old = $mk( 'alt@example.ch' );
+$other = $mk( 'neu@example.ch' );
+$GLOBALS['bws_bexio_orders'] = array(
+	array( 'id' => 4711, 'document_nr' => 'AU-00042', 'title' => $old->get_order_number() . ' Kaffeebohnen Alt Kunde', 'api_reference' => null ),
+	array( 'id' => 4712, 'document_nr' => 'AU-00043', 'title' => $other->get_order_number() . '9 andere Bestellung', 'api_reference' => null ),
+);
+$GLOBALS['bws_requests'] = array();
+$linked = BWS_Order_Sync::sync( wc_get_order( $old->get_id() ) );
+$old = wc_get_order( $old->get_id() );
+$writes = array_filter( $GLOBALS['bws_requests'], function ( $r ) { return in_array( $r[1], array( '2.0/kb_order', '2.0/contact' ), true ); } );
+t( 'Bestehender Auftrag gefunden und verknüpft', 4711 === $linked && 4711 === (int) $old->get_meta( '_bws_order_id' ) && 'AU-00042' === $old->get_meta( '_bws_order_nr' ) );
+t( 'Kein Auftrag und kein Kontakt angelegt', ! $writes, wp_json_encode( array_values( $writes ) ) );
+$n = wc_get_order_notes( array( 'order_id' => $old->get_id() ) );
+t( 'Notiz zur Verknüpfung', false !== strpos( $n[0]->content, 'AU-00042' ) && false !== strpos( $n[0]->content, 'kein neuer Auftrag' ), $n[0]->content );
+
+$GLOBALS['bws_requests'] = array();
+$new_id = BWS_Order_Sync::sync( wc_get_order( $other->get_id() ) );
+t( 'Ähnliche Nummer (…9) zählt nicht als Duplikat -> neuer Auftrag', 900 === $new_id && array_filter( $GLOBALS['bws_requests'], function ( $r ) { return '2.0/kb_order' === $r[1]; } ) );
+
+// Statuswechsel einer alten, bereits verknüpften Bestellung -> kein Job.
+as_unschedule_all_actions( 'bws_sync_order' );
+$old->update_status( 'completed' );
+t( 'Statuswechsel verknüpfter Bestellung plant nichts ein', ! as_has_scheduled_action( 'bws_sync_order', array( $old->get_id() ), BWS_AS_GROUP ) );
+
+// Titel ohne Präfix = nur Bestellnummer.
+BWS_Settings::save( array( 'order_title_prefix' => '' ) );
+t( 'Titel ohne Präfix', (string) $other->get_order_number() === BWS_Order_Sync::title( $other ) );
+BWS_Settings::save( array( 'order_title_prefix' => 'WooCommerce Bestellung' ) );
+
+// Suche schlägt fehl -> nichts anlegen.
+$fail_search = function ( $pre, $args, $url ) { return false !== strpos( $url, 'kb_order/search' ) ? resp( array( 'message' => 'kaputt' ), 400 ) : $pre; };
+add_filter( 'pre_http_request', $fail_search, 20, 3 );
+$o4 = $mk( 'fehler@example.ch' );
+$GLOBALS['bws_requests'] = array();
+try { BWS_Order_Sync::sync( $o4 ); t( 'Fehler bei Duplikatsuche bricht ab', false ); } catch ( BWS_Exception $e ) { t( 'Fehler bei Duplikatsuche bricht ab', ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return '2.0/kb_order' === $r[1]; } ) ); }
+remove_filter( 'pre_http_request', $fail_search, 20 );
 
 // Nur Adresszeile 2 ausgefüllt -> wird zur Strasse (bexio verlangt street_name).
 $o3 = wc_create_order();
