@@ -1,6 +1,6 @@
 # Marke Armatum – Grundlagen für @armatum_ch
 
-Stand: So, 11.10.2026 · Erstellt von: Irene (Social Media) · Zuletzt aktualisiert: 11.10.2026 (Abgleich mit der Website)
+Stand: So, 11.10.2026 · Erstellt von: Irene (Social Media) · Zuletzt aktualisiert: 11.10.2026 (Entscheide des Inhabers eingetragen)
 
 > **Quelle:** Alle Angaben ohne anderen Vermerk stammen von armatum.ch (abgerufen 11.10.2026): Startseite, Über uns, Angebot und Dienstleistungen, Wiederlade-Infrastruktur, Impressum sowie dem Theme-CSS der Website. Angaben aus anderen Quellen sind ausdrücklich gekennzeichnet. Was die Website nicht belegt, bleibt mit «[BESTÄTIGEN]» markiert.
 
@@ -11,9 +11,10 @@ Stand: So, 11.10.2026 · Erstellt von: Irene (Social Media) · Zuletzt aktualisi
 **Armatum GmbH** ist ein Schweizer Fachhändler für Schützen und Jäger mit Laden, Werkstatt und Onlineshop in Fulenbach SO.
 - Aktueller Claim auf der Startseite: «Ihr Schweizer Fachhändler für Schützen und Jäger» (der früher zitierte Satz «… für Waffen, Munition und Ausrüstung …» steht so nicht mehr auf der Seite).
 - Selbstbeschreibung: «Über 4000 Artikel von mehr als 100 Marken: Optik, Waffenzubehör, Munition und alles fürs Wiederladen. Mit persönlicher Fachberatung aus Fulenbach SO.»
-- Vertretungsberechtigte Person (Impressum): Pascal Wyser, Geschäftsführer. Ob der Name in Posts genannt werden soll, entscheidet der Inhaber. [BESTÄTIGEN: Namensnennung auf Instagram]
+- Vertretungsberechtigte Person: siehe Impressum. **Entscheid des Inhabers (11.10.2026): Die Inhaberperson wird auf Instagram nicht namentlich genannt**, weder in Captions noch in Slides, Bildtexten oder Stories.
 - UID / MWST (Impressum): CHE-357.427.886 (MWST)
-- Gründung: Eintrag ins Handelsregister am 23.01.2024, Kanton Solothurn. **Quelle: SHAB/Handelsregister, nicht die Website.** Die Formulierung «seit 2024» ist damit belegt, aber nicht von der Website. [BESTÄTIGEN: «seit 2024» für Instagram ok]
+- Gründung: Eintrag ins Handelsregister am 23.01.2024, Kanton Solothurn (Quelle: SHAB/Handelsregister). **«Seit 2024» darf auf Instagram verwendet werden** (vom Inhaber bestätigt am 11.10.2026).
+- Instagram-Account: bestehender Business-Account mit Historie (Stand 11.10.2026: 2450 Follower, folgt 5547 Konten, 347 Beiträge), seit 11.10.2026 über Composio verbunden. Auswertung in `auswertungen.md`.
 - Social Media laut Website: Instagram @armatum_ch und Facebook «Armatum GmbH» (facebook.com/people/Armatum-GmbH/61550968702675). Die Website wirbt im Footer: «Folgen Sie uns auf Instagram für Neuheiten, Tests und Einblicke.» Das passt genau zu unserer Säulen-Planung.
 - **Technischer Hinweis an den Inhaber:** In den strukturierten Daten der Website (Yoast-SEO, Feld «sameAs») ist noch `instagram.com/wyserwaffen/` hinterlegt, nicht @armatum_ch. Empfehlung: im SEO-Plugin unter Organisation/Social-Profile auf `https://www.instagram.com/armatum_ch/` ändern und die Facebook-Seite ergänzen. Das hilft Google, Website und Instagram-Profil zu verknüpfen.
 
@@ -141,9 +142,14 @@ Tipps, Tests & Einblicke 👇
 ## 9. Was weiterhin offen ist
 
 - **Wiederladekurse:** Inhalte, nächste Termine, Dauer, Zielgruppe (die Kursseite war nicht unter den abgerufenen Seiten)
-- **Namensnennung** Pascal Wyser auf Instagram ja/nein, und ob «seit 2024» verwendet werden soll
+- **Bio und Profilbild** (Abschnitte 5 und 8): Der Vorschlag steht, die Freigabe des Inhabers fehlt noch.
 - **Team:** Gibt es weitere Personen (z. B. Büchsenmacherin/Büchsenmacher), die auf Instagram auftreten möchten?
 - **Eigene Geschichte / Motivation:** Warum gibt es Armatum? Stark für Intro und Reels
 - **Website-Bildsprache** (Fotostil, Ladenbilder): nicht beurteilt, da nur Text vorlag
 - **Yoast-«sameAs»** von @wyserwaffen auf @armatum_ch umstellen (Website, siehe Abschnitt 1)
-- **Altersgrenze 18+ auf Instagram** und das **OK für die Composio-Verbindung**: beides beim Inhaber offen
+
+**Erledigt bzw. entschieden (11.10.2026):**
+- Namensnennung: Die Inhaberperson wird nicht genannt.
+- «Seit 2024»: darf verwendet werden.
+- Composio-Verbindung: aktiv. Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin.
+- Altersgrenze 18+: wird nach bewusstem Entscheid des Inhabers nicht gesetzt. Punkt geschlossen.

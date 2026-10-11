@@ -1,7 +1,8 @@
 # Redaktionsplan @armatum_ch – 12.10. bis 25.10.2026
 
-Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Abgleich mit armatum.ch) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
-Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10.), Woche 2 wartet auf Freigabe.** Es ist noch nichts veröffentlicht. Die Instagram-Verbindung über Composio ist **nicht** eingerichtet und wird erst nach ausdrücklichem OK des Inhabers eingerichtet. Bis dahin liefere ich die fertigen Dateien und Captions zum manuellen Posten.
+Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Entscheide des Inhabers, Auswertung des bestehenden Accounts) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
+Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, die Stories 15.10./16.10., Bio und Profilbild. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
+Ausgangslage: Es handelt sich um einen **bestehenden Account** (2450 Follower, folgt 5547 Konten, 347 Beiträge) und keinen Neustart. Die Auswertung steht in `/home/user/Claude/instagram/auswertungen.md` (Abschnitt «Ausgangslage 11.10.2026»).
 
 Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info, die die Website nicht belegt und die der Inhaber kurz bestätigen soll.
 Quelle der Fakten: armatum.ch (abgerufen 11.10.2026), Details in `/home/user/Claude/instagram/marke.md`.
@@ -34,6 +35,8 @@ Quelle der Fakten: armatum.ch (abgerufen 11.10.2026), Details in `/home/user/Cla
 | Stories | ca. 12:00 und 20:00 | Mittagspause und Abend. Die Umfragen laufen 24 h. |
 
 Diese Zeiten überprüfen wir nach Woche 2 anhand der Insights («Wann sind deine Follower aktiv»).
+
+**Abgleich mit den Insights (11.10.2026, Details in `auswertungen.md`):** Unter der Woche sind die meisten Follower zwischen 19 und 22 Uhr online. 18:30 und 19:00 liegen nur 3–5 % unter der Spitze. Die Zeiten für Woche 2 bleiben deshalb **unverändert**. Am Samstagmorgen um 09–10 Uhr sind rund 25 % weniger Follower online als am Abend. Für #8 (24.10.) bleibt es trotzdem bei 09:30, weil der Post auf die Ladenöffnung verweist. **Empfehlung für #4 (17.10., freigegeben):** Eine Verschiebung auf Sa 12:00 wäre etwas besser. Ohne Rückmeldung des Inhabers bleibt es bei 09:30. Ab Woche 3 testen wir einen Wochentags-Post um 20:00.
 
 ---
 
@@ -179,7 +182,7 @@ Welcher Schritt braucht bei dir am meisten Zeit? 👇
 
 **Slides** (dunkles Design, Fotos mit Fläche `#313131` unterlegt):
 1. Cover: Querlogo `logo-weiss.png` gross auf `#313131`, darunter «Hallo, wir sind Armatum 👋» und in einem olivgrünen Band «Laden · Werkstatt · Onlineshop»
-2. **Wer wir sind** (Foto: Inhaber/Team): «Seit 2024 in Fulenbach SO. Fachhandel für Schützen und Jäger, für Wiederlader und Sammler.» `[BESTÄTIGEN: Namensnennung Pascal Wyser, Geschäftsführer, ja/nein; «seit 2024» stammt aus dem Handelsregister, nicht von der Website]`
+2. **Wer wir sind** (Foto: Inhaber/Team, ohne Namensnennung): «Seit 2024 in Fulenbach SO. Fachhandel für Schützen und Jäger, für Wiederlader und Sammler.» (Entscheide des Inhabers vom 11.10.2026: keine Namensnennung, «seit 2024» ist ok.)
 3. **Laden** (Foto: Eingang oder Ladenansicht ohne Preisschilder): «Persönliche Fachberatung vor Ort, jeden Donnerstag 17–21 Uhr und jeden zweiten Samstag 9–13 Uhr. Tipp: Parkieren bei der A. Jäggi AG, der Eingang liegt hinter dem Gebäude.»
 4. **Werkstatt** (Foto: Werkbank): «Reinigung mit Funktionskontrolle, Service und Reparatur. Auf Wunsch holen wir deine Waffe ab und bringen sie zurück.»
 5. **Wiederladen & Onlineshop** (Foto: Wiederladeplatz): «Unser Herzstück: über 1000 Artikel fürs Wiederladen, Kurse und gewartete Arbeitsplätze zum Mieten. Optik, Zubehör, Ausrüstung und Pflege findest du auch online auf armatum.ch.»
@@ -212,13 +215,15 @@ Welches Thema wünschst du dir als Erstes? Schreib's in die Kommentare – die m
 **Hashtags:** `#armatum #fulenbach #sportschiessen #wiederladen #schweiz`
 Standort-Tag: «Fulenbach» bzw. das Geschäft, falls als Ort auf Instagram vorhanden.
 
+**Empfehlung nach der Account-Auswertung (zur Entscheidung des Inhabers):** Der Account hat bereits 2450 Follower. Der Hook «Schön, dass du da bist» klingt nach Neustart. Alternative für die erste Zeile: «Neuer Look, mehr Wissen: Wer steckt eigentlich hinter @armatum_ch? 👋» Der Rest der Caption kann bleiben. Ich übernehme die Änderung nur, wenn der Inhaber zustimmt.
+
 **Material/Shotlist:** 4 eigene Fotos, Hochformat 4:5, bis Mi 14.10. 12:00:
 - Inhaber oder Team vor der Werkbank oder im Laden (freundlich, ohne Waffe in der Hand oder mit entladener Waffe, Mündung in sichere Richtung, Finger weg vom Abzug)
 - Eingang mit Beschilderung bzw. Ladenansicht (ohne Autonummern, ohne unbeteiligte Personen, ohne Preisschilder, ohne Sale-Plakate)
 - Werkbank der Werkstatt (aufgeräumt, keine Kundenwaffen mit erkennbaren Seriennummern, keine Umbau-Projekte im Bild)
 - Wiederlade-Arbeitsplatz (Pressen, Waage; keine Pulverdosen mit lesbaren Angaben, keine Ladetabellen, keine Preisschilder)
 
-**Regel-Check:** ✅ geprüft mit Auflagen. Die Leistungen werden ohne Preise vorgestellt. Der Verweis geht nur auf den regulären Onlineshop und den Laden. Waffen und Munition werden nicht als Kaufangebot erwähnt; Ankauf, Beschaffung, kundenspezifische Munition, Waffenerwerb sowie Umbau/Modifikation sind bewusst ausgelassen (stehen zwar auf der Website, sind aber kein Instagram-Thema). Öffnungszeiten, Parkplätze und Werkstatt-Leistungen sind durch die Website belegt. Auflagen: Auf den Fotos sind keine Preisschilder, Aktionsplakate oder Seriennummern sichtbar. Keine Details zu Tresor oder Lager. Die mit `[BESTÄTIGEN]` markierten Punkte muss der Inhaber vor der Freigabe prüfen.
+**Regel-Check:** ✅ geprüft mit Auflagen. Die Leistungen werden ohne Preise vorgestellt. Der Verweis geht nur auf den regulären Onlineshop und den Laden. Waffen und Munition werden nicht als Kaufangebot erwähnt; Ankauf, Beschaffung, kundenspezifische Munition, Waffenerwerb sowie Umbau/Modifikation sind bewusst ausgelassen (stehen zwar auf der Website, sind aber kein Instagram-Thema). Öffnungszeiten, Parkplätze und Werkstatt-Leistungen sind durch die Website belegt. Auflagen: Auf den Fotos sind keine Preisschilder, Aktionsplakate oder Seriennummern sichtbar. Keine Details zu Tresor oder Lager. Keine Namensnennung der Inhaberperson in Slides, Caption oder Bildtexten (Entscheid des Inhabers vom 11.10.2026). «Seit 2024» ist vom Inhaber bestätigt.
 
 ---
 
@@ -420,15 +425,15 @@ Fehlt dein Thema? Schreib's in die Kommentare – oder frag uns direkt: Heute is
 
 ## 5. Story-Ideen pro Tag
 
-Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), Woche 2 (19.–25.10.) wartet auf Freigabe.
+Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
 
 | Datum | Tag | Story-Idee |
 |---|---|---|
 | 12.10. | Mo | Teaser: «Ab morgen geht's hier richtig los.» Umfrage-Sticker: «Was bist du? Sportschütze / Jäger» (2. Slide: «Wiederlader / Sammler») |
 | 13.10. | Di | Mittags Quiz: «Wie viel Öl gehört in den Lauf? Viel / dünner Film / gar keins». Abends den neuen Post #1 teilen. |
 | 14.10. | Mi | Umfrage: «Lädst du selbst wieder? Ja / Möchte anfangen / Nein». Abends Post #2 teilen. |
-| 15.10. | Do | Fragen-Sticker: «Was wolltest du schon immer über Waffenpflege oder Wiederladen wissen?» Abends Post #3 teilen, dazu ein Live-Foto aus dem Laden («Heute bis 21 Uhr offen») – ohne Preisschilder, ohne Kundschaft ohne Einverständnis. |
-| 16.10. | Fr | Behind the Scenes «So findest du uns»: kurzer Clip vom Parkplatz der A. Jäggi AG über den Weg hinter das Gebäude bis zum Eingang mit Beschilderung (ohne Autonummern). Textsticker: «Offen jeden Do 17–21 Uhr. Nächster Samstag: 24.10., 9–13 Uhr.» + Emoji-Slider «Wie sehr freust du dich aufs Wochenende am Stand?» |
+| 15.10. | Do | **(ergänzt, wartet auf Freigabe)** Fragen-Sticker: «Was wolltest du schon immer über Waffenpflege oder Wiederladen wissen?» Abends Post #3 teilen, dazu ein Live-Foto aus dem Laden («Heute bis 21 Uhr offen») – ohne Preisschilder, ohne Kundschaft ohne Einverständnis. |
+| 16.10. | Fr | **(ergänzt, wartet auf Freigabe)** Behind the Scenes «So findest du uns»: kurzer Clip vom Parkplatz der A. Jäggi AG über den Weg hinter das Gebäude bis zum Eingang mit Beschilderung (ohne Autonummern). Textsticker: «Offen jeden Do 17–21 Uhr. Nächster Samstag: 24.10., 9–13 Uhr.» + Emoji-Slider «Wie sehr freust du dich aufs Wochenende am Stand?» |
 | 17.10. | Sa | Post #4 teilen + Quiz: «Was ist ein Absenden? Rangverkündigung / Schiesspause / Munitionsausgabe». (Heute kein Öffnungs-Samstag – keinen Laden-Hinweis.) |
 | 18.10. | So | Umfrage: «Welches Thema soll nächste Woche kommen? Hülsen vorbereiten / Optik einstellen». Rückblick auf die Woche. |
 | 19.10. | Mo | Antworten auf 2–3 Fragen aus dem Fragen-Sticker (anonym). Teaser für das Reel morgen: «Erkennst du das?» (Nahaufnahme schmutzige Hülse) |
@@ -451,11 +456,16 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | – | ~~Markenfarben~~: aus dem Website-Theme übernommen (Olivgrün `#4e5743` als Akzent) | Grafiken | ✅ erledigt (11.10.) |
 | – | ~~Öffnungszeiten, Parkplätze, Werkstatt-Leistungen, Arbeitsplatz-Miete~~: durch armatum.ch belegt | #3, #5, #6, Stories | ✅ erledigt (11.10.) |
 | – | ~~Freigabe Woche 1~~ (#1, #2, #4, Stories 12.–18.10.) | Woche 1 | ✅ erledigt (11.10., vom Inhaber im Chat freigegeben) |
-| 2026-10-12 12:00 | **Altersgrenze 18+** im Profil gesetzt? (Einstellungen > Professionelles Konto > Mindestalter) | Voraussetzung ab #1 | offen |
-| 2026-10-12 12:00 | **Ausdrückliches OK für die Instagram-Verbindung über Composio** (der Inhaber erhält einen Login-Link, ich frage nie nach einem Passwort). Bis dahin wird nichts eingerichtet und nichts veröffentlicht; Woche 1 liefere ich zum manuellen Posten. | Veröffentlichen ab #1 | offen |
+| – | ~~Altersgrenze 18+ im Profil~~: **Entscheid des Inhabers (11.10.2026): wird bewusst nicht gesetzt.** | Profil | ✅ geschlossen (Entscheid des Inhabers) |
+| – | ~~OK für die Instagram-Verbindung über Composio~~: Verbindung aktiv (armatum_ch, Business). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. | Veröffentlichen ab #1 | ✅ erledigt (11.10.) |
+| – | ~~Bestätigungen fürs Intro~~: keine Namensnennung der Inhaberperson; «seit 2024» ist ok | #3 | ✅ erledigt (11.10.) |
 | 2026-10-12 12:00 | **Bio und Profilbild** freigeben (neuer Vorschlag in `marke.md`, Profilbild `emblem-weiss.png` auf Olivgrün `#4e5743`) | Profil | offen |
+| 2026-10-14 12:00 | **Freigabe der ergänzten Stories 15.10. und 16.10.** (Live-Foto aus dem Laden bzw. «So findest du uns») | Stories 15./16.10. | offen |
+| 2026-10-14 12:00 | **Hook für #3:** beim bisherigen Hook bleiben oder die Relaunch-Variante nehmen («Neuer Look, mehr Wissen: …»), weil der Account bereits besteht | #3 | offen (Empfehlung) |
 | 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder, Sale-Plakate und Seriennummern) | #3 Intro | offen |
-| 2026-10-14 12:00 | **Bestätigungen fürs Intro:** Namensnennung Pascal Wyser ja/nein; «seit 2024» verwenden ja/nein (Quelle Handelsregister, nicht Website) | #3 | offen |
+| 2026-10-16 18:00 | **#4 (Sa 17.10.) um 09:30 lassen oder auf 12:00 verschieben?** Laut Insights sind am Samstagmorgen rund 25 % weniger Follower online. Ohne Antwort bleibt es bei 09:30. | #4 | offen (Empfehlung) |
+| ohne Frist | **Altbeiträge mit Verkaufshinweis archivieren** («sucht neuen Besitzer» ×4, Preis beim Rettungsmesser). Die Dämpfer-Beiträge «made by Armatum» `rechtlich prüfen`. Liste in `auswertungen.md`, Abschnitt 8. Ich verändere ohne Auftrag nichts. | Account-Sicherheit | offen (dringende Empfehlung) |
+| ohne Frist | **Folgen-Verhältnis abbauen** (folgt 5547, 2450 Follower): über 6–8 Wochen von Hand inaktive und fachfremde Konten entfolgen, höchstens 50–100 pro Tag, keine Tools. Details in `auswertungen.md`, Abschnitt 7 | Reichweite | offen (Empfehlung) |
 | 2026-10-14 12:00 | **Wiederladekurse:** aktuell buchbar? Nächste Termine, Dauer, Zielgruppe (für Story und späteren Post, ohne Preise) | #2 (Kommentar-Antworten), #3, #5 | offen |
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
@@ -468,14 +478,16 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-23 18:00 | **Freigabe des Community-Karussells** mit den ausgewerteten Story-Resultaten | #8 Community | offen |
 | ohne Frist | **Website:** im SEO-Plugin (Yoast, «sameAs») `instagram.com/wyserwaffen/` durch `instagram.com/armatum_ch/` ersetzen | Auffindbarkeit | offen (Empfehlung) |
 
-Hinweis: Ohne aktive Instagram-Verbindung kann ich nicht selbst veröffentlichen. In diesem Fall liefere ich die fertigen Dateien und Captions zum manuellen Posten.
+Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche nur freigegebene Beiträge und erst zum geplanten Termin. Danach setze ich den Status hier auf «veröffentlicht» und ergänze den Link.
 
 ---
 
 ## 7. Empfehlungen zum Konto (zur Prüfung)
 
 - Professionelles Konto: ✅ Business-Konto, mit Facebook-Seite verknüpft.
-- Mindestalter 18+ für das Profil einstellen (Einstellungen > Professionelles Konto > Mindestalter). Status noch offen.
+- Mindestalter für das Profil: Entscheid des Inhabers (11.10.2026), es wird keine Altersgrenze gesetzt. Punkt geschlossen.
+- Folgen-Verhältnis (folgt 5547, 2450 Follower) schrittweise und von Hand abbauen, siehe `auswertungen.md`, Abschnitt 7.
+- Ältere Beiträge mit Verkaufshinweis oder Preis archivieren, siehe `auswertungen.md`, Abschnitt 8.
 - Bio gemäss Vorschlag in `marke.md`, Link-Feld https://armatum.ch. Keine Preise, keine Aktionen und kein «DM für Angebote».
 - Profilbild: `emblem-weiss.png` auf Olivgrün `#4e5743`.
 - Öffnungszeit Donnerstag im Profil hinterlegen; Öffnungs-Samstage per Story ankündigen.
@@ -491,3 +503,4 @@ Hinweis: Ohne aktive Instagram-Verbindung kann ich nicht selbst veröffentlichen
 | 2026-10-11 | Erster Plan erstellt (Irene). Alle Beiträge haben den Status «Entwurf – wartet auf Freigabe». |
 | 2026-10-11 | Markeninfos eingearbeitet (Laden + Werkstatt + Onlineshop in Fulenbach SO, armatum.ch, Du-Ansprache). Intro #3 fertig geschrieben (jetzt 6 Slides). Alle Captions mit Armatum-CTAs ohne Preise ergänzt. Design-Vorgaben mit Logo-Varianten, Profilbild und Palette ergänzt. Fachliche Prüfung des Schützen-ABC (#4) auf Fr 16.10. 18:00 vorverlegt. |
 | 2026-10-11 | Abgleich mit armatum.ch (abgerufen 11.10.2026): Öffnungszeiten inkl. Samstagsdaten bis 19.12.2026, Parkplatz A. Jäggi AG, Werkstatt-Leistungen, Wiederlade-Infrastruktur, Sortimentszahlen (über 4000 Artikel / über 1000 Wiederladen) übernommen. Palette auf Markenfarben umgestellt (Olivgrün `#4e5743`, Anthrazit `#313131`, Website-Grautöne), Messing gestrichen, Profilbild auf Olivgrün. Captions #3, #5, #6, #7, #8 und Stories angepasst (Öffnungs-Samstag 24.10. verknüpft). Woche 1 (#1, #2, #4, Stories 12.–18.10.) als freigegeben markiert (11.10.2026, vom Inhaber im Chat freigegeben); deren Captions unverändert, nur Grafikfarben angepasst. |
+| 2026-10-11 | Entscheide des Inhabers eingetragen: Composio-Verbindung aktiv (nur Lesezugriff genutzt, nichts veröffentlicht), keine Namensnennung der Inhaberperson, «seit 2024» ok, Altersgrenze bewusst nicht gesetzt (geschlossen). Noch offen bleiben Bio, Profilbild und die ergänzten Stories 15.10./16.10. Den bestehenden Account ausgewertet (`auswertungen.md`). Die Posting-Zeiten bleiben unverändert, für #4 gibt es eine Empfehlung (12:00). Empfehlungen zu #3 (Relaunch-Hook), zum Folgen-Verhältnis und zu Altbeiträgen mit Verkaufshinweis ergänzt. |
