@@ -492,7 +492,7 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 - Altersgrenze im Profil: bleibt Entscheid des Inhabers; der Beitrag enthält kein Handelsangebot.
 
 ✅ Ausführung bestätigt (Inhaber, 11.10.2026): 16"-Lauf – Gewichtsangabe ca. 2,8 kg bleibt.
-`[BESTÄTIGEN: Waffe beim Fotografieren entladen, Magazin leer]`
+✅ Entladen bestätigt (Inhaber, 11.10.: «Alle Waffen sind immer entladen»).
 `[BESTÄTIGEN: Marken-Tag @sigsauerinc gewünscht]`
 `[BESTÄTIGEN: Slide 4 Steckbrief erstellen – ja/nein]`
 
@@ -515,7 +515,7 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 ```
 Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel? 🤔
 
-Zwei Walther PDP in 9×19 mm nebeneinander, und doch für unterschiedliche Schützen gemacht. Swipe durch den Vergleich.
+Zwei @waltherarms PDP in 9×19 mm nebeneinander, und doch für unterschiedliche Schützen gemacht. Swipe durch den Vergleich.
 
 ⚡ PDP Pro FS 5.1" «Success and Comfort» (links)
 🔹 Full Size mit 5,1"-Lauf (ca. 13 cm) und Kompensator ab Werk. Er leitet einen Teil der Gase nach oben ab und hält so die Mündung beim Schuss flacher, laut Walther um bis zu 30 %.
@@ -545,7 +545,7 @@ Unsicher, welche zu deiner Disziplin passt? Wir beraten dich gern bei uns im Lad
 Speichere den Vergleich und schick ihn einem Schützenkollegen, der gerade zwischen zwei Pistolen schwankt.
 ```
 **Hashtags:** `#walther #waltherpdp #sportschiessen #ipsc #schweiz`
-Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA) oder der deutsche Hersteller-Account]`
+Marken-Tag: **@waltherarms** in der Caption und im Bild (Slide 1) – vom Inhaber gewünscht (11.10.).
 
 **Fakten und Quellen** (abgerufen 11.10.2026). waltherarms.com und carl-walther.com sind aus dieser Umgebung gesperrt. Geprüft wurde über Websuche-Auszüge der Herstellerseiten. **[H]** = Herstellerquelle, **[S]** = nur Sekundärquelle (Presse/Händler).
 - **Compact Full Steel:**
@@ -573,10 +573,10 @@ Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA
 - ⚠️ **Mündung Richtung Kamera:** Auf `01.jpg` (Cover) und `04.jpg` (schräg) zeigen die Mündungen schräg zur Kamera bzw. zum Betrachter. Das verstösst nicht gegen die Meta-Regeln, kann aber Sicherheits-Kommentare auslösen und widerspricht optisch dem Grundsatz «Mündung nie auf Menschen». Empfehlung: Als Cover `02.jpg` nehmen (Mündungen weniger frontal) oder die Bilder so lassen, weil die Pistolen entladen auf Ständern liegen und niemand davorsteht. Der Inhaber entscheidet.
 
 ✅ Pro-Variante bestätigt (Inhaber, 11.10.2026): Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss. Polymerrahmen laut Hersteller belegt.
-`[BESTÄTIGEN: beide Pistolen beim Fotografieren entladen, Magazine leer]`
+✅ Entladen bestätigt (Inhaber, 11.10.: «Alle Waffen sind immer entladen»).
 `[BESTÄTIGEN: Cover 01 (Mündungen Richtung Kamera) behalten oder 02 als Cover]`
 `[BESTÄTIGEN: IPSC-Hinweis «Kompensator = Open Division» fachlich ok]`
-`[BESTÄTIGEN: Marken-Tag Walther gewünscht und welcher Account]`
+✅ Marken-Tag @waltherarms (Inhaber, 11.10.).
 
 ---
 
@@ -684,7 +684,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
-| 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + Bestätigungen: Waffe entladen und Magazin leer, Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein | #9 | offen |
+| 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + offen: Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein (entladen ✅) | #9 | offen |
 | 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen (Pro-Variante seit 11.10. bestätigt): beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
@@ -727,3 +727,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #11 «Neuer Look für armatum.ch» ergänzt (Säule 5 Behind the Scenes, Karussell aus 5 fertigen Grafiken in `grafiken/11-website/`, Mo 12.10. 20:00, Ausweichtermin Mo 19.10. 20:00). Die Caption ist ohne Vorher-Vergleich formuliert und nennt weder Waffen, Munition, Angebote, Versand noch Rückgabe. Regel-Check: Caption geprüft. Auflagen für die Grafiken: Service-Leiste und «Aktuelle Angebote» in den Screenshots (Slides 2/3) entfernen bzw. unscharf machen, Vergleichs-Aussagen (Slides 1/4) bestätigen lassen. Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
 | 2026-10-11 | #11: Inhaber hat geantwortet, neu ist das Design. Die Caption sagt jetzt «Unsere Website hat ein neues Design: klar gegliedert …», der Hook bleibt. Die Grafiken sind bereinigt und von mir am Bild geprüft: Slide 2 zeigt nur noch den Hero-Bereich, «Aktuelle Angebote» ist auf Slide 2/3 unscharf, Cover und Slide 4 sind neutral formuliert. Auflagen erledigt. Offen: Hero-Satz «Munition», Freigabe Caption und Story-Ergänzung. |
 | 2026-10-11 | #10: Pro-Variante vom Inhaber bestätigt: Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss (Walther: «PDP Full Size 5,1" Success & Comfort», Art. 2912490). Die Vermutung «Pro-X PMM» ist ersetzt. Fakten per Websuche geprüft und mit [H]/[S] gekennzeichnet. Pro-Passage der Caption angepasst: Full Size, 5,1"-Lauf, Kompensator ab Werk (laut Walther bis zu 30 % weniger Hochschlag), verlängerter Verschlussweg, Polymerrahmen, DPT, 18 Schuss, Optic Ready. Kein Gewinde- oder Schalldämpfer-Bezug. [BESTÄTIGEN] zu Variante und Rahmen entfernt. |
+| 2026-10-11 | Grundsatz vom Inhaber: «Alle Waffen sind immer entladen» – gilt für alle Produktfotos; Bestätigungen bei #9 und #10 erledigt. #10: Marken-Tag @waltherarms (Caption + Bild). |

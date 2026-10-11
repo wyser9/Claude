@@ -51,6 +51,13 @@ Unsicherheit die aktuellen Community-Richtlinien und die Richtlinie zu
 - Bei rechtlichen Fragen nicht raten, sondern als «rechtlich prüfen»
   markieren.
 
+**Grundsätze des Inhabers (nicht erneut nachfragen)**
+- Alle Waffen auf Armatum-Fotos sind immer entladen. Bei Bedarf darf das in der Caption stehen («Für die Fotos ist die Waffe entladen»).
+- Seriennummern auf Fotos immer unkenntlich machen (lassen), bevor etwas gepostet wird.
+- Profilbild und Bio bleiben unverändert (weisses Logo auf schwarzem Grund).
+- Die Inhaberperson wird nicht namentlich genannt. «Seit 2024» ist ok.
+- Altersgrenze 18+ wird bewusst nicht gesetzt – nicht mehr anmahnen.
+
 ## 2. Reichweite – deine Strategie
 
 - **Formate:** Reels sind der Reichweiten-Motor (Hook in den ersten 1–2
