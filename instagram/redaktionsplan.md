@@ -524,7 +524,7 @@ Zwei @waltherarms PDP in 9×19 mm nebeneinander, und doch für unterschiedliche 
 🔹 Dynamic Performance Trigger (DPT): kurzer Abzugsweg, klar definierter Reset
 🔹 Magazin mit 18 Schuss
 🔹 Optic Ready für ein Leuchtpunktvisier
-👉 Für dich, wenn du auf Tempo gehst: dynamisches Schiessen und IPSC. Gut zu wissen: Mit Kompensator startest du im IPSC in der Open Division.
+👉 Für dich, wenn du auf Tempo gehst: dynamisches Schiessen und IPSC.
 
 🔩 PDP Compact Full Steel (rechts)
 🔹 Rahmen und Schlitten aus Stahl, rund 1,1 kg. Die Masse dämpft den Rückstoss spürbar.
@@ -559,7 +559,7 @@ Marken-Tag: **@waltherarms** in der Caption und im Bild (Slide 1) – vom Inhabe
   - **[S]** 5,1"-Lauf (127 mm; Frankonia nennt 130 mm), Verschlusslänge 4,5", Gewicht ca. 700–710 g, Kapazität 18 Schuss (Graz: 18/20), Lieferumfang je nach Händler unterschiedlich: [Waffenfuzzi](https://www.waffenfuzzi.de/walther-pdp-full-size-sucess-comfort-optical-ready-5-1-9mm-luger/wal-2912490), [Waffenstube Guggi Graz](https://waffen-graz.at/produkt/pdp-full-size-51%E2%80%B3-success-comfort/), [Waffen Braun](https://www.waffenbraun.com/verkauf/kurzwaffen/walther-pdp-full-size-5-1-success-and-comfort/), [Frankonia](https://www.frankonia.de/p/walther/pistole-pdp-full-size-success-comfort/2027295). Unabhängig bestätigt hat all4shooters nur den Wert von rund 30 % weniger Hochschlag (mit 124-grs-Standardmunition).
   - In der Caption stehen: Full Size, 5,1"-Lauf, Kompensator ab Werk (mit «laut Walther bis zu 30 %»), verlängerter Verschlussweg mit angepasster Rückholfeder (ohne die 70-%-Werbezahl), Polymerrahmen, DPT, 18 Schuss, Optic Ready. «Deutlich leichter» ist belegt: Polymerrahmen **[H]**, rund 700 g **[S]** gegenüber 1090 g bei der Compact Full Steel **[H]**. Das Gewicht der Pro nenne ich nicht als Zahl, weil es nur Händlerangaben gibt.
   - Bewusst nicht in der Caption: das Laufgewinde (½×28 UNEF laut Händlern), dass der Kompensator abnehmbar ist, Montage oder Nachrüsten, die 70-%-Angabe, Lieferumfang, Abzugsgewicht.
-- **[S/ungeprüft]** IPSC: Eine Pistole mit Kompensator wird in der Open Division geschossen (IPSC-Regelwerk Handgun). Das Regelwerk ist nicht per Quelle geprüft und muss vom Inhaber fachlich bestätigt werden.
+- **[gestrichen]** IPSC: Eine Pistole mit Kompensator wird in der Open Division geschossen (IPSC-Regelwerk Handgun). Das Regelwerk ist nicht per Quelle geprüft und muss vom Inhaber fachlich bestätigt werden.
 - Bewusst nicht in der Caption: Gewinde, Laufgewinde-Masse und jeder Bezug zu Schalldämpfern, Hersteller des Kompensators, Magazinkapazitäten, Abzugsgewichte, Herstellungsland.
 
 **Material:** vorhanden (5 Fotos in `grafiken/10-walther-pdp/`, Übersicht `uebersicht.png`).
@@ -575,7 +575,7 @@ Marken-Tag: **@waltherarms** in der Caption und im Bild (Slide 1) – vom Inhabe
 ✅ Pro-Variante bestätigt (Inhaber, 11.10.2026): Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss. Polymerrahmen laut Hersteller belegt.
 ✅ Entladen bestätigt (Inhaber, 11.10.: «Alle Waffen sind immer entladen»).
 `[BESTÄTIGEN: Cover 01 (Mündungen Richtung Kamera) behalten oder 02 als Cover]`
-`[BESTÄTIGEN: IPSC-Hinweis «Kompensator = Open Division» fachlich ok]`
+✅ IPSC-Hinweis (Open Division) auf Wunsch des Inhabers gestrichen (11.10.).
 ✅ Marken-Tag @waltherarms (Inhaber, 11.10.).
 
 ---
@@ -730,3 +730,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | Grundsatz vom Inhaber: «Alle Waffen sind immer entladen» – gilt für alle Produktfotos; Bestätigungen bei #9 und #10 erledigt. #10: Marken-Tag @waltherarms (Caption + Bild). |
 | 2026-10-11 | #11 vom Inhaber freigegeben («#11 frei, Story ja»). Veröffentlichung Mo 12.10. 20:00, Story mit `grafiken/11-website/story.jpg` ca. 20:15 (Link-Sticker per API nicht möglich → Hinweis «Link in der Bio» im Bild). |
 | 2026-10-11 | #9 vom Inhaber freigegeben, Marken-Tag @sigsauerinc, Steckbrief-Slide `04.jpg` erstellt. Veröffentlichung So 18.10. 20:00 geplant. |
+| 2026-10-11 | #10: Titelbild = bisheriges 02 (beide Pistolen von hinten/schräg), Bilder 01/02 getauscht; IPSC-Hinweis «Open Division» gestrichen (Inhaber). |
