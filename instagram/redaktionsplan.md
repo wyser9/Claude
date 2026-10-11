@@ -91,8 +91,9 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Ausführung, Waffe entladen/Magazin leer]` |
+| 10 | 25.10.2026 | So | 20:00 | Karussell (3 Fotos) | 3 Produkt-Vorstellung | Im Fokus: Walther PDP Compact Steel Frame 9×19 | «Die PDP kennst du in Polymer. Aber kennst du sie in Stahl?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Waffe entladen/Magazin leer, Foto 02]` |
 
-Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) als 5. Feed-Post in Woche 1, zugleich erster Test des 20-Uhr-Slots. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 2× (mit #9), Schiesssport/Jagd 1×, Community 2×.
+Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
 ---
 
