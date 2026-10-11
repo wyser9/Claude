@@ -489,7 +489,7 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 - **Magazin eingesetzt:** kein Regelverstoss. Meta erlaubt die Darstellung von Waffen; unsere Sicherheitsregeln betreffen Handhabung und Schiessen (Finger, Mündung, Schutz), und hier wird nichts gehandhabt. Weil der Verschluss auf den Fotos geschlossen ist, sieht man aber nicht, dass die Waffe leer ist. Deshalb steht in der Caption «Waffe entladen, Magazin leer». Voraussetzung: Der Inhaber bestätigt das. Für künftige Produktfotos: Magazin entnommen oder Verschluss offen.
 - Altersgrenze im Profil: bleibt Entscheid des Inhabers; der Beitrag enthält kein Handelsangebot.
 
-`[BESTÄTIGEN: Ausführung – 16"-Lauf, Standardversion schwarz? Sonst Gewichtszeile anpassen oder streichen]`
+✅ Ausführung bestätigt (Inhaber, 11.10.2026): 16"-Lauf – Gewichtsangabe ca. 2,8 kg bleibt.
 `[BESTÄTIGEN: Waffe beim Fotografieren entladen, Magazin leer]`
 `[BESTÄTIGEN: Marken-Tag @sigsauerinc gewünscht]`
 `[BESTÄTIGEN: Slide 4 Steckbrief erstellen – ja/nein]`
