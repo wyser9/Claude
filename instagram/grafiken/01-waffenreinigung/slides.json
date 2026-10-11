@@ -1,0 +1,17 @@
+{
+  "post": "#1 – Di 13.10.2026 18:30 – 5 Fehler bei der Waffenreinigung",
+  "slides": [
+    { "type": "cover", "title": "5 Fehler bei der Waffenreinigung", "subtitle": "Nr. 3 machen fast alle" },
+    { "type": "content", "badge": "1", "kicker": "Fehler 1", "title": "Nicht kontrolliert entladen",
+      "body": "Bevor du irgendetwas putzt:\n**Entladen. Patronenlager sichtbar prüfen. Munition aus dem Raum.**\n\nSicherheit kommt immer zuerst – auch nach dem hundertsten Mal." },
+    { "type": "content", "badge": "2", "kicker": "Fehler 2", "title": "Putzstock ohne Führung durch die Mündung",
+      "body": "Die Mündungskrone ist heikel – schon kleine Kratzer kosten Präzision.\n\n**Besser:** wenn möglich vom Patronenlager her reinigen und eine Führungshülse verwenden." },
+    { "type": "content", "badge": "3", "kicker": "Fehler 3", "title": "Zu viel Öl",
+      "body": "Ein **dünner Film** genügt.\n\nÜberschüssiges Öl zieht Schmutz an und kann im Lauf die Treffpunktlage beim ersten Schuss verändern." },
+    { "type": "content", "badge": "4", "kicker": "Fehler 4", "title": "Falsche Bürste, falsches Kaliber",
+      "body": "**Messing- oder Bronzebürste** im passenden Laufkaliber.\n\nKeine Stahlbürste im Lauf." },
+    { "type": "content", "badge": "5", "kicker": "Fehler 5", "title": "Reiniger nicht entfernt, feucht weggelegt",
+      "body": "Lösungsmittel gründlich auswischen, **trocknen lassen** – und erst dann leicht konservieren." },
+    { "type": "cta", "title": "Speichern für die nächste Reinigung.", "body": "Welchen Fehler hast du schon gemacht?\nSchreib's in die Kommentare 👇" }
+  ]
+}
