@@ -517,9 +517,12 @@ Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel? �
 
 Zwei Walther PDP in 9×19 mm nebeneinander, und doch für unterschiedliche Schützen gemacht. Swipe durch den Vergleich.
 
-⚡ PDP Pro (links)
-🔹 Längere Bauweise mit Kompensator an der Mündung. Er leitet einen Teil der Gase nach oben ab und hält so die Mündung beim Schuss flacher.
+⚡ PDP Pro FS 5.1" «Success and Comfort» (links)
+🔹 Full Size mit 5,1"-Lauf (ca. 13 cm) und Kompensator ab Werk. Er leitet einen Teil der Gase nach oben ab und hält so die Mündung beim Schuss flacher, laut Walther um bis zu 30 %.
+🔹 Das steckt hinter «Success and Comfort»: Ein verlängerter Verschlussweg mit angepasster Rückholfeder soll den Rückstoss zusätzlich spürbar dämpfen.
 🔹 Polymerrahmen, dadurch deutlich leichter als die Stahl-Version
+🔹 Dynamic Performance Trigger (DPT): kurzer Abzugsweg, klar definierter Reset
+🔹 Magazin mit 18 Schuss
 🔹 Optic Ready für ein Leuchtpunktvisier
 👉 Für dich, wenn du auf Tempo gehst: dynamisches Schiessen und IPSC. Gut zu wissen: Mit Kompensator startest du im IPSC in der Open Division.
 
