@@ -1,0 +1,21 @@
+{
+  "post": "#4 – Sa 17.10.2026 09:30 – Das Schützen-ABC der Schweiz",
+  "slides": [
+    { "type": "cover", "title": "Verstehst du Schützisch?", "subtitle": "7 Begriffe, die jeder Schütze in der Schweiz kennt 🇨🇭" },
+    { "type": "content", "badge": "A", "kicker": "Bundesprogramm", "title": "Obligatorisches",
+      "body": "Die **jährliche Schiesspflicht** für Angehörige der Armee mit persönlicher Waffe – absolviert im Schützenverein." },
+    { "type": "content", "badge": "B", "kicker": "Jedes Jahr", "title": "Feldschiessen",
+      "body": "Das **grösste Schützenfest der Welt** – kostenlos und offen für alle." },
+    { "type": "content", "badge": "C", "kicker": "Wettkampf", "title": "Stich",
+      "body": "Ein **Wettkampfprogramm** mit festgelegter Schusszahl an einem Schiessanlass." },
+    { "type": "content", "badge": "D", "kicker": "Auszeichnung", "title": "Kranz",
+      "body": "Gibt's für eine Leistung **über der Kranzlimite**." },
+    { "type": "content", "badge": "E", "kicker": "Resultate", "title": "Standblatt",
+      "body": "Das **persönliche Blatt**, auf dem deine Resultate festgehalten werden." },
+    { "type": "content", "badge": "F", "kicker": "Saisonabschluss", "title": "Endschiessen",
+      "body": "Der **gesellige Saisonabschluss** im Verein – oft im Herbst." },
+    { "type": "content", "badge": "G", "kicker": "Nach dem Anlass", "title": "Absenden",
+      "body": "**Rangverkündigung und Preisverteilung** nach einem Schiessanlass." },
+    { "type": "cta", "title": "Welcher Begriff fehlt?", "body": "Ergänze das ABC in den Kommentaren 👇" }
+  ]
+}

@@ -50,7 +50,7 @@ Diese Zeiten überprüfen wir nach Woche 2 anhand der Insights («Wann sind dein
 | Emblem mit «ARMATUM» in der Mitte | `emblem-weiss.png` | `emblem-schwarz.png` | **Profilbild**, Wasserzeichen in Reels, Story-Ecke, Highlight-Cover |
 | Nur Schriftzug | `schriftzug-weiss.png` | `schriftzug-schwarz.png` | Kopf- oder Fusszeile auf Inhalts-Slides |
 
-**Profilbild:** `emblem-weiss.png` zentriert auf Olivgrün `#4e5743`, 1080×1080 px. Das Emblem nimmt rund 65–70 % der Breite ein, damit beim runden Zuschnitt nichts abgeschnitten wird.
+**Profilbild und Bio:** bleiben unverändert (Entscheid des Inhabers vom 11.10.2026: weisses Logo auf schwarzem Grund). Keine Änderungsvorschläge mehr dazu.
 
 **Zwei Design-Linien** (Markenfarben von armatum.ch, Theme-Palette; Olivgrün `#4e5743` ist der Akzent):
 
@@ -459,7 +459,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | – | ~~Altersgrenze 18+ im Profil~~: **Entscheid des Inhabers (11.10.2026): wird bewusst nicht gesetzt.** | Profil | ✅ geschlossen (Entscheid des Inhabers) |
 | – | ~~OK für die Instagram-Verbindung über Composio~~: Verbindung aktiv (armatum_ch, Business). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. | Veröffentlichen ab #1 | ✅ erledigt (11.10.) |
 | – | ~~Bestätigungen fürs Intro~~: keine Namensnennung der Inhaberperson; «seit 2024» ist ok | #3 | ✅ erledigt (11.10.) |
-| 2026-10-12 12:00 | **Bio und Profilbild** freigeben (neuer Vorschlag in `marke.md`, Profilbild `emblem-weiss.png` auf Olivgrün `#4e5743`) | Profil | offen |
+| – | ~~Bio und Profilbild~~ | Profil | ✅ erledigt: bleiben unverändert (Entscheid Inhaber 11.10.) |
 | 2026-10-14 12:00 | **Freigabe der ergänzten Stories 15.10. und 16.10.** (Live-Foto aus dem Laden bzw. «So findest du uns») | Stories 15./16.10. | offen |
 | 2026-10-14 12:00 | **Hook für #3:** beim bisherigen Hook bleiben oder die Relaunch-Variante nehmen («Neuer Look, mehr Wissen: …»), weil der Account bereits besteht | #3 | offen (Empfehlung) |
 | 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder, Sale-Plakate und Seriennummern) | #3 Intro | offen |
@@ -488,8 +488,7 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 - Mindestalter für das Profil: Entscheid des Inhabers (11.10.2026), es wird keine Altersgrenze gesetzt. Punkt geschlossen.
 - Folgen-Verhältnis (folgt 5547, 2450 Follower) schrittweise und von Hand abbauen, siehe `auswertungen.md`, Abschnitt 7.
 - Ältere Beiträge mit Verkaufshinweis oder Preis archivieren, siehe `auswertungen.md`, Abschnitt 8.
-- Bio gemäss Vorschlag in `marke.md`, Link-Feld https://armatum.ch. Keine Preise, keine Aktionen und kein «DM für Angebote».
-- Profilbild: `emblem-weiss.png` auf Olivgrün `#4e5743`.
+- Bio und Profilbild: bleiben unverändert (Entscheid Inhaber 11.10.2026).
 - Öffnungszeit Donnerstag im Profil hinterlegen; Öffnungs-Samstage per Story ankündigen.
 - Story-Highlights anlegen: Wiederladen · Tests · Events · FAQ · Laden (Anfahrt, Parkplatz A. Jäggi AG, Eingang hinter dem Gebäude, Öffnungszeiten). Cover im Emblem-Design auf Olivgrün.
 - Keine bezahlte Werbung (Boosts) für Beiträge mit Waffen oder Munition.
@@ -504,3 +503,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | Markeninfos eingearbeitet (Laden + Werkstatt + Onlineshop in Fulenbach SO, armatum.ch, Du-Ansprache). Intro #3 fertig geschrieben (jetzt 6 Slides). Alle Captions mit Armatum-CTAs ohne Preise ergänzt. Design-Vorgaben mit Logo-Varianten, Profilbild und Palette ergänzt. Fachliche Prüfung des Schützen-ABC (#4) auf Fr 16.10. 18:00 vorverlegt. |
 | 2026-10-11 | Abgleich mit armatum.ch (abgerufen 11.10.2026): Öffnungszeiten inkl. Samstagsdaten bis 19.12.2026, Parkplatz A. Jäggi AG, Werkstatt-Leistungen, Wiederlade-Infrastruktur, Sortimentszahlen (über 4000 Artikel / über 1000 Wiederladen) übernommen. Palette auf Markenfarben umgestellt (Olivgrün `#4e5743`, Anthrazit `#313131`, Website-Grautöne), Messing gestrichen, Profilbild auf Olivgrün. Captions #3, #5, #6, #7, #8 und Stories angepasst (Öffnungs-Samstag 24.10. verknüpft). Woche 1 (#1, #2, #4, Stories 12.–18.10.) als freigegeben markiert (11.10.2026, vom Inhaber im Chat freigegeben); deren Captions unverändert, nur Grafikfarben angepasst. |
 | 2026-10-11 | Entscheide des Inhabers eingetragen: Composio-Verbindung aktiv (nur Lesezugriff genutzt, nichts veröffentlicht), keine Namensnennung der Inhaberperson, «seit 2024» ok, Altersgrenze bewusst nicht gesetzt (geschlossen). Noch offen bleiben Bio, Profilbild und die ergänzten Stories 15.10./16.10. Den bestehenden Account ausgewertet (`auswertungen.md`). Die Posting-Zeiten bleiben unverändert, für #4 gibt es eine Empfehlung (12:00). Empfehlungen zu #3 (Relaunch-Hook), zum Folgen-Verhältnis und zu Altbeiträgen mit Verkaufshinweis ergänzt. |
+| 2026-10-11 | Profilbild und Bio bleiben unverändert (Inhaber). Grafiken für #1, #2, #4 erstellt (`grafiken/01-…`, `02-…`, `04-…`, dunkles Design mit Olivgrün); Design vom Inhaber für gut befunden («Beiträge in grün sind super»). |

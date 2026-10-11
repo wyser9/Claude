@@ -1,0 +1,24 @@
+{
+  "post": "#2 – Mi 14.10.2026 18:30 – Wiederladen in 7 Schritten",
+  "slides": [
+    { "type": "cover", "title": "Wiederladen in 7 Schritten", "subtitle": "Der Überblick – von der leeren Hülse zur fertigen Patrone" },
+    { "type": "content", "badge": "1", "kicker": "Schritt 1", "title": "Hülsen sortieren und reinigen",
+      "body": "Nach **Hersteller und Los** sortieren.\n\nSaubere Hülsen sind die Basis für gleichmässige Patronen." },
+    { "type": "content", "badge": "2", "kicker": "Schritt 2", "title": "Kontrolle",
+      "body": "Jede Hülse prüfen und aussortieren bei:\n**Rissen, Beulen, ausgeleierten Zündglocken.**\n\nIm Zweifel: weg damit." },
+    { "type": "content", "badge": "3", "kicker": "Schritt 3", "title": "Kalibrieren und Zündhütchen ausstossen",
+      "body": "Die Hülse wird wieder auf **Mass** gebracht, das alte Zündhütchen ausgestossen." },
+    { "type": "content", "badge": "4", "kicker": "Schritt 4", "title": "Länge messen, trimmen, entgraten",
+      "body": "Hülsen wachsen beim Schiessen.\n**Messen** – und bei Bedarf auf Sollmass trimmen und entgraten." },
+    { "type": "content", "badge": "5", "kicker": "Schritt 5", "title": "Neues Zündhütchen setzen",
+      "body": "Sauber und **plan** setzen – nicht zu tief, nicht vorstehend." },
+    { "type": "content", "badge": "6", "kicker": "Schritt 6", "title": "Treibladung abfüllen",
+      "body": "**Ausschliesslich nach den Ladedaten des Pulver- bzw. Geschossherstellers.**\n\nNiemals Daten aus Foren oder Social Media übernehmen – auch nicht von uns." },
+    { "type": "content", "badge": "7", "kicker": "Schritt 7", "title": "Geschoss setzen, Patronenlänge prüfen",
+      "body": "Geschoss setzen und die **Patronenlänge (OAL)** kontrollieren." },
+    { "type": "cta",
+      "warn": "Schutzbrille · keine Ablenkung · kein Feuer, kein Rauchen · eine Pulversorte pro Arbeitsgang · Protokoll führen · Vorschriften zu Erwerb und Lagerung beachten",
+      "title": "Speichern – als Checkliste für deine Werkbank.",
+      "body": "Lieber lernen statt nur lesen?\n**Wiederladekurse bei Armatum in Fulenbach.**" }
+  ]
+}
