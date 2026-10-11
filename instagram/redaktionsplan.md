@@ -90,7 +90,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
-| 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Waffe entladen/Magazin leer]` |
+| 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 18.10. 20:00 |
 | 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: entladen/Magazine leer, Cover, IPSC, Marken-Tag]` |
 | 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | **Freigegeben (11.10.2026)** inkl. Story-Teilen ca. 20:15 – Veröffentlichung geplant Mo 12.10. 20:00 |
 
@@ -493,8 +493,8 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 
 ✅ Ausführung bestätigt (Inhaber, 11.10.2026): 16"-Lauf – Gewichtsangabe ca. 2,8 kg bleibt.
 ✅ Entladen bestätigt (Inhaber, 11.10.: «Alle Waffen sind immer entladen»).
-`[BESTÄTIGEN: Marken-Tag @sigsauerinc gewünscht]`
-`[BESTÄTIGEN: Slide 4 Steckbrief erstellen – ja/nein]`
+✅ Marken-Tag @sigsauerinc (Inhaber, 11.10.).
+✅ Steckbrief-Slide erstellt: `grafiken/09-sig-cross/04.jpg` (nur [H]-Fakten bzw. Caption-Fakten, keine Preise).
 
 ---
 
@@ -684,7 +684,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
-| 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + offen: Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein (entladen ✅) | #9 | offen |
+| – | ~~Freigabe #9 SIG Sauer Cross~~ ✅ freigegeben 11.10. (Tag @sigsauerinc, Steckbrief ja, entladen ✅) | #9 | offen |
 | 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen (Pro-Variante seit 11.10. bestätigt): beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
@@ -729,3 +729,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #10: Pro-Variante vom Inhaber bestätigt: Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss (Walther: «PDP Full Size 5,1" Success & Comfort», Art. 2912490). Die Vermutung «Pro-X PMM» ist ersetzt. Fakten per Websuche geprüft und mit [H]/[S] gekennzeichnet. Pro-Passage der Caption angepasst: Full Size, 5,1"-Lauf, Kompensator ab Werk (laut Walther bis zu 30 % weniger Hochschlag), verlängerter Verschlussweg, Polymerrahmen, DPT, 18 Schuss, Optic Ready. Kein Gewinde- oder Schalldämpfer-Bezug. [BESTÄTIGEN] zu Variante und Rahmen entfernt. |
 | 2026-10-11 | Grundsatz vom Inhaber: «Alle Waffen sind immer entladen» – gilt für alle Produktfotos; Bestätigungen bei #9 und #10 erledigt. #10: Marken-Tag @waltherarms (Caption + Bild). |
 | 2026-10-11 | #11 vom Inhaber freigegeben («#11 frei, Story ja»). Veröffentlichung Mo 12.10. 20:00, Story mit `grafiken/11-website/story.jpg` ca. 20:15 (Link-Sticker per API nicht möglich → Hinweis «Link in der Bio» im Bild). |
+| 2026-10-11 | #9 vom Inhaber freigegeben, Marken-Tag @sigsauerinc, Steckbrief-Slide `04.jpg` erstellt. Veröffentlichung So 18.10. 20:00 geplant. |

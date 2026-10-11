@@ -40,6 +40,7 @@ h2{font-family:Cinzel,serif;font-weight:700;font-size:80px;line-height:1.15;marg
 .hr{height:2px;background:${C.line};margin-top:48px}
 .warn{margin-top:48px;border:3px solid ${C.warn};border-radius:20px;padding:36px 40px;font-size:34px;line-height:1.5}
 .warn .t{color:${C.warn};font-weight:600;font-size:30px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.specs{width:100%;border-collapse:collapse;margin-top:28px}.specs td{padding:20px 0;border-bottom:2px solid ${C.line};vertical-align:top;font-size:36px;line-height:1.35}.specs .k{color:${C.muted};width:34%;padding-right:24px;font-size:30px;text-transform:uppercase;letter-spacing:.08em;padding-top:24px}.specs .v{color:#fff}
 .cta{background:${C.olive};border-radius:24px;padding:56px 56px;font-size:46px;line-height:1.4;text-align:center;font-weight:600}
 `;
 
@@ -80,6 +81,17 @@ function shot(s, i, n) {
   </div>`;
 }
 
+function specs(s, i, n) {
+  const rows = s.rows.map(([k, v]) => `<tr><td class="k">${esc(k)}</td><td class="v">${md(v)}</td></tr>`).join('');
+  return `<div class="slide">
+    ${s.kicker ? `<div class="kicker" style="margin-top:0">${esc(s.kicker)}</div>` : ''}
+    <h2 style="font-size:72px">${md(s.title)}</h2>
+    <div class="hr"></div>
+    <table class="specs">${rows}</table>
+    <div class="foot"><img src="${logo('schriftzug-weiss.png')}"><span class="count">${esc(s.counter || `${i + 1}/${n}`)}</span></div>
+  </div>`;
+}
+
 function cta(s, i, n) {
   return `<div class="slide" style="display:flex;flex-direction:column;align-items:center;text-align:center">
     ${s.warn ? `<div class="warn" style="margin-top:0;text-align:left;width:100%"><div class="t">⚠ Sicherheit</div>${md(s.warn)}</div>` : '<div style="height:40px"></div>'}
@@ -98,7 +110,7 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: 1080, height: 1350 } });
 const n = spec.slides.length;
 for (const [i, s] of spec.slides.entries()) {
-  const inner = s.type === 'cover' ? cover(s) : s.type === 'cta' ? cta(s, i, n) : s.type === 'shot' ? shot(s, i, n) : content(s, i, n);
+  const inner = s.type === 'cover' ? cover(s) : s.type === 'cta' ? cta(s, i, n) : s.type === 'shot' ? shot(s, i, n) : s.type === 'specs' ? specs(s, i, n) : content(s, i, n);
   await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${inner}</body></html>`, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   const file = resolve(outDir, `${String(i + 1).padStart(2, '0')}.png`);

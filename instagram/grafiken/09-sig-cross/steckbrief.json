@@ -1,0 +1,45 @@
+{
+  "post": "#9 Slide 4 – Steckbrief SIG Sauer Cross",
+  "slides": [
+    {
+      "type": "specs",
+      "counter": "4/4",
+      "kicker": "Steckbrief",
+      "title": "SIG Sauer Cross",
+      "rows": [
+        [
+          "Kaliber",
+          ".308 Win"
+        ],
+        [
+          "Lauf",
+          "16\", Edelstahl, freischwingend"
+        ],
+        [
+          "Gewicht",
+          "ca. 2,8 kg (ohne Magazin)"
+        ],
+        [
+          "Verschluss",
+          "3 Warzen, 60° Öffnungswinkel"
+        ],
+        [
+          "Abzug",
+          "Match, zweistufig, einstellbar"
+        ],
+        [
+          "Schaft",
+          "Klappschaft, werkzeuglos verstellbar"
+        ],
+        [
+          "Handschutz",
+          "M-LOK"
+        ],
+        [
+          "Montage",
+          "20-MOA-Picatinny-Schiene"
+        ]
+      ]
+    }
+  ]
+}
