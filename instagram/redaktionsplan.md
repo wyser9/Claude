@@ -1,22 +1,25 @@
 # Redaktionsplan @armatum_ch – 12.10. bis 25.10.2026
 
-Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
-Status gesamt: **Entwurf – wartet auf Freigabe**. Es ist noch nichts veröffentlicht. Die Instagram-Verbindung über Composio ist **nicht** eingerichtet und wird erst nach ausdrücklichem OK des Inhabers eingerichtet.
+Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Abgleich mit armatum.ch) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
+Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10.), Woche 2 wartet auf Freigabe.** Es ist noch nichts veröffentlicht. Die Instagram-Verbindung über Composio ist **nicht** eingerichtet und wird erst nach ausdrücklichem OK des Inhabers eingerichtet. Bis dahin liefere ich die fertigen Dateien und Captions zum manuellen Posten.
 
-Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info aus der Website-Recherche, die der Inhaber kurz bestätigen soll.
-Markengrundlagen (Profil, Leistungen, Farben, Logo-Varianten, Bio): `/home/user/Claude/instagram/marke.md`
+Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info, die die Website nicht belegt und die der Inhaber kurz bestätigen soll.
+Quelle der Fakten: armatum.ch (abgerufen 11.10.2026), Details in `/home/user/Claude/instagram/marke.md`.
 
-**Armatum in einem Satz:** Laden, Werkstatt und Onlineshop in Fulenbach SO, seit 2024, für Sportschützen, Jäger, Wiederlader und Sammler. Shop: https://armatum.ch · Ansprache: **Du**.
+**Armatum in einem Satz:** Fachhandel für Schützen und Jäger mit Laden, Werkstatt und Onlineshop in Fulenbach SO. Über 4000 Artikel von mehr als 100 Marken, über 1000 davon fürs Wiederladen, dazu Wiederladekurse und mietbare Wiederladeplätze. Shop: https://armatum.ch · Ansprache: **Du**.
 
-**CTA-Regel (gilt für alle Beiträge):** Wir verweisen nur auf den Onlineshop («Link in der Bio» bzw. armatum.ch) oder auf den Laden in Fulenbach. Es gibt keine Preise, kein «DM für Preis», kein «zu verkaufen» und keine Verkaufsabwicklung über Instagram. Ankauf von Waffen, kundenspezifische Munition sowie Umbau und Modifikation sind kein Instagram-Thema.
+**Öffnungszeiten (Website):** Do 17:00–21:00 · jeden 2. Samstag 09:00–13:00, nächste Samstage **24.10.**, 07.11., 21.11., 05.12., 19.12.2026 · sonst nach Vereinbarung. Sa 17.10. ist geschlossen.
+**Anfahrt:** Färchstrasse 6b, 4629 Fulenbach · Parkplätze auf dem Parkplatz der A. Jäggi AG · Eingang hinter dem Gebäude, der Beschilderung folgen.
+
+**CTA-Regel (gilt für alle Beiträge):** Wir verweisen nur auf den Onlineshop («Link in der Bio» bzw. armatum.ch) oder auf den Laden in Fulenbach. Es gibt keine Preise, keine Aktionen/Sale, kein «DM für Preis», kein «zu verkaufen» und keine Verkaufsabwicklung über Instagram. Ankauf von Waffen, Beschaffung, kundenspezifische Munition, Beratung zum Waffenerwerb sowie Umbau, Neubau und Modifikation sind kein Instagram-Thema.
 
 ---
 
 ## 1. Strategie für die ersten 2 Wochen
 
 - **Woche 1: Vertrauen und Kennenlernen.** Drei Wissens-Karussells aus Text und Grafik plus ein Vorstellungs-Post. Dafür braucht es kaum eigenes Material. In den Stories fragen wir mit Umfragen ab, wer uns folgt (Sportschützen, Jäger, Wiederlader, Sammler).
-- **Woche 2: Erste eigene Videos.** Ein Wiederlade-Reel und ein ehrlicher Produkttest bringen Reichweite. Das Community-Karussell am Samstag wertet die Umfragen aus Woche 1 aus und schliesst so den Kreis.
-- **Armatum-Profil schärfen:** Wiederladen ist das Alleinstellungsmerkmal von Armatum, mit dem grössten Sortimentsbereich, Kursen und Wiederlade-Arbeitsplätzen zum Mieten. Säule 2 bekommt deshalb in beiden Wochen einen festen Platz. Laden und Werkstatt zeigen wir in Stories und im Intro, damit man sieht, dass hinter dem Account echte Menschen vor Ort stehen.
+- **Woche 2: Erste eigene Videos.** Ein Wiederlade-Reel und ein ehrlicher Produkttest bringen Reichweite. Das Community-Karussell am Samstag 24.10. wertet die Umfragen aus Woche 1 aus und fällt auf einen Öffnungs-Samstag: Online-Post und Laden (9–13 Uhr) verknüpfen wir direkt.
+- **Armatum-Profil schärfen:** Wiederladen ist das Alleinstellungsmerkmal von Armatum: über 1000 Artikel, Kurse und gewartete Wiederladeplätze zum Mieten. Säule 2 bekommt deshalb in beiden Wochen einen festen Platz. Laden und Werkstatt zeigen wir in Stories und im Intro, damit man sieht, dass hinter dem Account echte Menschen vor Ort stehen.
 - **Reichweiten-Logik:** Karussells sollen gespeichert und geteilt werden (das ist Mehrwert, der bleibt). Reels erreichen auch Nicht-Follower. Stories halten die Bindung täglich. In der ersten Stunde nach jedem Post beantworten wir alle Kommentare.
 - **Regeln:** Es gibt keine Preise, keine Verkäufe in der App und keine Ladedaten. Sicherheit ist in jedem Bild sichtbar. Reposts gibt es in diesen 2 Wochen noch keine, weil noch keine Erlaubnisse vorliegen.
 - **Ziel nach 2 Wochen:** Erste Insights liegen vor (Reichweite, Speicherungen, Shares, Follower-Zuwachs). Damit passen wir die Posting-Zeiten und die Gewichtung der Säulen an.
@@ -26,8 +29,8 @@ Markengrundlagen (Profil, Leistungen, Farben, Logo-Varianten, Bio): `/home/user/
 | Slot | Zeit | Begründung |
 |---|---|---|
 | Di / Mi | 18:30 | Feierabend-Scrolling: Die Zielgruppe ist berufstätig und am frühen Abend aktiv. Wenn wir 18:30 statt 18:00 posten, liegt die wichtige erste Stunde in der stärksten Nutzungszeit. |
-| Do | 19:00 | Gleiches Fenster. Der etwas spätere Slot fängt Leute ab, die vom Vereinstraining oder von der Arbeit kommen. Er fällt zudem in die Laden-Öffnungszeit am Donnerstagabend (17–21 Uhr `[BESTÄTIGEN: Öffnungszeiten]`), sodass Kundinnen und Kunden im Laden direkt auf den Post angesprochen werden können. |
-| Sa | 09:30 | Ruhiger Wochenend-Morgen vor dem Gang zum Stand, ins Revier oder in die Werkstatt. In dieser Zeit wird viel gespeichert. |
+| Do | 19:00 | Gleiches Fenster. Der etwas spätere Slot fängt Leute ab, die vom Vereinstraining oder von der Arbeit kommen. Er fällt zudem in die Laden-Öffnungszeit am Donnerstagabend (17–21 Uhr), sodass Kundinnen und Kunden im Laden direkt auf den Post angesprochen werden können. |
+| Sa | 09:30 | Ruhiger Wochenend-Morgen vor dem Gang zum Stand, ins Revier oder in die Werkstatt. In dieser Zeit wird viel gespeichert. An Öffnungs-Samstagen (z. B. 24.10.) liegt der Post zudem in der Ladenöffnung 9–13 Uhr. |
 | Stories | ca. 12:00 und 20:00 | Mittagspause und Abend. Die Umfragen laufen 24 h. |
 
 Diese Zeiten überprüfen wir nach Woche 2 anhand der Insights («Wann sind deine Follower aktiv»).
@@ -38,36 +41,37 @@ Diese Zeiten überprüfen wir nach Woche 2 anhand der Insights («Wann sind dein
 
 **Logo-Varianten** (alle in `/home/user/Claude/instagram/assets/`, PNG mit transparentem Hintergrund, Übersicht in `assets/README.md`):
 
-| Variante | Weiss (auf dunkel) | Schwarz (auf hell) | Einsatz |
+| Variante | Weiss (auf dunkel/oliv) | Schwarz (auf hell) | Einsatz |
 |---|---|---|---|
 | Querlogo: Emblem + Schriftzug | `logo-weiss.png` | `logo-schwarz.png` | Cover-Slide, Schluss-Slide (CTA), Reel-Endcard, Intro #3 |
 | Emblem mit «ARMATUM» in der Mitte | `emblem-weiss.png` | `emblem-schwarz.png` | **Profilbild**, Wasserzeichen in Reels, Story-Ecke, Highlight-Cover |
 | Nur Schriftzug | `schriftzug-weiss.png` | `schriftzug-schwarz.png` | Kopf- oder Fusszeile auf Inhalts-Slides |
 
-**Profilbild:** `emblem-weiss.png` zentriert auf `#121212`, 1080×1080 px. Das Emblem nimmt rund 65–70 % der Breite ein, damit beim runden Zuschnitt nichts abgeschnitten wird.
+**Profilbild:** `emblem-weiss.png` zentriert auf Olivgrün `#4e5743`, 1080×1080 px. Das Emblem nimmt rund 65–70 % der Breite ein, damit beim runden Zuschnitt nichts abgeschnitten wird.
 
-**Zwei Design-Linien:**
+**Zwei Design-Linien** (Markenfarben von armatum.ch, Theme-Palette; Olivgrün `#4e5743` ist der Akzent):
 
 | | Dunkles Design (Standard) | Helles Design (Checklisten/Tabellen) |
 |---|---|---|
-| Hintergrund | `#121212`, Kästen `#1E1F21` | `#F4F1EA` (Warmweiss) |
-| Text | `#FFFFFF`, Nebentext `#B5B5B5` | `#121212` |
-| Akzent (Nummern, Linien, Hervorhebungen) | Messing `#B08D57` | dunkles Messing `#8A6A3A` |
-| Sicherheitshinweise | Signalorange `#E07A1F` mit ⚠️-Symbol | Signalorange `#E07A1F` |
+| Hintergrund | `#313131` Anthrazit | `#f8f9fb`, Kästen `#edeff2` / `#E2E7ED` |
+| Text | `#ffffff`, Nebentext `#a7a7a7` | Titel `#2c3e50`, Fliesstext `#415161` |
+| Akzent (Nummern, Linien, Hervorhebungen) | Olivgrün `#4e5743` als **Fläche** (Badges, Bänder, CTA-Kasten) mit weisser Schrift | Olivgrün `#4e5743` als Schrift- und Linienfarbe |
+| Feine Linien | `#415161` | `#E2E7ED` |
+| Sicherheitshinweise | Signalorange `#E07A1F` mit Warnsymbol | Signalorange `#E07A1F` |
 | Logo | weisse Varianten | schwarze Varianten |
 | Eingesetzt bei | #1, #2, #3, #4, #8, Reels #5 und #7 | #6 (Einwinter-Checkliste) |
 
-Die Farben sind eine Arbeitspalette. Die Website-Farben waren nicht ermittelbar, deshalb `[BESTÄTIGEN: Farben]`.
+Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt mit Oliv schnell militärisch, verwässert den einen Markenakzent, zu wenig Kontrast für kleine Schrift).
 
 **Layout-Regeln:**
 - Format 1080×1350 px (4:5), Rand ringsum mindestens 80 px
-- **Cover-Slide:** Querlogo oben zentriert (ca. 40 % Breite), darunter der Hook gross in der Titelschrift
-- **Inhalts-Slides:** Messing-Nummer gross links oben, Titel und 1–3 kurze Zeilen. Fusszeile mit Schriftzug (ca. 25 % Breite) zentriert unten und Slide-Zähler «2/7» rechts unten
-- **Schluss-Slide:** Querlogo, CTA-Text, darunter «armatum.ch · Laden · Werkstatt · Onlineshop · Fulenbach SO» in Nebentext-Grau. Keine Preise.
-- Pro Slide genau ein Logo-Element. Das Logo wird nie eingefärbt oder verzerrt. Auf Fotos wird eine dunkle Fläche mit 70 % Deckkraft unterlegt.
-- **Schriften:** Titel in *Cinzel* oder *Cormorant Garamond* (Versalien, passend zum Logo), Fliesstext in *Inter* oder *Montserrat*
-- **Reels:** Untertitel weiss mit dunklem Balken, `emblem-weiss.png` als Wasserzeichen oben rechts (ca. 60 % Deckkraft), Endcard mit Querlogo auf `#121212` (1,5 s)
-- **Stories:** `emblem-weiss.png` klein in einer Ecke, Sticker möglichst in Messing/Weiss
+- **Cover-Slide:** Querlogo oben zentriert (ca. 40 % Breite), darunter der Hook gross in der Titelschrift, ein olivgrünes Band als Akzent
+- **Inhalts-Slides:** grosse Nummer in einem olivgrünen Badge (dunkel) bzw. in Olivgrün (hell) links oben, Titel und 1–3 kurze Zeilen. Fusszeile mit Schriftzug (ca. 25 % Breite) zentriert unten und Slide-Zähler «2/7» rechts unten
+- **Schluss-Slide:** Querlogo, CTA-Text in olivgrünem Kasten, darunter «armatum.ch · Laden · Werkstatt · Onlineshop · Fulenbach SO» im Nebentext-Grau. Keine Preise.
+- Pro Slide genau ein Logo-Element. Das Logo wird nie eingefärbt oder verzerrt. Auf Fotos wird eine Fläche in `#313131` mit 70 % Deckkraft unterlegt.
+- **Schriften:** Titel in *Cinzel* oder *Cormorant Garamond* (Versalien, passend zum Logo; die Website nutzt Georgia als Serife), Fliesstext in *Inter* oder *Montserrat*
+- **Reels:** Untertitel weiss auf `#313131`-Balken, `emblem-weiss.png` als Wasserzeichen oben rechts (ca. 60 % Deckkraft), Endcard mit Querlogo auf `#4e5743` (1,5 s)
+- **Stories:** `emblem-weiss.png` klein in einer Ecke, Sticker möglichst in Olivgrün/Weiss
 
 ---
 
@@ -75,10 +79,10 @@ Die Farben sind eine Arbeitspalette. Die Website-Farben waren nicht ermittelbar,
 
 | # | Datum | Tag | Uhrzeit | Format | Content-Säule | Thema | Hook | Status |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 13.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | 5 Fehler bei der Waffenreinigung | «Fehler Nr. 3 machen fast alle – du wahrscheinlich auch.» | Entwurf – wartet auf Freigabe |
-| 2 | 14.10.2026 | Mi | 18:30 | Karussell (9 Slides, dunkel) | 2 Wiederladen | Wiederladen in 7 Schritten – der Überblick | «Wiederladen klingt kompliziert? Es sind 7 Schritte.» | Entwurf – wartet auf Freigabe |
+| 1 | 13.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | 5 Fehler bei der Waffenreinigung | «Fehler Nr. 3 machen fast alle – du wahrscheinlich auch.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
+| 2 | 14.10.2026 | Mi | 18:30 | Karussell (9 Slides, dunkel) | 2 Wiederladen | Wiederladen in 7 Schritten – der Überblick | «Wiederladen klingt kompliziert? Es sind 7 Schritte.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
 | 3 | 15.10.2026 | Do | 19:00 | Karussell (6 Slides, dunkel + Fotos) | 5 Community | Hallo, wir sind Armatum | «Schön, dass du da bist. Wer steckt hinter @armatum_ch?» | Entwurf fertig – wartet auf Fotos und Freigabe |
-| 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | Entwurf – wartet auf Freigabe und fachliche Prüfung (bis Fr 16.10. 18:00) |
+| 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)** – fachliche Prüfung des ABC bis Fr 16.10. 18:00 noch offen, sonst Verschiebung |
 | 5 | 20.10.2026 | Di | 18:30 | Reel (20–25 Sek.) | 2 Wiederladen | Hülsenvorbereitung: vom Messing-Chaos zur präzisen Hülse | «Aus dieser Hülse wird Präzision.» | Entwurf – wartet auf Freigabe `[FEHLT: Video]` |
 | 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
@@ -92,6 +96,8 @@ Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Pos
 
 ### #1 – Di 13.10.2026, 18:30 – Karussell – Säule 1: 5 Fehler bei der Waffenreinigung
 
+**Status:** Freigegeben (11.10.2026). Seit der Freigabe nur Farbanpassung der Grafiken (Olivgrün statt Messing), Caption unverändert.
+
 **Slides** (dunkles Design, siehe Abschnitt 2):
 1. Cover: Querlogo und «5 Fehler bei der Waffenreinigung – Nr. 3 machen fast alle»
 2. Fehler 1: Nicht kontrolliert entladen. Zuerst entladen, Patronenlager sichtbar prüfen, Munition aus dem Raum.
@@ -99,7 +105,7 @@ Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Pos
 4. Fehler 3: Zu viel Öl. Ein dünner Film genügt. Überschüssiges Öl zieht Schmutz an und kann im Lauf die Treffpunktlage beim ersten Schuss verändern.
 5. Fehler 4: Falsche Bürste und falsches Kaliber. Messing- oder Bronzebürste in Laufkaliber, keine Stahlbürste im Lauf.
 6. Fehler 5: Reiniger nicht entfernt, feucht weggelegt. Lösungsmittel auswischen, trocknen und erst dann leicht konservieren.
-7. CTA (Querlogo): «Speichern für die nächste Reinigung. Welchen Fehler hast du schon gemacht?» Fusszeile «armatum.ch · Laden · Werkstatt · Onlineshop · Fulenbach SO»
+7. CTA (Querlogo, olivgrüner Kasten): «Speichern für die nächste Reinigung. Welchen Fehler hast du schon gemacht?» Fusszeile «armatum.ch · Laden · Werkstatt · Onlineshop · Fulenbach SO»
 
 **Caption zum Kopieren:**
 ```
@@ -124,13 +130,15 @@ Welchen Fehler hast du selbst schon gemacht? Schreib's in die Kommentare 👇
 
 **Material/Shotlist:** Keine Fotos nötig. 7 Text-Grafiken (1080×1350 px), die ich in Canva o. ä. erstelle. Optional als Hintergrund ein eigenes Foto: Reinigungsset auf der Armatum-Werkbank, Waffe sichtbar entladen (Verschluss offen), mit dunkler Fläche unterlegt.
 
-**Regel-Check:** ✅ geprüft. Reines Pflegewissen. Der Verweis auf Laden und Onlineshop betrifft Pflegeprodukte und Beratung, nicht Waffen oder Munition, und nennt keine Preise. Der Sicherheitshinweis ist enthalten. Hinweis: Ein Hintergrundfoto muss eine sichtbar entladene Waffe zeigen.
+**Regel-Check:** ✅ geprüft. Reines Pflegewissen. Der Verweis auf Laden und Onlineshop betrifft Pflegeprodukte und Beratung, nicht Waffen oder Munition, und nennt keine Preise. Der Sicherheitshinweis ist enthalten. Die Werkstatt-Reinigung ist durch die Website belegt. Hinweis: Ein Hintergrundfoto muss eine sichtbar entladene Waffe zeigen.
 
 ---
 
 ### #2 – Mi 14.10.2026, 18:30 – Karussell – Säule 2: Wiederladen in 7 Schritten
 
-**Slides** (dunkles Design, Schritt-Icons in Messing):
+**Status:** Freigegeben (11.10.2026). Seit der Freigabe nur Farbanpassung der Grafiken, Caption unverändert.
+
+**Slides** (dunkles Design, Schritt-Icons weiss in olivgrünen Badges):
 1. Cover: Querlogo und «Wiederladen in 7 Schritten – der Überblick»
 2. Schritt 1: Hülsen sortieren und reinigen (nach Hersteller und Los)
 3. Schritt 2: Kontrolle. Risse, Beulen und ausgeleierte Zündglocken aussortieren.
@@ -163,30 +171,30 @@ Welcher Schritt braucht bei dir am meisten Zeit? 👇
 
 **Material/Shotlist:** Keine Fotos nötig, 9 Text-Grafiken (Icons pro Schritt). Optional ein eigenes Foto der Armatum-Wiederladeplätze als Cover (ohne Pulverdosen mit lesbaren Angaben, ohne Preisschilder).
 
-**Regel-Check:** ✅ geprüft. Keine Ladedaten (weder Pulversorte noch Menge), stattdessen ein Verweis auf die Herstellertabellen. Der Sicherheitshinweis ist enthalten. Wiederladen von Munition für den Eigengebrauch ist ein Prozess und keine Waffenherstellung oder -umrüstung. Kurse und die Miete von Arbeitsplätzen sind Dienstleistungen ohne Waren- oder Munitionsverkauf. Es werden keine Preise genannt, und «kundenspezifische Munition» wird bewusst nicht erwähnt. Die Formulierung zu den Pulver-Vorschriften ist bewusst allgemein gehalten (`rechtlich prüfen`, falls der Inhaber konkrete Artikel nennen möchte). `[BESTÄTIGEN: Kurse und Arbeitsplatz-Miete aktuell buchbar]`
+**Regel-Check:** ✅ geprüft. Keine Ladedaten (weder Pulversorte noch Menge), stattdessen ein Verweis auf die Herstellertabellen. Der Sicherheitshinweis ist enthalten. Wiederladen von Munition für den Eigengebrauch ist ein Prozess und keine Waffenherstellung oder -umrüstung. Kurse und die Miete von Arbeitsplätzen sind Dienstleistungen ohne Waren- oder Munitionsverkauf. Es werden keine Preise genannt, und «kundenspezifische Munition» wird bewusst nicht erwähnt. Die Formulierung zu den Pulver-Vorschriften ist bewusst allgemein gehalten (`rechtlich prüfen`, falls der Inhaber konkrete Artikel nennen möchte). Arbeitsplatz-Miete mit Kurs-Voraussetzung ist durch die Website belegt (die Website erlaubt alternativ den Nachweis gleichwertiger Kenntnisse; die verkürzte Caption ist korrekt, nur nicht vollständig). `[BESTÄTIGEN: Wiederladekurse aktuell mit Terminen buchbar]`
 
 ---
 
 ### #3 – Do 15.10.2026, 19:00 – Karussell – Säule 5: Hallo, wir sind Armatum
 
-**Slides** (dunkles Design, Fotos mit dunkler Fläche unterlegt):
-1. Cover: Querlogo `logo-weiss.png` gross auf `#121212`, darunter «Hallo, wir sind Armatum 👋» und in Messing «Laden · Werkstatt · Onlineshop»
-2. **Wer wir sind** (Foto: Inhaber/Team): «Seit 2024 in Fulenbach SO. Ein Fachgeschäft von Schützen für Schützen, Jäger, Wiederlader und Sammler.» `[BESTÄTIGEN: Namensnennung Pascal Wyser, Geschäftsführer, ja/nein]`
-3. **Laden** (Foto: Eingang oder Ladenansicht ohne Preisschilder): «Persönliche Beratung vor Ort. Tipp: Der Eingang liegt hinter dem Gebäude – einfach der Beschilderung folgen.»
-4. **Werkstatt** (Foto: Werkbank): «Service, Pflege und Reparatur für deine Ausrüstung. Auf Wunsch mit Abhol- und Bringservice.» `[BESTÄTIGEN: Werkstatt-Leistungen und Abholservice]`
-5. **Wiederladen & Onlineshop** (Foto: Wiederladeplatz): «Unser Herzstück: Wiederlade-Sortiment, Kurse und Arbeitsplätze zum Mieten. Optik, Zubehör und Pflege findest du auch online auf armatum.ch.»
+**Slides** (dunkles Design, Fotos mit Fläche `#313131` unterlegt):
+1. Cover: Querlogo `logo-weiss.png` gross auf `#313131`, darunter «Hallo, wir sind Armatum 👋» und in einem olivgrünen Band «Laden · Werkstatt · Onlineshop»
+2. **Wer wir sind** (Foto: Inhaber/Team): «Seit 2024 in Fulenbach SO. Fachhandel für Schützen und Jäger, für Wiederlader und Sammler.» `[BESTÄTIGEN: Namensnennung Pascal Wyser, Geschäftsführer, ja/nein; «seit 2024» stammt aus dem Handelsregister, nicht von der Website]`
+3. **Laden** (Foto: Eingang oder Ladenansicht ohne Preisschilder): «Persönliche Fachberatung vor Ort, jeden Donnerstag 17–21 Uhr und jeden zweiten Samstag 9–13 Uhr. Tipp: Parkieren bei der A. Jäggi AG, der Eingang liegt hinter dem Gebäude.»
+4. **Werkstatt** (Foto: Werkbank): «Reinigung mit Funktionskontrolle, Service und Reparatur. Auf Wunsch holen wir deine Waffe ab und bringen sie zurück.»
+5. **Wiederladen & Onlineshop** (Foto: Wiederladeplatz): «Unser Herzstück: über 1000 Artikel fürs Wiederladen, Kurse und gewartete Arbeitsplätze zum Mieten. Optik, Zubehör, Ausrüstung und Pflege findest du auch online auf armatum.ch.»
 6. **Was dich hier erwartet** + CTA: «Wissen & Tipps · Wiederladen · ehrliche Tests · Schiesssport & Jagd in der Schweiz · deine Fragen. Folge uns und stell uns deine Frage – sie wird vielleicht unser nächster Beitrag.»
 
 **Caption zum Kopieren:**
 ```
 Schön, dass du da bist. Wer steckt eigentlich hinter @armatum_ch? 👋
 
-Wir sind Armatum – Laden, Werkstatt und Onlineshop in einem. Seit 2024 sind wir in Fulenbach (SO) zu Hause und für Sportschützen, Jäger, Wiederlader und Sammler da.
+Wir sind Armatum – Fachhandel für Schützen und Jäger, mit Laden, Werkstatt und Onlineshop. Seit 2024 sind wir in Fulenbach (SO) zu Hause und für Sportschützen, Jäger, Wiederlader und Sammler da.
 
-🏪 Laden: persönliche Beratung vor Ort in Fulenbach
-🔧 Werkstatt: Service, Pflege und Reparatur für deine Ausrüstung
-🎯 Wiederladen: unser Herzstück – mit Kursen und Arbeitsplätzen zum Mieten
-💻 Onlineshop: Optik, Zubehör, Pflege und Wiederlade-Material auf armatum.ch
+🏪 Laden: persönliche Fachberatung vor Ort in Fulenbach
+🔧 Werkstatt: Reinigung mit Funktionskontrolle, Service und Reparatur – auf Wunsch mit Abhol- und Bringservice
+🎯 Wiederladen: unser Herzstück – über 1000 Artikel, Kurse und gewartete Arbeitsplätze zum Mieten
+💻 Onlineshop: Optik, Zubehör, Ausrüstung, Pflege und Wiederlade-Material auf armatum.ch
 
 Und das erwartet dich hier auf Instagram:
 📚 Wissen & Tipps rund um Pflege und Zubehör
@@ -195,8 +203,9 @@ Und das erwartet dich hier auf Instagram:
 🇨🇭 Schiesssport & Jagd in der Schweiz
 💬 Antworten auf deine Fragen
 
-📍 Färchstrasse 6b, 4629 Fulenbach – der Eingang ist hinter dem Gebäude, folge einfach der Beschilderung.
-Öffnungszeiten und Shop: Link in der Bio.
+📍 Färchstrasse 6b, 4629 Fulenbach
+🅿️ Parkplätze bei der A. Jäggi AG – der Eingang ist hinter dem Gebäude, folge einfach der Beschilderung.
+🕔 Jeden Donnerstag 17–21 Uhr (heute auch!) und jeden zweiten Samstag 9–13 Uhr. Nächster Samstag: 24. Oktober.
 
 Welches Thema wünschst du dir als Erstes? Schreib's in die Kommentare – die meistgenannten Themen setzen wir um. 👇
 ```
@@ -205,17 +214,19 @@ Standort-Tag: «Fulenbach» bzw. das Geschäft, falls als Ort auf Instagram vorh
 
 **Material/Shotlist:** 4 eigene Fotos, Hochformat 4:5, bis Mi 14.10. 12:00:
 - Inhaber oder Team vor der Werkbank oder im Laden (freundlich, ohne Waffe in der Hand oder mit entladener Waffe, Mündung in sichere Richtung, Finger weg vom Abzug)
-- Eingang mit Beschilderung bzw. Ladenansicht (ohne Autonummern, ohne unbeteiligte Personen, ohne Preisschilder)
-- Werkbank der Werkstatt (aufgeräumt, keine Kundenwaffen mit erkennbaren Seriennummern)
+- Eingang mit Beschilderung bzw. Ladenansicht (ohne Autonummern, ohne unbeteiligte Personen, ohne Preisschilder, ohne Sale-Plakate)
+- Werkbank der Werkstatt (aufgeräumt, keine Kundenwaffen mit erkennbaren Seriennummern, keine Umbau-Projekte im Bild)
 - Wiederlade-Arbeitsplatz (Pressen, Waage; keine Pulverdosen mit lesbaren Angaben, keine Ladetabellen, keine Preisschilder)
 
-**Regel-Check:** ✅ geprüft mit Auflagen. Die Leistungen werden ohne Preise vorgestellt. Der Verweis geht nur auf den regulären Onlineshop und den Laden. Waffen und Munition werden nicht als Kaufangebot erwähnt, und Ankauf, kundenspezifische Munition sowie Umbau sind bewusst ausgelassen. Auflagen: Auf den Fotos sind keine Preisschilder, Aktionsplakate oder Seriennummern sichtbar. Die Adresse eines Ladengeschäfts zu nennen ist üblich und unproblematisch, es werden aber keine Details zu Tresor oder Lager gezeigt. Die mit `[BESTÄTIGEN]` markierten Punkte muss der Inhaber vor der Freigabe prüfen.
+**Regel-Check:** ✅ geprüft mit Auflagen. Die Leistungen werden ohne Preise vorgestellt. Der Verweis geht nur auf den regulären Onlineshop und den Laden. Waffen und Munition werden nicht als Kaufangebot erwähnt; Ankauf, Beschaffung, kundenspezifische Munition, Waffenerwerb sowie Umbau/Modifikation sind bewusst ausgelassen (stehen zwar auf der Website, sind aber kein Instagram-Thema). Öffnungszeiten, Parkplätze und Werkstatt-Leistungen sind durch die Website belegt. Auflagen: Auf den Fotos sind keine Preisschilder, Aktionsplakate oder Seriennummern sichtbar. Keine Details zu Tresor oder Lager. Die mit `[BESTÄTIGEN]` markierten Punkte muss der Inhaber vor der Freigabe prüfen.
 
 ---
 
 ### #4 – Sa 17.10.2026, 09:30 – Karussell – Säule 4: Das Schützen-ABC der Schweiz
 
-**Slides** (dunkles Design, Begriff jeweils gross in Messing):
+**Status:** Freigegeben (11.10.2026). **Offen: fachliche Prüfung der Begriffe bis Fr 16.10.2026, 18:00.** Seit der Freigabe nur Farbanpassung der Grafiken, Caption unverändert.
+
+**Slides** (dunkles Design, Begriff jeweils gross in Weiss auf olivgrünem Band):
 1. Cover: Querlogo und «Verstehst du Schützisch? 7 Begriffe, die jeder Schütze in der Schweiz kennt»
 2. **Obligatorisches (Bundesprogramm):** die jährliche Schiesspflicht für Angehörige der Armee mit persönlicher Waffe, absolviert im Schützenverein
 3. **Feldschiessen:** das grösste Schützenfest der Welt, jedes Jahr kostenlos und offen für alle
@@ -245,15 +256,15 @@ Und schick den Beitrag jemandem, der gerade mit dem Schiessen anfängt.
 
 **Material/Shotlist:** Keine Fotos nötig, 9 Text-Grafiken. Optional ein eigenes Foto vom Schiessstand (Gehör- und Augenschutz sichtbar, nur Ringscheiben, keine Personen ohne deren Einverständnis).
 
-**Regel-Check:** ✅ geprüft, Veröffentlichung nur nach fachlicher Prüfung. Sport- und Brauchtumsinhalt ohne Gewaltbezug und ohne Verkauf. Der Werkstatt-Hinweis nennt keine Preise. **Die Begriffsdefinitionen muss der Inhaber oder ein Vereinsmitglied bis Fr 16.10.2026, 18:00 gegenlesen.** Liegt bis dahin kein OK vor, verschiebe ich #4 auf den nächsten freien Slot. Es werden nur Ringscheiben gezeigt, keine Figurenscheiben.
+**Regel-Check:** ✅ geprüft, Veröffentlichung nur nach fachlicher Prüfung. Sport- und Brauchtumsinhalt ohne Gewaltbezug und ohne Verkauf. Der Werkstatt-Hinweis nennt keine Preise. Hinweis: Sa 17.10. ist kein Öffnungs-Samstag; «schau vorbei» ist deshalb allgemein gemeint (Öffnungszeiten über den Bio-Link). **Die Begriffsdefinitionen muss der Inhaber oder ein Vereinsmitglied bis Fr 16.10.2026, 18:00 gegenlesen.** Liegt bis dahin kein OK vor, verschiebe ich #4 auf den nächsten freien Slot. Es werden nur Ringscheiben gezeigt, keine Figurenscheiben.
 
 ---
 
 ### #5 – Di 20.10.2026, 18:30 – Reel – Säule 2: Hülsenvorbereitung
 
-**Ablauf des Reels** (20–25 Sek., Untertitel eingebrannt, ruhiges Werkstatt-Audio oder passendes Trend-Audio, `emblem-weiss.png` als Wasserzeichen, Endcard mit Querlogo):
+**Ablauf des Reels** (20–25 Sek., Untertitel eingebrannt, ruhiges Werkstatt-Audio oder passendes Trend-Audio, `emblem-weiss.png` als Wasserzeichen, Endcard mit Querlogo auf Olivgrün):
 - 0–2 s Hook: Nahaufnahme einer Handvoll angelaufener, schmutziger Hülsen fällt auf die Werkbank. Text: «Aus dieser Hülse wird Präzision.»
-- 2–6 s: Hülsen in die Reinigung (Tumbler oder Ultraschall), Schnitt auf glänzende Hülsen
+- 2–6 s: Hülsen in die Reinigung (Tumbler oder Nassreinigung), Schnitt auf glänzende Hülsen
 - 6–11 s: Sichtkontrolle: Eine Hülse mit Riss wird aussortiert. Text: «Beschädigt? Weg damit.»
 - 11–16 s: Hülsenlänge mit dem Messschieber messen. Text: «Länge prüfen.»
 - 16–21 s: Trimmen und Entgraten. Text: «Trimmen & entgraten.»
@@ -272,29 +283,29 @@ Präzision fängt nicht beim Schuss an, sondern an der Werkbank. Die Hülsenvorb
 
 ⚠️ Schutzbrille tragen und konzentriert arbeiten. Ladedaten nur aus den aktuellen Tabellen der Hersteller.
 
-Gefilmt an einem unserer Wiederlade-Arbeitsplätze in Fulenbach. Willst du das selbst lernen? Infos zu unseren Wiederladekursen findest du über den Link in der Bio.
+Gefilmt an einem unserer Wiederlade-Arbeitsplätze in Fulenbach. Tumbler, Nassreinigung, Präzisionswaagen und Messwerkzeug stehen dort bereit – gewartet und nach Einweisung nutzbar. Kein Platz für eine eigene Werkbank zu Hause? Nach einem Wiederladekurs bei uns kannst du einen Arbeitsplatz mieten. Infos über den Link in der Bio.
 
 Speichern für deine nächste Session an der Werkbank.
-Tumbler oder Ultraschall – womit reinigst du deine Hülsen? 👇
+Tumbler oder Nassreinigung – womit reinigst du deine Hülsen? 👇
 ```
 **Hashtags:** `#wiederladen #reloading #hülsen #präzisionsschiessen #schweiz`
 
 **Material/Shotlist** (Rohmaterial bis Mo 19.10. 12:00, Hochformat 9:16, 4K oder 1080p, mehrere Sekunden pro Einstellung, gefilmt an einem Armatum-Wiederladeplatz):
 1. Nahaufnahme: schmutzige Hülsen fallen auf eine helle Werkbank (2–3 Takes)
-2. Hülsen in Tumbler oder Ultraschallgerät füllen, danach Deckel öffnen und glänzende Hülsen zeigen
+2. Hülsen in Tumbler oder Nassreinigung füllen, danach öffnen und glänzende Hülsen zeigen
 3. Hand hält eine Hülse gegen das Licht, eine beschädigte Hülse landet im Ausschuss-Behälter
 4. Messschieber an der Hülse, die Anzeige ist gut lesbar
 5. Trimmer und Entgrater in Aktion (Nahaufnahme, Schutzbrille im Bild oder auf der Werkbank sichtbar)
 6. Ladeblock mit fertig vorbereiteten Hülsen, langsamer Schwenk
-- **Nicht im Bild:** Pulverdosen mit lesbaren Sorten- oder Mengenangaben, Ladetabellen mit Zahlen, Notizen mit Ladedaten, Preisschilder.
+- **Nicht im Bild:** Pulverdosen mit lesbaren Sorten- oder Mengenangaben, Ladetabellen mit Zahlen, Notizen mit Ladedaten, Preisschilder, Hinweise auf kundenspezifische Munition.
 
-**Regel-Check:** ✅ geprüft mit Auflage. Prozess und Präzision werden gezeigt, ohne Ladedaten. Der Sicherheitshinweis ist enthalten. Der Verweis auf die Kurse nennt keine Preise. Auflage: Vor dem Posten prüfe ich das Rohmaterial darauf, dass keine Ladedaten oder Pulverbezeichnungen mit Mengen lesbar sind.
+**Regel-Check:** ✅ geprüft mit Auflage. Prozess und Präzision werden gezeigt, ohne Ladedaten. Der Sicherheitshinweis ist enthalten. Ausstattung (Tumbler, Nassreinigung, Waagen, Messwerkzeug), Einweisung und Kurs-Voraussetzung sind durch die Website belegt. Der Verweis auf Kurse und Miete nennt keine Preise. Auflage: Vor dem Posten prüfe ich das Rohmaterial darauf, dass keine Ladedaten oder Pulverbezeichnungen mit Mengen lesbar sind.
 
 ---
 
 ### #6 – Mi 21.10.2026, 18:30 – Karussell – Säule 1: Ausrüstung einwintern
 
-**Slides** (**helles Design**: `#F4F1EA`, schwarze Logo-Varianten, damit sich die Checkliste im Feed abhebt und gut ausdrucken lässt):
+**Slides** (**helles Design**: `#f8f9fb`, Akzent Olivgrün, schwarze Logo-Varianten, damit sich die Checkliste im Feed abhebt und gut ausdrucken lässt):
 1. Cover: `logo-schwarz.png` und «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.»
 2. Gründlich reinigen: Lauf, Verschluss, Rückstände von Pulver, Feuchtigkeit oder bei Jägern auch Schweiss/Blut entfernen
 3. Leicht konservieren: dünner Ölfilm auf Metallteilen, Überschuss abwischen
@@ -320,7 +331,7 @@ Unsere Checkliste:
 
 👉 Swipe für die Details.
 
-Keine Zeit oder lieber in Profi-Hände geben? Unsere Werkstatt in Fulenbach übernimmt Service und Pflege für deine Ausrüstung. Pflegeprodukte findest du im Laden und im Onlineshop (Link in der Bio).
+Keine Zeit oder lieber in Profi-Hände geben? Unsere Werkstatt in Fulenbach reinigt deine Waffe gründlich und prüft dabei die Funktion. Verschleissteile tauschen wir nur nach Rücksprache mit dir. Auf Wunsch holen wir sie bei dir ab und bringen sie zurück. Pflegeprodukte findest du im Laden und im Onlineshop (Link in der Bio).
 
 Speichere die Checkliste. Was ist dein bester Tipp gegen Feuchtigkeit im Waffenschrank? 👇
 ```
@@ -328,15 +339,15 @@ Speichere die Checkliste. Was ist dein bester Tipp gegen Feuchtigkeit im Waffens
 
 **Material/Shotlist:** Keine Fotos nötig, 8 Text-Grafiken. Optional ein eigenes Foto: geöffneter Waffenschrank mit Entfeuchter (ohne Schloss-/Code-Details, ohne Hinweis auf den Standort).
 
-**Regel-Check:** ✅ geprüft mit Auflage. Reines Pflege- und Sicherheitswissen. Der Werkstatt-Hinweis nennt keine Preise. Auflage: Die Werkstatt-Leistung «Service und Pflege» bestätigt der Inhaber bis Di 20.10. Der Hinweis zur Aufbewahrung ist bewusst allgemein formuliert (`rechtlich prüfen`, falls der Inhaber genaue Artikel zitieren will). Aus Sicherheitsgründen keine Details zu Schrank oder Schloss zeigen.
+**Regel-Check:** ✅ geprüft. Reines Pflege- und Sicherheitswissen. Die Werkstatt-Leistung (Reinigung mit Funktionskontrolle, Verschleissteile nach Rücksprache, Abhol- und Bringservice) ist durch die Website belegt, keine Preise. Der Hinweis zur Aufbewahrung ist bewusst allgemein formuliert (`rechtlich prüfen`, falls der Inhaber genaue Artikel zitieren will). Hinweis zum Abholservice: Der Transport von Waffen unterliegt dem WG; die Caption beschreibt nur die Dienstleistung des Fachhändlers und gibt keine Transport-Anleitung. Aus Sicherheitsgründen keine Details zu Schrank oder Schloss zeigen.
 
 ---
 
 ### #7 – Do 22.10.2026, 19:00 – Reel – Säule 3: Ehrlicher Produkttest
 
-**Vorschlag für die Produktwahl** (der Inhaber entscheidet): bevorzugt ein Artikel aus dem Armatum-Sortiment in den Bereichen Wiederlade-Werkzeug, Pflege, Optik oder Aufbewahrung (z. B. ein Hülsentrimmer, eine Präzisionswaage oder der Vaultek Single Pistol Rack). Das ist unkritischer als eine Waffe und passt zu Beitrag #5 und #6. `[FEHLT: Produkt, Erfahrung des Inhabers, Vor- und Nachteile]`
+**Vorschlag für die Produktwahl** (der Inhaber entscheidet): ein Artikel aus dem Armatum-Sortiment ohne Waffen-/Munitionsbezug, damit der Test unkritisch und gut teilbar ist. Passend zum Sortiment laut Website z. B.: ein Wiederlade-Werkzeug von Hornady oder Lyman (passt zu #5), ein Gehörschutz oder eine Schutzbrille (Sicherheit im Bild!), ein Red Dot oder Zielfernrohr (Holosun, Aimpoint, Steiner), ein Multitool von Leatherman oder der Vaultek Single Pistol Rack. `[FEHLT: Produkt, Erfahrung des Inhabers, Vor- und Nachteile]`
 
-**Ablauf des Reels** (20–30 Sek., Untertitel, Wasserzeichen `emblem-weiss.png`, Endcard mit Querlogo):
+**Ablauf des Reels** (20–30 Sek., Untertitel, Wasserzeichen `emblem-weiss.png`, Endcard mit Querlogo auf Olivgrün):
 - 0–2 s Hook: Produkt wird auf die Werkbank gestellt. Text: «Lohnt sich [Produkt]? Ehrliche Antwort.»
 - 2–8 s: Auspacken und Lieferumfang
 - 8–18 s: Produkt im Einsatz (2–3 Einstellungen)
@@ -356,7 +367,7 @@ Lohnt sich [FEHLT: Produkt]? Unsere ehrliche Antwort nach [FEHLT: Zeitraum] im E
 
 🎯 Fazit: [FEHLT: Für wen geeignet, für wen eher nicht]
 
-Du willst es selbst in die Hand nehmen? Komm bei uns im Laden in Fulenbach vorbei. Mehr Infos findest du im Onlineshop (Link in der Bio).
+Du willst es selbst in die Hand nehmen? Komm bei uns im Laden in Fulenbach vorbei – heute Abend bis 21 Uhr oder am Samstag, 24.10., von 9 bis 13 Uhr. Mehr Infos findest du im Onlineshop (Link in der Bio).
 
 Hast du [Produkt] schon im Einsatz? Teile deine Erfahrung in den Kommentaren 👇
 ```
@@ -368,21 +379,23 @@ Hast du [Produkt] schon im Einsatz? Teile deine Erfahrung in den Kommentaren �
 3. 2–3 Einsatz-Szenen (falls am Schiessstand: Gehör- und Augenschutz sichtbar, Finger ausserhalb des Abzugsbügels, Mündung in sichere Richtung, Kugelfang)
 4. Detail-Nahaufnahme des Vorteils und des Nachteils
 5. Optional ein kurzes Statement des Inhabers in die Kamera (10 Sek.)
-- **Nicht im Bild:** Preisschilder, Aktionsplakate, Hinweise wie «jetzt kaufen».
+- **Nicht im Bild:** Preisschilder, Aktionsplakate, «Sale», Hinweise wie «jetzt kaufen».
 
-**Regel-Check:** ⚠️ bedingt geprüft. Die Vorlage ist regelkonform (Test mit Vor- und Nachteilen, keine Preise, Verweis nur auf Laden und Bio-Link). Der endgültige Check erfolgt nach Wahl des Produkts. Ist es eine Waffe, ein Waffenteil oder Munition: Präsentation ist erlaubt, aber ohne «Komm im Laden vorbei, um es zu kaufen», ohne «verfügbar ab …» und ohne Bewerbung als Ad oder Boost. Die Laden-Zeile ersetze ich dann durch «Fragen? Schreib sie in die Kommentare.» Ist es ein Waffenteil: keine Montage- oder Umbauanleitung.
+**Regel-Check:** ⚠️ bedingt geprüft. Die Vorlage ist regelkonform (Test mit Vor- und Nachteilen, keine Preise, Verweis nur auf Laden und Bio-Link). Der endgültige Check erfolgt nach Wahl des Produkts. Ist es eine Waffe, ein Waffenteil oder Munition: Präsentation ist erlaubt, aber ohne «Komm im Laden vorbei, um es zu kaufen», ohne Öffnungszeiten als Kaufaufforderung, ohne «verfügbar ab …» und ohne Bewerbung als Ad oder Boost. Die Laden-Zeile ersetze ich dann durch «Fragen? Schreib sie in die Kommentare.» Ist es ein Waffenteil: keine Montage- oder Umbauanleitung. Schalldämpfer, Conversion Kits und Upper/Lower kommen als Testprodukt nicht in Frage.
 
 ---
 
 ### #8 – Sa 24.10.2026, 09:30 – Karussell – Säule 5: Ihr habt abgestimmt
 
-**Slides** (dunkles Design, Balkendiagramme in Messing):
+Sa 24.10. ist ein **Öffnungs-Samstag (9–13 Uhr)**. Post und Laden werden verknüpft.
+
+**Slides** (dunkles Design, Balkendiagramme in Olivgrün mit weissen Zahlen):
 1. Cover: Querlogo und «Ihr habt abgestimmt – und das Resultat überrascht.»
 2. Wer ihr seid: Resultat der Umfrage Sportschütze/Jäger/Wiederlader/Sammler `[FEHLT: Story-Resultate]`
 3. Was ihr sehen wollt: Top-Themen aus Umfrage und Fragen-Sticker
 4. Eure häufigste Frage und unsere Kurzantwort
 5. Was als Nächstes kommt: Vorschau auf die Themen im November
-6. CTA (Querlogo): «Stell uns deine Frage – wir beantworten sie in einem der nächsten Beiträge.»
+6. CTA (Querlogo): «Stell uns deine Frage – hier in den Kommentaren oder heute bis 13 Uhr bei uns im Laden in Fulenbach.»
 
 **Caption zum Kopieren** (Zahlen nach der Auswertung einsetzen):
 ```
@@ -395,38 +408,38 @@ Danke für über [FEHLT: Anzahl] Antworten in unseren Stories! Das haben wir gel
 
 👉 Swipe für alle Resultate und unsere Pläne für den November.
 
-Fehlt dein Thema? Schreib's in die Kommentare oder frag uns direkt im Laden in Fulenbach – wir lesen und hören alles. 👇
+Fehlt dein Thema? Schreib's in die Kommentare – oder frag uns direkt: Heute ist unser Laden in Fulenbach von 9 bis 13 Uhr offen. Parkplätze bei der A. Jäggi AG, Eingang hinter dem Gebäude. 👇
 ```
 **Hashtags:** `#sportschiessen #jagdschweiz #wiederladen #community #schweiz`
 
 **Material/Shotlist:** Keine Fotos nötig. Text-Grafiken mit Balkendiagrammen. Ich werte die Story-Insights aus Woche 1 und 2 aus (bis Fr 23.10.).
 
-**Regel-Check:** ✅ geprüft mit Auflage. Nutzerantworten werden nur anonym und zusammengefasst wiedergegeben. Ohne Einverständnis werden keine Benutzernamen zitiert. Fragen, die auf Verkauf, Preise oder Umbauten zielen, beantworten wir nicht öffentlich als Content.
+**Regel-Check:** ✅ geprüft mit Auflage. Nutzerantworten werden nur anonym und zusammengefasst wiedergegeben. Ohne Einverständnis werden keine Benutzernamen zitiert. Fragen, die auf Verkauf, Preise, Ankauf oder Umbauten zielen, beantworten wir nicht öffentlich als Content. Der Laden-Hinweis lädt zu Beratung und Fragen ein, nicht zum Kauf von Waffen oder Munition. Öffnungszeit durch die Website belegt.
 
 ---
 
 ## 5. Story-Ideen pro Tag
 
-Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler Hintergrund oder eigenes Foto.
+Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), Woche 2 (19.–25.10.) wartet auf Freigabe.
 
 | Datum | Tag | Story-Idee |
 |---|---|---|
 | 12.10. | Mo | Teaser: «Ab morgen geht's hier richtig los.» Umfrage-Sticker: «Was bist du? Sportschütze / Jäger» (2. Slide: «Wiederlader / Sammler») |
 | 13.10. | Di | Mittags Quiz: «Wie viel Öl gehört in den Lauf? Viel / dünner Film / gar keins». Abends den neuen Post #1 teilen. |
 | 14.10. | Mi | Umfrage: «Lädst du selbst wieder? Ja / Möchte anfangen / Nein». Abends Post #2 teilen. |
-| 15.10. | Do | Fragen-Sticker: «Was wolltest du schon immer über Waffenpflege oder Wiederladen wissen?» Abends Post #3 teilen, dazu ein Live-Foto aus dem Laden am Donnerstagabend (ohne Preisschilder, ohne Kundschaft ohne Einverständnis). |
-| 16.10. | Fr | Behind the Scenes: «So findest du uns» – kurzer Clip vom Weg zum versteckten Eingang hinter dem Gebäude (ohne Autonummern) + Emoji-Slider «Wie sehr freust du dich aufs Wochenende am Stand?» |
-| 17.10. | Sa | Post #4 teilen + Quiz: «Was ist ein Absenden? Rangverkündigung / Schiesspause / Munitionsausgabe» |
+| 15.10. | Do | Fragen-Sticker: «Was wolltest du schon immer über Waffenpflege oder Wiederladen wissen?» Abends Post #3 teilen, dazu ein Live-Foto aus dem Laden («Heute bis 21 Uhr offen») – ohne Preisschilder, ohne Kundschaft ohne Einverständnis. |
+| 16.10. | Fr | Behind the Scenes «So findest du uns»: kurzer Clip vom Parkplatz der A. Jäggi AG über den Weg hinter das Gebäude bis zum Eingang mit Beschilderung (ohne Autonummern). Textsticker: «Offen jeden Do 17–21 Uhr. Nächster Samstag: 24.10., 9–13 Uhr.» + Emoji-Slider «Wie sehr freust du dich aufs Wochenende am Stand?» |
+| 17.10. | Sa | Post #4 teilen + Quiz: «Was ist ein Absenden? Rangverkündigung / Schiesspause / Munitionsausgabe». (Heute kein Öffnungs-Samstag – keinen Laden-Hinweis.) |
 | 18.10. | So | Umfrage: «Welches Thema soll nächste Woche kommen? Hülsen vorbereiten / Optik einstellen». Rückblick auf die Woche. |
 | 19.10. | Mo | Antworten auf 2–3 Fragen aus dem Fragen-Sticker (anonym). Teaser für das Reel morgen: «Erkennst du das?» (Nahaufnahme schmutzige Hülse) |
-| 20.10. | Di | Reel #5 teilen + Umfrage: «Tumbler oder Ultraschall?» |
+| 20.10. | Di | Reel #5 teilen + Umfrage: «Tumbler oder Nassreinigung?» |
 | 21.10. | Mi | Post #6 teilen + Quiz: «Was ist der grösste Feind im Waffenschrank? Staub / Feuchtigkeit / Kälte» |
-| 22.10. | Do | Teaser am Mittag: «Heute Abend: ehrlicher Test von …» (Produkt unscharf). Abends Reel #7 teilen. |
-| 23.10. | Fr | Fragen-Sticker: «Welches Produkt sollen wir als Nächstes testen?» |
-| 24.10. | Sa | Post #8 teilen + Umfrage: «Bist du dabei, wenn wir im November [Thema] machen?» |
-| 25.10. | So | Wochenrückblick mit Danke an die Community + Story-Highlights anlegen bzw. aktualisieren (Wiederladen, Tests, Events, FAQ; Cover im Emblem-Design) |
+| 22.10. | Do | Teaser am Mittag: «Heute Abend: ehrlicher Test von …» (Produkt unscharf). Abends Reel #7 teilen + «Laden heute bis 21 Uhr offen». |
+| 23.10. | Fr | Fragen-Sticker: «Welches Produkt sollen wir als Nächstes testen?» + Countdown-Sticker «Morgen Laden offen, 9–13 Uhr». |
+| 24.10. | Sa | Morgens: «Heute 9–13 Uhr offen» (Foto Eingang/Beschilderung, Hinweis Parkplatz A. Jäggi AG). Post #8 teilen + Umfrage: «Bist du dabei, wenn wir im November [Thema] machen?» Ggf. ein Live-Eindruck aus dem Laden (ohne Preisschilder, ohne Kundschaft ohne Einverständnis). |
+| 25.10. | So | Wochenrückblick mit Danke an die Community + Story-Highlights anlegen bzw. aktualisieren (Wiederladen, Tests, Events, FAQ, Laden mit Anfahrt und Öffnungszeiten; Cover im Emblem-Design auf Olivgrün). |
 
-Story-Regel: In Stories gibt es weder Preise noch Verkauf noch «DM für …». Fragen nach Preisen beantworten wir per DM nur mit dem Verweis auf den Onlineshop (armatum.ch) oder den Laden in Fulenbach. Öffnungszeiten nennen wir erst, wenn der Inhaber sie bestätigt hat.
+Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für …». Fragen nach Preisen beantworten wir per DM nur mit dem Verweis auf den Onlineshop (armatum.ch) oder den Laden in Fulenbach. Öffnungszeiten (Website, abgerufen 11.10.2026) dürfen genannt werden: Do 17–21 Uhr, Sa 24.10./07.11./21.11./05.12./19.12. 9–13 Uhr.
 
 ---
 
@@ -434,17 +447,17 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf noch «DM für …». 
 
 | Fällig bis (Europe/Zurich) | Was genau | Für welchen Beitrag | Status |
 |---|---|---|---|
-| 2026-10-12 12:00 | ~~Grundinfos zu Armatum~~: Laden + Werkstatt + Onlineshop, Shop-Link https://armatum.ch, Ansprache Du. Standort, Gründung und Sortiment aus der Website-Recherche (`marke.md`) | #3, Bio, CTAs | ✅ erledigt (11.10.) |
-| 2026-10-12 12:00 | ~~Logo~~: alle Varianten (quer, Emblem, Schriftzug, je weiss/schwarz) in `assets/` | Grafiken | ✅ erledigt (11.10.) |
-| 2026-10-12 12:00 | **Markenfarben:** Arbeitspalette (Anthrazit/Weiss/Messing, siehe Abschnitt 2) bestätigen oder Hex-Codes der Website nennen | Grafiken ab #1 | offen |
-| 2026-10-12 12:00 | ~~Kontotyp~~: Business-Konto, mit Facebook-Seite verknüpft | Voraussetzung | ✅ erledigt (11.10.) |
+| – | ~~Grundinfos, Logo, Kontotyp~~ | Basis | ✅ erledigt (11.10.) |
+| – | ~~Markenfarben~~: aus dem Website-Theme übernommen (Olivgrün `#4e5743` als Akzent) | Grafiken | ✅ erledigt (11.10.) |
+| – | ~~Öffnungszeiten, Parkplätze, Werkstatt-Leistungen, Arbeitsplatz-Miete~~: durch armatum.ch belegt | #3, #5, #6, Stories | ✅ erledigt (11.10.) |
+| – | ~~Freigabe Woche 1~~ (#1, #2, #4, Stories 12.–18.10.) | Woche 1 | ✅ erledigt (11.10., vom Inhaber im Chat freigegeben) |
 | 2026-10-12 12:00 | **Altersgrenze 18+** im Profil gesetzt? (Einstellungen > Professionelles Konto > Mindestalter) | Voraussetzung ab #1 | offen |
-| 2026-10-12 12:00 | **Ausdrückliches OK für die Instagram-Verbindung über Composio** (der Inhaber erhält einen Login-Link, ich frage nie nach einem Passwort). Bis dahin wird nichts eingerichtet und nichts veröffentlicht. | Voraussetzung für das Veröffentlichen ab #1 | offen |
-| 2026-10-12 12:00 | **Bio und Profilbild** freigeben (Vorschlag in `marke.md`, Profilbild `emblem-weiss.png` auf `#121212`) | Profil | offen |
-| 2026-10-12 20:00 | **Freigabe Woche 1** (Beiträge #1, #2, #4 und Story-Ideen 12.–18.10.) | #1, #2, #4, Stories Woche 1 | offen |
-| 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder und Seriennummern) | #3 Intro | offen |
-| 2026-10-14 12:00 | **Bestätigungen fürs Intro:** Namensnennung Pascal Wyser ja/nein, Werkstatt-Leistungen (Service, Pflege, Reparatur, Abholservice), Wiederladekurse und Arbeitsplatz-Miete aktuell buchbar, aktuelle Laden-Öffnungszeiten (Website zeigt Do 17–21 Uhr und jeden 2. Sa 9–13 Uhr, Daten nur bis März 2026) | #2, #3, #6, Stories | offen |
-| 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt fertig ausformuliert) | #3 Intro | offen |
+| 2026-10-12 12:00 | **Ausdrückliches OK für die Instagram-Verbindung über Composio** (der Inhaber erhält einen Login-Link, ich frage nie nach einem Passwort). Bis dahin wird nichts eingerichtet und nichts veröffentlicht; Woche 1 liefere ich zum manuellen Posten. | Veröffentlichen ab #1 | offen |
+| 2026-10-12 12:00 | **Bio und Profilbild** freigeben (neuer Vorschlag in `marke.md`, Profilbild `emblem-weiss.png` auf Olivgrün `#4e5743`) | Profil | offen |
+| 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder, Sale-Plakate und Seriennummern) | #3 Intro | offen |
+| 2026-10-14 12:00 | **Bestätigungen fürs Intro:** Namensnennung Pascal Wyser ja/nein; «seit 2024» verwenden ja/nein (Quelle Handelsregister, nicht Website) | #3 | offen |
+| 2026-10-14 12:00 | **Wiederladekurse:** aktuell buchbar? Nächste Termine, Dauer, Zielgruppe (für Story und späteren Post, ohne Preise) | #2 (Kommentar-Antworten), #3, #5 | offen |
+| 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
@@ -453,8 +466,9 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf noch «DM für …». 
 | 2026-10-21 12:00 | **Rohvideo/Fotos Produkttest** gemäss Shotlist | #7 Produkttest | offen |
 | 2026-10-22 14:00 | **Freigabe des geschnittenen Test-Reels und der finalen Caption** | #7 Produkttest | offen |
 | 2026-10-23 18:00 | **Freigabe des Community-Karussells** mit den ausgewerteten Story-Resultaten | #8 Community | offen |
+| ohne Frist | **Website:** im SEO-Plugin (Yoast, «sameAs») `instagram.com/wyserwaffen/` durch `instagram.com/armatum_ch/` ersetzen | Auffindbarkeit | offen (Empfehlung) |
 
-Hinweis: Kommt keine Rückmeldung zu den Farben, gestalte ich mit der Arbeitspalette (Abschnitt 2) und passe sie später an. Ohne aktive Instagram-Verbindung kann ich nicht selbst veröffentlichen. In diesem Fall liefere ich die fertigen Dateien und Captions zum manuellen Posten.
+Hinweis: Ohne aktive Instagram-Verbindung kann ich nicht selbst veröffentlichen. In diesem Fall liefere ich die fertigen Dateien und Captions zum manuellen Posten.
 
 ---
 
@@ -462,9 +476,10 @@ Hinweis: Kommt keine Rückmeldung zu den Farben, gestalte ich mit der Arbeitspal
 
 - Professionelles Konto: ✅ Business-Konto, mit Facebook-Seite verknüpft.
 - Mindestalter 18+ für das Profil einstellen (Einstellungen > Professionelles Konto > Mindestalter). Status noch offen.
-- Bio gemäss Vorschlag in `marke.md`, Link-Feld https://armatum.ch. Keine Preise und kein «DM für Angebote».
-- Profilbild: `emblem-weiss.png` auf `#121212`.
-- Story-Highlights anlegen: Wiederladen · Tests · Events · FAQ, dazu optional «Laden» (Anfahrt, Eingang hinter dem Gebäude). Cover im Emblem-Design.
+- Bio gemäss Vorschlag in `marke.md`, Link-Feld https://armatum.ch. Keine Preise, keine Aktionen und kein «DM für Angebote».
+- Profilbild: `emblem-weiss.png` auf Olivgrün `#4e5743`.
+- Öffnungszeit Donnerstag im Profil hinterlegen; Öffnungs-Samstage per Story ankündigen.
+- Story-Highlights anlegen: Wiederladen · Tests · Events · FAQ · Laden (Anfahrt, Parkplatz A. Jäggi AG, Eingang hinter dem Gebäude, Öffnungszeiten). Cover im Emblem-Design auf Olivgrün.
 - Keine bezahlte Werbung (Boosts) für Beiträge mit Waffen oder Munition.
 
 ---
@@ -474,4 +489,5 @@ Hinweis: Kommt keine Rückmeldung zu den Farben, gestalte ich mit der Arbeitspal
 | Datum | Änderung |
 |---|---|
 | 2026-10-11 | Erster Plan erstellt (Irene). Alle Beiträge haben den Status «Entwurf – wartet auf Freigabe». |
-| 2026-10-11 | Markeninfos eingearbeitet (Laden + Werkstatt + Onlineshop in Fulenbach SO, armatum.ch, Du-Ansprache). Intro #3 fertig geschrieben (jetzt 6 Slides). Alle Captions mit Armatum-CTAs ohne Preise ergänzt. Design-Vorgaben mit Logo-Varianten, Profilbild und Palette (dunkel/hell, #6 hell) ergänzt. Fachliche Prüfung des Schützen-ABC (#4) auf Fr 16.10. 18:00 vorverlegt, also vor die Veröffentlichung am Sa 17.10. 09:30. Erledigte Inhaber-Punkte markiert, neue Bestätigungspunkte ergänzt. |
+| 2026-10-11 | Markeninfos eingearbeitet (Laden + Werkstatt + Onlineshop in Fulenbach SO, armatum.ch, Du-Ansprache). Intro #3 fertig geschrieben (jetzt 6 Slides). Alle Captions mit Armatum-CTAs ohne Preise ergänzt. Design-Vorgaben mit Logo-Varianten, Profilbild und Palette ergänzt. Fachliche Prüfung des Schützen-ABC (#4) auf Fr 16.10. 18:00 vorverlegt. |
+| 2026-10-11 | Abgleich mit armatum.ch (abgerufen 11.10.2026): Öffnungszeiten inkl. Samstagsdaten bis 19.12.2026, Parkplatz A. Jäggi AG, Werkstatt-Leistungen, Wiederlade-Infrastruktur, Sortimentszahlen (über 4000 Artikel / über 1000 Wiederladen) übernommen. Palette auf Markenfarben umgestellt (Olivgrün `#4e5743`, Anthrazit `#313131`, Website-Grautöne), Messing gestrichen, Profilbild auf Olivgrün. Captions #3, #5, #6, #7, #8 und Stories angepasst (Öffnungs-Samstag 24.10. verknüpft). Woche 1 (#1, #2, #4, Stories 12.–18.10.) als freigegeben markiert (11.10.2026, vom Inhaber im Chat freigegeben); deren Captions unverändert, nur Grafikfarben angepasst. |
