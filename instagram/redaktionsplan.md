@@ -1,7 +1,7 @@
 # Redaktionsplan @armatum_ch – 12.10. bis 25.10.2026
 
 Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Entscheide des Inhabers, Auswertung des bestehenden Accounts) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
-Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, #9 (SIG Sauer Cross, So 18.10.), #10 (Vergleich Walther PDP Pro vs. Compact Full Steel, So 25.10.), die Stories 15.10./16.10. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
+Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, #9 (SIG Sauer Cross, So 18.10.), #10 (Vergleich Walther PDP Pro vs. Compact Full Steel, So 25.10.), #11 (Website-Relaunch, Mo 12.10.), die Stories 15.10./16.10. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
 Ausgangslage: Es handelt sich um einen **bestehenden Account** (2450 Follower, folgt 5547 Konten, 347 Beiträge) und keinen Neustart. Die Auswertung steht in `/home/user/Claude/instagram/auswertungen.md` (Abschnitt «Ausgangslage 11.10.2026»).
 
 Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info, die die Website nicht belegt und die der Inhaber kurz bestätigen soll.
@@ -92,8 +92,9 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Waffe entladen/Magazin leer]` |
 | 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Pro-Variante, entladen/Magazine leer, Cover]` |
+| 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | Entwurf – wartet auf Freigabe (bis Mo 12.10. 16:00, sonst Mo 19.10. 20:00) `[BESTÄTIGEN: Was ist neu / Screenshots bereinigen]` |
 
-Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
+Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
 ---
 
@@ -576,6 +577,62 @@ Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA
 
 ---
 
+### #11 – Mo 12.10.2026, 20:00 – Karussell – Säule 5 (Behind the Scenes): Neuer Look für armatum.ch
+
+**Status:** Entwurf – wartet auf Freigabe (bis **Mo 12.10.2026, 16:00**; danach Ausweichtermin **Mo 19.10.2026, 20:00**).
+
+**Terminwahl:** Mo 12.10., 20:00. Der Montag ist ohne Feed-Post, und der Relaunch eröffnet die erste Content-Woche vor #1 (Di 18:30). Unter der Woche liegt die Spitze laut Insights bei 20–21 Uhr (19–22 Uhr insgesamt stark). Mit 20:00 fällt die ganze erste Stunde in die Spitze, mit 19:30 nur die Hälfte. Deshalb 20:00 statt 19:30, gleich wie bei #9 und #10. Bis #1 bleiben 22,5 Stunden, das reicht. Die freigegebene Story vom 12.10. («Ab morgen geht's hier richtig los» + Umfrage) passt dazu und bleibt unverändert. Ergänzung, die noch freigegeben werden muss: um ca. 20:15 #11 in der Story teilen, mit Link-Sticker auf armatum.ch.
+**Ausweichtermin:** Kommt die Freigabe nicht bis Mo 12.10. 16:00 (es braucht Zeit, um die Screenshots zu bereinigen), wird #11 am **Mo 19.10., 20:00** gepostet. Der Montag eröffnet dann Woche 2. Bis #9 (So 20:00) sind es 24 Stunden, bis #5 (Di 18:30) 22,5 Stunden. Fr 16.10. kommt nicht in Frage: Der Tag liegt zwischen #3 (Do) und #4 (Sa 09:30), und es wäre der dritte Post in drei Tagen.
+
+**Slides** (dunkles Design, fertig in `grafiken/11-website/01.jpg`–`05.jpg`, Texte in `slides.json`):
+1. `01.jpg` – Cover: Querlogo, «Neuer Look für armatum.ch», «Übersichtlicher. Schneller. Auch auf dem Handy.», «Swipe →»
+2. `02.jpg` – «Die Startseite – Alles auf einen Blick»: Screenshot Desktop (Navigation unscharf)
+3. `03.jpg` – «Mobil – Gemacht fürs Handy»: Screenshot Handy
+4. `04.jpg` – «Neu & übersichtlich – Das findest du jetzt schneller»: Sortiment nach Themen, Wiederladen (Kurse & Arbeitsplätze), Öffnungszeiten & Anfahrt, Fachberatung im Laden
+5. `05.jpg` – CTA: «Schau vorbei: armatum.ch», «Link in der Bio», «Wie gefällt dir der neue Look? Sag's uns», Fusszeile
+
+**Caption zum Kopieren** (ohne Vorher-Vergleich formuliert, stimmt auch dann, wenn unklar ist, was genau neu ist):
+```
+armatum.ch hat einen neuen Look – schon reingeschaut? 👀
+
+Unsere Website ist frisch gestaltet und auch auf dem Handy gut lesbar. Ob am Rechner zu Hause oder unterwegs auf dem Stand: Du findest dich mit wenigen Klicks zurecht.
+
+Das erwartet dich auf armatum.ch:
+🎯 Sortiment nach Themen – über 4000 Artikel von mehr als 100 Marken, von Optik über Zubehör bis Wiederladen und Ausrüstung
+🔧 Wiederladen bei Armatum – Kurse und mietbare Arbeitsplätze in Fulenbach
+🕔 Öffnungszeiten und Anfahrt zu unserem Laden
+💬 Persönliche Fachberatung – online stöbern, im Laden in Fulenbach nachfragen
+
+👉 Swipe durch die neue Startseite.
+
+Schau vorbei – der Link ist in unserer Bio.
+
+Wie gefällt dir der neue Look? Und was suchst du auf einer Website für Schützen und Jäger als Erstes? Schreib's in die Kommentare 👇 Dein Feedback hilft uns, die Seite weiter zu verbessern.
+```
+**Hashtags:** `#armatum #sportschiessen #jagdschweiz #wiederladen #schweiz`
+Standort-Tag: «Fulenbach» (wie bei #3).
+
+**Material:** vorhanden (5 Grafiken). Vor dem Posten bereinigen: siehe Auflagen im Regel-Check (Slides 2 und 3).
+
+**Fakten und Quellen:** armatum.ch, Startseite (abgerufen 11.10.2026): Hero-Text «Über 4000 Artikel von mehr als 100 Marken … Mit persönlicher Fachberatung aus Fulenbach SO.», Sortiment nach Themen, Bereich «Wiederladen bei Armatum» (Infrastruktur mieten, Kurse, über 1000 Artikel), Öffnungszeiten im Footer. Was gegenüber der alten Website neu ist, ist **nicht** belegt.
+
+**Regel-Check:** ⚠️ Caption ✅ geprüft, Grafiken mit Auflagen.
+- Caption: keine Preise, keine Aktionen/Sale/Angebote, kein «zu verkaufen», kein «DM für …». Das Sortiment wird nur allgemein beschrieben (Optik, Zubehör, Wiederladen, Ausrüstung), Waffen und Munition werden nicht genannt. Versand, Abholung, Rückgaberecht, Ankauf, Umbau und kundenspezifische Munition kommen nicht vor. Der CTA verweist nur auf die Website («Link in der Bio») und den Laden. Die Kurs- und Arbeitsplatz-Erwähnung ist eine Dienstleistung ohne Preis und ohne Ladedaten. Die Zahl «über 4000 Artikel» ist die Gesamtzahl laut Website. Die Aufzählung «von … bis …» ist bewusst nicht abschliessend formuliert. Keine bezahlte Bewerbung (Boost).
+- **Auflage Slide 2 (`02.jpg`):** Im Screenshot sind der Button «Aktuelle Angebote» und die ganze Service-Leiste lesbar: «Schneller Versand … Schweizer Post … nach Zahlungseingang», «Abholung vor Ort», «Fachberatung zu Optik, Wiederladen und **Waffenerwerb**», «10 Tage Rückgaberecht». Genau diese Punkte lassen wir in der Caption bewusst weg (Verkaufsbezug bei regulierten Waren, Waffenerwerb ist kein Instagram-Thema). Empfehlung: Screenshot unterhalb des grünen Hero-Bereichs abschneiden und «Aktuelle Angebote» unscharf machen, gleich wie die Navigation.
+- **Auflage Slide 3 (`03.jpg`):** Button «Aktuelle Angebote» unscharf machen.
+- **Hinweis Slides 2 und 3:** Der Hero-Text nennt «Munition» als Teil des Sortiments. Das ist eine allgemeine Beschreibung ohne Produkt, Preis oder Kaufaufforderung und deshalb kein Regelverstoss. Wer es ganz sauber will, macht den Satz unscharf. Der Inhaber entscheidet.
+- **Hinweis Slides 1 und 4:** «Übersichtlicher. Schneller.», «Neu & übersichtlich» und «jetzt schneller» behaupten einen Vergleich mit der alten Website. Das stimmt nur, wenn der Inhaber es bestätigt. Sonst schlage ich neutrale Texte vor: Cover «Klar gegliedert. Auch auf dem Handy.», Slide 4 Kicker «Übersichtlich», Titel «Das findest du auf armatum.ch».
+- Navigation im Desktop-Screenshot ist unscharf (enthielt «Sale %», «Waffen», «Munition»). Das ist ok und bleibt so.
+- Hinweis zu #3: Die Hook-Alternative «Neuer Look, mehr Wissen: …» für #3 würde sich mit #11 doppeln. Wenn #11 am Mo 12.10. kommt, empfehle ich für #3 den bisherigen Hook.
+
+`[BESTÄTIGEN: Was ist am Relaunch besonders neu oder wichtig und soll hervorgehoben werden (z. B. Suche, Filter, Handy-Ansicht, Themen-Navigation, Wiederlade-Bereich)?]`
+`[BESTÄTIGEN: Vergleichs-Aussagen auf Cover/Slide 4 («Übersichtlicher. Schneller.», «jetzt schneller») stehen lassen oder neutral formulieren]`
+`[BESTÄTIGEN: Slide 2 zuschneiden (Service-Leiste weg) und «Aktuelle Angebote» auf Slide 2 und 3 unscharf machen – ok?]`
+`[BESTÄTIGEN: Hero-Satz mit «Munition» stehen lassen oder unscharf machen]`
+`[BESTÄTIGEN: Termin Mo 12.10. 20:00 (Freigabe bis 16:00) oder Mo 19.10. 20:00]`
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -613,6 +670,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | – | ~~OK für die Instagram-Verbindung über Composio~~: Verbindung aktiv (armatum_ch, Business). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. | Veröffentlichen ab #1 | ✅ erledigt (11.10.) |
 | – | ~~Bestätigungen fürs Intro~~: keine Namensnennung der Inhaberperson; «seit 2024» ist ok | #3 | ✅ erledigt (11.10.) |
 | – | ~~Bio und Profilbild~~ | Profil | ✅ erledigt: bleiben unverändert (Entscheid Inhaber 11.10.) |
+| 2026-10-12 16:00 | **Freigabe #11 «Neuer Look für armatum.ch»** (Caption, Termin Mo 12.10. 20:00) + Angaben: Was am Relaunch besonders hervorgehoben werden soll, Vergleichs-Aussagen auf Cover/Slide 4 ok oder neutral, Screenshots bereinigen (Service-Leiste und «Aktuelle Angebote»), Hero-Satz mit «Munition», Story-Ergänzung 12.10. (#11 teilen). Ohne Freigabe bis dahin: Ausweichtermin Mo 19.10. 20:00, Freigabe dann bis So 18.10. 18:00 | #11 | offen |
 | 2026-10-14 12:00 | **Freigabe der ergänzten Stories 15.10. und 16.10.** (Live-Foto aus dem Laden bzw. «So findest du uns») | Stories 15./16.10. | offen |
 | 2026-10-14 12:00 | **Hook für #3:** beim bisherigen Hook bleiben oder die Relaunch-Variante nehmen («Neuer Look, mehr Wissen: …»), weil der Account bereits besteht | #3 | offen (Empfehlung) |
 | 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder, Sale-Plakate und Seriennummern) | #3 Intro | offen |
@@ -663,3 +721,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #10 «Im Fokus: Walther PDP Compact Steel Frame 9×19» ergänzt (Säule 3, Karussell aus 3 eigenen Fotos, So 25.10. 20:00, eine Woche nach #9). Fakten per Websuche belegt (Quellen im Detailabschnitt), Regel-Check mit Auflagen (Foto 02: Mündung Richtung Kamera), Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
 | 2026-10-11 | #10 auf Wunsch des Inhabers zum Vergleichs-Beitrag «Walther PDP Pro vs. PDP Compact Full Steel» umgebaut (5 Fotos, Termin unverändert So 25.10. 20:00). Pro-Variante nur vermutet (PDP Pro-X PMM), deshalb in der Caption nur allgemeine Pro-Merkmale; Kompensator ohne Gewinde-/Schalldämpfer-Bezug. Einzel-Entwurf entfernt. |
 | 2026-10-11 | #9: 16"-Lauf vom Inhaber bestätigt, Gewichtsangabe (ca. 2,8 kg ohne Magazin) bleibt. #9 und #10: Quellen auf Herstellerangaben umgestellt (Websuche-Auszüge von sigsauer.com, waltherarms.com, carl-walther.com), Kennzeichnung [H] Hersteller / [S] nur Sekundärquelle. #10 Caption: Gewicht der Compact Full Steel neutral «rund 1,1 kg» (Hersteller: 1090 g bzw. 40 oz). |
+| 2026-10-11 | #11 «Neuer Look für armatum.ch» ergänzt (Säule 5 Behind the Scenes, Karussell aus 5 fertigen Grafiken in `grafiken/11-website/`, Mo 12.10. 20:00, Ausweichtermin Mo 19.10. 20:00). Die Caption ist ohne Vorher-Vergleich formuliert und nennt weder Waffen, Munition, Angebote, Versand noch Rückgabe. Regel-Check: Caption geprüft. Auflagen für die Grafiken: Service-Leiste und «Aktuelle Angebote» in den Screenshots (Slides 2/3) entfernen bzw. unscharf machen, Vergleichs-Aussagen (Slides 1/4) bestätigen lassen. Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
