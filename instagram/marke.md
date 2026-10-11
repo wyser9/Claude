@@ -47,8 +47,17 @@ Daraus folgt für den Content: Wiederladen ist das Alleinstellungsmerkmal (Sorti
 ## 5. Markenfarben und Bildsprache
 
 - **Hex-Farben von der Website: nicht ermittelbar.** Das Seiten-CSS konnte ich nicht laden.
-- **Logo:** `/home/user/Claude/instagram/assets/logo-weiss.png`, weiss auf transparentem Hintergrund (1561×532). Links ist ein Emblem aus Flügeln, Schwert und Blitzen, rechts der Schriftzug «ARMATUM». Es funktioniert nur auf dunklem Hintergrund.
-- **Arbeitspalette für Instagram** (mein Vorschlag, **vom Inhaber bestätigen** oder durch die Website-Farben ersetzen):
+- **Logo-Varianten:** Alle liegen in `/home/user/Claude/instagram/assets/`, als PNG mit transparentem Hintergrund und je in Weiss und Schwarz (Übersicht in `assets/README.md`). Weisse Varianten kommen auf dunklen Hintergrund, schwarze auf hellen.
+
+| Variante | Datei | Einsatz auf Instagram |
+|---|---|---|
+| Quer: Emblem + Schriftzug (1561×532) | `logo-weiss.png` / `logo-schwarz.png` | Cover-Slide von Karussells, Schluss-Slide (CTA), Reel-Endcard, Intro-Post #3 |
+| Emblem mit «ARMATUM» in der Mitte (1014×887) | `emblem-weiss.png` / `emblem-schwarz.png` | **Profilbild**, Wasserzeichen in Reels (Ecke, ca. 60 % Deckkraft), Story-Ecke, Highlight-Cover |
+| Nur Schriftzug «ARMATUM» (1545×224) | `schriftzug-weiss.png` / `schriftzug-schwarz.png` | Kopf- oder Fusszeile auf Inhalts-Slides (klein, zentriert unten, ca. 25 % der Bildbreite) |
+
+- **Profilbild-Empfehlung:** `emblem-weiss.png` zentriert auf einer quadratischen Fläche in `#121212` (1080×1080 px), wobei das Emblem rund 65–70 % der Breite einnimmt. So bleibt genug Rand, damit beim runden Zuschnitt nichts abgeschnitten wird. Das Emblem ist im kleinen Kreis besser lesbar als das Querlogo, und Weiss auf Dunkel fällt im Feed auf. Gleiche Vorlage für die Story-Highlight-Cover (Wiederladen, Tests, Events, FAQ), dort mit einem kleinen Messing-Icon statt Emblem.
+- **Grundregel:** Pro Grafik genau ein Logo-Element. Cover und Schluss bekommen das Querlogo, Inhalts-Slides nur den Schriftzug. Das Logo wird nie eingefärbt, verzerrt oder auf unruhige Fotos gesetzt (dann eine dunkle Fläche unterlegen).
+- **Arbeitspalette für Instagram** (mein Vorschlag, **vom Inhaber bestätigen** oder durch die Website-Farben ersetzen). Standard ist das dunkle Design. Das helle Design ist für Checklisten und Tabellen gedacht, die man ausdrucken oder speichern will, damit der Feed etwas Abwechslung bekommt:
 
 | Rolle | Farbe | Hex |
 |---|---|---|
@@ -58,6 +67,10 @@ Daraus folgt für den Content: Wiederladen ist das Alleinstellungsmerkmal (Sorti
 | Nebentext | Hellgrau | `#B5B5B5` |
 | Akzent (Zahlen, Linien, Highlights) | Messing | `#B08D57` |
 | Warnhinweise (Sicherheit) | Signalorange | `#E07A1F` |
+| Heller Hintergrund (helles Design) | Warmweiss | `#F4F1EA` |
+| Text auf hell | Schwarz | `#121212` |
+
+Im hellen Design verwende ich die schwarzen Logo-Varianten und `#8A6A3A` als Akzent, ein dunkleres Messing für genug Kontrast.
 
 Den Messington habe ich bewusst gewählt: Er passt zu Hülsen und Wiederladen und wirkt zum eleganten Logo hochwertig, ohne militärisch zu wirken.
 
@@ -82,6 +95,7 @@ Wiederladen, Waffenpflege, ehrliche Tests
 Infos & Shop 👇
 ```
 - **Link-Feld:** https://armatum.ch
+- Profilbild: `emblem-weiss.png` auf `#121212` (siehe Abschnitt 5)
 - Kategorie im Profil: «Sportartikelgeschäft» oder «Einzelhandel». Adresse optional anzeigen (Färchstrasse 6b, 4629 Fulenbach).
 - In der Bio stehen keine Preise und kein «DM für Angebote».
 
