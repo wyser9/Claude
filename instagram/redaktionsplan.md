@@ -1,7 +1,7 @@
 # Redaktionsplan @armatum_ch – 12.10. bis 25.10.2026
 
 Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Entscheide des Inhabers, Auswertung des bestehenden Accounts) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
-Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, #9 (SIG Sauer Cross, So 18.10.), die Stories 15.10./16.10. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
+Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, #9 (SIG Sauer Cross, So 18.10.), #10 (Vergleich Walther PDP Pro vs. Compact Full Steel, So 25.10.), die Stories 15.10./16.10. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
 Ausgangslage: Es handelt sich um einen **bestehenden Account** (2450 Follower, folgt 5547 Konten, 347 Beiträge) und keinen Neustart. Die Auswertung steht in `/home/user/Claude/instagram/auswertungen.md` (Abschnitt «Ausgangslage 11.10.2026»).
 
 Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info, die die Website nicht belegt und die der Inhaber kurz bestätigen soll.
@@ -91,7 +91,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Ausführung, Waffe entladen/Magazin leer]` |
-| 10 | 25.10.2026 | So | 20:00 | Karussell (3 Fotos) | 3 Produkt-Vorstellung | Im Fokus: Walther PDP Compact Steel Frame 9×19 | «Die PDP kennst du in Polymer. Aber kennst du sie in Stahl?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Waffe entladen/Magazin leer, Foto 02]` |
+| 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Pro-Variante, entladen/Magazine leer, Cover]` |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -496,6 +496,77 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 
 ---
 
+### #10 – So 25.10.2026, 20:00 – Karussell – Säule 3: Vergleich – Walther PDP Pro vs. PDP Compact Full Steel (9×19)
+
+**Status:** Entwurf – wartet auf Freigabe (zusammen mit Woche 2, spätestens Fr 23.10.2026, 18:00). Auf Wunsch des Inhabers vom Einzel-Beitrag zum Vergleich umgebaut (11.10.2026).
+
+**Terminwahl:** So 25.10., 20:00. In Woche 2 sind Di 20.10. (#5), Mi 21.10. (#6), Do 22.10. (#7) und Sa 24.10. (#8) belegt. Mo 19.10. fällt weg, weil er direkt auf #9 folgt. Fr 23.10. käme direkt nach dem Produkttest #7, das wären zwei Produkt-Beiträge hintereinander. Der So 25.10. liegt genau eine Woche nach #9, am selben Wochentag und zur selben Uhrzeit. So lassen sich die beiden Waffen-Vorstellungen direkt vergleichen (Test des Slots So 20:00). 20:00 liegt in der Spitze der Insights (20–22 Uhr).
+
+**Slides** (eigene Fotos, 4:5, fertig in `grafiken/10-walther-pdp/`, Seriennummern unkenntlich gemacht):
+1. `01.jpg` – beide nebeneinander von vorne (links Pro mit Kompensator, rechts Compact Full Steel), Hook-Bild
+2. `02.jpg` – beide von hinten/schräg
+3. `03.jpg` – Compact Full Steel, Seitenansicht
+4. `04.jpg` – Compact Full Steel, schräg
+5. `05.jpg` – Compact Full Steel, von oben (Kimme, Optic-Ready-Fräsung, Serrations, Griffstruktur)
+
+**Caption zum Kopieren:**
+```
+Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel? 🤔
+
+Zwei Walther PDP in 9×19 mm nebeneinander, und doch für unterschiedliche Schützen gemacht. Swipe durch den Vergleich.
+
+⚡ PDP Pro (links)
+🔹 Längere Bauweise mit Kompensator an der Mündung. Er leitet einen Teil der Gase nach oben ab und hält so die Mündung beim Schuss flacher.
+🔹 Polymerrahmen, dadurch deutlich leichter als die Stahl-Version
+🔹 Optic Ready für ein Leuchtpunktvisier
+👉 Für dich, wenn du auf Tempo gehst: dynamisches Schiessen und IPSC. Gut zu wissen: Mit Kompensator startest du im IPSC in der Open Division.
+
+🔩 PDP Compact Full Steel (rechts)
+🔹 Rahmen und Schlitten aus Stahl, rund 1,1 kg mit leerem Magazin. Die Masse dämpft den Rückstoss spürbar.
+🔹 Kompakter 4"-Lauf (ca. 10 cm)
+🔹 Performance Duty Trigger (PDT)
+🔹 Optic Ready ab Werk, ohne Visier mit Abdeckplatte
+🔹 SuperTerrain-Serrations vorne und hinten am Schlitten, griffig beim Durchladen und bei der Sichtkontrolle
+👉 Für dich, wenn du eine ruhige, satte Schussabgabe in kompakter Grösse willst, vom Präzisionsprogramm bis zum Training auf dem Stand.
+
+⚖️ Ehrlich gesagt: Rund 1,1 kg sind für eine Compact viel. Wer es leicht mag, fühlt sich mit der Pro wohler. Wer Ruhe in der Hand sucht, nimmt den Stahl.
+
+📸 Für die Fotos sind beide Pistolen entladen und die Magazine leer.
+
+Und du? Team Kompensator oder Team Stahl? Schreib's in die Kommentare 👇
+
+Unsicher, welche zu deiner Disziplin passt? Wir beraten dich gern bei uns im Laden in Fulenbach. Mehr auf armatum.ch.
+
+Speichere den Vergleich und schick ihn einem Schützenkollegen, der gerade zwischen zwei Pistolen schwankt.
+```
+**Hashtags:** `#walther #waltherpdp #sportschiessen #ipsc #schweiz`
+Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA) oder der deutsche Hersteller-Account]`
+
+**Fakten und Quellen** (abgerufen 11.10.2026; waltherarms.com war technisch nicht erreichbar, die Werte stammen aus Händler-Datenblättern und Fachpresse, die die Herstellerangaben wiedergeben):
+- **Compact Full Steel:** Stahlschlitten und Stahlrahmen, 4"-Lauf, 9 mm, 40,39 oz (ca. 1145 g) mit leerem Magazin, Performance Duty Trigger, SuperTerrain-Serrations, Optic Ready: [Big Tex Ordnance](https://www.bigtexordnance.com/?p=777478), [Kinsey's](https://webstore.kinseysinc.com/Walther-PDP-Steel-Frame-Compact-Pistol-9mm-4-in.-Black-10-rd./1210747), [Joensuun SAR](https://www.joensuunsar.fi/kauppa/aseet/walther-pdp-steel-frame-4-compact/) (1109 g mit Magazin). Rückstossdämpfung durch den Stahlrahmen (Herstelleraussage, sinngemäss): [Primary Arms](https://www.primaryarms.com/walther-pdp-compact-steel-frame-9mm-pistol-4in-qualified-individuals-only), [Safariland CADRE](https://inside.safariland.com/blog/walther-pdp-steel-frame-full-size-and-compact). Abdeckplatte ab Werk: [Athlon Outdoors](https://athlonoutdoors.com/article/walther-pdp-compact-review/)
+- **PDP Pro (Variante vermutet):** Die Fotos passen am ehesten zur **PDP Pro-X PMM** (Kompensator ab Werk, Polymerrahmen, Stahlschlitten, 4,6"-Lauf, Dynamic Performance Trigger, 18-Schuss-Magazin; Compact ca. 680 g, Full Size ca. 765 g leer): [Rainier Arms Compact](https://rainierarms.com/walther-pdp-pro-x-pmm-9mm-compact-pistol), [Rainier Arms Full Size](https://rainierarms.com/walther-pdp-pro-x-pmm-9mm-full-size-pistol), [swisswaffen Pro-X Full Size](https://swisswaffen.com/markt/gunlex/walther-pdp/walther-pdp-pro-x-full-size/mcaxxvjgne7p). Es gibt auch die PDP Pro SD, meist ohne Kompensator: [all4shooters](https://all4shooters.com/en/shooting/pistols/test-walther-pdp-full-size-pro-sd-and-compact-pro-sd-in-9-mm-luger). In der Caption steht deshalb nur, was für jede Pro-Variante mit Kompensator gilt (Polymerrahmen, leichter, Kompensator, Optic Ready). Lauflänge, Gewicht, Abzug und Kapazität stehen erst nach Bestätigung drin.
+- **IPSC:** Eine Pistole mit Kompensator wird in der Open Division geschossen (IPSC-Regelwerk Handgun). Fachlich vom Inhaber bestätigen lassen.
+- Bewusst nicht in der Caption: Gewinde, Laufgewinde-Masse und jeder Bezug zu Schalldämpfern, Hersteller des Kompensators, Magazinkapazitäten, Abzugsgewichte, Herstellungsland.
+
+**Material:** vorhanden (5 Fotos in `grafiken/10-walther-pdp/`, Übersicht `uebersicht.png`).
+
+**Regel-Check:** ✅ geprüft mit Auflagen.
+- Kein Verkauf: keine Preise, kein «zu verkaufen», kein «verfügbar/an Lager», kein «DM für Preis». CTA nur Beratung im Laden und armatum.ch. Preis- oder Kaufanfragen in Kommentaren und DMs nur mit Verweis auf Laden/armatum.ch beantworten. Keine Bewerbung als Ad/Boost.
+- Kompensator wird nur als «Kompensator» mit seiner Funktion (Mündung flacher) benannt. Kein Gewinde, kein Schalldämpfer, kein Umbau oder Nachrüsten, keine Montageanleitung. Optic Ready beschreibt nur die Werksausstattung.
+- Kein Bezug zu Waffentragen, Selbstverteidigung oder Einsatz gegen Menschen. Beide Pistolen werden nur als Sportpistolen für den Stand und IPSC vorgestellt. Das Tragen ist in der Schweiz bewilligungspflichtig, deshalb bewusst kein «Carry»-Thema.
+- Bilder: reine Produktfotos auf Ständern, keine Personen, keine Handhabung, keine Preisschilder, Seriennummern unkenntlich.
+- **Magazine eingesetzt, Schlitten geschlossen:** kein Regelverstoss (Produktfoto, keine Handhabung). Weil man auf den Fotos nicht sieht, dass die Pistolen leer sind, steht in der Caption «entladen, Magazine leer». Das muss der Inhaber bestätigen.
+- ⚠️ **Mündung Richtung Kamera:** Auf `01.jpg` (Cover) und `04.jpg` (schräg) zeigen die Mündungen schräg zur Kamera bzw. zum Betrachter. Das verstösst nicht gegen die Meta-Regeln, kann aber Sicherheits-Kommentare auslösen und widerspricht optisch dem Grundsatz «Mündung nie auf Menschen». Empfehlung: Als Cover `02.jpg` nehmen (Mündungen weniger frontal) oder die Bilder so lassen, weil die Pistolen entladen auf Ständern liegen und niemand davorsteht. Der Inhaber entscheidet.
+
+`[BESTÄTIGEN: genaue Pro-Variante (vermutet PDP Pro-X PMM, Compact oder Full Size?) – danach ggf. Lauflänge/Gewicht ergänzen]`
+`[BESTÄTIGEN: Polymerrahmen bei der Pro (Steel-Frame-Pro-Varianten existieren, dann Caption anpassen)]`
+`[BESTÄTIGEN: beide Pistolen beim Fotografieren entladen, Magazine leer]`
+`[BESTÄTIGEN: Cover 01 (Mündungen Richtung Kamera) behalten oder 02 als Cover]`
+`[BESTÄTIGEN: IPSC-Hinweis «Kompensator = Open Division» fachlich ok]`
+`[BESTÄTIGEN: Marken-Tag Walther gewünscht und welcher Account]`
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -544,6 +615,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
 | 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + Bestätigungen: Ausführung/Lauflänge, Waffe entladen und Magazin leer, Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein | #9 | offen |
+| 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen: genaue Pro-Variante und Rahmenmaterial, beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
 | 2026-10-20 14:00 | **Freigabe des geschnittenen Reels** | #5 Reel | offen |
@@ -579,3 +651,5 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | Entscheide des Inhabers eingetragen: Composio-Verbindung aktiv (nur Lesezugriff genutzt, nichts veröffentlicht), keine Namensnennung der Inhaberperson, «seit 2024» ok, Altersgrenze bewusst nicht gesetzt (geschlossen). Noch offen bleiben Bio, Profilbild und die ergänzten Stories 15.10./16.10. Den bestehenden Account ausgewertet (`auswertungen.md`). Die Posting-Zeiten bleiben unverändert, für #4 gibt es eine Empfehlung (12:00). Empfehlungen zu #3 (Relaunch-Hook), zum Folgen-Verhältnis und zu Altbeiträgen mit Verkaufshinweis ergänzt. |
 | 2026-10-11 | Profilbild und Bio bleiben unverändert (Inhaber). Grafiken für #1, #2, #4 erstellt (`grafiken/01-…`, `02-…`, `04-…`, dunkles Design mit Olivgrün); Design vom Inhaber für gut befunden («Beiträge in grün sind super»). |
 | 2026-10-11 | #9 «Im Fokus: SIG Sauer Cross in .308 Win» ergänzt (Säule 3, Karussell aus 3 eigenen Fotos, So 18.10. 20:00, zugleich erster Test des 20-Uhr-Slots). Fakten per Websuche belegt (Quellen im Detailabschnitt), Regel-Check mit Auflagen, Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
+| 2026-10-11 | #10 «Im Fokus: Walther PDP Compact Steel Frame 9×19» ergänzt (Säule 3, Karussell aus 3 eigenen Fotos, So 25.10. 20:00, eine Woche nach #9). Fakten per Websuche belegt (Quellen im Detailabschnitt), Regel-Check mit Auflagen (Foto 02: Mündung Richtung Kamera), Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
+| 2026-10-11 | #10 auf Wunsch des Inhabers zum Vergleichs-Beitrag «Walther PDP Pro vs. PDP Compact Full Steel» umgebaut (5 Fotos, Termin unverändert So 25.10. 20:00). Pro-Variante nur vermutet (PDP Pro-X PMM), deshalb in der Caption nur allgemeine Pro-Merkmale; Kompensator ohne Gewinde-/Schalldämpfer-Bezug. Einzel-Entwurf entfernt. |
