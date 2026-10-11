@@ -1,7 +1,7 @@
 # Redaktionsplan @armatum_ch – 12.10. bis 25.10.2026
 
 Erstellt: So, 11.10.2026 · Zuletzt aktualisiert: So, 11.10.2026 (Entscheide des Inhabers, Auswertung des bestehenden Accounts) · Erstellt von: Irene (Social Media) · Zeitzone: Europe/Zurich
-Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, die Stories 15.10./16.10., Bio und Profilbild. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
+Status gesamt: **Woche 1 freigegeben (#1, #2, #4 und Stories 12.–18.10., ausgenommen die ergänzten Stories 15.10. und 16.10.), Woche 2 wartet auf Freigabe.** Noch offen: #3, #9 (SIG Sauer Cross, So 18.10.), die Stories 15.10./16.10. Es ist noch nichts veröffentlicht. **Die Instagram-Verbindung über Composio ist aktiv** (Konto armatum_ch, Business, OK des Inhabers vom 11.10.2026). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. Bisher habe ich nur Daten gelesen.
 Ausgangslage: Es handelt sich um einen **bestehenden Account** (2450 Follower, folgt 5547 Konten, 347 Beiträge) und keinen Neustart. Die Auswertung steht in `/home/user/Claude/instagram/auswertungen.md` (Abschnitt «Ausgangslage 11.10.2026»).
 
 Legende: `[FEHLT: …]` = Info vom Inhaber nötig, bevor gepostet werden kann. `[BESTÄTIGEN: …]` = Info, die die Website nicht belegt und die der Inhaber kurz bestätigen soll.
@@ -90,8 +90,9 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
+| 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Ausführung, Waffe entladen/Magazin leer]` |
 
-Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 1×, Schiesssport/Jagd 1×, Community 2×.
+Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) als 5. Feed-Post in Woche 1, zugleich erster Test des 20-Uhr-Slots. Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 2× (mit #9), Schiesssport/Jagd 1×, Community 2×.
 
 ---
 
@@ -423,6 +424,77 @@ Fehlt dein Thema? Schreib's in die Kommentare – oder frag uns direkt: Heute is
 
 ---
 
+### #9 – So 18.10.2026, 20:00 – Karussell – Säule 3: Im Fokus – SIG Sauer Cross in .308 Win
+
+**Status:** Entwurf – wartet auf Freigabe (Freigabe bis Sa 17.10.2026, 18:00).
+
+**Terminwahl:** So 18.10., 20:00. Die Insights zeigen an allen gemessenen Tagen (Mo–Do und Sa) die Spitze zwischen 20 und 22 Uhr; mit 20:00 liegt die erste Stunde voll darin. Waffen-Vorstellungen (K11/K31) sind bisher das stärkste Thema, deshalb bekommt #9 den besten Slot. Der Sonntag ist frei, es gibt keinen zweiten Feed-Post am selben Tag, und #4 (Sa 09:30) hat einen vollen Tag Vorsprung. Fr 16.10. wäre nur einen Tag nach #3 und fällt mit der Prüf-Frist für #4 (Fr 18:00) zusammen; zudem ist der Freitagabend erfahrungsgemäss ausgeh-lastig (für Fr/So liegen keine eigenen Insights vor). Gilt zugleich als erster Test des 20-Uhr-Slots, der für Woche 3 vorgesehen war.
+
+**Slides** (eigene Fotos, 4:5, fertig in `grafiken/09-sig-cross/`):
+1. `01.jpg` – Gesamtansicht auf Holzboden (Hook-Bild)
+2. `02.jpg` – Schaft eingeklappt (kompaktes Packmass)
+3. `03.jpg` – Detail Verschluss/Kammerstängel von oben
+4. Optional (empfohlen für die Speicherrate): Steckbrief-Slide im dunklen Design mit den Eckdaten aus der Caption (ohne Preise). Alternativ `fotos/sig-cross/gesamt-2.jpg`. Wird erst nach Freigabe erstellt.
+
+**Caption zum Kopieren:**
+```
+Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein. 🎯
+
+Im Fokus: die Cross von @sigsauerinc im Kaliber .308 Win (7.62×51). Ein Repetierer, der Ideen aus dem Präzisionsschiessen in ein kompaktes, leichtes Paket bringt.
+
+Das macht sie besonders:
+🔹 Klappschaft: per Knopfdruck eingeklappt – platzsparend im Futteral und im Auto
+🔹 Schaftlänge und Wangenauflage ohne Werkzeug verstellbar – schnell auf dich eingestellt
+🔹 Dreiwarzen-Verschluss mit nur 60° Öffnungswinkel – kurzer Weg beim Repetieren, das Zielfernrohr kann tiefer sitzen
+🔹 Einteiliges Aluminium-Gehäuse – kein Einbetten (Bedding) nötig
+🔹 Zweistufiger Match-Abzug, von aussen einstellbar
+🔹 Freischwingender Edelstahllauf mit M-LOK-Handschutz für Zweibein & Co.
+🔹 AICS-kompatible Magazine, beidseitige Sicherung
+
+Für wen eignet sie sich?
+🎯 Präzision & Stand: verstellbarer Schaft und Match-Abzug für saubere Gruppen auf Distanz
+🦌 Jagd: in der Ausführung mit 16"-Lauf rund 2,8 kg ohne Magazin – leicht genug für den Pirschgang, eingeklappt kompakt im Auto
+🔁 Allrounder: eine Büchse für Stand und Revier, statt zwei
+
+Gut zu wissen: Der Skelettschaft ist funktional, aber Geschmackssache. Wer klassisches Holz liebt, wird mit der Cross optisch nicht warm.
+
+📸 Für die Fotos ist die Waffe entladen und das Magazin leer.
+
+Klappschaft am Repetierer: praktisch oder unnötig? Und wofür nutzt du deine .308 – eher Stand oder Revier? Schreib's in die Kommentare 👇
+
+Fragen zur Cross oder zu Präzisionsrepetierern allgemein? Wir beraten dich gern bei uns im Laden in Fulenbach. Mehr auf armatum.ch.
+
+Speichere den Beitrag als Steckbrief und schick ihn einem Schützenkollegen, der gerade eine .308 sucht.
+```
+**Hashtags:** `#sigsauer #repetierer #präzisionsschiessen #jagdschweiz #schweiz`
+Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine Collab-Einladung ohne Absprache.
+
+**Fakten und Quellen** (abgerufen 11.10.2026; sigsauer.com selbst war technisch nicht erreichbar, die Herstellerangaben stammen aus dem SIG-Blog bzw. dessen Wiedergabe in der Fachpresse):
+- Dreiwarzen-Verschluss, 60° Öffnungswinkel, austauschbarer Kammerstängel, zweistufiger Match-Abzug von aussen einstellbar, beidseitige Sicherung, freischwingender Edelstahllauf, M-LOK-Handschutz: [SIG-Blog Launch](https://www.sigsauer.com/blog/sig-sauer-introduces-cross-rifle-the-first-sig-sauer-precision-bolt-action-hunting-rifle-manufactured-in-the-usa), [Gun Digest](https://gundigest.com/rifles/hunting-rifles/sig-sauer-back-in-the-bolt-action-market-with-cross-rifle)
+- Einteiliges Aluminium-Gehäuse ohne Bedding, AICS-Magazine, Klappschaft per Knopfdruck, Schaftlänge und Wangenauflage werkzeuglos verstellbar: [Shooting Illustrated](https://www.shootingillustrated.com/articles/2019/12/19/new-for-2020-sig-sauer-cross-rifle), [SIG-Blog Now Shipping](https://www.sigsauer.com/blog/sig-sauer-cross-bolt-action-rifle-now-shipping)
+- .308 Win mit 16"-Lauf, 6,2 lb (ca. 2,8 kg) ohne Magazin, Drall 1:10, Gewinde 5/8×24: [Military Times](https://www.militarytimes.com/off-duty/gearscout/irons/2019/12/18/sig-just-took-a-shot-at-the-rifle-world-with-its-new-bolt-action-cross-in-a-whole-new-rifle-caliber/), [Rainier Arms](https://www.rainierarms.com/sig-sauer-cross-308-rifle-16-black/)
+- Weitere Ausführungen (z. B. 20"-STX, 24"-PRS) sind schwerer: [Rainier Arms STX](https://www.rainierarms.com/sig-sauer-cross-stx-308-tactical-bolt-action-rifle-20-black/), [Blackstone PRS](https://blackstoneshooting.com/sig-sauer-cross-prs-308-win-24-00-barrel-10-rds-cerakote-elite-concrete)
+- Bewusst nicht in der Caption: Abzugsgewicht (Quellen widersprechen sich: 2–4,5 lb bzw. 2,5–4 lb), Masse eingeklappt (Angaben schwanken), Gewinde-Mass.
+
+**Material:** vorhanden (3 Fotos in `grafiken/09-sig-cross/`, Originale in `fotos/sig-cross/`). Optionaler Steckbrief-Slide nach Freigabe.
+
+**Story-Idee 18.10. (Ergänzung, wartet auf Freigabe):** Abends #9 teilen + Umfrage-Sticker «Klappschaft am Repetierer? Praktisch / Brauch ich nicht».
+
+**Regel-Check:** ✅ geprüft mit Auflagen.
+- Kein Verkauf: keine Preise, kein «zu verkaufen», kein «verfügbar/an Lager», kein «DM für Preis». Der CTA lädt nur zur Beratung im Laden und auf armatum.ch ein. Kommentare oder DMs mit Preis- oder Kaufanfragen beantworten wir nur mit «Melde dich im Laden in Fulenbach oder schau auf armatum.ch», nie mit Preis oder Verfügbarkeit.
+- Keine Bewerbung als Ad/Boost.
+- Laufgewinde ist nur auf dem Foto sichtbar (mit Schutzkappe) und wird in der Caption bewusst nicht erwähnt: kein Bezug zu Schalldämpfern (in der Schweiz bewilligungspflichtig, `rechtlich prüfen`, falls das je Thema wird). Keine Umbau- oder Tuning-Hinweise.
+- Bilder: reine Produktfotos, Waffe liegt auf Holzboden, keine Personen, keine Handhabung, keine Preisschilder, keine lesbaren Seriennummern erkennbar, kein Gewaltbezug. Fakten nur belegt, Ausführungs-Details mit [BESTÄTIGEN].
+- **Magazin eingesetzt:** kein Regelverstoss. Meta erlaubt die Darstellung von Waffen; unsere Sicherheitsregeln betreffen Handhabung und Schiessen (Finger, Mündung, Schutz), und hier wird nichts gehandhabt. Weil der Verschluss auf den Fotos geschlossen ist, sieht man aber nicht, dass die Waffe leer ist. Deshalb steht in der Caption «Waffe entladen, Magazin leer». Voraussetzung: Der Inhaber bestätigt das. Für künftige Produktfotos: Magazin entnommen oder Verschluss offen.
+- Altersgrenze im Profil: bleibt Entscheid des Inhabers; der Beitrag enthält kein Handelsangebot.
+
+`[BESTÄTIGEN: Ausführung – 16"-Lauf, Standardversion schwarz? Sonst Gewichtszeile anpassen oder streichen]`
+`[BESTÄTIGEN: Waffe beim Fotografieren entladen, Magazin leer]`
+`[BESTÄTIGEN: Marken-Tag @sigsauerinc gewünscht]`
+`[BESTÄTIGEN: Slide 4 Steckbrief erstellen – ja/nein]`
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -470,6 +542,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
+| 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + Bestätigungen: Ausführung/Lauflänge, Waffe entladen und Magazin leer, Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein | #9 | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
 | 2026-10-20 14:00 | **Freigabe des geschnittenen Reels** | #5 Reel | offen |
@@ -504,3 +577,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | Abgleich mit armatum.ch (abgerufen 11.10.2026): Öffnungszeiten inkl. Samstagsdaten bis 19.12.2026, Parkplatz A. Jäggi AG, Werkstatt-Leistungen, Wiederlade-Infrastruktur, Sortimentszahlen (über 4000 Artikel / über 1000 Wiederladen) übernommen. Palette auf Markenfarben umgestellt (Olivgrün `#4e5743`, Anthrazit `#313131`, Website-Grautöne), Messing gestrichen, Profilbild auf Olivgrün. Captions #3, #5, #6, #7, #8 und Stories angepasst (Öffnungs-Samstag 24.10. verknüpft). Woche 1 (#1, #2, #4, Stories 12.–18.10.) als freigegeben markiert (11.10.2026, vom Inhaber im Chat freigegeben); deren Captions unverändert, nur Grafikfarben angepasst. |
 | 2026-10-11 | Entscheide des Inhabers eingetragen: Composio-Verbindung aktiv (nur Lesezugriff genutzt, nichts veröffentlicht), keine Namensnennung der Inhaberperson, «seit 2024» ok, Altersgrenze bewusst nicht gesetzt (geschlossen). Noch offen bleiben Bio, Profilbild und die ergänzten Stories 15.10./16.10. Den bestehenden Account ausgewertet (`auswertungen.md`). Die Posting-Zeiten bleiben unverändert, für #4 gibt es eine Empfehlung (12:00). Empfehlungen zu #3 (Relaunch-Hook), zum Folgen-Verhältnis und zu Altbeiträgen mit Verkaufshinweis ergänzt. |
 | 2026-10-11 | Profilbild und Bio bleiben unverändert (Inhaber). Grafiken für #1, #2, #4 erstellt (`grafiken/01-…`, `02-…`, `04-…`, dunkles Design mit Olivgrün); Design vom Inhaber für gut befunden («Beiträge in grün sind super»). |
+| 2026-10-11 | #9 «Im Fokus: SIG Sauer Cross in .308 Win» ergänzt (Säule 3, Karussell aus 3 eigenen Fotos, So 18.10. 20:00, zugleich erster Test des 20-Uhr-Slots). Fakten per Websuche belegt (Quellen im Detailabschnitt), Regel-Check mit Auflagen, Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
