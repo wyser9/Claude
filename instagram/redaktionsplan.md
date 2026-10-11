@@ -91,7 +91,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 18.10. 20:00 |
-| 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: entladen/Magazine leer, Cover, IPSC, Marken-Tag]` |
+| 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 25.10. 20:00 (Titelbild = Ansicht von hinten) |
 | 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | **Freigegeben (11.10.2026)** inkl. Story-Teilen ca. 20:15 – Veröffentlichung geplant Mo 12.10. 20:00 |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
@@ -685,7 +685,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
 | – | ~~Freigabe #9 SIG Sauer Cross~~ ✅ freigegeben 11.10. (Tag @sigsauerinc, Steckbrief ja, entladen ✅) | #9 | offen |
-| 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen (Pro-Variante seit 11.10. bestätigt): beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
+| – | ~~Freigabe #10 Walther-Vergleich~~ | #10 | ✅ freigegeben 11.10. (Titelbild 02→01, ohne IPSC-Hinweis, Tag @waltherarms, entladen ✅) |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
 | 2026-10-20 14:00 | **Freigabe des geschnittenen Reels** | #5 Reel | offen |
@@ -731,3 +731,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #11 vom Inhaber freigegeben («#11 frei, Story ja»). Veröffentlichung Mo 12.10. 20:00, Story mit `grafiken/11-website/story.jpg` ca. 20:15 (Link-Sticker per API nicht möglich → Hinweis «Link in der Bio» im Bild). |
 | 2026-10-11 | #9 vom Inhaber freigegeben, Marken-Tag @sigsauerinc, Steckbrief-Slide `04.jpg` erstellt. Veröffentlichung So 18.10. 20:00 geplant. |
 | 2026-10-11 | #10: Titelbild = bisheriges 02 (beide Pistolen von hinten/schräg), Bilder 01/02 getauscht; IPSC-Hinweis «Open Division» gestrichen (Inhaber). |
+| 2026-10-11 | #10 vom Inhaber freigegeben. Veröffentlichung So 25.10. 20:00 (Winterzeit) geplant. |
