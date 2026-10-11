@@ -1,0 +1,37 @@
+{
+  "post": "#11 – Neuer Look für armatum.ch",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Neuer Look für armatum.ch",
+      "subtitle": "Übersichtlicher. Schneller. Auch auf dem Handy."
+    },
+    {
+      "type": "shot",
+      "kicker": "Die Startseite",
+      "title": "Alles auf einen Blick",
+      "image": "web-desktop.png"
+    },
+    {
+      "type": "shot",
+      "kicker": "Mobil",
+      "title": "Gemacht fürs Handy",
+      "image": "web-mobile.png",
+      "maxHeight": 860,
+      "radius": 40,
+      "border": 14
+    },
+    {
+      "type": "content",
+      "badge": "✓",
+      "kicker": "Neu & übersichtlich",
+      "title": "Das findest du jetzt schneller",
+      "body": "**Sortiment nach Themen** – Optik bis Wiederladen\n**Wiederladen:** Kurse & Arbeitsplätze\n**Öffnungszeiten & Anfahrt**\n**Fachberatung** im Laden in Fulenbach"
+    },
+    {
+      "type": "cta",
+      "title": "Schau vorbei: armatum.ch",
+      "body": "Link in der Bio 🔗\nWie gefällt dir der neue Look? Sag's uns 👇"
+    }
+  ]
+}

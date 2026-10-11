@@ -68,6 +68,18 @@ function content(s, i, n) {
   </div>`;
 }
 
+function shot(s, i, n) {
+  const src = 'data:image/png;base64,' + readFileSync(resolve(dirname(specPath), s.image)).toString('base64');
+  return `<div class="slide" style="display:flex;flex-direction:column">
+    ${s.kicker ? `<div class="kicker" style="margin-top:0">${esc(s.kicker)}</div>` : ''}
+    <h2 style="font-size:68px">${md(s.title)}</h2>
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;margin:40px 0 90px">
+      <img src="${src}" style="max-width:${s.maxWidth || 904}px;max-height:${s.maxHeight || 820}px;border-radius:${s.radius || 18}px;border:${s.border || 10}px solid #1f1f1f;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+    </div>
+    <div class="foot"><img src="${logo('schriftzug-weiss.png')}"><span class="count">${i + 1}/${n}</span></div>
+  </div>`;
+}
+
 function cta(s, i, n) {
   return `<div class="slide" style="display:flex;flex-direction:column;align-items:center;text-align:center">
     ${s.warn ? `<div class="warn" style="margin-top:0;text-align:left;width:100%"><div class="t">⚠ Sicherheit</div>${md(s.warn)}</div>` : '<div style="height:40px"></div>'}
@@ -86,7 +98,7 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: 1080, height: 1350 } });
 const n = spec.slides.length;
 for (const [i, s] of spec.slides.entries()) {
-  const inner = s.type === 'cover' ? cover(s) : s.type === 'cta' ? cta(s, i, n) : content(s, i, n);
+  const inner = s.type === 'cover' ? cover(s) : s.type === 'cta' ? cta(s, i, n) : s.type === 'shot' ? shot(s, i, n) : content(s, i, n);
   await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${inner}</body></html>`, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   const file = resolve(outDir, `${String(i + 1).padStart(2, '0')}.png`);
