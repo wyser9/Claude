@@ -85,7 +85,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 1 | 13.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | 5 Fehler bei der Waffenreinigung | «Fehler Nr. 3 machen fast alle – du wahrscheinlich auch.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
 | 2 | 14.10.2026 | Mi | 18:30 | Karussell (9 Slides, dunkel) | 2 Wiederladen | Wiederladen in 7 Schritten – der Überblick | «Wiederladen klingt kompliziert? Es sind 7 Schritte.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
 | 3 | 15.10.2026 | Do | 19:00 | Karussell (6 Slides, dunkel + Fotos) | 5 Community | Hallo, wir sind Armatum | «Schön, dass du da bist. Wer steckt hinter @armatum_ch?» | Entwurf fertig – wartet auf Fotos und Freigabe |
-| 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)** – fachliche Prüfung des ABC bis Fr 16.10. 18:00 noch offen, sonst Verschiebung |
+| 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)**, fachliche Prüfung ✅ (Inhaber «ABC ok», 11.10.) – Veröffentlichung geplant Sa 17.10. 09:30 |
 | 5 | 20.10.2026 | Di | 18:30 | Reel (20–25 Sek.) | 2 Wiederladen | Hülsenvorbereitung: vom Messing-Chaos zur präzisen Hülse | «Aus dieser Hülse wird Präzision.» | Entwurf – wartet auf Freigabe `[FEHLT: Video]` |
 | 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
@@ -232,7 +232,7 @@ Standort-Tag: «Fulenbach» bzw. das Geschäft, falls als Ort auf Instagram vorh
 
 ### #4 – Sa 17.10.2026, 09:30 – Karussell – Säule 4: Das Schützen-ABC der Schweiz
 
-**Status:** Freigegeben (11.10.2026). **Offen: fachliche Prüfung der Begriffe bis Fr 16.10.2026, 18:00.** Seit der Freigabe nur Farbanpassung der Grafiken, Caption unverändert.
+**Status:** Freigegeben (11.10.2026). ✅ Fachliche Prüfung der Begriffe erledigt (Inhaber, 11.10.2026: «ABC ok»). Seit der Freigabe nur Farbanpassung der Grafiken, Caption unverändert.
 
 **Slides** (dunkles Design, Begriff jeweils gross in Weiss auf olivgrünem Band):
 1. Cover: Querlogo und «Verstehst du Schützisch? 7 Begriffe, die jeder Schütze in der Schweiz kennt»
@@ -732,3 +732,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #9 vom Inhaber freigegeben, Marken-Tag @sigsauerinc, Steckbrief-Slide `04.jpg` erstellt. Veröffentlichung So 18.10. 20:00 geplant. |
 | 2026-10-11 | #10: Titelbild = bisheriges 02 (beide Pistolen von hinten/schräg), Bilder 01/02 getauscht; IPSC-Hinweis «Open Division» gestrichen (Inhaber). |
 | 2026-10-11 | #10 vom Inhaber freigegeben. Veröffentlichung So 25.10. 20:00 (Winterzeit) geplant. |
+| 2026-10-11 | #4: fachliche Prüfung des Schützen-ABC vom Inhaber bestätigt («ABC ok»). Veröffentlichung Sa 17.10. 09:30 bleibt. |
