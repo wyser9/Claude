@@ -91,8 +91,8 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos, optional + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Waffe entladen/Magazin leer]` |
-| 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: Pro-Variante, entladen/Magazine leer, Cover]` |
-| 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | Entwurf – wartet auf Freigabe (bis Mo 12.10. 16:00, sonst Mo 19.10. 20:00) `[BESTÄTIGEN: Was ist neu / Screenshots bereinigen]` |
+| 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | Entwurf – wartet auf Freigabe `[BESTÄTIGEN: entladen/Magazine leer, Cover, IPSC, Marken-Tag]` |
+| 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | Entwurf – wartet auf Freigabe (bis Mo 12.10. 16:00, sonst Mo 19.10. 20:00); Grafiken bereinigt `[BESTÄTIGEN: Hero-Satz «Munition»]` |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -553,11 +553,12 @@ Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA
   - **[S]** Stahlschlitten, SuperTerrain-Serrations vorne und hinten, Optic Ready: [Big Tex Ordnance](https://www.bigtexordnance.com/?p=777478), [Kinsey's](https://webstore.kinseysinc.com/Walther-PDP-Steel-Frame-Compact-Pistol-9mm-4-in.-Black-10-rd./1210747). Für Optic Ready und Serrations gibt es zusätzlich die PDP-Features-Seite des Herstellers (serienweit); im Auszug ist das für die Steel-Frame-Variante nicht einzeln aufgeführt.
   - **[S]** Rückstossdämpfung durch den Stahlrahmen (laut Händlern Werbeaussage von Walther): [Primary Arms](https://www.primaryarms.com/walther-pdp-compact-steel-frame-9mm-pistol-4in-qualified-individuals-only), [Safariland CADRE](https://inside.safariland.com/blog/walther-pdp-steel-frame-full-size-and-compact)
   - **[S]** Abdeckplatte ab Werk bei Optic-Ready-PDP: [Athlon Outdoors](https://athlonoutdoors.com/article/walther-pdp-compact-review/)
-- **PDP Pro (Variante vermutet):** Die Fotos passen am ehesten zur **PDP Pro-X PMM** (Kompensator ab Werk; der Magwell aus Aluminium ist auf den Fotos erkennbar).
-  - **[H]** Polymerrahmen, 4,6"-Lauf, Dynamic Performance Trigger (4,5 lb ±1 lb), Magwell und Bodenplatten aus Aluminium, Compact mit 5"-Staubschutz bzw. Rahmen in voller Länge, 18 Schuss: [Walther Arms PDP Pro-X PMM Compact 4.6"](https://waltherarms.com/defense/pdp/pdp-pro-x-pmm-compact-4-6-in), [Walther Arms PDP Pro-X PMM Full Size 4.6"](https://waltherarms.com/defense/pdp/pro/pdp-pro-x-pmm-full-size-4-6-in), [Walther Arms PDP Pro-X](https://waltherarms.com/defense/pdp/pro/pro-x)
-  - **[S]** Gewichte (Compact ca. 680 g, Full Size ca. 765 g leer): [Rainier Arms](https://rainierarms.com/walther-pdp-pro-x-pmm-9mm-compact-pistol), [swisswaffen](https://swisswaffen.com/markt/gunlex/walther-pdp/walther-pdp-pro-x-full-size/mcaxxvjgne7p)
-  - Achtung: Es gibt auch eine **PDP Steel Frame Pro Compact 4"** mit Stahlrahmen (DPT, ca. 40 oz) **[H]** [Walther Arms](https://waltherarms.com/defense/pdp/pdp-steel-frame-pro-compact-4-in). Ob sie ab Werk einen Kompensator hat, ist nicht belegt. Ist die Pro des Inhabers diese Variante, stimmen «Polymerrahmen» und «deutlich leichter» in der Caption nicht mehr.
-  - In der Caption steht deshalb nur, was für die Pro-X mit Kompensator gilt. Lauflänge, Gewicht, Abzug und Kapazität ergänze ich erst nach der Bestätigung.
+- **PDP Pro FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss** (Variante vom Inhaber bestätigt, 11.10.2026; die frühere Vermutung «Pro-X PMM» ist hinfällig). Walther führt das Modell als **«PDP Full Size 5,1" Success & Comfort», Art.-Nr. 2912490**. Die Bezeichnung «PDP PRO FS 5.1" Success and Comfort, Kal. 9 mm Para, 18 Schuss» verwendet der Schweizer Handel ([dangos.ch](https://www.dangos.ch/de/sportwaffen/pistolen/pistole-walther-pdp-pro-fs-51-success-and-comfort-kal-9-mm-para-18-schuss)). carl-walther.com ist aus dieser Umgebung gesperrt. Geprüft wurde über Websuche-Auszüge.
+  - **Was «Success and Comfort» ist:** keine reine Sonderedition und kein Zubehörpaket, sondern eine eigene Modellvariante der PDP Full Size mit zwei Merkmalen ab Werk: Kompensator («Success») und «Performance Recoil Spring» mit verlängertem Verschlussweg («Comfort»). **[H]** [Carl Walther, PDP Full Size 5,1" Success & Comfort (2912490)](https://carl-walther.com/defense/products/p/2912490), [Walther-Flyer «NEU PDP Success & Comfort – 100 % Performance» (PDF)](https://carl-walther.com/_default_upload_bucket/2926369%20Flyer%20DE%20PDP%20Success%20and%20Comfort%20revc.pdf). **[S]** [all4shooters (Vorstellung)](https://www.all4shooters.com/de/shooting/kurzwaffen/walther-pdp-success-and-comfort-kompensator-long-stroke-pistole-9mm-luger-vorstellung-neuheit/): Sie wirkt wie eine PDP Pro SD mit Kompensator. Der Kompensator ist geklemmt und abnehmbar, Verschlussgeometrie und Rückholfeder sind angepasst, der Verschluss läuft weiter zurück.
+  - **[H]** Polymer-Griffstück («leicht und robust»), Dynamic Performance Trigger (kurzer Abzugsweg, klar definierter Reset), Rückenschalen S/M/L, für Leuchtpunktvisiere über Adapterplatten vorbereitet (Optic Ready), Full Size, 5,1" in der Modellbezeichnung. Herstellerangaben (Werbeaussagen): Kompensator «bis zu 30 % weniger Hochschlag», verlängerter Verschlussweg «über 70 % weniger Rückstossimpuls». Quelle: Produktseite 2912490 (siehe oben).
+  - **[S]** 5,1"-Lauf (127 mm; Frankonia nennt 130 mm), Verschlusslänge 4,5", Gewicht ca. 700–710 g, Kapazität 18 Schuss (Graz: 18/20), Lieferumfang je nach Händler unterschiedlich: [Waffenfuzzi](https://www.waffenfuzzi.de/walther-pdp-full-size-sucess-comfort-optical-ready-5-1-9mm-luger/wal-2912490), [Waffenstube Guggi Graz](https://waffen-graz.at/produkt/pdp-full-size-51%E2%80%B3-success-comfort/), [Waffen Braun](https://www.waffenbraun.com/verkauf/kurzwaffen/walther-pdp-full-size-5-1-success-and-comfort/), [Frankonia](https://www.frankonia.de/p/walther/pistole-pdp-full-size-success-comfort/2027295). Unabhängig bestätigt hat all4shooters nur den Wert von rund 30 % weniger Hochschlag (mit 124-grs-Standardmunition).
+  - In der Caption stehen: Full Size, 5,1"-Lauf, Kompensator ab Werk (mit «laut Walther bis zu 30 %»), verlängerter Verschlussweg mit angepasster Rückholfeder (ohne die 70-%-Werbezahl), Polymerrahmen, DPT, 18 Schuss, Optic Ready. «Deutlich leichter» ist belegt: Polymerrahmen **[H]**, rund 700 g **[S]** gegenüber 1090 g bei der Compact Full Steel **[H]**. Das Gewicht der Pro nenne ich nicht als Zahl, weil es nur Händlerangaben gibt.
+  - Bewusst nicht in der Caption: das Laufgewinde (½×28 UNEF laut Händlern), dass der Kompensator abnehmbar ist, Montage oder Nachrüsten, die 70-%-Angabe, Lieferumfang, Abzugsgewicht.
 - **[S/ungeprüft]** IPSC: Eine Pistole mit Kompensator wird in der Open Division geschossen (IPSC-Regelwerk Handgun). Das Regelwerk ist nicht per Quelle geprüft und muss vom Inhaber fachlich bestätigt werden.
 - Bewusst nicht in der Caption: Gewinde, Laufgewinde-Masse und jeder Bezug zu Schalldämpfern, Hersteller des Kompensators, Magazinkapazitäten, Abzugsgewichte, Herstellungsland.
 
@@ -565,14 +566,13 @@ Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA
 
 **Regel-Check:** ✅ geprüft mit Auflagen.
 - Kein Verkauf: keine Preise, kein «zu verkaufen», kein «verfügbar/an Lager», kein «DM für Preis». CTA nur Beratung im Laden und armatum.ch. Preis- oder Kaufanfragen in Kommentaren und DMs nur mit Verweis auf Laden/armatum.ch beantworten. Keine Bewerbung als Ad/Boost.
-- Kompensator wird nur als «Kompensator» mit seiner Funktion (Mündung flacher) benannt. Kein Gewinde, kein Schalldämpfer, kein Umbau oder Nachrüsten, keine Montageanleitung. Optic Ready beschreibt nur die Werksausstattung.
+- Kompensator wird nur als «Kompensator» mit seiner Funktion (Mündung flacher) benannt. Kein Gewinde, kein Schalldämpfer, kein Umbau oder Nachrüsten, keine Montageanleitung. Optic Ready beschreibt nur die Werksausstattung. Kompensator und verlängerter Verschlussweg sind Werksausstattung der Variante «Success and Comfort» und werden nur beschrieben, ohne Hinweise zum Ab- oder Anbauen und ohne Tuning-Bezug. Die Kapazität (18 Schuss) wird sachlich als Herstellerausstattung genannt, ohne Bezug zu Bewilligungen. Die Werbezahl «bis zu 30 %» steht ausdrücklich als Herstellerangabe («laut Walther») da.
 - Kein Bezug zu Waffentragen, Selbstverteidigung oder Einsatz gegen Menschen. Beide Pistolen werden nur als Sportpistolen für den Stand und IPSC vorgestellt. Das Tragen ist in der Schweiz bewilligungspflichtig, deshalb bewusst kein «Carry»-Thema.
 - Bilder: reine Produktfotos auf Ständern, keine Personen, keine Handhabung, keine Preisschilder, Seriennummern unkenntlich.
 - **Magazine eingesetzt, Schlitten geschlossen:** kein Regelverstoss (Produktfoto, keine Handhabung). Weil man auf den Fotos nicht sieht, dass die Pistolen leer sind, steht in der Caption «entladen, Magazine leer». Das muss der Inhaber bestätigen.
 - ⚠️ **Mündung Richtung Kamera:** Auf `01.jpg` (Cover) und `04.jpg` (schräg) zeigen die Mündungen schräg zur Kamera bzw. zum Betrachter. Das verstösst nicht gegen die Meta-Regeln, kann aber Sicherheits-Kommentare auslösen und widerspricht optisch dem Grundsatz «Mündung nie auf Menschen». Empfehlung: Als Cover `02.jpg` nehmen (Mündungen weniger frontal) oder die Bilder so lassen, weil die Pistolen entladen auf Ständern liegen und niemand davorsteht. Der Inhaber entscheidet.
 
-`[BESTÄTIGEN: genaue Pro-Variante (vermutet PDP Pro-X PMM, Compact oder Full Size?) – danach ggf. Lauflänge/Gewicht ergänzen]`
-`[BESTÄTIGEN: Polymerrahmen bei der Pro (Steel-Frame-Pro-Varianten existieren, dann Caption anpassen)]`
+✅ Pro-Variante bestätigt (Inhaber, 11.10.2026): Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss. Polymerrahmen laut Hersteller belegt.
 `[BESTÄTIGEN: beide Pistolen beim Fotografieren entladen, Magazine leer]`
 `[BESTÄTIGEN: Cover 01 (Mündungen Richtung Kamera) behalten oder 02 als Cover]`
 `[BESTÄTIGEN: IPSC-Hinweis «Kompensator = Open Division» fachlich ok]`
@@ -588,17 +588,17 @@ Marken-Tag (optional): `[BESTÄTIGEN: welcher Walther-Account, @waltherarms (USA
 **Ausweichtermin:** Kommt die Freigabe nicht bis Mo 12.10. 16:00 (es braucht Zeit, um die Screenshots zu bereinigen), wird #11 am **Mo 19.10., 20:00** gepostet. Der Montag eröffnet dann Woche 2. Bis #9 (So 20:00) sind es 24 Stunden, bis #5 (Di 18:30) 22,5 Stunden. Fr 16.10. kommt nicht in Frage: Der Tag liegt zwischen #3 (Do) und #4 (Sa 09:30), und es wäre der dritte Post in drei Tagen.
 
 **Slides** (dunkles Design, fertig in `grafiken/11-website/01.jpg`–`05.jpg`, Texte in `slides.json`):
-1. `01.jpg` – Cover: Querlogo, «Neuer Look für armatum.ch», «Übersichtlicher. Schneller. Auch auf dem Handy.», «Swipe →»
-2. `02.jpg` – «Die Startseite – Alles auf einen Blick»: Screenshot Desktop (Navigation unscharf)
-3. `03.jpg` – «Mobil – Gemacht fürs Handy»: Screenshot Handy
-4. `04.jpg` – «Neu & übersichtlich – Das findest du jetzt schneller»: Sortiment nach Themen, Wiederladen (Kurse & Arbeitsplätze), Öffnungszeiten & Anfahrt, Fachberatung im Laden
+1. `01.jpg` – Cover: Querlogo, «Neuer Look für armatum.ch», «Klar gegliedert. Auch auf dem Handy.», «Swipe →»
+2. `02.jpg` – «Die Startseite – Alles auf einen Blick»: Screenshot Desktop, nur Hero-Bereich (Navigation und «Aktuelle Angebote» unscharf, Service-Leiste weggeschnitten)
+3. `03.jpg` – «Mobil – Gemacht fürs Handy»: Screenshot Handy («Aktuelle Angebote» unscharf)
+4. `04.jpg` – «Übersichtlich – Das findest du auf armatum.ch»: Sortiment nach Themen, Wiederladen (Kurse & Arbeitsplätze), Öffnungszeiten & Anfahrt, Fachberatung im Laden
 5. `05.jpg` – CTA: «Schau vorbei: armatum.ch», «Link in der Bio», «Wie gefällt dir der neue Look? Sag's uns», Fusszeile
 
-**Caption zum Kopieren** (ohne Vorher-Vergleich formuliert, stimmt auch dann, wenn unklar ist, was genau neu ist):
+**Caption zum Kopieren** (ohne Vorher-Vergleich; laut Inhaber ist das Design neu):
 ```
 armatum.ch hat einen neuen Look – schon reingeschaut? 👀
 
-Unsere Website ist frisch gestaltet und auch auf dem Handy gut lesbar. Ob am Rechner zu Hause oder unterwegs auf dem Stand: Du findest dich mit wenigen Klicks zurecht.
+Unsere Website hat ein neues Design: klar gegliedert und auch auf dem Handy gut lesbar. Ob am Rechner zu Hause oder unterwegs auf dem Stand: Du findest dich mit wenigen Klicks zurecht.
 
 Das erwartet dich auf armatum.ch:
 🎯 Sortiment nach Themen – über 4000 Artikel von mehr als 100 Marken, von Optik über Zubehör bis Wiederladen und Ausrüstung
@@ -615,24 +615,24 @@ Wie gefällt dir der neue Look? Und was suchst du auf einer Website für Schütz
 **Hashtags:** `#armatum #sportschiessen #jagdschweiz #wiederladen #schweiz`
 Standort-Tag: «Fulenbach» (wie bei #3).
 
-**Material:** vorhanden (5 Grafiken). Vor dem Posten bereinigen: siehe Auflagen im Regel-Check (Slides 2 und 3).
+**Material:** vorhanden (5 Grafiken, bereinigt am 11.10.2026, von mir am Bild kontrolliert).
 
-**Fakten und Quellen:** armatum.ch, Startseite (abgerufen 11.10.2026): Hero-Text «Über 4000 Artikel von mehr als 100 Marken … Mit persönlicher Fachberatung aus Fulenbach SO.», Sortiment nach Themen, Bereich «Wiederladen bei Armatum» (Infrastruktur mieten, Kurse, über 1000 Artikel), Öffnungszeiten im Footer. Was gegenüber der alten Website neu ist, ist **nicht** belegt.
+**Fakten und Quellen:** armatum.ch, Startseite (abgerufen 11.10.2026): Hero-Text «Über 4000 Artikel von mehr als 100 Marken … Mit persönlicher Fachberatung aus Fulenbach SO.», Sortiment nach Themen, Bereich «Wiederladen bei Armatum» (Infrastruktur mieten, Kurse, über 1000 Artikel), Öffnungszeiten im Footer. Neu ist laut Inhaber (11.10.2026) das **Design**. Weitere Neuerungen (z. B. Funktionen, Tempo) werden nicht behauptet.
 
-**Regel-Check:** ⚠️ Caption ✅ geprüft, Grafiken mit Auflagen.
+**Regel-Check:** ✅ geprüft. Die Auflagen für die Grafiken sind erledigt (11.10.2026). Offen ist nur noch der Entscheid zum Hero-Satz mit «Munition».
 - Caption: keine Preise, keine Aktionen/Sale/Angebote, kein «zu verkaufen», kein «DM für …». Das Sortiment wird nur allgemein beschrieben (Optik, Zubehör, Wiederladen, Ausrüstung), Waffen und Munition werden nicht genannt. Versand, Abholung, Rückgaberecht, Ankauf, Umbau und kundenspezifische Munition kommen nicht vor. Der CTA verweist nur auf die Website («Link in der Bio») und den Laden. Die Kurs- und Arbeitsplatz-Erwähnung ist eine Dienstleistung ohne Preis und ohne Ladedaten. Die Zahl «über 4000 Artikel» ist die Gesamtzahl laut Website. Die Aufzählung «von … bis …» ist bewusst nicht abschliessend formuliert. Keine bezahlte Bewerbung (Boost).
-- **Auflage Slide 2 (`02.jpg`):** Im Screenshot sind der Button «Aktuelle Angebote» und die ganze Service-Leiste lesbar: «Schneller Versand … Schweizer Post … nach Zahlungseingang», «Abholung vor Ort», «Fachberatung zu Optik, Wiederladen und **Waffenerwerb**», «10 Tage Rückgaberecht». Genau diese Punkte lassen wir in der Caption bewusst weg (Verkaufsbezug bei regulierten Waren, Waffenerwerb ist kein Instagram-Thema). Empfehlung: Screenshot unterhalb des grünen Hero-Bereichs abschneiden und «Aktuelle Angebote» unscharf machen, gleich wie die Navigation.
-- **Auflage Slide 3 (`03.jpg`):** Button «Aktuelle Angebote» unscharf machen.
+- ~~**Auflage Slide 2 (`02.jpg`):** Service-Leiste (Versand, Abholung, Rückgaberecht, «Fachberatung zu … Waffenerwerb») und Button «Aktuelle Angebote» entfernen bzw. unscharf machen.~~ ✅ erledigt (11.10.2026): Es ist nur noch der Hero-Bereich zu sehen, «Aktuelle Angebote» ist unscharf.
+- ~~**Auflage Slide 3 (`03.jpg`):** Button «Aktuelle Angebote» unscharf machen.~~ ✅ erledigt (11.10.2026).
 - **Hinweis Slides 2 und 3:** Der Hero-Text nennt «Munition» als Teil des Sortiments. Das ist eine allgemeine Beschreibung ohne Produkt, Preis oder Kaufaufforderung und deshalb kein Regelverstoss. Wer es ganz sauber will, macht den Satz unscharf. Der Inhaber entscheidet.
-- **Hinweis Slides 1 und 4:** «Übersichtlicher. Schneller.», «Neu & übersichtlich» und «jetzt schneller» behaupten einen Vergleich mit der alten Website. Das stimmt nur, wenn der Inhaber es bestätigt. Sonst schlage ich neutrale Texte vor: Cover «Klar gegliedert. Auch auf dem Handy.», Slide 4 Kicker «Übersichtlich», Titel «Das findest du auf armatum.ch».
+- ~~**Hinweis Slides 1 und 4:** Vergleichs-Aussagen («Übersichtlicher. Schneller.», «jetzt schneller») neutral formulieren.~~ ✅ erledigt (11.10.2026): Cover «Klar gegliedert. Auch auf dem Handy.», Slide 4 Kicker «Übersichtlich», Titel «Das findest du auf armatum.ch».
 - Navigation im Desktop-Screenshot ist unscharf (enthielt «Sale %», «Waffen», «Munition»). Das ist ok und bleibt so.
 - Hinweis zu #3: Die Hook-Alternative «Neuer Look, mehr Wissen: …» für #3 würde sich mit #11 doppeln. Wenn #11 am Mo 12.10. kommt, empfehle ich für #3 den bisherigen Hook.
 
-`[BESTÄTIGEN: Was ist am Relaunch besonders neu oder wichtig und soll hervorgehoben werden (z. B. Suche, Filter, Handy-Ansicht, Themen-Navigation, Wiederlade-Bereich)?]`
-`[BESTÄTIGEN: Vergleichs-Aussagen auf Cover/Slide 4 («Übersichtlicher. Schneller.», «jetzt schneller») stehen lassen oder neutral formulieren]`
-`[BESTÄTIGEN: Slide 2 zuschneiden (Service-Leiste weg) und «Aktuelle Angebote» auf Slide 2 und 3 unscharf machen – ok?]`
-`[BESTÄTIGEN: Hero-Satz mit «Munition» stehen lassen oder unscharf machen]`
+✅ Was ist neu? Beantwortet (Inhaber, 11.10.2026): das Design. Die Caption ist darauf angepasst.
+✅ Vergleichs-Aussagen neutral formuliert und Screenshots bereinigt (11.10.2026).
+`[BESTÄTIGEN: Hero-Satz mit «Munition» (Slides 2/3) stehen lassen oder unscharf machen]`
 `[BESTÄTIGEN: Termin Mo 12.10. 20:00 (Freigabe bis 16:00) oder Mo 19.10. 20:00]`
+`[FREIGABE: Caption #11 und Story-Ergänzung 12.10. (#11 um ca. 20:15 teilen)]`
 
 ---
 
@@ -673,7 +673,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | – | ~~OK für die Instagram-Verbindung über Composio~~: Verbindung aktiv (armatum_ch, Business). Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin. | Veröffentlichen ab #1 | ✅ erledigt (11.10.) |
 | – | ~~Bestätigungen fürs Intro~~: keine Namensnennung der Inhaberperson; «seit 2024» ist ok | #3 | ✅ erledigt (11.10.) |
 | – | ~~Bio und Profilbild~~ | Profil | ✅ erledigt: bleiben unverändert (Entscheid Inhaber 11.10.) |
-| 2026-10-12 16:00 | **Freigabe #11 «Neuer Look für armatum.ch»** (Caption, Termin Mo 12.10. 20:00) + Angaben: Was am Relaunch besonders hervorgehoben werden soll, Vergleichs-Aussagen auf Cover/Slide 4 ok oder neutral, Screenshots bereinigen (Service-Leiste und «Aktuelle Angebote»), Hero-Satz mit «Munition», Story-Ergänzung 12.10. (#11 teilen). Ohne Freigabe bis dahin: Ausweichtermin Mo 19.10. 20:00, Freigabe dann bis So 18.10. 18:00 | #11 | offen |
+| 2026-10-12 16:00 | **Freigabe #11 «Neuer Look für armatum.ch»** (Caption, Termin Mo 12.10. 20:00) + Hero-Satz mit «Munition» stehen lassen oder unscharf + Story-Ergänzung 12.10. (#11 teilen). Erledigt (11.10.): «Was ist neu» (Design), Screenshots bereinigt, Vergleichs-Aussagen neutral. Ohne Freigabe bis dahin: Ausweichtermin Mo 19.10. 20:00, Freigabe dann bis So 18.10. 18:00 | #11 | offen |
 | 2026-10-14 12:00 | **Freigabe der ergänzten Stories 15.10. und 16.10.** (Live-Foto aus dem Laden bzw. «So findest du uns») | Stories 15./16.10. | offen |
 | 2026-10-14 12:00 | **Hook für #3:** beim bisherigen Hook bleiben oder die Relaunch-Variante nehmen («Neuer Look, mehr Wissen: …»), weil der Account bereits besteht | #3 | offen (Empfehlung) |
 | 2026-10-14 12:00 | **4 Fotos für die Vorstellung** (Inhaber/Team, Eingang/Laden, Werkbank, Wiederladeplatz; ohne Preisschilder, Sale-Plakate und Seriennummern) | #3 Intro | offen |
@@ -685,7 +685,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
 | 2026-10-17 18:00 | **Freigabe #9 SIG Sauer Cross** (Caption, Termin So 18.10. 20:00) + Bestätigungen: Waffe entladen und Magazin leer, Marken-Tag @sigsauerinc, Steckbrief-Slide ja/nein | #9 | offen |
-| 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen: genaue Pro-Variante und Rahmenmaterial, beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
+| 2026-10-23 18:00 | **Freigabe #10 Vergleich Walther PDP Pro vs. Compact Full Steel** (Caption, Termin So 25.10. 20:00) + Bestätigungen (Pro-Variante seit 11.10. bestätigt): beide entladen und Magazine leer, Cover 01 oder 02, IPSC-Hinweis, Marken-Tag | #10 | offen |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
 | 2026-10-20 14:00 | **Freigabe des geschnittenen Reels** | #5 Reel | offen |
@@ -725,3 +725,5 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #10 auf Wunsch des Inhabers zum Vergleichs-Beitrag «Walther PDP Pro vs. PDP Compact Full Steel» umgebaut (5 Fotos, Termin unverändert So 25.10. 20:00). Pro-Variante nur vermutet (PDP Pro-X PMM), deshalb in der Caption nur allgemeine Pro-Merkmale; Kompensator ohne Gewinde-/Schalldämpfer-Bezug. Einzel-Entwurf entfernt. |
 | 2026-10-11 | #9: 16"-Lauf vom Inhaber bestätigt, Gewichtsangabe (ca. 2,8 kg ohne Magazin) bleibt. #9 und #10: Quellen auf Herstellerangaben umgestellt (Websuche-Auszüge von sigsauer.com, waltherarms.com, carl-walther.com), Kennzeichnung [H] Hersteller / [S] nur Sekundärquelle. #10 Caption: Gewicht der Compact Full Steel neutral «rund 1,1 kg» (Hersteller: 1090 g bzw. 40 oz). |
 | 2026-10-11 | #11 «Neuer Look für armatum.ch» ergänzt (Säule 5 Behind the Scenes, Karussell aus 5 fertigen Grafiken in `grafiken/11-website/`, Mo 12.10. 20:00, Ausweichtermin Mo 19.10. 20:00). Die Caption ist ohne Vorher-Vergleich formuliert und nennt weder Waffen, Munition, Angebote, Versand noch Rückgabe. Regel-Check: Caption geprüft. Auflagen für die Grafiken: Service-Leiste und «Aktuelle Angebote» in den Screenshots (Slides 2/3) entfernen bzw. unscharf machen, Vergleichs-Aussagen (Slides 1/4) bestätigen lassen. Status «Entwurf – wartet auf Freigabe». Nichts veröffentlicht, kein Container erstellt. |
+| 2026-10-11 | #11: Inhaber hat geantwortet, neu ist das Design. Die Caption sagt jetzt «Unsere Website hat ein neues Design: klar gegliedert …», der Hook bleibt. Die Grafiken sind bereinigt und von mir am Bild geprüft: Slide 2 zeigt nur noch den Hero-Bereich, «Aktuelle Angebote» ist auf Slide 2/3 unscharf, Cover und Slide 4 sind neutral formuliert. Auflagen erledigt. Offen: Hero-Satz «Munition», Freigabe Caption und Story-Ergänzung. |
+| 2026-10-11 | #10: Pro-Variante vom Inhaber bestätigt: Walther PDP PRO FS 5.1" «Success and Comfort», 9 mm Para, 18 Schuss (Walther: «PDP Full Size 5,1" Success & Comfort», Art. 2912490). Die Vermutung «Pro-X PMM» ist ersetzt. Fakten per Websuche geprüft und mit [H]/[S] gekennzeichnet. Pro-Passage der Caption angepasst: Full Size, 5,1"-Lauf, Kompensator ab Werk (laut Walther bis zu 30 % weniger Hochschlag), verlängerter Verschlussweg, Polymerrahmen, DPT, 18 Schuss, Optic Ready. Kein Gewinde- oder Schalldämpfer-Bezug. [BESTÄTIGEN] zu Variante und Rahmen entfernt. |
