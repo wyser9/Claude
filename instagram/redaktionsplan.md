@@ -92,7 +92,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 18.10. 20:00 |
 | 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 25.10. 20:00 (Titelbild = Ansicht von hinten) |
-| 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | **Freigegeben (11.10.2026)** inkl. Story-Teilen ca. 20:15 – Veröffentlichung geplant Mo 12.10. 20:00 |
+| 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | ✅ **Veröffentlicht 12.10.2026, 20:56** (verspätet wegen Neustart) – https://www.instagram.com/p/DeZ7TMLmRKs/ + Story |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -767,3 +767,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #4: fachliche Prüfung des Schützen-ABC vom Inhaber bestätigt («ABC ok»). Veröffentlichung Sa 17.10. 09:30 bleibt. |
 | 2026-10-12 | #12 Marlin × Mad Pig Custom als Entwurf angelegt (Grafiken + Caption ohne Vorbestellungs-/Verkaufsaufruf). |
 | 2026-10-12 | #12 Marlin × Mad Pig Custom sofort veröffentlicht (16:17): https://www.instagram.com/p/DeZbXsAkQ5i/ – ohne Vorbestellungs-Aufruf, ohne Marken-Tags. |
+| 2026-10-12 | #11 veröffentlicht um 20:56 statt 20:00 (Sitzungs-Neustart unterbrach die geplante Veröffentlichung): https://www.instagram.com/p/DeZ7TMLmRKs/ – Story publiziert. |
