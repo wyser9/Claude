@@ -1,0 +1,84 @@
+{
+  "post": "#12 – Marlin × Mad Pig Custom (1894 .357 Mag / 1895 .45-70)",
+  "slides": [
+    {
+      "type": "product",
+      "kicker": "Neu angekündigt",
+      "title": "Marlin × Mad Pig Custom",
+      "titleSize": 76,
+      "images": [
+        "marlin-1894.png",
+        "marlin-1895.png"
+      ],
+      "body": "Der Unterhebelrepetierer – **neu gedacht.** Erwartet 2027."
+    },
+    {
+      "type": "product",
+      "kicker": "OD Green",
+      "title": "Marlin 1894 Mad Pig Custom",
+      "image": "marlin-1894.png",
+      "rows": [
+        [
+          "Kaliber",
+          ".357 Magnum / .38 Special"
+        ],
+        [
+          "Lauf",
+          "16.1\" (409 mm)"
+        ],
+        [
+          "Magazin",
+          "8 Schuss (.357 Mag)"
+        ],
+        [
+          "Gewicht",
+          "ca. 3,3 kg"
+        ],
+        [
+          "Finish",
+          "OD Green Cerakote"
+        ]
+      ]
+    },
+    {
+      "type": "product",
+      "kicker": "Flat Dark Earth",
+      "title": "Marlin 1895 Mad Pig Custom",
+      "image": "marlin-1895.png",
+      "rows": [
+        [
+          "Kaliber",
+          ".45-70 Govt"
+        ],
+        [
+          "Lauf",
+          "16.1\" (409 mm)"
+        ],
+        [
+          "Magazin",
+          "5 Schuss"
+        ],
+        [
+          "Gewicht",
+          "ca. 3,3 kg"
+        ],
+        [
+          "Finish",
+          "FDE Cerakote"
+        ]
+      ]
+    },
+    {
+      "type": "content",
+      "badge": "✓",
+      "kicker": "Beide Modelle",
+      "title": "Das haben sie gemeinsam",
+      "body": "**Alu-Schaft** mit verstellbarer Backe\n**M-LOK-Handschutz** mit Picatinny-Schiene\n**Ghost-Ring-Kimme**, voll einstellbar\n**CNC-gefrästes** Stahlgehäuse und Mad-Pig-Hebel\n**Takedown** ohne Werkzeug"
+    },
+    {
+      "type": "cta",
+      "title": "Mehr Infos auf armatum.ch",
+      "body": ".357 oder .45-70 – welche wär's für dich? 👇"
+    }
+  ]
+}

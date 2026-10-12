@@ -636,6 +636,41 @@ Standort-Tag: «Fulenbach» (wie bei #3).
 
 ---
 
+### #12 – Termin offen (Vorschlag Fr 16.10.2026, 20:00) – Karussell – Säule 3: Marlin × Mad Pig Custom
+
+**Status:** Entwurf – wartet auf Freigabe. Auftrag des Inhabers vom 12.10.2026 («Vorbestellung jetzt möglich, Lieferung Q2/Q3 2027»).
+
+**Slides** (`grafiken/12-marlin-mad-pig/01–05.jpg`, Produktbilder von armatum.ch): 1 Cover beide Modelle, 2 Steckbrief 1894 (.357 Mag, OD Green), 3 Steckbrief 1895 (.45-70, FDE), 4 Gemeinsamkeiten, 5 CTA «Mehr Infos auf armatum.ch».
+
+**Caption zum Kopieren:**
+```
+Lever-Action, neu gedacht: Marlin × Mad Pig Custom 🐗
+
+Marlin hat zusammen mit Mad Pig Customs zwei Unterhebelrepetierer aufgebaut, die Tradition und moderne Ausstattung verbinden:
+
+🟢 Marlin 1894 Mad Pig Custom – .357 Magnum / .38 Special, OD Green
+🟤 Marlin 1895 Mad Pig Custom – .45-70 Govt, Flat Dark Earth
+
+Beide mit 16.1"-Lauf, Alu-Schaft mit verstellbarer Backe, M-LOK-Handschutz mit Picatinny-Schiene, voll einstellbarer Ghost-Ring-Kimme und Takedown ohne Werkzeug. Gehäuse und Hebel sind CNC-gefräst aus Stahl.
+
+👉 Swipe für die Details der beiden Modelle.
+
+Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.ch (Link in der Bio) – oder frag uns direkt im Laden in Fulenbach.
+
+.357 Magnum oder .45-70 Govt – welche wär's für dich? 👇
+```
+**Hashtags:** `#marlin #leveraction #unterhebelrepetierer #madpigcustoms #schweiz`
+
+**Quelle:** Produktseiten armatum.ch (Art. 70924 und 70938, abgerufen 12.10.2026).
+
+**Regel-Check:** ⚠️ «Vorbestellung jetzt möglich» ist ein Kaufangebot für Waffen und verstösst gegen die Meta-Richtlinie zu eingeschränkten Waren (Kauf/Verkauf von Waffen über Instagram). Deshalb in dieser Version: kein «Vorbestellung», kein Preis, kein «verfügbar», kein Liefertermin als Kaufversprechen – nur «für 2027 erwartet» als Produktinfo plus Verweis auf armatum.ch/Laden. Laufgewinde und Mündungsbremse werden nicht erwähnt (Fotos zeigen die Mündungsbremse, kein Schalldämpfer). Produktbilder stammen von armatum.ch (Herstellerbilder) – Nutzungsrecht für Social Media beim Inhaber/Hersteller `[BESTÄTIGEN]`.
+
+`[BESTÄTIGEN: Formulierung ohne «Vorbestellung» ok?]`
+`[BESTÄTIGEN: Termin]`
+`[BESTÄTIGEN: Marken-Tags (z. B. Marlin, Mad Pig Customs) – Accounts?]`
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -733,3 +768,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #10: Titelbild = bisheriges 02 (beide Pistolen von hinten/schräg), Bilder 01/02 getauscht; IPSC-Hinweis «Open Division» gestrichen (Inhaber). |
 | 2026-10-11 | #10 vom Inhaber freigegeben. Veröffentlichung So 25.10. 20:00 (Winterzeit) geplant. |
 | 2026-10-11 | #4: fachliche Prüfung des Schützen-ABC vom Inhaber bestätigt («ABC ok»). Veröffentlichung Sa 17.10. 09:30 bleibt. |
+| 2026-10-12 | #12 Marlin × Mad Pig Custom als Entwurf angelegt (Grafiken + Caption ohne Vorbestellungs-/Verkaufsaufruf). |
