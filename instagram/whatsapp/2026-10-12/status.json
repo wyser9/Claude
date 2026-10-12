@@ -1,0 +1,14 @@
+{
+  "status": [
+    { "name": "1-marlin-teaser", "kicker": "Neu angekündigt", "title": "Marlin × Mad Pig Custom",
+      "images": [{ "src": "../../grafiken/12-marlin-mad-pig/marlin-1894.png" }, { "src": "../../grafiken/12-marlin-mad-pig/marlin-1895.png" }],
+      "body": "Lever-Action, **neu gedacht.**", "pill": "Mehr Infos: armatum.ch" },
+    { "name": "2-marlin-modelle", "kicker": "Zwei Modelle", "title": "Welche wär's für dich?",
+      "images": [
+        { "src": "../../grafiken/12-marlin-mad-pig/marlin-1894.png", "caption": "**1894** · .357 Magnum / .38 Special · OD Green" },
+        { "src": "../../grafiken/12-marlin-mad-pig/marlin-1895.png", "caption": "**1895** · .45-70 Govt · Flat Dark Earth" }],
+      "body": "Erwartet 2027.", "pill": "Antworte mit 1894 oder 1895 👇" },
+    { "name": "3-website", "kicker": "armatum.ch", "title": "Im neuen Design",
+      "phone": "../../grafiken/11-website/web-mobile.png", "pill": "Schau vorbei: armatum.ch" }
+  ]
+}
