@@ -8,7 +8,7 @@ const [specPath, outDir] = process.argv.slice(2);
 const base = dirname(resolve(specPath));
 const spec = JSON.parse(readFileSync(specPath, 'utf8'));
 mkdirSync(outDir, { recursive: true });
-const img = (f) => 'data:image/png;base64,' + readFileSync(resolve(base, f)).toString('base64');
+const img = (f) => (f.endsWith('.jpg') ? 'data:image/jpeg;base64,' : 'data:image/png;base64,') + readFileSync(resolve(base, f)).toString('base64');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 
@@ -29,6 +29,7 @@ h1{font-family:Cinzel,serif;font-weight:700;font-size:92px;line-height:1.1;margi
 .pill{margin-top:auto;background:#4e5743;border-radius:60px;padding:30px 56px;font-size:44px;font-weight:600}
 .phone{border:16px solid #1f1f1f;border-radius:56px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);height:1000px}
 .phone img{height:100%;display:block}
+.phone.post{height:900px;border-radius:28px}
 `;
 const logo = img(spec.logo || '../../assets/logo-weiss.png');
 

@@ -57,6 +57,7 @@ Unsicherheit die aktuellen Community-Richtlinien und die Richtlinie zu
 - Profilbild und Bio bleiben unverändert (weisses Logo auf schwarzem Grund).
 - Die Inhaberperson wird nicht namentlich genannt. «Seit 2024» ist ok.
 - Altersgrenze 18+ wird bewusst nicht gesetzt – nicht mehr anmahnen.
+- Zu jedem Instagram-Beitrag gehören 1–2 WhatsApp-Business-Status-Bilder (1080×1920, Renderer `instagram/whatsapp/status.mjs`). Der Inhaber postet sie selbst; erinnere ihn kurz nach dem Instagram-Post. Gleiche Regeln: keine Preise, kein Verkauf/Vorbestellung, keine Waffen im WhatsApp-Katalog.
 
 ## 2. Reichweite – deine Strategie
 

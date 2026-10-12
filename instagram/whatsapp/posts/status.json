@@ -1,0 +1,9 @@
+{
+  "status": [
+    { "name": "01-waffenreinigung", "kicker": "Neu auf Instagram", "title": "Waffenpflege-Check", "phone": "../../grafiken/01-waffenreinigung/01.jpg", "body": "Fehler Nr. 3 machen fast alle 👀", "pill": "Jetzt auf @armatum_ch" },
+    { "name": "02-wiederladen", "kicker": "Neu auf Instagram", "title": "Wiederladen in 7 Schritten", "phone": "../../grafiken/02-wiederladen/01.jpg", "body": "Speichern als Checkliste 🔧", "pill": "Jetzt auf @armatum_ch" },
+    { "name": "04-schuetzen-abc", "kicker": "Neu auf Instagram", "title": "Verstehst du Schützisch?", "phone": "../../grafiken/04-schuetzen-abc/01.jpg", "body": "7 Begriffe, die jeder kennt 🇨🇭", "pill": "Jetzt auf @armatum_ch" },
+    { "name": "09-sig-cross", "kicker": "Im Fokus", "title": "SIG Sauer Cross", "phone": "../../grafiken/09-sig-cross/01.jpg", "body": "Präzisionsgewehr oder Jagdbüchse? 🎯", "pill": "Mehr auf @armatum_ch" },
+    { "name": "10-walther-pdp", "kicker": "Vergleich", "title": "Team Kompensator oder Team Stahl?", "phone": "../../grafiken/10-walther-pdp/01.jpg", "body": "Walther PDP Pro vs. Compact Full Steel", "pill": "Mehr auf @armatum_ch" }
+  ]
+}
