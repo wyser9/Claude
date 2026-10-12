@@ -636,9 +636,9 @@ Standort-Tag: «Fulenbach» (wie bei #3).
 
 ---
 
-### #12 – Termin offen (Vorschlag Fr 16.10.2026, 20:00) – Karussell – Säule 3: Marlin × Mad Pig Custom
+### #12 – Mo 12.10.2026, 16:17 (veröffentlicht) – Karussell – Säule 3: Marlin × Mad Pig Custom
 
-**Status:** Entwurf – wartet auf Freigabe. Auftrag des Inhabers vom 12.10.2026 («Vorbestellung jetzt möglich, Lieferung Q2/Q3 2027»).
+**Status:** ✅ Veröffentlicht am 12.10.2026, 16:17 – https://www.instagram.com/p/DeZbXsAkQ5i/ (Freigabe Inhaber: «perfekt, sofort posten»). Auftrag des Inhabers vom 12.10.2026 («Vorbestellung jetzt möglich, Lieferung Q2/Q3 2027»).
 
 **Slides** (`grafiken/12-marlin-mad-pig/01–05.jpg`, Produktbilder von armatum.ch): 1 Cover beide Modelle, 2 Steckbrief 1894 (.357 Mag, OD Green), 3 Steckbrief 1895 (.45-70, FDE), 4 Gemeinsamkeiten, 5 CTA «Mehr Infos auf armatum.ch».
 
@@ -665,9 +665,6 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 
 **Regel-Check:** ⚠️ «Vorbestellung jetzt möglich» ist ein Kaufangebot für Waffen und verstösst gegen die Meta-Richtlinie zu eingeschränkten Waren (Kauf/Verkauf von Waffen über Instagram). Deshalb in dieser Version: kein «Vorbestellung», kein Preis, kein «verfügbar», kein Liefertermin als Kaufversprechen – nur «für 2027 erwartet» als Produktinfo plus Verweis auf armatum.ch/Laden. Laufgewinde und Mündungsbremse werden nicht erwähnt (Fotos zeigen die Mündungsbremse, kein Schalldämpfer). Produktbilder stammen von armatum.ch (Herstellerbilder) – Nutzungsrecht für Social Media beim Inhaber/Hersteller `[BESTÄTIGEN]`.
 
-`[BESTÄTIGEN: Formulierung ohne «Vorbestellung» ok?]`
-`[BESTÄTIGEN: Termin]`
-`[BESTÄTIGEN: Marken-Tags (z. B. Marlin, Mad Pig Customs) – Accounts?]`
 
 ---
 
@@ -769,3 +766,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-11 | #10 vom Inhaber freigegeben. Veröffentlichung So 25.10. 20:00 (Winterzeit) geplant. |
 | 2026-10-11 | #4: fachliche Prüfung des Schützen-ABC vom Inhaber bestätigt («ABC ok»). Veröffentlichung Sa 17.10. 09:30 bleibt. |
 | 2026-10-12 | #12 Marlin × Mad Pig Custom als Entwurf angelegt (Grafiken + Caption ohne Vorbestellungs-/Verkaufsaufruf). |
+| 2026-10-12 | #12 Marlin × Mad Pig Custom sofort veröffentlicht (16:17): https://www.instagram.com/p/DeZbXsAkQ5i/ – ohne Vorbestellungs-Aufruf, ohne Marken-Tags. |
