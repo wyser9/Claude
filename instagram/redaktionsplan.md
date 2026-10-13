@@ -82,7 +82,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 
 | # | Datum | Tag | Uhrzeit | Format | Content-Säule | Thema | Hook | Status |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 13.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | 5 Fehler bei der Waffenreinigung | «Fehler Nr. 3 machen fast alle – du wahrscheinlich auch.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
+| 1 | 13.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | 5 Fehler bei der Waffenreinigung | «Fehler Nr. 3 machen fast alle – du wahrscheinlich auch.» | ✅ **Veröffentlicht 13.10.2026, 18:57** (verspätet wegen Neustart) – https://www.instagram.com/p/DecSkEAFDu0/ |
 | 2 | 14.10.2026 | Mi | 18:30 | Karussell (9 Slides, dunkel) | 2 Wiederladen | Wiederladen in 7 Schritten – der Überblick | «Wiederladen klingt kompliziert? Es sind 7 Schritte.» | **Freigegeben (11.10.2026)** – bereit zum Posten |
 | 3 | 15.10.2026 | Do | 19:00 | Karussell (6 Slides, dunkel + Fotos) | 5 Community | Hallo, wir sind Armatum | «Schön, dass du da bist. Wer steckt hinter @armatum_ch?» | Entwurf fertig – wartet auf Fotos und Freigabe |
 | 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)**, fachliche Prüfung ✅ (Inhaber «ABC ok», 11.10.) – Veröffentlichung geplant Sa 17.10. 09:30 |
@@ -768,3 +768,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-12 | #12 Marlin × Mad Pig Custom als Entwurf angelegt (Grafiken + Caption ohne Vorbestellungs-/Verkaufsaufruf). |
 | 2026-10-12 | #12 Marlin × Mad Pig Custom sofort veröffentlicht (16:17): https://www.instagram.com/p/DeZbXsAkQ5i/ – ohne Vorbestellungs-Aufruf, ohne Marken-Tags. |
 | 2026-10-12 | #11 veröffentlicht um 20:56 statt 20:00 (Sitzungs-Neustart unterbrach die geplante Veröffentlichung): https://www.instagram.com/p/DeZ7TMLmRKs/ – Story publiziert. |
+| 2026-10-13 | #1 veröffentlicht um 18:57 statt 18:30 (Sitzungs-Neustart; vom Sicherheitsnetz nachgeholt): https://www.instagram.com/p/DecSkEAFDu0/ |
