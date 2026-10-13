@@ -769,3 +769,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-12 | #12 Marlin × Mad Pig Custom sofort veröffentlicht (16:17): https://www.instagram.com/p/DeZbXsAkQ5i/ – ohne Vorbestellungs-Aufruf, ohne Marken-Tags. |
 | 2026-10-12 | #11 veröffentlicht um 20:56 statt 20:00 (Sitzungs-Neustart unterbrach die geplante Veröffentlichung): https://www.instagram.com/p/DeZ7TMLmRKs/ – Story publiziert. |
 | 2026-10-13 | #1 veröffentlicht um 18:57 statt 18:30 (Sitzungs-Neustart; vom Sicherheitsnetz nachgeholt): https://www.instagram.com/p/DecSkEAFDu0/ |
+| 2026-10-13 | Inhaber: Posts ab sofort automatisch ohne Einzelfreigabe (Autopilot). Regel-Check ersetzt die Freigabe; Zweifelsfälle, Reposts, Verkaufsbezug und fehlendes Material weiterhin als Frage. |
