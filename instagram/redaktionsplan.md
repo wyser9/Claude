@@ -770,3 +770,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-12 | #11 veröffentlicht um 20:56 statt 20:00 (Sitzungs-Neustart unterbrach die geplante Veröffentlichung): https://www.instagram.com/p/DeZ7TMLmRKs/ – Story publiziert. |
 | 2026-10-13 | #1 veröffentlicht um 18:57 statt 18:30 (Sitzungs-Neustart; vom Sicherheitsnetz nachgeholt): https://www.instagram.com/p/DecSkEAFDu0/ |
 | 2026-10-13 | Inhaber: Posts ab sofort automatisch ohne Einzelfreigabe (Autopilot). Regel-Check ersetzt die Freigabe; Zweifelsfälle, Reposts, Verkaufsbezug und fehlendes Material weiterhin als Frage. |
+| 2026-10-14 | #13 Springfield Echelon Pro Comp (3 Modelle) auf Wunsch des Inhabers sofort veröffentlicht (16:52): https://www.instagram.com/p/Deeo_1mEURg/ – ohne Vorbestellungs-Aufruf und ohne YouTube-Video (Urheberrecht), «ab Ende Januar 2027 erwartet», Tag @springfieldarmory. |
