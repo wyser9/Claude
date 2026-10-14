@@ -95,7 +95,7 @@ function specs(s, i, n) {
 
 function product(s, i, n) {
   const src = (f) => 'data:image/png;base64,' + readFileSync(resolve(dirname(specPath), f)).toString('base64');
-  const imgs = (s.images || [s.image]).map((f) => `<div class="card"><img src="${src(f)}"></div>`).join('');
+  const imgs = (s.images || [s.image]).map((f) => `<div class="card"><img src="${src(f)}"${s.imgHeight ? ` style="height:${s.imgHeight}px;object-fit:contain"` : ''}></div>`).join('');
   const rows = (s.rows || []).map(([k, v]) => `<tr><td class="k">${esc(k)}</td><td class="v">${md(v)}</td></tr>`).join('');
   return `<div class="slide">
     ${s.kicker ? `<div class="kicker" style="margin-top:0">${esc(s.kicker)}</div>` : ''}

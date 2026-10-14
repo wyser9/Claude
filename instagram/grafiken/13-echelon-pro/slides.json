@@ -1,0 +1,78 @@
+{
+  "post": "#13 – Springfield Armory Echelon Pro Comp (neu)",
+  "slides": [
+    {
+      "type": "product",
+      "kicker": "Neu bei Armatum",
+      "title": "Springfield Echelon Pro Comp",
+      "titleSize": 72,
+      "images": [
+        "src-ecp9409byfc-comp-1.jpg"
+      ],
+      "body": "**Kompensator. Tritium. Optics Ready.**\nDrei Modelle in 9 mm."
+    },
+    {
+      "type": "product",
+      "kicker": "Echelon Pro 4.5F Comp",
+      "title": "Was sie ausmacht",
+      "titleSize": 64,
+      "images": [
+        "src-ecp9459by-comp-3.jpg"
+      ],
+      "rows": [
+        [
+          "Schlitten",
+          "integral kompensiert, Springfield Grey Cerakote"
+        ],
+        [
+          "Visierung",
+          "Tritium-Korn"
+        ],
+        [
+          "Optik",
+          "Optics-Ready-Schlitten"
+        ],
+        [
+          "Kaliber",
+          "9 mm (9×19)"
+        ]
+      ],
+      "imgHeight": 420
+    },
+    {
+      "type": "specs",
+      "kicker": "Drei Modelle",
+      "title": "Welche passt zu dir?",
+      "rows": [
+        [
+          "4.0C Comp",
+          "4\"-Lauf · kleines Griffmodul\n18 Schuss · ca. 652 g"
+        ],
+        [
+          "4.0FC Comp",
+          "4\"-Lauf · mittleres Griffmodul\n20 Schuss · ca. 680 g"
+        ],
+        [
+          "4.5F Comp",
+          "4.5\"-Lauf · Badlands-Textur\n20 Schuss · ca. 709 g"
+        ]
+      ]
+    },
+    {
+      "type": "product",
+      "kicker": "Im Detail",
+      "title": "Grip-Textur",
+      "titleSize": 64,
+      "images": [
+        "src-ecp9459by-comp-7.jpg"
+      ],
+      "body": "Griffig, kompakt, bereit für den Stand.",
+      "imgHeight": 640
+    },
+    {
+      "type": "cta",
+      "title": "Alle Infos auf armatum.ch",
+      "body": "4.0C, 4.0FC oder 4.5F – welche wär's für dich? 👇"
+    }
+  ]
+}
