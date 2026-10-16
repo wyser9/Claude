@@ -55,6 +55,19 @@ check( 'Nummer in anderer Zahl', false, BWS_Util::title_matches_order_number( 'A
 check( 'Kurze Nummer nicht in langer', false, BWS_Util::title_matches_order_number( '1234 Muster', '123' ) );
 check( 'Leere Nummer', false, BWS_Util::title_matches_order_number( '12345', '' ) );
 
+$b = BWS_Util::description_bullets(
+	array( 'Hersteller' => 'Streamlight', 'Packungsgrösse' => '' ),
+	'<p>350 Lumen (Hoch-Modus, mit CR123A), Reichweite bis 160 Meter. Multi-Fuel: nimmt AA oder CR123A. Ultrakompakt: nur 10.8 cm lang. Vierter Satz.</p>',
+	''
+);
+check( 'Stichpunkte: Merkmale + Sätze (max 3), leere Merkmale weg', array( 'Hersteller: Streamlight', '350 Lumen (Hoch-Modus, mit CR123A), Reichweite bis 160 Meter', 'Multi-Fuel: nimmt AA oder CR123A', 'Ultrakompakt: nur 10.8 cm lang' ), $b );
+$b2 = BWS_Util::description_bullets( array(), '<p>Kurz.</p>', '<h2>Technik</h2><ul><li>Kaliber: 10mm / .400</li><li>Geschossgewicht: 180gr</li><li>kaliber: 10mm / .400</li></ul>' );
+check( 'Stichpunkte: Liste aus Langbeschreibung, Duplikate entfernt', array( 'Kaliber: 10mm / .400', 'Geschossgewicht: 180gr' ), $b2 );
+check( 'HTML-Liste', '<ul><li>A &amp; B</li><li>C</li></ul>', BWS_Util::bullets_html( array( 'A & B', 'C' ) ) );
+check( 'Keine Punkte = leer', '', BWS_Util::bullets_html( array() ) );
+$many = BWS_Util::description_bullets( array_combine( range( 1, 15 ), range( 1, 15 ) ), '', '' );
+check( 'Maximal 10 Punkte', 10, count( $many ) );
+
 check( 'Kürzen', 'abc', BWS_Util::truncate( ' abcdef ', 3 ) );
 
 echo $failures ? "\n$failures Fehler\n" : "\nAlle Tests bestanden.\n";

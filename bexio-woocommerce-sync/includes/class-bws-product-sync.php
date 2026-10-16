@@ -230,6 +230,95 @@ class BWS_Product_Sync {
 	}
 
 	/**
+	 * Beschreibung für bexio: wichtigste Fakten als Stichpunkte (Einstellung "description_bullets"),
+	 * sonst die Kurzbeschreibung als Text.
+	 *
+	 * @param WC_Product $product Produkt oder Variante.
+	 * @return string
+	 */
+	public static function description( WC_Product $product ) {
+		$parent = $product->is_type( 'variation' ) ? wc_get_product( $product->get_parent_id() ) : null;
+		$short  = $product->get_short_description();
+		$long   = $product->get_description();
+		if ( $parent ) {
+			$short = '' !== trim( $short ) ? $short : $parent->get_short_description();
+			$long  = '' !== trim( $long ) ? $long : $parent->get_description();
+		}
+
+		if ( ! BWS_Settings::enabled( 'description_bullets' ) ) {
+			return wp_strip_all_tags( '' !== trim( $short ) ? $short : $long );
+		}
+
+		$facts = array();
+		foreach ( array_filter( array( $parent, $product ) ) as $source ) {
+			foreach ( $source->get_attributes() as $key => $attribute ) {
+				if ( is_object( $attribute ) ) {
+					// Merkmal des Elternprodukts (WC_Product_Attribute).
+					if ( ! $attribute->get_visible() || ( $parent && $source === $parent && $attribute->get_variation() ) ) {
+						continue;
+					}
+					$values = $attribute->is_taxonomy() ? wc_get_product_terms( $source->get_id(), $attribute->get_name(), array( 'fields' => 'names' ) ) : $attribute->get_options();
+					$facts[ wc_attribute_label( $attribute->get_name(), $source ) ] = implode( ', ', $values );
+				} elseif ( '' !== (string) $attribute ) {
+					// Merkmal der Variante (Slug/Wert).
+					$taxonomy = str_replace( 'attribute_', '', $key );
+					$term     = taxonomy_exists( $taxonomy ) ? get_term_by( 'slug', $attribute, $taxonomy ) : false;
+					$facts[ wc_attribute_label( $taxonomy, $source ) ] = $term ? $term->name : $attribute;
+				}
+			}
+		}
+
+		$bullets = BWS_Util::description_bullets( apply_filters( 'bws_description_facts', $facts, $product ), $short, $long );
+		return BWS_Util::bullets_html( $bullets );
+	}
+
+	/**
+	 * Ob ein Produkt (bzw. das Elternprodukt einer Variante) in einer Kategorie oder deren Unterkategorie liegt.
+	 *
+	 * @param WC_Product $product Produkt.
+	 * @param int        $term_id Kategorie-ID.
+	 * @return bool
+	 */
+	public static function in_category_tree( WC_Product $product, $term_id ) {
+		if ( ! $term_id ) {
+			return false;
+		}
+		$cat_ids = $product->get_category_ids();
+		if ( ! $cat_ids && $product->get_parent_id() ) {
+			$parent  = wc_get_product( $product->get_parent_id() );
+			$cat_ids = $parent ? $parent->get_category_ids() : array();
+		}
+		foreach ( $cat_ids as $cat_id ) {
+			if ( (int) $cat_id === (int) $term_id || in_array( (int) $term_id, array_map( 'intval', get_ancestors( (int) $cat_id, 'product_cat', 'taxonomy' ) ), true ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Alle bereits verknüpften Produkte (Meta _bws_article_id).
+	 *
+	 * @return array<int,int> bexio Artikel-ID => Produkt-ID.
+	 */
+	public static function products_by_article_id() {
+		global $wpdb;
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT pm.post_id, pm.meta_value FROM {$wpdb->postmeta} pm
+				INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id AND p.post_status <> 'trash'
+				WHERE pm.meta_key = %s",
+				self::META_ARTICLE_ID
+			)
+		);
+		$map = array();
+		foreach ( $rows as $row ) {
+			$map[ (int) $row->meta_value ] = (int) $row->post_id;
+		}
+		return $map;
+	}
+
+	/**
 	 * Felder, die nur beim Anlegen eines neuen bexio-Artikels gesetzt werden:
 	 * Lagerverwaltung ("Ist ein Produkt mit Lager"), Aufwandkonto und Vorsteuer.
 	 * Bestehende Artikel bleiben unverändert.
@@ -393,21 +482,14 @@ class BWS_Product_Sync {
 			}
 		}
 
-		$description = $product->get_short_description();
-		if ( '' === trim( $description ) ) {
-			$description = $product->get_description();
-		}
-		if ( '' === trim( $description ) && $product->is_type( 'variation' ) ) {
-			$parent      = wc_get_product( $product->get_parent_id() );
-			$description = $parent ? $parent->get_short_description() : '';
-		}
+		$description = self::description( $product );
 
 		$payload = array(
 			'user_id'           => BWS_Lookup::user_id(),
 			'article_type_id'   => $product->is_virtual() ? 2 : 1, // 1 = physisch, 2 = Dienstleistung.
 			'intern_code'       => self::intern_code( $product ),
 			'intern_name'       => BWS_Util::truncate( wp_strip_all_tags( $name ), 255 ),
-			'intern_description' => wp_strip_all_tags( $description ),
+			'intern_description' => $description,
 			'sale_price'        => BWS_Util::amount( (float) $product->get_regular_price(), 2 ),
 			'tax_income_id'     => BWS_Lookup::tax_id_for_rate( self::tax_rate( $product ) ),
 		);

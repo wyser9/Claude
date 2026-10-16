@@ -316,6 +316,66 @@ BWS_Settings::save( array( 'expense_account_id' => '', 'tax_expense_id' => '', '
 $pvv = new WC_Product_Simple(); $pvv->set_props( array( 'name' => 'Gutschein', 'sku' => 'GS-1', 'regular_price' => '50', 'virtual' => true ) ); $pvv->save();
 t( 'Virtuelles Produkt (Dienstleistung) ohne Lager', ! isset( BWS_Product_Sync::create_only_fields( wc_get_product( $pvv->get_id() ) )['is_stock'] ) );
 
+// --- Beschreibung als Stichpunkte ---
+$pa = new WC_Product_Attribute(); $pa->set_name( 'Hersteller' ); $pa->set_options( array( 'Streamlight' ) ); $pa->set_visible( true );
+$pd = new WC_Product_Simple(); $pd->set_props( array( 'name' => 'ProTac', 'sku' => 'DESC-1', 'regular_price' => '79.9', 'short_description' => '<p>350 Lumen, Reichweite bis 160 Meter. Ultrakompakt: nur 10.8 cm lang.</p>' ) ); $pd->set_attributes( array( $pa ) ); $pd->save();
+$desc = BWS_Product_Sync::build_payload( wc_get_product( $pd->get_id() ) )['intern_description'];
+t( 'bexio-Beschreibung als Stichpunkte', '<ul><li>Hersteller: Streamlight</li><li>350 Lumen, Reichweite bis 160 Meter</li><li>Ultrakompakt: nur 10.8 cm lang</li></ul>' === $desc, $desc );
+BWS_Settings::save( array( 'description_bullets' => 'no' ) );
+t( 'Stichpunkte abschaltbar (Fliesstext)', false === strpos( BWS_Product_Sync::build_payload( wc_get_product( $pd->get_id() ) )['intern_description'], '<li>' ) );
+BWS_Settings::save( array( 'description_bullets' => 'yes' ) );
+
+// --- Nachrüsten bestehender Artikel ---
+BWS_Lookup::flush();
+$pb1 = new WC_Product_Simple(); $pb1->set_props( array( 'name' => 'Alt ohne Lager', 'sku' => 'BF-1', 'regular_price' => '1' ) ); $pb1->save(); update_post_meta( $pb1->get_id(), '_bws_article_id', 5001 );
+$pb2 = new WC_Product_Simple(); $pb2->set_props( array( 'name' => 'Alt mit Lager', 'sku' => 'BF-2', 'regular_price' => '1' ) ); $pb2->save(); update_post_meta( $pb2->get_id(), '_bws_article_id', 5002 );
+$pb3 = new WC_Product_Simple(); $pb3->set_props( array( 'name' => 'Komplett', 'sku' => 'BF-3', 'regular_price' => '1' ) ); $pb3->save(); update_post_meta( $pb3->get_id(), '_bws_article_id', 5003 );
+$GLOBALS['bws_bexio_articles'] = array(
+	array( 'id' => 5001, 'intern_code' => 'BF-1', 'is_stock' => false, 'stock_nr' => 0, 'expense_account_id' => null, 'tax_expense_id' => null ),
+	array( 'id' => 5002, 'intern_code' => 'BF-2', 'is_stock' => true, 'stock_nr' => 7, 'expense_account_id' => null, 'tax_expense_id' => 99 ),
+	array( 'id' => 5003, 'intern_code' => 'BF-3', 'is_stock' => true, 'stock_nr' => 2, 'expense_account_id' => 42, 'tax_expense_id' => 21 ),
+	array( 'id' => 5004, 'intern_code' => '096-77116', 'deliverer_code' => '19442', 'is_stock' => true, 'stock_nr' => 1 ),
+);
+$GLOBALS['bws_requests'] = array();
+$st = BWS_Backfill::scan();
+while ( 'running' === $st['state'] ) { $st = BWS_Backfill::chunk(); }
+$posts = array(); foreach ( $GLOBALS['bws_requests'] as $q ) { if ( 'POST' === $q[0] ) $posts[ $q[1] ] = $q[2]; }
+t( 'Nachrüsten: Artikel ohne Lager bekommt Lager, Konto, Vorsteuer', isset( $posts['2.0/article/5001'] ) && true === $posts['2.0/article/5001']['is_stock'] && 42 === $posts['2.0/article/5001']['expense_account_id'] && 21 === $posts['2.0/article/5001']['tax_expense_id'], wp_json_encode( $posts ) );
+t( 'Nachrüsten: Lagerartikel – Bestand unangetastet, nur fehlendes Konto', isset( $posts['2.0/article/5002'] ) && ! isset( $posts['2.0/article/5002']['is_stock'] ) && ! isset( $posts['2.0/article/5002']['stock_nr'] ) && ! isset( $posts['2.0/article/5002']['tax_expense_id'] ) && 42 === $posts['2.0/article/5002']['expense_account_id'] );
+t( 'Nachrüsten: vollständiger Artikel unverändert', ! isset( $posts['2.0/article/5003'] ) );
+t( 'Nachrüsten: Seriennummer-Kopie (kein Shop-Produkt) unverändert', ! isset( $posts['2.0/article/5004'] ) );
+t( 'Nachrüsten: Status', 'done' === $st['state'] && 2 === $st['done'] && 0 === $st['errors'] );
+
+// --- Waffen mit Seriennummer-Kopien ---
+$c_waf = (int) wp_insert_term( 'Waffen', 'product_cat', array( 'slug' => 'waffen' ) )['term_id'];
+$c_pis = (int) wp_insert_term( 'Pistolen', 'product_cat', array( 'parent' => $c_waf ) )['term_id'];
+$c_zub = (int) wp_insert_term( 'Zubehör X', 'product_cat' )['term_id'];
+$gun = new WC_Product_Simple(); $gun->set_props( array( 'name' => 'Ruger RXM 17 Schuss', 'sku' => '19442', 'regular_price' => '700', 'category_ids' => array( $c_pis ) ) ); $gun->save();
+$gun2 = new WC_Product_Simple(); $gun2->set_props( array( 'name' => 'Ruger ohne Kopie', 'sku' => '19443', 'regular_price' => '700', 'category_ids' => array( $c_pis ) ) ); $gun2->save();
+$acc = new WC_Product_Simple(); $acc->set_props( array( 'name' => 'Zubehör mit Lieferantencode', 'sku' => 'ZB-1', 'regular_price' => '10', 'category_ids' => array( $c_zub ) ) ); $acc->save();
+foreach ( array( $gun, $gun2, $acc ) as $pp ) { $o = wc_get_product( $pp->get_id() ); $o->set_stock_status( 'onbackorder' ); $o->save(); }
+$GLOBALS['bws_bexio_articles'] = array(
+	array( 'id' => 6001, 'intern_code' => '19442', 'is_stock' => false, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 6002, 'intern_code' => '096-77116', 'deliverer_code' => '19442', 'is_stock' => true, 'stock_nr' => 1, 'stock_available_nr' => 1 ),
+	array( 'id' => 6003, 'intern_code' => '096-77117', 'deliverer_code' => '19442', 'is_stock' => true, 'stock_nr' => 1, 'stock_available_nr' => 1 ),
+	array( 'id' => 6004, 'intern_code' => '096-80000', 'deliverer_code' => '19442', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 6005, 'intern_code' => '19443', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 6006, 'intern_code' => 'ZB-1', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 6007, 'intern_code' => 'LIEF-ABC', 'deliverer_code' => 'ZB-1', 'is_stock' => true, 'stock_nr' => 5, 'stock_available_nr' => 5 ),
+);
+BWS_Settings::save( array( 'stock_mode' => 'from_bexio' ) );
+$GLOBALS['bws_requests'] = array();
+$ss = BWS_Stock_Import::run();
+t( 'Waffe: Hauptartikel an Lager über 2 Seriennummern', 'instock' === wc_get_product( $gun->get_id() )->get_stock_status(), wp_json_encode( $ss ) );
+t( 'Waffe ohne Kopie bleibt Lieferrückstand', 'onbackorder' === wc_get_product( $gun2->get_id() )->get_stock_status() );
+t( 'Nicht-Waffe: Lieferantencode zählt nicht', 'onbackorder' === wc_get_product( $acc->get_id() )->get_stock_status() );
+t( 'Statistik Seriennummern', 1 === $ss['serial'] );
+t( 'Lagerimport schreibt nichts in bexio', ! array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'GET' !== $q[0]; } ) );
+$GLOBALS['bws_bexio_articles'][1]['stock_nr'] = 0; $GLOBALS['bws_bexio_articles'][2]['stock_nr'] = 0;
+BWS_Stock_Import::run();
+t( 'Waffe verkauft (Kopien 0) -> Lieferrückstand', 'onbackorder' === wc_get_product( $gun->get_id() )->get_stock_status() );
+BWS_Settings::save( array( 'stock_mode' => 'to_bexio' ) );
+
 // --- Lagerimport bexio -> WooCommerce ---
 BWS_Settings::save( array( 'stock_mode' => 'from_bexio', 'price_mode' => 'gross' ) );
 update_option( 'woocommerce_prices_include_tax', 'yes' );

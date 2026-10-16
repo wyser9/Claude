@@ -99,6 +99,108 @@ class BWS_Util {
 	}
 
 	/**
+	 * Fasst Produktinfos zu den wichtigsten Fakten als Stichpunkte zusammen.
+	 *
+	 * Reihenfolge: Merkmale ("Name: Wert"), dann Aufzählungspunkte aus der Kurz- bzw. Langbeschreibung;
+	 * gibt es dort keine Liste, die ersten Sätze der Kurzbeschreibung. Doppelte Punkte werden entfernt.
+	 *
+	 * @param array  $facts      Merkmal => Wert.
+	 * @param string $short_html Kurzbeschreibung (HTML).
+	 * @param string $long_html  Beschreibung (HTML).
+	 * @param int    $max        Maximale Anzahl Punkte.
+	 * @return string[]
+	 */
+	public static function description_bullets( array $facts, $short_html, $long_html, $max = 10 ) {
+		$items = array();
+		foreach ( $facts as $label => $value ) {
+			$value = self::clean_text( $value );
+			if ( '' !== $value ) {
+				$items[] = self::clean_text( $label ) . ': ' . $value;
+			}
+		}
+		$list = self::list_items( $short_html );
+		if ( ! $list ) {
+			$list = self::list_items( $long_html );
+		}
+		if ( ! $list ) {
+			$list = array_slice( self::sentences( $short_html ), 0, 3 );
+		}
+		$items = array_merge( $items, $list );
+
+		$seen = array();
+		$out  = array();
+		foreach ( $items as $item ) {
+			$item = self::truncate( rtrim( $item, ' .;' ), 200 );
+			$key  = function_exists( 'mb_strtolower' ) ? mb_strtolower( $item ) : strtolower( $item );
+			if ( '' === $item || isset( $seen[ $key ] ) ) {
+				continue;
+			}
+			$seen[ $key ] = true;
+			$out[]        = $item;
+			if ( count( $out ) >= $max ) {
+				break;
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Stichpunkte als HTML-Liste.
+	 *
+	 * @param string[] $bullets Punkte.
+	 * @return string
+	 */
+	public static function bullets_html( array $bullets ) {
+		if ( ! $bullets ) {
+			return '';
+		}
+		$li = array_map(
+			function ( $b ) {
+				return '<li>' . htmlspecialchars( $b, ENT_QUOTES, 'UTF-8' ) . '</li>';
+			},
+			$bullets
+		);
+		return '<ul>' . implode( '', $li ) . '</ul>';
+	}
+
+	/**
+	 * Texte aller <li>-Elemente.
+	 *
+	 * @param string $html HTML.
+	 * @return string[]
+	 */
+	public static function list_items( $html ) {
+		if ( ! preg_match_all( '#<li[^>]*>(.*?)</li>#is', (string) $html, $m ) ) {
+			return array();
+		}
+		return array_values( array_filter( array_map( array( __CLASS__, 'clean_text' ), $m[1] ), 'strlen' ) );
+	}
+
+	/**
+	 * Sätze bzw. Zeilen eines Textes.
+	 *
+	 * @param string $html HTML oder Text.
+	 * @return string[]
+	 */
+	public static function sentences( $html ) {
+		$text  = preg_replace( '#<(br|/p|/div|/h\d)[^>]*>#i', "\n", (string) $html );
+		$text  = html_entity_decode( strip_tags( $text ), ENT_QUOTES, 'UTF-8' );
+		$parts = preg_split( '/(?<=[.!?])\s+(?=[A-ZÄÖÜ0-9])|\n+/u', $text );
+		return array_values( array_filter( array_map( array( __CLASS__, 'clean_text' ), (array) $parts ), 'strlen' ) );
+	}
+
+	/**
+	 * HTML entfernen, Entities dekodieren, Leerraum vereinheitlichen.
+	 *
+	 * @param string $value Wert.
+	 * @return string
+	 */
+	public static function clean_text( $value ) {
+		$value = html_entity_decode( strip_tags( (string) $value ), ENT_QUOTES, 'UTF-8' );
+		return trim( preg_replace( '/\s+/u', ' ', $value ) );
+	}
+
+	/**
 	 * Kürzt einen String auf die maximale Feldlänge von bexio.
 	 *
 	 * @param string $value Text.

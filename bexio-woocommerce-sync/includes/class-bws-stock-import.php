@@ -103,10 +103,14 @@ class BWS_Stock_Import {
 	public static function run() {
 		$articles = BWS_Client::instance()->get_all( '2.0/article' );
 		$field    = 'stock_available_nr' === BWS_Settings::get( 'stock_field' ) ? 'stock_available_nr' : 'stock_nr';
-		$by_id    = self::products_by_article_id();
+		$by_id    = BWS_Product_Sync::products_by_article_id();
+		$serials  = self::serial_stock( $articles, $field );
+		$serial_cat = self::serial_category_id();
+		$handled  = array();
 		$stats    = array(
 			'time'      => time(),
 			'articles'  => count( $articles ),
+			'serial'    => 0,
 			'instock'   => 0,
 			'backorder' => 0,
 			'unchanged' => 0,
@@ -118,17 +122,32 @@ class BWS_Stock_Import {
 		BWS_Product_Sync::$suspended = true;
 		try {
 			foreach ( $articles as $article ) {
+				$code   = trim( (string) ( $article['intern_code'] ?? '' ) );
+				$serial = $serials[ $code ]['stock'] ?? 0;
+
+				$is_stock = ! empty( $article['is_stock'] ) && isset( $article[ $field ] );
+				$product  = self::find_product( $article, $by_id );
+
 				// Nur Lagerartikel – bei anderen Artikeln ist der Bestand in bexio immer 0.
-				if ( empty( $article['is_stock'] ) || ! isset( $article[ $field ] ) ) {
+				// Ausnahme: Hauptartikel der Seriennummer-Kategorie (Waffen), deren Bestand aus den Kopien kommt.
+				if ( ! $is_stock && ! ( $product && BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) ) {
 					$stats['skipped']++;
 					continue;
 				}
-
-				$product = self::find_product( $article, $by_id );
 				if ( ! $product ) {
 					$stats['not_found']++;
 					continue;
 				}
+				$own = empty( $article['is_stock'] ) ? 0.0 : (float) ( $article[ $field ] ?? 0 );
+				if ( $serial && ! BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) {
+					bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s hat Kopien mit Produktcode Lieferant (%s), ist aber nicht in der Seriennummer-Kategorie – ignoriert.', $code, implode( ', ', $serials[ $code ]['codes'] ) ) );
+					$serial = 0;
+					if ( empty( $article['is_stock'] ) ) {
+						$stats['skipped']++;
+						continue;
+					}
+				}
+				$handled[ $code ] = true;
 				if ( $product->is_type( array( 'variable', 'grouped', 'external' ) ) ) {
 					bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s gehört zu einem %s-Produkt (#%d) – Status wird dort aus den Varianten berechnet, übersprungen.', $article['intern_code'], $product->get_type(), $product->get_id() ) );
 					$stats['skipped']++;
@@ -136,12 +155,30 @@ class BWS_Stock_Import {
 				}
 
 				try {
-					$result = self::apply( $product, (float) $article[ $field ] );
+					$result = self::apply( $product, $own + $serial );
 					$stats[ $result ]++;
+					if ( $serial ) {
+						$stats['serial']++;
+						bws_log( 'info', sprintf( 'Lagerimport: %s (Produkt #%d) – %s Stück über Seriennummern %s.', $code, $product->get_id(), $serial, implode( ', ', $serials[ $code ]['codes'] ) ) );
+					}
 				} catch ( Exception $e ) {
 					$stats['errors']++;
 					bws_log( 'error', sprintf( 'Lagerimport: Produkt #%d (%s): %s', $product->get_id(), $article['intern_code'], $e->getMessage() ) );
 				}
+			}
+			// Hauptartikel, die in bexio nicht (mehr) existieren, aber Seriennummer-Kopien haben.
+			foreach ( $serials as $code => $info ) {
+				if ( isset( $handled[ $code ] ) ) {
+					continue;
+				}
+				$product_id = wc_get_product_id_by_sku( $code );
+				$product    = $product_id ? wc_get_product( $product_id ) : null;
+				if ( ! $product || $product->is_type( array( 'variable', 'grouped', 'external' ) ) || ! BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) {
+					continue;
+				}
+				$result = self::apply( $product, $info['stock'] );
+				$stats[ $result ]++;
+				$stats['serial']++;
 			}
 		} finally {
 			BWS_Product_Sync::$suspended = false;
@@ -162,6 +199,61 @@ class BWS_Stock_Import {
 			)
 		);
 		return $stats;
+	}
+
+	/**
+	 * Bestand der Seriennummer-Kopien je Hauptartikel-Nummer.
+	 *
+	 * Eine Kopie ist ein bexio-Lagerartikel, dessen "Produktcode Lieferant" (deliverer_code) die
+	 * Artikelnummer eines anderen Artikels trägt, z. B. Kopie "096-77116" mit Produktcode Lieferant
+	 * "19442". Der bexio-Bestand wird nur gelesen, nie verändert.
+	 *
+	 * @param array  $articles bexio-Artikel.
+	 * @param string $field    stock_nr | stock_available_nr.
+	 * @return array<string,array{stock:float,codes:string[]}>
+	 */
+	public static function serial_stock( array $articles, $field ) {
+		$main_codes = array();
+		foreach ( $articles as $article ) {
+			$main_codes[ trim( (string) ( $article['intern_code'] ?? '' ) ) ] = true;
+		}
+		$sums = array();
+		foreach ( $articles as $article ) {
+			$parent = trim( (string) ( $article['deliverer_code'] ?? '' ) );
+			$code   = trim( (string) ( $article['intern_code'] ?? '' ) );
+			$stock  = (float) ( $article[ $field ] ?? 0 );
+			if ( '' === $parent || $parent === $code || empty( $article['is_stock'] ) || $stock <= 0 ) {
+				continue;
+			}
+			// Nur zählen, wenn der Hauptartikel in bexio existiert oder es ein Shop-Produkt mit dieser SKU gibt.
+			if ( ! isset( $main_codes[ $parent ] ) && ! wc_get_product_id_by_sku( $parent ) ) {
+				continue;
+			}
+			if ( ! isset( $sums[ $parent ] ) ) {
+				$sums[ $parent ] = array( 'stock' => 0.0, 'codes' => array() );
+			}
+			$sums[ $parent ]['stock']  += $stock;
+			$sums[ $parent ]['codes'][] = $code;
+		}
+		return $sums;
+	}
+
+	/**
+	 * Kategorie der Artikel mit Seriennummer-Kopien (Einstellung, sonst Hauptkategorie "Waffen").
+	 *
+	 * @return int
+	 */
+	public static function serial_category_id() {
+		$configured = BWS_Settings::id( 'serial_category' );
+		if ( $configured ) {
+			return $configured;
+		}
+		$term = get_term_by( 'slug', 'waffen', 'product_cat' );
+		if ( ! $term ) {
+			$found = get_terms( array( 'taxonomy' => 'product_cat', 'name' => 'Waffen', 'parent' => 0, 'hide_empty' => false ) );
+			$term  = is_array( $found ) && $found ? $found[0] : null;
+		}
+		return $term ? (int) $term->term_id : 0;
 	}
 
 	/**
@@ -219,27 +311,5 @@ class BWS_Stock_Import {
 		}
 		$product = $product_id ? wc_get_product( $product_id ) : null;
 		return $product ? $product : null;
-	}
-
-	/**
-	 * Alle bereits verknüpften Produkte (Meta _bws_article_id).
-	 *
-	 * @return array<int,int>
-	 */
-	private static function products_by_article_id() {
-		global $wpdb;
-		$rows = $wpdb->get_results(
-			$wpdb->prepare(
-				"SELECT pm.post_id, pm.meta_value FROM {$wpdb->postmeta} pm
-				INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id AND p.post_status <> 'trash'
-				WHERE pm.meta_key = %s",
-				BWS_Product_Sync::META_ARTICLE_ID
-			)
-		);
-		$map = array();
-		foreach ( $rows as $row ) {
-			$map[ (int) $row->meta_value ] = (int) $row->post_id;
-		}
-		return $map;
 	}
 }

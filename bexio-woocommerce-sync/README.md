@@ -42,6 +42,19 @@ Nur beim **Neuanlegen** eines Artikels setzt das Plugin zusätzlich:
 
 Bestehende bexio-Artikel werden dabei nicht verändert.
 
+### Bestehende Artikel nachrüsten
+Werkzeug **„Bestehende Artikel nachrüsten (Lager, Aufwandkonto, Vorsteuer)“** (oder `wp bexio backfill`): Für alle bexio-Artikel, die mit einem Shop-Produkt verknüpft sind, werden **nur fehlende Werte** ergänzt – „Ist ein Produkt mit Lager“ (Bestand/Mindestbestand 0, Lagerort/-platz) bei Artikeln ohne Lagerführung, Aufwandkonto 4200 und Vorsteuer VM81, wo leer. Bestehende Lagerbestände, gesetzte Konten/Steuern und Artikel ohne Shop-Produkt (z. B. Waffen-Kopien mit Seriennummer) bleiben unverändert. Fortschritt auf der Einstellungsseite.
+
+### Beschreibung als Stichpunkte
+Die bexio-Produktbeschreibung enthält die wichtigsten Fakten als Aufzählung: zuerst die sichtbaren Merkmale („Hersteller: Streamlight“, „Packungsgrösse: 100“ …), dann die Aufzählungspunkte der Shop-Beschreibung (Kurz-, sonst Langbeschreibung); gibt es keine, die ersten drei Sätze der Kurzbeschreibung. Max. 10 Punkte, Duplikate entfernt. Abschaltbar („Beschreibung als Stichpunkte“). Bestehende Artikel erhalten die neue Beschreibung bei der nächsten Übertragung („Alle Artikel jetzt an bexio übertragen“).
+
+### Waffen mit Seriennummer-Kopien
+Für jede Waffe gibt es in bexio einen **Hauptartikel** (z. B. „19442“, Bestand immer 0) und **Kopien mit Seriennummer** (z. B. „096-77116“), deren **„Produktcode Lieferant“** die Artikelnummer des Hauptartikels trägt. Beim Lagerimport wird der Bestand aller Kopien zum Hauptartikel addiert:
+- mindestens eine Kopie an Lager → Hauptartikel im Shop **Vorrätig** (bei Lagerverwaltung mit der Anzahl Waffen),
+- keine Kopie an Lager → **Lieferrückstand**.
+
+Gilt nur für Produkte der Kategorie **„Waffen“** (einstellbar), damit normale Lieferanten-Artikelnummern nicht mitzählen. Der Bestand in bexio wird nie verändert.
+
 ### Artikelgruppen (Produktkategorien)
 - In den Einstellungen unter **Artikelgruppen** steht jede Hauptkategorie des Shops mit einem Feld für die **bexio Artikelgruppen-ID**.
 - Die Artikelgruppen müssen zuerst **in bexio angelegt** werden. Die bexio-API bietet keine Schnittstelle zum Anlegen oder Auflisten von Artikelgruppen.

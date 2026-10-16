@@ -121,6 +121,7 @@ class BWS_Admin {
 					<?php
 					self::checkbox( 'sync_products', 'Artikel übertragen', 'Produkte und Varianten werden bei jeder Änderung als bexio-Artikel angelegt/aktualisiert (Zuordnung über SKU = Artikel-Nr.).', $s );
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
+					self::checkbox( 'description_bullets', 'Beschreibung als Stichpunkte', 'Die bexio-Produktbeschreibung enthält die wichtigsten Fakten als Aufzählung (Merkmale wie Hersteller, Kaliber, Packungsgrösse sowie die Aufzählungspunkte der Shop-Beschreibung) statt Fliesstext.', $s );
 					self::checkbox( 'new_article_stock', 'Neue Artikel als Lagerartikel', 'Neu in bexio angelegte Artikel erhalten „Ist ein Produkt mit Lager“ (Bestand/Mindestbestand 0, Lagerort und Lagerplatz aus den Zuordnungen unten). Bestehende Artikel bleiben unverändert.', $s );
 					self::checkbox( 'sku_fallback', 'Ohne SKU übertragen', 'Produkte ohne SKU erhalten in bexio die Artikel-Nr. "WC-&lt;ID&gt;".', $s );
 					self::checkbox( 'update_contacts', 'Bestehende Kontakte aktualisieren', 'Adressdaten bereits vorhandener bexio-Kontakte mit den Angaben der Bestellung überschreiben.', $s );
@@ -155,7 +156,7 @@ class BWS_Admin {
 								<?php if ( is_array( $last ) && ! empty( $last['error'] ) ) : ?>
 									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?> fehlgeschlagen: <?php echo esc_html( $last['error'] ); ?>
 								<?php elseif ( is_array( $last ) ) : ?>
-									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?>: <?php echo (int) $last['instock']; ?> auf Vorrätig, <?php echo (int) $last['backorder']; ?> auf Lieferrückstand, <?php echo (int) $last['unchanged']; ?> unverändert, <?php echo (int) $last['not_found']; ?> nicht im Shop, <?php echo (int) $last['errors']; ?> Fehler.
+									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?>: <?php echo (int) $last['instock']; ?> auf Vorrätig, <?php echo (int) $last['backorder']; ?> auf Lieferrückstand, <?php echo (int) $last['unchanged']; ?> unverändert, <?php echo (int) $last['not_found']; ?> nicht im Shop, <?php echo (int) ( $last['serial'] ?? 0 ); ?> Waffen über Seriennummern, <?php echo (int) $last['errors']; ?> Fehler.
 								<?php endif; ?>
 							</p>
 						</td>
@@ -196,6 +197,29 @@ class BWS_Admin {
 						self::select( 'stock_place_id', 'Lagerplatz', $lists['stock_places'], 'name', $s );
 						self::select( 'account_id', 'Ertragskonto', $lists['accounts'], array( 'account_no', 'name' ), $s, 'Leer = Standard-Ertragskonto aus bexio.' );
 						self::select( 'expense_account_id', 'Aufwandkonto (neue Artikel)', $lists['accounts'], array( 'account_no', 'name' ), $s, 'Leer = automatisch Konto 4200 (Einkauf Handelsware).' );
+						?>
+						<tr>
+							<th><label for="bws_serial_category">Kategorie mit Seriennummern</label></th>
+							<td>
+								<?php
+								wp_dropdown_categories(
+									array(
+										'taxonomy'         => 'product_cat',
+										'name'             => 'serial_category',
+										'id'               => 'bws_serial_category',
+										'selected'         => (int) $s['serial_category'],
+										'show_option_none' => '— automatisch „Waffen“ —',
+										'option_none_value' => '',
+										'hide_empty'       => false,
+										'hierarchical'     => true,
+										'depth'            => 1,
+									)
+								);
+								?>
+								<p class="description">Für Produkte dieser Kategorie zählt der Lagerimport den Bestand der bexio-Kopien mit, deren „Produktcode Lieferant“ die Artikelnummer des Hauptartikels trägt (z. B. Kopie „096-77116“ → Hauptartikel „19442“). Der Bestand in bexio wird nicht verändert.</p>
+							</td>
+						</tr>
+						<?php
 						self::select( 'tax_expense_id', 'MWST Vorsteuer (neue Artikel)', $lists['pre_taxes'], array( 'name', 'value' ), $s, 'Leer = automatisch VM81 (Mat/DL 8.1 %).' );
 						self::select( 'default_tax_id', 'Fallback-MWST', $lists['taxes'], array( 'name', 'value' ), $s, 'Wird verwendet, wenn zu einem Woo-Steuersatz keine bexio-Steuer mit gleichem Satz gefunden wird. Normalerweise leer lassen.' );
 						self::select( 'contact_group_id', 'Kontaktgruppe für neue Kunden', $lists['contact_groups'], 'name', $s );
@@ -241,8 +265,19 @@ class BWS_Admin {
 					<?php if ( 'from_bexio' === BWS_Settings::stock_mode() ) : ?>
 						<button class="button" name="tool" value="import_stock">Lagerstatus jetzt aus bexio holen</button>
 					<?php endif; ?>
+					<button class="button" name="tool" value="backfill">Bestehende Artikel nachrüsten (Lager, Aufwandkonto, Vorsteuer)</button>
 					<button class="button" name="tool" value="flush_cache">bexio-Stammdaten neu laden</button>
 				</form>
+				<?php
+				$bf = get_option( BWS_Backfill::OPT_STATUS );
+				if ( is_array( $bf ) ) :
+					?>
+					<p class="description">Nachrüsten: <?php echo esc_html( 'done' === $bf['state'] ? 'abgeschlossen' : ( 'scanning' === $bf['state'] ? 'liest Artikel …' : 'läuft …' ) ); ?>
+						<?php if ( isset( $bf['todo'] ) ) : ?>
+							– <?php echo (int) $bf['done']; ?> von <?php echo (int) $bf['todo']; ?> Artikeln aktualisiert, <?php echo (int) $bf['errors']; ?> Fehler (Stand <?php echo esc_html( wp_date( 'd.m.Y H:i', $bf['time'] ) ); ?>).
+						<?php endif; ?>
+					</p>
+				<?php endif; ?>
 				<p class="description">Die Übertragung läuft im Hintergrund (WooCommerce &rarr; Status &rarr; Geplante Aktionen, Gruppe "bexio-sync"). Protokoll: WooCommerce &rarr; Status &rarr; Logs, Quelle "bexio-sync".</p>
 			<?php endif; ?>
 		</div>
@@ -305,7 +340,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts', 'new_article_stock' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -329,7 +364,7 @@ class BWS_Admin {
 			}
 		}
 
-		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'expense_account_id', 'tax_expense_id', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
+		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'expense_account_id', 'tax_expense_id', 'serial_category', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				$raw            = sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
 				$values[ $key ] = '' === $raw ? '' : (string) absint( $raw );
@@ -351,6 +386,10 @@ class BWS_Admin {
 		if ( 'sync_all_products' === $tool ) {
 			as_enqueue_async_action( 'bws_bulk_sync_products', array( 1 ), BWS_AS_GROUP );
 			self::redirect( 'Übertragung aller Artikel wurde im Hintergrund gestartet.' );
+		}
+		if ( 'backfill' === $tool ) {
+			BWS_Backfill::start();
+			self::redirect( 'Nachrüsten der bestehenden Artikel wurde im Hintergrund gestartet.' );
 		}
 		if ( 'import_stock' === $tool ) {
 			as_enqueue_async_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP );
