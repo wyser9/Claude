@@ -10,7 +10,7 @@
         "src-duty-f-schraeg.png"
       ],
       "imgHeight": 520,
-      "body": "**Die neue Striker-Generation von CZ.**\nModulares Chassis · Optics Ready\n9 mm Para"
+      "body": "**Die neue Striker-Generation von CZ.**\nVier Modelle · Optics Ready\n9 mm Para"
     },
     {
       "type": "product",
@@ -32,6 +32,29 @@
         [
           "Bedienung",
           "vollständig beidseitig"
+        ]
+      ]
+    },
+    {
+      "type": "product",
+      "kicker": "Full-Size mit Sicherung",
+      "title": "CZ DUTY 4.0 F MS",
+      "images": [
+        "src-duty-f-ms.png"
+      ],
+      "imgHeight": 480,
+      "rows": [
+        [
+          "Kaliber",
+          "9 mm Para (9×19)"
+        ],
+        [
+          "Magazin",
+          "19 Schuss"
+        ],
+        [
+          "Sicherung",
+          "manuell, beidseitig bedienbar"
         ]
       ]
     },
@@ -90,12 +113,16 @@
     },
     {
       "type": "specs",
-      "kicker": "Die DUTY-Familie",
+      "kicker": "Vier Modelle",
       "title": "Welche passt zu dir?",
       "rows": [
         [
           "4.0 F",
           "Full-Size · 19 Schuss"
+        ],
+        [
+          "4.0 F MS",
+          "Full-Size · 19 Schuss\nmit manueller Sicherung"
         ],
         [
           "4.0 C",
