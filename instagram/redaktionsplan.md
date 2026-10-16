@@ -353,7 +353,7 @@ Speichere die Checkliste. Was ist dein bester Tipp gegen Feuchtigkeit im Waffens
 
 ### #7 – Do 22.10.2026, 19:00 – Reel – Säule 3: Ehrlicher Produkttest
 
-**Vorschlag für die Produktwahl** (der Inhaber entscheidet): ein Artikel aus dem Armatum-Sortiment ohne Waffen-/Munitionsbezug, damit der Test unkritisch und gut teilbar ist. Passend zum Sortiment laut Website z. B.: ein Wiederlade-Werkzeug von Hornady oder Lyman (passt zu #5), ein Gehörschutz oder eine Schutzbrille (Sicherheit im Bild!), ein Red Dot oder Zielfernrohr (Holosun, Aimpoint, Steiner), ein Multitool von Leatherman oder der Vaultek Single Pistol Rack. `[FEHLT: Produkt, Erfahrung des Inhabers, Vor- und Nachteile]`
+**Produkt (Inhaber, 16.10.2026):** Tikka T3x ACE Target, 6.5 Creedmoor, schwarz. Erfahrung des Inhabers: starkes Gesamtpaket, einstellbarer Abzug, perfekt für Long Range, man spürt den Einfluss von Sako. Formulierung im Post: «starkes Gesamtpaket» statt «Preis-Leistung» (kein Preisbezug bei Waffen auf Meta). `[FEHLT: 1 Nachteil, Einsatzdauer]`
 
 **Ablauf des Reels** (20–30 Sek., Untertitel, Wasserzeichen `emblem-weiss.png`, Endcard mit Querlogo auf Olivgrün):
 - 0–2 s Hook: Produkt wird auf die Werkbank gestellt. Text: «Lohnt sich [Produkt]? Ehrliche Antwort.»
@@ -364,22 +364,22 @@ Speichere die Checkliste. Was ist dein bester Tipp gegen Feuchtigkeit im Waffens
 
 **Caption zum Kopieren** (Platzhalter ersetzen):
 ```
-Lohnt sich [FEHLT: Produkt]? Unsere ehrliche Antwort nach [FEHLT: Zeitraum] im Einsatz. 🧪
+Lohnt sich die Tikka T3x ACE Target in 6.5 Creedmoor? Unsere ehrliche Antwort nach [FEHLT: Zeitraum] im Einsatz. 🧪
 
 👍 Was uns überzeugt:
-– [FEHLT: Vorteil 1]
-– [FEHLT: Vorteil 2]
+– Starkes Gesamtpaket – man spürt den Einfluss von Sako
+– Einstellbarer Abzug
 
 👎 Was besser sein könnte:
 – [FEHLT: Nachteil]
 
-🎯 Fazit: [FEHLT: Für wen geeignet, für wen eher nicht]
+🎯 Fazit: Perfekt für alle, die auf Long Range wollen.
 
-Du willst es selbst in die Hand nehmen? Komm bei uns im Laden in Fulenbach vorbei – heute Abend bis 21 Uhr oder am Samstag, 24.10., von 9 bis 13 Uhr. Mehr Infos findest du im Onlineshop (Link in der Bio).
+Fragen zur ACE? Schreib sie in die Kommentare – oder schau auf armatum.ch vorbei (Link in der Bio).
 
-Hast du [Produkt] schon im Einsatz? Teile deine Erfahrung in den Kommentaren 👇
+Schiesst du schon eine Tikka? Teile deine Erfahrung 👇
 ```
-**Hashtags:** `#produkttest #sportschiessen #wiederladen #ausrüstung #schweiz` (je nach Produkt anpassen)
+**Hashtags:** `#tikka #65creedmoor #longrange #produkttest #sportschiessen`
 
 **Material/Shotlist** (bis Mi 21.10. 12:00, Hochformat 9:16):
 1. Produkt in der Verpackung auf der Werkbank (Hook-Shot)
@@ -715,7 +715,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-14 12:00 | **Wiederladekurse:** aktuell buchbar? Nächste Termine, Dauer, Zielgruppe (für Story und späteren Post, ohne Preise) | #2 (Kommentar-Antworten), #3, #5 | offen |
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | ✅ erledigt (11.10., «ABC ok») |
-| 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
+| 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | ✅ Produkt, Vorteile, Fazit (16.10.) – offen: 1 Nachteil, Einsatzdauer |
 | – | ~~Freigabe #9 SIG Sauer Cross~~ ✅ freigegeben 11.10. (Tag @sigsauerinc, Steckbrief ja, entladen ✅) | #9 | offen |
 | – | ~~Freigabe #10 Walther-Vergleich~~ | #10 | ✅ freigegeben 11.10. (Titelbild 02→01, ohne IPSC-Hinweis, Tag @waltherarms, entladen ✅) |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
@@ -773,3 +773,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-14 | #13 Springfield Echelon Pro Comp (3 Modelle) auf Wunsch des Inhabers sofort veröffentlicht (16:52): https://www.instagram.com/p/Deeo_1mEURg/ – ohne Vorbestellungs-Aufruf und ohne YouTube-Video (Urheberrecht), «ab Ende Januar 2027 erwartet», Tag @springfieldarmory. |
 | 2026-10-14 | #2 veröffentlicht um 21:29 statt 18:30 (mehrere Sitzungs-Neustarts): https://www.instagram.com/p/DefIJ_zidmm/ |
 | 2026-10-16 | #14 CZ DUTY 4.0 (4 Modelle: F, F MS, C, C MS) auf Wunsch des Inhabers sofort veröffentlicht (08:19): https://www.instagram.com/p/Dei35wjFZYX/ – 8 Slides, Herstellerbilder aus dem Shop (keine Seriennummern sichtbar), ohne Preis/Verkaufsaufruf. Story publiziert, WhatsApp-Status `whatsapp/posts/14-cz-duty.jpg`. |
+| 2026-10-16 | #7 Produkttest: Inhaber wählt Tikka T3x ACE Target 6.5 Creedmoor (schwarz). Caption vorbereitet, Laden-Zeile durch Kommentar-/Bio-Hinweis ersetzt (Waffe → kein Kaufaufruf). Offen: 1 Nachteil, Einsatzdauer, Video bis Mi 21.10. 12:00. |
