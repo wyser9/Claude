@@ -714,7 +714,7 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | ohne Frist | **Folgen-Verhältnis abbauen** (folgt 5547, 2450 Follower): über 6–8 Wochen von Hand inaktive und fachfremde Konten entfolgen, höchstens 50–100 pro Tag, keine Tools. Details in `auswertungen.md`, Abschnitt 7 | Reichweite | offen (Empfehlung) |
 | 2026-10-14 12:00 | **Wiederladekurse:** aktuell buchbar? Nächste Termine, Dauer, Zielgruppe (für Story und späteren Post, ohne Preise) | #2 (Kommentar-Antworten), #3, #5 | offen |
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
-| 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | offen |
+| 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | ✅ erledigt (11.10., «ABC ok») |
 | 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | offen |
 | – | ~~Freigabe #9 SIG Sauer Cross~~ ✅ freigegeben 11.10. (Tag @sigsauerinc, Steckbrief ja, entladen ✅) | #9 | offen |
 | – | ~~Freigabe #10 Walther-Vergleich~~ | #10 | ✅ freigegeben 11.10. (Titelbild 02→01, ohne IPSC-Hinweis, Tag @waltherarms, entladen ✅) |
