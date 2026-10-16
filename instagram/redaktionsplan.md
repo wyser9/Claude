@@ -88,7 +88,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)**, fachliche Prüfung ✅ (Inhaber «ABC ok», 11.10.) – Veröffentlichung geplant Sa 17.10. 09:30 |
 | 5 | 20.10.2026 | Di | 18:30 | Reel (20–25 Sek.) | 2 Wiederladen | Hülsenvorbereitung: vom Messing-Chaos zur präzisen Hülse | «Aus dieser Hülse wird Präzision.» | Entwurf – wartet auf Freigabe `[FEHLT: Video]` |
 | 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
-| 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | Entwurf – wartet auf Freigabe `[FEHLT: Produkt + Video]` |
+| 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | ⏸ pausiert (Inhaber, 16.10.) |
 | 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 18.10. 20:00 |
 | 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 25.10. 20:00 (Titelbild = Ansicht von hinten) |
@@ -352,6 +352,8 @@ Speichere die Checkliste. Was ist dein bester Tipp gegen Feuchtigkeit im Waffens
 ---
 
 ### #7 – Do 22.10.2026, 19:00 – Reel – Säule 3: Ehrlicher Produkttest
+
+**Status: ⏸ pausiert (Inhaber, 16.10.2026: «Wir warten noch damit»).** Kein Termin, wird nicht automatisch gepostet. Wieder aufnehmen nur auf Ansage des Inhabers.
 
 **Produkt (Inhaber, 16.10.2026):** Tikka T3x ACE Target, 6.5 Creedmoor, schwarz. Erfahrung des Inhabers: starkes Gesamtpaket, einstellbarer Abzug, perfekt für Long Range, man spürt den Einfluss von Sako. Formulierung im Post: «starkes Gesamtpaket» statt «Preis-Leistung» (kein Preisbezug bei Waffen auf Meta). `[FEHLT: 1 Nachteil, Einsatzdauer]`
 
@@ -715,14 +717,14 @@ Story-Regel: In Stories gibt es weder Preise noch Verkauf, Sale oder «DM für �
 | 2026-10-14 12:00 | **Wiederladekurse:** aktuell buchbar? Nächste Termine, Dauer, Zielgruppe (für Story und späteren Post, ohne Preise) | #2 (Kommentar-Antworten), #3, #5 | offen |
 | 2026-10-14 18:00 | **Freigabe der finalen Intro-Caption** (jetzt mit Öffnungszeiten, Parkplatz und Werkstatt-Leistungen) | #3 Intro | offen |
 | 2026-10-16 18:00 | **Fachliche Prüfung** der Begriffe im Schützen-ABC (kurzes OK oder Korrekturen). Muss **vor** der Veröffentlichung am Sa 17.10. 09:30 vorliegen, sonst verschiebe ich #4. | #4 Schützen-ABC | ✅ erledigt (11.10., «ABC ok») |
-| 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | ✅ Produkt, Vorteile, Fazit (16.10.) – offen: 1 Nachteil, Einsatzdauer |
+| 2026-10-16 18:00 | **Produktwahl für den Test** + Erfahrung des Inhabers (Einsatzdauer, 2 Vorteile, 1 Nachteil, Fazit) | #7 Produkttest | ⏸ pausiert |
 | – | ~~Freigabe #9 SIG Sauer Cross~~ ✅ freigegeben 11.10. (Tag @sigsauerinc, Steckbrief ja, entladen ✅) | #9 | offen |
 | – | ~~Freigabe #10 Walther-Vergleich~~ | #10 | ✅ freigegeben 11.10. (Titelbild 02→01, ohne IPSC-Hinweis, Tag @waltherarms, entladen ✅) |
 | 2026-10-18 20:00 | **Freigabe Woche 2** (Beiträge #5–#8 als Vorlagen und Story-Ideen 19.–25.10.) | #5, #6, #7, #8, Stories Woche 2 | offen |
 | 2026-10-19 12:00 | **Rohvideo Hülsenvorbereitung** gemäss Shotlist (9:16, ohne lesbare Ladedaten) | #5 Reel | offen |
 | 2026-10-20 14:00 | **Freigabe des geschnittenen Reels** | #5 Reel | offen |
-| 2026-10-21 12:00 | **Rohvideo/Fotos Produkttest** gemäss Shotlist | #7 Produkttest | offen |
-| 2026-10-22 14:00 | **Freigabe des geschnittenen Test-Reels und der finalen Caption** | #7 Produkttest | offen |
+| 2026-10-21 12:00 | **Rohvideo/Fotos Produkttest** gemäss Shotlist | #7 Produkttest | ⏸ pausiert |
+| 2026-10-22 14:00 | **Freigabe des geschnittenen Test-Reels und der finalen Caption** | #7 Produkttest | ⏸ pausiert |
 | 2026-10-23 18:00 | **Freigabe des Community-Karussells** mit den ausgewerteten Story-Resultaten | #8 Community | offen |
 | ohne Frist | **Website:** im SEO-Plugin (Yoast, «sameAs») `instagram.com/wyserwaffen/` durch `instagram.com/armatum_ch/` ersetzen | Auffindbarkeit | offen (Empfehlung) |
 
@@ -774,3 +776,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-14 | #2 veröffentlicht um 21:29 statt 18:30 (mehrere Sitzungs-Neustarts): https://www.instagram.com/p/DefIJ_zidmm/ |
 | 2026-10-16 | #14 CZ DUTY 4.0 (4 Modelle: F, F MS, C, C MS) auf Wunsch des Inhabers sofort veröffentlicht (08:19): https://www.instagram.com/p/Dei35wjFZYX/ – 8 Slides, Herstellerbilder aus dem Shop (keine Seriennummern sichtbar), ohne Preis/Verkaufsaufruf. Story publiziert, WhatsApp-Status `whatsapp/posts/14-cz-duty.jpg`. |
 | 2026-10-16 | #7 Produkttest: Inhaber wählt Tikka T3x ACE Target 6.5 Creedmoor (schwarz). Caption vorbereitet, Laden-Zeile durch Kommentar-/Bio-Hinweis ersetzt (Waffe → kein Kaufaufruf). Offen: 1 Nachteil, Einsatzdauer, Video bis Mi 21.10. 12:00. |
+| 2026-10-16 | #7 Produkttest (Tikka T3x ACE Target) auf Wunsch des Inhabers pausiert («Wir warten noch damit»). Termin 22.10. entfällt, Erinnerungen zu #7 entfernt. Entwurf bleibt im Plan. |
