@@ -273,14 +273,15 @@ class BWS_Product_Sync {
 	}
 
 	/**
-	 * Ob ein Produkt (bzw. das Elternprodukt einer Variante) in einer Kategorie oder deren Unterkategorie liegt.
+	 * Ob ein Produkt (bzw. das Elternprodukt einer Variante) in einer der Kategorien oder deren Unterkategorien liegt.
 	 *
-	 * @param WC_Product $product Produkt.
-	 * @param int        $term_id Kategorie-ID.
+	 * @param WC_Product $product  Produkt.
+	 * @param int|int[]  $term_ids Kategorie-ID(s).
 	 * @return bool
 	 */
-	public static function in_category_tree( WC_Product $product, $term_id ) {
-		if ( ! $term_id ) {
+	public static function in_category_tree( WC_Product $product, $term_ids ) {
+		$term_ids = array_filter( array_map( 'intval', (array) $term_ids ) );
+		if ( ! $term_ids ) {
 			return false;
 		}
 		$cat_ids = $product->get_category_ids();
@@ -289,7 +290,8 @@ class BWS_Product_Sync {
 			$cat_ids = $parent ? $parent->get_category_ids() : array();
 		}
 		foreach ( $cat_ids as $cat_id ) {
-			if ( (int) $cat_id === (int) $term_id || in_array( (int) $term_id, array_map( 'intval', get_ancestors( (int) $cat_id, 'product_cat', 'taxonomy' ) ), true ) ) {
+			$chain = array_merge( array( (int) $cat_id ), array_map( 'intval', get_ancestors( (int) $cat_id, 'product_cat', 'taxonomy' ) ) );
+			if ( array_intersect( $chain, $term_ids ) ) {
 				return true;
 			}
 		}

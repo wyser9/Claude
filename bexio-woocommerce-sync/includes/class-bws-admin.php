@@ -199,24 +199,16 @@ class BWS_Admin {
 						self::select( 'expense_account_id', 'Aufwandkonto (neue Artikel)', $lists['accounts'], array( 'account_no', 'name' ), $s, 'Leer = automatisch Konto 4200 (Einkauf Handelsware).' );
 						?>
 						<tr>
-							<th><label for="bws_serial_category">Kategorie mit Seriennummern</label></th>
+							<th>Kategorien mit Seriennummern</th>
 							<td>
 								<?php
-								wp_dropdown_categories(
-									array(
-										'taxonomy'         => 'product_cat',
-										'name'             => 'serial_category',
-										'id'               => 'bws_serial_category',
-										'selected'         => (int) $s['serial_category'],
-										'show_option_none' => '— automatisch „Waffen“ —',
-										'option_none_value' => '',
-										'hide_empty'       => false,
-										'hierarchical'     => true,
-										'depth'            => 1,
-									)
-								);
-								?>
-								<p class="description">Für Produkte dieser Kategorie zählt der Lagerimport den Bestand der bexio-Kopien mit, deren „Produktcode Lieferant“ die Artikelnummer des Hauptartikels trägt (z. B. Kopie „096-77116“ → Hauptartikel „19442“). Der Bestand in bexio wird nicht verändert.</p>
+								$serial_ids = BWS_Stock_Import::serial_category_ids();
+								$top        = get_terms( array( 'taxonomy' => 'product_cat', 'parent' => 0, 'hide_empty' => false ) );
+								foreach ( is_array( $top ) ? $top : array() as $cat ) :
+									?>
+									<label style="display:inline-block;margin-right:16px"><input type="checkbox" name="serial_categories[]" value="<?php echo (int) $cat->term_id; ?>" <?php checked( in_array( (int) $cat->term_id, $serial_ids, true ) ); ?>> <?php echo esc_html( $cat->name ); ?></label>
+								<?php endforeach; ?>
+								<p class="description">Für Produkte dieser Kategorien (inkl. Unterkategorien, z. B. „Waffenzubehör > Lampen / Laser“) zählt der Lagerimport den Bestand der bexio-Kopien mit, deren „Produktcode Lieferant“ die Artikelnummer des Hauptartikels trägt (z. B. Kopie „096-77116“ → Hauptartikel „19442“). Ohne Auswahl: automatisch Waffen, Waffenzubehör und Laser. Der Bestand in bexio wird nicht verändert.</p>
 							</td>
 						</tr>
 						<?php
@@ -355,6 +347,7 @@ class BWS_Admin {
 		$values['price_mode']         = ( isset( $_POST['price_mode'] ) && 'net' === $_POST['price_mode'] ) ? 'net' : 'gross';
 		$values['order_title_prefix'] = isset( $_POST['order_title_prefix'] ) ? sanitize_text_field( wp_unslash( $_POST['order_title_prefix'] ) ) : '';
 
+		$values['serial_categories'] = isset( $_POST['serial_categories'] ) ? array_values( array_filter( array_map( 'absint', (array) wp_unslash( $_POST['serial_categories'] ) ) ) ) : array();
 		$values['category_groups'] = array();
 		if ( isset( $_POST['category_groups'] ) && is_array( $_POST['category_groups'] ) ) {
 			foreach ( wp_unslash( $_POST['category_groups'] ) as $term_id => $group_id ) {
@@ -364,7 +357,7 @@ class BWS_Admin {
 			}
 		}
 
-		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'expense_account_id', 'tax_expense_id', 'serial_category', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
+		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'expense_account_id', 'tax_expense_id', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				$raw            = sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
 				$values[ $key ] = '' === $raw ? '' : (string) absint( $raw );

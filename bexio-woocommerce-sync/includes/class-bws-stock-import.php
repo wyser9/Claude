@@ -105,7 +105,7 @@ class BWS_Stock_Import {
 		$field    = 'stock_available_nr' === BWS_Settings::get( 'stock_field' ) ? 'stock_available_nr' : 'stock_nr';
 		$by_id    = BWS_Product_Sync::products_by_article_id();
 		$serials  = self::serial_stock( $articles, $field );
-		$serial_cat = self::serial_category_id();
+		$serial_cat = self::serial_category_ids();
 		$handled  = array();
 		$stats    = array(
 			'time'      => time(),
@@ -239,21 +239,27 @@ class BWS_Stock_Import {
 	}
 
 	/**
-	 * Kategorie der Artikel mit Seriennummer-Kopien (Einstellung, sonst Hauptkategorie "Waffen").
+	 * Kategorien der Artikel mit Seriennummer-Kopien (inkl. Unterkategorien).
+	 * Einstellung, sonst automatisch "Waffen", "Waffenzubehör" und Kategorien mit "Laser" im Namen.
 	 *
-	 * @return int
+	 * @return int[]
 	 */
-	public static function serial_category_id() {
-		$configured = BWS_Settings::id( 'serial_category' );
+	public static function serial_category_ids() {
+		$configured = array_filter( array_map( 'intval', (array) BWS_Settings::get( 'serial_categories' ) ) );
 		if ( $configured ) {
-			return $configured;
+			return array_values( $configured );
 		}
-		$term = get_term_by( 'slug', 'waffen', 'product_cat' );
-		if ( ! $term ) {
-			$found = get_terms( array( 'taxonomy' => 'product_cat', 'name' => 'Waffen', 'parent' => 0, 'hide_empty' => false ) );
-			$term  = is_array( $found ) && $found ? $found[0] : null;
+		$ids   = array();
+		$terms = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => false ) );
+		foreach ( is_array( $terms ) ? $terms : array() as $term ) {
+			$name = function_exists( 'mb_strtolower' ) ? mb_strtolower( $term->name ) : strtolower( $term->name );
+			if ( ( 0 === (int) $term->parent && in_array( $name, array( 'waffen', 'waffenzubehör' ), true ) )
+				|| in_array( $term->slug, array( 'waffen', 'waffenzubehoer' ), true )
+				|| false !== strpos( $name, 'laser' ) ) {
+				$ids[] = (int) $term->term_id;
+			}
 		}
-		return $term ? (int) $term->term_id : 0;
+		return array_values( array_unique( $ids ) );
 	}
 
 	/**

@@ -350,6 +350,10 @@ t( 'Nachrüsten: Status', 'done' === $st['state'] && 2 === $st['done'] && 0 === 
 $c_waf = (int) wp_insert_term( 'Waffen', 'product_cat', array( 'slug' => 'waffen' ) )['term_id'];
 $c_pis = (int) wp_insert_term( 'Pistolen', 'product_cat', array( 'parent' => $c_waf ) )['term_id'];
 $c_zub = (int) wp_insert_term( 'Zubehör X', 'product_cat' )['term_id'];
+$c_wz  = (int) wp_insert_term( 'Waffenzubehör', 'product_cat', array( 'slug' => 'waffenzubehoer' ) )['term_id'];
+$c_las = (int) wp_insert_term( 'Lampen / Laser', 'product_cat', array( 'parent' => $c_wz ) )['term_id'];
+$laser = new WC_Product_Simple(); $laser->set_props( array( 'name' => 'Laser Klasse 4', 'sku' => 'LAS-1', 'regular_price' => '300', 'category_ids' => array( $c_las ) ) ); $laser->save();
+$lo = wc_get_product( $laser->get_id() ); $lo->set_stock_status( 'onbackorder' ); $lo->save();
 $gun = new WC_Product_Simple(); $gun->set_props( array( 'name' => 'Ruger RXM 17 Schuss', 'sku' => '19442', 'regular_price' => '700', 'category_ids' => array( $c_pis ) ) ); $gun->save();
 $gun2 = new WC_Product_Simple(); $gun2->set_props( array( 'name' => 'Ruger ohne Kopie', 'sku' => '19443', 'regular_price' => '700', 'category_ids' => array( $c_pis ) ) ); $gun2->save();
 $acc = new WC_Product_Simple(); $acc->set_props( array( 'name' => 'Zubehör mit Lieferantencode', 'sku' => 'ZB-1', 'regular_price' => '10', 'category_ids' => array( $c_zub ) ) ); $acc->save();
@@ -362,6 +366,8 @@ $GLOBALS['bws_bexio_articles'] = array(
 	array( 'id' => 6005, 'intern_code' => '19443', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
 	array( 'id' => 6006, 'intern_code' => 'ZB-1', 'is_stock' => true, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
 	array( 'id' => 6007, 'intern_code' => 'LIEF-ABC', 'deliverer_code' => 'ZB-1', 'is_stock' => true, 'stock_nr' => 5, 'stock_available_nr' => 5 ),
+	array( 'id' => 6008, 'intern_code' => 'LAS-1', 'is_stock' => false, 'stock_nr' => 0, 'stock_available_nr' => 0 ),
+	array( 'id' => 6009, 'intern_code' => 'L-SN-001', 'deliverer_code' => 'LAS-1', 'is_stock' => true, 'stock_nr' => 1, 'stock_available_nr' => 1 ),
 );
 BWS_Settings::save( array( 'stock_mode' => 'from_bexio' ) );
 $GLOBALS['bws_requests'] = array();
@@ -369,7 +375,9 @@ $ss = BWS_Stock_Import::run();
 t( 'Waffe: Hauptartikel an Lager über 2 Seriennummern', 'instock' === wc_get_product( $gun->get_id() )->get_stock_status(), wp_json_encode( $ss ) );
 t( 'Waffe ohne Kopie bleibt Lieferrückstand', 'onbackorder' === wc_get_product( $gun2->get_id() )->get_stock_status() );
 t( 'Nicht-Waffe: Lieferantencode zählt nicht', 'onbackorder' === wc_get_product( $acc->get_id() )->get_stock_status() );
-t( 'Statistik Seriennummern', 1 === $ss['serial'] );
+t( 'Laser (Waffenzubehör > Lampen / Laser) über Seriennummer an Lager', 'instock' === wc_get_product( $laser->get_id() )->get_stock_status() );
+t( 'Automatische Kategorien: Waffen, Waffenzubehör, Laser', ! array_diff( array( $c_waf, $c_wz, $c_las ), BWS_Stock_Import::serial_category_ids() ) && ! in_array( $c_zub, BWS_Stock_Import::serial_category_ids(), true ) );
+t( 'Statistik Seriennummern', 2 === $ss['serial'], wp_json_encode( $ss ) );
 t( 'Lagerimport schreibt nichts in bexio', ! array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'GET' !== $q[0]; } ) );
 $GLOBALS['bws_bexio_articles'][1]['stock_nr'] = 0; $GLOBALS['bws_bexio_articles'][2]['stock_nr'] = 0;
 BWS_Stock_Import::run();

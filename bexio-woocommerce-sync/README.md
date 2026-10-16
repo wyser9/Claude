@@ -53,7 +53,7 @@ Für jede Waffe gibt es in bexio einen **Hauptartikel** (z. B. „19442“, Best
 - mindestens eine Kopie an Lager → Hauptartikel im Shop **Vorrätig** (bei Lagerverwaltung mit der Anzahl Waffen),
 - keine Kopie an Lager → **Lieferrückstand**.
 
-Gilt nur für Produkte der Kategorie **„Waffen“** (einstellbar), damit normale Lieferanten-Artikelnummern nicht mitzählen. Der Bestand in bexio wird nie verändert.
+Gilt nur für Produkte der Kategorien **„Waffen“** und **„Waffenzubehör“** inkl. aller Unterkategorien (damit auch „Lampen / Laser“) – einstellbar unter „Kategorien mit Seriennummern“ –, damit normale Lieferanten-Artikelnummern nicht mitzählen. Shop-Bestellungen laufen weiterhin auf den Hauptartikel. Der Bestand in bexio wird nie verändert.
 
 ### Artikelgruppen (Produktkategorien)
 - In den Einstellungen unter **Artikelgruppen** steht jede Hauptkategorie des Shops mit einem Feld für die **bexio Artikelgruppen-ID**.
