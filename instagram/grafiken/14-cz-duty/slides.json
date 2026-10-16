@@ -1,0 +1,116 @@
+{
+  "post": "#14 – CZ DUTY 4.0 (neu im Shop)",
+  "slides": [
+    {
+      "type": "product",
+      "kicker": "Neu bei Armatum",
+      "title": "CZ DUTY 4.0",
+      "titleSize": 88,
+      "images": [
+        "src-duty-f-schraeg.png"
+      ],
+      "imgHeight": 520,
+      "body": "**Die neue Striker-Generation von CZ.**\nModulares Chassis · Optics Ready\n9 mm Para"
+    },
+    {
+      "type": "product",
+      "kicker": "Full-Size",
+      "title": "CZ DUTY 4.0 F",
+      "images": [
+        "src-duty-f.png"
+      ],
+      "imgHeight": 480,
+      "rows": [
+        [
+          "Kaliber",
+          "9 mm Para (9×19)"
+        ],
+        [
+          "Magazin",
+          "19 Schuss"
+        ],
+        [
+          "Bedienung",
+          "vollständig beidseitig"
+        ]
+      ]
+    },
+    {
+      "type": "product",
+      "kicker": "Compact",
+      "title": "CZ DUTY 4.0 C",
+      "images": [
+        "src-duty-c.png"
+      ],
+      "imgHeight": 480,
+      "rows": [
+        [
+          "Kaliber",
+          "9 mm Para (9×19)"
+        ],
+        [
+          "Magazin",
+          "17 Schuss"
+        ],
+        [
+          "Bedienung",
+          "vollständig beidseitig"
+        ]
+      ]
+    },
+    {
+      "type": "product",
+      "kicker": "Compact mit Sicherung",
+      "title": "CZ DUTY 4.0 C MS",
+      "images": [
+        "src-duty-c-ms.png"
+      ],
+      "imgHeight": 480,
+      "rows": [
+        [
+          "Kaliber",
+          "9 mm Para (9×19)"
+        ],
+        [
+          "Magazin",
+          "17 Schuss"
+        ],
+        [
+          "Sicherung",
+          "manuell, beidseitig bedienbar"
+        ]
+      ]
+    },
+    {
+      "type": "content",
+      "badge": "4.0",
+      "kicker": "Was ist neu?",
+      "title": "Durchdacht",
+      "body": "**Modulares Chassis** – trägt die Seriennummer\n**Optics Ready** – Rotpunkt ohne Adapterplatte\n**3 Griffmodule** – S, M, L\n**Zerlegen** – ohne den Abzug zu betätigen"
+    },
+    {
+      "type": "specs",
+      "kicker": "Die DUTY-Familie",
+      "title": "Welche passt zu dir?",
+      "rows": [
+        [
+          "4.0 F",
+          "Full-Size · 19 Schuss"
+        ],
+        [
+          "4.0 C",
+          "Compact · 17 Schuss"
+        ],
+        [
+          "4.0 C MS",
+          "Compact · 17 Schuss\nmit manueller Sicherung"
+        ]
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Alle Modelle & Infos auf armatum.ch",
+      "body": "Oder komm vorbei: Do 17–21 Uhr in Fulenbach.\n\nWelche DUTY wär's für dich? 👇"
+    }
+  ]
+}
