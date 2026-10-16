@@ -29,6 +29,9 @@ class BWS_Settings {
 			'stock_id'           => '',
 			'stock_place_id'     => '',
 			'account_id'         => '',
+			'expense_account_id' => '', // Leer = Konto 4200 automatisch.
+			'tax_expense_id'     => '', // Leer = Vorsteuer VM81 automatisch.
+			'new_article_stock'  => 'yes', // Neue Artikel als Lagerartikel anlegen.
 			'category_groups'    => array(), // Produktkategorie-ID => bexio Artikelgruppen-ID.
 			'default_tax_id'     => '',
 			'contact_group_id'   => '',

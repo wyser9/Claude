@@ -34,6 +34,14 @@ WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führ
 - Virtuelle Produkte werden als Dienstleistung angelegt, alle anderen als physischer Artikel.
 - Die Verknüpfung wird am Produkt gespeichert (Meta `_bws_article_id`).
 
+### Neue Artikel in bexio
+Nur beim **Neuanlegen** eines Artikels setzt das Plugin zusätzlich:
+- **„Ist ein Produkt mit Lager“** (Lagerbestand und Mindestbestand 0, Lagerort und Lagerplatz aus den bexio-Zuordnungen), abschaltbar mit „Neue Artikel als Lagerartikel“. Virtuelle Produkte werden ohne Lager angelegt.
+- **Aufwandkonto**: automatisch Konto **4200 – Einkauf Handelsware** (oder das in den Einstellungen gewählte Konto).
+- **MWST Vorsteuer**: automatisch **VM81 – Mat/DL (NS) 8.1 %** (oder die gewählte Vorsteuer).
+
+Bestehende bexio-Artikel werden dabei nicht verändert.
+
 ### Artikelgruppen (Produktkategorien)
 - In den Einstellungen unter **Artikelgruppen** steht jede Hauptkategorie des Shops mit einem Feld für die **bexio Artikelgruppen-ID**.
 - Die Artikelgruppen müssen zuerst **in bexio angelegt** werden. Die bexio-API bietet keine Schnittstelle zum Anlegen oder Auflisten von Artikelgruppen.

@@ -195,10 +195,10 @@ class BWS_Product_Sync {
 					throw $e;
 				}
 				// In bexio gelöscht -> neu anlegen.
-				$result = $client->post( '2.0/article', $payload );
+				$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
 			}
 		} else {
-			$result = $client->post( '2.0/article', $payload );
+			$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
 		}
 
 		if ( empty( $result['id'] ) ) {
@@ -227,6 +227,38 @@ class BWS_Product_Sync {
 		bws_log( 'info', sprintf( 'Produkt #%d -> bexio Artikel %d (%s)', $product->get_id(), $article_id, $payload['intern_code'] ) );
 
 		return $article_id;
+	}
+
+	/**
+	 * Felder, die nur beim Anlegen eines neuen bexio-Artikels gesetzt werden:
+	 * Lagerverwaltung ("Ist ein Produkt mit Lager"), Aufwandkonto und Vorsteuer.
+	 * Bestehende Artikel bleiben unverändert.
+	 *
+	 * @param WC_Product $product Produkt.
+	 * @return array
+	 */
+	public static function create_only_fields( WC_Product $product ) {
+		$fields = array();
+		if ( BWS_Settings::enabled( 'new_article_stock' ) && ! $product->is_virtual() ) {
+			$fields['is_stock']     = true;
+			$fields['stock_nr']     = 0;
+			$fields['stock_min_nr'] = 0;
+			if ( BWS_Settings::id( 'stock_id' ) ) {
+				$fields['stock_id'] = BWS_Settings::id( 'stock_id' );
+			}
+			if ( BWS_Settings::id( 'stock_place_id' ) ) {
+				$fields['stock_place_id'] = BWS_Settings::id( 'stock_place_id' );
+			}
+		}
+		$account = BWS_Lookup::expense_account_id();
+		if ( $account ) {
+			$fields['expense_account_id'] = $account;
+		}
+		$tax = BWS_Lookup::tax_expense_id();
+		if ( $tax ) {
+			$fields['tax_expense_id'] = $tax;
+		}
+		return apply_filters( 'bws_article_create_fields', $fields, $product );
 	}
 
 	/**

@@ -16,6 +16,8 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	$GLOBALS['bws_requests'][] = array( $args['method'], $path, $body, $args['headers'] );
 	$m = $args['method'];
 	if ( 'GET' === $m && '3.0/users/me' === $path ) return resp( array( 'id' => 7, 'firstname' => 'Max', 'lastname' => 'Muster', 'email' => 'm@x.ch' ) );
+	if ( 'GET' === $m && '3.0/taxes' === $path && false !== strpos( $url, 'pre_tax' ) ) return resp( array( array( 'id' => 21, 'code' => 'VM81', 'name' => 'VM81', 'value' => 8.1 ), array( 'id' => 22, 'code' => 'VM26', 'name' => 'VM26', 'value' => 2.6 ) ) );
+	if ( 'GET' === $m && '3.0/accounts' === $path ) return resp( array( array( 'id' => 43, 'account_no' => '3200', 'name' => 'Handelserlös' ), array( 'id' => 42, 'account_no' => '4200', 'name' => 'Einkauf Handelsware' ) ) );
 	if ( 'GET' === $m && '3.0/taxes' === $path ) return resp( array( array( 'id' => 11, 'value' => 8.1, 'name' => 'UN81' ), array( 'id' => 12, 'value' => 2.6, 'name' => 'UR26' ), array( 'id' => 14, 'value' => 0, 'name' => 'UN00' ) ) );
 	if ( 'GET' === $m && '2.0/country' === $path ) return resp( array( array( 'id' => 1, 'name' => 'Schweiz', 'name_short' => 'CH', 'iso3166_alpha2' => 'CH' ), array( 'id' => 2, 'name' => 'Deutschland', 'name_short' => 'DE', 'iso3166_alpha2' => 'DE' ) ) );
 	if ( 'GET' === $m && '3.0/currencies' === $path ) return resp( array( array( 'id' => 1, 'name' => 'CHF' ), array( 'id' => 2, 'name' => 'EUR' ) ) );
@@ -291,6 +293,28 @@ BWS_Settings::save( array( 'category_groups' => array( $c_mun => 7, $c_308 => 8 
 t( 'Genauere Zuordnung gewinnt', 8 === BWS_Product_Sync::article_group_id( wc_get_product( $pc1->get_id() ) ) );
 BWS_Settings::save( array( 'category_groups' => array() ) );
 t( 'Ohne Zuordnungen kein Feld', ! isset( BWS_Product_Sync::build_payload( wc_get_product( $pc1->get_id() ) )['article_group_id'] ) );
+
+// --- Neue Artikel: Lagerartikel, Aufwandkonto 4200, Vorsteuer VM81 ---
+BWS_Lookup::flush();
+$pn = new WC_Product_Simple(); $pn->set_props( array( 'name' => 'Streamlight ProTac', 'sku' => 'SL-88061', 'regular_price' => '79.90' ) ); $pn->save();
+$GLOBALS['bws_requests'] = array();
+BWS_Product_Sync::sync( wc_get_product( $pn->get_id() ) );
+$cr = null; foreach ( $GLOBALS['bws_requests'] as $q ) { if ( 'POST' === $q[0] && '2.0/article' === $q[1] ) $cr = $q[2]; }
+t( 'Neuer Artikel: Ist ein Produkt mit Lager', true === $cr['is_stock'] && 0 === $cr['stock_nr'] && 0 === $cr['stock_min_nr'], wp_json_encode( $cr ) );
+t( 'Neuer Artikel: Lagerort/Lagerplatz aus Einstellungen', 1 === $cr['stock_id'] && 2 === $cr['stock_place_id'] );
+t( 'Neuer Artikel: Aufwandkonto 4200 automatisch', 42 === $cr['expense_account_id'] );
+t( 'Neuer Artikel: Vorsteuer VM81 automatisch', 21 === $cr['tax_expense_id'] );
+$GLOBALS['bws_requests'] = array();
+BWS_Product_Sync::sync( wc_get_product( $pn->get_id() ) );
+$up = end( $GLOBALS['bws_requests'] );
+t( 'Bestehender Artikel: keine Lager-/Konto-Felder beim Update', 0 === strpos( $up[1], '2.0/article/' ) && ! isset( $up[2]['is_stock'] ) && ! isset( $up[2]['expense_account_id'] ) && ! isset( $up[2]['tax_expense_id'] ), wp_json_encode( $up ) );
+BWS_Settings::save( array( 'expense_account_id' => '43', 'tax_expense_id' => '22', 'new_article_stock' => 'no' ) );
+$pv = new WC_Product_Simple(); $pv->set_props( array( 'name' => 'Ohne Lager', 'sku' => 'NL-1', 'regular_price' => '1' ) ); $pv->save();
+$f = BWS_Product_Sync::create_only_fields( wc_get_product( $pv->get_id() ) );
+t( 'Einstellungen übersteuern Automatik, Lager abschaltbar', 43 === $f['expense_account_id'] && 22 === $f['tax_expense_id'] && ! isset( $f['is_stock'] ) );
+BWS_Settings::save( array( 'expense_account_id' => '', 'tax_expense_id' => '', 'new_article_stock' => 'yes' ) );
+$pvv = new WC_Product_Simple(); $pvv->set_props( array( 'name' => 'Gutschein', 'sku' => 'GS-1', 'regular_price' => '50', 'virtual' => true ) ); $pvv->save();
+t( 'Virtuelles Produkt (Dienstleistung) ohne Lager', ! isset( BWS_Product_Sync::create_only_fields( wc_get_product( $pvv->get_id() ) )['is_stock'] ) );
 
 // --- Lagerimport bexio -> WooCommerce ---
 BWS_Settings::save( array( 'stock_mode' => 'from_bexio', 'price_mode' => 'gross' ) );

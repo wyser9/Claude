@@ -31,7 +31,7 @@ class BWS_Lookup {
 	 * Löscht alle zwischengespeicherten Stammdaten.
 	 */
 	public static function flush() {
-		foreach ( array( 'me', 'taxes', 'countries', 'currencies', 'units', 'stocks', 'stock_places', 'accounts', 'contact_groups', 'languages' ) as $key ) {
+		foreach ( array( 'me', 'taxes', 'pre_taxes', 'countries', 'currencies', 'units', 'stocks', 'stock_places', 'accounts', 'contact_groups', 'languages' ) as $key ) {
 			delete_transient( self::CACHE_PREFIX . $key );
 		}
 	}
@@ -178,6 +178,64 @@ class BWS_Lookup {
 				}
 			}
 		);
+	}
+
+	/**
+	 * Aktive Vorsteuern (für tax_expense_id).
+	 *
+	 * @return array
+	 */
+	public static function pre_taxes() {
+		return self::cached(
+			'pre_taxes',
+			function () {
+				return BWS_Client::instance()->get(
+					'3.0/taxes',
+					array(
+						'scope' => 'active',
+						'types' => 'pre_tax',
+					)
+				);
+			}
+		);
+	}
+
+	/**
+	 * Aufwandkonto für neue Artikel: Einstellung, sonst Konto 4200 (Einkauf Handelsware).
+	 *
+	 * @return int|null
+	 */
+	public static function expense_account_id() {
+		$configured = BWS_Settings::id( 'expense_account_id' );
+		if ( $configured ) {
+			return $configured;
+		}
+		foreach ( self::accounts() as $account ) {
+			if ( isset( $account['account_no'], $account['id'] ) && '4200' === (string) $account['account_no'] ) {
+				return (int) $account['id'];
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Vorsteuer für neue Artikel: Einstellung, sonst Steuer mit Code VM81.
+	 *
+	 * @return int|null
+	 */
+	public static function tax_expense_id() {
+		$configured = BWS_Settings::id( 'tax_expense_id' );
+		if ( $configured ) {
+			return $configured;
+		}
+		foreach ( self::pre_taxes() as $tax ) {
+			foreach ( array( 'code', 'name' ) as $field ) {
+				if ( isset( $tax[ $field ], $tax['id'] ) && 'VM81' === strtoupper( trim( (string) $tax[ $field ] ) ) ) {
+					return (int) $tax['id'];
+				}
+			}
+		}
+		return null;
 	}
 
 	public static function accounts() {

@@ -67,6 +67,7 @@ class BWS_Admin {
 				'stocks'         => array( 'BWS_Lookup', 'stocks' ),
 				'stock_places'   => array( 'BWS_Lookup', 'stock_places' ),
 				'accounts'       => array( 'BWS_Lookup', 'accounts' ),
+				'pre_taxes'      => array( 'BWS_Lookup', 'pre_taxes' ),
 				'contact_groups' => array( 'BWS_Lookup', 'contact_groups' ),
 				'languages'      => array( 'BWS_Lookup', 'languages' ),
 			);
@@ -120,6 +121,7 @@ class BWS_Admin {
 					<?php
 					self::checkbox( 'sync_products', 'Artikel übertragen', 'Produkte und Varianten werden bei jeder Änderung als bexio-Artikel angelegt/aktualisiert (Zuordnung über SKU = Artikel-Nr.).', $s );
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
+					self::checkbox( 'new_article_stock', 'Neue Artikel als Lagerartikel', 'Neu in bexio angelegte Artikel erhalten „Ist ein Produkt mit Lager“ (Bestand/Mindestbestand 0, Lagerort und Lagerplatz aus den Zuordnungen unten). Bestehende Artikel bleiben unverändert.', $s );
 					self::checkbox( 'sku_fallback', 'Ohne SKU übertragen', 'Produkte ohne SKU erhalten in bexio die Artikel-Nr. "WC-&lt;ID&gt;".', $s );
 					self::checkbox( 'update_contacts', 'Bestehende Kontakte aktualisieren', 'Adressdaten bereits vorhandener bexio-Kontakte mit den Angaben der Bestellung überschreiben.', $s );
 					?>
@@ -193,6 +195,8 @@ class BWS_Admin {
 						self::select( 'stock_id', 'Lager', $lists['stocks'], 'name', $s, 'Lagerort für Lagerartikel.' );
 						self::select( 'stock_place_id', 'Lagerplatz', $lists['stock_places'], 'name', $s );
 						self::select( 'account_id', 'Ertragskonto', $lists['accounts'], array( 'account_no', 'name' ), $s, 'Leer = Standard-Ertragskonto aus bexio.' );
+						self::select( 'expense_account_id', 'Aufwandkonto (neue Artikel)', $lists['accounts'], array( 'account_no', 'name' ), $s, 'Leer = automatisch Konto 4200 (Einkauf Handelsware).' );
+						self::select( 'tax_expense_id', 'MWST Vorsteuer (neue Artikel)', $lists['pre_taxes'], array( 'name', 'value' ), $s, 'Leer = automatisch VM81 (Mat/DL 8.1 %).' );
 						self::select( 'default_tax_id', 'Fallback-MWST', $lists['taxes'], array( 'name', 'value' ), $s, 'Wird verwendet, wenn zu einem Woo-Steuersatz keine bexio-Steuer mit gleichem Satz gefunden wird. Normalerweise leer lassen.' );
 						self::select( 'contact_group_id', 'Kontaktgruppe für neue Kunden', $lists['contact_groups'], 'name', $s );
 						self::select( 'language_id', 'Sprache', $lists['languages'], 'name', $s );
@@ -301,7 +305,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts', 'new_article_stock' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -325,7 +329,7 @@ class BWS_Admin {
 			}
 		}
 
-		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
+		foreach ( array( 'user_id', 'unit_id', 'stock_id', 'stock_place_id', 'account_id', 'expense_account_id', 'tax_expense_id', 'default_tax_id', 'contact_group_id', 'language_id' ) as $key ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				$raw            = sanitize_text_field( wp_unslash( $_POST[ $key ] ) );
 				$values[ $key ] = '' === $raw ? '' : (string) absint( $raw );
