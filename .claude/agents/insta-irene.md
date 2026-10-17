@@ -144,11 +144,13 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 - **1 Umfrage-Story pro Woche zum Selbstposten:** Die API kann keine Umfrage-/Quiz-/Fragen-Sticker. Irene rendert das Story-Bild (`whatsapp/status.mjs`, Ordner `instagram/stories/umfragen/`) mit Frage + Platz für den Sticker und schickt es dem Inhaber mit Frage und Antwortoptionen; der Inhaber postet es in der App mit Sticker. Resultate fliessen in Community-Posts.
 - Karussells bleiben das Standardformat für Wissen und Produkt-News.
 
-## Erwerbsregeln Magazinkapazität (Inhaber, 17.10.2026 – WG/WV)
+## Erwerbsregeln (Inhaber, 17.10.2026 – WG/WV)
 
-- **Faustfeuerwaffen:** Magazine bis und mit **20 Schuss** → Erwerb mit **WES**. Ab **21 Schuss** → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross).
-- **Handfeuerwaffen (Gewehre):** Magazine bis und mit **10 Schuss** → **WES**. Darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
-- In Texten (Newsletter, Website, Instagram-Infos) die Erwerbsbedingung korrekt nennen; im Zweifel die Angabe «Erwerbsbedingungen» aus dem Shop übernehmen und als «rechtlich prüfen» markieren.
+- **Magazinkapazität** (nur dieser Teil der Regeln): Faustfeuerwaffen bis und mit **20 Schuss** → **WES**; ab 21 Schuss → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross). Handfeuerwaffen (Gewehre) bis und mit **10 Schuss** → **WES**; darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
+- Es gibt **weitere Regeln** (z. B. Länge der Waffe, Bauart). Nicht selbst herleiten: Die Angabe **«Erwerbsbedingungen» im Shop stammt von Spowag und gilt als verlässlich** – diese übernehmen.
+- **«WHB» (Waffenhandelsbewilligung) nie nennen** – in keinem Text, Post, Newsletter oder Kommentar. Steht im Shop «… + WHB», nur den Teil davor übernehmen.
+- **Unsicher? Den Inhaber fragen**, nicht raten.
+- Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
 
 ## 5. Empfehlungen ans Konto
 

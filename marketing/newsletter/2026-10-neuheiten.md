@@ -19,7 +19,7 @@ Diese Woche ist bei uns einiges eingetroffen – hier die Highlights:
 - **Chiappa Rhino 30DS Nebula, .357 Magnum** – Lauf unten, weniger Hochschlag, inkl. Lederholster und Moonclips. `[PREIS]` → [Zum Produkt](https://armatum.ch/produkt/chiappa-rhino-30ds-revolver-357-magnum-3-nebula/)
 - **Tisas Zigana PX-9 Gen3 Carry, 9 mm Para** – kompakt, 3.5″ mit Kompensator, RMR-Cut, inkl. Holster. `[PREIS]` → [Zum Produkt](https://armatum.ch/produkt/tisas-zigana-px-9-gen3-carry-kompensator-9mm-para-schwarz-15-schuss/)
 - **Kel-Tec KP50 SBR, 5.7×28** – kompakte Plattform mit Klappschaft, 2 × 50-Schuss-Magazine. `[PREIS]` → [Zum Produkt](https://armatum.ch/produkt/kel-tec-kp50-sbr-5-7x28-2-x-50-schuss-schwarz/)
-  **Erwerb nur mit Ausnahmebewilligung** (Magazine über 20 Schuss; laut Shop: Ausnahmebewilligung klein (Sammler) + WHB).
+  **Erwerb nur mit Ausnahmebewilligung** – laut Shop: Ausnahmebewilligung klein (Sammler).
 
 **🔧 Zubehör**
 - **B&T HUB-Adapter für PRINT-X** (M15x1 und 5/8″-24 UNEF) – nur 85 g. `[PREIS]` → [M15x1](https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-m15x1/) · [5/8″-24](https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-5-8-24-unef/)
