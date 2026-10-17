@@ -86,13 +86,16 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 2 | 14.10.2026 | Mi | 18:30 | Karussell (9 Slides, dunkel) | 2 Wiederladen | Wiederladen in 7 Schritten – der Überblick | «Wiederladen klingt kompliziert? Es sind 7 Schritte.» | ✅ **Veröffentlicht 14.10.2026, 21:29** (verspätet wegen Neustarts) – https://www.instagram.com/p/DefIJ_zidmm/ |
 | 3 | 15.10.2026 | Do | 19:00 | Karussell (6 Slides, dunkel + Fotos) | 5 Community | Hallo, wir sind Armatum | «Schön, dass du da bist. Wer steckt hinter @armatum_ch?» | Entwurf fertig – wartet auf Fotos und Freigabe |
 | 4 | 17.10.2026 | Sa | 09:30 | Karussell (9 Slides, dunkel) | 4 Schiesssport & Jagd CH | Das Schützen-ABC der Schweiz – 7 Begriffe | «Endschiessen, Stich, Absenden – verstehst du Schützisch?» | **Freigegeben (11.10.2026)**, fachliche Prüfung ✅ (Inhaber «ABC ok», 11.10.) – Veröffentlichung geplant Sa 17.10. 09:30 |
-| 5 | 20.10.2026 | Di | 18:30 | Reel (20–25 Sek.) | 2 Wiederladen | Hülsenvorbereitung: vom Messing-Chaos zur präzisen Hülse | «Aus dieser Hülse wird Präzision.» | Entwurf – wartet auf Freigabe `[FEHLT: Video]` |
-| 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Entwurf – wartet auf Freigabe |
+| 5 | 20.10.2026 | Di | 18:30 | Reel (20–25 Sek.) | 2 Wiederladen | Hülsenvorbereitung: vom Messing-Chaos zur präzisen Hülse | «Aus dieser Hülse wird Präzision.» | ↪ ersetzt durch #15 (Video fehlt) – Reel bleibt Entwurf |
+| 6 | 21.10.2026 | Mi | 18:30 | Karussell (8 Slides, hell) | 1 Wissen & Tipps | Ausrüstung einwintern – die Checkliste | «Saison vorbei? So überwintert deine Ausrüstung ohne Rost.» | Autopilot – geplant Mi 21.10. 18:30 (dunkles Design) |
 | 7 | 22.10.2026 | Do | 19:00 | Reel (20–30 Sek.) | 3 Produkt-Vorstellung & Test | Ehrlicher Test: `[FEHLT: Produkt]` | «Lohnt sich [Produkt]? Ehrliche Antwort nach X Wochen.» | ⏸ pausiert (Inhaber, 16.10.) |
-| 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | Entwurf – wartet auf Freigabe `[FEHLT: Umfrage-Resultate]` |
+| 8 | 24.10.2026 | Sa | 09:30 | Karussell (6 Slides, dunkel) | 5 Community | Ihr habt abgestimmt: Das interessiert euch | «Ihr habt abgestimmt – und das Resultat überrascht.» | ↪ ersetzt durch #17 (keine Umfrage-Resultate) – bleibt Entwurf |
 | 9 | 18.10.2026 | So | 20:00 | Karussell (3 Fotos + Steckbrief-Slide) | 3 Produkt-Vorstellung | Im Fokus: SIG Sauer Cross in .308 Win | «Präzisionsgewehr oder Jagdbüchse? Die SIG Sauer Cross will beides sein.» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 18.10. 20:00 |
 | 10 | 25.10.2026 | So | 20:00 | Karussell (5 Fotos) | 3 Produkt-Vorstellung | Vergleich: Walther PDP Pro vs. PDP Compact Full Steel (9×19) | «Gleiche Familie, ganz anderer Charakter: PDP Pro oder PDP Compact Full Steel?» | **Freigegeben (11.10.2026)** – Veröffentlichung geplant So 25.10. 20:00 (Titelbild = Ansicht von hinten) |
 | 11 | 12.10.2026 | Mo | 20:00 | Karussell (5 Slides, dunkel + Screenshots) | 5 Community / Behind the Scenes | Neuer Look für armatum.ch (Website-Relaunch) | «armatum.ch hat einen neuen Look – schon reingeschaut?» | ✅ **Veröffentlicht 12.10.2026, 20:56** (verspätet wegen Neustart) – https://www.instagram.com/p/DeZ7TMLmRKs/ + Story |
+| 15 | 20.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 2 Wiederladen | Hülsenvorbereitung in 5 Schritten | «Aus dieser Hülse wird Präzision.» | Autopilot – geplant |
+| 16 | 22.10.2026 | Do | 19:00 | Karussell (7 Slides, dunkel) | 1 Wissen & Tipps | MOA oder MIL? | «MOA oder MIL? Absehen und Klicks einfach erklärt.» | Autopilot – geplant |
+| 17 | 24.10.2026 | Sa | 09:30 | Karussell (8 Slides, dunkel) | 5 Community | Dies oder das? | «6 Fragen – entscheide dich, ohne Ausreden.» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -670,6 +673,109 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 
 ---
 
+### Wochenplan 17.–25.10.2026 (Autopilot, erstellt 17.10.)
+
+| Datum | Zeit | Beitrag | Status |
+|---|---|---|---|
+| Sa 17.10. | 09:30 | #4 Schützen-ABC | geplant (automatisch) |
+| So 18.10. | 20:00 | #9 SIG Sauer Cross | geplant (automatisch) |
+| Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | geplant (automatisch) |
+| Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | geplant (automatisch) |
+| Do 22.10. | 19:00 | #16 MOA oder MIL? (statt #7, pausiert) | geplant (automatisch) |
+| Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
+| So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
+
+Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
+
+---
+
+### #15 – Di 20.10.2026, 18:30 – Karussell – Säule 2: Hülsenvorbereitung in 5 Schritten
+
+**Status:** Autopilot – geplant (ersetzt Reel #5, Video fehlt).
+
+**Grafiken:** `instagram/grafiken/15-huelsen/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/15-huelsen.jpg`.
+
+**Caption zum Kopieren:**
+```
+Aus dieser Hülse wird Präzision. ✨
+
+Präzision fängt nicht beim Schuss an, sondern an der Werkbank. Die Hülsenvorbereitung ist der unterschätzteste Schritt beim Wiederladen – in 5 Schritten:
+
+✔️ Reinigen
+✔️ Kontrollieren – beschädigte Hülsen konsequent aussortieren
+✔️ Länge messen
+✔️ Trimmen
+✔️ Entgraten & anfasen
+
+⚠️ Schutzbrille tragen und konzentriert arbeiten. Ladedaten nur aus den aktuellen Tabellen der Hersteller.
+
+Kein Platz für eine eigene Werkbank? Nach einem Wiederladekurs bei uns in Fulenbach kannst du einen voll ausgerüsteten Arbeitsplatz mieten. Infos über den Link in der Bio.
+
+Speichern für deine nächste Session an der Werkbank.
+Tumbler oder Nassreinigung – womit reinigst du deine Hülsen? 👇
+```
+**Hashtags:** `#wiederladen #reloading #hülsen #präzisionsschiessen #schweiz`
+
+**Regel-Check:** ✅ Prozesswissen ohne Ladedaten, Sicherheitshinweis auf Slide und in der Caption, Kurs/Arbeitsplatz ohne Preise (Website-belegt). Max. Hülsenlänge nur mit Verweis auf Herstellertabelle/C.I.P., keine Zahlen.
+
+---
+
+### #16 – Do 22.10.2026, 19:00 – Karussell – Säule 1: MOA oder MIL?
+
+**Status:** Autopilot – geplant (ersetzt #7, pausiert).
+
+**Grafiken:** `instagram/grafiken/16-moa-mil/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/16-moa-mil.jpg`.
+
+**Caption zum Kopieren:**
+```
+MOA oder MIL? 🎯 Absehen und Klicks einfach erklärt.
+
+Wer auf Distanz schiesst, kommt nicht drum herum: Dein Zielfernrohr rechnet entweder in MRAD (Milliradiant) oder in MOA (Minute of Angle).
+
+📏 1 MRAD = 10 cm auf 100 m – ein Klick (0,1 MRAD) = 1 cm
+📏 1 MOA ≈ 2,9 cm auf 100 m – ein Klick (¼ MOA) ≈ 0,73 cm
+
+Die goldene Regel: Absehen und Türme in derselben Einheit. Und bei einem Absehen in der zweiten Bildebene (SFP) stimmen die Werte nur bei der vom Hersteller angegebenen Vergrösserung.
+
+👉 Swipe für den Vergleich.
+
+Fragen zu Optik und Absehen? Heute Abend sind wir bis 21 Uhr im Laden in Fulenbach – oder schreib sie in die Kommentare.
+
+Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
+```
+**Hashtags:** `#longrange #zielfernrohr #präzisionsschiessen #sportschiessen #schweiz`
+
+**Regel-Check:** ✅ Reines Optik-Wissen, Werte geprüft (1 MRAD = 10 cm/100 m; 1 MOA = 1,047″/100 yd ≈ 2,91 cm/100 m). Laden-Hinweis betrifft Beratung zu Optik, kein Waffen-/Munitionsangebot.
+
+---
+
+### #17 – Sa 24.10.2026, 09:30 – Karussell – Säule 5: Dies oder das?
+
+**Status:** Autopilot – geplant (ersetzt #8, keine Umfrage-Resultate). Öffnungs-Samstag.
+
+**Grafiken:** `instagram/grafiken/17-dies-oder-das/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/17-dies-oder-das.jpg`.
+
+**Caption zum Kopieren:**
+```
+Dies oder das? 🤔 6 Fragen – entscheide dich, ohne Ausreden.
+
+1️⃣ Kimme & Korn oder Rotpunkt?
+2️⃣ Holz oder Chassis?
+3️⃣ Fabrikmunition oder selbst geladen?
+4️⃣ 25 m oder 300 m?
+5️⃣ Stand oder Revier?
+6️⃣ Gleich putzen oder «morgen dann …»?
+
+Schreib deine Antworten in die Kommentare – zum Beispiel: 1B 2A 3B 4B 5A 6A 👇
+
+Lieber persönlich diskutieren? Heute ist unser Laden in Fulenbach von 9 bis 13 Uhr offen. Parkplätze bei der A. Jäggi AG, Eingang hinter dem Gebäude.
+```
+**Hashtags:** `#sportschiessen #jagdschweiz #wiederladen #community #schweiz`
+
+**Regel-Check:** ✅ Community-Format ohne Verkaufsbezug; Munition nur als Thema (Fabrik vs. Wiederladen), kein Angebot. Laden-Hinweis = Einladung zum Austausch. Öffnungszeit und Parkplatz website-belegt.
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -777,3 +883,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-16 | #14 CZ DUTY 4.0 (4 Modelle: F, F MS, C, C MS) auf Wunsch des Inhabers sofort veröffentlicht (08:19): https://www.instagram.com/p/Dei35wjFZYX/ – 8 Slides, Herstellerbilder aus dem Shop (keine Seriennummern sichtbar), ohne Preis/Verkaufsaufruf. Story publiziert, WhatsApp-Status `whatsapp/posts/14-cz-duty.jpg`. |
 | 2026-10-16 | #7 Produkttest: Inhaber wählt Tikka T3x ACE Target 6.5 Creedmoor (schwarz). Caption vorbereitet, Laden-Zeile durch Kommentar-/Bio-Hinweis ersetzt (Waffe → kein Kaufaufruf). Offen: 1 Nachteil, Einsatzdauer, Video bis Mi 21.10. 12:00. |
 | 2026-10-16 | #7 Produkttest (Tikka T3x ACE Target) auf Wunsch des Inhabers pausiert («Wir warten noch damit»). Termin 22.10. entfällt, Erinnerungen zu #7 entfernt. Entwurf bleibt im Plan. |
+| 2026-10-17 | Wochenplan 17.–25.10. erstellt (Autopilot): #5 → #15 (Karussell statt Reel, Video fehlt), #7 → #16 MOA/MIL, #8 → #17 Dies oder das? (keine Umfrage-Resultate), #6 im dunklen Design. Grafiken + WhatsApp-Status gerendert, Veröffentlichung terminiert. |
