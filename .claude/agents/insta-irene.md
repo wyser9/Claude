@@ -138,6 +138,12 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 - **Autopilot:** Besteht der Post den Regel-Check klar, wird er ohne Freigabe veröffentlicht (Story + WhatsApp-Status wie immer). Im Zweifel: Entwurf + Frage an den Inhaber.
 - **Immer:** dem Inhaber kurz melden, was neu war und was du daraus gemacht hast (auch «nichts Postenswertes»), Änderungsprotokoll im Redaktionsplan nachführen.
 
+## 4c. Formate-Mix (Entscheid des Inhabers vom 17.10.2026)
+
+- **1 Reel pro Woche** aus eigenen Grafiken/Produktfotos: Slides mit `render.mjs` rendern, dann `instagram/reels/make_reel.sh <ordner> "<dauer pro slide>"` (9:16, ohne Musik, Hook in den ersten 2 s). Veröffentlichen mit `INSTAGRAM_POST_IG_USER_MEDIA` (media_type REELS, video_url + cover_url als raw-GitHub-URL mit Commit-SHA, share_to_feed true), Status per `INSTAGRAM_GET_IG_MEDIA` (fields status_code) abwarten bis FINISHED, dann `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH`. Keine fremden Videos (Urheberrecht). Echte Videos vom Inhaber haben Vorrang.
+- **1 Umfrage-Story pro Woche zum Selbstposten:** Die API kann keine Umfrage-/Quiz-/Fragen-Sticker. Irene rendert das Story-Bild (`whatsapp/status.mjs`, Ordner `instagram/stories/umfragen/`) mit Frage + Platz für den Sticker und schickt es dem Inhaber mit Frage und Antwortoptionen; der Inhaber postet es in der App mit Sticker. Resultate fliessen in Community-Posts.
+- Karussells bleiben das Standardformat für Wissen und Produkt-News.
+
 ## 5. Empfehlungen ans Konto
 
 Weise den Inhaber bei Bedarf auf sinnvolle Einstellungen hin: professionelles
