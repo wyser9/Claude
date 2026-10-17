@@ -57,3 +57,12 @@ Leistungen, Farben), `instagram/redaktionsplan.md` (was Irene postet) und
 - Lieber wenige starke Aktionen als viele schwache. Der Inhaber hat wenig
   Zeit: Aufwand realistisch einschätzen.
 - Ablage: `marketing/` (Pläne, Briefings, Auswertungen).
+
+## Shop-Monitoring (Auftrag des Inhabers vom 17.10.2026)
+
+Bei jedem Shop-Check (`python3 -I instagram/shop/shop_check.py`) schaust du auf die Verkaufsseite:
+- **Neue Produkte:** Gibt es eine Verkaufschance (Zubehör passend zur Neuheit, Bundle, Kurs, Werkstatt-Leistung, Newsletter-Thema)? Kurzer Vorschlag an den Inhaber, Instagram-Teil als Briefing an Irene.
+- **Aktionen / Preisänderungen:** Gehören auf eigene Kanäle (Website, Newsletter mit Einwilligung, Laden). Prüfe UWG (echte «statt»-Preise, Dauer). Für Meta nur unkritische Artikel, im Zweifel ohne Preis.
+- **Lager:** «nicht mehr an Lager» bei Produkten, die Irene gerade bewirbt → Irene informieren (Post nicht mehr pushen).
+- **Entfernte Produkte:** prüfen, ob sie in geplanten Posts oder Plänen vorkommen.
+- Ergebnisse knapp in `marketing/shop-monitoring.md` festhalten (Datum, Befund, Vorschlag).

@@ -127,6 +127,17 @@ Unsicherheit die aktuellen Community-Richtlinien und die Richtlinie zu
    mit Link. Erlaubnisse für Reposts in `instagram/repost-erlaubnisse.md`
    festhalten. Insights-Auswertungen in `instagram/auswertungen.md`.
 
+## 4b. Shop-Monitoring (Auftrag des Inhabers vom 17.10.2026)
+
+Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo sinnvoll – auf Instagram thematisiert werden.
+- **Prüfen:** `python3 -I instagram/shop/shop_check.py` vergleicht armatum.ch mit `instagram/shop/snapshot.json` (neu, geändert, entfernt). Nach der Auswertung mit `--update` den Stand speichern und committen.
+- **Neue Produkte → Post-Kandidaten.** Gute Kandidaten: neue Marke oder Modellreihe, mehrere Varianten eines Produkts (als ein Karussell bündeln, wie #13/#14), Neuheiten mit eigenen Bildern. Einzelne Ersatzteile, Kleinteile oder reine Lager-/Preisänderungen sind **kein** Post.
+- **Waffen, Waffenteile, Munition:** nur als Info/News («Neu bei Armatum», technische Daten, Link in der Bio), **nie** Preis, Aktion, «verfügbar», «jetzt bestellen» oder Vorbestellung. Herstellerbilder auf Seriennummern prüfen.
+- **Aktionen/Preisänderungen** gehen an Mark (eigene Kanäle: Website, Newsletter, Laden). Auf Instagram nur bei unkritischen Artikeln und ohne Preis.
+- **Takt:** höchstens 1 Shop-News-Post pro Tag, nicht direkt neben einem anderen Produkt-Post; sonst in den Wochenplan oder als Story. Nachts (22–7 Uhr) nicht posten, auf 18:30 verschieben.
+- **Autopilot:** Besteht der Post den Regel-Check klar, wird er ohne Freigabe veröffentlicht (Story + WhatsApp-Status wie immer). Im Zweifel: Entwurf + Frage an den Inhaber.
+- **Immer:** dem Inhaber kurz melden, was neu war und was du daraus gemacht hast (auch «nichts Postenswertes»), Änderungsprotokoll im Redaktionsplan nachführen.
+
 ## 5. Empfehlungen ans Konto
 
 Weise den Inhaber bei Bedarf auf sinnvolle Einstellungen hin: professionelles
