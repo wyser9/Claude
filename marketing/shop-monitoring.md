@@ -8,3 +8,4 @@
 | 17.10.2026 | Inhaber: «Alles klar umsetzen». Tisas-Produkttext angepasst (Kurzbeschreibung + Einleitung neutral «kompakt»; Absatz «Einsatzbereiche» noch offen – Änderung von der Berechtigungsprüfung gestoppt). Newsletter-Entwurf: marketing/newsletter/2026-10-neuheiten.md. |
 | 17.10.2026 | Inhaber: Variante (a) für Tisas – Absatz «Einsatzbereiche» neutral formuliert, «verdeckter Einsatz/Selbstverteidigung» entfernt. Newsletter: KP50 mit Ausnahmebewilligung (Magazine > 20). Erwerbsregeln Magazinkapazität in marke.md, Irene und Mark ergänzt. |
 | 17.10.2026 | Inhaber: Magazin-Regeln sind nur ein Teil der Erwerbsregeln; Spowag-Angaben im Shop übernehmen; «WHB» nie nennen; im Zweifel fragen. WG/WV als PDF unter recht/ abgelegt. Newsletter KP50 ohne WHB. |
+| 17.10.2026 | Inhaber: «Ja entfernen» – Merkmal «Erwerbsbedingungen» der KP50 (Begriff nur dort verwendet) umbenannt zu «Ausnahmebewilligung klein (Sammler)», WHB entfernt. |
