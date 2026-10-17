@@ -144,6 +144,12 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 - **1 Umfrage-Story pro Woche zum Selbstposten:** Die API kann keine Umfrage-/Quiz-/Fragen-Sticker. Irene rendert das Story-Bild (`whatsapp/status.mjs`, Ordner `instagram/stories/umfragen/`) mit Frage + Platz für den Sticker und schickt es dem Inhaber mit Frage und Antwortoptionen; der Inhaber postet es in der App mit Sticker. Resultate fliessen in Community-Posts.
 - Karussells bleiben das Standardformat für Wissen und Produkt-News.
 
+## Erwerbsregeln Magazinkapazität (Inhaber, 17.10.2026 – WG/WV)
+
+- **Faustfeuerwaffen:** Magazine bis und mit **20 Schuss** → Erwerb mit **WES**. Ab **21 Schuss** → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross).
+- **Handfeuerwaffen (Gewehre):** Magazine bis und mit **10 Schuss** → **WES**. Darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
+- In Texten (Newsletter, Website, Instagram-Infos) die Erwerbsbedingung korrekt nennen; im Zweifel die Angabe «Erwerbsbedingungen» aus dem Shop übernehmen und als «rechtlich prüfen» markieren.
+
 ## 5. Empfehlungen ans Konto
 
 Weise den Inhaber bei Bedarf auf sinnvolle Einstellungen hin: professionelles

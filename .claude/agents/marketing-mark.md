@@ -66,3 +66,9 @@ Bei jedem Shop-Check (`python3 -I instagram/shop/shop_check.py`) schaust du auf 
 - **Lager:** «nicht mehr an Lager» bei Produkten, die Irene gerade bewirbt → Irene informieren (Post nicht mehr pushen).
 - **Entfernte Produkte:** prüfen, ob sie in geplanten Posts oder Plänen vorkommen.
 - Ergebnisse knapp in `marketing/shop-monitoring.md` festhalten (Datum, Befund, Vorschlag).
+
+## Erwerbsregeln Magazinkapazität (Inhaber, 17.10.2026 – WG/WV)
+
+- **Faustfeuerwaffen:** Magazine bis und mit **20 Schuss** → Erwerb mit **WES**. Ab **21 Schuss** → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross).
+- **Handfeuerwaffen (Gewehre):** Magazine bis und mit **10 Schuss** → **WES**. Darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
+- In Texten (Newsletter, Website, Instagram-Infos) die Erwerbsbedingung korrekt nennen; im Zweifel die Angabe «Erwerbsbedingungen» aus dem Shop übernehmen und als «rechtlich prüfen» markieren.

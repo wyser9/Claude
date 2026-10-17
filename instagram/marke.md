@@ -153,3 +153,9 @@ Tipps, Tests & Einblicke 👇
 - «Seit 2024»: darf verwendet werden.
 - Composio-Verbindung: aktiv. Veröffentlicht wird nur, was freigegeben ist, und erst zum geplanten Termin.
 - Altersgrenze 18+: wird nach bewusstem Entscheid des Inhabers nicht gesetzt. Punkt geschlossen.
+
+## Erwerbsregeln Magazinkapazität (Inhaber, 17.10.2026 – WG/WV)
+
+- **Faustfeuerwaffen:** Magazine bis und mit **20 Schuss** → Erwerb mit **WES**. Ab **21 Schuss** → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross).
+- **Handfeuerwaffen (Gewehre):** Magazine bis und mit **10 Schuss** → **WES**. Darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
+- In Texten (Newsletter, Website, Instagram-Infos) die Erwerbsbedingung korrekt nennen; im Zweifel die Angabe «Erwerbsbedingungen» aus dem Shop übernehmen und als «rechtlich prüfen» markieren.
