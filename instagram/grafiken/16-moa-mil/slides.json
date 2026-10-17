@@ -1,0 +1,10 @@
+{ "post": "#16 – Do 22.10.2026 19:00 – MOA oder MIL?",
+  "slides": [
+    { "type": "cover", "title": "MOA oder MIL?", "subtitle": "Absehen & Klicks einfach erklärt" },
+    { "type": "content", "badge": "MIL", "kicker": "Milliradiant (MRAD)", "title": "Dezimal & metrisch", "body": "**1 MRAD = 10 cm auf 100 m**\n\nEin Klick (0,1 MRAD) = **1 cm auf 100 m**.\nRechnen im Kopf? Einfach." },
+    { "type": "content", "badge": "MOA", "kicker": "Minute of Angle", "title": "Fein & verbreitet", "body": "**1 MOA ≈ 2,9 cm auf 100 m**\n\nEin Klick (¼ MOA) ≈ **0,73 cm auf 100 m**.\nFeinere Schritte, aber krumme Zahlen." },
+    { "type": "content", "badge": "!", "kicker": "Die goldene Regel", "title": "Nie mischen", "body": "Absehen und Türme in **derselben Einheit**.\n\nMIL-Absehen + MIL-Türme oder MOA + MOA – dann kannst du direkt vom Absehen auf die Klicks übertragen." },
+    { "type": "content", "badge": "FFP", "kicker": "Erste oder zweite Bildebene", "title": "Wann stimmen die Werte?", "body": "**FFP:** Die Absehen-Werte gelten bei jeder Vergrösserung.\n\n**SFP:** Nur bei der vom Hersteller angegebenen Vergrösserung." },
+    { "type": "specs", "kicker": "Auf einen Blick", "title": "Der Vergleich", "rows": [["Einheit", "MRAD · MOA"], ["Pro Einheit (100 m)", "10 cm · ≈ 2,9 cm"], ["Typischer Klick", "1 cm · ≈ 0,73 cm"], ["Stärke", "einfach rechnen · feine Schritte"]] },
+    { "type": "cta", "title": "Speichern für deinen nächsten Tag am Stand.", "body": "Team MIL oder Team MOA? 👇" }
+  ] }

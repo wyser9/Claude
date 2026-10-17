@@ -1,0 +1,6 @@
+{ "status": [
+ { "name": "15-huelsen", "kicker": "Wiederladen", "title": "Aus dieser Hülse wird Präzision", "phone": "../../grafiken/15-huelsen/01.jpg", "body": "Hülsenvorbereitung in 5 Schritten", "pill": "Mehr auf @armatum_ch" },
+ { "name": "06-einwintern", "kicker": "Checkliste", "title": "Ausrüstung einwintern", "phone": "../../grafiken/06-einwintern/01.jpg", "body": "So überwintert sie ohne Rost", "pill": "Mehr auf @armatum_ch" },
+ { "name": "16-moa-mil", "kicker": "Optik-Wissen", "title": "MOA oder MIL?", "phone": "../../grafiken/16-moa-mil/01.jpg", "body": "Absehen & Klicks einfach erklärt", "pill": "Mehr auf @armatum_ch" },
+ { "name": "17-dies-oder-das", "kicker": "Heute 9–13 Uhr offen", "title": "Dies oder das?", "phone": "../../grafiken/17-dies-oder-das/01.jpg", "body": "6 Fragen – entscheide dich", "pill": "Mehr auf @armatum_ch" }
+] }

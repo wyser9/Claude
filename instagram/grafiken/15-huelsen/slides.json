@@ -1,0 +1,10 @@
+{ "post": "#15 – Di 20.10.2026 18:30 – Hülsenvorbereitung in 5 Schritten",
+  "slides": [
+    { "type": "cover", "title": "Aus dieser Hülse wird Präzision", "subtitle": "Hülsenvorbereitung in 5 Schritten" },
+    { "type": "content", "badge": "1", "kicker": "Schritt 1", "title": "Reinigen", "body": "Tumbler oder Nassreinigung.\n\nSaubere Hülsen schonen deine Matrizen – und zeigen Schäden erst richtig." },
+    { "type": "content", "badge": "2", "kicker": "Schritt 2", "title": "Kontrollieren", "body": "Jede Hülse gegen das Licht halten.\n\n**Risse, Beulen, Spuren von Überdruck? Konsequent aussortieren.**" },
+    { "type": "content", "badge": "3", "kicker": "Schritt 3", "title": "Länge messen", "body": "Mit dem Messschieber.\n\nDie maximale Hülsenlänge steht in der Ladetabelle des Herstellers bzw. in den Massblättern (C.I.P.)." },
+    { "type": "content", "badge": "4", "kicker": "Schritt 4", "title": "Trimmen", "body": "Zu lange Hülsen auf die Trimmlänge kürzen.\n\nGleiche Länge = gleichmässigeres Verhalten." },
+    { "type": "content", "badge": "5", "kicker": "Schritt 5", "title": "Entgraten & anfasen", "body": "Hülsenmund innen und aussen sauber entgraten.\n\nDas Geschoss setzt sich dann ohne Kratzer." },
+    { "type": "cta", "title": "Speichern für deine nächste Session an der Werkbank.", "body": "Tumbler oder Nassreinigung –\nwomit reinigst du? 👇", "warn": "Schutzbrille tragen, konzentriert arbeiten. **Ladedaten nur aus den aktuellen Tabellen der Hersteller.**" }
+  ] }
