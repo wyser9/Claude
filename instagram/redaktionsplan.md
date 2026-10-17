@@ -918,3 +918,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-17 | Inhaber: «Ja» zu Reels aus Grafiken (1×/Woche) und Umfrage-Story zum Selbstposten (1×/Woche). #16 wird als Reel veröffentlicht; Umfrage-Story Di 20.10. (Bild `stories/umfragen/umfrage-2026-10-20.jpg`). |
 | 2026-10-17 | #4 Schützen-ABC veröffentlicht um 12:02 statt 09:30 (mehrere Sitzungs-Neustarts): https://www.instagram.com/p/DelnxPLFdqy/ – Story publiziert. |
 | 2026-10-17 | Shop-Check: 5 neue Produkte. 3 Faustfeuerwaffen → #18 (Mo 19.10. 18:30; Sa = #4, So = #9 Produkt-Post). Halsmesser und Pufferpatrone kein eigener Post (Pufferpatrone ggf. später in einem Sicherheits-Tipp). |
+| 2026-10-17 | Shop-Check Abend: 4 neue Produkte (B&T-Schalldämpfer-Adapter, Kel-Tec KP50 SBR, Tisas PX-9 Carry) – bewusst kein Post (Meta-Regeln/Schweizer Rechtslage), Details in marketing/shop-monitoring.md. |

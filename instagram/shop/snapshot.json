@@ -61974,5 +61974,75 @@
 "short": "Kompaktes Halsmesser (Neck Knife) im GSG-9-Stil mit schlanker Klinge, ergonomischem Griff und robuster Kydex-Scheide mit Glasbrecher.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/gsg-9-einsatzmesser-em4-neck-knife-mit-kydex-scheide/"
+},
+"32185": {
+"cats": [
+"Pistolen",
+"Tisas"
+],
+"images": 6,
+"name": "Tisas Zigana PX-9 Gen3 Carry Kompensator 9mm Para, Schwarz, 15 Schuss",
+"on_sale": false,
+"price": "71900",
+"regular": "71900",
+"short": "Subkompakte 9mm-Pistole für den verdeckten Alltagsgebrauch: 3.5-Zoll-Lauf mit Kompensator, 15 Schuss aus SIG-P228-Magazinen, RMR-Cut für Red Dots – inklusive Holster.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/tisas-zigana-px-9-gen3-carry-kompensator-9mm-para-schwarz-15-schuss/"
+},
+"32186": {
+"cats": [
+"Kel-Tec",
+"Pistolen"
+],
+"images": 4,
+"name": "Kel-Tec KP50 SBR 5.7×28, 2 x 50 Schuss, Schwarz",
+"on_sale": false,
+"price": "158900",
+"regular": "158900",
+"short": "Kel-Tec KP50 SBR im Kaliber 5.7×28: kompakte Plattform mit seitlich klappbarem Schaft, zwei 50-Schuss-Magazinen und Jungle-Clip-System für insgesamt 100 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/kel-tec-kp50-sbr-5-7x28-2-x-50-schuss-schwarz/"
+},
+"32191": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 2,
+"name": "B&T HUB Adapter für PRINT-X Schalldämpfer 5/8″-24 UNEF",
+"on_sale": false,
+"price": "5990",
+"regular": "5990",
+"short": "HUB-Adapter von B&T für den PRINT-X Schalldämpfer: waffenseitige Schnittstelle 5/8″-24 UNEF, nur 85 g leicht.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-5-8-24-unef/"
+},
+"32196": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 4,
+"name": "B&T HUB Adapter für PRINT-X Schalldämpfer M15x1",
+"on_sale": false,
+"price": "5990",
+"regular": "5990",
+"short": "HUB-Adapter von B&T für den PRINT-X Schalldämpfer: waffenseitige Schnittstelle M15x1, nur 85 g leicht.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-m15x1/"
+},
+"32197": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 3,
+"name": "B&T HUB Adapter für PRINT-X Schalldämpfer M24x1.5",
+"on_sale": false,
+"price": "5990",
+"regular": "5990",
+"short": "HUB-Adapter von B&T für den PRINT-X Schalldämpfer: waffenseitige Schnittstelle M24x1.5, nur 95 g leicht.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-m24x1-5/"
 }
 }
