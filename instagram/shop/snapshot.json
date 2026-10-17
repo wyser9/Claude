@@ -1228,7 +1228,7 @@
 "price": "42400",
 "regular": "42400",
 "short": "Der B&T QD Schalldämpfer 9x19mm ist ein hochleistungsfähiger Schalldämpfer, entwickelt für Maschinenpistolen und Personal Defense Weapons (PDWs). Er bietet effektive Geräuschreduzierung und Rückstossminderung. Aus robusten Materialien gefertigt, verfügt er über ein innovatives Schnellwechsel-Montage",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-qd-schalldaempfer-kal-9x19mm/"
 },
 "13727": {
@@ -1284,7 +1284,7 @@
 "price": "2190",
 "regular": "2190",
 "short": "Die Real Avid AR15 Star Chamber Cleaning Pads sind speziell entwickelte Pads für die gründliche Reinigung der Sternkammer Ihrer AR15. Sie entfernen effektiv Schmutz und Ablagerungen, sind einfach anzuwenden und bestehen aus hochwertigen Materialien. Kompakt verpackt, sind sie ideal für eine schnelle",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/real-avid-ar15-star-chamber-cleaning-pads/"
 },
 "13743": {
@@ -3874,7 +3874,7 @@
 "price": "3900",
 "regular": "3900",
 "short": "Das Springfield Armory Echelon Magazine bietet Platz für 20 Schuss im Kaliber 9mm. Hergestellt aus robustem Stahl für dauerhafte Zuverlässigkeit und optimale Leistung.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/springfield-armory-echelon-magazine-20-schuss-langlebiges-9mm-magazin/"
 },
 "15539": {
@@ -7133,7 +7133,7 @@
 "price": "640",
 "regular": "640",
 "short": "Robuste Kunststoff-Reinigungswerkzeuge f?r pr?zise Waffenpflege ? sch?tzt Oberfl?chen und entfernt effektiv Schmutz und Ablagerungen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/birchwood-casey-cleaning-picks-set-praezisionswerkzeuge-fuer-waffenpflege/"
 },
 "17422": {
@@ -9230,7 +9230,7 @@
 "price": "890",
 "regular": "890",
 "short": "SureFire CR123A Lithium-Batterie 2er-Pack – leistungsstark, langlebig und zuverlässig für Taschenlampen und taktisches Zubehör.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/surefire-cr123a-batterie-2er-pack-hochleistungs-lithiumbatterien/"
 },
 "18740": {
@@ -10005,7 +10005,7 @@
 "price": "44900",
 "regular": "44900",
 "short": "B&T RBS Schalldämpfer Print-X Compact – kompakter Hochleistungs-Schalldämpfer mit RBS-Technologie. Reduziert Rückstoss, Mündungsfeuer und Gasbelastung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-rbs-schalldaempfer-print-x-compact-kompakter-schalldaempfer/"
 },
 "19127": {
@@ -10482,7 +10482,7 @@
 "price": "22900",
 "regular": "22990",
 "short": "Die Streamlight TLR-7 X ist eine kompakte taktische Waffenlampe mit 500 Lumen, CR123A Batterie, beidseitiger Bedienung und Safe-Off-Funktion für maximale Sicherheit.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/streamlight-tlr-7-x-taktische-waffenlampe-mit-500-lumen-und-cr123a-batterie/"
 },
 "19321": {
@@ -14380,7 +14380,7 @@
 "price": "10900",
 "regular": "10900",
 "short": "Leichter und kompakter Schiess-Sack von Birchwood Casey. Stabile Waffenauflage, robuste Verarbeitung und ideal f?r Schiessstand und Feld.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/birchwood-casey-schiess-sack-steady-shot-foxtrot-waffenauflage/"
 },
 "20390": {
@@ -14408,7 +14408,7 @@
 "price": "10900",
 "regular": "10900",
 "short": "Kompaktes Präzisions-Monopod von B&T für Picatinny-Schienen. Leicht, robust und ideal für feine Höhenkorrekturen bei Long-Range-Schüssen",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-industries-accu-shot-precision-rail-monopod-bt12-qk-schwarz/"
 },
 "20409": {
@@ -14728,7 +14728,7 @@
 "price": "2390",
 "regular": "2390",
 "short": "Universelle Gewehr Reinigungsmatte mit Polsterung und rutschfester Unterseite. Erh?ltlich in vier Designs f?r sichere Waffenpflege.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/tekmat-gewehr-reinigungsmatte-universelle-waffenpflege-matte/"
 },
 "20574": {
@@ -35796,7 +35796,7 @@
 "price": "56990",
 "regular": "56990",
 "short": "Competition Green Dot mit grossem Sichtfeld. Schnell, präzise und ideal für dynamische Disziplinen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-hs507comp-green-dot/"
 },
 "23829": {
@@ -61903,5 +61903,76 @@
 "short": "Die Phoenix Drake Standard Duotone ist eine Schweizer IPSC- und Standschiesspistole in 9x19mm mit reinem SA-Abzug, grünem Fiberkorn, LPA-Visier, 127 mm Lauf, Alu-Griff DR und 19-Schuss-Magazin.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/phoenix-drake-standard-duotone/"
+},
+"32155": {
+"cats": [
+"Chiappa",
+"Pistolen",
+"Revolver"
+],
+"images": 1,
+"name": "Chiappa Rhino 30DS Revolver .357 Magnum 3″ Nebula",
+"on_sale": false,
+"price": "167900",
+"regular": "167900",
+"short": "Kompakter .357 Magnum Revolver mit 3-Zoll-Lauf, tiefer Laufachse und Nebula-PVD-Finish – inklusive Lederholster und Moonclips.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/chiappa-rhino-30ds-revolver-357-magnum-3-nebula/"
+},
+"32162": {
+"cats": [
+"Freedom Arms",
+"Pistolen",
+"Revolver"
+],
+"images": 1,
+"name": "Freedom Arms Model 83 Premier Grade Revolver .454 Casull 7.5″",
+"on_sale": false,
+"price": "484900",
+"regular": "484900",
+"short": "Legendärer Single-Action-Revolver im Kaliber .454 Casull: Premier Grade, 7.5-Zoll-Lauf, verstellbare Visierung, rostfreier Edelstahl – Made in USA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/freedom-arms-model-83-premier-grade-revolver-454-casull-7-5/"
+},
+"32163": {
+"cats": [
+"Kimber",
+"Pistolen"
+],
+"images": 5,
+"name": "Kimber 2K11 Pro Stainless Pistole 9mm Para 4.25″ Optic Ready",
+"on_sale": false,
+"price": "291900",
+"regular": "291900",
+"short": "Kimber 2K11 Pro in 9mm Para: handgefertigte 1911-Pistole mit 4.25-Zoll-Lauf, Edelstahlschlitten, GT-Match-Abzug und werkseitiger Optikplatte (RMR) – inklusive zwei 19-Schuss-Magazinen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/kimber-2k11-pro-stainless-pistole-9mm-para-4-25-optic-ready/"
+},
+"32171": {
+"cats": [
+".308 Winchester",
+"Evolution"
+],
+"images": 1,
+"name": "Evolution Pufferpatrone mit Sicherheitsfahne .308, 5 Stück",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "Pufferpatrone mit Sicherheitsfahne für Kaliber .308: zeigt auf einen Blick, dass das Patronenlager leer ist – praktisches 5er-Set.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/evolution-pufferpatrone-mit-sicherheitsfahne-308-5-stueck/"
+},
+"32172": {
+"cats": [
+"Messer"
+],
+"images": 6,
+"name": "GSG-9 Einsatzmesser EM4 Neck Knife mit Kydex-Scheide",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "Kompaktes Halsmesser (Neck Knife) im GSG-9-Stil mit schlanker Klinge, ergonomischem Griff und robuster Kydex-Scheide mit Glasbrecher.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gsg-9-einsatzmesser-em4-neck-knife-mit-kydex-scheide/"
 }
 }

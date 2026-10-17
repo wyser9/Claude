@@ -1,0 +1,13 @@
+{ "post": "#18 – Mo 19.10.2026 18:30 – Neu bei Armatum: 3 Charakterköpfe",
+  "slides": [
+    { "type": "product", "kicker": "Neu bei Armatum", "title": "3 Charakterköpfe", "titleSize": 88, "images": ["src-chiappa.png"], "imgHeight": 560,
+      "body": "**Eine 1911 der neuen Generation, eine Magnum-Legende und ein Revolver, der alles anders macht.**" },
+    { "type": "product", "kicker": "Kimber", "title": "2K11 Pro Stainless", "images": ["src-kimber.png"], "imgHeight": 470,
+      "rows": [["Kaliber", "9 mm Para · 19 Schuss"], ["Lauf", "4.25″ (108 mm)"], ["Highlights", "GT-Match-Abzug · Optics Ready\nvon einem Techniker montiert"]] },
+    { "type": "product", "kicker": "Freedom Arms", "title": "Model 83 Premier Grade", "images": ["src-freedom.png"], "imgHeight": 400,
+      "rows": [["Kaliber", ".454 Casull · 5 Schuss"], ["Lauf", "7.5″ (190 mm)"], ["Highlights", "Single Action · Edelstahl\nMade in USA"]] },
+    { "type": "product", "kicker": "Chiappa", "title": "Rhino 30DS Nebula", "images": ["src-chiappa.png"], "imgHeight": 470,
+      "rows": [["Kaliber", ".357 Magnum · 6 Schuss"], ["Lauf", "3″ (76 mm)"], ["Highlights", "Lauf unten = weniger Hochschlag\nSA/DA · Nebula-PVD"]] },
+    { "type": "content", "badge": "?", "kicker": "Gewusst?", "title": "Warum der Rhino so anders ist", "body": "Beim Rhino sitzt der Lauf **auf Höhe der untersten Kammer** statt oben.\n\nDer Rückstoss geht so direkter in die Hand – die Mündung steigt weniger." },
+    { "type": "cta", "title": "Alle Infos auf armatum.ch", "body": "Kimber, Freedom Arms oder Rhino –\nwelcher wär's für dich? 👇" }
+  ] }

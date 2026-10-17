@@ -96,6 +96,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 15 | 20.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 2 Wiederladen | Hülsenvorbereitung in 5 Schritten | «Aus dieser Hülse wird Präzision.» | Autopilot – geplant |
 | 16 | 22.10.2026 | Do | 19:00 | Reel (25 Sek., aus Grafiken) | 1 Wissen & Tipps | MOA oder MIL? | «MOA oder MIL? Absehen und Klicks einfach erklärt.» | Autopilot – geplant |
 | 17 | 24.10.2026 | Sa | 09:30 | Karussell (8 Slides, dunkel) | 5 Community | Dies oder das? | «6 Fragen – entscheide dich, ohne Ausreden.» | Autopilot – geplant |
+| 18 | 19.10.2026 | Mo | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Kimber 2K11 Pro, Freedom Arms 83, Chiappa Rhino 30DS | «Neu bei Armatum: 3 Charakterköpfe» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -679,6 +680,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 |---|---|---|---|
 | Sa 17.10. | 09:30 | #4 Schützen-ABC | geplant (automatisch) |
 | So 18.10. | 20:00 | #9 SIG Sauer Cross | geplant (automatisch) |
+| Mo 19.10. | 18:30 | #18 Neu bei Armatum: Kimber 2K11, Freedom Arms 83, Chiappa Rhino (aus Shop-Check) | geplant (automatisch) |
 | Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | geplant (automatisch) |
 | Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | geplant (automatisch) |
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | geplant (automatisch) |
@@ -774,6 +776,34 @@ Lieber persönlich diskutieren? Heute ist unser Laden in Fulenbach von 9 bis 13 
 **Hashtags:** `#sportschiessen #jagdschweiz #wiederladen #community #schweiz`
 
 **Regel-Check:** ✅ Community-Format ohne Verkaufsbezug; Munition nur als Thema (Fabrik vs. Wiederladen), kein Angebot. Laden-Hinweis = Einladung zum Austausch. Öffnungszeit und Parkplatz website-belegt.
+
+---
+
+### #18 – Mo 19.10.2026, 18:30 – Karussell – Säule 3: Neu bei Armatum – 3 Charakterköpfe
+
+**Status:** Autopilot – geplant (aus Shop-Check 17.10.: 3 neue Faustfeuerwaffen). Seriennummern auf Chiappa- und Kimber-Bild verpixelt. Bild der Pufferpatrone nicht verwendet (fremdes Wasserzeichen).
+
+**Grafiken:** `instagram/grafiken/18-neuheiten-faustfeuerwaffen/01.jpg` ff., WhatsApp-Status `whatsapp/posts/18-neuheiten-faustfeuerwaffen.jpg`.
+
+**Caption zum Kopieren:**
+```
+Neu bei Armatum: 3 Charakterköpfe 🔥
+
+Eine 1911 der neuen Generation, eine Magnum-Legende und ein Revolver, der alles anders macht:
+
+▪️ Kimber 2K11 Pro Stainless – 9 mm Para, 4.25″-Lauf, GT-Match-Abzug, Optics Ready
+▪️ Freedom Arms Model 83 Premier Grade – .454 Casull, 7.5″-Lauf, Single Action, Made in USA
+▪️ Chiappa Rhino 30DS Nebula – .357 Magnum, 3″-Lauf, der Lauf sitzt unten statt oben
+
+👉 Swipe für die Details – und warum der Rhino so anders ist.
+
+Alle Infos auf armatum.ch (Link in der Bio).
+
+Kimber, Freedom Arms oder Rhino – welcher wär's für dich? 👇
+```
+**Hashtags:** `#kimber #chiappa #freedomarms #sportschiessen #schweiz`
+
+**Regel-Check:** ✅ Reine Produkt-Info (Daten aus dem Shop), kein Preis, kein «verfügbar»/«bestellen», nur Link in der Bio. Seriennummern unkenntlich.
 
 ---
 
@@ -887,3 +917,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-17 | Wochenplan 17.–25.10. erstellt (Autopilot): #5 → #15 (Karussell statt Reel, Video fehlt), #7 → #16 MOA/MIL, #8 → #17 Dies oder das? (keine Umfrage-Resultate), #6 im dunklen Design. Grafiken + WhatsApp-Status gerendert, Veröffentlichung terminiert. |
 | 2026-10-17 | Inhaber: «Ja» zu Reels aus Grafiken (1×/Woche) und Umfrage-Story zum Selbstposten (1×/Woche). #16 wird als Reel veröffentlicht; Umfrage-Story Di 20.10. (Bild `stories/umfragen/umfrage-2026-10-20.jpg`). |
 | 2026-10-17 | #4 Schützen-ABC veröffentlicht um 12:02 statt 09:30 (mehrere Sitzungs-Neustarts): https://www.instagram.com/p/DelnxPLFdqy/ – Story publiziert. |
+| 2026-10-17 | Shop-Check: 5 neue Produkte. 3 Faustfeuerwaffen → #18 (Mo 19.10. 18:30; Sa = #4, So = #9 Produkt-Post). Halsmesser und Pufferpatrone kein eigener Post (Pufferpatrone ggf. später in einem Sicherheits-Tipp). |
