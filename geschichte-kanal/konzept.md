@@ -1,6 +1,9 @@
-# Neuer Instagram-Kanal: Geschichte (Konzept + Startplan)
+# Instagram-Kanal «Weltkriegs-Tagebuch» (Konzept + Monatsplan)
 
-Stand: 17.10.2026 · Status: **Entwurf, wartet auf Freigabe** · Der Kanal ist eigenständig, ohne Bezug zu Armatum.
+Stand: 17.10.2026 · Status: **Entwurf, wartet auf Freigabe** · Eigenständiger Kanal, ohne Bezug zu Armatum.
+Ersetzt das allgemeine Geschichts-Konzept vom 17.10.2026. Neuer Fokus: **jeden Tag ein Ereignis aus dem Ersten und Zweiten Weltkrieg**, vor allem als Reels.
+
+Weitere Dateien: [`anleitung.md`](anleitung.md) (Schritt für Schritt zu viel Reichweite) · [`quellen.md`](quellen.md) (welches Material wir verwenden dürfen) · [`reels/`](reels/) (Reel-Baukasten und Beispiel).
 
 ---
 
@@ -8,214 +11,110 @@ Stand: 17.10.2026 · Status: **Entwurf, wartet auf Freigabe** · Der Kanal ist e
 
 | Vorschlag | Handle | Idee |
 |---|---|---|
-| **Gestern erklärt** (Empfehlung) | `@gestern.erklaert` | Kurz, sagt sofort, worum es geht, und klingt nicht nach Schulbuch |
-| Damals kompakt | `@damals.kompakt` | Steht für kurze Formate |
-| Zeitfenster | `@zeitfenster.geschichte` | Ein Blick durch ein Fenster in eine andere Zeit |
-| Mythos & Wahrheit | `@mythos.und.wahrheit` | Passt zur stärksten Säule, ist aber thematisch enger |
+| **Weltkriegs-Tagebuch** (Empfehlung) | `@weltkriegstagebuch` | Sagt genau, was es gibt: jeden Tag ein Eintrag |
+| Heute im Krieg | `@heute.im.krieg` | Stark für «On this day», klingt aber härter |
+| Frontlinien | `@frontlinien.geschichte` | Kurz und einprägsam |
+| 1914–1945 | `@1914bis1945` | Zeitraum als Marke, leicht zu merken |
 
-`[PRÜFEN: Ob die Handles frei sind, habe ich nicht geprüft. Bitte in der App testen, bevor wir Grafiken mit dem Namen bauen.]`
+`[PRÜFEN: Handles sind nicht auf Verfügbarkeit geprüft. Im Beispiel-Reel steht vorläufig @weltkriegstagebuch.]`
 
-**Bio (Vorschlag, max. 150 Zeichen):**
-> Geschichte, die man sich merkt 🏛️
-> Mythen, Fakten und «Heute vor …»
-> Jeden Tag ein Stück Gestern · Quellen in jedem Post
+**Bio (max. 150 Zeichen):**
+> Jeden Tag: was heute vor 80 oder 110 Jahren geschah 📅
+> Erster & Zweiter Weltkrieg · sachlich · mit Quellen
+> Nie wieder beginnt mit Erinnern.
 
-**Profil-Einstellungen:** Creator-Konto (Kategorie «Bildung»), damit Insights und geplante Posts möglich sind. Highlights zum Start: *Mythen*, *Heute vor …*, *Schweiz*, *Quiz*, *Quellen/FAQ*.
-
----
-
-## 2. Positionierung
-
-- **Versprechen:** Pro Post eine verblüffende, belegte Geschichte, in 30 Sekunden verstanden und so erzählt, dass man sie weitererzählen will.
-- **Zielgruppe:** 18- bis 45-Jährige im deutschsprachigen Raum (CH, DE, AT), die Geschichte spannend finden, aber keine Fachliteratur lesen. Zweite Zielgruppe: Lehrpersonen und Schüler, die gute Beispiele suchen.
-- **Abgrenzung:** keine Politik der Gegenwart und keine Kriegsverherrlichung, auch kein Clickbait ohne Beleg. Jeder Post nennt seine Quelle. Daraus wird das Markenzeichen.
-- **Ton:** Du-Form, locker und präzise. Ein Augenzwinkern ist erlaubt, Spott über Menschen nicht. Schweizer Rechtschreibung (ss statt ß).
+**Highlights:** *1914–1918*, *1939–1945*, *Schweiz*, *Quiz*, *Quellen*.
 
 ---
 
-## 3. Content-Säulen
+## 2. Haltung (wichtig für Reichweite **und** Sperr-Risiko)
 
-| # | Säule | Anteil | Beispiel |
-|---|---|---|---|
-| 1 | **Mythos oder Fakt?** | 30 % | Napoleon war gar nicht klein |
-| 2 | **Heute vor … Jahren** | 25 % | 9.11.1989: Der Mauerfall begann mit einem Versprecher |
-| 3 | **Zeit-Perspektiven** (verblüffende Vergleiche) | 20 % | Kleopatra lebte näher an der Mondlandung als am Pyramidenbau |
-| 4 | **Schweizer Geschichte** | 15 % | Bundesbrief, Rütli und 1. August |
-| 5 | **Community** (Quiz, Fragen, Wünsche) | 10 % | «Welche Epoche als Nächstes?» |
+- **Erinnern, nicht verherrlichen.** Wir zeigen Menschen, Entscheidungen und Folgen, keine «coolen» Waffen-Edits und keine Heldenmusik zu Täter-Bildern.
+- **Täter benennen, aber nicht inszenieren:** keine Hakenkreuze, SS-Runen oder Porträts von NS-Führern auf Cover und erstem Frame. Im Inneren nur, wenn es sachlich nötig ist (Meta stuft solche Inhalte schnell als «gefährliche Organisationen» ein; die Folge sind gelöschte Posts oder ein Konto, das nicht mehr empfohlen wird).
+- **Keine Leichen und keine Verwundungen im Bild.** Opfer werden mit Zahlen, Namen und Orten gewürdigt, nicht mit Schockbildern.
+- **Holocaust und Kriegsverbrechen:** eigener, ruhiger Stil (schwarz, keine Musik oder nur leise, kein Hook-Trick), Quellen von Gedenkstätten (Yad Vashem, USHMM, Arolsen Archives).
+- **Kommentare** sind moderiert, Hetze und Leugnung werden sofort gelöscht (siehe Anleitung, Schritt 3).
 
 ---
 
-## 4. Formate und Rhythmus
+## 3. Formate
 
-| Format | Häufigkeit | Zweck |
+| Format | Häufigkeit | Inhalt |
 |---|---|---|
-| Karussell (5–8 Slides) | 3× pro Woche | Wird gespeichert und geteilt, Kern des Kanals |
-| Reel (15–30 s, aus Grafiken + Voiceover oder Text) | 1× pro Woche | Reichweite bei Nicht-Followern |
-| Stories | täglich | Quiz-Sticker «Mythos oder Fakt?», Repost der Feed-Posts, Umfragen |
+| **Reel «Heute vor X Jahren»** (20–40 s) | täglich | Hauptformat. Hook in der 1. Sekunde, dann Uhrzeiten, Orte, Menschen. Text auf dem Bild, Voiceover sobald verfügbar |
+| Karussell (6–8 Slides) | 2× pro Woche, zusätzlich | Längere Hintergründe, Karten, Zahlen. Wird gespeichert |
+| Stories | täglich | Reel teilen, Quiz «Wann war das?», Umfrage zum nächsten Thema |
+| Serie «Ein Mensch, ein Schicksal» | 1× pro Woche (So) | Ein einzelner Soldat, eine Krankenschwester oder ein Zivilist, erzählt mit Feldpostbriefen |
 
-**Posting-Zeiten (Startwerte, nach 4 Wochen anhand der Insights anpassen):** Mo/Mi/Fr 18:30, So 10:00 (Reel). Stories ca. 12:00 und 20:00.
+**Posting-Zeit (Start):** täglich 18:00, Sonntag 10:00. Nach 3 Wochen anhand der Insights anpassen.
 
----
+**Reel-Bauplan (bewährt):**
+1. **0–2 s Hook:** ein Widerspruch oder eine Frage («Sie wussten, dass der Krieg endet. Und kämpften trotzdem weiter.»)
+2. **2–25 s:** 4–6 kurze Schritte mit Uhrzeit oder Jahreszahl gross im Bild
+3. **Ende:** ein Satz, der hängen bleibt, + «Folge für morgen»
+4. Untertitel immer im Bild (85 % schauen ohne Ton)
 
-## 5. Design
-
-- **Farben:** Pergament `#F3EBDD` (Hintergrund hell), Tinte `#1F2A36` (Text, Hintergrund dunkel), Siegelrot `#A23B2A` (Akzent, Stempel «MYTHOS» / «FAKT»), Gold `#B8964E` (Jahreszahlen).
-- **Schrift:** Überschriften in einer Serifenschrift (z. B. *Playfair Display*), Fliesstext in einer klaren Sans-Schrift (z. B. *Inter*). Beide sind frei verfügbar.
-- **Wiedererkennung:** Grosse Jahreszahl oben links auf jedem Cover. Auf Mythos-Posts ein roter Stempel «MYTHOS» bzw. «FAKT». Die letzte Slide ist immer «Quellen» und hat einen kleinen Handle.
-- **Bilder:** nur gemeinfreie Werke (Wikimedia Commons mit Lizenz «Public Domain», Open-Access-Sammlungen von Museen, z. B. Rijksmuseum, Met, Library of Congress) oder eigene Grafiken. KI-Bilder nur mit sichtbarem Hinweis «KI-Illustration» und nie als historisches Dokument ausgegeben.
-- **Formate:** Feed 1080×1350 (4:5), Stories/Reels 1080×1920.
-
----
-
-## 6. Regeln für Qualität
-
-1. Jede Tatsache braucht mindestens eine seriöse Quelle (Fachlexikon, z. B. *Historisches Lexikon der Schweiz*, Museum, Universität, Fachbuch). Wikipedia dient nur als Einstieg.
-2. Legenden werden als Legenden bezeichnet («der Überlieferung nach …»).
-3. Zahlen und Daten werden vor dem Posten zweimal geprüft. Unsicheres ist im Plan mit `[PRÜFEN]` markiert.
-4. Wenn ein Fehler gemeldet wird: korrigieren, sich in den Kommentaren bedanken und die Korrektur in der Caption vermerken.
-5. Sensible Themen (Kriege, Genozide, Sklaverei) nur sachlich und respektvoll behandeln, ohne Memes oder Witz.
+Beispiel: `reels/2026-11-11-waffenstillstand/reel.mp4` (25 s, eigene Grafik, keine fremden Rechte).
 
 ---
 
-## 7. Startplan: die ersten 2 Wochen (Mo 2.11.–So 15.11.2026)
+## 4. Design
 
-Profil am **Mo 2.11.** mit drei Posts gleichzeitig starten, damit das Raster nicht leer aussieht (Reihenfolge des Hochladens: P3, P2, P1, damit das Intro oben links steht).
+- **Farben:** Fast-Schwarz `#111111`, Papier `#EDE6D6`, Signalrot `#B3261E` (Akzent, sparsam), Grau `#968F84` (Quellen).
+- **Schrift:** *Inter Display Black* für Uhrzeiten und Hooks, *Liberation Mono Bold* (Schreibmaschine) für Ort und Datum, *Inter* für Text.
+- **Archivfotos:** schwarz-weiss lassen, leicht gezoomt (Ken-Burns-Effekt), Quelle unten klein.
+- Fortschrittsbalken oben, Handle unten. So wird jedes Reel sofort wiedererkannt.
 
-| Nr. | Datum | Zeit | Format | Säule | Thema |
+---
+
+## 5. Monatsplan November 2026 (1 Reel pro Tag)
+
+Start: **Mo 2.11.2026**. «Jahre» = Abstand zu 2026. Alle Daten vor der Produktion noch einmal mit der Quelle abgleichen.
+
+| Tag | Datum | Krieg | Ereignis | Jahre | Hook-Idee |
 |---|---|---|---|---|---|
-| P1 | Mo 02.11. | 18:30 | Karussell (4) | Community | Intro: Willkommen bei Gestern erklärt |
-| P2 | Mo 02.11. | 18:30 | Karussell (6) | Zeit-Perspektiven | Kleopatra, Pyramiden und die Mondlandung |
-| P3 | Mo 02.11. | 18:30 | Karussell (6) | Mythos oder Fakt? | Hatten Wikinger Hörner am Helm? |
-| P4 | Mi 04.11. | 18:30 | Karussell (6) | Mythos oder Fakt? | War Napoleon klein? |
-| P5 | Fr 06.11. | 18:30 | Karussell (7) | Schweizer Geschichte | 1816: Das Jahr ohne Sommer |
-| P6 | So 08.11. | 10:00 | Reel (20 s) | Zeit-Perspektiven | Oxford ist älter als das Aztekenreich |
-| P7 | Mo 09.11. | 18:30 | Karussell (7) | Heute vor … | Mauerfall: der Versprecher, der Geschichte schrieb |
-| P8 | Mi 11.11. | 18:30 | Karussell (6) | Heute vor … | 11.11.1918, 11 Uhr: die letzten Stunden des Ersten Weltkriegs |
-| P9 | Fr 13.11. | 18:30 | Karussell (7) | Schweizer Geschichte | Rütlischwur, Bundesbrief und 1. August: was stimmt? |
-| P10 | So 15.11. | 10:00 | Reel (20 s) | Mythos oder Fakt? | Als zehn Tage einfach verschwanden (Kalenderreform 1582) |
+| Mo | 02.11. | WK2 | El Alamein: Operation «Supercharge» (1942) | 84 | «Der Wüstenkrieg kippt in einer Nacht.» |
+| Di | 03.11. | WK1 | Matrosenaufstand in Kiel (1918) | 108 | «Die Matrosen weigerten sich, in eine sinnlose letzte Schlacht zu fahren.» |
+| Mi | 04.11. | WK1 | Der Dichter Wilfred Owen fällt am Sambre-Oise-Kanal (1918) | 108 | «Eine Woche vor Kriegsende. Seine Mutter erfuhr es, als die Glocken den Frieden läuteten.» |
+| Do | 05.11. | WK1 | Grossbritannien und Frankreich erklären dem Osmanischen Reich den Krieg (1914) | 112 | «Wie Europas Krieg zum Krieg im Nahen Osten wurde.» |
+| Fr | 06.11. | WK1 | Kanadier erobern Passchendaele (1917) | 109 | «Fünf Monate Schlamm für acht Kilometer.» |
+| Sa | 07.11. | WK1 | Oktoberrevolution in Petrograd (1917, nach westlichem Kalender) | 109 | «Warum die Oktoberrevolution im November war.» |
+| So | 08.11. | WK2 | Operation «Torch»: Landung der Alliierten in Nordafrika (1942) | 84 | «Die erste grosse Landung der Amerikaner gegen Hitlers Achse.» |
+| Mo | 09.11. | WK1/WK2 | Der «Schicksalstag»: 1918 Ausrufung der Republik, 1938 Novemberpogrome | 108 / 88 | ruhiger Stil, kein Hook-Trick. Gedenken an 1938 |
+| Di | 10.11. | WK1 | Kaiser Wilhelm II. flieht in die Niederlande (1918) | 108 | «Er ging ins Exil und kam nie zurück.» |
+| Mi | 11.11. | WK1 | Waffenstillstand von Compiègne, 11 Uhr (1918) | 108 | **Beispiel-Reel fertig** |
+| Do | 12.11. | WK2 | Das Schlachtschiff «Tirpitz» wird versenkt (1944) | 82 | «Das Schiff, das fast nie kämpfte und trotzdem eine ganze Flotte band.» |
+| Fr | 13.11. | WK1 | Schlacht an der Ancre, letzte Phase der Somme (1916) | 110 | «Die Somme: 141 Tage. Das ist das Ende.» |
+| Sa | 14.11. | WK2 | Luftangriff auf Coventry (Nacht 14./15.11.1940) | 86 | «Eine Stadt, nach der ein Verb benannt wurde.» |
+| So | 15.11. | WK2 | Seeschlacht von Guadalcanal endet (1942) | 84 | Serie «Ein Mensch, ein Schicksal»: die fünf Sullivan-Brüder (gefallen am 13.11.1942) |
+| Mo | 16.11. | WK2 | Fall von Leros, Dodekanes (1943) | 83 | «Der vergessene Feldzug in der Ägäis.» |
+| Di | 17.11. | WK1 | Zweites Seegefecht vor Helgoland (1917) | 109 | «Seeschlacht in der Nordsee: kurz, chaotisch, vergessen.» |
+| Mi | 18.11. | WK1 | Ende der Schlacht an der Somme (1916) | 110 | «Über eine Million Tote, Verwundete und Vermisste. Für ein paar Kilometer.» |
+| Do | 19.11. | WK2 | Operation «Uranus»: Die Rote Armee schliesst Stalingrad ein (1942) | 84 | «In vier Tagen sass die 6. Armee in der Falle.» |
+| Fr | 20.11. | WK1 | Schlacht von Cambrai: erster Massen-Einsatz von Panzern (1917) | 109 | «476 Panzer, und trotzdem kein Durchbruch.» |
+| Sa | 21.11. | WK1 | Lazarettschiff HMHS «Britannic», Schwesterschiff der Titanic, sinkt (1916) | 110 | «Die Titanic hatte eine Schwester. Sie sank schneller.» |
+| So | 22.11. | WK2 | Konferenz von Kairo: Roosevelt, Churchill, Chiang Kai-shek (1943) | 83 | Serie «Ein Mensch, ein Schicksal» oder Karussell |
+| Mo | 23.11. | WK2 | Ende der Schlacht um Tarawa (1943) | 83 | «76 Stunden für eine Insel, kleiner als der Flughafen Zürich.» |
+| Di | 24.11. | WK2 | Erster B-29-Angriff auf Tokio von den Marianen aus (1944) | 82 | «Der Anfang vom Bombenkrieg gegen Japan.» |
+| Mi | 25.11. | WK2 | U-331 versenkt die HMS «Barham» (1941) | 85 | «Das Schlachtschiff kenterte in vier Minuten, gefilmt von einer Wochenschau-Kamera.» |
+| Do | 26.11. | WK2 | Japans Flugzeugträger laufen Richtung Pearl Harbor aus (1941) | 85 | «12 Tage vor dem Angriff. Funkstille.» |
+| Fr | 27.11. | WK2 | Die französische Flotte versenkt sich in Toulon selbst (1942) | 84 | «Lieber versenken als ausliefern.» |
+| Sa | 28.11. | WK2 | Konferenz von Teheran: Erstes Treffen der «Grossen Drei» (1943) | 83 | «Drei Männer verteilen Europa neu.» |
+| So | 29.11. | WK2 | Serie «Schweiz im Krieg»: Réduit und Rütlirapport von General Guisan (Juli 1940) | – | «Warum die Schweiz ihre Armee in die Berge zurückzog.» |
+| Mo | 30.11. | WK2 | Die Sowjetunion greift Finnland an, Beginn des Winterkriegs (1939) | 87 | «Weisse Tarnanzüge gegen die grösste Armee der Welt.» |
 
-### Captions
+`[PRÜFEN: Zahlen in den Hooks (z. B. «476 Panzer», «76 Stunden», «vier Minuten») erst nach Abgleich mit der Quelle ins Reel übernehmen. Für die Barham-Aufnahme siehe quellen.md: Wochenschau-Material ist meist nicht frei.]`
 
-**P1 – Intro**
-> Geschichte muss nicht trocken sein. 🏛️
-> Hier gibt's jeden Tag ein Stück Gestern: Mythen, die du vielleicht noch glaubst, verblüffende Zeitvergleiche und «Heute vor … Jahren».
-> Zu jedem Post nennen wir die Quellen, versprochen.
-> 👉 Welche Epoche interessiert dich am meisten? Schreib's in die Kommentare.
->
-> #geschichte #history #geschichteerleben #wusstestdu #bildung #schweizergeschichte
-
-**P2 – Kleopatra**
-> Kleopatra lebte näher an der Mondlandung als am Bau der Grossen Pyramide. 🤯
-> Die Cheops-Pyramide entstand um 2560 v. Chr., Kleopatra starb 30 v. Chr., also rund 2500 Jahre später. Bis zur Mondlandung 1969 waren es «nur» etwa 2000 Jahre.
-> Für Kleopatra waren die Pyramiden schon uraltes Erbe.
-> 💾 Speichern für den nächsten Smalltalk.
->
-> #geschichte #kleopatra #altesägypten #pyramiden #wusstestdu #history
-
-**P3 – Wikinger**
-> Hörner am Helm? Fehlanzeige. ❌
-> Kein einziger Wikingerhelm mit Hörnern ist archäologisch belegt. Das Bild stammt aus dem 19. Jahrhundert, berühmt wurde es durch die Kostüme von Carl Emil Doepler für Wagners «Ring des Nibelungen» (Bayreuth 1876).
-> Welchen Mythos sollen wir als Nächstes prüfen?
->
-> #wikinger #mythosoderfakt #geschichte #mittelalter #history #wusstestdu
-
-**P4 – Napoleon**
-> Napoleon war klein? Eher nicht. 📏
-> Er war etwa 1,69 m gross, damit lag er für einen Franzosen seiner Zeit im Durchschnitt. Der Mythos kommt unter anderem von alten französischen Massen («5 pieds 2 pouces»), die in Grossbritannien als englische Fuss und Zoll gelesen wurden, und von der britischen Propaganda.
-> Hast du's auch geglaubt? 👇
->
-> #napoleon #mythosoderfakt #geschichte #frankreich #history #wusstestdu
-
-**P5 – Jahr ohne Sommer**
-> 1816 fiel der Sommer aus, auch in der Schweiz. ❄️
-> Im April 1815 brach in Indonesien der Vulkan Tambora aus. Seine Asche kühlte das Klima weltweit ab. In der Schweiz gab es im Sommer Schnee, Missernten und eine Hungersnot.
-> Und am Genfersee schrieb Mary Shelley, eingesperrt vom Dauerregen, die erste Fassung von «Frankenstein».
-> 💾 Speichern und teilen.
->
-> #schweizergeschichte #1816 #jahrohnesommer #frankenstein #geschichte #history
-
-`[PRÜFEN: Zahlen zur Hungersnot in der Ostschweiz nur mit Quelle (HLS-Artikel «Hungersnöte») auf die Slides nehmen.]`
-
-**P6 – Reel Oxford**
-> Die Universität Oxford ist älter als das Aztekenreich. 🎓
-> In Oxford wurde schon ab 1096 unterrichtet. Tenochtitlan, die Hauptstadt der Azteken, wurde erst um 1325 gegründet.
-> Folge für mehr Zeitvergleiche, die dein Gehirn verknoten.
->
-> #geschichte #oxford #azteken #wusstestdu #history #reels
-
-**P7 – Mauerfall**
-> Heute vor 37 Jahren fiel die Berliner Mauer, und das wegen eines Zettels. 🧱
-> Am Abend des 9.11.1989 verlas SED-Sprecher Günter Schabowski eine neue Reiseregelung. Auf die Frage, ab wann sie gelte, sagte er: «Das tritt nach meiner Kenntnis … ist das sofort, unverzüglich.»
-> Noch in derselben Nacht öffneten sich die Grenzübergänge.
-> Wo warst du (oder deine Eltern) an diesem Tag? 👇
->
-> #mauerfall #9november #berlin #geschichte #heutevor #history
-
-**P8 – Waffenstillstand 1918**
-> Der Erste Weltkrieg endete um 11 Uhr am 11.11.1918, unterschrieben wurde aber schon gegen 5 Uhr morgens. 🕚
-> In den sechs Stunden dazwischen wurde weitergekämpft, Tausende Soldaten wurden noch verwundet oder getötet. Einer der Letzten war der Amerikaner Henry Gunther, eine Minute vor 11 Uhr.
-> Ein stiller Gedenktag.
->
-> #ersterweltkrieg #11november #geschichte #gedenken #heutevor #history
-
-`[PRÜFEN: Opferzahlen des letzten Vormittags nur mit Quelle nennen, sonst bei «Tausende» bleiben.]`
-
-**P9 – Rütli und Bundesbrief**
-> Rütlischwur 1291? Ganz so einfach ist es nicht. 🇨🇭
-> ✅ Fakt: Der Bundesbrief ist auf «Anfang August 1291» datiert und liegt im Bundesbriefmuseum in Schwyz.
-> ❓ Legende: Den Rütlischwur und Wilhelm Tell kennen wir aus Chroniken, die erst rund 200 Jahre später geschrieben wurden.
-> 📅 Und der 1. August? Gefeiert seit 1891, offizieller Feiertag erst seit 1994.
-> Hättest du's gewusst?
->
-> #schweizergeschichte #rütli #bundesbrief #1august #mythosoderfakt #geschichte
-
-**P10 – Reel Kalenderreform**
-> Auf den 4. folgte der 15. Oktober 1582. 📆
-> Papst Gregor XIII. strich zehn Tage, damit der Kalender wieder zur Sonne passte. Katholische Länder machten sofort mit. Viele reformierte Gebiete, auch in der Schweiz, wechselten erst über 100 Jahre später.
-> Stell dir vor, dein Geburtstag fällt einfach aus.
->
-> #kalender #1582 #geschichte #wusstestdu #history #reels
-
-`[PRÜFEN: Daten der Umstellung in den reformierten Kantonen (u. a. 1700/1701, Teile Graubündens erst um 1811/12) vor einer Erwähnung im Reel mit dem HLS abgleichen.]`
-
-### Stories in den ersten 2 Wochen
-
-| Tag | Story |
-|---|---|
-| Mo 02.11. | «Wir sind live!» + Umfrage «Welche Epoche zuerst? Antike / Mittelalter» |
-| Di 03.11. | Quiz-Sticker «Mythos oder Fakt? Im Mittelalter dachte man, die Erde sei eine Scheibe.» → Auflösung: Mythos |
-| Mi 04.11. | Repost P4 + Slider «Wie gross war Napoleon wohl?» |
-| Do 05.11. | «Heute vor 421 Jahren»: Pulververschwörung in London (5.11.1605), eine Story-Slide |
-| Fr 06.11. | Repost P5 + Frage-Sticker «Welches Ereignis soll ich erklären?» |
-| Sa 07.11. | Quiz: «Welches ist älter? Kleopatra / Grosse Pyramide / Stonehenge (frühe Bauphase)» |
-| So 08.11. | Reel P6 teilen + Wochenrückblick |
-| Mo 09.11. | Repost P7 |
-| Di 10.11. | Quiz «Mythos oder Fakt? Im Alten Rom erbrach man sich im ‹Vomitorium›.» → Mythos (das waren Ausgänge im Amphitheater) |
-| Mi 11.11. | Repost P8, schlicht, schwarzer Hintergrund |
-| Do 12.11. | Antworten auf die Frage-Sticker vom 6.11. |
-| Fr 13.11. | Repost P9 + Umfrage «Glaubst du an Wilhelm Tell? Ja / Legende» |
-| Sa 14.11. | Quiz zum Schweizer Wissen (3 Fragen) |
-| So 15.11. | Reel P10 teilen + Danke, Highlights aktualisieren |
+Ab Dezember folgt der Plan jeweils am 20. des Vormonats. Dazu kommen grosse Jahrestage, die wir mit mehreren Posts begleiten (z. B. 07.12. Pearl Harbor, 24./25.12. Weihnachtsfrieden 1914, 06.06. D-Day, 08.05. Kriegsende in Europa).
 
 ---
 
-## 8. Wachstum in den ersten 3 Monaten
-
-- **Erste Stunde nach jedem Post:** alle Kommentare beantworten, mit Fragen zurück.
-- **Zusammenarbeit:** Collab-Posts mit kleineren Geschichts-Accounts (1000–20 000 Follower) und mit Museen in der Region anfragen.
-- **Hashtags:** pro Post 5–8, gemischt aus gross (#geschichte, #history), mittel (#schweizergeschichte, #mythosoderfakt) und Nische (#heutevor). Keine gekauften Follower, keine Follow/Unfollow-Taktik.
-- **Serien** aufbauen, die man sammeln will (z. B. «Mythos #1, #2, …»), und in den Highlights bündeln.
-- **Ziele (Richtwerte):** nach 4 Wochen 300 Follower, nach 3 Monaten 1500. Wichtiger als die Followerzahl: Speicherungen pro Post (Ziel > 3 % der Reichweite).
-
----
-
-## 9. Offene Entscheide
+## 6. Offene Entscheide
 
 | Frage | Vorschlag |
 |---|---|
-| Name und Handle | «Gestern erklärt» / `@gestern.erklaert`, Verfügbarkeit in der App prüfen |
-| Wer betreibt den Kanal (Konto, Login)? | Neues Creator-Konto, getrennt von @armatum_ch |
-| Veröffentlichung | selbst posten oder später über eine Verbindung (z. B. Composio) automatisieren |
-| Gesicht/Stimme im Reel | anfangs nur Text + Musik, später Voiceover |
-| Startdatum | Mo 2.11.2026 |
-| Grafiken | Sobald Name und Farben freigegeben sind, baue ich die Vorlagen und die 10 Start-Posts |
+| Name und Handle | `@weltkriegstagebuch`, Verfügbarkeit in der App prüfen |
+| Konto | neues Creator-Konto (Kategorie «Bildung» oder «Digitaler Creator»), getrennt von @armatum_ch |
+| Stimme | KI-Voiceover (ElevenLabs) oder deine eigene Stimme, siehe Anleitung |
+| Automatisches Posten | über Composio, wie bei Armatum, siehe Anleitung, Schritt 2 |
+| Archivbilder | Netzwerk-Freigabe für die Archive in dieser Umgebung, siehe quellen.md |
