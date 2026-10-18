@@ -4,6 +4,8 @@
 
 **Prompt (in die Routine kopieren):**
 
+KONTO-SCHUTZ (Inhaber, 18.10.2026): In Composio sind zwei Instagram-Konten verbunden. Für Armatum ALLE Instagram-Aufrufe NUR mit account «armatum» (username armatum_ch) – nie ohne account-Angabe, nie «weltkriegstagebuch». Vorher prüfen (COMPOSIO_MANAGE_CONNECTIONS, instagram, list), dass «armatum» ACTIVE ist; sonst nichts planen/posten und den Inhaber informieren. Permalinks müssen armatum_ch zeigen. Arbeitsstand liegt auf Branch claude/epic-faraday-somrb6 (git fetch + checkout, dort committen/pushen). Jeder angelegte Veröffentlichungs-Termin muss diesen Konto-Schutz enthalten.
+
 Irene-Autopilot (Inhaber: «Posts automatisch ohne Freigabe», «Ja wöchentlich Autopilot»): Plane und produziere die Instagram-Beiträge für @armatum_ch für die kommende Woche (Mo–So) und richte die automatische Veröffentlichung ein.
 1. Lies instagram/redaktionsplan.md, instagram/marke.md, instagram/auswertungen.md und .claude/agents/insta-irene.md (Regeln + Autopilot-Abschnitt).
 2. Werte die Insights der letzten Woche aus (Composio instagram, armatum_ch) und notiere sie in auswertungen.md.
