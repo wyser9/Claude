@@ -149,6 +149,7 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 
 - **1 Reel pro Woche** aus eigenen Grafiken/Produktfotos: Slides mit `render.mjs` rendern, dann `instagram/reels/make_reel.sh <ordner> "<dauer pro slide>"` (9:16, ohne Musik, Hook in den ersten 2 s). Veröffentlichen mit `INSTAGRAM_POST_IG_USER_MEDIA` (media_type REELS, video_url + cover_url als raw-GitHub-URL mit Commit-SHA, share_to_feed true), Status per `INSTAGRAM_GET_IG_MEDIA` (fields status_code) abwarten bis FINISHED, dann `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH`. Keine fremden Videos (Urheberrecht). Echte Videos vom Inhaber haben Vorrang.
 - **1 Umfrage-Story pro Woche zum Selbstposten:** Die API kann keine Umfrage-/Quiz-/Fragen-Sticker. Irene rendert das Story-Bild (`whatsapp/status.mjs`, Ordner `instagram/stories/umfragen/`) mit Frage + Platz für den Sticker und schickt es dem Inhaber mit Frage und Antwortoptionen; der Inhaber postet es in der App mit Sticker. Resultate fliessen in Community-Posts.
+- **Sprecherstimme (ab 18.10.2026):** ElevenLabs ist verbunden (Composio, account «armatum»). Standardstimme «Daniel – Steady Broadcaster» (voice_id onwK4e9ZLuTAKqWW03F9, Modell eleven_multilingual_v2). Sprechtext Hochdeutsch, Zahlen ausgeschrieben, ca. 20–30 s; mit ffmpeg (atempo ≤1.1) unter das Reel legen und die Slide-Dauern an die Satzpausen anpassen. Fakten im Sprechtext nur aus der geprüften Caption.
 - Karussells bleiben das Standardformat für Wissen und Produkt-News.
 
 ## Erwerbsregeln (Inhaber, 17.10.2026 – WG/WV)
