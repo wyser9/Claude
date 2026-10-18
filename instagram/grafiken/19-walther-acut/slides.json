@@ -1,0 +1,12 @@
+{ "post": "#19 – Fr 23.10.2026 18:30 – Neu: Walther PDP PRO A-Cut mit Aimpoint COA",
+  "slides": [
+    { "type": "product", "kicker": "Neu bei Armatum", "title": "Rotpunkt ohne Platte", "titleSize": 80, "images": ["src-fs.png"], "imgHeight": 520,
+      "body": "**Walther PDP PRO A-Cut mit Aimpoint COA** – das Visier sitzt direkt im Verschluss." },
+    { "type": "product", "kicker": "Walther PDP PRO", "title": "Compact 4.6″ A-Cut", "images": ["src-compact.png"], "imgHeight": 470,
+      "rows": [["Kaliber", "9 mm Para · 18 Schuss"], ["Lauf", "4.6″ (117 mm), Gewinde"], ["Highlights", "Compact-Griffstück · DPT-Abzug\nAlu-Magazintrichter"]] },
+    { "type": "product", "kicker": "Walther PDP PRO", "title": "FS 5.1″ A-Cut", "images": ["src-fs.png"], "imgHeight": 470,
+      "rows": [["Kaliber", "9 mm Para · 18 Schuss"], ["Lauf", "5.1″ (130 mm), Gewinde"], ["Highlights", "Full-Size-Griffstück · DPT-Abzug\nAlu-Magazintrichter"]] },
+    { "type": "content", "badge": "A", "kicker": "Was ist A-Cut?", "title": "Direkt statt Adapter", "body": "Das **Aimpoint COA** sitzt ohne Adapterplatte direkt im Verschluss.\n\n**Tiefere Visierlinie**, schnellere Zielaufnahme, feste Verbindung – und Stahlvisiere mit **Co-Witness** als Backup." },
+    { "type": "specs", "kicker": "Zwei Längen", "title": "Welche passt zu dir?", "rows": [["Compact 4.6″", "kürzeres Griffstück · 117 mm Lauf"], ["FS 5.1″", "Full-Size-Griffstück · 130 mm Lauf"], ["Beide", "9 mm Para · 18 Schuss · Aimpoint COA"]] },
+    { "type": "cta", "title": "Alle Infos auf armatum.ch", "body": "Compact oder FS – welche wär's für dich? 👇\n\nAm Sonntag: PDP Pro vs. Compact Full Steel." }
+  ] }

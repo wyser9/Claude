@@ -97,6 +97,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 16 | 22.10.2026 | Do | 19:00 | Reel (25 Sek., aus Grafiken) | 1 Wissen & Tipps | MOA oder MIL? | «MOA oder MIL? Absehen und Klicks einfach erklärt.» | Autopilot – geplant |
 | 17 | 24.10.2026 | Sa | 09:30 | Karussell (8 Slides, dunkel) | 5 Community | Dies oder das? | «6 Fragen – entscheide dich, ohne Ausreden.» | Autopilot – geplant |
 | 18 | 19.10.2026 | Mo | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Kimber 2K11 Pro, Freedom Arms 83, Chiappa Rhino 30DS | «Neu bei Armatum: 3 Charakterköpfe» | Autopilot – geplant |
+| 19 | 23.10.2026 | Fr | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Walther PDP PRO A-Cut mit Aimpoint COA | «Rotpunkt ohne Platte» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -685,6 +686,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | geplant (automatisch) |
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | geplant (automatisch) |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
+| Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | geplant (automatisch) |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
 
@@ -807,6 +809,34 @@ Kimber, Freedom Arms oder Rhino – welcher wär's für dich? 👇
 
 ---
 
+### #19 – Fr 23.10.2026, 18:30 – Karussell – Säule 3: Neu – Walther PDP PRO A-Cut mit Aimpoint COA
+
+**Status:** Autopilot – geplant (aus Shop-Check 18.10.: 2 neue Walther-Modelle). Teaser für #10 (So 25.10.). Keine Seriennummern auf den Herstellerbildern.
+
+**Grafiken:** `instagram/grafiken/19-walther-acut/01.jpg` ff., WhatsApp-Status `whatsapp/posts/19-walther-acut.jpg`.
+
+**Caption zum Kopieren:**
+```
+Neu bei Armatum: Rotpunkt ohne Platte 🎯
+
+Die Walther PDP PRO gibt's jetzt als A-Cut mit Aimpoint COA – das Rotpunktvisier sitzt direkt im Verschluss, ganz ohne Adapterplatte. Das heisst: tiefere Visierlinie, schnellere Zielaufnahme und eine feste Verbindung. Die Stahlvisiere bleiben als Co-Witness nutzbar.
+
+▪️ PDP PRO Compact 4.6″ A-Cut – kürzeres Griffstück, 117-mm-Gewindelauf
+▪️ PDP PRO FS 5.1″ A-Cut – Full-Size-Griffstück, 130-mm-Gewindelauf
+Beide: 9 mm Para, 18 Schuss, Dynamic Performance Trigger, Alu-Magazintrichter.
+
+👉 Swipe für die Details.
+
+Alle Infos auf armatum.ch (Link in der Bio). Und am Sonntag vergleichen wir PDP Pro und PDP Compact Full Steel.
+
+Compact oder FS – welche wär's für dich? 👇
+```
+**Hashtags:** `#walther #waltherpdp #aimpoint #sportschiessen #schweiz`
+
+**Regel-Check:** ✅ Produkt-Info aus dem Shop, kein Preis, kein Kaufaufruf, nur Link in der Bio. 18 Schuss → Erwerb mit WES (Spowag-Angabe «Ausweiskopie + WES»), wird im Post nicht thematisiert. @waltherarms/@aimpoint nicht markiert (Marken-Handles nicht verifiziert).
+
+---
+
 ## 5. Story-Ideen pro Tag
 
 Alle Stories: `emblem-weiss.png` klein in der Ecke, dunkler (`#313131`) oder olivgrüner (`#4e5743`) Hintergrund oder eigenes Foto. Woche 1 (12.–18.10.) ist freigegeben (11.10.2026), **ausgenommen die nachträglich ergänzten Stories vom 15.10. und 16.10.**, die noch auf Freigabe warten. Woche 2 (19.–25.10.) wartet auf Freigabe.
@@ -919,3 +949,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-17 | #4 Schützen-ABC veröffentlicht um 12:02 statt 09:30 (mehrere Sitzungs-Neustarts): https://www.instagram.com/p/DelnxPLFdqy/ – Story publiziert. |
 | 2026-10-17 | Shop-Check: 5 neue Produkte. 3 Faustfeuerwaffen → #18 (Mo 19.10. 18:30; Sa = #4, So = #9 Produkt-Post). Halsmesser und Pufferpatrone kein eigener Post (Pufferpatrone ggf. später in einem Sicherheits-Tipp). |
 | 2026-10-17 | Shop-Check Abend: 4 neue Produkte (B&T-Schalldämpfer-Adapter, Kel-Tec KP50 SBR, Tisas PX-9 Carry) – bewusst kein Post (Meta-Regeln/Schweizer Rechtslage), Details in marketing/shop-monitoring.md. |
+| 2026-10-18 | Shop-Check: 26 neue Produkte (23× HKS Speedloader, LOK Magwell PDP F-Series, 2× Walther PDP PRO A-Cut mit Aimpoint COA). Walther → #19 (Fr 23.10. 18:30, freier Tag, Teaser für #10). HKS/LOK kein Post (Mark). |

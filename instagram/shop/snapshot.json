@@ -61985,7 +61985,7 @@
 "on_sale": false,
 "price": "71900",
 "regular": "71900",
-"short": "Subkompakte 9mm-Pistole für den verdeckten Alltagsgebrauch: 3.5-Zoll-Lauf mit Kompensator, 15 Schuss aus SIG-P228-Magazinen, RMR-Cut für Red Dots – inklusive Holster.",
+"short": "Kompakte 9mm-Pistole im handlichen Format: 3.5-Zoll-Lauf mit Kompensator, 15 Schuss aus SIG-P228-Magazinen, RMR-Cut für Red Dots – inklusive Holster.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/tisas-zigana-px-9-gen3-carry-kompensator-9mm-para-schwarz-15-schuss/"
 },
@@ -62036,7 +62036,7 @@
 "Brügger & Thomet",
 "Schalldämpfer"
 ],
-"images": 3,
+"images": 4,
 "name": "B&T HUB Adapter für PRINT-X Schalldämpfer M24x1.5",
 "on_sale": false,
 "price": "5990",
@@ -62044,5 +62044,370 @@
 "short": "HUB-Adapter von B&T für den PRINT-X Schalldämpfer: waffenseitige Schnittstelle M24x1.5, nur 95 g leicht.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-hub-adapter-fuer-print-x-schalldaempfer-m24x1-5/"
+},
+"32206": {
+"cats": [
+"Carl Walther",
+"Pistolen"
+],
+"images": 2,
+"name": "Walther PDP PRO FS 5.1″ A-Cut mit Aimpoint COA 9mm Para, 18 Schuss",
+"on_sale": false,
+"price": "192900",
+"regular": "192900",
+"short": "Walther PDP PRO FS mit 5.1-Zoll-Gewindelauf und A-Cut-Schnittstelle: Aimpoint COA direkt montiert, ohne Adapterplatte. Kaliber 9mm Para, 18 Schuss, Dynamic Performance Trigger und Aluminium-Magazintrichter.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/walther-pdp-pro-fs-5-1-a-cut-mit-aimpoint-coa-9mm-para-18-schuss/"
+},
+"32209": {
+"cats": [
+"Carl Walther",
+"Pistolen"
+],
+"images": 2,
+"name": "Walther PDP PRO Compact 4.6″ A-Cut mit Aimpoint COA 9mm Para, 18 Schuss",
+"on_sale": false,
+"price": "192900",
+"regular": "192900",
+"short": "Walther PDP PRO Compact mit 4.6-Zoll-Gewindelauf und A-Cut-Schnittstelle: Aimpoint COA direkt montiert, ohne Adapterplatte. Kaliber 9mm Para, 18 Schuss, Dynamic Performance Trigger und Aluminium-Magazintrichter.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/walther-pdp-pro-compact-4-6-a-cut-mit-aimpoint-coa-9mm-para-18-schuss/"
+},
+"32211": {
+"cats": [
+"Carl Walther",
+"LOK Grips",
+"Zubehör"
+],
+"images": 1,
+"name": "LOK Grips Magwell Aluminium für Walther PDP F-Series, Schwarz cerakoted",
+"on_sale": false,
+"price": "8490",
+"regular": "8490",
+"short": "CNC-gefrästes Magwell aus 6061-Aluminium für die Walther PDP F-Series, schwarz cerakoted – für schnellere Magazinwechsel und besseren Komfort.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lok-grips-magwell-aluminium-fuer-walther-pdp-f-series-schwarz-cerakoted/"
+},
+"32215": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 22HR .22 LR für H&R 9 Schuss / Taurus 94",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 22HR im Kaliber .22 LR für H&R (9 Schuss) und Taurus 94 – lädt alle Kammern in einem Zug.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-22hr-22-lr-fuer-hr-9-schuss-taurus-97/"
+},
+"32216": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 32-K .32 H&R für S&W 16, Taurus 76/761, S&W K-Frame 6 Schuss",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 32-K im Kaliber .32 H&R für S&W 16, Taurus 76/761 und S&W K-Frame mit 6 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-32-k-32-hr-fuer-sw-16-taurus-76-761-sw-k-frame-6-schuss/"
+},
+"32217": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 32-J .32 H&R für Ruger SP101, Taurus 73, S&W J-Frame",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 32-J im Kaliber .32 H&R für Ruger SP101, Taurus 73 und S&W J-Frame.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-32-j-32-hr-fuer-ruger-sp101-taurus-73-sw-j-frame/"
+},
+"32218": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Cordura Case Double 100 für alle Revolver-Speedloader",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Cordura Case Double 100: Tasche für zwei Revolver-Speedloader, passend für alle HKS-Speedloader.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-cordura-case-double-100-fuer-alle-revolver-speedloader/"
+},
+"32219": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Magazin-Speedloader 451 9mm Para für Single Stack Colt 1911, Tisas, Ruger, S&W",
+"on_sale": false,
+"price": "2690",
+"regular": "2690",
+"short": "HKS Magazin-Speedloader 451 im Kaliber 9mm Para für einreihige Magazine von Colt 1911, Tisas, Ruger und S&W.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-magazin-speedloader-451-9mm-para-fuer-single-stack-colt-1911-tisas-ruger-sw/"
+},
+"32220": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Magazin-Speedloader GL-940 9mm Para für Glock 17, 19, 22, 23, 26, 27, 33, 34",
+"on_sale": false,
+"price": "2690",
+"regular": "2690",
+"short": "HKS Magazin-Speedloader GL-940 im Kaliber 9mm Para für Glock 17, 19, 22, 23, 26, 27, 33, 34 und weitere.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-magazin-speedloader-gl-940-9mm-para-fuer-glock-17-19-22-23-26-27-33-34/"
+},
+"32221": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Magazin-Speedloader 941 9mm Para für Double Stack S&W, Beretta 92F, Taurus",
+"on_sale": false,
+"price": "2690",
+"regular": "2690",
+"short": "HKS Magazin-Speedloader 941 im Kaliber 9mm Para für doppelreihige Magazine von S&W, Beretta 92F und Taurus.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-magazin-speedloader-941-9mm-para-fuer-double-stack-sw-beretta-92f-taurus/"
+},
+"32222": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Magazin-Speedloader 940 .40 S&W für Double Stack SIG 226/P228, Browning, Ruger",
+"on_sale": false,
+"price": "2690",
+"regular": "2690",
+"short": "HKS Magazin-Speedloader 940 im Kaliber .40 S&W für doppelreihige Magazine von SIG 226/P228, Browning und Ruger.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-magazin-speedloader-940-40-sw-fuer-double-stack-sig-226-p228-browning-ruger/"
+},
+"32223": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 587-A .357 Mag für S&W 686 Magnum Plus, 7 Schuss",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 587-A im Kaliber .357 Magnum für S&W 686 Magnum Plus mit 7 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-587-a-357-mag-fuer-sw-686-magnum-plus-7-schuss/"
+},
+"32224": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader CA-44 .44 Special für Charter Arms .44, Taurus 431, Rossi 720",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader CA-44 im Kaliber .44 Special für Charter Arms .44, Taurus 431 und Rossi 720.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-ca-44-44-special-fuer-charter-arms-44-taurus-431-rossi-720/"
+},
+"32225": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 57M .41 Magnum für S&W 57, 58 und Ruger",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 57M im Kaliber .41 Magnum für S&W 57, 58 und Ruger.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-57m-41-magnum-fuer-sw-57-58-und-ruger/"
+},
+"32226": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 29M .44 Magnum/Special für S&W 29/629, Ruger Red Hawk, Colt Anaconda, 6 Schuss",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 29M im Kaliber .44 Magnum/Special für S&W 29/629, Ruger Red Hawk und Colt Anaconda mit 6 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-29m-44-magnum-special-fuer-sw-29-629-ruger-red-hawk-colt-anaconda-6-schuss/"
+},
+"32227": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 25-M .45 Auto Rim für S&W 25-2",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 25-M im Kaliber .45 Auto Rim für S&W 25-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-25-m-45-auto-rim-fuer-sw-25-2/"
+},
+"32228": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 51J .22 Magnum für S&W 51 J-Frame",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 51J im Kaliber .22 Magnum, nur für S&W 51 J-Frame.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-51j-22-magnum-fuer-sw-51-j-frame/"
+},
+"32229": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 22J .22 LR für S&W 34, 35, 43, 63 und K-Frame",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 22J im Kaliber .22 LR für S&W 34, 35, 43, 63 und K-Frame.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-22j-22-lr-fuer-sw-34-35-43-63-und-k-frame/"
+},
+"32230": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 22K .22 LR für S&W 17, 18, Colt Diamondback, Dan Wesson 22",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 22K im Kaliber .22 LR für S&W 17, 18, Colt Diamondback und Dan Wesson 22.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-22k-22-lr-fuer-sw-17-18-colt-diamondback-dan-wesson-22/"
+},
+"32231": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 586-A .38/.357 Mag für S&W 586, 686, 581, 681, Ruger GP100",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 586-A im Kaliber .38/.357 Magnum für S&W 586, 686, 581, 681 und Ruger GP100.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-586-a-38-357-mag-fuer-sw-586-686-581-681-ruger-gp100/"
+},
+"32232": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader PYA .38/.357 Mag für Colt Python",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader PYA im Kaliber .38/.357 Magnum für Colt Python.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-pya-38-357-mag-fuer-colt-python/"
+},
+"32233": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader MK-3A .38/.357 Mag für Colt Mark III/V, King Cobra, Ruger Security Six",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader MK-3A im Kaliber .38/.357 Magnum für Colt Mark III/V, King Cobra und Ruger Security Six.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-mk-3a-38-357-mag-fuer-colt-mark-iii-v-king-cobra-ruger-security-six/"
+},
+"32234": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader DS-A .38 Special für Colt Detective Special, Cobra, Agent, DB",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader DS-A im Kaliber .38 Special für Colt Detective Special, Cobra, Agent und DB.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-ds-a-38-special-fuer-colt-detective-special-cobra-agent-db/"
+},
+"32235": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 36A .38/.357 Mag für S&W 36-60, Taurus, Rossi, Ruger SP101, 5 Schuss",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 36A im Kaliber .38/.357 Magnum für S&W 36-60, Taurus, Rossi und Ruger SP101 mit 5 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-36a-38-357-mag-fuer-sw-36-60-taurus-rossi-ruger-sp101-5-schuss/"
+},
+"32236": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 27A .38/.357 Mag für S&W 27, 28",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 27A im Kaliber .38/.357 Magnum für S&W 27 und 28.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-27a-38-357-mag-fuer-sw-27-28/"
+},
+"32237": {
+"cats": [
+"HKS",
+"Ladehilfe / Speedloader"
+],
+"images": 1,
+"name": "HKS Speedloader 10-A .38/.357 Mag für S&W 10-67, Taurus, Rossi",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "HKS Speedloader 10-A im Kaliber .38 Special für S&W 10-67, Taurus und Rossi.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hks-speedloader-10-a-38-special-fuer-sw-10-67-taurus-rossi/"
 }
 }
