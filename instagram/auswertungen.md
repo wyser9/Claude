@@ -128,3 +128,19 @@ Die folgenden älteren Beiträge verstossen gegen die Meta-Richtlinie zu eingesc
 - **Woche 1 (freigegeben): unverändert.** Di/Mi 18:30 und Do 19:00 liegen im starken Abendfenster. Für Sa 17.10. 09:30 (#4) zeigen die Daten rund 25 % weniger Online-Follower als am Abend. Das ist eine Schwäche, aber kein massives Gegenargument, denn die bisherigen Morgen-Posts liefen gut. **Empfehlung (nur notiert):** Wer optimieren will, verschiebt #4 auf Sa 12:00. Ohne Rückmeldung bleibt es bei 09:30.
 - **Woche 2 (noch nicht freigegeben): Zeiten bleiben.** Die Daten sprechen nicht klar für eine Änderung: 18:30 und 19:00 liegen nur 3–5 % unter der Spitze, und die Engagement-Daten der bisherigen Posts zeigen keinen Zeiteffekt. #8 am Sa 24.10. bleibt bewusst um 09:30, weil der Post auf die Ladenöffnung von 9 bis 13 Uhr verweist.
 - **Test ab Woche 3:** einen Wochentags-Post um 20:00 statt 18:30 veröffentlichen und Reichweite sowie Speicherungen vergleichen.
+
+## Wochenauswertung 18.10.2026 (Autopilot, Konto armatum_ch, Stand 16:57 UTC)
+
+Follower 2466 (11.10.: 2450, +16), 354 Beiträge. Likes/Kommentare der Woche (Composio, Konto «armatum»; Reichweite/Saves pro Beitrag nicht abgefragt):
+
+| Beitrag | Datum | Likes | Kommentare |
+|---|---|---|---|
+| #4 Schützen-ABC | 17.10. | 20 | 2 |
+| #14 CZ DUTY 4.0 | 16.10. | 29 | 0 |
+| #2 Wiederladen in 7 Schritten | 14.10. | 10 | 0 |
+| #13 Echelon Pro Comp | 14.10. | 27 | 0 |
+| #1 5 Fehler Waffenreinigung | 13.10. | 28 | 0 |
+| #11 Website-Relaunch | 12.10. | 18 | 0 |
+| #12 Marlin × Mad Pig | 12.10. | 74 | 3 |
+
+Erkenntnisse: Konkrete Waffen-Neuheiten (#12: 74, #14: 29, #13: 27) und Wissens-Karussell #1 (28) laufen solide; das Wiederladen-Karussell #2 (10) ist am schwächsten. Kommentare bleiben selten – Fragen am Schluss bleiben, aber mit leichterer Antwort (daher #17 «Dies oder das?»). Posts mit Waffen-Neuheiten sind der Hebel; Wiederladen ggf. mit Foto statt reiner Grafik testen.
