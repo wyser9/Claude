@@ -74,3 +74,5 @@ Bei jedem Shop-Check (`python3 -I instagram/shop/shop_check.py`) schaust du auf 
 - **«WHB» (Waffenhandelsbewilligung) nie nennen** – in keinem Text, Post, Newsletter oder Kommentar. Steht im Shop «… + WHB», nur den Teil davor übernehmen.
 - **Unsicher? Den Inhaber fragen**, nicht raten.
 - Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
+
+- **Shop-Texte:** Formulierungen wie «im Dienst» oder «zur Selbstverteidigung» sind laut Inhaber (18.10.2026) zulässig und werden nicht beanstandet.
