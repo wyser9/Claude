@@ -96,7 +96,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 15 | 20.10.2026 | Di | 18:30 | Karussell (7 Slides, dunkel) | 2 Wiederladen | Hülsenvorbereitung in 5 Schritten | «Aus dieser Hülse wird Präzision.» | Autopilot – geplant |
 | 16 | 22.10.2026 | Do | 19:00 | Reel (25 Sek., aus Grafiken) | 1 Wissen & Tipps | MOA oder MIL? | «MOA oder MIL? Absehen und Klicks einfach erklärt.» | Autopilot – geplant |
 | 17 | 24.10.2026 | Sa | 09:30 | Karussell (8 Slides, dunkel) | 5 Community | Dies oder das? | «6 Fragen – entscheide dich, ohne Ausreden.» | Autopilot – geplant |
-| 18 | 19.10.2026 | Mo | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Kimber 2K11 Pro, Freedom Arms 83, Chiappa Rhino 30DS | «Neu bei Armatum: 3 Charakterköpfe» | Autopilot – geplant |
+| 18 | 19.10.2026 | Mo | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Kimber 2K11 Pro, Freedom Arms 83, Chiappa Rhino 30DS | «Neu bei Armatum: 3 Charakterköpfe» | ✅ **Veröffentlicht 19.10.2026, 18:31** – https://www.instagram.com/p/DersZtrCWcM/ + Story |
 | 19 | 23.10.2026 | Fr | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Walther PDP PRO A-Cut mit Aimpoint COA | «Rotpunkt ohne Platte» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
@@ -952,3 +952,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-18 | Shop-Check: 26 neue Produkte (23× HKS Speedloader, LOK Magwell PDP F-Series, 2× Walther PDP PRO A-Cut mit Aimpoint COA). Walther → #19 (Fr 23.10. 18:30, freier Tag, Teaser für #10). HKS/LOK kein Post (Mark). |
 | 2026-10-18 | #9 SIG Sauer Cross pünktlich veröffentlicht (20:01, Konto armatum_ch geprüft): https://www.instagram.com/p/DepR2xvHU1k/ – Story publiziert. |
 | 2026-10-18 | Wochen-Routine: Woche 19.–25.10. unverändert übernommen (#18, #15, #6, #16, #19, #17, #9, #10 – Material vorhanden, Bild-URLs mit Commit `3106894` auf HTTP 200 geprüft). Veröffentlichungs- und Sicherheitsnetz-Termine neu angelegt (nur Konto «armatum»/armatum_ch). Insights in `auswertungen.md` ergänzt (Follower 2466). |
+| 2026-10-19 | #18 Neuheiten (Kimber/Freedom Arms/Chiappa) pünktlich veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/DersZtrCWcM/ – Story publiziert. |
