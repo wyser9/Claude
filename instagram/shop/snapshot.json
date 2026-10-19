@@ -7213,8 +7213,8 @@
 "Visiere / Optik",
 "Zielfernrohre / Scopes"
 ],
-"images": 9,
-"name": "Sig Sauer TANGO-MSR LPVO 1-6X24MM (SFP)",
+"images": 5,
+"name": "Sig Sauer TANGO-MSR LPVO 1-6X24MM (SFP) Schwarz",
 "on_sale": false,
 "price": "40900",
 "regular": "40900",
@@ -62409,5 +62409,48 @@
 "short": "HKS Speedloader 10-A im Kaliber .38 Special für S&W 10-67, Taurus und Rossi.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hks-speedloader-10-a-38-special-fuer-sw-10-67-taurus-rossi/"
+},
+"32245": {
+"cats": [
+"SIG Sauer",
+"Visiere / Optik",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Sig Sauer TANGO-MSR LPVO 1-6X24MM (SFP) Coyote Tan",
+"on_sale": false,
+"price": "59900",
+"regular": "59900",
+"short": "Robustes LPVO-Zielfernrohr in Coyote Tan mit 1-6x Vergrösserung, SFP-Absehen, inkl. Montage – das TANGO-MSR 1-6x24mm jetzt bei Armatum.ch.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sig-sauer-tango-msr-lpvo-1-6x24mm-sfp-coyote-tan/"
+},
+"32247": {
+"cats": [
+".223 REM / 5.56x45 mm",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Frontier .223 Rem 55gr FMJ – 20 Stk.",
+"on_sale": false,
+"price": "1890",
+"regular": "1890",
+"short": "Hornady Frontier .223 Remington mit 55gr FMJ-Geschoss: preiswerte Büchsenmunition für Training und Zielschiessen. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-frontier-223-rem-55gr-fmj-20-stk/"
+},
+"32249": {
+"cats": [
+"CZ",
+"Montagen"
+],
+"images": 1,
+"name": "CZ Montageplatte Shadow 2 Optics Ready für Trijicon RMR / SRO",
+"on_sale": false,
+"price": "8890",
+"regular": "8890",
+"short": "Montageplatte für die CZ Shadow 2 Optics Ready zur Montage von Leuchtpunktvisieren mit Trijicon-RMR-Anschluss, z.B. Trijicon RMR Type 2, Trijicon SRO und Holosun 407C / 507C.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-montageplatte-shadow-2-optics-ready-fuer-trijicon-rmr-sro/"
 }
 }
