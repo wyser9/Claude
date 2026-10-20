@@ -682,7 +682,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Sa 17.10. | 09:30 | #4 Schützen-ABC | geplant (automatisch) |
 | So 18.10. | 20:00 | #9 SIG Sauer Cross | geplant (automatisch) |
 | Mo 19.10. | 18:30 | #18 Neu bei Armatum: Kimber 2K11, Freedom Arms 83, Chiappa Rhino (aus Shop-Check) | geplant (automatisch) |
-| Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | geplant (automatisch) |
+| Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/DeuROKOm9qN/ |
 | Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | geplant (automatisch) |
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | geplant (automatisch) |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
@@ -696,7 +696,7 @@ Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 U
 
 ### #15 – Di 20.10.2026, 18:30 – Karussell – Säule 2: Hülsenvorbereitung in 5 Schritten
 
-**Status:** Autopilot – geplant (ersetzt Reel #5, Video fehlt).
+**Status:** ✅ Veröffentlicht 20.10.2026, 18:32 (armatum_ch) – https://www.instagram.com/p/DeuROKOm9qN/ – Story mit Slide 01 gepostet.
 
 **Grafiken:** `instagram/grafiken/15-huelsen/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/15-huelsen.jpg`.
 
@@ -956,3 +956,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-18 | Wochen-Routine: Woche 19.–25.10. unverändert übernommen (#18, #15, #6, #16, #19, #17, #9, #10 – Material vorhanden, Bild-URLs mit Commit `3106894` auf HTTP 200 geprüft). Veröffentlichungs- und Sicherheitsnetz-Termine neu angelegt (nur Konto «armatum»/armatum_ch). Insights in `auswertungen.md` ergänzt (Follower 2466). |
 | 2026-10-19 | #18 Neuheiten (Kimber/Freedom Arms/Chiappa) pünktlich veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/DersZtrCWcM/ – Story publiziert. |
 | 2026-10-20 | Shop-Check: Neu Lapua Hülsen 6.5 Creedmoor SR-Boxer (100) – als eine Zeile in die Caption von #15 Hülsen aufgenommen (passendes Thema, kein eigener Post, ohne Preis). |
+| 2026-10-20 | #15 Hülsenvorbereitung veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/DeuROKOm9qN/ + Story. WhatsApp-Status an Inhaber. |
