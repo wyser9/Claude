@@ -51262,8 +51262,8 @@
 "images": 1,
 "name": "Hornady Geschoss 9.3mm .366 300gr DGS (50)",
 "on_sale": false,
-"price": "10300",
-"regular": "10300",
+"price": "9990",
+"regular": "9990",
 "short": "Hornady DGS (Dangerous Game Solid) Geschoss im Kaliber 9.3mm (.366) mit 300gr, Flachnase aus Hartbleikern mit Stahlmantel in Kupferbeschichtung. Packung mit 50 Geschossen (Hornady 3565), nur zum Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-geschoss-9-3mm-366-300gr-dgs-50/"
@@ -51820,13 +51820,13 @@
 "Hornady"
 ],
 "images": 1,
-"name": "Hornady Geschoss 9.3mm .366 300gr DGS (50)",
+"name": "Hornady Geschoss .375 Cal 300gr DGX Bonded (50)",
 "on_sale": false,
 "price": "10900",
 "regular": "10900",
-"short": "Hornady DGS Geschoss in 9.3mm / .366 mit 300gr. Robuste Dangerous Game Solid Konstruktion für hohe Formstabilität und tiefe Penetration.",
+"short": "Hornady DGX Bonded Geschoss in .375 Cal mit 300gr. Verbundenes Kern-Mantel-Geschoss für hohe Gewichtserhaltung und tiefe Penetration. Packungsinhalt: 50 Stück.",
 "stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/hornady-geschoss-9-3mm-366-300gr-dgs/"
+"url": "https://armatum.ch/produkt/hornady-geschoss-375-cal-300gr-dgx-bonded-50/"
 },
 "29200": {
 "cats": [
@@ -62452,5 +62452,19 @@
 "short": "Montageplatte für die CZ Shadow 2 Optics Ready zur Montage von Leuchtpunktvisieren mit Trijicon-RMR-Anschluss, z.B. Trijicon RMR Type 2, Trijicon SRO und Holosun 407C / 507C.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cz-montageplatte-shadow-2-optics-ready-fuer-trijicon-rmr-sro/"
+},
+"32260": {
+"cats": [
+"Hülsen",
+"Lapua"
+],
+"images": 3,
+"name": "Lapua Hülsen 6.5 Creedmoor SR-Boxer (100)",
+"on_sale": false,
+"price": "17290",
+"regular": "17290",
+"short": "Lapua Hülsen 6.5 Creedmoor mit kleiner Gewehr-Zündhütchentasche (Small Rifle, SR-Boxer) und verkleinertem 1.5-mm-Zündkanal für hohe Präzision beim Wiederladen. Packungsinhalt: 100 Stück.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lapua-huelsen-6-5-creedmoor-sr-boxer-100/"
 }
 }

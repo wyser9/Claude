@@ -714,6 +714,8 @@ Präzision fängt nicht beim Schuss an, sondern an der Werkbank. Die Hülsenvorb
 
 ⚠️ Schutzbrille tragen und konzentriert arbeiten. Ladedaten nur aus den aktuellen Tabellen der Hersteller.
 
+Neu im Shop: Lapua-Hülsen 6.5 Creedmoor mit kleiner Zündhütchentasche (SR) – für alle, die auf Präzision laden.
+
 Kein Platz für eine eigene Werkbank? Nach einem Wiederladekurs bei uns in Fulenbach kannst du einen voll ausgerüsteten Arbeitsplatz mieten. Infos über den Link in der Bio.
 
 Speichern für deine nächste Session an der Werkbank.
@@ -953,3 +955,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-18 | #9 SIG Sauer Cross pünktlich veröffentlicht (20:01, Konto armatum_ch geprüft): https://www.instagram.com/p/DepR2xvHU1k/ – Story publiziert. |
 | 2026-10-18 | Wochen-Routine: Woche 19.–25.10. unverändert übernommen (#18, #15, #6, #16, #19, #17, #9, #10 – Material vorhanden, Bild-URLs mit Commit `3106894` auf HTTP 200 geprüft). Veröffentlichungs- und Sicherheitsnetz-Termine neu angelegt (nur Konto «armatum»/armatum_ch). Insights in `auswertungen.md` ergänzt (Follower 2466). |
 | 2026-10-19 | #18 Neuheiten (Kimber/Freedom Arms/Chiappa) pünktlich veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/DersZtrCWcM/ – Story publiziert. |
+| 2026-10-20 | Shop-Check: Neu Lapua Hülsen 6.5 Creedmoor SR-Boxer (100) – als eine Zeile in die Caption von #15 Hülsen aufgenommen (passendes Thema, kein eigener Post, ohne Preis). |
