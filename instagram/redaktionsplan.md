@@ -683,7 +683,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | So 18.10. | 20:00 | #9 SIG Sauer Cross | geplant (automatisch) |
 | Mo 19.10. | 18:30 | #18 Neu bei Armatum: Kimber 2K11, Freedom Arms 83, Chiappa Rhino (aus Shop-Check) | geplant (automatisch) |
 | Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/DeuROKOm9qN/ |
-| Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | geplant (automatisch) |
+| Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/Dew2BC_mwJm/ |
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | geplant (automatisch) |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | geplant (automatisch) |
@@ -987,3 +987,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-20 | Shop-Check: Neu Lapua Hülsen 6.5 Creedmoor SR-Boxer (100) – als eine Zeile in die Caption von #15 Hülsen aufgenommen (passendes Thema, kein eigener Post, ohne Preis). |
 | 2026-10-20 | #15 Hülsenvorbereitung veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/DeuROKOm9qN/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-21 | Shop-Check: 13 neue Produkte. #20 GPO-Spektive (3 Modelle) erstellt und auf Di 27.10. 18:30 terminiert (Sicherheitsnetz 18:40). Schmeisser AR15, B&T Glock COA Cut, Falke Prismenvisier, Schmeisser-Montagen, Pitchfork-Taschen, Hornady QD-Platte: kein eigener Post (siehe marketing/shop-monitoring.md). |
+| 2026-10-21 | #6 Ausrüstung einwintern veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/Dew2BC_mwJm/ + Story. WhatsApp-Status an Inhaber. |
