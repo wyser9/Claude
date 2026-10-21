@@ -1,0 +1,13 @@
+{ "post": "#20 – Di 27.10.2026 18:30 – Neu bei Armatum: 3 GPO-Spektive",
+  "slides": [
+    { "type": "product", "kicker": "Neu bei Armatum", "title": "3 Spektive von GPO", "titleSize": 84, "images": ["src-passion85-front.png"], "imgHeight": 520,
+      "body": "**Kompakt, gross oder mit Absehen –** für Stand, Revier und Beobachtung auf Distanz." },
+    { "type": "product", "kicker": "GPO", "title": "PASSION 16-48×65 APO", "images": ["src-passion65.png"], "imgHeight": 430,
+      "rows": [["Zoom", "16–48× · 65 mm Objektiv"], ["Gewicht", "1301 g · 315 mm lang"], ["Highlights", "ED-Glas · Magnesiumgehäuse\nwasserdicht (IPX5) · Tasche dabei"]] },
+    { "type": "product", "kicker": "GPO", "title": "PASSION 20-60×85 APO", "images": ["src-passion85.png"], "imgHeight": 430,
+      "rows": [["Zoom", "20–60× · 85 mm Objektiv"], ["Gewicht", "1807 g · 375 mm lang"], ["Highlights", "APO-Optik mit ED-Glas\nSchrägeinblick · ideal zum Digiscoping"]] },
+    { "type": "product", "kicker": "GPO", "title": "TAC SPOTTER 15-45×60", "images": ["src-tac.png"], "imgHeight": 430,
+      "rows": [["Zoom", "15–45× · 60 mm Objektiv"], ["Gewicht", "1380 g · 278 mm lang"], ["Highlights", "PLR-Absehen in der 1. Bildebene\n3 Picatinny-Schienen für Zubehör"]] },
+    { "type": "content", "badge": "?", "kicker": "Gewusst?", "title": "Ein Spektiv mit Absehen – wozu?", "body": "Beim TAC Spotter sitzt das Absehen in der **1. Bildebene**: Die Skala wächst mit dem Zoom mit und stimmt bei **jeder Vergrösserung**.\n\nSo liest der Spotter die Abweichung direkt in **mil** ab und gibt die Korrektur durch." },
+    { "type": "cta", "title": "Alle Infos auf armatum.ch", "body": "Kompakt, gross oder mit Absehen –\nwelches wär's für dich? 👇" }
+  ] }

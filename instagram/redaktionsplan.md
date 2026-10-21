@@ -689,8 +689,37 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | geplant (automatisch) |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
+| Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
+
+---
+
+### #20 – Di 27.10.2026, 18:30 – Karussell – Säule 3: Neu – 3 Spektive von GPO
+
+**Status:** Autopilot – geplant (aus Shop-Check 21.10.: 3 neue GPO-Spektive). Optik, keine Waffe – Meta-unkritisch. Knüpft an #16 MOA/MIL an (Absehen in mil).
+
+**Grafiken:** `instagram/grafiken/20-gpo-spektive/01.jpg` ff. (6 Slides), WhatsApp-Status `whatsapp/posts/20-gpo-spektive.jpg`.
+
+**Caption zum Kopieren:**
+```
+Neu bei Armatum: 3 Spektive von GPO 🔭
+
+Ob Trefferaufnahme am Stand, Ansprechen im Revier oder Beobachten auf Distanz – GPO bringt drei neue Spektive:
+
+▪️ PASSION 16-48×65 APO – kompakt und leicht (1301 g), ED-Glas, wasserdicht, Tasche dabei
+▪️ PASSION 20-60×85 APO – grosses 85-mm-Objektiv, APO-Optik, Schrägeinblick, ideal zum Digiscoping
+▪️ TAC SPOTTER 15-45×60 – mit PLR-Absehen in der 1. Bildebene und drei Picatinny-Schienen
+
+👉 Swipe für die Details – und warum ein Spektiv ein Absehen hat.
+
+Alle Infos auf armatum.ch (Link in der Bio).
+
+Kompakt, gross oder mit Absehen – welches wär's für dich? 👇
+```
+**Hashtags:** `#spektiv #gpo #optik #präzisionsschiessen #schweiz`
+
+**Regel-Check:** ✅ Optik (keine Waffe/Munition), Daten aus dem Shop, kein Preis, kein «verfügbar»/Kaufaufruf, nur Link in der Bio. Herstellerbilder ohne Seriennummern/Wasserzeichen. @gpo nicht markiert (Handle nicht verifiziert).
 
 ---
 
@@ -957,3 +986,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-19 | #18 Neuheiten (Kimber/Freedom Arms/Chiappa) pünktlich veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/DersZtrCWcM/ – Story publiziert. |
 | 2026-10-20 | Shop-Check: Neu Lapua Hülsen 6.5 Creedmoor SR-Boxer (100) – als eine Zeile in die Caption von #15 Hülsen aufgenommen (passendes Thema, kein eigener Post, ohne Preis). |
 | 2026-10-20 | #15 Hülsenvorbereitung veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/DeuROKOm9qN/ + Story. WhatsApp-Status an Inhaber. |
+| 2026-10-21 | Shop-Check: 13 neue Produkte. #20 GPO-Spektive (3 Modelle) erstellt und auf Di 27.10. 18:30 terminiert (Sicherheitsnetz 18:40). Schmeisser AR15, B&T Glock COA Cut, Falke Prismenvisier, Schmeisser-Montagen, Pitchfork-Taschen, Hornady QD-Platte: kein eigener Post (siehe marketing/shop-monitoring.md). |

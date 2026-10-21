@@ -8430,7 +8430,7 @@
 "price": "9990",
 "regular": "10200",
 "short": "Reload Swiss RS14 ist ein präzises T-Pulver für Subsonic- und Cowboy-Loads. Perfekt für Büchsen- und Revolverkaliber. In praktischer 400g Dose.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/reload-swiss-rs14-pulver-400g-fuer-reduzierte-und-subsonic-ladungen/"
 },
 "18423": {
@@ -12070,7 +12070,7 @@
 "price": "6900",
 "regular": "6900",
 "short": "Ein leistungsstarkes und zuverlässiges Pulver , das speziell für gleichmässige und präzise Wiederladungen entwickelt wurde! Das RS24 ist ein poröses, extrudiertes Blättchenpulver auf Basis Nitrocellulose.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/pulver-reload-swiss-rs24-500g/"
 },
 "20066": {
@@ -35579,7 +35579,7 @@
 "price": "3500",
 "regular": "3500",
 "short": "Robustes 30-Schuss Magazin für AK Plattformen im Kaliber 5.56×45 mit zuverlässiger Zuführung und stabiler Bauweise.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/wbp-ak-magazin-30-schuss-5-56x45mm/"
 },
 "23790": {
@@ -37873,7 +37873,7 @@
 "price": "11200",
 "regular": "12000",
 "short": "Treibladungspulver für Büchsenpatronen. Präzise, konstant und ideal für Wiederladen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/reload-swiss-rs52-pulver-1000g/"
 },
 "24324": {
@@ -37887,7 +37887,7 @@
 "price": "11200",
 "regular": "11700",
 "short": "Leistungsstarkes Treibladungspulver. Ideal für präzise und energieeffiziente Wiederladungen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/reload-swiss-rs60-pulver-1000g/"
 },
 "24326": {
@@ -55937,7 +55937,7 @@
 "price": "4390",
 "regular": "4390",
 "short": "MOLLE-Magazintasche von Agilite für 5.56-, 7.62×39- und PCC-Magazine oder zwei verlängerte 9mm-Glock-Magazine. Der patentierte, trichterförmige Magazinhalter erlaubt das einhändige Greifen und Neupositionieren. Mag Splitter für PCC-Magazine inklusive. Ausführung: Ranger Green.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/agilite-pincer-single-multi-caliber-mag-pouch-ranger-green/"
 },
 "30414": {
@@ -56133,7 +56133,7 @@
 "price": "8390",
 "regular": "8390",
 "short": "Elastisches Placard von Agilite mit drei Magazinschächten für 5.56-, 7.62×39- oder PCC-Magazine oder sechs verlängerte 9mm-Glock-Magazine. Trichterförmige Polymer-Schächte für einhändiges Greifen, G-Haken und MOLLE-Placard-Schnallen inklusive. Ausführung: Schwarz.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/agilite-pincer-placard-multi-caliber-triple-mag-pouch-schwarz/"
 },
 "30455": {
@@ -62453,6 +62453,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cz-montageplatte-shadow-2-optics-ready-fuer-trijicon-rmr-sro/"
 },
+"32255": {
+"cats": [
+"Hornady",
+"Presse"
+],
+"images": 2,
+"name": "Hornady Quick Detach Universal Mounting Plate (Art. 399698)",
+"on_sale": false,
+"price": "3390",
+"regular": "3390",
+"short": "Hornady Quick Detach Universal Mounting Plate: Montageplatte für das Quick-Detach-System, zum schnellen und stabilen Befestigen von Wiederlade-Geräten auf der Arbeitsfläche.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-quick-detach-universal-mounting-plate-art-399698/"
+},
 "32260": {
 "cats": [
 "Hülsen",
@@ -62466,5 +62480,174 @@
 "short": "Lapua Hülsen 6.5 Creedmoor mit kleiner Gewehr-Zündhütchentasche (Small Rifle, SR-Boxer) und verkleinertem 1.5-mm-Zündkanal für hohe Präzision beim Wiederladen. Packungsinhalt: 100 Stück.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lapua-huelsen-6-5-creedmoor-sr-boxer-100/"
+},
+"32268": {
+"cats": [
+"Pitchfork Systems",
+"Rucksack / Taschen"
+],
+"images": 5,
+"name": "Pitchfork Essential Double Rifle Case 120 – Ranger Green",
+"on_sale": false,
+"price": "19990",
+"regular": "19990",
+"short": "Pitchfork Essential Double Rifle Case 120 in Ranger Green: gepolsterte Gewehrtasche für zwei Langwaffen mit 10 mm Polsterung, gepolsterter Trennwand und verstaubarem Rucksack-Tragesystem.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-essential-double-rifle-case-120-ranger-green/"
+},
+"32271": {
+"cats": [
+"Pitchfork Systems",
+"Rucksack / Taschen"
+],
+"images": 2,
+"name": "Pitchfork Essential Double Rifle Case 120 – Coyote",
+"on_sale": false,
+"price": "19990",
+"regular": "19990",
+"short": "Pitchfork Essential Double Rifle Case 120 in Coyote: gepolsterte Gewehrtasche für zwei Langwaffen mit 10 mm Polsterung, gepolsterter Trennwand und verstaubarem Rucksack-Tragesystem.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-essential-double-rifle-case-120-coyote/"
+},
+"32276": {
+"cats": [
+"Pitchfork Systems",
+"Rucksack / Taschen"
+],
+"images": 2,
+"name": "Pitchfork Essential Double Rifle Case 120 – Black",
+"on_sale": false,
+"price": "19990",
+"regular": "19990",
+"short": "Pitchfork Essential Double Rifle Case 120 in Black: gepolsterte Gewehrtasche für zwei Langwaffen mit 10 mm Polsterung, gepolsterter Trennwand und verstaubarem Rucksack-Tragesystem.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-essential-double-rifle-case-120-black/"
+},
+"32280": {
+"cats": [
+"Schmeisser",
+"Sturmgewehre"
+],
+"images": 2,
+"name": "Schmeisser AR15 M4FL 14.5″ .223 Rem SOLID LINE",
+"on_sale": false,
+"price": "209000",
+"regular": "209000",
+"short": "Schmeisser AR15 M4FL SOLID LINE im Kaliber .223 Rem: Halbautomat mit 14.5″ Lauf (368.3 mm), Two-Stage-Trigger, Drall 1:9, Open Sights inklusive und 10-Schuss-Magazin.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/schmeisser-ar15-m4fl-14-5-223-rem-solid-line/"
+},
+"32283": {
+"cats": [
+"Schmeisser",
+"Sturmgewehre"
+],
+"images": 2,
+"name": "Schmeisser AR15 M5FL 16.75″ .223 Rem SOLID LINE",
+"on_sale": false,
+"price": "209000",
+"regular": "209000",
+"short": "Schmeisser AR15 M5FL SOLID LINE im Kaliber .223 Rem: Halbautomat mit 16.75″ Lauf (425 mm), Two-Stage-Trigger, Sicherung 45/90° und Open Sights inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/schmeisser-ar15-m5fl-16-75-223-rem-solid-line/"
+},
+"32287": {
+"cats": [
+"Montagen",
+"Schmeisser"
+],
+"images": 3,
+"name": "Schmeisser Montage SM30 mit QD für Picatinny",
+"on_sale": false,
+"price": "17990",
+"regular": "17990",
+"short": "Schmeisser ZF-Montage SM30 mit QD-Schnellspannsystem für Picatinny: einteilige Blockmontage für 30 mm Optiken, Bauhöhe 19 mm, mit verschiebbarer Picatinnyrail für Reflexvisiere.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/schmeisser-montage-sm30-mit-qd-fuer-picatinny/"
+},
+"32291": {
+"cats": [
+"Montagen",
+"Schmeisser"
+],
+"images": 3,
+"name": "Schmeisser Montage SM34 mit QD für Picatinny",
+"on_sale": false,
+"price": "17990",
+"regular": "17990",
+"short": "Schmeisser ZF-Montage SM34 mit QD-Schnellspannsystem für Picatinny: einteilige Blockmontage für 34 mm Optiken, Bauhöhe 17 mm, mit verschiebbarer Picatinnyrail für Reflexvisiere.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/schmeisser-montage-sm34-mit-qd-fuer-picatinny/"
+},
+"32298": {
+"cats": [
+"Schmeisser",
+"Visiere / Optik",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Falke Prismenvisier EBIIS35 3.5x",
+"on_sale": false,
+"price": "43990",
+"regular": "43990",
+"short": "Falke EBIIS35: Prismenvisier mit 3.5-facher Vergrösserung, BDCi762-Absehen mit 11 Helligkeitsstufen, nachtsichttauglich, IPX8 wasserdicht, stossfest und beschlagfrei – inklusive KillFlash/Wabenfilter.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/falke-prismenvisier-ebiis35-3-5x/"
+},
+"32306": {
+"cats": [
+"Fernglas / Monkular / Binokular",
+"GPO German Precision Optics"
+],
+"images": 4,
+"name": "GPO Spektiv PASSION 16-48×65 APO",
+"on_sale": false,
+"price": "73990",
+"regular": "73990",
+"short": "GPO PASSION 16-48×65 APO: kompaktes, wasserdichtes Spektiv mit Magnesiumgehäuse, ED-Glas, 16-48-fachem Zoom, 65 mm Objektiv, integrierter Stativadapterplatte und Tragetasche im Lieferumfang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gpo-spektiv-passion-16-48x65-apo/"
+},
+"32310": {
+"cats": [
+"Fernglas / Monkular / Binokular",
+"GPO German Precision Optics"
+],
+"images": 4,
+"name": "GPO Spektiv PASSION 20-60×85 APO",
+"on_sale": false,
+"price": "88990",
+"regular": "88990",
+"short": "GPO PASSION 20-60×85 APO: Spektiv mit grossem 85-mm-Objektiv und Schrägeinblick, APO-Optik mit ED-Glas, GPObright-Vergütung, wasserdichtem Magnesiumgehäuse und Tragetasche im Lieferumfang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gpo-spektiv-passion-20-60x85-apo/"
+},
+"32313": {
+"cats": [
+"Fernglas / Monkular / Binokular",
+"GPO German Precision Optics"
+],
+"images": 4,
+"name": "GPO Spektiv TAC SPOTTER 15-45×60",
+"on_sale": false,
+"price": "98990",
+"regular": "98990",
+"short": "GPO TAC Spotter 15-45×60: taktisches Spektiv mit PLR-Absehen in der 1. Bildebene, HD-Linsensystem, gummiarmiertem Magnesiumgehäuse und drei Picatinny-Schienen für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gpo-spektiv-tac-spotter-15-45x60/"
+},
+"32315": {
+"cats": [
+"Brügger & Thomet",
+"Montagen"
+],
+"images": 1,
+"name": "B&T Glock COA Cut für Aimpoint COA (Non-MOS)",
+"on_sale": false,
+"price": "80990",
+"regular": "80990",
+"short": "B&T Glock COA Cut (BT-232602): Verschlussfräsung zur direkten Montage des Aimpoint COA auf Nicht-MOS-Glock-Modellen inklusive Slimline. Passende mechanische B&T Visierung im Lieferumfang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-glock-coa-cut-fuer-aimpoint-coa-non-mos/"
 }
 }
