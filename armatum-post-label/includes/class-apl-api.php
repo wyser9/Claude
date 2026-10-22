@@ -127,7 +127,7 @@ class APL_Api {
 			return array(
 				'usable'  => 'UNUSABLE' !== $quality,
 				'quality' => $quality,
-				'message' => 'UNUSABLE' === $quality ? 'Die Post kennt diese Adresse nicht (Qualität UNUSABLE).' : 'Adressprüfung: ' . $quality,
+				'message' => 'UNUSABLE' === $quality ? 'Achtung: Die Adressprüfung der Post kennt diese Adresse/Person nicht (UNUSABLE) – bitte Adresse kontrollieren.' : 'Adressprüfung: ' . $quality,
 			);
 		}
 		// Prüfung selbst fehlgeschlagen -> Label nicht blockieren, aber Hinweis.

@@ -273,8 +273,10 @@ class APL_Label {
 				'city'      => $recipient['label']['city'],
 			)
 		);
+		// Nur Hinweis, keine Sperre: Die Prüfung meldet auch korrekte Adressen als UNUSABLE,
+		// wenn die Person der Post (noch) nicht bekannt ist. Ungültige Adressen lehnt die Label-API selbst ab.
 		if ( ! $check['usable'] ) {
-			throw new Exception( $check['message'] . ' Bitte die Lieferadresse korrigieren.' );
+			apl_log( 'warning', sprintf( 'Bestellung #%s: %s', $order->get_order_number(), $check['message'] ) );
 		}
 
 		$preview = 'yes' === get_option( 'armatum_post_test_mode', 'yes' );

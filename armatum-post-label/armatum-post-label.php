@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Armatum Post Label
  * Description:       Erstellt Versandlabels der Schweizerischen Post (PostPac Economy, optional Signature / Sperrgut) direkt aus WooCommerce-Bestellungen.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Armatum GmbH
  * Requires at least: 6.0
  * Requires PHP:      7.4
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'APL_VERSION', '1.0.0' );
+define( 'APL_VERSION', '1.0.1' );
 define( 'APL_FILE', __FILE__ );
 define( 'APL_LOG_SOURCE', 'armatum-post-label' );
 

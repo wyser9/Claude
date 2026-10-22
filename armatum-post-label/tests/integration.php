@@ -97,7 +97,9 @@ $err = function ( $fn ) { try { $fn(); return ''; } catch ( Exception $e ) { ret
 t( 'Gewicht 0 abgelehnt', false !== strpos( $err( function () use ( $order ) { APL_Label::create( $order, 0, false, false ); } ), 'Gewicht' ) );
 t( 'Über 30 kg abgelehnt', false !== strpos( $err( function () use ( $order ) { APL_Label::create( $order, 31000, false, false ); } ), '30 kg' ) );
 $GLOBALS['apl_quality'] = 'UNUSABLE';
-t( 'Unbrauchbare Adresse blockiert', false !== strpos( $err( function () use ( $order ) { APL_Label::create( $order, 1000, false, false ); } ), 'korrigieren' ) );
+t( 'UNUSABLE blockiert nicht, nur Hinweis', '' === $err( function () use ( $order ) { APL_Label::create( $order, 1000, false, false ); } ) );
+$notes = wc_get_order_notes( array( 'order_id' => $order->get_id(), 'limit' => 1 ) );
+t( 'Hinweis in Bestellnotiz', false !== strpos( $notes[0]->content, 'UNUSABLE' ) );
 $GLOBALS['apl_quality'] = 'CERTIFIED';
 $pick = wc_create_order(); $ps = new WC_Order_Item_Shipping(); $ps->set_method_title( 'Abholung vor Ort' ); $ps->set_method_id( 'local_pickup' ); $pick->add_item( $ps ); $pick->save();
 t( 'Abholung abgelehnt', false !== strpos( $err( function () use ( $pick ) { APL_Label::create( $pick, 1000, false, false ); } ), 'abgeholt' ) );
