@@ -989,3 +989,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-21 | Shop-Check: 13 neue Produkte. #20 GPO-Spektive (3 Modelle) erstellt und auf Di 27.10. 18:30 terminiert (Sicherheitsnetz 18:40). Schmeisser AR15, B&T Glock COA Cut, Falke Prismenvisier, Schmeisser-Montagen, Pitchfork-Taschen, Hornady QD-Platte: kein eigener Post (siehe marketing/shop-monitoring.md). |
 | 2026-10-21 | #6 Ausrüstung einwintern veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/Dew2BC_mwJm/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-22 | Shop-Check: 7 neue Produkte (Pitchfork IFAK-Taschen, Stoeger-Diabolos) – kein Post, Befund bei Mark. |
+| 2026-10-22 | Shop-Check Abend: 8× Hornady-Munition neu (.45-70, .300 BLK), Glock 45 Hunter entfernt – kein Post (Munition), Befund bei Mark. |

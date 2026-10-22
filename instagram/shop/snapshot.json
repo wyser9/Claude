@@ -6768,21 +6768,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/springfield-armory-echelon-4-compact-osp-u-notch-od-green/"
 },
-"17257": {
-"cats": [
-"Glock",
-"Pistolen",
-"Sale %"
-],
-"images": 4,
-"name": "Glock 45 Hunter Edition mit Aimpoint COA und GTL II",
-"on_sale": true,
-"price": "149900",
-"regular": "165400",
-"short": "Die Glock 45 Hunter Edition kombiniert die bewährte Glock 45 mit dem leistungsstarken GTL II Waffenlicht und wird mit dem Aimpoint COA geliefert. Dank Glock Marksman Barrel , Front Serrations und NDLC-Beschichtung bietet diese Pistole höchste Präzision und Widerstandsfähigkeit. Die perfekte Wahl für",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/glock-45-hunter-edition-mit-aimpoint-coa-und-gtl-ii/"
-},
 "17262": {
 "cats": [
 "Glock",
@@ -62747,5 +62732,117 @@
 "short": "Kompakte IFAK-Tasche aus Cordura 500D für schnellen Zugriff auf medizinisches Material. Horizontal montierbar auf MOLLE oder Gürtel, mit herausziehbarem Innenmodul und Halterung für ein Tourniquet. Wird ohne Inhalt geliefert.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/pitchfork-horizontal-ifak-pouch-ranger-green/"
+},
+"32380": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Frontier .300 Blackout 125gr FMJ – 150 Stk.",
+"on_sale": false,
+"price": "23990",
+"regular": "23990",
+"short": "Hornady Frontier .300 Blackout mit 125gr FMJ-Geschoss: preiswerte Büchsenmunition für Training und Zielschiessen. Packungsinhalt: 150 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-frontier-300-blackout-125gr-fmj-150-stk/"
+},
+"32382": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Frontier .300 Blackout 125gr FMJ – 20 Stk.",
+"on_sale": false,
+"price": "3190",
+"regular": "3190",
+"short": "Hornady Frontier .300 Blackout mit 125gr FMJ-Geschoss: preiswerte Büchsenmunition für Training und Zielschiessen. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-frontier-300-blackout-125gr-fmj-20-stk/"
+},
+"32386": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Frontier .300 Blackout 208gr FMJ Subsonic – 20 Stk.",
+"on_sale": false,
+"price": "3890",
+"regular": "3890",
+"short": "Hornady Frontier .300 Blackout Subsonic mit schwerem 208gr FMJ-Geschoss: preiswerte Büchsenmunition für Training und Zielschiessen. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-frontier-300-blackout-208gr-fmj-subsonic-20-stk/"
+},
+"32388": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Custom .300 Blackout 110gr CX – 20 Stk.",
+"on_sale": false,
+"price": "5090",
+"regular": "5090",
+"short": "Hornady Custom .300 Blackout mit 110gr CX-Geschoss: präzise Büchsenmunition für Jagd, Wettkampf und Plinking. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-custom-300-blackout-110gr-cx-20-stk/"
+},
+"32391": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 2,
+"name": "Hornady Black .300 Blackout 110gr NTX – 20 Stk.",
+"on_sale": false,
+"price": "4790",
+"regular": "4790",
+"short": "Hornady Black .300 Blackout mit 110gr NTX-Geschoss: vielseitige Büchsenmunition für amerikanische Waffensysteme. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-black-300-blackout-110gr-ntx-20-stk/"
+},
+"32394": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 2,
+"name": "Hornady Black .300 Blackout 110gr V-Max – 20 Stk.",
+"on_sale": false,
+"price": "4290",
+"regular": "4290",
+"short": "Hornady Black .300 Blackout mit 110gr V-Max-Geschoss: vielseitige Büchsenmunition für amerikanische Waffensysteme. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-black-300-blackout-110gr-v-max-20-stk/"
+},
+"32399": {
+"cats": [
+".45-70 Govt",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady LEVERevolution .45-70 Govt 250gr MonoFlex – 20 Stk.",
+"on_sale": false,
+"price": "7990",
+"regular": "7990",
+"short": "Hornady LEVERevolution .45-70 Govt mit 250gr MonoFlex-Geschoss: CIP-zugelassene Munition für Unterhebelrepetierer, sicher im Röhrenmagazin. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-250gr-monoflex-20-stk/"
+},
+"32407": {
+"cats": [
+".45-70 Govt",
+"Hornady"
+],
+"images": 3,
+"name": "Hornady LEVERevolution .45-70 Govt 325gr FTX – 20 Stk.",
+"on_sale": false,
+"price": "6590",
+"regular": "6590",
+"short": "Hornady LEVERevolution .45-70 Govt mit 325gr FTX-Geschoss: Munition für Unterhebelrepetierer, sicher im Röhrenmagazin. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-325gr-ftx-20-stk/"
 }
 }
