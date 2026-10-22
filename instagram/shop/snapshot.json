@@ -34,11 +34,11 @@
 "Mechanix Wear"
 ],
 "images": 4,
-"name": "Mechanix The Original covert",
+"name": "Mechanix The Original Covert Handschuhe",
 "on_sale": false,
 "price": "2990",
 "regular": "2990",
-"short": "Hochwertige Mechanix The Original Handschuhe: Unvergleichliche Leistung und Schutz Das passgenaue TrekDry® hält Ihre Hände angenehm kühl. Der verstellbare Thermoplastic-Rubber(TPR)-Abschluss bietet einen sicheren Sitz. Der verstärkte Daumen und Zeigefinger verbessern die Haltbarkeit. Das touchscreen",
+"short": "Atmungsaktives TrekDry® auf dem Handrücken hält die Hände angenehm kühl 0.8 mm dickes, touchscreenfähiges Kunstleder für Fingerfertigkeit und Haltbarkeit Verstellbarer TPR-Verschluss am Handgelenk für sicheren Sitz Verstärkter Daumen und Zeigefinger Nylon-Tragschlaufen, maschinenwaschbar",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/mechanix-the-original-covert/"
 },
@@ -62649,5 +62649,103 @@
 "short": "B&T Glock COA Cut (BT-232602): Verschlussfräsung zur direkten Montage des Aimpoint COA auf Nicht-MOS-Glock-Modellen inklusive Slimline. Passende mechanische B&T Visierung im Lieferumfang.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-glock-coa-cut-fuer-aimpoint-coa-non-mos/"
+},
+"32328": {
+"cats": [
+"Diabolos",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger X-Magnum Diabolos 4.5 mm Spitz 0.75 g, 300 Stk.",
+"on_sale": false,
+"price": "560",
+"regular": "560",
+"short": "Schwere Diabolos mit Spitzkopf und Drall im Kaliber 4.5 mm. Hohe Schlagzähigkeit und Durchschlagskraft für die Jagd auf mittlere Distanzen, 300 Stück pro Packung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-x-magnum-diabolos-4-5-mm-spitz-0-75-g-300-stk/"
+},
+"32329": {
+"cats": [
+"Diabolos",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger X-Hunter Diabolos 4.5 mm Spitz 0.56 g, 500 Stk.",
+"on_sale": false,
+"price": "720",
+"regular": "720",
+"short": "Mittelschwere, sehr präzise Diabolos mit Spitzkopf im Kaliber 4.5 mm. Aerodynamisches Design für flache Flugbahnen, 500 Stück pro Schachtel.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-x-hunter-diabolos-4-5-mm-spitz-0-56-g-500-stk/"
+},
+"32330": {
+"cats": [
+"Diabolos",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger X-Hunter Diabolos 5.5 mm Spitz 1.02 g, 200 Stk.",
+"on_sale": false,
+"price": "480",
+"regular": "480",
+"short": "Mittelschwere, sehr präzise Diabolos mit Spitzkopf im Kaliber 5.5 mm. Aerodynamisches Design für flache Flugbahnen, 200 Stück pro Schachtel.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-x-hunter-diabolos-5-5-mm-spitz-1-02-g-200-stk/"
+},
+"32331": {
+"cats": [
+"Diabolos",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger X-Sport Diabolos 4.5 mm Flach 0.48 g, 500 Stk.",
+"on_sale": false,
+"price": "600",
+"regular": "600",
+"short": "Leichte, präzise Diabolos mit Flachkopf im Kaliber 4.5 mm für Training und Freizeit. Universell einsetzbar, 500 Stück pro Packung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-x-sport-diabolos-4-5-mm-flach-0-48-g-500-stk/"
+},
+"32376": {
+"cats": [
+"Medics",
+"Pitchfork Systems"
+],
+"images": 6,
+"name": "Pitchfork Horizontal IFAK Pouch – Black",
+"on_sale": false,
+"price": "9995",
+"regular": "9995",
+"short": "Kompakte IFAK-Tasche aus Cordura 500D für schnellen Zugriff auf medizinisches Material. Horizontal montierbar auf MOLLE oder Gürtel, mit herausziehbarem Innenmodul und Halterung für ein Tourniquet. Wird ohne Inhalt geliefert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-horizontal-ifak-pouch-black/"
+},
+"32377": {
+"cats": [
+"Medics",
+"Pitchfork Systems"
+],
+"images": 2,
+"name": "Pitchfork Horizontal IFAK Pouch – Coyote",
+"on_sale": false,
+"price": "9995",
+"regular": "9995",
+"short": "Kompakte IFAK-Tasche aus Cordura 500D für schnellen Zugriff auf medizinisches Material. Horizontal montierbar auf MOLLE oder Gürtel, mit herausziehbarem Innenmodul und Halterung für ein Tourniquet. Wird ohne Inhalt geliefert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-horizontal-ifak-pouch-coyote/"
+},
+"32378": {
+"cats": [
+"Medics",
+"Pitchfork Systems"
+],
+"images": 2,
+"name": "Pitchfork Horizontal IFAK Pouch – Ranger Green",
+"on_sale": false,
+"price": "9995",
+"regular": "9995",
+"short": "Kompakte IFAK-Tasche aus Cordura 500D für schnellen Zugriff auf medizinisches Material. Horizontal montierbar auf MOLLE oder Gürtel, mit herausziehbarem Innenmodul und Halterung für ein Tourniquet. Wird ohne Inhalt geliefert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pitchfork-horizontal-ifak-pouch-ranger-green/"
 }
 }
