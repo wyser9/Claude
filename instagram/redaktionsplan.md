@@ -684,7 +684,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Mo 19.10. | 18:30 | #18 Neu bei Armatum: Kimber 2K11, Freedom Arms 83, Chiappa Rhino (aus Shop-Check) | geplant (automatisch) |
 | Di 20.10. | 18:30 | #15 Hülsenvorbereitung in 5 Schritten (Karussell statt Reel #5 – Video fehlt) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/DeuROKOm9qN/ |
 | Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/Dew2BC_mwJm/ |
-| Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | geplant (automatisch) |
+| Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | ✅ veröffentlicht 19:02 als Reel mit Sprecherstimme – https://www.instagram.com/reel/DezeJVtn3mv/ |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | geplant (automatisch) |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
@@ -758,7 +758,7 @@ Tumbler oder Nassreinigung – womit reinigst du deine Hülsen? 👇
 
 ### #16 – Do 22.10.2026, 19:00 – Reel – Säule 1: MOA oder MIL?
 
-**Status:** Autopilot – geplant als **Reel** (Inhaber 17.10.: «Ja» zu Reels aus Grafiken). Video `grafiken/16-moa-mil/reel.mp4` (24,8 s, 9:16, ohne Musik), Cover `reel-cover.jpg`, gebaut mit `instagram/reels/make_reel.sh`. Karussell-Bilder bleiben als Ersatz.
+**Status:** ✅ Veröffentlicht 22.10.2026, 19:02 (armatum_ch) als Reel mit ElevenLabs-Stimme (Daniel) – https://www.instagram.com/reel/DezeJVtn3mv/ – Story mit Slide 01. Caption-Zeile «Swipe» → «Im Video» angepasst.
 
 **Grafiken:** `instagram/grafiken/16-moa-mil/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/16-moa-mil.jpg`.
 
@@ -773,7 +773,7 @@ Wer auf Distanz schiesst, kommt nicht drum herum: Dein Zielfernrohr rechnet entw
 
 Die goldene Regel: Absehen und Türme in derselben Einheit. Und bei einem Absehen in der zweiten Bildebene (SFP) stimmen die Werte nur bei der vom Hersteller angegebenen Vergrösserung.
 
-👉 Swipe für den Vergleich.
+👉 Im Video: der Vergleich in 30 Sekunden.
 
 Fragen zu Optik und Absehen? Heute Abend sind wir bis 21 Uhr im Laden in Fulenbach – oder schreib sie in die Kommentare.
 
@@ -990,3 +990,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-21 | #6 Ausrüstung einwintern veröffentlicht (18:32, armatum_ch): https://www.instagram.com/p/Dew2BC_mwJm/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-22 | Shop-Check: 7 neue Produkte (Pitchfork IFAK-Taschen, Stoeger-Diabolos) – kein Post, Befund bei Mark. |
 | 2026-10-22 | Shop-Check Abend: 8× Hornady-Munition neu (.45-70, .300 BLK), Glock 45 Hunter entfernt – kein Post (Munition), Befund bei Mark. |
+| 2026-10-22 | #16 MOA oder MIL? als Reel mit Sprecherstimme veröffentlicht (19:02, armatum_ch): https://www.instagram.com/reel/DezeJVtn3mv/ + Story. «Swipe für den Vergleich» → «Im Video: der Vergleich in 30 Sekunden» (Reel hat keine Slides zum Wischen). WhatsApp-Status an Inhaber. |
