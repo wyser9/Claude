@@ -686,7 +686,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Mi 21.10. | 18:30 | #6 Ausrüstung einwintern (dunkles statt helles Design, Renderer kann nur dunkel) | ✅ veröffentlicht 18:32 – https://www.instagram.com/p/Dew2BC_mwJm/ |
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | ✅ veröffentlicht 19:02 als Reel mit Sprecherstimme – https://www.instagram.com/reel/DezeJVtn3mv/ |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
-| Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | geplant (automatisch) |
+| Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | ✅ veröffentlicht 18:31 – https://www.instagram.com/p/De1_iC8G4EB/ |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
@@ -842,7 +842,7 @@ Kimber, Freedom Arms oder Rhino – welcher wär's für dich? 👇
 
 ### #19 – Fr 23.10.2026, 18:30 – Karussell – Säule 3: Neu – Walther PDP PRO A-Cut mit Aimpoint COA
 
-**Status:** Autopilot – geplant (aus Shop-Check 18.10.: 2 neue Walther-Modelle). Teaser für #10 (So 25.10.). Keine Seriennummern auf den Herstellerbildern.
+**Status:** ✅ Veröffentlicht 23.10.2026, 18:31 (armatum_ch) – https://www.instagram.com/p/De1_iC8G4EB/ – Story mit Slide 01 gepostet.
 
 **Grafiken:** `instagram/grafiken/19-walther-acut/01.jpg` ff., WhatsApp-Status `whatsapp/posts/19-walther-acut.jpg`.
 
@@ -992,3 +992,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-22 | Shop-Check Abend: 8× Hornady-Munition neu (.45-70, .300 BLK), Glock 45 Hunter entfernt – kein Post (Munition), Befund bei Mark. |
 | 2026-10-22 | #16 MOA oder MIL? als Reel mit Sprecherstimme veröffentlicht (19:02, armatum_ch): https://www.instagram.com/reel/DezeJVtn3mv/ + Story. «Swipe für den Vergleich» → «Im Video: der Vergleich in 30 Sekunden» (Reel hat keine Slides zum Wischen). WhatsApp-Status an Inhaber. |
 | 2026-10-23 | Shop-Check: 3 neue Produkte (Streamlight TLR-1 HL-X, Erla-Hüdeli, GSG-9 SD-Adapter), 7 wieder an Lager – kein Post, Befund bei Mark. |
+| 2026-10-23 | #19 Walther PDP PRO A-Cut veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/De1_iC8G4EB/ + Story. WhatsApp-Status an Inhaber. |
