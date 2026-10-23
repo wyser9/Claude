@@ -991,3 +991,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-22 | Shop-Check: 7 neue Produkte (Pitchfork IFAK-Taschen, Stoeger-Diabolos) – kein Post, Befund bei Mark. |
 | 2026-10-22 | Shop-Check Abend: 8× Hornady-Munition neu (.45-70, .300 BLK), Glock 45 Hunter entfernt – kein Post (Munition), Befund bei Mark. |
 | 2026-10-22 | #16 MOA oder MIL? als Reel mit Sprecherstimme veröffentlicht (19:02, armatum_ch): https://www.instagram.com/reel/DezeJVtn3mv/ + Story. «Swipe für den Vergleich» → «Im Video: der Vergleich in 30 Sekunden» (Reel hat keine Slides zum Wischen). WhatsApp-Status an Inhaber. |
+| 2026-10-23 | Shop-Check: 3 neue Produkte (Streamlight TLR-1 HL-X, Erla-Hüdeli, GSG-9 SD-Adapter), 7 wieder an Lager – kein Post, Befund bei Mark. |

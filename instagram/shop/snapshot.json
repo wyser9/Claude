@@ -1004,7 +1004,7 @@
 "price": "2690",
 "regular": "2690",
 "short": "Das Magpul PMAG 30 AR/M4 GEN M3 mit Fenster ist ein robustes 30-Schuss-Polymermagazin mit integriertem Sichtfenster zur schnellen Munitionsanzeige. Ideal für AR-15/M4-Plattformen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/magpul-pmag-30-ar-m4-gen-m3-mit-fenster/"
 },
 "13594": {
@@ -3553,7 +3553,7 @@
 "price": "8000",
 "regular": "8000",
 "short": "Das Blackhawk Omnivore Multifit Holster ist ein universelles Holster für über 150 Pistolenmodelle. Es bietet sicheren Halt durch ein Level-2-Retention-System und ermöglicht schnellen Zugriff. Perfekt für Dienst- und Outdoor-Einsätze.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/blackhawk-omnivore-multifit-holster-universelles-holster-fuer-ueber-150-pistolenmodelle/"
 },
 "15233": {
@@ -4014,7 +4014,7 @@
 "price": "19300",
 "regular": "23900",
 "short": "Der 3M Peltor Gehörschutz SportTac – grün/orange bietet optimalen Schutz mit aktiver Lärmunterdrückung. Komfortabel, ergonomisch und perfekt für Schiesssport geeignet.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/3m-peltor-gehoerschutz-sporttac-gruen-orange-fuer-optimalen-schutz/"
 },
 "15561": {
@@ -4028,7 +4028,7 @@
 "price": "21510",
 "regular": "23900",
 "short": "Der 3M Peltor Gehörschutz SportTac in Orange/Grün-Camo bietet erstklassigen Lärmschutz und klare Geräuschwahrnehmung für Jäger und Sportschützen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/3m-peltor-gehoerschutz-sporttac-orange-gruen-camo-fuer-jagd-sportschiessen/"
 },
 "15563": {
@@ -4042,7 +4042,7 @@
 "price": "18810",
 "regular": "20900",
 "short": "Der 3M Peltor Gehörschutz SportTac – Pink/Grün kombiniert effektiven Lärmschutz mit stilvollem Design, ideal für Schiesssportler und Outdoor-Fans.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/3m-peltor-gehoerschutz-sporttac-pink-gruen-fuer-schiesssport-und-outdoor/"
 },
 "15565": {
@@ -8246,7 +8246,7 @@
 "price": "44900",
 "regular": "44900",
 "short": "Das Romeo5 Juliet3 Micro Combo Kit bietet ein kompaktes Red Dot mit Bewegungssensor und 3x Magnifier – robust, leicht und ideal für mittlere Distanzen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/romeo5-juliet3-micro-kompaktes-optik-kit-von-sig-sauer/"
 },
 "18207": {
@@ -14713,7 +14713,7 @@
 "price": "2390",
 "regular": "2390",
 "short": "Universelle Gewehr Reinigungsmatte mit Polsterung und rutschfester Unterseite. Erh?ltlich in vier Designs f?r sichere Waffenpflege.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/tekmat-gewehr-reinigungsmatte-universelle-waffenpflege-matte/"
 },
 "20574": {
@@ -55051,8 +55051,8 @@
 "images": 1,
 "name": "TCH Handschellenschlüssel drehbar rund",
 "on_sale": false,
-"price": "250",
-"regular": "250",
+"price": "1390",
+"regular": "1390",
 "short": "Runder, drehbarer TCH Handschellenschlüssel für kompatible Standard-Handschellenschlösser. Kompakte Ausführung als Haupt-, Zweit- oder Ersatzschlüssel.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/tch-handschellenschluessel-drehbar-rund/"
@@ -62844,5 +62844,47 @@
 "short": "Hornady LEVERevolution .45-70 Govt mit 325gr FTX-Geschoss: Munition für Unterhebelrepetierer, sicher im Röhrenmagazin. Packungsinhalt: 20 Patronen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-325gr-ftx-20-stk/"
+},
+"32415": {
+"cats": [
+"Adapter",
+"German Sport Guns"
+],
+"images": 3,
+"name": "GSG-9 SD-Laufadapter Kal. 9mm Para ½»x28 UNEF",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "Der GSG-9 SD-Laufadapter im Kaliber 9mm Para bietet ein ½»x28 UNEF Gewinde am Lauf der GSG-9 von German Sport Guns.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gsg-9-sd-laufadapter-kal-9mm-para-1-2x28-unef/"
+},
+"32419": {
+"cats": [
+"Erla",
+"Waffenreinigung & Pflege"
+],
+"images": 2,
+"name": "Erla Putzlappen Baumwollvlies – 10 Rollen à 4 m x 4 cm (Hüdeli)",
+"on_sale": false,
+"price": "940",
+"regular": "940",
+"short": "Erla Putzlappen (Hüdeli) aus Baumwollvlies zur Reinigung von Waffen. 10 Rollen à 4 m x 4 cm, auf beliebige Länge zuschneidbar. Hergestellt in der Schweiz.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/erla-putzlappen-baumwollvlies-10-rollen-a-4-m-x-4-cm-huedeli/"
+},
+"32426": {
+"cats": [
+"Lampen / Laser",
+"Streamlight"
+],
+"images": 6,
+"name": "Streamlight TLR-1 HL-X USB Waffenlampe Schwarz",
+"on_sale": false,
+"price": "36640",
+"regular": "36640",
+"short": "Die Streamlight TLR-1 HL-X USB ist eine kompakte Waffenlampe mit 1500 Lumen, wiederaufladbaren SL-B9-Akkus und USB-C-Ladekabel im Lieferumfang. Gehäuse aus Flugzeugaluminium, Farbe Schwarz.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/streamlight-tlr-1-hl-x-usb-waffenlampe-schwarz/"
 }
 }
