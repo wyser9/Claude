@@ -687,7 +687,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Do 22.10. | 19:00 | #16 MOA oder MIL? als **Reel** (statt #7, pausiert) | ✅ veröffentlicht 19:02 als Reel mit Sprecherstimme – https://www.instagram.com/reel/DezeJVtn3mv/ |
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | ✅ veröffentlicht 18:31 – https://www.instagram.com/p/De1_iC8G4EB/ |
-| Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | geplant (automatisch) |
+| Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | ✅ veröffentlicht 09:31 – https://www.instagram.com/p/De3mju3lTSa/ |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
 
@@ -787,7 +787,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #17 – Sa 24.10.2026, 09:30 – Karussell – Säule 5: Dies oder das?
 
-**Status:** Autopilot – geplant (ersetzt #8, keine Umfrage-Resultate). Öffnungs-Samstag.
+**Status:** ✅ Veröffentlicht 24.10.2026, 09:31 (armatum_ch) – https://www.instagram.com/p/De3mju3lTSa/ – Story mit Slide 01 gepostet.
 
 **Grafiken:** `instagram/grafiken/17-dies-oder-das/01.jpg` ff. (Commit `99185d3`), WhatsApp-Status `whatsapp/posts/17-dies-oder-das.jpg`.
 
@@ -993,3 +993,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-22 | #16 MOA oder MIL? als Reel mit Sprecherstimme veröffentlicht (19:02, armatum_ch): https://www.instagram.com/reel/DezeJVtn3mv/ + Story. «Swipe für den Vergleich» → «Im Video: der Vergleich in 30 Sekunden» (Reel hat keine Slides zum Wischen). WhatsApp-Status an Inhaber. |
 | 2026-10-23 | Shop-Check: 3 neue Produkte (Streamlight TLR-1 HL-X, Erla-Hüdeli, GSG-9 SD-Adapter), 7 wieder an Lager – kein Post, Befund bei Mark. |
 | 2026-10-23 | #19 Walther PDP PRO A-Cut veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/De1_iC8G4EB/ + Story. WhatsApp-Status an Inhaber. |
+| 2026-10-24 | #17 Dies oder das? veröffentlicht (09:31, armatum_ch): https://www.instagram.com/p/De3mju3lTSa/ + Story. WhatsApp-Status an Inhaber. |
