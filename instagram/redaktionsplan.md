@@ -98,6 +98,9 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 17 | 24.10.2026 | Sa | 09:30 | Karussell (8 Slides, dunkel) | 5 Community | Dies oder das? | «6 Fragen – entscheide dich, ohne Ausreden.» | Autopilot – geplant |
 | 18 | 19.10.2026 | Mo | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Kimber 2K11 Pro, Freedom Arms 83, Chiappa Rhino 30DS | «Neu bei Armatum: 3 Charakterköpfe» | ✅ **Veröffentlicht 19.10.2026, 18:31** – https://www.instagram.com/p/DersZtrCWcM/ + Story |
 | 19 | 23.10.2026 | Fr | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: Walther PDP PRO A-Cut mit Aimpoint COA | «Rotpunkt ohne Platte» | Autopilot – geplant |
+| 20 | 27.10.2026 | Di | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: 3 GPO-Spektive | «Neu bei Armatum: 3 Spektive von GPO» | Autopilot – geplant |
+| 21 | 28.10.2026 | Mi | 18:30 | Karussell (7 Slides, dunkel) | 4 Schiesssport & Jagd CH | Schweizer Klassiker: der K31 | «Schweizer Klassiker im Fokus: der K31» | Autopilot – geplant |
+| 22 | 29.10.2026 | Do | 19:00 | Karussell (8 Slides, dunkel) | 1 Wissen & Tipps | Gehörschutz am Stand | «Stöpsel, Kapsel oder beides?» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -723,6 +726,69 @@ Kompakt, gross oder mit Absehen – welches wär's für dich? 👇
 
 ---
 
+### #21 – Mi 28.10.2026, 18:30 – Karussell – Säule 4 (Schiesssport & Jagd CH): Schweizer Klassiker im Fokus: der K31
+
+**Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Mi 28.10.2026, 18:30, Sicherheitsnetz +10 Min.
+
+**Grafiken:** `instagram/grafiken/21-k31/01.jpg` ff., WhatsApp-Status `whatsapp/posts/21-k31.jpg`.
+
+**Caption zum Kopieren:**
+```
+Schweizer Klassiker im Fokus: der K31 🇨🇭
+
+Der Karabiner 31 ist ein Stück Schweizer Schiessgeschichte. 1933 eingeführt, löste er Langgewehr G11 und Karabiner K11 ab und blieb Ordonnanzwaffe, bis ihn das Sturmgewehr 57 ab 1959 ersetzte.
+
+Das macht ihn besonders:
+▪️ Geradzugverschluss – der Kammerstängel wird gerade zurückgezogen und vorgeschoben, ohne zu drehen
+▪️ Kaliber 7,5×55 Swiss (GP 11)
+▪️ Magazin mit 6 Patronen
+▪️ ca. 65 cm Lauf, ca. 110 cm Gesamtlänge, rund 4 kg
+
+Viele Schützen pflegen ihren K31 bis heute und schiessen damit im Verein.
+
+👉 Swipe für Steckbrief, Geschichte und Pflege-Tipps.
+
+Ein Klassiker will Sorgfalt: zuerst entladen und kontrollieren, dann reinigen, dünn ölen und trocken lagern. Unsere Werkstatt in Fulenbach reinigt deine Waffe gründlich und prüft dabei die Funktion.
+
+Hast du einen K31 im Schrank oder im Verein? Erzähl uns seine Geschichte in den Kommentaren 👇
+
+#k31 #schweizerarmee #ordonnanzwaffe #schützenverein #schweiz
+```
+**Regel-Check:** ✅ Historisch/Sachinformation, reine Text-Grafiken ohne Fremdbilder, kein Verkauf, kein Preis, kein Kaufaufruf; Verweis nur auf die Werkstatt (Reinigung mit Funktionskontrolle, durch Website belegt). Daten (1933, 7,5×55, 6 Patronen, ca. 65 cm Lauf, ca. 110 cm, rund 4 kg) per Websuche geprüft und mit «ca.» gerundet. Sicherheitshinweis (entladen) enthalten. Aus Insights-Erkenntnis 9.1 (Swissness).
+
+---
+
+### #22 – Do 29.10.2026, 19:00 – Karussell – Säule 1 (Wissen & Tipps): Gehörschutz am Stand
+
+**Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Do 29.10.2026, 19:00, Sicherheitsnetz +10 Min.
+
+**Grafiken:** `instagram/grafiken/22-gehoerschutz/01.jpg` ff., WhatsApp-Status `whatsapp/posts/22-gehoerschutz.jpg`.
+
+**Caption zum Kopieren:**
+```
+Gehörschutz am Stand: Stöpsel, Kapsel oder beides? 🎧
+
+Ein Schuss erreicht Spitzenpegel weit über 140 Dezibel. Schon ein einzelner Knall ohne Schutz kann dem Gehör bleibend schaden – und einmal verlorenes Gehör kommt nicht zurück.
+
+Das musst du wissen:
+✔️ Stöpsel: klein und leicht, aber nur mit richtigem Sitz wirksam
+✔️ Kapsel: schnell aufgesetzt, Dichtung muss rundum anliegen (Brillenbügel und Bart öffnen sie)
+✔️ Beides kombiniert: zusätzlicher Schutz in der Halle oder bei Mündungsbremsen in der Nähe
+✔️ Aktiver Gehörschutz: dämmt den Knall, lässt Stimmen und Kommandos durch
+✔️ Schaumstoff und Dichtungen regelmässig ersetzen – und Augenschutz nicht vergessen
+
+👉 Swipe für die Details.
+
+Gehörschutz findest du bei uns im Laden in Fulenbach und im Onlineshop (Link in der Bio).
+
+Speichern für den nächsten Standbesuch. Stöpsel, Kapsel oder beides – was trägst du? 👇
+
+#gehörschutz #sportschiessen #schiessstand #sicherheit #schweiz
+```
+**Regel-Check:** ✅ Sicherheitswissen, keine Waffe/Munition, kein Preis; Gehörschutz ist im Sortiment (Shop-Snapshot, marke.md). Pegelangabe bewusst vorsichtig («weit über 140 dB»).
+
+---
+
 ### #15 – Di 20.10.2026, 18:30 – Karussell – Säule 2: Hülsenvorbereitung in 5 Schritten
 
 **Status:** ✅ Veröffentlicht 20.10.2026, 18:32 (armatum_ch) – https://www.instagram.com/p/DeuROKOm9qN/ – Story mit Slide 01 gepostet.
@@ -994,3 +1060,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-23 | Shop-Check: 3 neue Produkte (Streamlight TLR-1 HL-X, Erla-Hüdeli, GSG-9 SD-Adapter), 7 wieder an Lager – kein Post, Befund bei Mark. |
 | 2026-10-23 | #19 Walther PDP PRO A-Cut veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/De1_iC8G4EB/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-24 | #17 Dies oder das? veröffentlicht (09:31, armatum_ch): https://www.instagram.com/p/De3mju3lTSa/ + Story. WhatsApp-Status an Inhaber. |
+| 2026-10-25 | Wochen-Routine: Woche 26.10.–01.11. geplant: #20 GPO-Spektive (Di 27.10.), #21 K31 (Mi 28.10.), #22 Gehörschutz (Do 29.10.). Fr/Sa/So ohne Feed-Post (Sa 31.10. kein Öffnungs-Samstag, Shop-News falls nötig). Reel diese Woche ausgelassen (Insights: Reel #16 nur 6 Likes; Waffen-Neuheiten/Swissness laufen besser). Grafiken + WhatsApp-Status gerendert. |

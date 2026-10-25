@@ -144,3 +144,19 @@ Follower 2466 (11.10.: 2450, +16), 354 Beiträge. Likes/Kommentare der Woche (Co
 | #12 Marlin × Mad Pig | 12.10. | 74 | 3 |
 
 Erkenntnisse: Konkrete Waffen-Neuheiten (#12: 74, #14: 29, #13: 27) und Wissens-Karussell #1 (28) laufen solide; das Wiederladen-Karussell #2 (10) ist am schwächsten. Kommentare bleiben selten – Fragen am Schluss bleiben, aber mit leichterer Antwort (daher #17 «Dies oder das?»). Posts mit Waffen-Neuheiten sind der Hebel; Wiederladen ggf. mit Foto statt reiner Grafik testen.
+
+## Wochenauswertung 25.10.2026 (Autopilot, Konto armatum_ch, Stand 14:50 UTC)
+
+Follower 2472 (18.10.: 2466, +6), 361 Beiträge. Reichweite 18.–25.10.: 1491 Konten (Composio, total_value). Likes/Kommentare:
+
+| Beitrag | Datum | Likes | Kommentare |
+|---|---|---|---|
+| #17 Dies oder das? | 24.10. | 2 | 2 |
+| #19 Walther PDP PRO A-Cut | 23.10. | 13 | 0 |
+| #16 MOA oder MIL? (Reel) | 22.10. | 6 | 0 |
+| #6 Einwintern | 21.10. | 3 | 0 |
+| #15 Hülsenvorbereitung | 20.10. | 4 | 0 |
+| #18 Neuheiten Faustfeuerwaffen | 19.10. | 22 | 1 |
+| #9 SIG Sauer Cross | 18.10. | 44 | 0 |
+
+Erkenntnisse: Konkrete Waffen-Portraits (#9: 44) und Neuheiten (#18: 22) liegen klar vorn; reine Wissens-/Wiederladen-Grafiken (#6: 3, #15: 4) und das Reel (#16: 6) schwach. «Dies oder das?» brachte nur 2 Kommentare. Konsequenz für 26.10.–01.11.: Swissness-Waffenportrait (K31) statt weiterem Wiederladen-Karussell, ein Sicherheits-Wissenspost mit Sortiments-Bezug, Reel pausiert. Hinweis: Likes der letzten Tage sind noch nicht ausgereift (Posts < 48 h).

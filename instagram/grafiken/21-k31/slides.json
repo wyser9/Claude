@@ -1,0 +1,14 @@
+{ "post": "#21 – Mi 28.10.2026 18:30 – Schweizer Klassiker im Fokus: der K31",
+  "slides": [
+    { "type": "cover", "title": "Schweizer Klassiker: der K31", "subtitle": "Karabiner 31 · Kaliber 7,5×55 Swiss 🇨🇭" },
+    { "type": "content", "badge": "1", "kicker": "Das Besondere", "title": "Geradzugverschluss",
+      "body": "Beim K31 wird der Kammerstängel **gerade nach hinten gezogen und wieder vorgeschoben** – ohne ihn zu drehen. Typisch für die Schmidt-Rubin-Familie." },
+    { "type": "specs", "kicker": "Steckbrief", "title": "K31 in Zahlen", "rows": [["Kaliber", "7,5×55 Swiss (GP 11)"], ["Magazin", "6 Patronen"], ["Lauf", "ca. 65 cm"], ["Länge · Gewicht", "ca. 110 cm · rund 4 kg"]] },
+    { "type": "content", "badge": "2", "kicker": "Geschichte", "title": "Seit 1933",
+      "body": "1933 als **Karabiner 31** eingeführt. Er löste Langgewehr G11 und Karabiner K11 ab und blieb Ordonnanzwaffe, bis das **Sturmgewehr 57** ihn ab 1959 ersetzte." },
+    { "type": "content", "badge": "3", "kicker": "Heute", "title": "Beliebt auf 300 m",
+      "body": "Viele Schützen pflegen ihren K31 bis heute und schiessen damit im Verein. **Ein Stück Schweizer Schiessgeschichte** – und ein präziser Schiesser." },
+    { "type": "content", "badge": "4", "kicker": "Pflege", "title": "Ein Klassiker will Sorgfalt",
+      "body": "Zuerst **entladen und kontrollieren**. Dann reinigen, dünn ölen und trocken lagern. Das Holz mag keine Feuchtigkeit.\n\nUnsere Werkstatt in Fulenbach reinigt mit Funktionskontrolle." },
+    { "type": "cta", "title": "Hast du einen K31?", "body": "Erzähl uns seine Geschichte in den Kommentaren 👇" }
+  ] }
