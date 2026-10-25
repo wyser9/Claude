@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       bexio WooCommerce Sync
- * Description:       Überträgt Artikel und Bestellungen inkl. Besteller (Kontakt) von WooCommerce nach bexio und übernimmt täglich den Lagerstatus aus bexio.
- * Version:           1.4.1
+ * Description:       Überträgt Artikel und Bestellungen inkl. Besteller (Kontakt) von WooCommerce nach bexio übernimmt täglich den Lagerstatus und stündlich den Zahlungs-/Erledigt-Status aus bexio.
+ * Version:           1.5.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Requires Plugins:  woocommerce
@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BWS_VERSION', '1.4.1' );
+define( 'BWS_VERSION', '1.5.0' );
 define( 'BWS_FILE', __FILE__ );
 define( 'BWS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BWS_LOG_SOURCE', 'bexio-sync' );
@@ -29,6 +29,7 @@ require_once BWS_DIR . 'includes/class-bws-contact-sync.php';
 require_once BWS_DIR . 'includes/class-bws-order-sync.php';
 require_once BWS_DIR . 'includes/class-bws-stock-import.php';
 require_once BWS_DIR . 'includes/class-bws-backfill.php';
+require_once BWS_DIR . 'includes/class-bws-status-import.php';
 require_once BWS_DIR . 'includes/class-bws-admin.php';
 
 // High-Performance Order Storage (HPOS) kompatibel.
@@ -46,6 +47,7 @@ register_deactivation_hook(
 	function () {
 		if ( function_exists( 'as_unschedule_all_actions' ) ) {
 			as_unschedule_all_actions( 'bws_import_stock' );
+			as_unschedule_all_actions( 'bws_import_order_status' );
 		}
 		delete_option( 'bws_stock_import_scheduled' );
 	}
@@ -68,6 +70,7 @@ add_action(
 		BWS_Order_Sync::init();
 		BWS_Stock_Import::init();
 		BWS_Backfill::init();
+		BWS_Status_Import::init();
 
 		if ( is_admin() ) {
 			BWS_Admin::init();

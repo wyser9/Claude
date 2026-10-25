@@ -12,6 +12,7 @@ defined( 'ABSPATH' ) || exit;
  *     wp bexio order 456
  *     wp bexio import-stock
  *     wp bexio backfill
+ *     wp bexio import-status
  */
 class BWS_CLI {
 
@@ -69,6 +70,20 @@ class BWS_CLI {
 		try {
 			$s = BWS_Stock_Import::run();
 			WP_CLI::success( sprintf( '%d Artikel: %d Vorrätig, %d Lieferrückstand, %d unverändert, %d nicht im Shop, %d übersprungen, %d Fehler.', $s['articles'], $s['instock'], $s['backorder'], $s['unchanged'], $s['not_found'], $s['skipped'], $s['errors'] ) );
+		} catch ( BWS_Exception $e ) {
+			WP_CLI::error( $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Übernimmt Bezahlt/Erledigt aus bexio in offene Bestellungen.
+	 *
+	 * @subcommand import-status
+	 */
+	public function import_status() {
+		try {
+			$s = BWS_Status_Import::run();
+			WP_CLI::success( sprintf( '%d geprüft, %d bezahlt, %d abgeschlossen, %d Fehler.', $s['checked'], $s['paid'], $s['completed'], $s['errors'] ) );
 		} catch ( BWS_Exception $e ) {
 			WP_CLI::error( $e->getMessage() );
 		}

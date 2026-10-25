@@ -46,6 +46,10 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 		}
 		return resp( array( 'id' => 900, 'document_nr' => 'AU-00001', 'total' => number_format( $total, 2, '.', '' ) ) );
 	}
+	if ( 'GET' === $m && preg_match( '#^2\.0/kb_order/(\d+)$#', $path, $mm ) && isset( $GLOBALS['bws_kb'][ (int) $mm[1] ] ) ) return resp( $GLOBALS['bws_kb'][ (int) $mm[1] ] );
+	if ( 'POST' === $m && '2.0/kb_invoice/search' === $path ) {
+		return resp( array_values( array_filter( $GLOBALS['bws_invoices'] ?? array(), function ( $i ) use ( $body ) { return (int) $i['contact_id'] === (int) $body[0]['value']; } ) ) );
+	}
 	return resp( array( 'message' => 'not mocked ' . $m . ' ' . $path ), 404 );
 }, 10, 3 );
 
@@ -448,5 +452,63 @@ BWS_Settings::save( array( 'stock_mode' => 'to_bexio' ) );
 BWS_Stock_Import::ensure_schedule();
 t( 'Zeitplan entfernt, wenn WooCommerce führt', false === as_next_scheduled_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP ) );
 t( 'Uhrzeit-Validierung', '07:05' === BWS_Stock_Import::normalize_time( '7:05' ) && '03:00' === BWS_Stock_Import::normalize_time( '25:00' ) );
+
+// --- Bestellstatus aus bexio ---
+BWS_Settings::save( array( 'status_from_bexio' => 'yes', 'sync_orders' => 'yes' ) );
+foreach ( wc_get_orders( array( 'limit' => -1, 'status' => BWS_Status_Import::OPEN_STATUSES ) ) as $prev ) { $prev->delete_meta_data( BWS_Order_Sync::META_ORDER_ID ); $prev->save(); }
+$ship_product = new WC_Product_Simple(); $ship_product->set_name( 'Versandartikel' ); $ship_product->set_regular_price( 120 ); $ship_product->save();
+$mk = function ( $status, $bexio_id ) use ( $ship_product ) {
+	$o = wc_create_order(); $o->add_product( $ship_product, 1 ); $o->set_payment_method( 'bacs' ); $o->set_total( 120 ); $o->set_status( $status );
+	$o->update_meta_data( BWS_Order_Sync::META_ORDER_ID, $bexio_id ); $o->save();
+	return $o;
+};
+$oa = $mk( 'on-hold', 801 );   // Rechnung bezahlt, Auftrag offen -> In Bearbeitung.
+$ob = $mk( 'on-hold', 802 );   // Rechnung bezahlt, Auftrag erledigt -> Abgeschlossen.
+$oc = $mk( 'on-hold', 803 );   // Rechnung offen -> unverändert.
+$od = $mk( 'processing', 804 ); // Ohne passenden Titel, gleiches Total -> Abgeschlossen.
+$oe = $mk( 'on-hold', 805 );   // Keine Rechnung -> unverändert.
+$of = $mk( 'on-hold', 806 );   // Zwei Rechnungen, eine offen -> unverändert.
+$og = $mk( 'cancelled', 807 ); // Storniert -> wird nicht angefasst.
+$GLOBALS['bws_kb'] = array();
+foreach ( array( 801 => array( $oa, 5, 61 ), 802 => array( $ob, 6, 62 ), 803 => array( $oc, 6, 63 ), 804 => array( $od, 6, 64 ), 805 => array( $oe, 6, 65 ), 806 => array( $of, 6, 66 ), 807 => array( $og, 6, 67 ) ) as $kid => $x ) {
+	$GLOBALS['bws_kb'][ $kid ] = array( 'id' => $kid, 'document_nr' => 'AU-' . $kid, 'title' => 'WooCommerce Bestellung #' . $x[0]->get_order_number(), 'kb_item_status_id' => $x[1], 'contact_id' => $x[2], 'total' => '120.00', 'is_valid_from' => '2026-10-01' );
+}
+$GLOBALS['bws_invoices'] = array(
+	array( 'id' => 1, 'document_nr' => 'RE-1', 'contact_id' => 61, 'title' => 'WooCommerce Bestellung #' . $oa->get_order_number(), 'kb_item_status_id' => 9, 'total' => '120.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 2, 'document_nr' => 'RE-2', 'contact_id' => 62, 'title' => 'WooCommerce Bestellung #' . $ob->get_order_number(), 'kb_item_status_id' => 9, 'total' => '120.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 9, 'document_nr' => 'RE-9', 'contact_id' => 62, 'title' => 'Andere Bestellung #1', 'kb_item_status_id' => 8, 'total' => '50.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 3, 'document_nr' => 'RE-3', 'contact_id' => 63, 'title' => 'WooCommerce Bestellung #' . $oc->get_order_number(), 'kb_item_status_id' => 8, 'total' => '120.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 4, 'document_nr' => 'RE-4', 'contact_id' => 64, 'title' => 'Rechnung', 'kb_item_status_id' => 9, 'total' => '120.00', 'is_valid_from' => '2026-10-03' ),
+	array( 'id' => 5, 'document_nr' => 'RE-5', 'contact_id' => 64, 'title' => 'Alte Rechnung', 'kb_item_status_id' => 8, 'total' => '120.00', 'is_valid_from' => '2026-09-01' ),
+	array( 'id' => 6, 'document_nr' => 'RE-6', 'contact_id' => 66, 'title' => 'WooCommerce Bestellung #' . $of->get_order_number() . ' Teil 1', 'kb_item_status_id' => 9, 'total' => '60.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 7, 'document_nr' => 'RE-7', 'contact_id' => 66, 'title' => 'WooCommerce Bestellung #' . $of->get_order_number() . ' Teil 2', 'kb_item_status_id' => 16, 'total' => '60.00', 'is_valid_from' => '2026-10-02' ),
+	array( 'id' => 8, 'document_nr' => 'RE-8', 'contact_id' => 66, 'title' => 'WooCommerce Bestellung #' . $of->get_order_number(), 'kb_item_status_id' => 19, 'total' => '120.00', 'is_valid_from' => '2026-10-01' ),
+	array( 'id' => 10, 'document_nr' => 'RE-10', 'contact_id' => 67, 'title' => 'WooCommerce Bestellung #' . $og->get_order_number(), 'kb_item_status_id' => 9, 'total' => '120.00', 'is_valid_from' => '2026-10-02' ),
+);
+$GLOBALS['bws_requests'] = array();
+$ss = BWS_Status_Import::run();
+$st = function ( $o ) { return wc_get_order( $o->get_id() )->get_status(); };
+t( 'Rechnung bezahlt -> In Bearbeitung', 'processing' === $st( $oa ) && wc_get_order( $oa->get_id() )->get_date_paid(), $st( $oa ) );
+t( 'Bezahlt + Auftrag erledigt -> Abgeschlossen', 'completed' === $st( $ob ), $st( $ob ) );
+t( 'Rechnung offen -> unverändert', 'on-hold' === $st( $oc ), $st( $oc ) );
+t( 'Zuordnung über Total (Rechnung nach Auftragsdatum)', 'completed' === $st( $od ), $st( $od ) );
+t( 'Keine Rechnung -> unverändert', 'on-hold' === $st( $oe ), $st( $oe ) );
+t( 'Teilrechnung offen, stornierte ignoriert -> unverändert', 'on-hold' === $st( $of ), $st( $of ) );
+t( 'Stornierte Bestellung nicht angefasst', 'cancelled' === $st( $og ) );
+$n = wc_get_order_notes( array( 'order_id' => $ob->get_id() ) );
+t( 'Bestellnotiz nennt Rechnung und Auftrag', false !== strpos( wp_json_encode( wp_list_pluck( $n, 'content' ) ), 'RE-2' ) && false !== strpos( wp_json_encode( wp_list_pluck( $n, 'content' ) ), 'AU-802' ) );
+t( 'Statistik Statusabgleich', 6 === $ss['checked'] && 2 === $ss['paid'] && 2 === $ss['completed'] && 0 === $ss['errors'], wp_json_encode( $ss ) );
+t( 'In bexio nichts verändert', ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0] && 'search' !== substr( $r[1], -6 ); } ) );
+// Zweiter Lauf: Auftrag 801 jetzt erledigt -> Abgeschlossen; Abgeschlossene werden nicht mehr abgefragt.
+$GLOBALS['bws_kb'][801]['kb_item_status_id'] = 6;
+$GLOBALS['bws_requests'] = array();
+$ss = BWS_Status_Import::run();
+t( 'Später erledigt -> Abgeschlossen', 'completed' === $st( $oa ) && 0 === $ss['paid'] && 1 === $ss['completed'], wp_json_encode( $ss ) );
+t( 'Abgeschlossene nicht mehr geprüft', 4 === $ss['checked'], wp_json_encode( $ss ) );
+BWS_Status_Import::ensure_schedule();
+t( 'Stündlicher Abgleich eingeplant', is_int( as_next_scheduled_action( BWS_Status_Import::HOOK, array(), BWS_AS_GROUP ) ) );
+BWS_Settings::save( array( 'status_from_bexio' => 'no' ) );
+BWS_Status_Import::ensure_schedule();
+t( 'Abgleich abschaltbar', false === as_next_scheduled_action( BWS_Status_Import::HOOK, array(), BWS_AS_GROUP ) );
 
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

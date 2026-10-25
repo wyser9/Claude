@@ -121,6 +121,7 @@ class BWS_Admin {
 					<?php
 					self::checkbox( 'sync_products', 'Artikel übertragen', 'Produkte und Varianten werden bei jeder Änderung als bexio-Artikel angelegt/aktualisiert (Zuordnung über SKU = Artikel-Nr.).', $s );
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
+					self::checkbox( 'status_from_bexio', 'Bestellstatus aus bexio', 'Stündlich prüfen: Rechnung zum Auftrag bezahlt &rarr; Bestellung „In Bearbeitung“ (bezahlt); Rechnung bezahlt und Auftrag „Erledigt“ &rarr; „Abgeschlossen“. Der Kunde erhält dabei die üblichen WooCommerce-E-Mails.', $s );
 					self::checkbox( 'description_bullets', 'Beschreibung als Stichpunkte', 'Die bexio-Produktbeschreibung enthält die wichtigsten Fakten als Aufzählung (Merkmale wie Hersteller, Kaliber, Packungsgrösse sowie die Aufzählungspunkte der Shop-Beschreibung) statt Fliesstext.', $s );
 					self::checkbox( 'new_article_stock', 'Neue Artikel als Lagerartikel', 'Neu in bexio angelegte Artikel erhalten „Ist ein Produkt mit Lager“ (Bestand/Mindestbestand 0, Lagerort und Lagerplatz aus den Zuordnungen unten). Bestehende Artikel bleiben unverändert.', $s );
 					self::checkbox( 'sku_fallback', 'Ohne SKU übertragen', 'Produkte ohne SKU erhalten in bexio die Artikel-Nr. "WC-&lt;ID&gt;".', $s );
@@ -257,10 +258,21 @@ class BWS_Admin {
 					<?php if ( 'from_bexio' === BWS_Settings::stock_mode() ) : ?>
 						<button class="button" name="tool" value="import_stock">Lagerstatus jetzt aus bexio holen</button>
 					<?php endif; ?>
+					<?php if ( BWS_Status_Import::active() ) : ?>
+						<button class="button" name="tool" value="import_status">Bestellstatus jetzt aus bexio holen</button>
+					<?php endif; ?>
 					<button class="button" name="tool" value="backfill">Bestehende Artikel nachrüsten (Lager, Aufwandkonto, Vorsteuer)</button>
 					<button class="button" name="tool" value="flush_cache">bexio-Stammdaten neu laden</button>
 				</form>
 				<?php
+				$st = get_option( BWS_Status_Import::OPTION_LAST );
+				if ( is_array( $st ) ) :
+					?>
+					<p class="description">Letzter Statusabgleich (<?php echo esc_html( wp_date( 'd.m.Y H:i', $st['time'] ) ); ?>):
+						<?php echo isset( $st['error'] ) ? esc_html( 'Fehler – ' . $st['error'] ) : esc_html( sprintf( '%d offene Bestellungen geprüft, %d bezahlt, %d abgeschlossen, %d Fehler.', $st['checked'], $st['paid'], $st['completed'], $st['errors'] ) ); ?>
+					</p>
+					<?php
+				endif;
 				$bf = get_option( BWS_Backfill::OPT_STATUS );
 				if ( is_array( $bf ) ) :
 					?>
@@ -332,7 +344,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -366,6 +378,7 @@ class BWS_Admin {
 
 		BWS_Settings::save( $values );
 		BWS_Stock_Import::ensure_schedule();
+		BWS_Status_Import::ensure_schedule();
 		self::redirect( 'Einstellungen gespeichert.' );
 	}
 
@@ -387,6 +400,10 @@ class BWS_Admin {
 		if ( 'import_stock' === $tool ) {
 			as_enqueue_async_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP );
 			self::redirect( 'Lagerimport aus bexio wurde im Hintergrund gestartet.' );
+		}
+		if ( 'import_status' === $tool ) {
+			as_enqueue_async_action( BWS_Status_Import::HOOK, array(), BWS_AS_GROUP );
+			self::redirect( 'Statusabgleich aus bexio wurde im Hintergrund gestartet.' );
 		}
 		if ( 'flush_cache' === $tool ) {
 			BWS_Lookup::flush();

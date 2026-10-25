@@ -98,6 +98,19 @@ bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio u
 - Jede Bestellung wird **genau einmal** übertragen. Die Auftragsnummer erscheint in der Bestellnotiz und in der Box „bexio“ (mit Link zu bexio).
 - Manuell senden: In der Bestellung die Aktion **„An bexio übertragen“** wählen oder in der Bestellübersicht die gleichnamige Sammelaktion verwenden.
 
+### Bestellstatus aus bexio (stündlich)
+Wenn in bexio aus dem Auftrag eine Rechnung erstellt und diese als bezahlt markiert wird, zieht die Bestellung nach:
+
+| bexio | WooCommerce |
+|---|---|
+| Rechnung bezahlt | **In Bearbeitung** (bezahlt, Zahlungsdatum gesetzt) |
+| Rechnung bezahlt **und** Auftrag „Erledigt“ | **Abgeschlossen** |
+
+- Geprüft werden verknüpfte Bestellungen der letzten 180 Tage mit Status *Wartend*, *Zahlung ausstehend* oder *In Bearbeitung*. Abgeschlossene, stornierte und erstattete Bestellungen bleiben unverändert, ebenso alles in bexio.
+- **Zuordnung der Rechnung:** Gesucht werden die Rechnungen des Auftrags-Kontakts. Passend ist eine Rechnung, deren Titel die Bestellnummer enthält, was bei aus dem Auftrag erstellten Rechnungen der Fall ist. Trifft das auf keine zu, zählt eine Rechnung mit gleichem Total, aber nur, wenn es genau eine solche gibt. Stornierte Rechnungen zählen nicht. Bei mehreren Rechnungen (Teilrechnungen) müssen alle bezahlt sein.
+- Der Kunde erhält die üblichen WooCommerce-E-Mails („Bestellung in Bearbeitung“ bzw. „Bestellung abgeschlossen“).
+- Sofort ausführen: Knopf **„Bestellstatus jetzt aus bexio holen“** oder `wp bexio import-status`. Abschalten: Einstellung *Bestellstatus aus bexio*.
+
 ## Fehler & Protokoll
 - Log: *WooCommerce → Status → Logs*, Quelle **bexio-sync**
 - Hintergrund-Jobs: *WooCommerce → Status → Geplante Aktionen*, Gruppe **bexio-sync**. Fehlgeschlagene Jobs lassen sich dort erneut ausführen.
@@ -111,6 +124,8 @@ wp bexio products             # alle Artikel/Bestände synchron übertragen
 wp bexio products --id=123    # einzelnes Produkt
 wp bexio order 456            # einzelne Bestellung übertragen
 wp bexio import-stock         # Lagerstatus sofort aus bexio übernehmen
+wp bexio import-status        # Bezahlt/Erledigt sofort aus bexio übernehmen
+wp bexio backfill             # bestehende Artikel nachrüsten
 ```
 
 ## Anpassen (Filter)

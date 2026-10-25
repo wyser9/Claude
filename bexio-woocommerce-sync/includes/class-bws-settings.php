@@ -21,6 +21,7 @@ class BWS_Settings {
 			'stock_import_time'  => '03:00',
 			'stock_field'        => 'stock_nr', // stock_nr | stock_available_nr.
 			'sync_orders'        => 'yes',
+			'status_from_bexio'  => 'yes', // Bezahlt/Erledigt aus bexio in die Bestellung übernehmen.
 			'order_statuses'     => array( 'processing', 'completed' ),
 			'price_mode'         => function_exists( 'wc_prices_include_tax' ) && wc_prices_include_tax() ? 'gross' : 'net',
 			'sku_fallback'       => 'yes',
