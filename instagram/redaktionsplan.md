@@ -511,7 +511,7 @@ Marken-Tag (optional): @sigsauerinc im Bild (Slide 1) und in der Caption. Keine 
 
 ### #10 – So 25.10.2026, 20:00 – Karussell – Säule 3: Vergleich – Walther PDP Pro vs. PDP Compact Full Steel (9×19)
 
-**Status:** Entwurf – wartet auf Freigabe (zusammen mit Woche 2, spätestens Fr 23.10.2026, 18:00). Auf Wunsch des Inhabers vom Einzel-Beitrag zum Vergleich umgebaut (11.10.2026).
+**Status:** ✅ Veröffentlicht 25.10.2026, 20:02 (armatum_ch) – https://www.instagram.com/p/De7aYhJifea/ – Story mit Slide 01 gepostet.
 
 **Terminwahl:** So 25.10., 20:00. In Woche 2 sind Di 20.10. (#5), Mi 21.10. (#6), Do 22.10. (#7) und Sa 24.10. (#8) belegt. Mo 19.10. fällt weg, weil er direkt auf #9 folgt. Fr 23.10. käme direkt nach dem Produkttest #7, das wären zwei Produkt-Beiträge hintereinander. Der So 25.10. liegt genau eine Woche nach #9, am selben Wochentag und zur selben Uhrzeit. So lassen sich die beiden Waffen-Vorstellungen direkt vergleichen (Test des Slots So 20:00). 20:00 liegt in der Spitze der Insights (20–22 Uhr).
 
@@ -692,7 +692,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Di 20.10. | 12:00 | Umfrage-Story «Was willst du hier öfter sehen?» – Inhaber postet selbst mit Umfrage-Sticker (API kann keine Sticker) | Bild bereit |
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | ✅ veröffentlicht 18:31 – https://www.instagram.com/p/De1_iC8G4EB/ |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | ✅ veröffentlicht 09:31 – https://www.instagram.com/p/De3mju3lTSa/ |
-| So 25.10. | 20:00 | #10 Walther PDP Vergleich | geplant (automatisch) |
+| So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
@@ -1094,3 +1094,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-24 | #17 Dies oder das? veröffentlicht (09:31, armatum_ch): https://www.instagram.com/p/De3mju3lTSa/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-25 | Wochen-Routine: Woche 26.10.–01.11. geplant: #20 GPO-Spektive (Di 27.10.), #21 K31 (Mi 28.10.), #22 Gehörschutz (Do 29.10.). Fr/Sa/So ohne Feed-Post (Sa 31.10. kein Öffnungs-Samstag, Shop-News falls nötig). Reel diese Woche ausgelassen (Insights: Reel #16 nur 6 Likes; Waffen-Neuheiten/Swissness laufen besser). Grafiken + WhatsApp-Status gerendert. |
 | 2026-10-25 | Inhaber schickt Foto von Vollmantelgeschossen → #23 (Fr 30.10. 18:30) als Wiederladen-Karussell mit dem Foto auf Slide 1. |
+| 2026-10-25 | #10 Walther PDP Vergleich veröffentlicht (20:02, armatum_ch): https://www.instagram.com/p/De7aYhJifea/ + Story. |
