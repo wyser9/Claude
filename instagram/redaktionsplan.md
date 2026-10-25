@@ -101,6 +101,7 @@ Messing `#B08D57` ist gestrichen (Begründung in `marke.md`, Abschnitt 5: wirkt 
 | 20 | 27.10.2026 | Di | 18:30 | Karussell (6 Slides) | 3 Produkt-Vorstellung | Neu: 3 GPO-Spektive | «Neu bei Armatum: 3 Spektive von GPO» | Autopilot – geplant |
 | 21 | 28.10.2026 | Mi | 18:30 | Karussell (7 Slides, dunkel) | 4 Schiesssport & Jagd CH | Schweizer Klassiker: der K31 | «Schweizer Klassiker im Fokus: der K31» | Autopilot – geplant |
 | 22 | 29.10.2026 | Do | 19:00 | Karussell (8 Slides, dunkel) | 1 Wissen & Tipps | Gehörschutz am Stand | «Stöpsel, Kapsel oder beides?» | Autopilot – geplant |
+| 23 | 30.10.2026 | Fr | 18:30 | Karussell (6 Slides, dunkel + Foto) | 2 Wiederladen | Das Geschoss – was steckt drin? | «Das Geschoss: was steckt drin?» | Autopilot – geplant |
 
 Rhythmus: 4 Feed-Posts pro Woche, Stories täglich. So und Mo sind ohne Feed-Post. Ausnahme: #9 (So 18.10.) und #10 (So 25.10.) als 5. Feed-Post der jeweiligen Woche, zugleich Test des 20-Uhr-Slots am Sonntag. Weitere Ausnahme: #11 (Mo 12.10., 20:00) eröffnet als Relaunch-Beitrag die erste Content-Woche vor #1 (Di). Säulen in den 2 Wochen: Wissen 2×, Wiederladen 2×, Produkt 3× (mit #9, #10), Schiesssport/Jagd 1×, Community 2×.
 
@@ -789,6 +790,37 @@ Speichern für den nächsten Standbesuch. Stöpsel, Kapsel oder beides – was t
 
 ---
 
+### #23 – Fr 30.10.2026, 18:30 – Karussell – Säule 2: Das Geschoss – was steckt drin?
+
+**Status:** Autopilot – geplant (Foto vom Inhaber, 25.10.2026). Veröffentlichung Fr 30.10. 18:30, Sicherheitsnetz +10 Min.
+
+**Grafiken:** `instagram/grafiken/23-geschosse/01.jpg` ff. (6 Slides), Originalfoto `instagram/fotos/wiederladen/geschosse-2026-10-25.jpg`, WhatsApp-Status `whatsapp/posts/23-geschosse.jpg`.
+
+**Caption zum Kopieren:**
+```
+Das Geschoss: was steckt drin? 🔧
+
+Beim Wiederladen setzt du es als Letztes – und doch entscheidet es mit über Treffbild und Einsatzzweck: das Geschoss. Unser Foto zeigt Vollmantelgeschosse: ein Bleikern, umschlossen von einem Kupfer- bzw. Tombakmantel, der Boden bleibt offen.
+
+Darauf kommt es an:
+▪️ Aufbau: Mantel und Kern
+▪️ Bauform: Vollmantel, Teilmantel, Hohlspitz oder Blei – je nach Einsatz
+▪️ Passend zur Waffe: richtiger Durchmesser, Gewicht und Form
+
+⚠️ Ladedaten (Pulversorte, Menge, Patronenlänge) ausschliesslich aus den aktuellen Tabellen der Pulver- und Geschosshersteller – nie aus Foren oder von Social Media. Schutzbrille tragen, konzentriert arbeiten.
+
+👉 Swipe für die Details.
+
+Wiederladen lernen? Bei uns in Fulenbach gibt's Wiederladekurse, danach kannst du einen voll ausgerüsteten Arbeitsplatz mieten. Infos über den Link in der Bio.
+
+Mit welchem Geschoss lädst du am liebsten? 👇
+
+#wiederladen #reloading #geschosse #präzisionsschiessen #schweiz
+```
+**Regel-Check:** ✅ Eigenes Foto des Inhabers (Geschosse, keine Waffe, keine Personen, keine lesbaren Angaben/Seriennummern/Preise). Keine Ladedaten, Verweis auf Herstellertabellen, Sicherheitshinweis enthalten. Kurse/Arbeitsplatzmiete ohne Preis (Website). Kaliber bewusst nicht genannt (nicht belegt). Kein Verkauf, kein Kaufaufruf.
+
+---
+
 ### #15 – Di 20.10.2026, 18:30 – Karussell – Säule 2: Hülsenvorbereitung in 5 Schritten
 
 **Status:** ✅ Veröffentlicht 20.10.2026, 18:32 (armatum_ch) – https://www.instagram.com/p/DeuROKOm9qN/ – Story mit Slide 01 gepostet.
@@ -1061,3 +1093,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-23 | #19 Walther PDP PRO A-Cut veröffentlicht (18:31, armatum_ch): https://www.instagram.com/p/De1_iC8G4EB/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-24 | #17 Dies oder das? veröffentlicht (09:31, armatum_ch): https://www.instagram.com/p/De3mju3lTSa/ + Story. WhatsApp-Status an Inhaber. |
 | 2026-10-25 | Wochen-Routine: Woche 26.10.–01.11. geplant: #20 GPO-Spektive (Di 27.10.), #21 K31 (Mi 28.10.), #22 Gehörschutz (Do 29.10.). Fr/Sa/So ohne Feed-Post (Sa 31.10. kein Öffnungs-Samstag, Shop-News falls nötig). Reel diese Woche ausgelassen (Insights: Reel #16 nur 6 Likes; Waffen-Neuheiten/Swissness laufen besser). Grafiken + WhatsApp-Status gerendert. |
+| 2026-10-25 | Inhaber schickt Foto von Vollmantelgeschossen → #23 (Fr 30.10. 18:30) als Wiederladen-Karussell mit dem Foto auf Slide 1. |

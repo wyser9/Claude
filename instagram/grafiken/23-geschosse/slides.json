@@ -1,0 +1,13 @@
+{ "post": "#23 – Fr 30.10.2026 18:30 – Geschosse: was steckt drin?",
+  "slides": [
+    { "type": "shot", "kicker": "Wiederladen", "title": "Das Geschoss: was steckt drin? 🔧", "image": "src-geschosse.png", "maxWidth": 860, "maxHeight": 860 },
+    { "type": "content", "badge": "1", "kicker": "Aufbau", "title": "Mantel und Kern",
+      "body": "Ein Vollmantelgeschoss besteht aus einem **Bleikern**, der von einem **Kupfer- oder Tombakmantel** umschlossen ist. Der Boden ist offen – so wie auf dem Foto." },
+    { "type": "content", "badge": "2", "kicker": "Bauformen", "title": "Nicht jedes Geschoss ist gleich",
+      "body": "**Vollmantel**, Teilmantel, Hohlspitz oder Bleigeschoss: Form und Aufbau bestimmen, **wofür** ein Geschoss gedacht ist – Training, Wettkampf oder Jagd." },
+    { "type": "content", "badge": "3", "kicker": "Auswahl", "title": "Passt es zu deiner Waffe?",
+      "body": "Wichtig sind der **richtige Durchmesser** fürs Kaliber, das **Gewicht** und die **Form**. Beides richtet sich nach der Ladetabelle des Herstellers." },
+    { "type": "content", "badge": "!", "kicker": "Sicherheit", "title": "Ladedaten nur vom Hersteller",
+      "body": "Pulversorte, Menge und Patronenlänge **ausschliesslich aus den aktuellen Tabellen** der Pulver- und Geschosshersteller. Nie aus Foren oder Social Media.\n\nSchutzbrille, ein aufgeräumter Arbeitsplatz, keine Ablenkung." },
+    { "type": "cta", "title": "Wiederladen lernen in Fulenbach", "body": "Kurse und gewartete Arbeitsplätze zum Mieten – Infos über den Link in der Bio.\n\nMit welchem Geschoss lädst du am liebsten? 👇" }
+  ] }
