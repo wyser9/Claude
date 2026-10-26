@@ -694,8 +694,42 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | ✅ veröffentlicht 09:31 – https://www.instagram.com/p/De3mju3lTSa/ |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
+| So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
+
+---
+
+### #24 – So 01.11.2026, 20:00 – Reel mit Sprecherstimme (Eric) – Säule 1: FFP + MIL – warum das zusammengehört (Beispiele Arken Optics)
+
+**Status:** Autopilot – geplant. Freigabe Inhaber 26.10.2026 («Ja» auf den Vorschlag Wissens-Post FFP/MIL mit Arken, ohne Preis). Wochen-Reel für 26.10.–1.11. Anschluss an Reel #16 MOA/MIL.
+
+**Material:** `instagram/grafiken/24-ffp-mil-arken/01.jpg`–`06.jpg` (Fallback-Karussell), `reel-voice.mp4` (29,9 s, ElevenLabs «Eric», atempo 1.1), `reel-cover.jpg`, WhatsApp-Status `whatsapp/posts/24-ffp-mil-arken.jpg`.
+
+**Sprechtext:** «FFP und MIL. Warum das zusammengehört. Bei einem Absehen in der ersten Bildebene wächst die Skala mit dem Zoom mit. Die Werte stimmen also bei jeder Vergrösserung. Rechnen Absehen und Türme beide in MIL, musst du nichts umrechnen. Treffer null Komma vier MIL zu tief? Dann einfach vier Klicks hoch. Zwei Beispiele aus unserem Sortiment: das Arken SH-4 und das Arken EP-5, beide mit MIL-Absehen in der ersten Bildebene. Alle Infos auf armatum.ch.»
+
+**Caption zum Kopieren:**
+```
+FFP + MIL: warum das zusammengehört 🎯
+
+Zwei Dinge machen das Schiessen auf Distanz einfacher:
+
+1️⃣ Absehen in der 1. Bildebene (FFP): Die Skala wächst mit dem Zoom mit – die MIL-Werte stimmen bei jeder Vergrösserung.
+2️⃣ Absehen und Türme in derselben Einheit: Treffer 0,4 MIL zu tief? Am Absehen ablesen, 4 Klicks hoch (1 Klick = 0,1 MIL = 1 cm auf 100 m).
+
+Zwei Beispiele aus unserem Sortiment:
+▪️ Arken Optics SH-4 Gen2 4-16×50 FFP – VPR-MIL-Absehen, beleuchtet
+▪️ Arken Optics EP-5 Gen2 5-25×56 FFP – VPR-MIL-Absehen, beleuchtet, für weite Distanzen
+
+👉 Im Video: das Prinzip in 30 Sekunden.
+
+Alle Infos auf armatum.ch (Link in der Bio). Fragen zu Optik und Absehen? Wir beraten dich gern im Laden in Fulenbach.
+
+Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
+```
+**Hashtags:** `#zielfernrohr #longrange #präzisionsschiessen #arkenoptics #schweiz`
+
+**Regel-Check:** ✅ Optik (keine Waffe/Munition), keine Preise und keine Preissenkung erwähnt, kein «verfügbar»/Kaufaufruf, nur Link in der Bio. Daten aus den Shop-Merkmalen (Vergrösserung, Objektiv, Absehen, Gewicht, Garantie). Rechenbeispiel geprüft (0,4 MIL = 4 Klicks à 0,1 MIL; 0,1 MRAD = 1 cm auf 100 m). Hinweis: Beschreibungstext des SH-4 im Shop beschreibt fälschlich das EPL-4 4-16×44 – nicht verwendet, an Mark gemeldet.
 
 ---
 
@@ -1095,3 +1129,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-25 | Wochen-Routine: Woche 26.10.–01.11. geplant: #20 GPO-Spektive (Di 27.10.), #21 K31 (Mi 28.10.), #22 Gehörschutz (Do 29.10.). Fr/Sa/So ohne Feed-Post (Sa 31.10. kein Öffnungs-Samstag, Shop-News falls nötig). Reel diese Woche ausgelassen (Insights: Reel #16 nur 6 Likes; Waffen-Neuheiten/Swissness laufen besser). Grafiken + WhatsApp-Status gerendert. |
 | 2026-10-25 | Inhaber schickt Foto von Vollmantelgeschossen → #23 (Fr 30.10. 18:30) als Wiederladen-Karussell mit dem Foto auf Slide 1. |
 | 2026-10-25 | #10 Walther PDP Vergleich veröffentlicht (20:02, armatum_ch): https://www.instagram.com/p/De7aYhJifea/ + Story. |
+| 2026-10-26 | Inhaber «Ja» zum Wissens-Post FFP/MIL mit Arken: #24 als Reel mit ElevenLabs-Stimme «Eric» (29,9 s) + Fallback-Karussell erstellt, auf So 01.11. 20:00 terminiert (Sicherheitsnetz 20:10). |

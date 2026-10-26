@@ -1,0 +1,13 @@
+{ "post": "#24 – So 01.11.2026 20:00 – Reel – FFP + MIL (Arken)",
+  "slides": [
+    { "type": "product", "kicker": "Zielfernrohr-Wissen", "title": "FFP + MIL: warum das zusammengehört", "titleSize": 72, "images": ["src-ep5.png"], "imgHeight": 470,
+      "body": "**Absehen und Türme in derselben Einheit –** und die Skala stimmt bei jedem Zoom." },
+    { "type": "product", "kicker": "Schritt 1", "title": "FFP: Absehen in der 1. Bildebene", "titleSize": 64, "images": ["src-vpr.png"], "imgHeight": 520,
+      "body": "Das Absehen wächst mit dem Zoom mit. Die MIL-Striche stimmen bei **jeder Vergrösserung**." },
+    { "type": "content", "badge": "1:1", "kicker": "Schritt 2", "title": "MIL am Absehen = MIL am Turm", "body": "Treffer **0,4 MIL** zu tief? Am Absehen ablesen, **4 Klicks** hoch.\n\n1 Klick = 0,1 MIL = 1 cm auf 100 m. Kein Umrechnen, kein Rätseln." },
+    { "type": "product", "kicker": "Arken Optics", "title": "SH-4 Gen2 4-16×50 FFP", "images": ["src-sh4.png"], "imgHeight": 420,
+      "rows": [["Zoom", "4–16× · 50 mm Objektiv"], ["Absehen", "VPR MIL, 1. Bildebene, beleuchtet"], ["Gewicht", "1009 g · 34-mm-Mittelrohr"], ["Garantie", "25 Jahre"]] },
+    { "type": "product", "kicker": "Arken Optics", "title": "EP-5 Gen2 5-25×56 FFP", "images": ["src-ep5-b.png"], "imgHeight": 420,
+      "rows": [["Zoom", "5–25× · 56 mm Objektiv"], ["Absehen", "VPR MIL, 1. Bildebene, beleuchtet"], ["Gewicht", "1110 g · 34-mm-Mittelrohr"], ["Garantie", "25 Jahre"]] },
+    { "type": "cta", "title": "Alle Infos auf armatum.ch", "body": "Team MIL oder Team MOA? 👇\nFragen? Wir beraten dich im Laden in Fulenbach." }
+  ] }
