@@ -122,6 +122,24 @@ class BWS_Admin {
 					self::checkbox( 'sync_products', 'Artikel übertragen', 'Produkte und Varianten werden bei jeder Änderung als bexio-Artikel angelegt/aktualisiert (Zuordnung über SKU = Artikel-Nr.).', $s );
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
 					self::checkbox( 'status_from_bexio', 'Bestellstatus aus bexio', 'Stündlich prüfen: Rechnung zum Auftrag bezahlt &rarr; Bestellung „In Bearbeitung“ (bezahlt); Rechnung bezahlt und Auftrag „Erledigt“ &rarr; „Abgeschlossen“. Der Kunde erhält dabei die üblichen WooCommerce-E-Mails.', $s );
+					self::checkbox( 'tracking_to_bexio', 'Sendungsnummer nach bexio', 'Wird mit „Armatum Post Label“ ein Label erstellt (nicht im Testmodus), steht die Sendungsnummer mit Tracking-Link als interner Kommentar im bexio-Auftrag.', $s );
+					self::checkbox( 'cancel_to_bexio', 'Storno melden', 'Wird eine übertragene Bestellung im Shop storniert, erhält der bexio-Auftrag einen Kommentar und du eine E-Mail, den Auftrag in bexio zu stornieren (die bexio-Schnittstelle kann Aufträge nicht selbst stornieren).', $s );
+					?>
+					<tr>
+						<th><label for="bws_payment_reminder_days">Unbezahlte Vorkasse melden nach</label></th>
+						<td>
+							<input type="number" min="0" max="365" id="bws_payment_reminder_days" name="payment_reminder_days" value="<?php echo (int) $s['payment_reminder_days']; ?>" class="small-text"> Tagen
+							<p class="description">Täglich um <?php echo esc_html( BWS_Order_Events::REMINDER_TIME ); ?> Uhr: Sammel-E-Mail mit Banküberweisungs-Bestellungen, die nach dieser Frist noch „Wartend“ sind (jede nur einmal). 0 = aus.</p>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="bws_notify_email">Hinweise an</label></th>
+						<td>
+							<input type="email" id="bws_notify_email" name="notify_email" value="<?php echo esc_attr( $s['notify_email'] ); ?>" class="regular-text" placeholder="<?php echo esc_attr( get_option( 'admin_email' ) ); ?>">
+							<p class="description">E-Mail für Zahlungs- und Storno-Hinweise. Leer = Admin-E-Mail der Website.</p>
+						</td>
+					</tr>
+					<?php
 					self::checkbox( 'description_bullets', 'Beschreibung als Stichpunkte', 'Die bexio-Produktbeschreibung enthält die wichtigsten Fakten als Aufzählung (Merkmale wie Hersteller, Kaliber, Packungsgrösse sowie die Aufzählungspunkte der Shop-Beschreibung) statt Fliesstext.', $s );
 					self::checkbox( 'new_article_stock', 'Neue Artikel als Lagerartikel', 'Neu in bexio angelegte Artikel erhalten „Ist ein Produkt mit Lager“ (Bestand/Mindestbestand 0, Lagerort und Lagerplatz aus den Zuordnungen unten). Bestehende Artikel bleiben unverändert.', $s );
 					self::checkbox( 'sku_fallback', 'Ohne SKU übertragen', 'Produkte ohne SKU erhalten in bexio die Artikel-Nr. "WC-&lt;ID&gt;".', $s );
@@ -344,7 +362,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -357,6 +375,8 @@ class BWS_Admin {
 		$values['stock_field']        = ( isset( $_POST['stock_field'] ) && 'stock_available_nr' === $_POST['stock_field'] ) ? 'stock_available_nr' : 'stock_nr';
 		$values['order_statuses']     = isset( $_POST['order_statuses'] ) ? array_map( 'sanitize_key', (array) wp_unslash( $_POST['order_statuses'] ) ) : array();
 		$values['price_mode']         = ( isset( $_POST['price_mode'] ) && 'net' === $_POST['price_mode'] ) ? 'net' : 'gross';
+		$values['payment_reminder_days'] = isset( $_POST['payment_reminder_days'] ) ? min( 365, absint( $_POST['payment_reminder_days'] ) ) : 0;
+		$values['notify_email']          = isset( $_POST['notify_email'] ) ? sanitize_email( wp_unslash( $_POST['notify_email'] ) ) : '';
 		$values['order_title_prefix'] = isset( $_POST['order_title_prefix'] ) ? sanitize_text_field( wp_unslash( $_POST['order_title_prefix'] ) ) : '';
 
 		$values['serial_categories'] = isset( $_POST['serial_categories'] ) ? array_values( array_filter( array_map( 'absint', (array) wp_unslash( $_POST['serial_categories'] ) ) ) ) : array();
@@ -379,6 +399,7 @@ class BWS_Admin {
 		BWS_Settings::save( $values );
 		BWS_Stock_Import::ensure_schedule();
 		BWS_Status_Import::ensure_schedule();
+		BWS_Order_Events::ensure_schedule();
 		self::redirect( 'Einstellungen gespeichert.' );
 	}
 

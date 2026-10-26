@@ -28,3 +28,6 @@ Beim ersten Aufruf nach dem Update werden die Muster-Labels der Version 0.1 (öf
 php tests/test-util.php
 wp eval-file wp-content/plugins/armatum-post-label/tests/integration.php   # nur Test-Installation
 ```
+
+## Für andere Plugins
+Nach jedem erstellten Label wird `do_action( 'apl_label_created', $order, $ident_code, $preview )` ausgelöst. *bexio WooCommerce Sync* (ab 1.6.0) nutzt das, um die Sendungsnummer in den bexio-Auftrag zu schreiben.

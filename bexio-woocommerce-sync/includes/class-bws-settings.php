@@ -22,6 +22,10 @@ class BWS_Settings {
 			'stock_field'        => 'stock_nr', // stock_nr | stock_available_nr.
 			'sync_orders'        => 'yes',
 			'status_from_bexio'  => 'yes', // Bezahlt/Erledigt aus bexio in die Bestellung übernehmen.
+			'tracking_to_bexio'  => 'yes', // Post-Sendungsnummer als Kommentar in den bexio-Auftrag.
+			'cancel_to_bexio'    => 'yes', // Storno im Shop: Kommentar in bexio + Hinweis an den Shop.
+			'payment_reminder_days' => 10, // Hinweis bei unbezahlter Vorkasse nach X Tagen (0 = aus).
+			'notify_email'       => '', // Empfänger der Hinweise (leer = Admin-E-Mail).
 			'order_statuses'     => array( 'processing', 'completed' ),
 			'price_mode'         => function_exists( 'wc_prices_include_tax' ) && wc_prices_include_tax() ? 'gross' : 'net',
 			'sku_fallback'       => 'yes',

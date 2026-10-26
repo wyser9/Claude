@@ -104,6 +104,12 @@ $GLOBALS['apl_quality'] = 'CERTIFIED';
 $pick = wc_create_order(); $ps = new WC_Order_Item_Shipping(); $ps->set_method_title( 'Abholung vor Ort' ); $ps->set_method_id( 'local_pickup' ); $pick->add_item( $ps ); $pick->save();
 t( 'Abholung abgelehnt', false !== strpos( $err( function () use ( $pick ) { APL_Label::create( $pick, 1000, false, false ); } ), 'abgeholt' ) );
 
+// Hook für andere Plugins (bexio: Sendungsnummer in den Auftrag).
+$hooked = array();
+add_action( 'apl_label_created', function ( $o, $ident, $preview ) use ( &$hooked ) { $hooked[] = array( $o->get_id(), $ident, $preview ); }, 10, 3 );
+APL_Label::create( $order, 1000, false, false );
+t( 'Hook apl_label_created mit Sendungsnummer', 1 === count( $hooked ) && $hooked[0][0] === $order->get_id() && '' !== $hooked[0][1] && is_bool( $hooked[0][2] ), wp_json_encode( $hooked ) );
+
 // Box rendert.
 ob_start(); APL_Admin::render_box( $order ); $box = ob_get_clean();
 t( 'Box zeigt Sendungsnummer und Formular', false !== strpos( $box, '996012345600000099' ) && false !== strpos( $box, 'apl_create_label' ) && false !== strpos( $box, 'data-apl="apl_weight"' ) );

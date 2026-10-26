@@ -111,6 +111,17 @@ Wenn in bexio aus dem Auftrag eine Rechnung erstellt und diese als bezahlt marki
 - Der Kunde erhält die üblichen WooCommerce-E-Mails („Bestellung in Bearbeitung“ bzw. „Bestellung abgeschlossen“).
 - Sofort ausführen: Knopf **„Bestellstatus jetzt aus bexio holen“** oder `wp bexio import-status`. Abschalten: Einstellung *Bestellstatus aus bexio*.
 
+### Sendungsnummer → bexio-Auftrag
+Wird mit dem Plugin **Armatum Post Label** ein Label erstellt (nicht im Testmodus), schreibt das Plugin die Sendungsnummer samt Tracking-Link als **internen Kommentar** in den bexio-Auftrag. Der Kunde sieht den Kommentar nicht. Ein neu erstelltes Label führt zu einem weiteren Kommentar, dieselbe Nummer wird nicht doppelt eingetragen. Einstellung: *Sendungsnummer nach bexio*.
+
+### Unbezahlte Vorkasse melden (täglich 07:45)
+Banküberweisungs-Bestellungen (auch Scheck), die nach der eingestellten Frist (Standard 10 Tage) noch *Wartend* oder *Zahlung ausstehend* sind, kommen in eine Sammel-E-Mail an *Hinweise an*. Leer bedeutet die Admin-E-Mail. Jede Bestellung wird nur einmal gemeldet und erhält eine Bestellnotiz. 0 Tage = aus. Bezahlt gilt eine Bestellung, sobald der stündliche Statusabgleich die bezahlte bexio-Rechnung übernommen hat.
+
+### Storno im Shop
+Wird eine bereits übertragene Bestellung storniert, bekommt der bexio-Auftrag einen internen Kommentar („im Shop storniert“). Zusätzlich geht eine E-Mail an *Hinweise an*, den Auftrag und eine allfällige Rechnung in bexio zu stornieren. Die bexio-Schnittstelle kann Aufträge nicht stornieren, Rechnungen fasst das Plugin bewusst nicht an. Einstellung: *Storno melden*.
+
+> In bexio fügt das Plugin bei diesen drei Funktionen nur Kommentare hinzu. Auftrag, Positionen, Status, Rechnungen und Lager bleiben unverändert.
+
 ## Fehler & Protokoll
 - Log: *WooCommerce → Status → Logs*, Quelle **bexio-sync**
 - Hintergrund-Jobs: *WooCommerce → Status → Geplante Aktionen*, Gruppe **bexio-sync**. Fehlgeschlagene Jobs lassen sich dort erneut ausführen.

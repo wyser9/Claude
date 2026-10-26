@@ -47,6 +47,10 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 		return resp( array( 'id' => 900, 'document_nr' => 'AU-00001', 'total' => number_format( $total, 2, '.', '' ) ) );
 	}
 	if ( 'GET' === $m && preg_match( '#^2\.0/kb_order/(\d+)$#', $path, $mm ) && isset( $GLOBALS['bws_kb'][ (int) $mm[1] ] ) ) return resp( $GLOBALS['bws_kb'][ (int) $mm[1] ] );
+	if ( 'POST' === $m && preg_match( '#^2\.0/kb_order/(\d+)/comment$#', $path, $mm ) ) {
+		if ( empty( $body['text'] ) || empty( $body['user_id'] ) || empty( $body['user_name'] ) ) return resp( array( 'message' => 'missing' ), 422 );
+		return resp( array_merge( $body, array( 'id' => 1 ) ) );
+	}
 	if ( 'POST' === $m && '2.0/kb_invoice/search' === $path ) {
 		return resp( array_values( array_filter( $GLOBALS['bws_invoices'] ?? array(), function ( $i ) use ( $body ) { return (int) $i['contact_id'] === (int) $body[0]['value']; } ) ) );
 	}
@@ -510,5 +514,58 @@ t( 'Stündlicher Abgleich eingeplant', is_int( as_next_scheduled_action( BWS_Sta
 BWS_Settings::save( array( 'status_from_bexio' => 'no' ) );
 BWS_Status_Import::ensure_schedule();
 t( 'Abgleich abschaltbar', false === as_next_scheduled_action( BWS_Status_Import::HOOK, array(), BWS_AS_GROUP ) );
+
+// --- Sendungsnummer, Zahlungshinweis, Storno ---
+$GLOBALS['bws_mails'] = array();
+add_filter( 'pre_wp_mail', function ( $r, $atts ) { $GLOBALS['bws_mails'][] = $atts; return true; }, 10, 2 );
+$comments = function () { return array_values( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0] && '/comment' === substr( $r[1], -8 ); } ) ); };
+BWS_Settings::save( array( 'notify_email' => 'shop@armatum.ch', 'payment_reminder_days' => 10 ) );
+$ot = $mk( 'processing', 811 );
+$GLOBALS['bws_requests'] = array();
+do_action( 'apl_label_created', $ot, '99.60.123456.12345678', true );
+t( 'Testlabel: kein Kommentar', ! $comments() && ! as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $ot->get_id(), 'tracking', '99.60.123456.12345678' ), BWS_AS_GROUP ) );
+do_action( 'apl_label_created', $ot, '99.60.123456.12345678', false );
+t( 'Label: Kommentar-Job eingeplant', as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $ot->get_id(), 'tracking', '99.60.123456.12345678' ), BWS_AS_GROUP ) );
+BWS_Order_Events::run_comment_job( $ot->get_id(), 'tracking', '99.60.123456.12345678' );
+$c = $comments();
+t( 'Sendungsnummer als interner Kommentar im Auftrag', 1 === count( $c ) && '2.0/kb_order/811/comment' === $c[0][1] && false !== strpos( $c[0][2]['text'], '99.60.123456.12345678' ) && false !== strpos( $c[0][2]['text'], 'swisspost-tracking' ) && false === $c[0][2]['is_public'] && 'Max Muster' === $c[0][2]['user_name'], wp_json_encode( $c ) );
+BWS_Order_Events::run_comment_job( $ot->get_id(), 'tracking', '99.60.123456.12345678' );
+t( 'Gleiche Sendungsnummer nicht doppelt', 1 === count( $comments() ) );
+$unlinked = wc_create_order(); $unlinked->save();
+do_action( 'apl_label_created', $unlinked, '99.1', false );
+t( 'Nicht übertragene Bestellung: nichts', ! as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $unlinked->get_id(), 'tracking', '99.1' ), BWS_AS_GROUP ) );
+
+// Zahlungshinweis.
+$old1 = $mk( 'on-hold', 812 ); $old1->set_date_created( time() - 12 * DAY_IN_SECONDS ); $old1->save();
+$old2 = $mk( 'on-hold', 813 ); $old2->set_payment_method( 'twint_regular' ); $old2->set_date_created( time() - 12 * DAY_IN_SECONDS ); $old2->save();
+$new1 = $mk( 'on-hold', 814 ); $new1->set_date_created( time() - 3 * DAY_IN_SECONDS ); $new1->save();
+$GLOBALS['bws_mails'] = array();
+$cnt = BWS_Order_Events::run_reminder();
+$ids = wp_list_pluck( BWS_Order_Events::overdue_orders(), 'id' );
+$mail = $GLOBALS['bws_mails'][0] ?? array();
+t( 'Hinweis-Mail an Shop mit überfälliger Vorkasse', 1 === count( $GLOBALS['bws_mails'] ) && 'shop@armatum.ch' === $mail['to'] && false !== strpos( $mail['message'], '#' . $old1->get_order_number() . ' ' ), wp_json_encode( $mail ) );
+t( 'TWINT und neue Bestellung nicht gemeldet', false === strpos( $mail['message'] ?? '', '#' . $old2->get_order_number() . ' ' ) && false === strpos( $mail['message'] ?? '', '#' . $new1->get_order_number() . ' ' ) );
+t( 'Notiz in gemeldeter Bestellung', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $old1->get_id() ) ), 'content' ) ), 'unbezahlt' ) );
+$GLOBALS['bws_mails'] = array();
+t( 'Zweiter Lauf meldet nichts erneut', 0 === BWS_Order_Events::run_reminder() && ! $GLOBALS['bws_mails'] );
+BWS_Order_Events::ensure_schedule();
+t( 'Täglicher Hinweis eingeplant', is_int( as_next_scheduled_action( BWS_Order_Events::HOOK_REMINDER, array(), BWS_AS_GROUP ) ) );
+BWS_Settings::save( array( 'payment_reminder_days' => 0 ) );
+BWS_Order_Events::ensure_schedule();
+t( 'Hinweis abschaltbar', false === as_next_scheduled_action( BWS_Order_Events::HOOK_REMINDER, array(), BWS_AS_GROUP ) );
+
+// Storno.
+$GLOBALS['bws_requests'] = array(); $GLOBALS['bws_mails'] = array();
+$ox = $mk( 'processing', 815 );
+$ox->update_status( 'cancelled' );
+t( 'Storno: Job eingeplant', as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $ox->get_id(), 'cancelled', '' ), BWS_AS_GROUP ) );
+BWS_Order_Events::run_comment_job( $ox->get_id(), 'cancelled', '' );
+$c = $comments();
+$bws_mails = function () { return array_values( array_filter( $GLOBALS['bws_mails'], function ( $m ) { return false !== strpos( $m['subject'], 'bexio-Auftrag' ); } ) ); };
+t( 'Storno-Kommentar im bexio-Auftrag', 1 === count( $c ) && '2.0/kb_order/815/comment' === $c[0][1] && false !== strpos( $c[0][2]['text'], 'storniert' ), wp_json_encode( $c ) );
+t( 'Storno-Mail an Shop', 1 === count( $bws_mails() ) && 'shop@armatum.ch' === $bws_mails()[0]['to'] && false !== strpos( $bws_mails()[0]['message'], 'Auftrag 815 ' ) && false !== strpos( $bws_mails()[0]['message'], 'CHF120.00' ), wp_json_encode( $GLOBALS['bws_mails'] ) );
+t( 'Storno: sonst nichts in bexio geändert', 1 === count( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' !== $r[0]; } ) ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
+BWS_Order_Events::run_comment_job( $ox->get_id(), 'cancelled', '' );
+t( 'Storno nur einmal gemeldet', 1 === count( $comments() ) && 1 === count( $bws_mails() ) );
 
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

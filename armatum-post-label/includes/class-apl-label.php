@@ -312,6 +312,15 @@ class APL_Label {
 		$order->save();
 
 		apl_log( 'info', sprintf( 'Bestellung #%s: Label %s (%s)%s', $order->get_order_number(), $result['ident_code'], $services, $preview ? ' [Testmodus]' : '' ) );
+
+		/**
+		 * Label erstellt (z.B. für bexio: Sendungsnummer in den Auftrag).
+		 *
+		 * @param WC_Order $order   Bestellung.
+		 * @param string   $ident   Sendungsnummer.
+		 * @param bool     $preview Testlabel (SPECIMEN).
+		 */
+		do_action( 'apl_label_created', $order, $result['ident_code'], $preview );
 		return $result['ident_code'];
 	}
 

@@ -59,6 +59,22 @@ class BWS_Lookup {
 	}
 
 	/**
+	 * Name des bexio-Benutzers (für Kommentare).
+	 *
+	 * @return string
+	 */
+	public static function user_name() {
+		$me   = self::cached(
+			'me',
+			function () {
+				return BWS_Client::instance()->get( '3.0/users/me' );
+			}
+		);
+		$name = trim( ( $me['firstname'] ?? '' ) . ' ' . ( $me['lastname'] ?? '' ) );
+		return '' !== $name ? $name : 'WooCommerce';
+	}
+
+	/**
 	 * Aktive Umsatzsteuern.
 	 *
 	 * @return array
