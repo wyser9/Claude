@@ -1,17 +1,63 @@
-{ "post": "#22 – Do 29.10.2026 19:00 – Gehörschutz am Stand",
-  "slides": [
-    { "type": "cover", "title": "Gehörschutz am Stand", "subtitle": "Stöpsel, Kapsel oder beides?" },
-    { "type": "content", "badge": "!", "kicker": "Warum überhaupt", "title": "Ein Knall genügt",
-      "body": "Ein Schuss erreicht Spitzenpegel **weit über 140 Dezibel**. Schon ein einzelner Knall ohne Schutz kann dem Gehör **bleibend schaden**." },
-    { "type": "content", "badge": "1", "kicker": "Variante 1", "title": "Gehörstöpsel",
-      "body": "Klein, leicht und stören weder Schaft noch Brille. Wichtig ist der **richtige Sitz**: tief genug eingesetzt, sonst dämmen sie kaum." },
-    { "type": "content", "badge": "2", "kicker": "Variante 2", "title": "Kapselgehörschutz",
-      "body": "Schnell aufgesetzt und **gleichmässig im Sitz**. Achte darauf, dass die Dichtung rundum anliegt – Brillenbügel und Bart können sie öffnen." },
-    { "type": "content", "badge": "3", "kicker": "Mehr Schutz", "title": "Beides kombinieren",
-      "body": "Stöpsel **und** Kapsel bringen zusätzlichen Schutz – sinnvoll in der Halle, bei Mündungsbremsen in der Nähe oder bei grossen Kalibern." },
-    { "type": "content", "badge": "4", "kicker": "Komfort", "title": "Aktiver Gehörschutz",
-      "body": "Elektronische Kapseln **dämmen den Schussknall** und lassen Stimmen und Kommandos durch. Praktisch für Training und Jagd." },
-    { "type": "content", "badge": "5", "kicker": "Kontrolle", "title": "Regelmässig prüfen",
-      "body": "Schaumstoff und Dichtungen **verschleissen**. Stöpsel und Polster rechtzeitig ersetzen – und nicht vergessen: **Augenschutz** gehört dazu." },
-    { "type": "cta", "title": "Gehörschutz bei Armatum", "body": "Auswahl im Laden und im Onlineshop (Link in der Bio).\n\nStöpsel, Kapsel oder beides – was trägst du? 👇" }
-  ] }
+{
+ "post": "#22 – Do 29.10.2026 19:00 – Gehörschutz am Stand",
+ "slides": [
+  {
+   "type": "product",
+   "kicker": "Wissen & Tipps",
+   "title": "Gehörschutz am Stand",
+   "titleSize": 84,
+   "images": [
+    "src-peltor.png"
+   ],
+   "imgHeight": 470,
+   "body": "**Stöpsel, Kapsel oder beides?** So schützt du dein Gehör richtig."
+  },
+  {
+   "type": "content",
+   "badge": "!",
+   "kicker": "Warum überhaupt",
+   "title": "Ein Knall genügt",
+   "body": "Ein Schuss erreicht Spitzenpegel **weit über 140 Dezibel**. Schon ein einzelner Knall ohne Schutz kann dem Gehör **bleibend schaden**."
+  },
+  {
+   "type": "content",
+   "badge": "1",
+   "kicker": "Variante 1",
+   "title": "Gehörstöpsel",
+   "body": "Klein, leicht und stören weder Schaft noch Brille. Wichtig ist der **richtige Sitz**: tief genug eingesetzt, sonst dämmen sie kaum."
+  },
+  {
+   "type": "content",
+   "badge": "2",
+   "kicker": "Variante 2",
+   "title": "Kapselgehörschutz",
+   "body": "Schnell aufgesetzt und **gleichmässig im Sitz**. Achte darauf, dass die Dichtung rundum anliegt – Brillenbügel und Bart können sie öffnen."
+  },
+  {
+   "type": "content",
+   "badge": "3",
+   "kicker": "Mehr Schutz",
+   "title": "Beides kombinieren",
+   "body": "Stöpsel **und** Kapsel bringen zusätzlichen Schutz – sinnvoll in der Halle, bei Mündungsbremsen in der Nähe oder bei grossen Kalibern."
+  },
+  {
+   "type": "content",
+   "badge": "4",
+   "kicker": "Komfort",
+   "title": "Aktiver Gehörschutz",
+   "body": "Elektronische Kapseln **dämmen den Schussknall** und lassen Stimmen und Kommandos durch. Praktisch für Training und Jagd."
+  },
+  {
+   "type": "content",
+   "badge": "5",
+   "kicker": "Kontrolle",
+   "title": "Regelmässig prüfen",
+   "body": "Schaumstoff und Dichtungen **verschleissen**. Stöpsel und Polster rechtzeitig ersetzen – und nicht vergessen: **Augenschutz** gehört dazu."
+  },
+  {
+   "type": "cta",
+   "title": "Gehörschutz bei Armatum",
+   "body": "Auswahl im Laden und im Onlineshop (Link in der Bio).\n\nStöpsel, Kapsel oder beides – was trägst du? 👇"
+  }
+ ]
+}

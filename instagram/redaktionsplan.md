@@ -765,6 +765,8 @@ Kompakt, gross oder mit Absehen – welches wär's für dich? 👇
 
 **Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Mi 28.10.2026, 18:30, Sicherheitsnetz +10 Min.
 
+**Titelbild (26.10.):** Slide 1 = Originalfoto «K31 Custom» des Inhabers (Instagram-Beitrag https://www.instagram.com/p/DePwbqZABtX/, Medien-ID 18126225286862467, URL beim Posten frisch holen), danach Grafiken 01–07.
+
 **Grafiken:** `instagram/grafiken/21-k31/01.jpg` ff., WhatsApp-Status `whatsapp/posts/21-k31.jpg`.
 
 **Caption zum Kopieren:**
@@ -796,6 +798,8 @@ Hast du einen K31 im Schrank oder im Verein? Erzähl uns seine Geschichte in den
 ### #22 – Do 29.10.2026, 19:00 – Karussell – Säule 1 (Wissen & Tipps): Gehörschutz am Stand
 
 **Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Do 29.10.2026, 19:00, Sicherheitsnetz +10 Min.
+
+**Titelbild (26.10.):** Slide 1 neu mit Produktfoto 3M Peltor SportTac aus dem Shop (statt Text-Cover), Commit siehe Termin.
 
 **Grafiken:** `instagram/grafiken/22-gehoerschutz/01.jpg` ff., WhatsApp-Status `whatsapp/posts/22-gehoerschutz.jpg`.
 
@@ -1130,3 +1134,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-25 | Inhaber schickt Foto von Vollmantelgeschossen → #23 (Fr 30.10. 18:30) als Wiederladen-Karussell mit dem Foto auf Slide 1. |
 | 2026-10-25 | #10 Walther PDP Vergleich veröffentlicht (20:02, armatum_ch): https://www.instagram.com/p/De7aYhJifea/ + Story. |
 | 2026-10-26 | Inhaber «Ja» zum Wissens-Post FFP/MIL mit Arken: #24 als Reel mit ElevenLabs-Stimme «Eric» (29,9 s) + Fallback-Karussell erstellt, auf So 01.11. 20:00 terminiert (Sicherheitsnetz 20:10). |
+| 2026-10-26 | Inhaber: Punkt 6 der Profil-Optimierung umsetzen – Regel «Echtes Foto als Titelbild» (insta-irene.md, wochen-routine.md). #21 K31 mit Inhaber-Foto als Slide 1, #22 Gehörschutz mit Produktfoto-Cover. Fehlende Veröffentlichungstermine für #21/#22/#23 entdeckt (Wochen-Routine hatte keine angelegt) und neu angelegt. |
