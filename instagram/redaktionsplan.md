@@ -721,6 +721,8 @@ Zwei Beispiele aus unserem Sortiment:
 ▪️ Arken Optics SH-4 Gen2 4-16×50 FFP – VPR-MIL-Absehen, beleuchtet
 ▪️ Arken Optics EP-5 Gen2 5-25×56 FFP – VPR-MIL-Absehen, beleuchtet, für weite Distanzen
 
+Neu im Sortiment: die Arken-Linie gibt's jetzt auch in MOA – und mit den Outrider-Modellen (zweite Bildebene) für die Jagd.
+
 👉 Im Video: das Prinzip in 30 Sekunden.
 
 Alle Infos auf armatum.ch (Link in der Bio). Fragen zu Optik und Absehen? Wir beraten dich gern im Laden in Fulenbach.
@@ -1135,3 +1137,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-25 | #10 Walther PDP Vergleich veröffentlicht (20:02, armatum_ch): https://www.instagram.com/p/De7aYhJifea/ + Story. |
 | 2026-10-26 | Inhaber «Ja» zum Wissens-Post FFP/MIL mit Arken: #24 als Reel mit ElevenLabs-Stimme «Eric» (29,9 s) + Fallback-Karussell erstellt, auf So 01.11. 20:00 terminiert (Sicherheitsnetz 20:10). |
 | 2026-10-26 | Inhaber: Punkt 6 der Profil-Optimierung umsetzen – Regel «Echtes Foto als Titelbild» (insta-irene.md, wochen-routine.md). #21 K31 mit Inhaber-Foto als Slide 1, #22 Gehörschutz mit Produktfoto-Cover. Fehlende Veröffentlichungstermine für #21/#22/#23 entdeckt (Wochen-Routine hatte keine angelegt) und neu angelegt. |
+| 2026-10-27 | Shop-Check: 47 neue Produkte (u. a. 11 Arken-Artikel: EP-5/SH-4/SH-4J in MOA/TOR, Outrider 2-12/3-18 SFP, Halo-Ti-Ringe). Caption #24 um eine Zeile «Arken jetzt auch in MOA + Outrider» ergänzt (Reel unverändert). Übrige Neuheiten kein Post (siehe marketing/shop-monitoring.md). |

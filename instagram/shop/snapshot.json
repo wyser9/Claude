@@ -850,21 +850,6 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/glock-17-gen5-mos-fs-kopie/"
 },
-"13511": {
-"cats": [
-"Armatum",
-"Ausrüstung",
-"Zubehör"
-],
-"images": 2,
-"name": "Schlüsselanhänger",
-"on_sale": false,
-"price": "1190",
-"regular": "1190",
-"short": "Einzigartiger Selbstgemachter Schlüsselanhänger: Persönlicher Stil für Ihre Schlüssel Der selbstgemachte Schlüsselanhänger ist mehr als nur ein praktisches Accessoire – er ist ein Ausdruck Ihrer Kreativität und Persönlichkeit. Jeder Anhänger wird liebevoll von Hand gefertigt und ist daher ein Unikat",
-"stock": "in-stock",
-"url": "https://armatum.ch/produkt/schluesselanhaenger/"
-},
 "13526": {
 "cats": [
 "Pfefferspray",
@@ -6653,7 +6638,7 @@
 "price": "8900",
 "regular": "8900",
 "short": "Ein leistungsstarkes und zuverlässiges AR-15 Magazin , das höchste Ansprüche erfüllt!",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/magazin-schmeisser-ar15-60-schuss-hohe-kapazitaet-fuer-ar-15-modelle/"
 },
 "17181": {
@@ -8401,7 +8386,7 @@
 "price": "11200",
 "regular": "12000",
 "short": "Das Reload Swiss RS40 ist ein hochpräzises Einbasispulver für Kaliber wie .223 Remington. In 1000g Dose – ideal für Sportschützen und Wiederlader.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/reload-swiss-rs40-pulver-1000g-fuer-223-rem-mehr/"
 },
 "18340": {
@@ -9243,7 +9228,7 @@
 "price": "15900",
 "regular": "15900",
 "short": "Hornady Lock-N-Load Powder Measure – exaktes Pulverfüllgerät für Wiederlader mit einfacher Handhabung und präziser Pulverdosierung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-lock-n-load-powder-measure-praezises-pulverfuellgeraet-fuer-wiederlader/"
 },
 "18763": {
@@ -9608,7 +9593,7 @@
 "price": "63900",
 "regular": "63900",
 "short": "Der Hornady Lock-N-Load AP Pistol Bullet Feeder 220V ist ein automatisches Geschosszuführsystem mit 7/8″-14 Gewinde – für höhere Präzision und Geschwindigkeit.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-lock-n-load-ap-pistol-bullet-feeder-220v-geschosszufuehrsystem/"
 },
 "18897": {
@@ -9636,7 +9621,7 @@
 "price": "9800",
 "regular": "9800",
 "short": "Das Hornady Handheld Priming Tool ist ein mobiles Zündhütchensetzgerät mit ergonomischem Design – präzise, robust und ideal für Wiederlader.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-handheld-priming-tool-zuendhuetchensetzgeraet-fuer-wiederlader/"
 },
 "18902": {
@@ -22219,7 +22204,7 @@
 "price": "7790",
 "regular": "7790",
 "short": "Optimierter 2-Die Matrizensatz für 300 Blackout, geeignet für Sub- und Supersonic-Ladungen mit präziser Setztiefenkontrolle.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-matrizensatz-series-i-2-die-rifle-set-300-blackout-308/"
 },
 "21561": {
@@ -37899,7 +37884,7 @@
 "price": "11200",
 "regular": "12000",
 "short": "Extrem langsames Hochleistungspulver für Long Range. Maximale Energie und höchste Präzision.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/pulver-reload-swiss-rs80-1000g/"
 },
 "24332": {
@@ -58500,6 +58485,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/pistole-cz-p-09-f-nocturne-9mm-para-19-schuss/"
 },
+"31034": {
+"cats": [
+"CZ",
+"Pistolen"
+],
+"images": 3,
+"name": "Pistole CZ P-09 F Nocturne SR 9mm Para 19-Schuss – Gewindelauf 1/2×28 UNEF",
+"on_sale": false,
+"price": "84900",
+"regular": "84900",
+"short": "Die CZ P-09 F Nocturne SR ist eine Full-size-Pistole in 9mm Para mit 19 Schuss, 135mm Gewindelauf (1/2″×28 UNEF-3A), OMEGA-SA/DA-Abzug, Optics-Ready-Schlitten (Shield RMS, Holosun K) und Tritium-Visierung. Gewicht 892g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/pistole-cz-p-09-f-nocturne-sr-9mm-para-19-schuss-gewinde/"
+},
 "31047": {
 "cats": [
 "CZ",
@@ -58835,6 +58834,20 @@
 "short": "Wechselmagazin für die CZ P-10 M im Kaliber 9mm Para mit 7 Schuss in der Ausführung Blue. Von CZ.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cz-p-10-m-magazin-9mm-para-7-schuss-blue/"
+},
+"31118": {
+"cats": [
+"CZ",
+"Magazine"
+],
+"images": 1,
+"name": "CZ P-07 Magazin 9mm Para 17 Schuss",
+"on_sale": false,
+"price": "4490",
+"regular": "4490",
+"short": "Ersatzmagazin für die CZ P-07 im Kaliber 9mm Para mit 17 Schuss. Von CZ.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-p-07-magazin-9mm-para-17-schuss/"
 },
 "31119": {
 "cats": [
@@ -61468,6 +61481,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sig-sauer-p320-xcompact-9mm-optic-ready/"
 },
+"31996": {
+"cats": [
+"Pistolen",
+"SIG Sauer"
+],
+"images": 5,
+"name": "Sig Sauer P320 XCarry 9mm – XRAY3 Visierung, Optic Ready",
+"on_sale": false,
+"price": "114900",
+"regular": "114900",
+"short": "Die Sig Sauer P320 XCarry ist eine Striker-Fired-Pistole in 9mm mit Nitron-Schlitten (Optic Ready), XRAY3-Day/Night-Visierung, flachem X-Series-Abzug und modularem Griffmodul mit Magwell. Inklusive 2 Stahlmagazinen mit 17 Schuss. Gewicht 750g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sig-sauer-p320-xcarry-9mm/"
+},
 "32003": {
 "cats": [
 "Pistolen",
@@ -62676,6 +62703,328 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/stoeger-x-sport-diabolos-4-5-mm-flach-0-48-g-500-stk/"
 },
+"32332": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Basic Line 4.5 mm 7gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "620",
+"regular": "620",
+"short": "Diabolos für alle Druckluftwaffen im Kaliber 4.5 mm mit guter Präzision und Treffgenauigkeit zu einem günstigen Preis. 500 Stück pro Box.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-basic-line-4-5-mm-7gr-0-5g-500-stk/"
+},
+"32338": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo Club 4.5 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "810",
+"regular": "810",
+"short": "Leichte, glatte Diabolos im Kaliber 4.5 mm mit gesteigerter Geschwindigkeit. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-club-4-5-mm-7gr-0-4g-500-stk/"
+},
+"32339": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo Hobby 4.5 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "740",
+"regular": "740",
+"short": "Geriffelte Diabolos im Kaliber 4.5 mm für Hobbyschützen, ausgewogen und verlässlich zu einem niedrigen Preis. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-hobby-4-5-mm-7gr-0-4g-500-stk/"
+},
+"32340": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo Hobby 5.5 mm 12gr/0.8g, 500 Stk.",
+"on_sale": false,
+"price": "990",
+"regular": "990",
+"short": "Geriffelte Diabolos im Kaliber 5.5 mm für Hobbyschützen, ausgewogen und verlässlich zu einem niedrigen Preis. 500 Stück pro Box, 0.8 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-hobby-5-5-mm-12gr-0-8g-500-stk/"
+},
+"32341": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo Training 4.5 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "810",
+"regular": "810",
+"short": "Schwerere, glatte Trainings-Diabolos im Kaliber 4.5 mm, kostengünstig und mit gleichem ballistischem Verhalten wie RWS-Matchkugeln. 500 Stück pro Box.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-training-4-5-mm-8gr-0-5g-500-stk/"
+},
+"32344": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister 4.5 mm Kopf 4.50 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln im Kaliber 4.5 mm mit Kopfdurchmesser 4.50 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-4-5-mm-kopf-4-50-mm-8gr-0-5g-500-stk/"
+},
+"32345": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister 4.5 mm Kopf 4.49 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln im Kaliber 4.5 mm mit Kopfdurchmesser 4.49 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-4-5-mm-kopf-4-49-mm-8gr-0-5g-500-stk/"
+},
+"32346": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister 4.5 mm Kopf 4.51 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln im Kaliber 4.5 mm mit Kopfdurchmesser 4.51 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-4-5-mm-kopf-4-51-mm-8gr-0-5g-500-stk/"
+},
+"32347": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister 4.5 mm Kopf 4.48 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln im Kaliber 4.5 mm mit Kopfdurchmesser 4.48 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-4-5-mm-kopf-4-48-mm-8gr-0-5g-500-stk/"
+},
+"32348": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister HV 4.5 mm Kopf 4.48 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln HV im Kaliber 4.5 mm mit Kopfdurchmesser 4.48 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-hv-4-5-mm-kopf-4-48-mm-7gr-0-4g-500-stk/"
+},
+"32349": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister HV 4.5 mm Kopf 4.51 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln HV im Kaliber 4.5 mm mit Kopfdurchmesser 4.51 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-hv-4-5-mm-kopf-4-51-mm-7gr-0-4g-500-stk/"
+},
+"32350": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister HV 4.5 mm Kopf 4.49 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln HV im Kaliber 4.5 mm mit Kopfdurchmesser 4.49 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-hv-4-5-mm-kopf-4-49-mm-7gr-0-4g-500-stk/"
+},
+"32353": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 2,
+"name": "RWS Diabolo Meister HV 4.5 mm Kopf 4.50 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1050",
+"regular": "1050",
+"short": "RWS Meisterkugeln HV im Kaliber 4.5 mm mit Kopfdurchmesser 4.50 mm, dauerhaft hell und glänzend. 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-meister-hv-4-5-mm-kopf-4-50-mm-7gr-0-4g-500-stk/"
+},
+"32355": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo Hypermatch 4.5 mm Kopf 4.50 mm 5gr/0.3g, 250 Stk.",
+"on_sale": false,
+"price": "1890",
+"regular": "1890",
+"short": "Leichte RWS Wettkampf-Diabolos Hypermatch im Kaliber 4.5 mm mit Flachkopf und enger Fertigungstoleranz. 250 Stück pro Box, 0.3 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-hypermatch-4-5-mm-kopf-4-50-mm-5gr-0-3g-250-stk/"
+},
+"32356": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match 4.5 mm Kopf 4.50 mm 8gr/0.5g, 100 Stk.",
+"on_sale": false,
+"price": "710",
+"regular": "710",
+"short": "RWS Wettkampf-Diabolos R10 Match im Kaliber 4.5 mm mit Flachkopf und engen Fertigungstoleranzen. 100 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-4-5-mm-kopf-4-50-mm-8gr-0-5g-100-stk/"
+},
+"32357": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match 4.5 mm Kopf 4.50 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "RWS Wettkampf-Diabolos R10 Match im Kaliber 4.5 mm mit Flachkopf und engen Fertigungstoleranzen. 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-4-5-mm-kopf-4-50-mm-8gr-0-5g-500-stk/"
+},
+"32358": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match 4.5 mm Kopf 4.49 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "RWS Wettkampf-Diabolos R10 Match im Kaliber 4.5 mm mit Flachkopf und engen Fertigungstoleranzen. Kopf 4.49 mm, 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-4-5-mm-kopf-4-49-mm-8gr-0-5g-500-stk/"
+},
+"32359": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match 4.5 mm Kopf 4.51 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "RWS Wettkampf-Diabolos R10 Match im Kaliber 4.5 mm mit Flachkopf und engen Fertigungstoleranzen. Kopf 4.51 mm, 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-4-5-mm-kopf-4-51-mm-8gr-0-5g-500-stk/"
+},
+"32360": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match HV 4.5 mm Kopf 4.48 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "Leichtere RWS Wettkampf-Diabolos R10 Match HV im Kaliber 4.5 mm mit Flachkopf. Kopf 4.48 mm, 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-hv-4-5-mm-kopf-4-48-mm-7gr-0-4g-500-stk/"
+},
+"32361": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match HV 4.5 mm Kopf 4.49 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "Leichtere RWS Wettkampf-Diabolos R10 Match HV im Kaliber 4.5 mm mit Flachkopf. Kopf 4.49 mm, 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-hv-4-5-mm-kopf-4-49-mm-7gr-0-4g-500-stk/"
+},
+"32362": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match HV 4.5 mm Kopf 4.50 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "Leichtere RWS Wettkampf-Diabolos R10 Match HV im Kaliber 4.5 mm mit Flachkopf. Kopf 4.50 mm, 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-hv-4-5-mm-kopf-4-50-mm-7gr-0-4g-500-stk/"
+},
+"32363": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match HV 4.5 mm Kopf 4.51 mm 7gr/0.4g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "Leichtere RWS Wettkampf-Diabolos R10 Match HV im Kaliber 4.5 mm mit Flachkopf. Kopf 4.51 mm, 500 Stück pro Box, 0.4 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-hv-4-5-mm-kopf-4-51-mm-7gr-0-4g-500-stk/"
+},
+"32365": {
+"cats": [
+"Diabolos",
+"RWS"
+],
+"images": 1,
+"name": "RWS Diabolo R10 Match 4.5 mm Kopf 4.48 mm 8gr/0.5g, 500 Stk.",
+"on_sale": false,
+"price": "1320",
+"regular": "1320",
+"short": "RWS Wettkampf-Diabolos R10 Match im Kaliber 4.5 mm mit Flachkopf und engen Fertigungstoleranzen. Kopf 4.48 mm, 500 Stück pro Box, 0.5 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rws-diabolo-r10-match-4-5-mm-kopf-4-48-mm-8gr-0-5g-500-stk/"
+},
 "32376": {
 "cats": [
 "Medics",
@@ -62746,6 +63095,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-frontier-300-blackout-125gr-fmj-20-stk/"
 },
+"32384": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Custom .300 Blackout 110gr GMX TAP – 20 Stk.",
+"on_sale": false,
+"price": "4790",
+"regular": "4790",
+"short": "Hornady Custom .300 Blackout mit 110gr GMX-Geschoss (TAP): Büchsenmunition aus der Custom-Linie von Hornady. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-custom-300-blackout-110gr-gmx-tap-20-stk/"
+},
 "32386": {
 "cats": [
 ".300 Blackout",
@@ -62802,6 +63165,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-black-300-blackout-110gr-v-max-20-stk/"
 },
+"32397": {
+"cats": [
+".300 Blackout",
+"Hornady"
+],
+"images": 2,
+"name": "Hornady Black .300 Blackout 208gr A-Max Match Subsonic – 20 Stk.",
+"on_sale": false,
+"price": "4290",
+"regular": "4290",
+"short": "Hornady Black .300 Blackout Subsonic mit 208gr A-Max-Match-Geschoss: vielseitige Büchsenmunition für amerikanische Waffensysteme. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-black-300-blackout-208gr-a-max-match-subsonic-20-stk/"
+},
 "32399": {
 "cats": [
 ".45-70 Govt",
@@ -62816,6 +63193,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-250gr-monoflex-20-stk/"
 },
+"32403": {
+"cats": [
+".45-70 Govt",
+"Hornady"
+],
+"images": 3,
+"name": "Hornady LEVERevolution .45-70 Govt 250gr MonoFlex – 20 Stk. (Art. 82741)",
+"on_sale": false,
+"price": "7990",
+"regular": "7990",
+"short": "Hornady LEVERevolution .45-70 Govt mit 250gr MonoFlex-Geschoss: Munition für Unterhebelrepetierer, sicher im Röhrenmagazin. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-250gr-monoflex-20-stk-art-82741/"
+},
 "32407": {
 "cats": [
 ".45-70 Govt",
@@ -62829,6 +63220,20 @@
 "short": "Hornady LEVERevolution .45-70 Govt mit 325gr FTX-Geschoss: Munition für Unterhebelrepetierer, sicher im Röhrenmagazin. Packungsinhalt: 20 Patronen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-leverevolution-45-70-govt-325gr-ftx-20-stk/"
+},
+"32409": {
+"cats": [
+".45-70 Govt",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Subsonic .45-70 Govt 410gr Sub-X – 20 Stk.",
+"on_sale": false,
+"price": "6490",
+"regular": "6490",
+"short": "Hornady Subsonic .45-70 Govt mit 410gr Sub-X-Geschoss: Unterschallmunition für Präzision und Leistung unterhalb der Schallgeschwindigkeit. Packungsinhalt: 20 Patronen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/hornady-subsonic-45-70-govt-410gr-sub-x-20-stk/"
 },
 "32415": {
 "cats": [
@@ -62955,5 +63360,243 @@
 "short": "Der Strike Industries Quad V Kompensator für 9-mm-Pistolen mit 1/2″-28-Gewinde leitet die Mündungsgase um und gleicht Rückstoss sowie Laufanstieg aus. Das eloxierte Aluminiumgehäuse schützt zudem eine unter dem Lauf montierte Taschenlampe vor Pulverrückständen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/strike-industries-micro-threaded-comp-quad-v-pistolenkompensator-9-mm-1-2-28-schwarz/"
+},
+"32486": {
+"cats": [
+"Pistolen",
+"SIG Sauer"
+],
+"images": 6,
+"name": "Sig Sauer P320 M18X 9mm Coyote – Carry, ROMEO-M17 Rotpunktvisier, SIGLITE",
+"on_sale": false,
+"price": "224900",
+"regular": "224900",
+"short": "Die Sig Sauer P320 M18X ist die zivile Ausführung der US-Militärpistole mit ab Werk montiertem ROMEO-M17 Rotpunktvisier: 9mm, Striker-Fired, 3.9″ Lauf, Coyote-PVD-Schlitten, SIGLITE-Visierung, X-Series-Flachabzug und Zubehörschiene. Drei Magazine mit je 21 Schuss. Gewicht 873g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sig-sauer-p320-m18x-9mm-coyote-carry-romeo-m17-rotpunktvisier-siglite/"
+},
+"32489": {
+"cats": [
+"Arken Optics",
+"Montagen"
+],
+"images": 4,
+"name": "Arken Optics Halo Ti Montagering 34 mm – 32 mm Höhe",
+"on_sale": false,
+"price": "10990",
+"regular": "10990",
+"short": "Arken Halo Ti Montageringe für 34 mm Mittelrohr mit 32 mm Höhe der optischen Achse, aus 7075-T6-Aluminium mit Titan, für Picatinny-Schienen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-halo-ti-montagering-34-mm-32-mm-hoehe/"
+},
+"32490": {
+"cats": [
+"Arken Optics",
+"Montagen"
+],
+"images": 4,
+"name": "Arken Optics Halo Ti Montagering 34 mm – 36.8 mm Höhe",
+"on_sale": false,
+"price": "10990",
+"regular": "10990",
+"short": "Arken Halo Ti Montageringe für 34 mm Mittelrohr mit 36.8 mm Höhe der optischen Achse, aus 7075-T6-Aluminium mit Titan, für Picatinny-Schienen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-halo-ti-montagering-34-mm-36-8-mm-hoehe/"
+},
+"32491": {
+"cats": [
+"Arken Optics",
+"Montagen"
+],
+"images": 5,
+"name": "Arken Optics Halo Ti Montagering 34 mm – 23.4 mm Höhe",
+"on_sale": false,
+"price": "10990",
+"regular": "10990",
+"short": "Arken Halo Ti Montageringe für 34 mm Mittelrohr mit 23.4 mm Höhe der optischen Achse, aus 7075-T6-Aluminium mit Titan, für Picatinny-Schienen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-halo-ti-montagering-34-mm-23-4-mm-hoehe/"
+},
+"32492": {
+"cats": [
+"Arken Optics",
+"Montagen"
+],
+"images": 4,
+"name": "Arken Optics Halo Ti Montagering 30 mm – 24.6 mm Höhe",
+"on_sale": false,
+"price": "10990",
+"regular": "10990",
+"short": "Arken Halo Ti Montageringe für 30 mm Mittelrohr mit 24.6 mm Höhe der optischen Achse, aus 7075-T6-Aluminium mit Titan, für Picatinny-Schienen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-halo-ti-montagering-30-mm-24-6-mm-hoehe/"
+},
+"32493": {
+"cats": [
+"Arken Optics",
+"Montagen"
+],
+"images": 3,
+"name": "Arken Optics Halo Ti Montagering 30 mm – 32 mm Höhe",
+"on_sale": false,
+"price": "10990",
+"regular": "10990",
+"short": "Arken Halo Ti Montageringe für 30 mm Mittelrohr mit 32 mm Höhe der optischen Achse, aus 7075-T6-Aluminium mit Titan, für Picatinny-Schienen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-halo-ti-montagering-30-mm-32-mm-hoehe/"
+},
+"32495": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Arken Optics Outrider 3-18×50 SFP FDR Zielfernrohr",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "Arken Outrider 3-18×50 im zweiten Brennpunkt mit beleuchtetem FDR-Absehen, japanischem HD-Glas, 30 mm Mittelrohr und 0.25 MOA Klickwerten für Jagd und Sport.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-outrider-3-18x50-sfp-fdr-zielfernrohr/"
+},
+"32496": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Arken Optics Outrider 2-12×42 SFP FDR Zielfernrohr",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "Arken Outrider 2-12×42 im zweiten Brennpunkt mit beleuchtetem FDR-Absehen, japanischem HD-Glas, 30 mm Mittelrohr und 0.25 MOA Klickwerten für Jagd und Sport.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-outrider-2-12x42-sfp-fdr-zielfernrohr/"
+},
+"32497": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Arken Optics EP-8 1-8×28 FFP LPVO KLGrid Zielfernrohr mit Montage",
+"on_sale": false,
+"price": "35990",
+"regular": "35990",
+"short": "Das Arken Optics EP-8 1-8×28 FFP mit beleuchtetem KLGrid-Absehen und Montage verbindet schnelle Zielerfassung auf kurze Distanz mit präzisen Schüssen auf mittlere Entfernungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-ep-8-1-8x28-ffp-lpvo-klgrid-zielfernrohr-mit-montage/"
+},
+"32498": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 8,
+"name": "Arken Optics SH-4J Gen2 6-24×50 FFP VPR MOA Zielfernrohr",
+"on_sale": false,
+"price": "37990",
+"regular": "37990",
+"short": "Professionelles FFP Zielfernrohr mit 6-24x Vergrösserung, beleuchtetem VPR MOA Absehen, Zero Stop System und robuster 34 mm Konstruktion.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-sh-4j-gen2-6-24x50-ffp-vpr-moa-zielfernrohr/"
+},
+"32500": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Arken Optics SH-4 Gen2 4-16×50 FFP VPR MOA Zielfernrohr",
+"on_sale": false,
+"price": "34990",
+"regular": "34990",
+"short": "Professionelles FFP Zielfernrohr mit 4-16x Vergrösserung, beleuchtetem VPR MOA Absehen und Zero Stop System für Präzisions- und DMR-Anwendungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-sh-4-gen2-4-16x50-ffp-vpr-moa-zielfernrohr/"
+},
+"32501": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Arken Optics EP-5 Gen2 7-35×56 FFP VPR MOA Zielfernrohr",
+"on_sale": false,
+"price": "72990",
+"regular": "72990",
+"short": "Premium FFP Zielfernrohr mit 7-35x Vergrösserung, japanischem Glas, VPR MOA Absehen und Zero Stop System für extreme Long-Range Anwendungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-ep-5-gen2-7-35x56-ffp-vpr-moa-zielfernrohr/"
+},
+"32502": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 8,
+"name": "Arken Optics EP-5 Gen2 7-35×56 FFP TOR MIL Zielfernrohr",
+"on_sale": false,
+"price": "72990",
+"regular": "72990",
+"short": "Premium FFP Zielfernrohr mit 7-35x Vergrösserung, japanischem Glas, TOR MIL Absehen und Zero Stop System für extreme Long-Range Anwendungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-ep-5-gen2-7-35x56-ffp-tor-mil-zielfernrohr/"
+},
+"32503": {
+"cats": [
+"Arken Optics",
+"Zielfernrohre / Scopes"
+],
+"images": 8,
+"name": "Arken Optics EP-5 Gen2 5-25×56 FFP TOR MIL Zielfernrohr",
+"on_sale": false,
+"price": "54990",
+"regular": "54990",
+"short": "Das Arken Optics EP-5 Gen2 5-25×56 FFP TOR MIL bietet hohe Präzision, ein modernes FFP-Absehen und ausgezeichnete Bildqualität für anspruchsvolle Long-Range-Anwendungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/arken-optics-ep-5-gen2-5-25x56-ffp-tor-mil-zielfernrohr/"
+},
+"32588": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Star"
+],
+"images": 2,
+"name": "Star Target Pistole .22 LR gebraucht, für Rechtshänder",
+"on_sale": false,
+"price": "17000",
+"regular": "17000",
+"short": "Gebrauchte Star Target Pistole im Kaliber .22 LR für Rechtshänder, Zustand gut, inklusive zwei Magazinen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/star-target-pistole-22-lr-gebraucht-fuer-rechtshaender/"
+},
+"32589": {
+"cats": [
+"Bergara",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "Bergara BA13 Repetierbüchse .222 Remington mit Hawke 4-16×56 Zielfernrohr",
+"on_sale": false,
+"price": "124900",
+"regular": "124900",
+"short": "Bergara BA13 im Kaliber .222 Remington mit Hawke 4-16×56 Zielfernrohr, FBT ERA-LOC Laufgewindebuchse, Patronenhalter am Schaft und Tasche.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bergara-ba13-repetierbuechse-222-remington-mit-hawke-4-16x56/"
+},
+"32597": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Savage Arms"
+],
+"images": 2,
+"name": "Savage Mark II Repetierbüchse .22 LR gebraucht",
+"on_sale": false,
+"price": "34900",
+"regular": "34900",
+"short": "Gebrauchte Savage Mark II Repetierbüchse im Kaliber .22 LR, Zustand sehr gut.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/savage-mark-ii-repetierbuechse-22-lr-gebraucht/"
 }
 }
