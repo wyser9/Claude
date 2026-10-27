@@ -178,7 +178,7 @@ class BWS_Product_Sync {
 
 		$client     = BWS_Client::instance();
 		$payload    = self::build_payload( $product );
-		$article_id = (int) $product->get_meta( self::META_ARTICLE_ID, true );
+		$article_id = self::linked_article_id( $product );
 
 		if ( ! $article_id ) {
 			$article_id = self::find_article_id( $payload['intern_code'] );
@@ -360,13 +360,13 @@ class BWS_Product_Sync {
 	 * @return int|null
 	 */
 	public static function ensure_article( WC_Product $product, $allow_create = true ) {
-		$article_id = (int) $product->get_meta( self::META_ARTICLE_ID, true );
+		$article_id = self::linked_article_id( $product );
 		if ( $article_id ) {
 			return $article_id;
 		}
 
 		// Bestehenden bexio-Artikel nur verknüpfen, nicht überschreiben (bexio-Daten bleiben unverändert).
-		$sku = trim( (string) $product->get_sku() );
+		$sku = self::sku( $product );
 		if ( '' !== $sku ) {
 			$article_id = self::find_article_id( $sku );
 			if ( $article_id ) {
@@ -378,6 +378,57 @@ class BWS_Product_Sync {
 		}
 
 		return $allow_create ? self::sync( $product ) : null;
+	}
+
+	/**
+	 * Eigene Artikelnummer. Varianten ohne eigene Nummer übernehmen die des Hauptprodukts nur, wenn es die
+	 * einzige Variante ist – sonst würden sich mehrere Varianten einen bexio-Artikel teilen.
+	 *
+	 * @param WC_Product $product Produkt oder Variante.
+	 * @return string
+	 */
+	public static function sku( WC_Product $product ) {
+		$sku = trim( (string) $product->get_sku( 'edit' ) );
+		if ( '' === $sku && $product->is_type( 'variation' ) ) {
+			$parent = wc_get_product( $product->get_parent_id() );
+			if ( $parent && count( $parent->get_children() ) <= 1 ) {
+				$sku = trim( (string) $parent->get_sku( 'edit' ) );
+			}
+		}
+		return $sku;
+	}
+
+	/**
+	 * Gespeicherte Verknüpfung zum bexio-Artikel.
+	 *
+	 * Früher erhielten Varianten ohne eigene Nummer die des Hauptprodukts und teilten sich so einen
+	 * bexio-Artikel. Ist eine Verknüpfung geteilt, behält sie nur die Variante mit der kleinsten ID; die
+	 * anderen werden gelöst und über ihre eigene Nummer neu verknüpft bzw. angelegt.
+	 *
+	 * @param WC_Product $product Produkt oder Variante.
+	 * @return int
+	 */
+	public static function linked_article_id( WC_Product $product ) {
+		global $wpdb;
+		$article_id = (int) $product->get_meta( self::META_ARTICLE_ID, true );
+		if ( ! $article_id || ! $product->is_type( 'variation' ) ) {
+			return $article_id;
+		}
+		$owner = (int) $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->prepare(
+				"SELECT MIN(pm.post_id) FROM {$wpdb->postmeta} pm JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+				 WHERE pm.meta_key = %s AND pm.meta_value = %s AND p.post_status <> 'trash'",
+				self::META_ARTICLE_ID,
+				(string) $article_id
+			)
+		);
+		if ( $owner && $owner !== $product->get_id() ) {
+			delete_post_meta( $product->get_id(), self::META_ARTICLE_ID );
+			$product->delete_meta_data( self::META_ARTICLE_ID );
+			bws_log( 'notice', sprintf( 'Variante #%d teilte bexio-Artikel %d mit #%d – Verknüpfung gelöst, wird über die eigene Artikelnummer neu verknüpft.', $product->get_id(), $article_id, $owner ) );
+			return 0;
+		}
+		return $article_id;
 	}
 
 	/**
@@ -404,7 +455,7 @@ class BWS_Product_Sync {
 	 * @throws BWS_Exception Wenn keine SKU vorhanden ist und kein Fallback erlaubt ist.
 	 */
 	public static function intern_code( WC_Product $product ) {
-		$sku = trim( (string) $product->get_sku() );
+		$sku = self::sku( $product );
 		if ( '' !== $sku ) {
 			return BWS_Util::truncate( $sku, 255 );
 		}

@@ -474,6 +474,25 @@ BWS_Stock_Import::ensure_schedule();
 t( 'Zeitplan entfernt, wenn WooCommerce führt', false === as_next_scheduled_action( BWS_Stock_Import::HOOK, array(), BWS_AS_GROUP ) );
 t( 'Uhrzeit-Validierung', '07:05' === BWS_Stock_Import::normalize_time( '7:05' ) && '03:00' === BWS_Stock_Import::normalize_time( '25:00' ) );
 
+// --- Varianten ohne eigene Artikelnummer ---
+$vp = new WC_Product_Variable(); $vp->set_props( array( 'name' => 'Visier', 'sku' => 'VIS-P' ) ); $vp->save();
+$mkv = function ( $sku ) use ( $vp ) { $v = new WC_Product_Variation(); $v->set_parent_id( $vp->get_id() ); $v->set_regular_price( '10' ); if ( $sku ) { $v->set_sku( $sku ); } $v->save(); return $v; };
+$va = $mkv( '' ); $vb = $mkv( '' );
+update_post_meta( $va->get_id(), '_bws_article_id', 4327 ); update_post_meta( $vb->get_id(), '_bws_article_id', 4327 ); // Altlast: geteilter Artikel.
+BWS_Settings::save( array( 'sku_fallback' => 'no' ) );
+t( 'Variante ohne Nummer erbt nicht, wenn es mehrere gibt', '' === BWS_Product_Sync::sku( wc_get_product( $va->get_id() ) ) );
+$single_parent = new WC_Product_Variable(); $single_parent->set_props( array( 'name' => 'Einzel', 'sku' => 'EIN-P' ) ); $single_parent->save();
+$vs = new WC_Product_Variation(); $vs->set_parent_id( $single_parent->get_id() ); $vs->set_regular_price( '5' ); $vs->save();
+t( 'Einzige Variante übernimmt Nummer des Hauptprodukts', 'EIN-P' === BWS_Product_Sync::sku( wc_get_product( $vs->get_id() ) ) );
+$vb = wc_get_product( $vb->get_id() ); $vb->set_sku( 'VIS-B' ); $vb->save();
+$GLOBALS['bws_requests'] = array();
+BWS_Product_Sync::sync( wc_get_product( $vb->get_id() ) );
+$created = array_values( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0] && '2.0/article' === $r[1]; } ) );
+t( 'Geteilte Verknüpfung gelöst, Variante bekommt eigenen Artikel', 1 === count( $created ) && 'VIS-B' === $created[0][2]['intern_code'] && 4327 !== (int) get_post_meta( $vb->get_id(), '_bws_article_id', true ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
+t( 'Erste Variante behält den bestehenden Artikel', 4327 === BWS_Product_Sync::linked_article_id( wc_get_product( $va->get_id() ) ) );
+$err_v = ''; try { BWS_Product_Sync::sync( wc_get_product( $va->get_id() ) ); } catch ( BWS_Exception $e ) { $err_v = $e->getMessage(); }
+t( 'Variante ohne eigene Nummer meldet fehlende SKU', false !== strpos( $err_v, 'keine Artikelnummer' ), $err_v );
+
 // --- Bestellstatus aus bexio ---
 BWS_Settings::save( array( 'status_from_bexio' => 'yes', 'sync_orders' => 'yes' ) );
 foreach ( wc_get_orders( array( 'limit' => -1, 'status' => BWS_Status_Import::OPEN_STATUSES ) ) as $prev ) { $prev->delete_meta_data( BWS_Order_Sync::META_ORDER_ID ); $prev->save(); }

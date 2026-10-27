@@ -34,6 +34,8 @@ WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führ
 - Virtuelle Produkte werden als Dienstleistung angelegt, alle anderen als physischer Artikel.
 - Die Verknüpfung wird am Produkt gespeichert (Meta `_bws_article_id`).
 
+**Varianten** brauchen eine eigene Artikelnummer. Nur wenn ein Variantenprodukt genau eine Variante hat, übernimmt sie die Nummer des Hauptprodukts. Haben sich früher mehrere Varianten einen bexio-Artikel geteilt, behält ihn die Variante mit der kleinsten ID. Die anderen werden beim nächsten Speichern über ihre eigene Nummer verknüpft oder neu angelegt.
+
 ### Neue Artikel in bexio
 Nur beim **Neuanlegen** eines Artikels setzt das Plugin zusätzlich:
 - **„Ist ein Produkt mit Lager“** (Lagerbestand und Mindestbestand 0, Lagerort und Lagerplatz aus den bexio-Zuordnungen), abschaltbar mit „Neue Artikel als Lagerartikel“. Virtuelle Produkte werden ohne Lager angelegt.
