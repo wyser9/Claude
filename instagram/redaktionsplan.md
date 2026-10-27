@@ -693,7 +693,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Fr 23.10. | 18:30 | #19 Neu: Walther PDP PRO A-Cut mit Aimpoint COA (aus Shop-Check) | ✅ veröffentlicht 18:31 – https://www.instagram.com/p/De1_iC8G4EB/ |
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | ✅ veröffentlicht 09:31 – https://www.instagram.com/p/De3mju3lTSa/ |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
-| Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | geplant (automatisch) |
+| Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | ✅ veröffentlicht 20:20 (verspätet) – https://www.instagram.com/p/DfAmF47CY2I/ |
 | So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
@@ -737,7 +737,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #20 – Di 27.10.2026, 18:30 – Karussell – Säule 3: Neu – 3 Spektive von GPO
 
-**Status:** Autopilot – geplant (aus Shop-Check 21.10.: 3 neue GPO-Spektive). Optik, keine Waffe – Meta-unkritisch. Knüpft an #16 MOA/MIL an (Absehen in mil).
+**Status:** ✅ Veröffentlicht 27.10.2026, 20:20 (armatum_ch, geplant 18:30 – verspätet nach Worker-Neustart) – https://www.instagram.com/p/DfAmF47CY2I/ – Story mit Slide 01.
 
 **Grafiken:** `instagram/grafiken/20-gpo-spektive/01.jpg` ff. (6 Slides), WhatsApp-Status `whatsapp/posts/20-gpo-spektive.jpg`.
 
@@ -1138,3 +1138,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-26 | Inhaber «Ja» zum Wissens-Post FFP/MIL mit Arken: #24 als Reel mit ElevenLabs-Stimme «Eric» (29,9 s) + Fallback-Karussell erstellt, auf So 01.11. 20:00 terminiert (Sicherheitsnetz 20:10). |
 | 2026-10-26 | Inhaber: Punkt 6 der Profil-Optimierung umsetzen – Regel «Echtes Foto als Titelbild» (insta-irene.md, wochen-routine.md). #21 K31 mit Inhaber-Foto als Slide 1, #22 Gehörschutz mit Produktfoto-Cover. Fehlende Veröffentlichungstermine für #21/#22/#23 entdeckt (Wochen-Routine hatte keine angelegt) und neu angelegt. |
 | 2026-10-27 | Shop-Check: 47 neue Produkte (u. a. 11 Arken-Artikel: EP-5/SH-4/SH-4J in MOA/TOR, Outrider 2-12/3-18 SFP, Halo-Ti-Ringe). Caption #24 um eine Zeile «Arken jetzt auch in MOA + Outrider» ergänzt (Reel unverändert). Übrige Neuheiten kein Post (siehe marketing/shop-monitoring.md). |
+| 2026-10-27 | #20 GPO-Spektive veröffentlicht – **verspätet 20:20 statt 18:30**: Worker-Neustart während der Veröffentlichung, danach fälschlich «No response requested» geantwortet; das Sicherheitsnetz hat es nachgeholt. https://www.instagram.com/p/DfAmF47CY2I/ + Story. |
