@@ -172,6 +172,9 @@ class BWS_Admin {
 								<?php if ( is_int( $next ) ) : ?>
 									Nächster Lauf: <?php echo esc_html( wp_date( 'd.m.Y H:i', $next ) ); ?>.
 								<?php endif; ?>
+								<?php if ( is_array( get_option( BWS_Stock_Import::OPTION_STATE ) ) ) : ?>
+									Import läuft gerade in Etappen …
+								<?php endif; ?>
 								<?php if ( is_array( $last ) && ! empty( $last['error'] ) ) : ?>
 									Letzter Lauf <?php echo esc_html( wp_date( 'd.m.Y H:i', $last['time'] ) ); ?> fehlgeschlagen: <?php echo esc_html( $last['error'] ); ?>
 								<?php elseif ( is_array( $last ) ) : ?>

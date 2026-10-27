@@ -94,7 +94,11 @@ class BWS_CLI {
 	 */
 	public function backfill() {
 		try {
+			delete_option( BWS_Backfill::OPT_STATUS );
 			$status = BWS_Backfill::scan();
+			while ( 'scanning' === $status['state'] ) {
+				$status = BWS_Backfill::scan();
+			}
 			while ( 'running' === $status['state'] ) {
 				$status = BWS_Backfill::chunk();
 				WP_CLI::log( sprintf( '%d / %d', $status['done'], $status['todo'] ) );

@@ -16,6 +16,8 @@ class BWS_Backfill {
 	const OPT_QUEUE  = 'bws_backfill_queue';
 	const OPT_STATUS = 'bws_backfill_status';
 	const CHUNK      = 25;
+	const PAGE       = 500;
+	const STEP_SECONDS = 15; // Server bricht nach 30 s ab.
 
 	public static function init() {
 		add_action( self::HOOK_SCAN, array( __CLASS__, 'scan' ) );
@@ -23,7 +25,10 @@ class BWS_Backfill {
 	}
 
 	public static function start() {
-		update_option( self::OPT_STATUS, array( 'state' => 'scanning', 'time' => time() ), false );
+		update_option( self::OPT_STATUS, array( 'state' => 'scanning', 'time' => time(), 'offset' => 0, 'articles' => 0, 'linked' => 0 ), false );
+		update_option( self::OPT_QUEUE, array(), false );
+		as_unschedule_all_actions( self::HOOK_SCAN, array(), BWS_AS_GROUP );
+		as_unschedule_all_actions( self::HOOK_CHUNK, array(), BWS_AS_GROUP );
 		as_enqueue_async_action( self::HOOK_SCAN, array(), BWS_AS_GROUP );
 	}
 
@@ -63,34 +68,60 @@ class BWS_Backfill {
 	}
 
 	/**
-	 * Liest alle bexio-Artikel und plant die nötigen Änderungen.
+	 * Liest die bexio-Artikel seitenweise und plant die nötigen Änderungen.
+	 * Jeder Aufruf arbeitet höchstens STEP_SECONDS und plant bei Bedarf den nächsten ein.
 	 *
 	 * @return array Status.
 	 */
 	public static function scan() {
-		$articles = BWS_Client::instance()->get_all( '2.0/article' );
-		$linked   = BWS_Product_Sync::products_by_article_id();
-		$queue    = array();
-		foreach ( $articles as $article ) {
-			$id = (int) ( $article['id'] ?? 0 );
-			if ( ! $id || ! isset( $linked[ $id ] ) ) {
-				continue;
-			}
-			$product = wc_get_product( $linked[ $id ] );
-			if ( ! $product ) {
-				continue;
-			}
-			$fields = self::missing_fields( $article, $product );
-			if ( $fields ) {
-				$queue[ $id ] = $fields;
-			}
+		$status = (array) get_option( self::OPT_STATUS, array() );
+		if ( 'scanning' !== ( $status['state'] ?? '' ) || ! isset( $status['offset'] ) ) {
+			$status = array( 'state' => 'scanning', 'time' => time(), 'offset' => 0, 'articles' => 0, 'linked' => 0 );
+			update_option( self::OPT_QUEUE, array(), false );
 		}
+		$queue  = (array) get_option( self::OPT_QUEUE, array() );
+		$linked = BWS_Product_Sync::products_by_article_id();
+		$until  = time() + self::STEP_SECONDS;
+
+		do {
+			$page = BWS_Client::instance()->get( '2.0/article', array( 'limit' => self::PAGE, 'offset' => $status['offset'] ) );
+			$page = is_array( $page ) ? $page : array();
+			foreach ( $page as $article ) {
+				$status['articles']++;
+				$id = (int) ( $article['id'] ?? 0 );
+				if ( ! $id || ! isset( $linked[ $id ] ) ) {
+					continue;
+				}
+				$status['linked']++;
+				$product = wc_get_product( $linked[ $id ] );
+				if ( ! $product ) {
+					continue;
+				}
+				$fields = self::missing_fields( $article, $product );
+				if ( $fields ) {
+					$queue[ $id ] = $fields;
+				}
+			}
+			$status['offset'] += self::PAGE;
+			$more              = count( $page ) === self::PAGE && $status['offset'] < 20000;
+		} while ( $more && time() < $until );
+
 		update_option( self::OPT_QUEUE, $queue, false );
+		$status['time'] = time();
+
+		if ( $more ) {
+			update_option( self::OPT_STATUS, $status, false );
+			if ( function_exists( 'as_enqueue_async_action' ) ) {
+				as_enqueue_async_action( self::HOOK_SCAN, array(), BWS_AS_GROUP );
+			}
+			return $status;
+		}
+
 		$status = array(
 			'state'    => $queue ? 'running' : 'done',
 			'time'     => time(),
-			'articles' => count( $articles ),
-			'linked'   => count( array_intersect_key( $linked, array_flip( array_column( $articles, 'id' ) ) ) ),
+			'articles' => $status['articles'],
+			'linked'   => $status['linked'],
 			'todo'     => count( $queue ),
 			'done'     => 0,
 			'errors'   => 0,
@@ -104,7 +135,7 @@ class BWS_Backfill {
 	}
 
 	/**
-	 * Arbeitet ein Paket der Warteschlange ab.
+	 * Arbeitet ein Paket der Warteschlange ab (höchstens CHUNK Artikel bzw. STEP_SECONDS).
 	 *
 	 * @return array Status.
 	 */
@@ -112,6 +143,7 @@ class BWS_Backfill {
 		$queue  = (array) get_option( self::OPT_QUEUE, array() );
 		$status = (array) get_option( self::OPT_STATUS, array() ) + array( 'done' => 0, 'errors' => 0 );
 		$batch  = array_slice( $queue, 0, self::CHUNK, true );
+		$until  = time() + self::STEP_SECONDS;
 		foreach ( $batch as $id => $fields ) {
 			try {
 				BWS_Client::instance()->post( '2.0/article/' . (int) $id, $fields );
@@ -121,6 +153,9 @@ class BWS_Backfill {
 				bws_log( 'error', sprintf( 'Nachrüsten bexio-Artikel %d: %s', $id, $e->getMessage() ) );
 			}
 			unset( $queue[ $id ] );
+			if ( time() >= $until ) {
+				break;
+			}
 		}
 		update_option( self::OPT_QUEUE, $queue, false );
 		$status['state'] = $queue ? 'running' : 'done';

@@ -21,7 +21,10 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	if ( 'GET' === $m && '3.0/taxes' === $path ) return resp( array( array( 'id' => 11, 'value' => 8.1, 'name' => 'UN81' ), array( 'id' => 12, 'value' => 2.6, 'name' => 'UR26' ), array( 'id' => 14, 'value' => 0, 'name' => 'UN00' ) ) );
 	if ( 'GET' === $m && '2.0/country' === $path ) return resp( array( array( 'id' => 1, 'name' => 'Schweiz', 'name_short' => 'CH', 'iso3166_alpha2' => 'CH' ), array( 'id' => 2, 'name' => 'Deutschland', 'name_short' => 'DE', 'iso3166_alpha2' => 'DE' ) ) );
 	if ( 'GET' === $m && '3.0/currencies' === $path ) return resp( array( array( 'id' => 1, 'name' => 'CHF' ), array( 'id' => 2, 'name' => 'EUR' ) ) );
-	if ( 'GET' === $m && '2.0/article' === $path ) return resp( $GLOBALS['bws_bexio_articles'] ?? array() );
+	if ( 'GET' === $m && '2.0/article' === $path ) {
+		parse_str( (string) wp_parse_url( $url, PHP_URL_QUERY ), $qa );
+		return resp( array_slice( $GLOBALS['bws_bexio_articles'] ?? array(), (int) ( $qa['offset'] ?? 0 ), isset( $qa['limit'] ) ? (int) $qa['limit'] : null ) );
+	}
 	if ( 'POST' === $m && '2.0/article/search' === $path ) {
 		if ( 'KAPUTT-1' === $body[0]['value'] ) return resp( array( 'message' => 'Serverfehler' ), 400 );
 		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575 );
@@ -345,8 +348,16 @@ $GLOBALS['bws_bexio_articles'] = array(
 	array( 'id' => 5004, 'intern_code' => '096-77116', 'deliverer_code' => '19442', 'is_stock' => true, 'stock_nr' => 1 ),
 );
 $GLOBALS['bws_requests'] = array();
+// 1200 weitere, nicht verknüpfte Artikel: Lesen über mehrere Seiten à 500.
+for ( $i = 0; $i < 1200; $i++ ) { $GLOBALS['bws_bexio_articles'][] = array( 'id' => 90000 + $i, 'intern_code' => 'X-' . $i, 'is_stock' => false ); }
+delete_option( BWS_Backfill::OPT_STATUS );
 $st = BWS_Backfill::scan();
+$scans = 1;
+while ( 'scanning' === $st['state'] && $scans < 10 ) { $st = BWS_Backfill::scan(); $scans++; }
+$article_gets = count( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' === $r[0] && '2.0/article' === $r[1]; } ) );
+t( 'Nachrüsten liest seitenweise', 3 === $article_gets && 1204 === $st['articles'] && 3 === $st['linked'], $article_gets . ' ' . wp_json_encode( $st ) );
 while ( 'running' === $st['state'] ) { $st = BWS_Backfill::chunk(); }
+$GLOBALS['bws_bexio_articles'] = array_slice( $GLOBALS['bws_bexio_articles'], 0, 4 );
 $posts = array(); foreach ( $GLOBALS['bws_requests'] as $q ) { if ( 'POST' === $q[0] ) $posts[ $q[1] ] = $q[2]; }
 t( 'Nachrüsten: Artikel ohne Lager bekommt Lager, Konto, Vorsteuer', isset( $posts['2.0/article/5001'] ) && true === $posts['2.0/article/5001']['is_stock'] && 42 === $posts['2.0/article/5001']['expense_account_id'] && 21 === $posts['2.0/article/5001']['tax_expense_id'], wp_json_encode( $posts ) );
 t( 'Nachrüsten: Lagerartikel – Bestand unangetastet, nur fehlendes Konto', isset( $posts['2.0/article/5002'] ) && ! isset( $posts['2.0/article/5002']['is_stock'] ) && ! isset( $posts['2.0/article/5002']['stock_nr'] ) && ! isset( $posts['2.0/article/5002']['tax_expense_id'] ) && 42 === $posts['2.0/article/5002']['expense_account_id'] );
@@ -439,6 +450,12 @@ t( 'Bestand 0, ohne Lagerverwaltung -> Lieferrückstand', 'onbackorder' === wc_g
 t( 'Zuordnung über verknüpfte Artikel-ID', 'instock' === wc_get_product( $p5->get_id() )->get_stock_status() );
 t( 'Statistik', 1 === $stats['not_found'] && 2 === $stats['skipped'] && 2 === $stats['instock'] && 3 === $stats['backorder'] && 0 === $stats['errors'], wp_json_encode( $stats ) );
 
+// Etappenweise (wie im Hintergrund): gleiches Ergebnis wie in einem Durchgang.
+BWS_Stock_Import::start();
+$steps = 0;
+while ( BWS_Stock_Import::step( 0 ) && $steps < 1000 ) { $steps++; }
+$staged = get_option( BWS_Stock_Import::OPTION_LAST );
+t( 'Import in Etappen läuft durch', $steps > 3 && false === get_option( BWS_Stock_Import::OPTION_STATE ) && $staged['articles'] === $stats['articles'] && 5 === $staged['unchanged'] && 0 === $staged['errors'], $steps . ' ' . wp_json_encode( $staged ) );
 $stats2 = BWS_Stock_Import::run();
 t( 'Zweiter Lauf: alles unverändert', 5 === $stats2['unchanged'] && 0 === $stats2['instock'] + $stats2['backorder'], wp_json_encode( $stats2 ) );
 

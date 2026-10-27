@@ -18,9 +18,14 @@ class BWS_Stock_Import {
 	const HOOK         = 'bws_import_stock';
 	const OPTION_LAST  = 'bws_stock_import_last';
 	const OPTION_SCHED = 'bws_stock_import_scheduled';
+	const OPTION_STATE = 'bws_stock_import_state';
+	const HOOK_STEP    = 'bws_import_stock_step';
+	const PAGE         = 500;
+	const STEP_SECONDS = 15; // Server bricht nach 30 s ab.
 
 	public static function init() {
 		add_action( self::HOOK, array( __CLASS__, 'run_job' ) );
+		add_action( self::HOOK_STEP, array( __CLASS__, 'run_step' ) );
 		add_action( 'action_scheduler_init', array( __CLASS__, 'ensure_schedule' ) );
 	}
 
@@ -78,38 +83,160 @@ class BWS_Stock_Import {
 	}
 
 	/**
-	 * Hintergrund-Job.
-	 *
-	 * @throws BWS_Exception Damit der Action Scheduler den Lauf als fehlgeschlagen markiert.
+	 * Hintergrund-Job (täglich bzw. Knopf): startet den Import in Etappen.
 	 */
 	public static function run_job() {
 		if ( 'from_bexio' !== BWS_Settings::stock_mode() ) {
 			return;
 		}
-		try {
-			self::run();
-		} catch ( BWS_Exception $e ) {
-			bws_log( 'error', 'Lagerimport aus bexio fehlgeschlagen: ' . $e->getMessage() );
-			update_option( self::OPTION_LAST, array( 'time' => time(), 'error' => $e->getMessage() ), false );
-			throw $e;
+		self::start();
+	}
+
+	/**
+	 * Startet einen Import in Etappen (jede Etappe bleibt deutlich unter dem PHP-Zeitlimit des Servers).
+	 */
+	public static function start() {
+		update_option(
+			self::OPTION_STATE,
+			array(
+				'phase'    => 'fetch',
+				'offset'   => 0,
+				'cursor'   => 0,
+				'articles' => array(),
+				'handled'  => array(),
+				'stats'    => self::empty_stats(),
+			),
+			false
+		);
+		if ( function_exists( 'as_enqueue_async_action' ) ) {
+			as_unschedule_all_actions( self::HOOK_STEP, array(), BWS_AS_GROUP );
+			as_enqueue_async_action( self::HOOK_STEP, array(), BWS_AS_GROUP );
+		} else {
+			while ( self::step( PHP_INT_MAX ) ) {
+				continue;
+			}
 		}
 	}
 
 	/**
-	 * Holt alle Artikel aus bexio und setzt den Lagerstatus in WooCommerce.
+	 * Eine Etappe; plant die nächste ein, solange noch Arbeit übrig ist.
+	 *
+	 * @throws BWS_Exception Damit der Action Scheduler die Etappe als fehlgeschlagen markiert.
+	 */
+	public static function run_step() {
+		try {
+			$more = self::step( self::STEP_SECONDS );
+		} catch ( BWS_Exception $e ) {
+			bws_log( 'error', 'Lagerimport aus bexio fehlgeschlagen: ' . $e->getMessage() );
+			update_option( self::OPTION_LAST, array( 'time' => time(), 'error' => $e->getMessage() ), false );
+			delete_option( self::OPTION_STATE );
+			throw $e;
+		}
+		if ( $more ) {
+			as_enqueue_async_action( self::HOOK_STEP, array(), BWS_AS_GROUP );
+		}
+	}
+
+	/**
+	 * Arbeitet höchstens $budget Sekunden am gespeicherten Import weiter.
+	 *
+	 * @param int $budget Sekunden.
+	 * @return bool Ob noch Arbeit übrig ist.
+	 */
+	public static function step( $budget ) {
+		$state = get_option( self::OPTION_STATE );
+		if ( ! is_array( $state ) ) {
+			return false;
+		}
+		$until = time() + $budget;
+
+		if ( 'fetch' === $state['phase'] ) {
+			do {
+				$page = BWS_Client::instance()->get( '2.0/article', array( 'limit' => self::PAGE, 'offset' => $state['offset'] ) );
+				$page = is_array( $page ) ? $page : array();
+				foreach ( $page as $article ) {
+					$state['articles'][] = self::compact( $article );
+				}
+				$state['offset'] += self::PAGE;
+			} while ( count( $page ) === self::PAGE && $state['offset'] < 20000 && time() < $until );
+
+			if ( count( $page ) === self::PAGE && $state['offset'] < 20000 ) {
+				update_option( self::OPTION_STATE, $state, false );
+				return true;
+			}
+			$state['phase']             = 'process';
+			$state['stats']['articles'] = count( $state['articles'] );
+		}
+
+		$field = self::field();
+		$ctx   = array(
+			'field'      => $field,
+			'by_id'      => BWS_Product_Sync::products_by_article_id(),
+			'serials'    => self::serial_stock( $state['articles'], $field ),
+			'serial_cat' => self::serial_category_ids(),
+		);
+
+		BWS_Product_Sync::$suspended = true;
+		try {
+			$total = count( $state['articles'] );
+			while ( $state['cursor'] < $total ) {
+				self::process_article( $state['articles'][ $state['cursor'] ], $ctx, $state['stats'], $state['handled'] );
+				$state['cursor']++;
+				if ( time() >= $until && $state['cursor'] < $total ) {
+					update_option( self::OPTION_STATE, $state, false );
+					return true;
+				}
+			}
+			self::process_leftover_serials( $ctx, $state['stats'], $state['handled'] );
+		} finally {
+			BWS_Product_Sync::$suspended = false;
+		}
+
+		delete_option( self::OPTION_STATE );
+		self::finish( $state['stats'] );
+		return false;
+	}
+
+	/**
+	 * Holt alle Artikel aus bexio und setzt den Lagerstatus in WooCommerce (in einem Durchgang, z.B. WP-CLI).
 	 *
 	 * @return array Zusammenfassung.
 	 */
 	public static function run() {
-		$articles = BWS_Client::instance()->get_all( '2.0/article' );
-		$field    = 'stock_available_nr' === BWS_Settings::get( 'stock_field' ) ? 'stock_available_nr' : 'stock_nr';
-		$by_id    = BWS_Product_Sync::products_by_article_id();
-		$serials  = self::serial_stock( $articles, $field );
-		$serial_cat = self::serial_category_ids();
-		$handled  = array();
-		$stats    = array(
+		$articles = array_map( array( __CLASS__, 'compact' ), BWS_Client::instance()->get_all( '2.0/article' ) );
+		$field    = self::field();
+		$ctx      = array(
+			'field'      => $field,
+			'by_id'      => BWS_Product_Sync::products_by_article_id(),
+			'serials'    => self::serial_stock( $articles, $field ),
+			'serial_cat' => self::serial_category_ids(),
+		);
+		$handled           = array();
+		$stats             = self::empty_stats();
+		$stats['articles'] = count( $articles );
+
+		BWS_Product_Sync::$suspended = true;
+		try {
+			foreach ( $articles as $article ) {
+				self::process_article( $article, $ctx, $stats, $handled );
+			}
+			self::process_leftover_serials( $ctx, $stats, $handled );
+		} finally {
+			BWS_Product_Sync::$suspended = false;
+		}
+
+		self::finish( $stats );
+		return $stats;
+	}
+
+	private static function field() {
+		return 'stock_available_nr' === BWS_Settings::get( 'stock_field' ) ? 'stock_available_nr' : 'stock_nr';
+	}
+
+	private static function empty_stats() {
+		return array(
 			'time'      => time(),
-			'articles'  => count( $articles ),
+			'articles'  => 0,
 			'serial'    => 0,
 			'instock'   => 0,
 			'backorder' => 0,
@@ -118,72 +245,100 @@ class BWS_Stock_Import {
 			'skipped'   => 0,
 			'errors'    => 0,
 		);
+	}
 
-		BWS_Product_Sync::$suspended = true;
-		try {
-			foreach ( $articles as $article ) {
-				$code   = trim( (string) ( $article['intern_code'] ?? '' ) );
-				$serial = $serials[ $code ]['stock'] ?? 0;
+	/**
+	 * Nur die für den Import nötigen Felder (hält den gespeicherten Zwischenstand klein).
+	 *
+	 * @param array $article bexio-Artikel.
+	 * @return array
+	 */
+	public static function compact( $article ) {
+		$keep = array( 'id', 'intern_code', 'is_stock', 'stock_nr', 'stock_available_nr', 'deliverer_code' );
+		return array_intersect_key( (array) $article, array_flip( $keep ) );
+	}
 
-				$is_stock = ! empty( $article['is_stock'] ) && isset( $article[ $field ] );
-				$product  = self::find_product( $article, $by_id );
+	/**
+	 * Verarbeitet einen bexio-Artikel.
+	 *
+	 * @param array $article bexio-Artikel.
+	 * @param array $ctx     field, by_id, serials, serial_cat.
+	 * @param array $stats   Zusammenfassung (wird ergänzt).
+	 * @param array $handled Bereits behandelte Hauptartikel-Nummern (wird ergänzt).
+	 */
+	private static function process_article( array $article, array $ctx, array &$stats, array &$handled ) {
+		$field      = $ctx['field'];
+		$serials    = $ctx['serials'];
+		$serial_cat = $ctx['serial_cat'];
+		$code       = trim( (string) ( $article['intern_code'] ?? '' ) );
+		$serial     = $serials[ $code ]['stock'] ?? 0;
 
-				// Nur Lagerartikel – bei anderen Artikeln ist der Bestand in bexio immer 0.
-				// Ausnahme: Hauptartikel der Seriennummer-Kategorie (Waffen), deren Bestand aus den Kopien kommt.
-				if ( ! $is_stock && ! ( $product && BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) ) {
-					$stats['skipped']++;
-					continue;
-				}
-				if ( ! $product ) {
-					$stats['not_found']++;
-					continue;
-				}
-				$own = empty( $article['is_stock'] ) ? 0.0 : (float) ( $article[ $field ] ?? 0 );
-				if ( $serial && ! BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) {
-					bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s hat Kopien mit Produktcode Lieferant (%s), ist aber nicht in der Seriennummer-Kategorie – ignoriert.', $code, implode( ', ', $serials[ $code ]['codes'] ) ) );
-					$serial = 0;
-					if ( empty( $article['is_stock'] ) ) {
-						$stats['skipped']++;
-						continue;
-					}
-				}
-				$handled[ $code ] = true;
-				if ( $product->is_type( array( 'variable', 'grouped', 'external' ) ) ) {
-					bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s gehört zu einem %s-Produkt (#%d) – Status wird dort aus den Varianten berechnet, übersprungen.', $article['intern_code'], $product->get_type(), $product->get_id() ) );
-					$stats['skipped']++;
-					continue;
-				}
+		$is_stock = ! empty( $article['is_stock'] ) && isset( $article[ $field ] );
+		$product  = self::find_product( $article, $ctx['by_id'] );
 
-				try {
-					$result = self::apply( $product, $own + $serial );
-					$stats[ $result ]++;
-					if ( $serial ) {
-						$stats['serial']++;
-						bws_log( 'info', sprintf( 'Lagerimport: %s (Produkt #%d) – %s Stück über Seriennummern %s.', $code, $product->get_id(), $serial, implode( ', ', $serials[ $code ]['codes'] ) ) );
-					}
-				} catch ( Exception $e ) {
-					$stats['errors']++;
-					bws_log( 'error', sprintf( 'Lagerimport: Produkt #%d (%s): %s', $product->get_id(), $article['intern_code'], $e->getMessage() ) );
-				}
+		// Nur Lagerartikel – bei anderen Artikeln ist der Bestand in bexio immer 0.
+		// Ausnahme: Hauptartikel der Seriennummer-Kategorie (Waffen), deren Bestand aus den Kopien kommt.
+		if ( ! $is_stock && ! ( $product && BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) ) {
+			$stats['skipped']++;
+			return;
+		}
+		if ( ! $product ) {
+			$stats['not_found']++;
+			return;
+		}
+		$own = empty( $article['is_stock'] ) ? 0.0 : (float) ( $article[ $field ] ?? 0 );
+		if ( $serial && ! BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) {
+			bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s hat Kopien mit Produktcode Lieferant (%s), ist aber nicht in der Seriennummer-Kategorie – ignoriert.', $code, implode( ', ', $serials[ $code ]['codes'] ) ) );
+			$serial = 0;
+			if ( empty( $article['is_stock'] ) ) {
+				$stats['skipped']++;
+				return;
 			}
-			// Hauptartikel, die in bexio nicht (mehr) existieren, aber Seriennummer-Kopien haben.
-			foreach ( $serials as $code => $info ) {
-				if ( isset( $handled[ $code ] ) ) {
-					continue;
-				}
-				$product_id = wc_get_product_id_by_sku( $code );
-				$product    = $product_id ? wc_get_product( $product_id ) : null;
-				if ( ! $product || $product->is_type( array( 'variable', 'grouped', 'external' ) ) || ! BWS_Product_Sync::in_category_tree( $product, $serial_cat ) ) {
-					continue;
-				}
-				$result = self::apply( $product, $info['stock'] );
-				$stats[ $result ]++;
-				$stats['serial']++;
-			}
-		} finally {
-			BWS_Product_Sync::$suspended = false;
+		}
+		$handled[ $code ] = true;
+		if ( $product->is_type( array( 'variable', 'grouped', 'external' ) ) ) {
+			bws_log( 'notice', sprintf( 'Lagerimport: Artikel %s gehört zu einem %s-Produkt (#%d) – Status wird dort aus den Varianten berechnet, übersprungen.', $code, $product->get_type(), $product->get_id() ) );
+			$stats['skipped']++;
+			return;
 		}
 
+		try {
+			$result = self::apply( $product, $own + $serial );
+			$stats[ $result ]++;
+			if ( $serial ) {
+				$stats['serial']++;
+				bws_log( 'info', sprintf( 'Lagerimport: %s (Produkt #%d) – %s Stück über Seriennummern %s.', $code, $product->get_id(), $serial, implode( ', ', $serials[ $code ]['codes'] ) ) );
+			}
+		} catch ( Exception $e ) {
+			$stats['errors']++;
+			bws_log( 'error', sprintf( 'Lagerimport: Produkt #%d (%s): %s', $product->get_id(), $code, $e->getMessage() ) );
+		}
+	}
+
+	/**
+	 * Hauptartikel, die in bexio nicht (mehr) existieren, aber Seriennummer-Kopien haben.
+	 *
+	 * @param array $ctx     Kontext.
+	 * @param array $stats   Zusammenfassung.
+	 * @param array $handled Bereits behandelte Hauptartikel-Nummern.
+	 */
+	private static function process_leftover_serials( array $ctx, array &$stats, array $handled ) {
+		foreach ( $ctx['serials'] as $code => $info ) {
+			if ( isset( $handled[ $code ] ) ) {
+				continue;
+			}
+			$product_id = wc_get_product_id_by_sku( $code );
+			$product    = $product_id ? wc_get_product( $product_id ) : null;
+			if ( ! $product || $product->is_type( array( 'variable', 'grouped', 'external' ) ) || ! BWS_Product_Sync::in_category_tree( $product, $ctx['serial_cat'] ) ) {
+				continue;
+			}
+			$result = self::apply( $product, $info['stock'] );
+			$stats[ $result ]++;
+			$stats['serial']++;
+		}
+	}
+
+	private static function finish( array $stats ) {
 		update_option( self::OPTION_LAST, $stats, false );
 		bws_log(
 			'info',
@@ -198,7 +353,6 @@ class BWS_Stock_Import {
 				$stats['errors']
 			)
 		);
-		return $stats;
 	}
 
 	/**
