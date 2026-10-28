@@ -765,7 +765,7 @@ Kompakt, gross oder mit Absehen – welches wär's für dich? 👇
 
 ### #21 – Mi 28.10.2026, 18:30 – Karussell – Säule 4 (Schiesssport & Jagd CH): Schweizer Klassiker im Fokus: der K31
 
-**Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Mi 28.10.2026, 18:30, Sicherheitsnetz +10 Min.
+**Status:** ✅ Veröffentlicht 28.10.2026, 22:00 (armatum_ch, geplant 18:30 – stark verspätet nach Worker-Neustarts) – https://www.instagram.com/p/DfDWTmKCR0y/ – 8 Slides inkl. Inhaber-Foto K31 Custom als Titelbild. Story ausgelassen (Nachtruhe-Regel 22–7 Uhr).
 
 **Titelbild (26.10.):** Slide 1 = Originalfoto «K31 Custom» des Inhabers (Instagram-Beitrag https://www.instagram.com/p/DePwbqZABtX/, Medien-ID 18126225286862467, URL beim Posten frisch holen), danach Grafiken 01–07.
 
@@ -1140,3 +1140,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-27 | Shop-Check: 47 neue Produkte (u. a. 11 Arken-Artikel: EP-5/SH-4/SH-4J in MOA/TOR, Outrider 2-12/3-18 SFP, Halo-Ti-Ringe). Caption #24 um eine Zeile «Arken jetzt auch in MOA + Outrider» ergänzt (Reel unverändert). Übrige Neuheiten kein Post (siehe marketing/shop-monitoring.md). |
 | 2026-10-27 | #20 GPO-Spektive veröffentlicht – **verspätet 20:20 statt 18:30**: Worker-Neustart während der Veröffentlichung, danach fälschlich «No response requested» geantwortet; das Sicherheitsnetz hat es nachgeholt. https://www.instagram.com/p/DfAmF47CY2I/ + Story. |
 | 2026-10-28 | Inhaber: Laden geschlossen Do 05.11. und Do 12.11. (Sa 07.11. offen). Umgesetzt: Footer-Hinweis armatum.ch, 5 Story-Grafiken (instagram/stories/schliessung-2026-11/), Aushang-PDF, Newsletter-Satz; Story-Termine 02./04./05./11./12.11. + Footer-Entfernung 13.11. eingerichtet (Auftrag: autopilot/auftrag-schliessung-2026-11.md). Google-Profil: Inhaber. |
+| 2026-10-28 | #21 K31 veröffentlicht – **22:00 statt 18:30**: zweimal Worker-Neustart, danach fälschlich «No response requested» statt Fortsetzen; erst nach dem Sicherheitsnetz nachgeholt. Inhaber-Foto als Slide 1 hat funktioniert (cdninstagram-URL direkt). https://www.instagram.com/p/DfDWTmKCR0y/ – Story wegen Nachtruhe ausgelassen. |
