@@ -161,3 +161,6 @@ Tipps, Tests & Einblicke 👇
 - **«WHB» (Waffenhandelsbewilligung) nie nennen** – in keinem Text, Post, Newsletter oder Kommentar. Steht im Shop «… + WHB», nur den Teil davor übernehmen.
 - **Unsicher? Den Inhaber fragen**, nicht raten.
 - Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
+
+## Sonderschliessungen (Inhaber, 28.10.2026)
+- **Do 05.11.2026 und Do 12.11.2026: Laden geschlossen.** An diesen Tagen keine «Heute offen»-Story, keine Einladung in den Laden («heute Abend sind wir da»), keine Aktion, die Ladenbesuch voraussetzt. Kommunikation siehe redaktionsplan.md «Schliessung 05./12.11.».
