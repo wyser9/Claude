@@ -695,6 +695,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | ✅ veröffentlicht 20:20 (verspätet) – https://www.instagram.com/p/DfAmF47CY2I/ |
 | So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | geplant (automatisch) |
+| Di 03.11. | 18:30 | #25 Neu: Nightforce – die ganze Familie (aus Shop-Check 29.10.) – fix terminiert, bei der Wochenplanung 02.–08.11. übernehmen | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
 
@@ -732,6 +733,36 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 **Hashtags:** `#zielfernrohr #longrange #präzisionsschiessen #arkenoptics #schweiz`
 
 **Regel-Check:** ✅ Optik (keine Waffe/Munition), keine Preise und keine Preissenkung erwähnt, kein «verfügbar»/Kaufaufruf, nur Link in der Bio. Daten aus den Shop-Merkmalen (Vergrösserung, Objektiv, Absehen, Gewicht, Garantie). Rechenbeispiel geprüft (0,4 MIL = 4 Klicks à 0,1 MIL; 0,1 MRAD = 1 cm auf 100 m). Hinweis: Beschreibungstext des SH-4 im Shop beschreibt fälschlich das EPL-4 4-16×44 – nicht verwendet, an Mark gemeldet.
+
+---
+
+### #25 – Di 03.11.2026, 18:30 – Karussell – Säule 3: Neu – Nightforce, die ganze Familie
+
+**Status:** Autopilot – geplant (aus Shop-Check 29.10.: Nightforce-Sortiment neu aufgebaut, 45 Varianten). Fix terminiert – bei der Wochenplanung 02.–08.11. übernehmen. Titelbild = Produktfoto (Regel 4c).
+
+**Grafiken:** `instagram/grafiken/25-nightforce/01.jpg`–`06.jpg`, WhatsApp-Status `whatsapp/posts/25-nightforce.jpg`.
+
+**Caption zum Kopieren:**
+```
+Neu bei Armatum: Nightforce – die ganze Familie 🎯
+
+Ab sofort führen wir das Nightforce-Sortiment in der ganzen Breite – mit der Wahl zwischen verschiedenen Absehen:
+
+▪️ NX6 – leicht und robust, von 2-12×42 für die Jagd bis 6-36×56 für die PRS-Produktionsklasse
+▪️ NX8 – kompakt mit 8-fachem Zoom, z. B. 4-32×50 auf nur 340 mm
+▪️ ATACR – die Referenz mit ED-Glas, vom 1-8×24 bis zum 7-35×56
+
+Alle mit Absehen in der 1. Bildebene – je nach Modell MIL-C, MIL-XT oder Horus TREMOR.
+
+👉 Swipe für die Modellreihen – und welches Absehen zu dir passt.
+
+Alle Infos auf armatum.ch (Link in der Bio). Fragen zu Optik und Absehen? Wir beraten dich gern im Laden in Fulenbach.
+
+NX6, NX8 oder ATACR – welches wär's für dich? 👇
+```
+**Hashtags:** `#nightforce #zielfernrohr #longrange #präzisionsschiessen #schweiz`
+
+**Regel-Check:** ✅ Optik (keine Waffe/Munition), Daten aus dem Shop, kein Preis und keine Preissenkung erwähnt, kein «verfügbar»/Kaufaufruf, nur Link in der Bio. Laden-Hinweis ohne Datum (Do 05.11. geschlossen). @nightforceoptics nicht markiert (Handle nicht verifiziert).
 
 ---
 
@@ -1141,3 +1172,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-27 | #20 GPO-Spektive veröffentlicht – **verspätet 20:20 statt 18:30**: Worker-Neustart während der Veröffentlichung, danach fälschlich «No response requested» geantwortet; das Sicherheitsnetz hat es nachgeholt. https://www.instagram.com/p/DfAmF47CY2I/ + Story. |
 | 2026-10-28 | Inhaber: Laden geschlossen Do 05.11. und Do 12.11. (Sa 07.11. offen). Umgesetzt: Footer-Hinweis armatum.ch, 5 Story-Grafiken (instagram/stories/schliessung-2026-11/), Aushang-PDF, Newsletter-Satz; Story-Termine 02./04./05./11./12.11. + Footer-Entfernung 13.11. eingerichtet (Auftrag: autopilot/auftrag-schliessung-2026-11.md). Google-Profil: Inhaber. |
 | 2026-10-28 | #21 K31 veröffentlicht – **22:00 statt 18:30**: zweimal Worker-Neustart, danach fälschlich «No response requested» statt Fortsetzen; erst nach dem Sicherheitsnetz nachgeholt. Inhaber-Foto als Slide 1 hat funktioniert (cdninstagram-URL direkt). https://www.instagram.com/p/DfDWTmKCR0y/ – Story wegen Nachtruhe ausgelassen. |
+| 2026-10-29 | Shop-Check: Nightforce-Sortiment neu (45 Varianten NX6/NX8/ATACR/SHV/CFS-Spektive, 6 alte Einträge ersetzt). #25 «Nightforce – die ganze Familie» erstellt, Di 03.11. 18:30 terminiert (Sicherheitsnetze +10 und +40 Min). |

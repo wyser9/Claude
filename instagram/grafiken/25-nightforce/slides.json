@@ -1,0 +1,13 @@
+{ "post": "#25 – Di 03.11.2026 18:30 – Neu bei Armatum: Nightforce – die ganze Familie",
+  "slides": [
+    { "type": "product", "kicker": "Neu bei Armatum", "title": "Nightforce – die ganze Familie", "titleSize": 76, "images": ["src-atacr735.png"], "imgHeight": 480,
+      "body": "**NX6, NX8 und ATACR** – vom leichten Jagdglas bis zum Long-Range-Spitzenmodell." },
+    { "type": "product", "kicker": "Nightforce NX6", "title": "Leicht und robust", "images": ["src-nx6.png"], "imgHeight": 400,
+      "rows": [["Modelle", "2-12×42 · 3-18×50 · 5-30×56 · 6-36×56"], ["Stärke", "FieldSet-Turm, Nahfokus ab 10 m (6-36×)"], ["Für", "Jagd, PRS-Produktionsklasse, Feldschiessen"]] },
+    { "type": "product", "kicker": "Nightforce NX8", "title": "Kompakt, 8-facher Zoom", "images": ["src-nx8.png"], "imgHeight": 400,
+      "rows": [["Modelle", "1-8×24 · 2.5-20×50 · 4-32×50"], ["Stärke", "ZeroStop, 4-32×50 nur 340 mm lang"], ["Für", "Wettkampf, Jagd auf Distanz, Kleinkaliber"]] },
+    { "type": "product", "kicker": "Nightforce ATACR", "title": "Die Referenz", "images": ["src-atacr525.png"], "imgHeight": 400,
+      "rows": [["Modelle", "1-8×24 · 4-16×42 · 4-20×50 · 5-25×56 · 7-35×56"], ["Stärke", "ED-Glas, ZeroStop/ZeroHold"], ["Für", "Long Range unter harten Bedingungen"]] },
+    { "type": "content", "badge": "?", "kicker": "Welches Absehen?", "title": "MIL-C, MIL-XT oder Horus?", "body": "Alle in der **1. Bildebene** und in **MIL**:\n\n**MIL-C** – klar und übersichtlich\n**MIL-XT** – mit Raster für Haltepunkte\n**Horus TREMOR** – dichtes Raster für Profis" },
+    { "type": "cta", "title": "Alle Infos auf armatum.ch", "body": "NX6, NX8 oder ATACR –\nwelches wär's für dich? 👇" }
+  ] }
