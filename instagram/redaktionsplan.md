@@ -830,7 +830,7 @@ Hast du einen K31 im Schrank oder im Verein? Erzähl uns seine Geschichte in den
 
 ### #22 – Do 29.10.2026, 19:00 – Karussell – Säule 1 (Wissen & Tipps): Gehörschutz am Stand
 
-**Status:** Autopilot – geplant (Wochen-Routine 25.10.2026). Veröffentlichung Do 29.10.2026, 19:00, Sicherheitsnetz +10 Min.
+**Status:** ✅ Veröffentlicht 29.10.2026, 19:15 (armatum_ch, geplant 19:00 – 15 Min. verspätet, Worker-Neustart) – https://www.instagram.com/p/DfFoNLkiXLi/ – Story mit Slide 01 (Produktfoto-Cover).
 
 **Titelbild (26.10.):** Slide 1 neu mit Produktfoto 3M Peltor SportTac aus dem Shop (statt Text-Cover), Commit siehe Termin.
 
@@ -1173,3 +1173,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-28 | Inhaber: Laden geschlossen Do 05.11. und Do 12.11. (Sa 07.11. offen). Umgesetzt: Footer-Hinweis armatum.ch, 5 Story-Grafiken (instagram/stories/schliessung-2026-11/), Aushang-PDF, Newsletter-Satz; Story-Termine 02./04./05./11./12.11. + Footer-Entfernung 13.11. eingerichtet (Auftrag: autopilot/auftrag-schliessung-2026-11.md). Google-Profil: Inhaber. |
 | 2026-10-28 | #21 K31 veröffentlicht – **22:00 statt 18:30**: zweimal Worker-Neustart, danach fälschlich «No response requested» statt Fortsetzen; erst nach dem Sicherheitsnetz nachgeholt. Inhaber-Foto als Slide 1 hat funktioniert (cdninstagram-URL direkt). https://www.instagram.com/p/DfDWTmKCR0y/ – Story wegen Nachtruhe ausgelassen. |
 | 2026-10-29 | Shop-Check: Nightforce-Sortiment neu (45 Varianten NX6/NX8/ATACR/SHV/CFS-Spektive, 6 alte Einträge ersetzt). #25 «Nightforce – die ganze Familie» erstellt, Di 03.11. 18:30 terminiert (Sicherheitsnetze +10 und +40 Min). |
+| 2026-10-29 | #22 Gehörschutz veröffentlicht 19:15 (geplant 19:00; Worker-Neustart, vom Sicherheitsnetz nachgeholt): https://www.instagram.com/p/DfFoNLkiXLi/ + Story. |
