@@ -22344,7 +22344,7 @@
 "price": "7790",
 "regular": "7790",
 "short": "Series I 2-Die Set für 6.5×55 mit präziser Vollkalibrierung und Geschosssetzung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-6-5x55-matrizensatz-series-i/"
 },
 "21574": {
@@ -35072,62 +35072,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/magpul-bipod-fuer-m-lok-fde/"
 },
-"23677": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 2,
-"name": "Nightforce NX8 – 1-8X24MM F1 schwarz",
-"on_sale": false,
-"price": "230990",
-"regular": "230990",
-"short": "Kompaktes LPVO Zielfernrohr mit 1-8x Vergrösserung und F1 Absehen für maximale Flexibilität.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-1-8x24-kaufen-f1-lpvo-zielfernrohr/"
-},
-"23681": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 1,
-"name": "Nightforce NX8 – 1-8X24MM F1 FDE",
-"on_sale": false,
-"price": "230990",
-"regular": "230990",
-"short": "Kompaktes LPVO Zielfernrohr mit 1-8x Vergrösserung und F1 Absehen für maximale Flexibilität.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-1-8x24mm-f1-fde/"
-},
-"23682": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 1,
-"name": "Nightforce NX8 – 2.5-20x50MM F1 ZeroStop – Schwarz",
-"on_sale": false,
-"price": "263990",
-"regular": "263990",
-"short": "Präzises Zielfernrohr mit 2.5-20x Vergrösserung, F1 Absehen und ZeroStop für Long Range Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50-kaufen-f1-zerostop/"
-},
-"23684": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 1,
-"name": "Nightforce NX8 – 2.5-20x50MM F1 ZeroStop – FDE",
-"on_sale": false,
-"price": "304990",
-"regular": "304990",
-"short": "Präzises Zielfernrohr mit 2.5-20x Vergrösserung, F1 Absehen und ZeroStop für Long Range Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50mm-f1-zerostop-fde/"
-},
 "23693": {
 "cats": [
 "6.5 Creedmoor",
@@ -38155,45 +38099,17 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cz-bren-2-magazin-30-schuss-223/"
 },
-"24428": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 1,
-"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – Schwarz",
-"on_sale": false,
-"price": "287990",
-"regular": "287990",
-"short": "High-End Zielfernrohr mit 4-32x Vergrösserung, FFP Absehen und ZeroStop für präzises Long Range Schiessen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop/"
-},
-"24431": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 1,
-"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – FDE",
-"on_sale": false,
-"price": "298990",
-"regular": "298990",
-"short": "High-End Zielfernrohr mit 4-32x Vergrösserung, FFP Absehen und ZeroStop für präzises Long Range Schiessen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-fde/"
-},
 "24433": {
 "cats": [
 "Nightforce",
 "Zielfernrohre / Scopes"
 ],
 "images": 1,
-"name": "Nightforce ATACR – 1-8X24MM F1 ZeroStop – Schwarz",
+"name": "Nightforce ATACR – 1-8x24mm F1 Zielfernrohr – Schwarz",
 "on_sale": false,
 "price": "298990",
 "regular": "298990",
-"short": "High-End LPVO Zielfernrohr mit 1-8x Vergrösserung. Schnell, präzise und extrem robust.",
+"short": "High-End LPVO Zielfernrohr mit 1-8x Vergrösserung, FFP-Absehen FC-DMx und tageslichttauglicher Beleuchtung. Auf 1x ein Rotpunktvisier, auf 8x präzise Haltepunkte.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/nightforce-atacr-1-8x24-f1-zerostop/"
 },
@@ -62510,7 +62426,8 @@
 "32306": {
 "cats": [
 "Fernglas / Monkular / Binokular",
-"GPO German Precision Optics"
+"GPO German Precision Optics",
+"Spektive"
 ],
 "images": 4,
 "name": "GPO Spektiv PASSION 16-48×65 APO",
@@ -62524,7 +62441,8 @@
 "32310": {
 "cats": [
 "Fernglas / Monkular / Binokular",
-"GPO German Precision Optics"
+"GPO German Precision Optics",
+"Spektive"
 ],
 "images": 4,
 "name": "GPO Spektiv PASSION 20-60×85 APO",
@@ -62538,7 +62456,8 @@
 "32313": {
 "cats": [
 "Fernglas / Monkular / Binokular",
-"GPO German Precision Optics"
+"GPO German Precision Optics",
+"Spektive"
 ],
 "images": 4,
 "name": "GPO Spektiv TAC SPOTTER 15-45×60",
@@ -63556,5 +63475,639 @@
 "short": "Gebrauchtes CMMG Kleinkaliber-Kit im Kaliber .22 LR für AR-15, inklusive drei Magazinen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cmmg-conversion-kit-22-lr-fuer-ar-15-mit-3-magazinen-gebraucht/"
+},
+"32629": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX6 3-18×50 F1 Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "218990",
+"regular": "218990",
+"short": "Vielseitiges Zielfernrohr mit 3-18x Vergrösserung, FFP-Absehen MIL-C, FieldSet-Höhenturm und Digillum-Beleuchtung für Jagd und Sportschiessen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-3-18x50-f1-zielfernrohr-schwarz-mil-c/"
+},
+"32636": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX6 3-18×50 F1 Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "218990",
+"regular": "218990",
+"short": "Vielseitiges Zielfernrohr mit 3-18x Vergrösserung, FFP-Absehen MIL-XT, FieldSet-Höhenturm und Digillum-Beleuchtung für Jagd und Sportschiessen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-3-18x50-f1-zielfernrohr-schwarz-mil-xt/"
+},
+"32655": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce ATACR – 1-8x24mm F1 Zielfernrohr – FDE",
+"on_sale": false,
+"price": "318990",
+"regular": "318990",
+"short": "High-End LPVO Zielfernrohr in FDE mit 1-8x Vergrösserung, FFP-Absehen FC-DMx und tageslichttauglicher Beleuchtung. Auf 1x ein Rotpunktvisier, auf 8x präzise Haltepunkte.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-1-8x24mm-f1-zielfernrohr-fde/"
+},
+"32662": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX6 5-30×56 F1 Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "247990",
+"regular": "247990",
+"short": "Hochvergrösserndes FFP-Zielfernrohr für Wettkampf und Langdistanz: 5-30x, 56-mm-Objektiv, MIL-C-Absehen, 34.9 MRAD Höhenverstellung und FieldSet-Turm mit schneller Nullstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-5-30x56-f1-zielfernrohr-schwarz-mil-c/"
+},
+"32664": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX6 5-30×56 F1 Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "247990",
+"regular": "247990",
+"short": "Hochvergrösserndes FFP-Zielfernrohr für Wettkampf und Langdistanz: 5-30x, 56-mm-Objektiv, MIL-XT-Absehen, 34.9 MRAD Höhenverstellung und FieldSet-Turm mit schneller Nullstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-5-30x56-f1-zielfernrohr-schwarz-mil-xt/"
+},
+"32672": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Nightforce NX6 2-12×42 F1 Zielfernrohr – Schwarz, FC-MRx",
+"on_sale": false,
+"price": "207990",
+"regular": "207990",
+"short": "Leichtes FFP-Zielfernrohr für Jagd- und Spezialgewehre: 2-12x, 42-mm-Objektiv, FC-MRx-Absehen mit 20-MRAD-Raster, Digillum-Beleuchtung und FieldSet-Höhenturm.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-2-12x42-f1-zielfernrohr-schwarz-fc-mrx/"
+},
+"32685": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX8 2.5-20×50 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "294990",
+"regular": "294990",
+"short": "Vielseitiges FFP-Zielfernrohr 2.5-20×50 mit ZeroStop-Höhenturm, Digillum-Beleuchtung und Horus-TREMOR3-Absehen. Nur 305 mm lang, mit 32 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50-f1-zerostop-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32686": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX8 2.5-20×50 F1 ZeroStop Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "263990",
+"regular": "263990",
+"short": "Vielseitiges FFP-Zielfernrohr 2.5-20×50 mit ZeroStop-Höhenturm, Digillum-Beleuchtung und MIL-XT-Absehen. Nur 305 mm lang, mit 32 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50-f1-zerostop-zielfernrohr-schwarz-mil-xt/"
+},
+"32687": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 2.5-20×50 F1 ZeroStop Zielfernrohr – FDE, Horus Tremor3",
+"on_sale": false,
+"price": "304990",
+"regular": "304990",
+"short": "Vielseitiges FFP-Zielfernrohr 2.5-20×50 in FDE mit ZeroStop-Höhenturm, Digillum-Beleuchtung und Horus-TREMOR3-Absehen. Nur 305 mm lang, mit 32 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50-f1-zerostop-zielfernrohr-fde-horus-tremor3/"
+},
+"32688": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 2.5-20×50 F1 ZeroStop Zielfernrohr – FDE, MIL-XT",
+"on_sale": false,
+"price": "275990",
+"regular": "275990",
+"short": "Vielseitiges FFP-Zielfernrohr 2.5-20×50 in FDE mit ZeroStop-Höhenturm, Digillum-Beleuchtung und MIL-XT-Absehen. Nur 305 mm lang, mit 32 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-2-5-20x50-f1-zerostop-zielfernrohr-fde-mil-xt/"
+},
+"32699": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Nightforce NX8 1-8×24 F1 CAPPED Zielfernrohr – Schwarz, FC-DMx",
+"on_sale": false,
+"price": "230990",
+"regular": "230990",
+"short": "Kompaktes, leichtes FFP-Zielfernrohr 1-8×24 mit echter 1x-Vergrösserung, tageslichttauglicher Beleuchtung und FC-DMx-Absehen. Ideal für Karabiner und federleichte Jagdgewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-1-8x24-f1-capped-zielfernrohr-schwarz-fc-dmx/"
+},
+"32700": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 6,
+"name": "Nightforce NX8 1-8×24 F1 CAPPED Zielfernrohr – FDE, FC-DMx",
+"on_sale": false,
+"price": "242990",
+"regular": "242990",
+"short": "Kompaktes, leichtes FFP-Zielfernrohr 1-8×24 in FDE mit echter 1x-Vergrösserung, tageslichttauglicher Beleuchtung und FC-DMx-Absehen. Ideal für Karabiner und federleichte Jagdgewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-1-8x24-f1-capped-zielfernrohr-fde-fc-dmx/"
+},
+"32707": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 8,
+"name": "Nightforce NX8 1-8×24 F1 ZeroStop Zielfernrohr – Schwarz, FC-MIL",
+"on_sale": false,
+"price": "230990",
+"regular": "230990",
+"short": "Kompaktes, leichtes FFP-Zielfernrohr 1-8×24 mit ZeroStop-Höhenturm, echter 1x-Vergrösserung und FC-MIL-Absehen. Ideal für ultraleichte Gewehre und Jagdgewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-1-8x24-f1-zerostop-zielfernrohr-schwarz-fc-mil/"
+},
+"32714": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Nightforce NX6 6-36×56 F1 Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "257990",
+"regular": "257990",
+"short": "Hochvergrösserndes FFP-Zielfernrohr 6-36×56 mit MIL-C-Absehen, 34.9 MRAD Höhenverstellung, FieldSet-Turm und 10 m Nahfokus. Ideal für PRS und Feldschiessen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-6-36x56-f1-zielfernrohr-schwarz-mil-c/"
+},
+"32715": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Nightforce NX6 6-36×56 F1 Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "257990",
+"regular": "257990",
+"short": "Hochvergrösserndes FFP-Zielfernrohr 6-36×56 mit MIL-XT-Absehen, 34.9 MRAD Höhenverstellung, FieldSet-Turm und 10 m Nahfokus. Ideal für PRS und Feldschiessen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-6-36x56-f1-zielfernrohr-schwarz-mil-xt/"
+},
+"32725": {
+"cats": [
+"Nightforce",
+"Spektive",
+"Visiere / Optik"
+],
+"images": 9,
+"name": "Nightforce CFS 6-36×50 F1 Spektiv – MIL-XT",
+"on_sale": false,
+"price": "340990",
+"regular": "340990",
+"short": "Konfigurierbares Feld-Spektiv 6-36×50 mit Absehen in der ersten Bildebene (MIL-XT), kompaktem Geradeinblick und robuster Nightforce-Bauweise. Ohne Accessory Cage Kit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-cfs-6-36x50-f1-spektiv-mil-xt/"
+},
+"32726": {
+"cats": [
+"Nightforce",
+"Spektive",
+"Visiere / Optik"
+],
+"images": 9,
+"name": "Nightforce CFS 6-36×50 F1 Spektiv – MIL-XT, mit Accessory Cage Kit",
+"on_sale": false,
+"price": "357990",
+"regular": "357990",
+"short": "Konfigurierbares Feld-Spektiv 6-36×50 mit Absehen in der ersten Bildebene (MIL-XT), kompaktem Geradeinblick und robuster Nightforce-Bauweise. Mit Accessory Cage Kit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-cfs-6-36x50-f1-spektiv-mil-xt-mit-accessory-cage-kit/"
+},
+"32727": {
+"cats": [
+"Nightforce",
+"Spektive",
+"Visiere / Optik"
+],
+"images": 9,
+"name": "Nightforce CFS 6-36×50 F1 Spektiv – Horus Tremor4",
+"on_sale": false,
+"price": "369990",
+"regular": "369990",
+"short": "Konfigurierbares Feld-Spektiv 6-36×50 mit Horus-TREMOR4-Absehen in der ersten Bildebene, kompaktem Geradeinblick und robuster Nightforce-Bauweise. Ohne Accessory Cage Kit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-cfs-6-36x50-f1-spektiv-horus-tremor4/"
+},
+"32728": {
+"cats": [
+"Nightforce",
+"Spektive",
+"Visiere / Optik"
+],
+"images": 9,
+"name": "Nightforce CFS 6-36×50 F1 Spektiv – Horus Tremor4, mit Accessory Cage Kit",
+"on_sale": false,
+"price": "386990",
+"regular": "386990",
+"short": "Konfigurierbares Feld-Spektiv 6-36×50 mit Horus-TREMOR4-Absehen in der ersten Bildebene, kompaktem Geradeinblick und robuster Nightforce-Bauweise. Mit Accessory Cage Kit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-cfs-6-36x50-f1-spektiv-horus-tremor4-mit-accessory-cage-kit/"
+},
+"32737": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "467990",
+"regular": "467990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 mit ZeroStop-Turm, Horus-TREMOR3-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32738": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "438990",
+"regular": "438990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 mit ZeroStop-Turm, MIL-XT-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-schwarz-mil-xt/"
+},
+"32739": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "438990",
+"regular": "438990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 mit ZeroStop-Turm, MIL-C-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-schwarz-mil-c/"
+},
+"32741": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor5",
+"on_sale": false,
+"price": "467990",
+"regular": "467990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 mit ZeroStop-Turm, Horus-TREMOR5-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-schwarz-horus-tremor5/"
+},
+"32742": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – FDE, Horus Tremor3",
+"on_sale": false,
+"price": "479990",
+"regular": "479990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 in FDE mit ZeroStop-Turm, Horus-TREMOR3-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-fde-horus-tremor3/"
+},
+"32743": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 7-35×56 F1 ZeroStop Zielfernrohr – FDE, MIL-XT",
+"on_sale": false,
+"price": "450990",
+"regular": "450990",
+"short": "Spitzen-Präzisionszielfernrohr 7-35×56 in FDE mit ZeroStop-Turm, MIL-XT-Absehen, 29 MRAD Höhenverstellung und Parallaxe ab 10 m.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-7-35x56-f1-zerostop-zielfernrohr-fde-mil-xt/"
+},
+"32748": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 4-20×50 F1 ZeroStop Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "337990",
+"regular": "337990",
+"short": "ATACR 4-20×50 mit ED-Glas, ZeroStop-Turm, MIL-C-Absehen und 38 MRAD Höhenverstellung, dem grössten Verstellbereich der ATACR-Familie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-20x50-f1-zerostop-zielfernrohr-schwarz-mil-c/"
+},
+"32749": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 4-20×50 F1 ZeroStop Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "337990",
+"regular": "337990",
+"short": "ATACR 4-20×50 mit ED-Glas, ZeroStop-Turm, MIL-XT-Absehen und 38 MRAD Höhenverstellung, dem grössten Verstellbereich der ATACR-Familie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-20x50-f1-zerostop-zielfernrohr-schwarz-mil-xt/"
+},
+"32750": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 4-20×50 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "363990",
+"regular": "363990",
+"short": "ATACR 4-20×50 mit ED-Glas, ZeroStop-Turm, Horus-TREMOR3-Absehen und 38 MRAD Höhenverstellung, dem grössten Verstellbereich der ATACR-Familie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-20x50-f1-zerostop-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32755": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 7,
+"name": "Nightforce NX6 1-6×24 F1 Zielfernrohr – Schwarz, FC-DMx",
+"on_sale": false,
+"price": "198990",
+"regular": "198990",
+"short": "Leichtes, robustes FFP-Zielfernrohr 1-6×24 mit FC-DMx-Absehen und tageslichttauglicher Beleuchtung. Für Dienstwaffen, Multi-Gun-Rigs und Jagd.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx6-1-6x24-f1-zielfernrohr-schwarz-fc-dmx/"
+},
+"32761": {
+"cats": [
+"Nightforce",
+"Visiere / Optik"
+],
+"images": 5,
+"name": "Nightforce Wedge Prism Assembly – 50 MOA / 14.5 MRAD",
+"on_sale": false,
+"price": "113990",
+"regular": "113990",
+"short": "Wedge Prism zur Montage vor dem Zielfernrohr: 50 MOA (14.5 MRAD) zusätzliche Höhe für extrem grosse Entfernungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-wedge-prism-assembly-50-moa-14-5-mrad/"
+},
+"32762": {
+"cats": [
+"Nightforce",
+"Visiere / Optik"
+],
+"images": 5,
+"name": "Nightforce Wedge Prism Assembly – 100 MOA / 29 MRAD",
+"on_sale": false,
+"price": "113990",
+"regular": "113990",
+"short": "Wedge Prism zur Montage vor dem Zielfernrohr: 100 MOA (29 MRAD) zusätzliche Höhe für extrem grosse Entfernungen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-wedge-prism-assembly-100-moa-29-mrad/"
+},
+"32769": {
+"cats": [
+"Nightforce",
+"Visiere / Optik"
+],
+"images": 6,
+"name": "Nightforce CFS s-RAP Spotting Scope Rail Accessory Platform – CFS 6-36×50 F1",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "Picatinny-Plattform mit Schwalbenschwanzbasis für das Nightforce CFS 6-36×50 F1: Montage von Wärmebild- und Nachtsichtgeräten vorne oder hinten am Spektiv.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-cfs-s-rap-spotting-scope-rail-accessory-platform-cfs-6-36x50-f1/"
+},
+"32774": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce SHV 4-14×50 F1 Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "144990",
+"regular": "144990",
+"short": "Leichtes, kompaktes Allround-Zielfernrohr 4-14×50 mit MIL-XT-Absehen in der ersten Bildebene, ZeroSet-Höhenturm und 27 MRAD Verstellbereich.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-shv-4-14x50-f1-zielfernrohr-schwarz-mil-xt/"
+},
+"32782": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "287990",
+"regular": "287990",
+"short": "Präzisionszielfernrohr 4-32×50 mit ZeroStop-Turm, MIL-C-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-schwarz-mil-c/"
+},
+"32783": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "287990",
+"regular": "287990",
+"short": "Präzisionszielfernrohr 4-32×50 mit ZeroStop-Turm, MIL-XT-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-schwarz-mil-xt/"
+},
+"32784": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "315990",
+"regular": "315990",
+"short": "Präzisionszielfernrohr 4-32×50 mit ZeroStop-Turm, Horus-TREMOR3-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32785": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor5",
+"on_sale": false,
+"price": "315990",
+"regular": "315990",
+"short": "Präzisionszielfernrohr 4-32×50 mit ZeroStop-Turm, Horus-TREMOR5-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-schwarz-horus-tremor5/"
+},
+"32786": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – FDE, MIL-XT",
+"on_sale": false,
+"price": "298990",
+"regular": "298990",
+"short": "Präzisionszielfernrohr 4-32×50 in FDE mit ZeroStop-Turm, MIL-XT-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-fde-mil-xt/"
+},
+"32790": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Nightforce NX8 4-32×50 F1 ZeroStop Zielfernrohr – FDE, Horus Tremor3",
+"on_sale": false,
+"price": "327990",
+"regular": "327990",
+"short": "Präzisionszielfernrohr 4-32×50 in FDE mit ZeroStop-Turm, Horus-TREMOR3-Absehen und Nahfokus ab 10 m. Kompakt mit 340 mm Länge.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-nx8-4-32x50-f1-zerostop-zielfernrohr-fde-horus-tremor3/"
+},
+"32791": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Nightforce ATACR 4-16×42 F1 ZeroHold Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "336990",
+"regular": "336990",
+"short": "Kompaktes ATACR 4-16×42 mit ZeroHold-Turm und Horus-TREMOR3-Absehen, entwickelt für halbautomatische Präzisionswaffen. Nur 320 mm lang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-16x42-f1-zerohold-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32792": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Nightforce ATACR 4-16×42 F1 ZeroHold Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "309990",
+"regular": "309990",
+"short": "Kompaktes ATACR 4-16×42 mit ZeroHold-Turm und MIL-XT-Absehen, entwickelt für halbautomatische Präzisionswaffen. Nur 320 mm lang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-16x42-f1-zerohold-zielfernrohr-schwarz-mil-xt/"
+},
+"32793": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Nightforce ATACR 4-16×42 F1 ZeroHold Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "309990",
+"regular": "309990",
+"short": "Kompaktes ATACR 4-16×42 mit ZeroHold-Turm und MIL-C-Absehen, entwickelt für halbautomatische Präzisionswaffen. Nur 320 mm lang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-4-16x42-f1-zerohold-zielfernrohr-schwarz-mil-c/"
+},
+"32798": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 5-25×56 F1 ZeroStop Zielfernrohr – Schwarz, Horus Tremor3",
+"on_sale": false,
+"price": "374990",
+"regular": "374990",
+"short": "Der Urvater der ATACR-Familie: 5-25×56 mit ED-Glas, ZeroStop-Turm, Horus-TREMOR3-Absehen und 35 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-5-25x56-f1-zerostop-zielfernrohr-schwarz-horus-tremor3/"
+},
+"32799": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 5-25×56 F1 ZeroStop Zielfernrohr – Schwarz, MIL-XT",
+"on_sale": false,
+"price": "347990",
+"regular": "347990",
+"short": "Der Urvater der ATACR-Familie: 5-25×56 mit ED-Glas, ZeroStop-Turm, MIL-XT-Absehen und 35 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-5-25x56-f1-zerostop-zielfernrohr-schwarz-mil-xt/"
+},
+"32800": {
+"cats": [
+"Nightforce",
+"Zielfernrohre / Scopes"
+],
+"images": 5,
+"name": "Nightforce ATACR 5-25×56 F1 ZeroStop Zielfernrohr – Schwarz, MIL-C",
+"on_sale": false,
+"price": "347990",
+"regular": "347990",
+"short": "Der Urvater der ATACR-Familie: 5-25×56 mit ED-Glas, ZeroStop-Turm, MIL-C-Absehen und 35 MRAD Höhenverstellung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/nightforce-atacr-5-25x56-f1-zerostop-zielfernrohr-schwarz-mil-c/"
 }
 }
