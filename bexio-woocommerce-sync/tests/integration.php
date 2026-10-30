@@ -27,12 +27,13 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	}
 	if ( 'POST' === $m && '2.0/article/search' === $path ) {
 		if ( 'KAPUTT-1' === $body[0]['value'] ) return resp( array( 'message' => 'Serverfehler' ), 400 );
-		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575 );
+		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575, 'VIS-TAKEN' => 6001 );
 		return resp( isset( $known[ $body[0]['value'] ] ) ? array( array( 'id' => $known[ $body[0]['value'] ], 'intern_code' => $body[0]['value'] ) ) : array() );
 	}
 	if ( 'POST' === $m && '2.0/article' === $path ) return resp( array_merge( $body, array( 'id' => ++$GLOBALS['bws_next_id'] ) ) );
 	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) {
 		// Wie das echte bexio: Artikelart ist beim Bearbeiten nicht erlaubt.
+		if ( isset( $body['intern_code'] ) && 'VIS-TAKEN' === $body['intern_code'] && 4327 === (int) $mm[1] ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'intern_code: Produktcode bereits in Gebrauch' ) ), 422 );
 		if ( isset( $body['article_type_id'] ) ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'Widget schema does not include the following field(s): article_type_id' ) ), 422 );
 		return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
 	}
@@ -491,6 +492,11 @@ $created = array_values( array_filter( $GLOBALS['bws_requests'], function ( $r )
 t( 'Geteilte Verknüpfung gelöst, Variante bekommt eigenen Artikel', 1 === count( $created ) && 'VIS-B' === $created[0][2]['intern_code'] && 4327 !== (int) get_post_meta( $vb->get_id(), '_bws_article_id', true ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
 t( 'Erste Variante behält den bestehenden Artikel', 4327 === BWS_Product_Sync::linked_article_id( wc_get_product( $va->get_id() ) ) );
 $err_v = ''; try { BWS_Product_Sync::sync( wc_get_product( $va->get_id() ) ); } catch ( BWS_Exception $e ) { $err_v = $e->getMessage(); }
+$va2 = wc_get_product( $va->get_id() ); $va2->set_sku( 'VIS-TAKEN' ); $va2->save();
+$GLOBALS['bws_requests'] = array();
+BWS_Product_Sync::sync( wc_get_product( $va->get_id() ) );
+t( 'Nummer in bexio vergeben -> mit diesem Artikel verknüpft', 6001 === (int) get_post_meta( $va->get_id(), '_bws_article_id', true ) && in_array( '2.0/article/6001', wp_list_pluck( $GLOBALS['bws_requests'], 1 ), true ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
+$va2 = wc_get_product( $va->get_id() ); $va2->set_sku( '' ); $va2->save();
 t( 'Variante ohne eigene Nummer meldet fehlende SKU', false !== strpos( $err_v, 'keine Artikelnummer' ), $err_v );
 
 // --- Bestellstatus aus bexio ---

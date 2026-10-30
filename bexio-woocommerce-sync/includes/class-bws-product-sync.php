@@ -191,11 +191,17 @@ class BWS_Product_Sync {
 				unset( $update['article_type_id'] );
 				$result = $client->post( '2.0/article/' . $article_id, $update );
 			} catch ( BWS_Exception $e ) {
-				if ( 404 !== $e->getCode() ) {
+				$taken = 422 === $e->getCode() && false !== strpos( $e->getMessage(), 'intern_code' ) ? self::find_article_id( $payload['intern_code'] ) : null;
+				if ( $taken && $taken !== $article_id ) {
+					// Die neue Artikelnummer gehört in bexio schon einem anderen Artikel -> mit diesem verknüpfen.
+					bws_log( 'notice', sprintf( 'Produkt #%d: Artikelnummer %s gehört in bexio zu Artikel %d – Verknüpfung von %d auf %d geändert.', $product->get_id(), $payload['intern_code'], $taken, $article_id, $taken ) );
+					$result = $client->post( '2.0/article/' . $taken, $update );
+				} elseif ( 404 === $e->getCode() ) {
+					// In bexio gelöscht -> neu anlegen.
+					$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
+				} else {
 					throw $e;
 				}
-				// In bexio gelöscht -> neu anlegen.
-				$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
 			}
 		} else {
 			$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
