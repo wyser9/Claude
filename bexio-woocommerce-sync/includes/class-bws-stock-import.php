@@ -21,7 +21,8 @@ class BWS_Stock_Import {
 	const OPTION_STATE = 'bws_stock_import_state';
 	const HOOK_STEP    = 'bws_import_stock_step';
 	const PAGE         = 500;
-	const STEP_SECONDS = 15; // Server bricht nach 30 s ab.
+	const STEP_SECONDS = 15; // Server bricht nach 30 s ab (gezählt ab Beginn des Aufrufs).
+	const LOCK         = 'bws_stock_import_lock';
 
 	public static function init() {
 		add_action( self::HOOK, array( __CLASS__, 'run_job' ) );
@@ -109,6 +110,7 @@ class BWS_Stock_Import {
 			false
 		);
 		if ( function_exists( 'as_enqueue_async_action' ) ) {
+			delete_transient( self::LOCK );
 			as_unschedule_all_actions( self::HOOK_STEP, array(), BWS_AS_GROUP );
 			as_enqueue_async_action( self::HOOK_STEP, array(), BWS_AS_GROUP );
 		} else {
@@ -124,14 +126,29 @@ class BWS_Stock_Import {
 	 * @throws BWS_Exception Damit der Action Scheduler die Etappe als fehlgeschlagen markiert.
 	 */
 	public static function run_step() {
+		if ( get_transient( self::LOCK ) ) {
+			return; // Eine Etappe läuft bereits; die Ersatz-Etappe ist eingeplant.
+		}
+		// Ersatz-Etappe, falls dieser Aufruf vom Server abgebrochen wird: macht beim gespeicherten Stand weiter.
+		as_unschedule_all_actions( self::HOOK_STEP, array(), BWS_AS_GROUP );
+		as_schedule_single_action( time() + 2 * MINUTE_IN_SECONDS, self::HOOK_STEP, array(), BWS_AS_GROUP );
+
+		if ( BWS_Util::deadline( self::STEP_SECONDS ) - time() < 5 ) {
+			return; // Kaum Zeit übrig in diesem Aufruf – die Ersatz-Etappe übernimmt.
+		}
+		set_transient( self::LOCK, 1, 90 );
 		try {
 			$more = self::step( self::STEP_SECONDS );
 		} catch ( BWS_Exception $e ) {
+			delete_transient( self::LOCK );
+			as_unschedule_all_actions( self::HOOK_STEP, array(), BWS_AS_GROUP );
 			bws_log( 'error', 'Lagerimport aus bexio fehlgeschlagen: ' . $e->getMessage() );
 			update_option( self::OPTION_LAST, array( 'time' => time(), 'error' => $e->getMessage() ), false );
 			delete_option( self::OPTION_STATE );
 			throw $e;
 		}
+		delete_transient( self::LOCK );
+		as_unschedule_all_actions( self::HOOK_STEP, array(), BWS_AS_GROUP );
 		if ( $more ) {
 			as_enqueue_async_action( self::HOOK_STEP, array(), BWS_AS_GROUP );
 		}
@@ -148,7 +165,7 @@ class BWS_Stock_Import {
 		if ( ! is_array( $state ) ) {
 			return false;
 		}
-		$until = time() + $budget;
+		$until = BWS_Util::deadline( $budget );
 
 		if ( 'fetch' === $state['phase'] ) {
 			do {

@@ -457,6 +457,19 @@ $steps = 0;
 while ( BWS_Stock_Import::step( 0 ) && $steps < 1000 ) { $steps++; }
 $staged = get_option( BWS_Stock_Import::OPTION_LAST );
 t( 'Import in Etappen läuft durch', $steps > 3 && false === get_option( BWS_Stock_Import::OPTION_STATE ) && $staged['articles'] === $stats['articles'] && 5 === $staged['unchanged'] && 0 === $staged['errors'], $steps . ' ' . wp_json_encode( $staged ) );
+// Hintergrund-Etappe mit Ersatz-Etappe und Zeitlimit ab Aufrufbeginn.
+BWS_Stock_Import::start();
+BWS_Stock_Import::run_step();
+t( 'Etappe: fertig, keine Ersatz-Etappe übrig', false === get_option( BWS_Stock_Import::OPTION_STATE ) && false === as_next_scheduled_action( BWS_Stock_Import::HOOK_STEP, array(), BWS_AS_GROUP ) && false === get_transient( BWS_Stock_Import::LOCK ) );
+$old_limit = ini_get( 'max_execution_time' ); $old_req = $_SERVER['REQUEST_TIME'] ?? null;
+ini_set( 'max_execution_time', '30' ); $_SERVER['REQUEST_TIME'] = time() - 25;
+t( 'Zeitlimit zählt ab Aufrufbeginn', BWS_Util::deadline( 15 ) <= time() - 7 );
+BWS_Stock_Import::start();
+BWS_Stock_Import::run_step();
+t( 'Kaum Zeit übrig: Ersatz-Etappe eingeplant, Stand bleibt', is_array( get_option( BWS_Stock_Import::OPTION_STATE ) ) && is_int( as_next_scheduled_action( BWS_Stock_Import::HOOK_STEP, array(), BWS_AS_GROUP ) ) );
+ini_set( 'max_execution_time', (string) $old_limit ); $_SERVER['REQUEST_TIME'] = $old_req ?? time();
+BWS_Stock_Import::run_step();
+t( 'Ersatz-Etappe macht weiter und schliesst ab', false === get_option( BWS_Stock_Import::OPTION_STATE ) && false === as_next_scheduled_action( BWS_Stock_Import::HOOK_STEP, array(), BWS_AS_GROUP ) );
 $stats2 = BWS_Stock_Import::run();
 t( 'Zweiter Lauf: alles unverändert', 5 === $stats2['unchanged'] && 0 === $stats2['instock'] + $stats2['backorder'], wp_json_encode( $stats2 ) );
 

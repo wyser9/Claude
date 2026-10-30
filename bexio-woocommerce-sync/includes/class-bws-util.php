@@ -233,4 +233,21 @@ class BWS_Util {
 		$name = strtolower( trim( $first ) . ' ' . trim( $last ) );
 		return 'first last' === $name && ( '' === trim( (string) $address ) || '123 main st' === strtolower( trim( $address ) ) );
 	}
+
+	/**
+	 * Zeitpunkt, bis zu dem eine Etappe arbeiten darf. Der Server zählt sein Zeitlimit (max_execution_time)
+	 * ab Beginn des Aufrufs – im selben Aufruf können vorher schon andere Hintergrundaufgaben gelaufen sein.
+	 *
+	 * @param int $budget Gewünschte Sekunden.
+	 * @return int Unix-Timestamp.
+	 */
+	public static function deadline( $budget ) {
+		$until = time() + (int) $budget;
+		$limit = (int) ini_get( 'max_execution_time' );
+		if ( $limit > 0 ) {
+			$start = isset( $_SERVER['REQUEST_TIME'] ) ? (int) $_SERVER['REQUEST_TIME'] : time();
+			$until = min( $until, $start + (int) floor( $limit * 0.6 ) );
+		}
+		return $until;
+	}
 }

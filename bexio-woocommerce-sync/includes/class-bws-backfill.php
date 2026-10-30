@@ -81,7 +81,7 @@ class BWS_Backfill {
 		}
 		$queue  = (array) get_option( self::OPT_QUEUE, array() );
 		$linked = BWS_Product_Sync::products_by_article_id();
-		$until  = time() + self::STEP_SECONDS;
+		$until  = BWS_Util::deadline( self::STEP_SECONDS );
 
 		do {
 			$page = BWS_Client::instance()->get( '2.0/article', array( 'limit' => self::PAGE, 'offset' => $status['offset'] ) );
@@ -143,7 +143,7 @@ class BWS_Backfill {
 		$queue  = (array) get_option( self::OPT_QUEUE, array() );
 		$status = (array) get_option( self::OPT_STATUS, array() ) + array( 'done' => 0, 'errors' => 0 );
 		$batch  = array_slice( $queue, 0, self::CHUNK, true );
-		$until  = time() + self::STEP_SECONDS;
+		$until  = BWS_Util::deadline( self::STEP_SECONDS );
 		foreach ( $batch as $id => $fields ) {
 			try {
 				BWS_Client::instance()->post( '2.0/article/' . (int) $id, $fields );
