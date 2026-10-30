@@ -863,7 +863,7 @@ Speichern für den nächsten Standbesuch. Stöpsel, Kapsel oder beides – was t
 
 ### #23 – Fr 30.10.2026, 18:30 – Karussell – Säule 2: Das Geschoss – was steckt drin?
 
-**Status:** Autopilot – geplant (Foto vom Inhaber, 25.10.2026). Veröffentlichung Fr 30.10. 18:30, Sicherheitsnetz +10 Min.
+**Status:** ✅ Veröffentlicht 30.10.2026, 18:31 (armatum_ch, pünktlich) – https://www.instagram.com/p/DfIH8d_iRBh/ – Story mit Slide 01 (Inhaber-Foto).
 
 **Grafiken:** `instagram/grafiken/23-geschosse/01.jpg` ff. (6 Slides), Originalfoto `instagram/fotos/wiederladen/geschosse-2026-10-25.jpg`, WhatsApp-Status `whatsapp/posts/23-geschosse.jpg`.
 
@@ -1174,3 +1174,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-28 | #21 K31 veröffentlicht – **22:00 statt 18:30**: zweimal Worker-Neustart, danach fälschlich «No response requested» statt Fortsetzen; erst nach dem Sicherheitsnetz nachgeholt. Inhaber-Foto als Slide 1 hat funktioniert (cdninstagram-URL direkt). https://www.instagram.com/p/DfDWTmKCR0y/ – Story wegen Nachtruhe ausgelassen. |
 | 2026-10-29 | Shop-Check: Nightforce-Sortiment neu (45 Varianten NX6/NX8/ATACR/SHV/CFS-Spektive, 6 alte Einträge ersetzt). #25 «Nightforce – die ganze Familie» erstellt, Di 03.11. 18:30 terminiert (Sicherheitsnetze +10 und +40 Min). |
 | 2026-10-29 | #22 Gehörschutz veröffentlicht 19:15 (geplant 19:00; Worker-Neustart, vom Sicherheitsnetz nachgeholt): https://www.instagram.com/p/DfFoNLkiXLi/ + Story. |
+| 2026-10-30 | #23 Geschosse veröffentlicht 18:31 (pünktlich): https://www.instagram.com/p/DfIH8d_iRBh/ + Story. |
