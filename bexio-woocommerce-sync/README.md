@@ -97,6 +97,7 @@ bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio u
 - Zahlungsart, Transaktions-ID und Kundenbemerkung landen im Kopftext, eine abweichende Lieferadresse im Feld Lieferadresse.
 - **Keine Duplikate:** Vor dem Anlegen sucht das Plugin in bexio nach einem Auftrag, dessen **Titel die Bestellnummer enthält** (z. B. „12345“ oder „12345 Max Muster“). Gibt es ihn schon, wird die Bestellung nur verknüpft. Es wird weder ein Auftrag noch ein Kontakt angelegt, eine Bestellnotiz hält das fest. Die Nummer muss als eigene Zahl vorkommen: „123456“ zählt nicht als Bestellung 12345. Schlägt die Suche fehl, wird sicherheitshalber nichts angelegt.
 - Auftragstitel: Ist das Feld *Auftragstitel* leer, besteht der Titel nur aus der Bestellnummer.
+- **Platzhalter-Bestellungen** werden nicht übertragen, zum Beispiel von TWINT Express vor der Zahlung („First Last“, „123 Main St“, „email@example.com“). Eine Bestellnotiz hält das fest. Kommen später echte Kundendaten, wird die Bestellung beim nächsten passenden Statuswechsel übertragen.
 - Jede Bestellung wird **genau einmal** übertragen. Die Auftragsnummer erscheint in der Bestellnotiz und in der Box „bexio“ (mit Link zu bexio).
 - Manuell senden: In der Bestellung die Aktion **„An bexio übertragen“** wählen oder in der Bestellübersicht die gleichnamige Sammelaktion verwenden.
 

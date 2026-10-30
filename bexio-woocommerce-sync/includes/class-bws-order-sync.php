@@ -86,6 +86,14 @@ class BWS_Order_Sync {
 		if ( $existing && ! $force ) {
 			return $existing;
 		}
+		if ( self::is_placeholder( $order ) ) {
+			if ( ! $order->get_meta( '_bws_placeholder_skipped' ) ) {
+				$order->update_meta_data( '_bws_placeholder_skipped', time() );
+				$order->add_order_note( 'Nicht an bexio übertragen: Die Bestellung enthält nur Platzhalterdaten (z.B. TWINT Express vor der Zahlung). Sobald echte Kundendaten vorliegen, wird sie beim nächsten Statuswechsel übertragen.' );
+				$order->save();
+			}
+			return 0;
+		}
 
 		// Schutz gegen parallele Übertragung derselben Bestellung.
 		$lock = 'bws_order_lock_' . $order->get_id();
@@ -136,6 +144,16 @@ class BWS_Order_Sync {
 		do_action( 'bws_order_synced', $order, $bexio_id, $result );
 
 		return $bexio_id;
+	}
+
+	/**
+	 * Platzhalter-Bestellung ohne echte Kundendaten.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @return bool
+	 */
+	public static function is_placeholder( WC_Order $order ) {
+		return BWS_Util::is_placeholder_customer( $order->get_billing_first_name(), $order->get_billing_last_name(), $order->get_billing_email(), $order->get_billing_address_1() );
 	}
 
 	/**

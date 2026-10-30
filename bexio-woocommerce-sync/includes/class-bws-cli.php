@@ -125,6 +125,10 @@ class BWS_CLI {
 		}
 		try {
 			$id = BWS_Order_Sync::sync( $order, isset( $assoc['force'] ) );
+			if ( ! $id ) {
+				WP_CLI::warning( 'Nicht übertragen: Bestellung enthält nur Platzhalterdaten.' );
+				return;
+			}
 			WP_CLI::success( 'bexio Auftrag-ID ' . $id );
 		} catch ( BWS_Exception $e ) {
 			WP_CLI::error( $e->getMessage() );

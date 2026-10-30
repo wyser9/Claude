@@ -499,6 +499,13 @@ t( 'Nummer in bexio vergeben -> mit diesem Artikel verknüpft', 6001 === (int) g
 $va2 = wc_get_product( $va->get_id() ); $va2->set_sku( '' ); $va2->save();
 t( 'Variante ohne eigene Nummer meldet fehlende SKU', false !== strpos( $err_v, 'keine Artikelnummer' ), $err_v );
 
+// --- Platzhalter-Bestellungen (TWINT Express vor der Zahlung) ---
+$ph = wc_create_order(); $ph->set_address( array( 'first_name' => 'First', 'last_name' => 'Last', 'address_1' => '123 Main St', 'city' => 'City', 'country' => 'CH', 'email' => 'email@example.com' ), 'billing' ); $ph->set_payment_method( 'twint_express' ); $ph->save();
+$GLOBALS['bws_requests'] = array();
+$phr = BWS_Order_Sync::sync( wc_get_order( $ph->get_id() ) );
+t( 'Platzhalter-Bestellung nicht übertragen', 0 === $phr && ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0]; } ) && ! wc_get_order( $ph->get_id() )->get_meta( '_bws_order_id' ) );
+t( 'Platzhalter: Notiz', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $ph->get_id() ) ), 'content' ) ), 'Platzhalterdaten' ) );
+
 // --- Bestellstatus aus bexio ---
 BWS_Settings::save( array( 'status_from_bexio' => 'yes', 'sync_orders' => 'yes' ) );
 foreach ( wc_get_orders( array( 'limit' => -1, 'status' => BWS_Status_Import::OPEN_STATUSES ) ) as $prev ) { $prev->delete_meta_data( BWS_Order_Sync::META_ORDER_ID ); $prev->save(); }

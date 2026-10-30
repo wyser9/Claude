@@ -214,4 +214,23 @@ class BWS_Util {
 		}
 		return substr( $value, 0, $max );
 	}
+
+	/**
+	 * Ob eine Bestellung nur Platzhalterdaten enthält (z.B. TWINT Express vor der Zahlung:
+	 * "First Last", "123 Main St", "email@example.com").
+	 *
+	 * @param string $first   Vorname.
+	 * @param string $last    Nachname.
+	 * @param string $email   E-Mail.
+	 * @param string $address Strasse.
+	 * @return bool
+	 */
+	public static function is_placeholder_customer( $first, $last, $email, $address ) {
+		$email = strtolower( trim( (string) $email ) );
+		if ( '' !== $email && preg_match( '/@example\.(com|org|net)$/', $email ) ) {
+			return true;
+		}
+		$name = strtolower( trim( $first ) . ' ' . trim( $last ) );
+		return 'first last' === $name && ( '' === trim( (string) $address ) || '123 main st' === strtolower( trim( $address ) ) );
+	}
 }

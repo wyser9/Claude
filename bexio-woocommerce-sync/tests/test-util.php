@@ -70,5 +70,9 @@ check( 'Maximal 10 Punkte', 10, count( $many ) );
 
 check( 'Kürzen', 'abc', BWS_Util::truncate( ' abcdef ', 3 ) );
 
+check( 'Platzhalter TWINT Express', true, BWS_Util::is_placeholder_customer( 'First', 'Last', 'email@example.com', '123 Main St' ) );
+check( 'Platzhalter nur Name', true, BWS_Util::is_placeholder_customer( 'First', 'Last', '', '123 Main St' ) );
+check( 'Echter Kunde', false, BWS_Util::is_placeholder_customer( 'Hans', 'Muster', 'hans@muster.ch', 'Bahnhofstrasse 1' ) );
+check( 'Echter Kunde namens Last', false, BWS_Util::is_placeholder_customer( 'First', 'Last', 'first.last@gmx.ch', 'Dorfstrasse 3' ) );
 echo $failures ? "\n$failures Fehler\n" : "\nAlle Tests bestanden.\n";
 exit( $failures ? 1 : 0 );
