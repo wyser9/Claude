@@ -7710,7 +7710,7 @@
 "price": "1990",
 "regular": "1990",
 "short": "Strapazierfähiger Gehörschutzbeutel aus Cordura mit Logo, Kordel und Klettfläche – ideal für den sicheren Transport auf dem Schiessstand.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/armatum-gehoerschutzbeutel-cordura-tasche-fuer-schiessstand-einsatz/"
 },
 "17818": {
@@ -8330,7 +8330,7 @@
 "price": "4900",
 "regular": "4900",
 "short": "Hochwertige Aluminium-Schienenhalterung für die ShotKam Gen4 Mini. Passend für Picatinny-Schienen, mit sicherem Klemmmechanismus und flachem Profil.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/shotkam-gen4-mini-schienenhalterung-praezise-stabil-montieren/"
 },
 "18338": {
@@ -10382,7 +10382,7 @@
 "price": "4900",
 "regular": "4900",
 "short": "Hochwertige Aluminium-Schienenhalterung für die ShotKam Gen4. Passend für Picatinny-Schienen, mit sicherem Klemmmechanismus und flachem Profil.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/shotkam-gen4-schienenhalterung/"
 },
 "19296": {
@@ -15057,7 +15057,7 @@
 "on_sale": false,
 "price": "52070",
 "regular": "52070",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 338 Lapua.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-338-lapua/"
 },
@@ -15070,7 +15070,7 @@
 "on_sale": false,
 "price": "52070",
 "regular": "52070",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 7.62x54R.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-7-62x54r/"
 },
@@ -15083,7 +15083,7 @@
 "on_sale": false,
 "price": "52070",
 "regular": "52070",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 7mm PRC.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-7mm-prc/"
 },
@@ -15096,7 +15096,7 @@
 "on_sale": false,
 "price": "52070",
 "regular": "52070",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 300 PRC.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-300-prc/"
 },
@@ -15109,7 +15109,7 @@
 "on_sale": false,
 "price": "50870",
 "regular": "50870",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 8.6 Blackout.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-8-6-blackout/"
 },
@@ -15122,7 +15122,7 @@
 "on_sale": false,
 "price": "48440",
 "regular": "48440",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 308 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-308-win/"
 },
@@ -15135,7 +15135,7 @@
 "on_sale": false,
 "price": "48440",
 "regular": "48440",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 300 Blackout.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-300-blackout/"
 },
@@ -15148,7 +15148,7 @@
 "on_sale": false,
 "price": "47870",
 "regular": "47870",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 6.5 Creedmoor.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-6-5-creedmoor/"
 },
@@ -15161,7 +15161,7 @@
 "on_sale": false,
 "price": "46020",
 "regular": "46020",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-223-rem/"
 },
@@ -15200,7 +15200,7 @@
 "on_sale": false,
 "price": "32700",
 "regular": "32700",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 38/.357.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-38-357/"
 },
@@ -15213,7 +15213,7 @@
 "on_sale": false,
 "price": "32700",
 "regular": "32700",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 38 Super.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-38-super/"
 },
@@ -15226,7 +15226,7 @@
 "on_sale": false,
 "price": "32700",
 "regular": "32700",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 40 S&W/10mm.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-40-sw-10mm/"
 },
@@ -15239,7 +15239,7 @@
 "on_sale": false,
 "price": "32700",
 "regular": "32700",
-"short": "",
+"short": "Das Lyman Pro Die Pack ist ein Matrizensatz zum Wiederladen von Patronen im Kaliber 45 ACP.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-die-pack-45-acp/"
 },
@@ -15252,7 +15252,7 @@
 "on_sale": false,
 "price": "31490",
 "regular": "31490",
-"short": "",
+"short": "Die Lyman Pro Carbide Sizing Die ist eine Matrize mit Carbide-Einsatz zum Kalibrieren (Sizing) von Hülsen im Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-sizing-die-223-rem/"
 },
@@ -15265,7 +15265,7 @@
 "on_sale": false,
 "price": "31490",
 "regular": "31490",
-"short": "",
+"short": "Die Lyman Pro Carbide Sizing Die ist eine Matrize mit Carbide-Einsatz zum Kalibrieren (Sizing) von Hülsen im Kaliber 308 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-sizing-die-308-win/"
 },
@@ -15278,7 +15278,7 @@
 "on_sale": false,
 "price": "31490",
 "regular": "31490",
-"short": "",
+"short": "Die Lyman Pro Carbide Sizing Die ist eine Matrize mit Carbide-Einsatz zum Kalibrieren (Sizing) von Hülsen im Kaliber 300 BLK.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-sizing-die-300-blk/"
 },
@@ -15291,7 +15291,7 @@
 "on_sale": false,
 "price": "26640",
 "regular": "26640",
-"short": "",
+"short": "Die Lyman Pro Carbide Trim Die ist eine Matrize mit Carbide-Einsatz zum Kürzen (Trimmen) von Hülsen im Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-trim-die-223-rem/"
 },
@@ -15304,7 +15304,7 @@
 "on_sale": false,
 "price": "26640",
 "regular": "26640",
-"short": "",
+"short": "Die Lyman Pro Carbide Trim Die ist eine Matrize mit Carbide-Einsatz zum Kürzen (Trimmen) von Hülsen im Kaliber 308 WIN.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-trim-die-308-win/"
 },
@@ -15385,7 +15385,7 @@
 "on_sale": false,
 "price": "19380",
 "regular": "19380",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 4-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 9mm Luger.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-9mm-luger-4-die-set/"
 },
@@ -15424,7 +15424,7 @@
 "on_sale": false,
 "price": "16950",
 "regular": "16950",
-"short": "",
+"short": "Die Lyman Pro Carbide Sizing Die ist eine Matrize mit Carbide-Einsatz zum Kalibrieren (Sizing) von Hülsen im Kaliber 9mm.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-carbide-sizing-die-9mm/"
 },
@@ -15451,7 +15451,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Seating Die ist eine Geschoss-Setzmatrize mit Mikrometer-Einstellung für das Kaliber 9mm.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-seating-die-9mm/"
 },
@@ -15464,7 +15464,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Seating Die ist eine Geschoss-Setzmatrize mit Mikrometer-Einstellung für das Kaliber 38 Super.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-seating-die-38-super/"
 },
@@ -15477,7 +15477,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Seating Die ist eine Geschoss-Setzmatrize mit Mikrometer-Einstellung für das Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-seating-die-223-rem/"
 },
@@ -15490,7 +15490,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Taper Crimp Die ist eine Matrize mit Mikrometer-Einstellung zum Taper-Crimpen von Patronen im Kaliber 9mm.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-taper-crimp-die-9mm/"
 },
@@ -15503,7 +15503,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Taper Crimp Die ist eine Matrize mit Mikrometer-Einstellung zum Taper-Crimpen von Patronen im Kaliber .38/.357.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-taper-crimp-die-38-357/"
 },
@@ -15516,7 +15516,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Die Lyman Pro Micrometer Taper Crimp Die ist eine Matrize mit Mikrometer-Einstellung zum Taper-Crimpen von Patronen im Kaliber 6.5 Creedmoor.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-micrometer-taper-crimp-die-6-5-creedmoor/"
 },
@@ -15529,7 +15529,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 4-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 450 Bushmaster.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-450-bushmaster-4-die-set/"
 },
@@ -15542,7 +15542,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 4-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 458 SOCOM.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-458-socom-4-die-set/"
 },
@@ -15555,7 +15555,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 4-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 50 Beowulf.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-50-beowulf-4-die-set/"
 },
@@ -15568,7 +15568,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 4-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 38 Spec/357 Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-spec-357-mag-carbide-4-die-set/"
 },
@@ -15581,7 +15581,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 4-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 9mm Luger.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-9mm-luger-carbide-4-die-set/"
 },
@@ -15594,7 +15594,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 4-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 40 S & W/10mm Auto.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-40-s-w-10mm-auto-carbide-4-die-set/"
 },
@@ -15607,7 +15607,7 @@
 "on_sale": false,
 "price": "15750",
 "regular": "15750",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 4-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 45 A.C.P./45 Win. Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-a-c-p-45-win-mag-carbide-4-die-set/"
 },
@@ -15659,7 +15659,7 @@
 "on_sale": false,
 "price": "13320",
 "regular": "13320",
-"short": "",
+"short": "Das Lyman Carbide Deluxe Rifle 3 Die Set ist ein 3-teiliger Matrizensatz mit Carbide-Einsatz zum Wiederladen von Büchsenpatronen im Kaliber 223 Rem (5.56mm).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-223-rem-5-56mm-carbide-deluxe-rifle-3-die-set/"
 },
@@ -15672,7 +15672,7 @@
 "on_sale": false,
 "price": "13320",
 "regular": "13320",
-"short": "",
+"short": "Das Lyman Carbide Deluxe Rifle 3 Die Set ist ein 3-teiliger Matrizensatz mit Carbide-Einsatz zum Wiederladen von Büchsenpatronen im Kaliber 6.5 x 55 S.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6-5-x-55-s-carbide-deluxe-rifle-3-die-set/"
 },
@@ -15685,7 +15685,7 @@
 "on_sale": false,
 "price": "13320",
 "regular": "13320",
-"short": "",
+"short": "Das Lyman Carbide Deluxe Rifle 3 Die Set ist ein 3-teiliger Matrizensatz mit Carbide-Einsatz zum Wiederladen von Büchsenpatronen im Kaliber 308 Win/307 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-308-win-307-win-carbide-deluxe-rifle-3-die-set/"
 },
@@ -15698,7 +15698,7 @@
 "on_sale": false,
 "price": "13320",
 "regular": "13320",
-"short": "",
+"short": "Das Lyman Carbide Deluxe Rifle 3 Die Set ist ein 3-teiliger Matrizensatz mit Carbide-Einsatz zum Wiederladen von Büchsenpatronen im Kaliber 338 Lapua.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-338-lapua-carbide-deluxe-rifle-3-die-set/"
 },
@@ -15711,7 +15711,7 @@
 "on_sale": false,
 "price": "13320",
 "regular": "13320",
-"short": "",
+"short": "Das Lyman Carbide Deluxe Rifle 3 Die Set ist ein 3-teiliger Matrizensatz mit Carbide-Einsatz zum Wiederladen von Büchsenpatronen im Kaliber 6.5 Creedmoor.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6-5-creedmoor-carbide-deluxe-rifle-3-die-set/"
 },
@@ -15724,7 +15724,7 @@
 "on_sale": false,
 "price": "12720",
 "regular": "12720",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 3-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-223-rem-3-die-set/"
 },
@@ -15737,7 +15737,7 @@
 "on_sale": false,
 "price": "12720",
 "regular": "12720",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 4-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 350 Legend.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-350-legend-4-die-set/"
 },
@@ -15750,7 +15750,7 @@
 "on_sale": false,
 "price": "12720",
 "regular": "12720",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 3-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 300 Blackout.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-300-blackout-3-die-set/"
 },
@@ -15763,7 +15763,7 @@
 "on_sale": false,
 "price": "12720",
 "regular": "12720",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 3-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 308 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-308-win-3-die-set/"
 },
@@ -15776,7 +15776,7 @@
 "on_sale": false,
 "price": "12720",
 "regular": "12720",
-"short": "",
+"short": "Das Lyman MSR Precision Die System ist ein 3-teiliger Matrizensatz zum Wiederladen von Patronen im Kaliber 6.5 Grendel.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-msr-precision-die-system-6-5-grendel-3-die-set/"
 },
@@ -15789,7 +15789,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 38 Spec/357 Mag./357 Rem Max.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-spec-357-mag-357-rem-max-carbide-3-die-set/"
 },
@@ -15802,7 +15802,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 44 Mag./44 Spec/445 Super Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-44-mag-44-spec-445-super-mag-carbide-3-die-set/"
 },
@@ -15815,7 +15815,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 45 A.C.P./45 Win Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-a-c-p-45-win-mag-carbide-3-die-set/"
 },
@@ -15828,7 +15828,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 45 Colt.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-colt-carbide-3-die-set/"
 },
@@ -15841,7 +15841,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 9mm Luger.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-9mm-luger-carbide-3-die-set/"
 },
@@ -15854,7 +15854,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 380 Auto.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-380-auto-carbide-3-die-set/"
 },
@@ -15867,7 +15867,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 32 A.C.P./32 S&W Long/32 H & R Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-32-a-c-p-32-sw-long-32-h-r-mag-carbide-3-die-set/"
 },
@@ -15880,7 +15880,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 38 S & W/ 38 Super Auto.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-s-w-38-super-auto-carbide-3-die-set/"
 },
@@ -15893,7 +15893,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 40 S & W/10mm Auto.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-40-s-w-10mm-auto-carbide-3-die-set/"
 },
@@ -15906,7 +15906,7 @@
 "on_sale": false,
 "price": "12110",
 "regular": "12110",
-"short": "",
+"short": "Das Lyman Carbide Die Set ist ein 3-teiliger Matrizensatz mit Hartmetall-Einsatz (Carbide) zum Wiederladen von Patronen im Kaliber 327 Federal Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-327-federal-mag-carbide-3-die-set/"
 },
@@ -15946,7 +15946,7 @@
 "on_sale": false,
 "price": "11210",
 "regular": "11210",
-"short": "",
+"short": "Das Lyman Matrizenset (45-90 Classic) ist ein 3-teiliger Matrizensatz zum Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-90-classic-3-die-rifle-set/"
 },
@@ -15972,7 +15972,7 @@
 "on_sale": false,
 "price": "10290",
 "regular": "10290",
-"short": "",
+"short": "Das Lyman Rifle 3 Die Set ist ein 3-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 50-70 Government.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-50-70-government-rifle-3-die-sets/"
 },
@@ -15985,7 +15985,7 @@
 "on_sale": false,
 "price": "9690",
 "regular": "9690",
-"short": "",
+"short": "Das Lyman Rifle 3 Die Set ist ein 3-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 30 M1 Carbine.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30-m1-carbine-rifle-3-die-sets/"
 },
@@ -15998,7 +15998,7 @@
 "on_sale": false,
 "price": "9690",
 "regular": "9690",
-"short": "",
+"short": "Das Lyman Rifle 3 Die Set ist ein 3-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 38-55 Winchester.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-55-winchester-rifle-3-die-sets/"
 },
@@ -16011,7 +16011,7 @@
 "on_sale": false,
 "price": "9690",
 "regular": "9690",
-"short": "",
+"short": "Das Lyman Rifle 3 Die Set ist ein 3-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 45-70 Government.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-70-government-rifle-3-die-sets/"
 },
@@ -16024,7 +16024,7 @@
 "on_sale": false,
 "price": "9090",
 "regular": "9090",
-"short": "",
+"short": "Das Lyman Matrizenset (5.7 x 28mm FN Specialty) ist ein 3-teiliger Matrizensatz zum Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-5-7-x-28mm-fn-specialty-3-die-set/"
 },
@@ -16051,7 +16051,7 @@
 "on_sale": false,
 "price": "8180",
 "regular": "8180",
-"short": "",
+"short": "Das Lyman Shellholder Set enthält 12 Hülsenhalter (Shellholder) für das Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-shellholder-set-12x-shellholders/"
 },
@@ -16090,7 +16090,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 243 Winchester.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-243-winchester-rifle-2-die-set/"
 },
@@ -16103,7 +16103,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 270 Winchester.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-270-winchester-rifle-2-die-set/"
 },
@@ -16116,7 +16116,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 303 British.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-303-british-rifle-2-die-set/"
 },
@@ -16129,7 +16129,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 308 Win/307 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-308-win-307-win-rifle-2-die-set/"
 },
@@ -16142,7 +16142,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 30-30 Winchester.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30-30-winchester-rifle-2-die-set/"
 },
@@ -16155,7 +16155,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 30-06 (7.62 x 63mm).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30-06-7-62-x-63mm-rifle-2-die-set/"
 },
@@ -16168,7 +16168,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 8mm x 57 Mauser.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-8mm-x-57-mauser-rifle-2-die-set/"
 },
@@ -16181,7 +16181,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 375 H & H Magnum.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-375-h-h-magnum-rifle-2-die-set/"
 },
@@ -16194,7 +16194,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 338 Winchester Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-338-winchester-mag-rifle-2-die-set/"
 },
@@ -16207,7 +16207,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 6.5×55 S.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6-5x55-s-rifle-2-die-set/"
 },
@@ -16220,7 +16220,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 338 Lapua Magnum.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-338-lapua-magnum-rifle-2-die-set/"
 },
@@ -16233,7 +16233,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 6mm Creedmoor.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6mm-creedmoor-rifle-2-die-set/"
 },
@@ -16246,7 +16246,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 6.5 Creedmoor.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6-5-creedmoor-rifle-2-die-set/"
 },
@@ -16259,7 +16259,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 6.5 PRC.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-6-5-prc-rifle-2-die-set/"
 },
@@ -16272,7 +16272,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 416 Rigby.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-416-rigby-rifle-2-die-set/"
 },
@@ -16285,7 +16285,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 7mm Rem Magnum.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-7mm-rem-magnum-rifle-2-die-set/"
 },
@@ -16298,7 +16298,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 300 AAC Blackout.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-300-aac-blackout-rifle-2-die-set/"
 },
@@ -16311,7 +16311,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 300 Winchester Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-300-winchester-mag-rifle-2-die-set/"
 },
@@ -16337,7 +16337,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 7.62 x 39.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-7-62-x-39-rifle-2-die-set/"
 },
@@ -16350,7 +16350,7 @@
 "on_sale": false,
 "price": "7880",
 "regular": "7880",
-"short": "",
+"short": "Das Lyman Rifle 2 Die Set ist ein 2-teiliger Matrizensatz zum Wiederladen von Büchsenpatronen im Kaliber 9.3mm x 62.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-9-3mm-x-62-rifle-2-die-set/"
 },
@@ -16376,7 +16376,7 @@
 "on_sale": false,
 "price": "7140",
 "regular": "7140",
-"short": "",
+"short": "Die Lyman Pro Universal Decapping Die ist eine Universal-Matrize zum Entfernen verbrauchter Zündhütchen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-universal-decapping-die/"
 },
@@ -16384,12 +16384,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Pro Universal Hold Down Die",
 "on_sale": false,
 "price": "7140",
 "regular": "7140",
-"short": "",
+"short": "Die Lyman Pro Universal Hold Down Die ist eine Universal-Niederhalter-Matrize für das Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-universal-hold-down-die/"
 },
@@ -16402,7 +16402,7 @@
 "on_sale": false,
 "price": "6900",
 "regular": "6900",
-"short": "",
+"short": "Die Lyman Multi Expand Powder Charge Die ist eine Matrize zum Aufweiten der Hülsenmündung und zum Einfüllen des Pulvers.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-multi-expand-powder-charge-die/"
 },
@@ -16428,7 +16428,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Universal Case Flare Die ist eine Aufweit-Matrize für Pistolenhülsen (9mm).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-universal-case-flare-die-9mm/"
 },
@@ -16441,7 +16441,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Universal Case Flare Die ist eine Aufweit-Matrize für Pistolenhülsen (40 cal).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-universal-case-flare-die-40-cal/"
 },
@@ -16454,7 +16454,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Universal Case Flare Die ist eine Aufweit-Matrize für Pistolenhülsen (44 cal).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-universal-case-flare-die-44-cal/"
 },
@@ -16467,7 +16467,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Trim Die ist eine Matrize zum Kürzen (Trimmen) von Hülsen im Kaliber 223 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-trim-die-223-rem/"
 },
@@ -16480,7 +16480,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Trim Die ist eine Matrize zum Kürzen (Trimmen) von Hülsen im Kaliber 300 AAC.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-trim-die-300-aac/"
 },
@@ -16493,7 +16493,7 @@
 "on_sale": false,
 "price": "6420",
 "regular": "6420",
-"short": "",
+"short": "Die Lyman Pro Trim Die ist eine Matrize zum Kürzen (Trimmen) von Hülsen im Kaliber 308 WIN.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pro-trim-die-308-win/"
 },
@@ -16533,7 +16533,7 @@
 "on_sale": false,
 "price": "5700",
 "regular": "5700",
-"short": "",
+"short": "Die Lyman Decapping Rod ist ein Entzündungsstift (Ausstossstift) mit Carbide-Button für Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-decapping-rod-w-carbide-button-22-caliber-222-rem-223-rem-22-250-220-swift-223-wssm/"
 },
@@ -16546,7 +16546,7 @@
 "on_sale": false,
 "price": "5700",
 "regular": "5700",
-"short": "",
+"short": "Die Lyman Decapping Rod ist ein Entzündungsstift (Ausstossstift) mit Carbide-Button für Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-decapping-rod-w-carbide-button-30-caliber-30-30-300-sav-308-win-30-06-300-win-mag/"
 },
@@ -16559,7 +16559,7 @@
 "on_sale": false,
 "price": "5700",
 "regular": "5700",
-"short": "",
+"short": "Die Lyman Decapping Rod ist ein Entzündungsstift (Ausstossstift) mit Carbide-Button für Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-decapping-rod-w-carbide-button-338-338-lapua-338-win-mag/"
 },
@@ -16594,12 +16594,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 44 Mag./44 Special/44 Russian/445 Super Mag Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 44 Mag./44 Special/44 Russian/445 Super Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-44-mag-44-special-44-russian-445-super-mag-neck-expanding-m-die/"
 },
@@ -16607,12 +16607,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 45 Schofield Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 45 Schofield.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-schofield-neck-expanding-m-die/"
 },
@@ -16620,12 +16620,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 40 S&W/10mm Auto Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 40 S&W/10mm Auto.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-40-sw-10mm-auto-neck-expanding-m-die/"
 },
@@ -16633,12 +16633,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 38 Spec/357 Mag/357 Rem Max/38 S&W Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 38 Spec/357 Mag/357 Rem Max/38 S&W.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-spec-357-mag-357-rem-max-38-sw-neck-expanding-m-die/"
 },
@@ -16646,12 +16646,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 380 Auto/ 38 Super Auto/9mm Luger/9×23 Win Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 380 Auto/ 38 Super Auto/9mm Luger/9×23 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-380-auto-38-super-auto-9mm-luger-9x23-win-neck-expanding-m-die/"
 },
@@ -16659,12 +16659,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 22S Neck Expanding «M» Die 222 Rem, 222 Rem Mag, 223 Rem, 22-250",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 22S 222 Rem, 222 Rem Mag, 223 Rem, 22-250.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-22s-neck-expanding-m-die-222-rem-222-rem-mag-223-rem-22-250/"
 },
@@ -16672,12 +16672,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 32 ACP/32 S&W Long/32 H&R Mag/327 Fed Mag Neck Expanding «M» Die",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 32 ACP/32 S&W Long/32 H&R Mag/327 Fed Mag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-32-acp-32-sw-long-32-hr-mag-327-fed-mag-neck-expanding-m-die/"
 },
@@ -16685,12 +16685,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 30L Neck Expanding «M» Die 30-06 (7.62 x 63mm), 308 Win/307 Win",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 30L 30-06 (7.62 x 63mm), 308 Win/307 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30l-neck-expanding-m-die-30-06-7-62-x-63mm-308-win-307-win/"
 },
@@ -16698,12 +16698,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 30S Neck Expanding «M» Die 30-30 Winchester, 300 Savage, 7.62 x 39",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 30S 30-30 Winchester, 300 Savage, 7.62 x 39.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30s-neck-expanding-m-die-30-30-winchester-300-savage-7-62-x-39/"
 },
@@ -16711,12 +16711,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 30M1 Neck Expanding «M» Die 30 M1 Carbine",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 30M1 30 M1 Carbine.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-30m1-neck-expanding-m-die-30-m1-carbine/"
 },
@@ -16724,12 +16724,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 31L Neck Expanding «M» Die 7.65mm Arg Mauser, 303 British",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 31L 7.65mm Arg Mauser, 303 British.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-31l-neck-expanding-m-die-7-65mm-arg-mauser-303-british/"
 },
@@ -16737,12 +16737,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 24 Neck Expanding «M» Die 243 Winchester, 6mm Rem (244 Rem)",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 24 243 Winchester, 6mm Rem (244 Rem).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-24-neck-expanding-m-die-243-winchester-6mm-rem-244-rem/"
 },
@@ -16750,12 +16750,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 27 Neck Expanding «M» Die 270 Winchester",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 27 270 Winchester.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-27-neck-expanding-m-die-270-winchester/"
 },
@@ -16763,12 +16763,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 28 Neck Expanding «M» Die 7mm Rem Mag, 7mm x 57 Mauser, 280 Rem",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 28 7mm Rem Mag, 7mm x 57 Mauser, 280 Rem.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-28-neck-expanding-m-die-7mm-rem-mag-7mm-x-57-mauser-280-rem/"
 },
@@ -16776,12 +16776,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 37 Neck Expanding «M» Die 375 H & H Mag, 38-55 Win",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 37 375 H & H Mag, 38-55 Win.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-37-neck-expanding-m-die-375-h-h-mag-38-55-win/"
 },
@@ -16789,12 +16789,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 8MM Neck Expanding «M» Die 8mm x 57 Mauser",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 8MM 8mm x 57 Mauser.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-8mm-neck-expanding-m-die-8mm-x-57-mauser/"
 },
@@ -16802,12 +16802,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 26 Neck Expanding «M» Die 260 Remington, 6.5 x 55 S",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 26 260 Remington, 6.5 x 55 S.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-26-neck-expanding-m-die-260-remington-6-5-x-55-s/"
 },
@@ -16815,12 +16815,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 45-70 Neck Expanding «M» Die 450 Marlin, 45-70 Government, 45-90",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 45-70 450 Marlin, 45-70 Government, 45-90.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-70-neck-expanding-m-die-450-marlin-45-70-government-45-90/"
 },
@@ -16828,12 +16828,12 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 22H Neck Expanding «M» Die 22 Hornet",
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Neck Expanding «M» Die ist eine Aufweit-Matrize (M-Die) zum Wiederladen. Ausführung: 22H 22 Hornet.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-22h-neck-expanding-m-die-22-hornet/"
 },
@@ -16846,7 +16846,7 @@
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Taper Crimp Die ist eine Einzelmatrize zum Taper-Crimpen von Patronen (9mm Luger).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-9mm-luger-taper-crimp-die-only/"
 },
@@ -16859,7 +16859,7 @@
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Taper Crimp Die ist eine Einzelmatrize zum Taper-Crimpen von Patronen (38 Spec./357 Mag./357 Rem Maximum).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-38-spec-357-mag-357-rem-maximum-taper-crimp-die-only/"
 },
@@ -16872,7 +16872,7 @@
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Taper Crimp Die ist eine Einzelmatrize zum Taper-Crimpen von Patronen (45 A.C.P./45 Win Mag/45 Colt/45 Schofield).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-a-c-p-45-win-mag-45-colt-45-schofield-taper-crimp-die-only/"
 },
@@ -16885,7 +16885,7 @@
 "on_sale": false,
 "price": "4370",
 "regular": "4370",
-"short": "",
+"short": "Die Lyman Taper Crimp Die ist eine Einzelmatrize zum Taper-Crimpen von Patronen (45 Caliber Short Black Powder).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-45-caliber-short-black-powder-taper-crimp-die/"
 },
@@ -17135,7 +17135,7 @@
 "on_sale": false,
 "price": "4250",
 "regular": "4250",
-"short": "",
+"short": "Die Lyman Ram Prime Die ist eine Matrize zum Setzen von Zündhütchen, geliefert mit grossen und kleinen Setzstempeln (Large & Small Punches).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-ram-prime-die-with-large-small-punches/"
 },
@@ -17174,7 +17174,7 @@
 "on_sale": false,
 "price": "3630",
 "regular": "3630",
-"short": "",
+"short": "Das Lyman Stuck Case Remover Kit dient zum Entfernen festsitzender Hülsen aus Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-stuck-case-remover-kit/"
 },
@@ -17310,7 +17310,7 @@
 "on_sale": false,
 "price": "2670",
 "regular": "2670",
-"short": "",
+"short": "Der Lyman J to X Shellholder Adapter ist ein Adapter für Hülsenhalter beim Wiederladen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-j-to-x-shellholder-adapter/"
 },
@@ -17869,7 +17869,7 @@
 "on_sale": false,
 "price": "980",
 "regular": "980",
-"short": "",
+"short": "Lyman Decapping Pins sind Ersatz-Entzündungsstifte (10er-Pack) für Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-decapping-pins-10-pack/"
 },
@@ -17986,7 +17986,7 @@
 "on_sale": false,
 "price": "890",
 "regular": "890",
-"short": "",
+"short": "Der Lyman Split Lock Ring ist ein geteilter Kontermutter-Ring zum Fixieren von Wiederladematrizen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-split-lock-ring/"
 },
@@ -23526,7 +23526,7 @@
 "price": "499900",
 "regular": "599900",
 "short": "Gebrauchte Sig 552-1 Commando mit 553 Umbau und umfangreichem Zubehör. Erstklassiger Zustand, ca. 1500 Schuss, sofort einsatzbereit.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sig-552-1-commando-umbau-auf-553-mit-premium-zubehoer/"
 },
 "22152": {
@@ -39363,7 +39363,7 @@
 "price": "34900",
 "regular": "34900",
 "short": "Kompakter B&T Rotex-V Schalldämpfer im Kaliber .223 mit QD Schnellverschluss für Rotex Mündungsbremsen. Occasion in gutem Zustand.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-rotex-v-schalldaempfer-223-qd/"
 },
 "24965": {
@@ -39378,8 +39378,8 @@
 "price": "34900",
 "regular": "34900",
 "short": "Kompakter B&T Rotex-V Schalldämpfer im Kaliber .223 mit QD Schnellverschluss für Rotex Mündungsbremsen. Occasion in gutem Zustand.",
-"stock": "in-stock",
-"url": "https://armatum.ch/produkt/bt-rotex-v-schalldaempfer-223-qd-occasion-kopie/"
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-rotex-v-schalldaempfer-223-qd-occasion-2/"
 },
 "24972": {
 "cats": [
@@ -43445,7 +43445,7 @@
 "price": "349900",
 "regular": "349900",
 "short": "Neuwertige Schmeisser AR15 DMR FDE mit lediglich rund 20 Schuss Belastung. Komplett ausgestattet mit Sightmark Zielfernrohr, Zweibein, Ladehilfe und Brass Catcher.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/schmeisser-ar15-dmr-gebrauchtwaffe-mit-optik/"
 },
 "26998": {
@@ -46655,7 +46655,7 @@
 "price": "20990",
 "regular": "20990",
 "short": "Der B&T Blast Deflector für den M.A.R.S. QD Anschluss reduziert die seitliche Druckbelastung durch gezielte Gasumlenkung nach vorne. Die robuste Konstruktion und das Schnellwechselsystem machen ihn zur idealen Ergänzung für kompatible B&T-Waffenplattformen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-blast-deflector-m-a-r-s-qd-anschluss/"
 },
 "28078": {
@@ -52017,7 +52017,7 @@
 "on_sale": false,
 "price": "8200",
 "regular": "8200",
-"short": "",
+"short": "Hornady Gas Checks 7MM: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-7mm/"
 },
@@ -52031,7 +52031,7 @@
 "on_sale": false,
 "price": "7500",
 "regular": "7500",
-"short": "",
+"short": "Hornady Gas Checks 30 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-30-cal/"
 },
@@ -52045,7 +52045,7 @@
 "on_sale": false,
 "price": "8100",
 "regular": "8100",
-"short": "",
+"short": "Hornady Gas Checks 32 CAL/8MM: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-32-cal-8mm/"
 },
@@ -52059,7 +52059,7 @@
 "on_sale": false,
 "price": "7700",
 "regular": "7700",
-"short": "",
+"short": "Hornady Gas Checks 338 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-338-cal/"
 },
@@ -52073,7 +52073,7 @@
 "on_sale": false,
 "price": "6700",
 "regular": "6700",
-"short": "",
+"short": "Hornady Gas Checks 35 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-35-cal/"
 },
@@ -52087,7 +52087,7 @@
 "on_sale": false,
 "price": "8500",
 "regular": "8500",
-"short": "",
+"short": "Hornady Gas Checks 375 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-375-cal/"
 },
@@ -52101,7 +52101,7 @@
 "on_sale": false,
 "price": "10000",
 "regular": "10000",
-"short": "",
+"short": "Hornady Gas Checks 416 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-416-cal/"
 },
@@ -52115,7 +52115,7 @@
 "on_sale": false,
 "price": "9600",
 "regular": "9600",
-"short": "",
+"short": "Hornady Gas Checks 45 CAL: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-45-cal/"
 },
@@ -52129,7 +52129,7 @@
 "on_sale": false,
 "price": "5500",
 "regular": "5500",
-"short": "",
+"short": "Hornady Gas Checks 000 BUCKSHOT .350 DIAMETER: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-000-buckshot-350-diameter/"
 },
@@ -52143,7 +52143,7 @@
 "on_sale": false,
 "price": "5500",
 "regular": "5500",
-"short": "",
+"short": "Hornady Gas Checks 00 BUCKSHOT .330 DIAMETER: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-00-buckshot-330-diameter/"
 },
@@ -52157,7 +52157,7 @@
 "on_sale": false,
 "price": "5500",
 "regular": "5500",
-"short": "",
+"short": "Hornady Gas Checks #4 BUCKSHOT .240 DIAMETER: Metallkappen für dafür ausgelegte Gussgeschosse. Zum Schutz des Geschossbodens bei passenden Wiederladeanwendungen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-gas-checks-4-buckshot-240-diameter/"
 },
@@ -63417,7 +63417,7 @@
 "price": "124900",
 "regular": "124900",
 "short": "Gebrauchte Bergara BA13 im Kaliber .222 Remington, Zustand sehr gut, mit Hawke 4-16×56 Zielfernrohr, FBT ERA-LOC Laufgewindebuchse, Patronenhalter am Schaft und Tasche.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bergara-ba13-repetierbuechse-222-remington-mit-hawke-4-16x56/"
 },
 "32607": {
@@ -64095,5 +64095,33 @@
 "short": "Der Urvater der ATACR-Familie: 5-25×56 mit ED-Glas, ZeroStop-Turm, MIL-C-Absehen und 35 MRAD Höhenverstellung.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/nightforce-atacr-5-25x56-f1-zerostop-zielfernrohr-schwarz-mil-c/"
+},
+"32812": {
+"cats": [
+"Geissele",
+"Sturmgewehre"
+],
+"images": 1,
+"name": "Geissele Super Duty MOD 1 Pistol 11.5 Zoll 5.56 NATO DDC",
+"on_sale": false,
+"price": "379990",
+"regular": "379990",
+"short": "Die Geissele Super Duty MOD1 Pistol im Kaliber 5.56 NATO mit 11.5-Zoll-CHF-Lauf (Drall 1:7), SSA-E-X-Zweistufenabzug, MK16-Schiene und SB Tactical SBA3 Brace in DDC. Die aktuelle Evolution der Super-Duty-Plattform.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/geissele-super-duty-mod-1-pistol-11-5-zoll-5-56-nato-ddc/"
+},
+"32819": {
+"cats": [
+"Geissele",
+"Sturmgewehre"
+],
+"images": 2,
+"name": "Geissele Super Duty MOD1 11.5 Zoll 5.56 NATO DDC",
+"on_sale": false,
+"price": "379990",
+"regular": "379990",
+"short": "Das Geissele Super Duty MOD1 im Kaliber 5.56 NATO mit 11.5-Zoll-Lauf in DDC: kaltgehämmerter, verchromter Geissele-Lauf, SSA-X-Zweistufenabzug, MK16-Schiene und B5-SOPMOD-Schaft. Die aktuelle Evolution der Super-Duty-Plattform.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/geissele-super-duty-mod1-11-5-zoll-5-56-nato-ddc/"
 }
 }
