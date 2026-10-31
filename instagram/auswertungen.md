@@ -160,3 +160,16 @@ Follower 2472 (18.10.: 2466, +6), 361 Beiträge. Reichweite 18.–25.10.: 1491 K
 | #9 SIG Sauer Cross | 18.10. | 44 | 0 |
 
 Erkenntnisse: Konkrete Waffen-Portraits (#9: 44) und Neuheiten (#18: 22) liegen klar vorn; reine Wissens-/Wiederladen-Grafiken (#6: 3, #15: 4) und das Reel (#16: 6) schwach. «Dies oder das?» brachte nur 2 Kommentare. Konsequenz für 26.10.–01.11.: Swissness-Waffenportrait (K31) statt weiterem Wiederladen-Karussell, ein Sicherheits-Wissenspost mit Sortiments-Bezug, Reel pausiert. Hinweis: Likes der letzten Tage sind noch nicht ausgereift (Posts < 48 h).
+
+## Auswertung 31.10.2026 (Likes Stand 31.10., 19 Beiträge seit 12.10.)
+
+| Typ | Beispiele | Likes |
+|---|---|---|
+| Eigenes Foto des Inhabers als Titelbild | K31 (#21) 104, Walther-Vergleich (#10) 38, SIG Cross 43, CZ Duty 40, Echelon 35, Marlin 77 | Ø ~56 |
+| Herstellerfoto/Produktfoto als Titelbild | GPO (#20) 4, Gehörschutz (#22) 5, Walther A-Cut (#19) 18, Neuheiten (#18) 24 | Ø ~13 |
+| Reine Text-/Wissensgrafik | Einwintern 3, Hülsen 4, Dies oder das 3, Wiederladen 14, Fehler 30 | Ø ~11 |
+| Reel aus Grafiken + Stimme | MOA/MIL (#16) 6 | 6 |
+| Inhaber-Foto + Wissen (#23 Geschosse) | 11 (nach 1 Tag) | – |
+
+Follower 2478 (+12 seit 18.10.), Gefolgt 4502 (vorher 5542). Kommentare: K31 3, Dies-oder-das 2 – sonst kaum.
+**Schluss:** Entscheidend ist ein echtes, eigenes Foto einer konkreten Waffe/Arbeit. Herstellerbilder bringen kaum mehr als reine Grafiken. Grafik-Reels funktionieren nicht.
