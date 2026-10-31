@@ -164,3 +164,13 @@ Tipps, Tests & Einblicke 👇
 
 ## Sonderschliessungen (Inhaber, 28.10.2026)
 - **Do 05.11.2026 und Do 12.11.2026: Laden geschlossen.** An diesen Tagen keine «Heute offen»-Story, keine Einladung in den Laden («heute Abend sind wir da»), keine Aktion, die Ladenbesuch voraussetzt. Kommunikation siehe redaktionsplan.md «Schliessung 05./12.11.».
+
+## Saison- und Feiertagskalender (Irene plant mit, Inhaber 31.10.2026 «Kein Halloween post?»)
+Anlässe immer mindestens als Story, mit eigenem Foto auch im Feed. Ton: augenzwinkernd, nie Waffen mit Masken/Kostümen oder auf Personen gerichtet.
+- 11.11. Martinstag / Fasnachtsbeginn (11.11. 11:11) – optional Story
+- 27.11. Black Friday (Mark entscheidet über Aktion; Instagram ohne Preise)
+- Advent ab 29.11. – Adventsstory jeden Sonntag
+- 06.12. Samichlaus – Story
+- 24.–26.12. Weihnachten – Story + Feed mit eigenem Foto, Hinweis Öffnungszeiten über die Feiertage
+- 31.12./01.01. Silvester/Neujahr – Story (Jahresrückblick)
+- Oktober: Halloween 31.10. – Story (2026: «Das wahre Grauen … ein ungeputzter Lauf»)
