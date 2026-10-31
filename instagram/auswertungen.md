@@ -173,3 +173,11 @@ Erkenntnisse: Konkrete Waffen-Portraits (#9: 44) und Neuheiten (#18: 22) liegen 
 
 Follower 2478 (+12 seit 18.10.), Gefolgt 4502 (vorher 5542). Kommentare: K31 3, Dies-oder-das 2 – sonst kaum.
 **Schluss:** Entscheidend ist ein echtes, eigenes Foto einer konkreten Waffe/Arbeit. Herstellerbilder bringen kaum mehr als reine Grafiken. Grafik-Reels funktionieren nicht.
+
+## Reichweiten-Check 31.10.2026 (Frage Inhaber: Reichweite eingeschränkt? Kontoart?)
+- Kontoart: BUSINESS (Unternehmen), Kategorie gesetzt – passt.
+- Reichweite/Tag: Anfang Okt. 54–330, seit 12.10. stabil 450–790 (30.10.: 788).
+- Nicht-Follower-Reichweite: 03.–17.10. 786 von 2006 (39 %), 17.–31.10. 1220 von 2454 (50 %) → Konto wird Nicht-Followern empfohlen, kein Hinweis auf kontoweite Einschränkung.
+- Profilbesuche 17.–31.10.: 163, Website-Klicks 16, interagierende Konten 268.
+- Pro Beitrag: K31 Custom (Inhaber) Reichweite 1815, 75 Shares, 28 Saves; #21 K31 1006 / 6 Shares; #20 GPO 180 / 0; #22 Gehörschutz 209 / 0; Reel #16 356, Skip-Rate 76 %, Ø 5,6 s.
+- Nicht per API prüfbar: «Kontostatus» in der App (einzelne Beiträge «nicht für Empfehlungen geeignet») – Inhaber prüft.
