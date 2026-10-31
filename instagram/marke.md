@@ -174,3 +174,6 @@ Anlässe immer mindestens als Story, mit eigenem Foto auch im Feed. Ton: augenzw
 - 24.–26.12. Weihnachten – Story + Feed mit eigenem Foto, Hinweis Öffnungszeiten über die Feiertage
 - 31.12./01.01. Silvester/Neujahr – Story (Jahresrückblick)
 - Oktober: Halloween 31.10. – Story (2026: «Das wahre Grauen … ein ungeputzter Lauf»)
+
+## Sensibles Thema: Brand bei B&T Thun (29.10.2026)
+- Story der Anteilnahme am 31.10. gepostet (Inhaber-OK). Bis mind. 15.11.2026 keine B&T-Produkte bewerben (auch keine Story aus dem Shop-Check), keine Kommentare zur Täterschaft, Bekennervideo nie teilen. Kommentare dazu nur nach Rücksprache mit dem Inhaber beantworten.
