@@ -694,7 +694,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | Sa 24.10. | 09:30 | #17 Dies oder das? (statt #8 – keine Umfrage-Resultate) – Öffnungs-Samstag | ✅ veröffentlicht 09:31 – https://www.instagram.com/p/De3mju3lTSa/ |
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | ✅ veröffentlicht 20:20 (verspätet) – https://www.instagram.com/p/DfAmF47CY2I/ |
-| So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | geplant (automatisch) |
+| So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | ✅ veröffentlicht 20:02 – https://www.instagram.com/reel/DfNbzgjjBVV/ |
 | Di 03.11. | 18:30 | #25 Neu: Nightforce – die ganze Familie (aus Shop-Check 29.10.) – fix terminiert, bei der Wochenplanung 02.–08.11. übernehmen | geplant (automatisch) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
@@ -703,7 +703,7 @@ Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 U
 
 ### #24 – So 01.11.2026, 20:00 – Reel mit Sprecherstimme (Eric) – Säule 1: FFP + MIL – warum das zusammengehört (Beispiele Arken Optics)
 
-**Status:** Autopilot – geplant. Freigabe Inhaber 26.10.2026 («Ja» auf den Vorschlag Wissens-Post FFP/MIL mit Arken, ohne Preis). Wochen-Reel für 26.10.–1.11. Anschluss an Reel #16 MOA/MIL.
+**Status:** ✅ Veröffentlicht 01.11.2026, 20:02 (armatum_ch, pünktlich) als Reel mit Stimme Eric – https://www.instagram.com/reel/DfNbzgjjBVV/ – Story mit Slide 01. Letztes Grafik-Reel (Regeln ab 31.10.).
 
 **Material:** `instagram/grafiken/24-ffp-mil-arken/01.jpg`–`06.jpg` (Fallback-Karussell), `reel-voice.mp4` (29,9 s, ElevenLabs «Eric», atempo 1.1), `reel-cover.jpg`, WhatsApp-Status `whatsapp/posts/24-ffp-mil-arken.jpg`.
 
@@ -1179,3 +1179,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-10-31 | Inhaber: «Kein Halloween post?» – Halloween-Story kurzfristig erstellt und um ca. 18:15 veröffentlicht (instagram/stories/halloween-2026/halloween.jpg: «Das wahre Grauen … ein ungeputzter Lauf», Werkstatt-Hinweis). Saison-/Feiertagskalender in marke.md ergänzt, damit Anlässe künftig eingeplant werden. |
 | 2026-10-31 | Inhaber-OK: Story «Viel Kraft, B&T» (Solidarität nach Brandanschlag in Thun, 29.10.) veröffentlicht – nur Anteilnahme, keine Täter-Spekulation, keine Politik. Bis Mitte November keine B&T-Produkte bewerben. |
 | 2026-11-01 | Wochen-Routine 02.–08.11.: **nichts neu geplant.** Grund 1: Kein neues Inhaber-Foto in `instagram/fotos/` (Regel 4c: ohne eigenes Foto kein Feed-Post). Grund 2: In dieser Routine-Sitzung gibt es keine dauerhaften Termin-Werkzeuge (send_later/create_trigger für Hauptsession); sitzungsgebundene Werkzeuge sind laut Routine verboten – es hätte keine verlässliche Veröffentlichung gegeben. Offen: #25 Nightforce (Di 03.11. 18:30) braucht ein eigenes Nightforce-Foto, sonst Story. Inhaber informiert, um Fotos gebeten. |
+| 2026-11-01 | #24 Reel FFP + MIL veröffentlicht 20:02 (pünktlich): https://www.instagram.com/reel/DfNbzgjjBVV/ + Story. |
