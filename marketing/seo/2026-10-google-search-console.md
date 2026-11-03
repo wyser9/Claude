@@ -29,3 +29,8 @@ Quelle: Monatsmail Google Search Console, vom Inhaber am 03.11.2026 weitergeleit
 3. Bildersuche: Dateinamen/Alt-Texte beschreibend (bei neuen Artikeln schon gut, z. B. Sako S20), Bilder-Sitemap in Yoast prüfen.
 4. Mobile Ladezeit verbessern (armatum.ch ist zeitweise sehr langsam, 503-Fehler im Oktober).
 5. Instagram-Bio-Link und Google-Unternehmensprofil weiter nutzen – die Markensuche steigt.
+
+## Bildersuche – Analyse 03.11.2026
+- Technisch kein Hindernis: robots.txt erlaubt Googlebot-Image, Yoast-Bilder-Sitemap aktiv, Bilder öffentlich (Cloudflare, kein noindex).
+- Mediathek (8852 von 8993 ausgewertet): **4502 Bilder ohne Alt-Text (51 %)**, davon 3724 an Produkte/Beiträge angehängt. 2729 Dateinamen sind nichtssagend (Datum, «Bild_…», Artikelnummern).
+- Vorschlag: leere Alt-Texte von Produktbildern automatisch aus dem Produktnamen füllen (bestehende nicht überschreiben); neue Uploads mit sprechendem Dateinamen + Alt-Text; alte Dateien nicht umbenennen.
