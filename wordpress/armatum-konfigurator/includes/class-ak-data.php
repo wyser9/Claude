@@ -28,9 +28,14 @@ class AK_Data {
 		'griff'    => 'Griffaufnahme',
 	);
 
+	/** Mündungskette in Reihenfolge: jedes Teil sitzt auf dem Ausgang des vorherigen. */
+	const MUZZLE_CHAIN = array( 'muendungsaufsatz', 'hub', 'schalldaempfer' );
+
 	/** Zubehörgruppen: Schlüssel => array( Steckplatz, Bezeichnung, Ebene ). */
 	const GROUPS = array(
-		'schalldaempfer' => array( 'muendung', 'Schalldämpfer', 3 ),
+		'muendungsaufsatz' => array( 'muendung', 'Mündungsaufsatz', 2 ),
+		'hub'            => array( 'muendung', 'HUB (Schalldämpfer-Adapter)', 3 ),
+		'schalldaempfer' => array( 'muendung', 'Schalldämpfer', 4 ),
 		'handgriff'      => array( 'unten', 'Handgriff', 3 ),
 		'laser'          => array( 'seite', 'Laser', 3 ),
 		'schaft'         => array( 'schaft', 'Schulterstütze', 2 ),
@@ -129,6 +134,9 @@ class AK_Data {
 		if ( 'zubehoer' === $role && ! self::group( $product_id ) ) {
 			return false;
 		}
+		if ( 'zubehoer' === $role && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'hub' ), true ) && ( ! self::point( $product_id, 'tube_anchor' ) || ! self::outputs( $product_id ) ) ) {
+			return false;
+		}
 		return true;
 	}
 
@@ -178,11 +186,71 @@ class AK_Data {
 		);
 	}
 
+	public static function split( $raw ) {
+		return array_values( array_unique( array_filter( array_map( 'trim', explode( ',', strtolower( (string) $raw ) ) ) ) ) );
+	}
+
+	/** Ausgang (Schnittstelle nach vorne) eines Mündungsaufsatzes oder HUBs. */
+	public static function outputs( $product_id ) {
+		return self::split( self::meta( $product_id, 'ausgang' ) );
+	}
+
+	/**
+	 * Mündungs-Enden der Waffe ohne Zubehör:
+	 *  - Gewinde (Steckplatz Mündung, Punkt = Gewindeende)
+	 *  - Original-Mündungsaufsatz (falls eingetragen, Punkt = vorderes Ende)
+	 */
+	public static function muzzle_ends( $weapon_id ) {
+		$ends   = array();
+		$thread = self::weapon_slot( $weapon_id, 'muendung' );
+		if ( $thread ) {
+			$ends[] = array( 'type' => 'gewinde', 'interfaces' => $thread['interfaces'] );
+		}
+		$dev_if = self::split( self::meta( $weapon_id, 'muzzle_device_if' ) );
+		if ( $dev_if && self::point( $weapon_id, 'muzzle_device_anchor' ) ) {
+			$ends[] = array( 'type' => 'original', 'interfaces' => $dev_if );
+		}
+		return $ends;
+	}
+
+	/**
+	 * Prüft eine Mündungskette. $chain = Gruppe => Produkt-ID (nur gewählte).
+	 * Mündungsaufsatz ersetzt den Originalaufsatz und sitzt immer auf dem Gewinde.
+	 */
+	public static function muzzle_chain_valid( $weapon_id, $chain ) {
+		$thread = self::weapon_slot( $weapon_id, 'muendung' );
+		if ( ! empty( $chain['muendungsaufsatz'] ) ) {
+			$id = $chain['muendungsaufsatz'];
+			if ( ! $thread || ! array_intersect( $thread['interfaces'], self::interfaces( $id ) ) ) {
+				return false;
+			}
+			$current = self::outputs( $id );
+		} else {
+			$current = array();
+			foreach ( self::muzzle_ends( $weapon_id ) as $end ) {
+				$current = array_merge( $current, $end['interfaces'] );
+			}
+		}
+		if ( ! empty( $chain['hub'] ) ) {
+			if ( ! array_intersect( $current, self::interfaces( $chain['hub'] ) ) ) {
+				return false;
+			}
+			$current = self::outputs( $chain['hub'] );
+		}
+		if ( ! empty( $chain['schalldaempfer'] ) && ! array_intersect( $current, self::interfaces( $chain['schalldaempfer'] ) ) ) {
+			return false;
+		}
+		return true;
+	}
+
 	/** Passt das Zubehör auf den Steckplatz der Waffe? */
 	public static function accessory_fits( $weapon_id, $acc_id ) {
 		$g = self::group( $acc_id );
 		if ( ! $g ) {
 			return false;
+		}
+		if ( in_array( $g, self::MUZZLE_CHAIN, true ) ) {
+			return true; // Mündungsteile werden in options_for_weapon über die Kette geprüft.
 		}
 		$slot = self::weapon_slot( $weapon_id, self::GROUPS[ $g ][0] );
 		return $slot && array_intersect( $slot['interfaces'], self::interfaces( $acc_id ) );
@@ -242,9 +310,38 @@ class AK_Data {
 		}
 
 		$parts = array();
+		$muzzle = array();
 		foreach ( array_diff( self::products_by_role( 'zubehoer' ), $blocked ) as $acc_id ) {
-			if ( self::accessory_fits( $weapon_id, $acc_id ) ) {
-				$parts[ self::group( $acc_id ) ][] = $acc_id;
+			$g = self::group( $acc_id );
+			if ( in_array( $g, self::MUZZLE_CHAIN, true ) ) {
+				$muzzle[ $g ][] = $acc_id;
+			} elseif ( self::accessory_fits( $weapon_id, $acc_id ) ) {
+				$parts[ $g ][] = $acc_id;
+			}
+		}
+		// Mündung: nur Teile, die in mindestens einer gültigen Kette vorkommen.
+		$aufs = array_merge( array( 0 ), isset( $muzzle['muendungsaufsatz'] ) ? $muzzle['muendungsaufsatz'] : array() );
+		$hubs = array_merge( array( 0 ), isset( $muzzle['hub'] ) ? $muzzle['hub'] : array() );
+		$sds  = array_merge( array( 0 ), isset( $muzzle['schalldaempfer'] ) ? $muzzle['schalldaempfer'] : array() );
+		$ok   = array();
+		foreach ( $aufs as $a ) {
+			foreach ( $hubs as $h ) {
+				foreach ( $sds as $d ) {
+					if ( ! $a && ! $h && ! $d ) {
+						continue;
+					}
+					$chain = array_filter( array( 'muendungsaufsatz' => $a, 'hub' => $h, 'schalldaempfer' => $d ) );
+					if ( self::muzzle_chain_valid( $weapon_id, $chain ) ) {
+						foreach ( $chain as $g => $id ) {
+							$ok[ $g ][ $id ] = true;
+						}
+					}
+				}
+			}
+		}
+		foreach ( self::MUZZLE_CHAIN as $g ) {
+			if ( ! empty( $ok[ $g ] ) ) {
+				$parts[ $g ] = array_map( 'intval', array_keys( $ok[ $g ] ) );
 			}
 		}
 
@@ -287,6 +384,10 @@ class AK_Data {
 				return new WP_Error( 'ak_part', 'Ein gewähltes Zubehör passt nicht auf diese Waffe.' );
 			}
 		}
+		$chain = array_intersect_key( $parts, array_flip( self::MUZZLE_CHAIN ) );
+		if ( $chain && ! self::muzzle_chain_valid( $weapon_id, $chain ) ) {
+			return new WP_Error( 'ak_muzzle', 'Die gewählten Teile an der Mündung passen nicht zusammen. Ein Schalldämpfer braucht einen passenden HUB.' );
+		}
 		if ( ! $optic_id && ! $parts ) {
 			return new WP_Error( 'ak_empty', 'Bitte mindestens ein Zubehör wählen.' );
 		}
@@ -320,6 +421,8 @@ class AK_Data {
 			'direct'     => self::is_direct( $product_id ),
 			'tube'       => self::tube( $product_id ),
 			'group'      => self::group( $product_id ),
+			'ifs'        => self::interfaces( $product_id ),
+			'outs'       => self::outputs( $product_id ),
 			'hinweis'    => (string) self::meta( $product_id, 'hinweis' ),
 			'cutout'     => 'yes' === self::meta( $product_id, 'freigestellt', 'no' ),
 		);

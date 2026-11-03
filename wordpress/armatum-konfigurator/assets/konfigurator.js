@@ -27,6 +27,12 @@
 		return { item: item, left: x - a[0] * s, top: y - a[1] * s, w: item.imgW * s, h: item.imgH * s };
 	}
 
+	function meets(a, b) {
+		return (a || []).some(function (x) { return (b || []).indexOf(x) >= 0; });
+	}
+
+	var CHAIN = ['muendungsaufsatz', 'hub', 'schalldaempfer'];
+
 	function Konfigurator($root) {
 		this.$root = $root;
 		this.cfg = $root.data('config');
@@ -78,7 +84,7 @@
 		var ghtml = '';
 		$.each(this.groups, function (_, g) {
 			ghtml += '<div class="ak-step" data-group="' + esc(g.key) + '"><h3>' + esc(g.label) + '</h3><div class="ak-list" role="radiogroup">' +
-				self.noneCard('ak_g_' + g.key, (g.key === 'schaft' ? 'Keine ' : 'Kein ') + g.label);
+				self.noneCard('ak_g_' + g.key, (g.key === 'schaft' ? 'Keine Schulterstütze' : g.key === 'hub' ? 'Kein HUB' : g.key === 'muendungsaufsatz' ? 'Original-Mündungsaufsatz behalten' : 'Kein ' + g.label));
 			$.each(g.items, function (_, it) { ghtml += self.card(it, 'ak_g_' + g.key); });
 			ghtml += '</div></div>';
 		});
@@ -123,14 +129,73 @@
 		this.mount = this.mountsById[parseInt($first.val(), 10)] || null;
 	};
 
+	/**
+	 * Mündungskette auflösen: liefert pro gewähltem Teil den Weltpunkt, an dem es sitzt,
+	 * und die Schnittstellen, die danach nach vorne frei sind.
+	 */
+	Konfigurator.prototype.muzzle = function (upTo) {
+		var w = this.cfg.weapon;
+		var thread = w.slots && w.slots.muendung ? { ifs: w.threadIfs, at: this.weaponPoint(w.slots.muendung) } : null;
+		var original = w.deviceAnchor && w.deviceIfs.length ? { ifs: w.deviceIfs, at: this.weaponPoint(w.deviceAnchor) } : null;
+		var ends = [original, thread].filter(Boolean);
+		var placed = {};
+		for (var i = 0; i < CHAIN.length; i++) {
+			var g = CHAIN[i];
+			if (g === upTo) { break; }
+			var it = this.parts[g];
+			if (!it) { continue; }
+			var base = g === 'muendungsaufsatz' ? (thread && meets(it.ifs, thread.ifs) ? thread : null)
+				: ends.filter(function (e) { return meets(it.ifs, e.ifs); })[0];
+			if (!base) { placed[g] = null; continue; }
+			placed[g] = base.at;
+			if (it.outs && it.outs.length && it.tubeAnchor) {
+				var a = pt(it, it.anchor), t = pt(it, it.tubeAnchor);
+				ends = [{ ifs: it.outs, at: [base.at[0] + (t[0] - a[0]) * it.mmPerPx, base.at[1] + (t[1] - a[1]) * it.mmPerPx] }];
+			} else {
+				ends = [];
+			}
+		}
+		return { ends: ends, placed: placed, thread: thread };
+	};
+
+	/** Blendet Mündungsteile aus, die zur aktuellen Kette nicht passen, und setzt ungültige zurück. */
+	Konfigurator.prototype.filterMuzzle = function () {
+		var self = this;
+		$.each(CHAIN, function (_, g) {
+			var $step = self.$root.find('.ak-step[data-group="' + g + '"]');
+			if (!$step.length) { return; }
+			var state = self.muzzle(g);
+			var fits = function (it) {
+				return g === 'muendungsaufsatz' ? !!(state.thread && meets(it.ifs, state.thread.ifs))
+					: state.ends.some(function (e) { return meets(it.ifs, e.ifs); });
+			};
+			var grp = self.groups.filter(function (x) { return x.key === g; })[0];
+			$.each(grp.items, function (_, it) {
+				var ok = fits(it);
+				$step.find('input[value="' + it.id + '"]').closest('.ak-card').toggle(ok);
+				if (!ok && self.parts[g] && self.parts[g].id === it.id) {
+					self.parts[g] = null;
+					$step.find('input[value="0"]').prop('checked', true);
+				}
+			});
+		});
+	};
+
 	Konfigurator.prototype.layers = function () {
 		var self = this;
 		var w = this.cfg.weapon;
 		var list = [$.extend(place(w, w.anchor, 0, 0), { z: 1 })];
+		var mz = this.muzzle();
 		$.each(this.selectedParts(), function (_, x) {
-			var sp = w.slots && w.slots[x.g.slot];
-			if (!sp) { return; }
-			var at = self.weaponPoint(sp);
+			var at;
+			if (CHAIN.indexOf(x.g.key) >= 0) {
+				at = mz.placed[x.g.key];
+				if (!at) { return; }
+			} else {
+				var sp = w.slots && w.slots[x.g.slot];
+				if (!sp) { return; }
+				at = self.weaponPoint(sp);
+			}
 			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer }));
 		});
 		if (this.optic && this.optic.direct) {
@@ -166,6 +231,7 @@
 
 	Konfigurator.prototype.update = function () {
 		var cfg = this.cfg;
+		this.filterMuzzle();
 		var lines = [cfg.weapon];
 		if (this.mount && this.optic && !this.optic.direct) { lines.push(this.mount); }
 		if (this.optic) { lines.push(this.optic); }

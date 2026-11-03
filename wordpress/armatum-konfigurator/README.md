@@ -42,6 +42,15 @@ Ab Version 0.2 gibt es zusätzlich die Rolle **Zubehör** mit Gruppe (Schalldäm
 
 Zeigt ein Bild die linke Seite, «Bild spiegeln» ankreuzen. Beste Ergebnisse mit Seitenansicht von rechts auf weissem oder transparentem Hintergrund.
 
+## Mündung (ab 0.3)
+
+Die Mündung ist eine Kette: **Gewinde → Mündungsaufsatz → HUB → Schalldämpfer**.
+
+- **Mündungsaufsatz** (Mündungsfeuerdämpfer, Mündungsbremse): Schnittstelle = Laufgewinde (z.B. `1/2x28`). Ersetzt den Original-Aufsatz. «Ausgang» = Schnittstelle für einen HUB (z.B. `taper-lok`), dazu «Ausgangspunkt» = vorderes Ende.
+- **HUB**: Schnittstelle = Laufgewinde oder Ausgang eines Mündungsaufsatzes. «Ausgang» = HUB-Standard des Schalldämpfers (z.B. `1.375x24`), dazu «Ausgangspunkt».
+- **Schalldämpfer**: Schnittstelle = HUB-Standard. Er erscheint erst, wenn ein passender HUB gewählt ist.
+- **Waffe**: Steckplatz Mündung = Laufgewinde mit Punkt an der Gewindeschulter. Optional «Original-Mündungsaufsatz»: Schnittstelle für einen HUB und Punkt am vorderen Ende, dann passt ein HUB auch direkt auf den Original-Aufsatz.
+
 ## Regeln
 
 - Optik «direkt»: passt, wenn eine ihrer Schnittstellen auch an der Waffe ist.

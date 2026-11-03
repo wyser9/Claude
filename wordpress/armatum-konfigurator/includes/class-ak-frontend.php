@@ -57,6 +57,11 @@ class AK_Frontend {
 			}
 		}
 
+		$thread                 = AK_Data::weapon_slot( $weapon_id, 'muendung' );
+		$weapon['threadIfs']    = $thread ? $thread['interfaces'] : array();
+		$weapon['deviceIfs']    = AK_Data::split( AK_Data::meta( $weapon_id, 'muzzle_device_if' ) );
+		$weapon['deviceAnchor'] = AK_Data::point( $weapon_id, 'muzzle_device_anchor' );
+
 		$groups = array();
 		foreach ( AK_Data::GROUPS as $key => $def ) {
 			if ( empty( $options['parts'][ $key ] ) ) {
