@@ -64485,7 +64485,32 @@
 "price": "1990",
 "regular": "1990",
 "short": "Wasserbasierte Politur von Hornady als Zusatz zum Tumbler-Medium. Reinigt, poliert und schützt Hülsen und andere Metalle, ausser Aluminium. Flasche mit 8 oz.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-one-shot-metal-polish-8-oz-case-polish/"
+},
+"32948": {
+"cats": [
+"SIG Sauer",
+"Sturmgewehre"
+],
+"images": 1,
+"name": "SIG516 G3 Bronze 5.56 NATO 16″",
+"on_sale": false,
+"price": "322900",
+"regular": "322900",
+"short": "Halbautomatisches Gewehr im Kaliber 5.56 NATO mit Kurzhub-Gaskolben, 3-fach verstellbarem Gassystem und 16″ Lauf. Bronze-Cerakote, beidseitige Bedienelemente und M-LOK Handschutz. Inklusive 30-Schuss-Magazin.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sig516-g3-bronze-5-56-nato-16/"
+},
+"32952": {
+"cats": [],
+"images": 0,
+"name": "Montage (gratis im Paket)",
+"on_sale": false,
+"price": "0",
+"regular": "0",
+"short": "Fachgerechte Montage von Optik und Zubehör auf die Waffe. Kostenlos beim Kauf eines Pakets aus dem Konfigurator.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/montage-gratis-im-paket/"
 }
 }
