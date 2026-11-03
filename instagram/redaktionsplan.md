@@ -695,7 +695,7 @@ Die beiden Modelle werden für 2027 erwartet. Alle Infos findest du auf armatum.
 | So 25.10. | 20:00 | #10 Walther PDP Vergleich | ✅ veröffentlicht 20:02 – https://www.instagram.com/p/De7aYhJifea/ |
 | Di 27.10. | 18:30 | #20 Neu: 3 Spektive von GPO (aus Shop-Check 21.10.) – fix terminiert, bei der Wochenplanung 26.10.–1.11. übernehmen | ✅ veröffentlicht 20:20 (verspätet) – https://www.instagram.com/p/DfAmF47CY2I/ |
 | So 01.11. | 20:00 | #24 Reel FFP + MIL (Arken, Sprecher Eric) – Freigabe Inhaber 26.10. | ✅ veröffentlicht 20:02 – https://www.instagram.com/reel/DfNbzgjjBVV/ |
-| Di 03.11. | 18:30 | #25 Neu: Nightforce – die ganze Familie (aus Shop-Check 29.10.) – fix terminiert, bei der Wochenplanung 02.–08.11. übernehmen | geplant (automatisch) |
+| Di 03.11. | 18:30 | #25 Neu: Nightforce – die ganze Familie (aus Shop-Check 29.10.) | ✅ als Story gepostet 18:31 (kein eigenes Foto → kein Feed-Post) |
 
 Stories: Do 22.10. «Heute offen 17–21 Uhr», Sa 24.10. «Heute offen 9–13 Uhr» (+ Repost des Feed-Beitrags). Reel #5 und Umfrage-Karussell #8 bleiben als Entwürfe, sobald Video bzw. Umfrage-Resultate da sind.
 
@@ -738,7 +738,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #25 – Di 03.11.2026, 18:30 – Karussell – Säule 3: Neu – Nightforce, die ganze Familie
 
-**Status:** Autopilot – geplant (aus Shop-Check 29.10.: Nightforce-Sortiment neu aufgebaut, 45 Varianten). Fix terminiert – bei der Wochenplanung 02.–08.11. übernehmen. Titelbild = Produktfoto (Regel 4c).
+**Status:** ✅ Als **Story** gepostet 03.11.2026, 18:31 (armatum_ch) mit `whatsapp/posts/25-nightforce.jpg` – kein eigenes Nightforce-Foto vorhanden, daher kein Feed-Post (Regel 4c). Feed-Post später möglich, sobald ein Foto aus dem Laden vorliegt (Karussell 01–06 bleibt bereit).
 
 **Grafiken:** `instagram/grafiken/25-nightforce/01.jpg`–`06.jpg`, WhatsApp-Status `whatsapp/posts/25-nightforce.jpg`.
 
@@ -1181,3 +1181,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-01 | Wochen-Routine 02.–08.11.: **nichts neu geplant.** Grund 1: Kein neues Inhaber-Foto in `instagram/fotos/` (Regel 4c: ohne eigenes Foto kein Feed-Post). Grund 2: In dieser Routine-Sitzung gibt es keine dauerhaften Termin-Werkzeuge (send_later/create_trigger für Hauptsession); sitzungsgebundene Werkzeuge sind laut Routine verboten – es hätte keine verlässliche Veröffentlichung gegeben. Offen: #25 Nightforce (Di 03.11. 18:30) braucht ein eigenes Nightforce-Foto, sonst Story. Inhaber informiert, um Fotos gebeten. |
 | 2026-11-01 | #24 Reel FFP + MIL veröffentlicht 20:02 (pünktlich): https://www.instagram.com/reel/DfNbzgjjBVV/ + Story. |
 | 2026-11-02 | Story «Laden geschlossen 5./12.11.» (01-ankuendigung) veröffentlicht ca. 10:01, WhatsApp-Bild an Inhaber, Bitte ums Highlight «Laden». |
+| 2026-11-03 | #25 Nightforce als Story gepostet (Fall B, kein eigenes Foto); Sicherheitsnetze gelöscht. Inhaber um Nightforce-Foto für späteren Feed-Post gebeten. |
