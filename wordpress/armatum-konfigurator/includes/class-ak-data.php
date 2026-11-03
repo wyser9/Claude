@@ -17,6 +17,17 @@ class AK_Data {
 
 	const ROLES = array( 'waffe', 'montage', 'optik' );
 
+	/**
+	 * Testmodus: Konfigurator nur für Shop-Manager/Admins sichtbar.
+	 * Standard an. Ausschalten mit der Option ak_testmode = 'no'.
+	 */
+	public static function visible_for_current_user() {
+		if ( 'no' === get_option( 'ak_testmode', 'yes' ) ) {
+			return true;
+		}
+		return current_user_can( 'manage_woocommerce' );
+	}
+
 	/** Liest einen Meta-Wert mit Präfix _ak_. */
 	public static function meta( $product_id, $key, $default = '' ) {
 		$value = get_post_meta( $product_id, '_ak_' . $key, true );

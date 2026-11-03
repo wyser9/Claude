@@ -29,6 +29,9 @@ class AK_Frontend {
 	}
 
 	public static function render( $weapon_id ) {
+		if ( ! AK_Data::visible_for_current_user() ) {
+			return '';
+		}
 		if ( ! $weapon_id || 'waffe' !== AK_Data::role( $weapon_id ) || ! AK_Data::is_ready( $weapon_id ) ) {
 			return '';
 		}
@@ -62,6 +65,9 @@ class AK_Frontend {
 		?>
 		<section class="ak-konfigurator" id="konfigurator" data-config="<?php echo esc_attr( wp_json_encode( $config ) ); ?>">
 			<div class="ak-head">
+				<?php if ( 'no' !== get_option( 'ak_testmode', 'yes' ) ) : ?>
+					<p class="ak-testmode">Testmodus: nur für Admins sichtbar.</p>
+				<?php endif; ?>
 				<h2>Waffe konfigurieren</h2>
 				<p>Wähle eine Optik und sieh direkt, wie sie auf der <?php echo esc_html( get_the_title( $weapon_id ) ); ?> aussieht. Die Montage ist im Paket gratis.</p>
 			</div>

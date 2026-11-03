@@ -3,7 +3,7 @@
 WordPress-Plugin für armatum.ch (WooCommerce). Auf der Produktseite einer eingerichteten Waffe erscheint der Bereich «Waffe konfigurieren». Der Kunde wählt eine Optik und, falls nötig, eine Montage, sieht eine massstabsgetreue Vorschau und legt das Paket in den Warenkorb.
 
 - Jede Komponente ist eine **eigene Warenkorbposition** (Lager, bexio, Versandcodes bleiben korrekt).
-- Die **Montage** erscheint als eigene Position «Montage Optik (gratis im Paket)» mit CHF 0.00. Das Produkt legt das Plugin bei der Aktivierung an (SKU `AK-MONTAGE`, im Katalog versteckt). Einzeln kann man es nicht kaufen. Fehlt im Warenkorb die Waffe oder die Optik des Pakets, wird die Montage automatisch entfernt.
+- Die **Montage** erscheint als eigene Position «Montage Optik (gratis im Paket)» mit CHF 0.00. Das Produkt legt das Plugin beim ersten Paket im Warenkorb an (SKU `AK-MONTAGE`, im Katalog versteckt). Einzeln kann man es nicht kaufen. Fehlt im Warenkorb die Waffe oder die Optik des Pakets, wird die Montage automatisch entfernt.
 - Einschiessen ist nicht Teil des Pakets.
 - Nur passende Artikel werden angezeigt (Regeln siehe unten). Der Server prüft die Auswahl beim Hinzufügen nochmals.
 
@@ -12,6 +12,10 @@ WordPress-Plugin für armatum.ch (WooCommerce). Auf der Produktseite einer einge
 1. Ordner `armatum-konfigurator` als ZIP packen (oder die fertige ZIP verwenden).
 2. wp-admin → Plugins → Installieren → Plugin hochladen → aktivieren.
 3. Die Produktseite einer Waffe aus dem Cache von WP Super Cache leeren, nachdem sie eingerichtet ist.
+
+## Testmodus
+
+Nach der Installation ist der Testmodus an: Den Konfigurator sehen nur eingeloggte Admins und Shop-Manager (WP Super Cache liefert eingeloggten Benutzern keine Cache-Seiten aus). Freischalten für alle: Option `ak_testmode` auf `no` setzen.
 
 ## Einrichtung pro Produkt
 
