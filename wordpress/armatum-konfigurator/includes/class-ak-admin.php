@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Admin {
 
-	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor' );
+	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge' );
 
 	/** Alle gespeicherten Felder inkl. Steckplätze der Waffe. */
 	public static function fields() {
@@ -50,7 +50,7 @@ class AK_Admin {
 		$src      = $image_id ? wp_get_attachment_image_src( $image_id, 'full' ) : false;
 		$scale    = AK_Data::scale( $post->ID );
 		?>
-		<div class="ak-box" data-role="<?php echo esc_attr( $v['role'] ); ?>">
+		<div class="ak-box" data-role="<?php echo esc_attr( $v['role'] ); ?>" data-ifs="<?php echo esc_attr( wp_json_encode( AK_Data::known_interfaces() ) ); ?>">
 			<p class="ak-row">
 				<label>Rolle
 					<select name="ak[role]" class="ak-role">
@@ -70,7 +70,7 @@ class AK_Admin {
 					</select>
 				</label>
 				<label>Schnittstelle(n)
-					<input type="text" name="ak[schnittstelle]" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="picatinny">
+					<input type="text" name="ak[schnittstelle]" class="ak-if" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="picatinny">
 				</label>
 				<label class="ak-only-montage ak-only-optik">Mittelrohr [mm]
 					<input type="text" name="ak[mittelrohr]" value="<?php echo esc_attr( $v['mittelrohr'] ); ?>" placeholder="aus Attribut: <?php echo esc_attr( AK_Data::tube( $post->ID ) ?: '–' ); ?>" size="6">
@@ -84,17 +84,17 @@ class AK_Admin {
 				<label><input type="checkbox" name="ak[freigestellt]" value="yes" <?php checked( $v['freigestellt'], 'yes' ); ?>> Bild ist freigestellt (PNG ohne Hintergrund, verdeckt Originalteil)</label>
 			</p>
 			<p class="ak-row ak-only-zubehoer">
-				<label>Ausgang nach vorne (nur Mündungsaufsatz und HUB, z.B. HUB-Standard 1.375x24)
-					<input type="text" name="ak[ausgang]" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
+				<label>Ausgang (Mündungsaufsatz und HUB: z.B. HUB-Standard 1.375x24; Adapterschiene: picatinny)
+					<input type="text" name="ak[ausgang]" class="ak-if" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
 				</label>
-				<span class="description">Bei Mündungsaufsatz und HUB zusätzlich «Ausgangspunkt» (vorderes Ende) setzen.</span>
+				<span class="description">Bei Mündungsaufsatz und HUB zusätzlich «Ausgangspunkt» (vorderes Ende) setzen. Adapterschiene: Schnittstelle = m-lok, Ausgang = picatinny, Ankerpunkt = Auflage am Handschutz, Ausgangspunkt = Oberfläche der Schiene.</span>
 			</p>
 			<div class="ak-slots ak-only-waffe">
 				<strong>Steckplätze</strong> <span class="description">Schnittstellen (z.B. m-lok, picatinny, 1/2x28, ar15-buffer, ar15-griff) und Punkt im Bild. Leer = Steckplatz nicht verwendet.</span>
 				<?php foreach ( AK_Data::SLOTS as $sk => $slabel ) : ?>
 					<p class="ak-row">
 						<label><?php echo esc_html( $slabel ); ?>
-							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
+							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
 						</label>
 						<button type="button" class="button ak-tool" data-target="slot_<?php echo esc_attr( $sk ); ?>_anchor">Punkt setzen</button>
 						<input type="hidden" name="ak[slot_<?php echo esc_attr( $sk ); ?>_anchor]" class="ak-pt" data-pt="slot_<?php echo esc_attr( $sk ); ?>_anchor" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_anchor' ] ); ?>">
@@ -102,7 +102,7 @@ class AK_Admin {
 				<?php endforeach; ?>
 				<p class="ak-row">
 					<label>Original-Mündungsaufsatz: Schnittstelle für HUB (leer = keiner)
-						<input type="text" name="ak[muzzle_device_if]" value="<?php echo esc_attr( $v['muzzle_device_if'] ); ?>" size="22">
+						<input type="text" name="ak[muzzle_device_if]" class="ak-if" value="<?php echo esc_attr( $v['muzzle_device_if'] ); ?>" size="22">
 					</label>
 					<button type="button" class="button ak-tool" data-target="muzzle_device_anchor">Vorderes Ende setzen</button>
 					<input type="hidden" name="ak[muzzle_device_anchor]" class="ak-pt" data-pt="muzzle_device_anchor" value="<?php echo esc_attr( $v['muzzle_device_anchor'] ); ?>">
@@ -121,11 +121,17 @@ class AK_Admin {
 				<label><input type="checkbox" name="ak[flip]" value="yes" <?php checked( $v['flip'], 'yes' ); ?>> Bild spiegeln (wenn es die linke Seite zeigt)</label>
 			</p>
 
+			<div class="ak-auto-row">
+				<label>Länge [mm] <input type="text" name="ak[laenge]" class="ak-laenge" value="<?php echo esc_attr( $v['laenge'] ); ?>" size="6" placeholder="<?php echo esc_attr( (string) ( AK_Auto::length( $post->ID ) ?: '' ) ); ?>"></label>
+				<button type="button" class="button button-primary ak-auto" data-id="<?php echo (int) $post->ID; ?>" data-nonce="<?php echo esc_attr( wp_create_nonce( 'ak_auto' ) ); ?>">Automatisch einmessen</button>
+				<span class="description">Gesamtlänge des Produkts im Bild. Leer = Attribut «Länge [mm]». Das Plugin erkennt den Umriss (weisser oder transparenter Hintergrund) und setzt Messpunkte und Ankerpunkte. Danach prüfen und speichern.</span>
+				<span class="ak-auto-msg"></span>
+			</div>
 			<div class="ak-tools">
 				<strong>Punkte im Bild setzen:</strong>
 				<button type="button" class="button ak-tool" data-target="p1">Messpunkt 1</button>
 				<button type="button" class="button ak-tool" data-target="p2">Messpunkt 2</button>
-				<label>Abstand der Messpunkte [mm] <input type="text" name="ak[ref_mm]" value="<?php echo esc_attr( $v['ref_mm'] ); ?>" size="6"></label>
+				<label>Abstand der Messpunkte [mm] <input type="text" name="ak[ref_mm]" class="ak-ref" value="<?php echo esc_attr( $v['ref_mm'] ); ?>" size="6"></label>
 				<button type="button" class="button ak-tool" data-target="anchor">Ankerpunkt</button>
 				<button type="button" class="button ak-tool ak-only-montage" data-target="tube_anchor">Rohrmitte</button>
 				<button type="button" class="button ak-tool ak-only-zubehoer" data-target="tube_anchor">Ausgangspunkt</button>
@@ -174,6 +180,9 @@ class AK_Admin {
 			}
 			if ( 'gruppe' === $f && ! isset( AK_Data::GROUPS[ $val ] ) ) {
 				$val = '';
+			}
+			if ( in_array( $f, array( 'schnittstelle', 'ausgang', 'muzzle_device_if' ), true ) || preg_match( '/^slot_.+_if$/', $f ) ) {
+				$val = implode( ', ', AK_Data::split( $val ) );
 			}
 			if ( '' === $val ) {
 				delete_post_meta( $post_id, '_ak_' . $f );

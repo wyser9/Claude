@@ -69,3 +69,32 @@ Ist bei Waffe (Steckplatz Mündung), Mündungsaufsatz oder Schalldämpfer keine 
 ## Shortcode
 
 `[armatum_konfigurator]` zeigt die Waffenauswahl (oder mit `?waffe=ID` direkt den Konfigurator). `[armatum_konfigurator waffe="123"]` zeigt den Konfigurator einer festen Waffe.
+
+## Automatisch einmessen (ab 0.5)
+
+Herstellerbilder in gerader Seitenansicht (90°) auf weissem oder transparentem Hintergrund lassen sich automatisch einmessen. Das Plugin erkennt den Umriss des Produkts. Die **Länge** kommt aus dem Feld «Länge [mm]» im Konfigurator oder aus dem Attribut «Länge [mm]» (`pa_laenge`). Daraus berechnet es den Massstab und setzt die Punkte:
+
+| Gruppe | Ankerpunkt | Rohrmitte / Ausgangspunkt |
+| --- | --- | --- |
+| Waffe | – (selbst setzen, ebenso Steckplätze) | – |
+| Optik mit Mittelrohr | Rohrachse in der Mitte (Spalte, deren Höhe dem Mittelrohr entspricht) | – |
+| Optik direkt | Mitte Unterseite | – |
+| Montage | Mitte Unterseite | Oberkante + Rohrradius + 3 mm (Schätzung, prüfen) |
+| Mündungsaufsatz, HUB | hinteres Ende Mitte | vorderes Ende Mitte |
+| Schalldämpfer | hinteres Ende Mitte | – |
+| Handgriff, Laser | Mitte Oberseite | – |
+| Adapterschiene | Mitte Oberseite (Auflage) | Mitte Unterseite (Schiene) |
+| Schulterstütze | vorderes Ende Mitte | – |
+| Griff | oberer vorderer Punkt | – |
+
+- **Im Produkt:** Knopf «Automatisch einmessen» rechnet mit den Werten im Formular. Danach prüfen und speichern.
+- **Für viele Produkte:** WooCommerce → Konfigurator → «Automatisch einrichten». Erst einen Probelauf machen. Bereits eingemessene Produkte werden übersprungen (ausser «Bestehende Punkte überschreiben»).
+- **Kategorien zuordnen:** In den Einstellungen Kategorien einer Rolle/Gruppe zuordnen. Produkte ohne Rolle erhalten sie beim automatischen Einrichten.
+
+## Adapterschiene (ab 0.5)
+
+Gruppe «Adapterschiene», z.B. M-LOK auf Picatinny: Schnittstelle `m-lok`, Ausgang `picatinny`. Passt ein Handgriff oder Laser nicht direkt auf den Steckplatz, aber über eine Adapterschiene, zeigt der Konfigurator ihn trotzdem an und wählt die Schiene mit. Sie ist eine eigene Warenkorbposition.
+
+## Schnittstellen-Schreibweise (ab 0.5)
+
+Unter jedem Schnittstellen-Feld stehen die bekannten Werte als Knöpfe. Neue Werte werden rot markiert. Beim Speichern werden Schreibweisen vereinheitlicht (z.B. `mlok`, `M Lok` → `m-lok`; `Picatinny-Schiene`, `1913` → `picatinny`).

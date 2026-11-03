@@ -46,6 +46,37 @@
 			$box.attr('data-role', $box.find('.ak-role').val());
 		}
 
+		// Schnittstellen: Vorschläge als Knöpfe, Klick fügt hinzu oder entfernt.
+		var known = $box.data('ifs') || [];
+		function norm(v) { return v.toLowerCase().replace(/\s+/g, ''); }
+		function values($in) { return $in.val().split(/\s*[,;]\s*/).map($.trim).filter(Boolean); }
+		function paintChips($in) {
+			var cur = values($in).map(norm);
+			$in.next('.ak-chips').find('.ak-chip').each(function () {
+				$(this).toggleClass('ak-chip-on', cur.indexOf(String($(this).data('v'))) >= 0);
+			});
+			var unknown = cur.filter(function (v) { return known.indexOf(v) < 0; });
+			$in.next('.ak-chips').find('.ak-chip-warn').text(unknown.length ? 'Neu: ' + unknown.join(', ') + ' (Schreibweise prüfen)' : '');
+		}
+		$box.find('.ak-if').each(function () {
+			var $in = $(this);
+			var html = '<span class="ak-chips">';
+			$.each(known, function (_, k) { html += '<button type="button" class="ak-chip" data-v="' + $('<i>').text(k).html() + '">' + $('<i>').text(k).html() + '</button>'; });
+			html += '<span class="ak-chip-warn"></span></span>';
+			$in.after(html);
+			paintChips($in);
+		});
+		$box.on('input', '.ak-if', function () { paintChips($(this)); });
+		$box.on('click', '.ak-chip', function () {
+			var $in = $(this).closest('.ak-chips').prev('.ak-if');
+			var v = String($(this).data('v'));
+			var cur = values($in);
+			var i = cur.map(norm).indexOf(v);
+			if (i >= 0) { cur.splice(i, 1); } else { cur.push(v); }
+			$in.val(cur.join(', '));
+			paintChips($in);
+		});
+
 		$box.on('change', '.ak-role', syncRole);
 		syncRole();
 
@@ -81,6 +112,29 @@
 				img().on('load', drawMarkers);
 			});
 			frame.open();
+		});
+
+		$box.on('click', '.ak-auto', function () {
+			var $btn = $(this).prop('disabled', true);
+			var $msg = $box.find('.ak-auto-msg').removeClass('ak-error').text('Bild wird analysiert …');
+			var val = function (n) { return $box.find('[name="ak[' + n + ']"]').val() || ''; };
+			var on = function (n) { return $box.find('[name="ak[' + n + ']"]').is(':checked') ? 1 : 0; };
+			$.post(window.ajaxurl, {
+				action: 'ak_auto_preview', nonce: $btn.data('nonce'), id: $btn.data('id'),
+				role: val('role'), gruppe: val('gruppe'), direkt: on('direkt'), flip: on('flip'),
+				mittelrohr: val('mittelrohr'), laenge: val('laenge'), image_id: val('image_id')
+			}).done(function (res) {
+				if (!res.success) { $msg.addClass('ak-error').text(res.data.message); return; }
+				$.each(['p1', 'p2', 'anchor', 'tube_anchor'], function (_, k) {
+					if (res.data[k]) { $box.find('.ak-pt[data-pt="' + k + '"]').val(res.data[k]); }
+				});
+				$box.find('.ak-ref').val(res.data.ref_mm);
+				$box.find('.ak-scale').text('Massstab: ' + Number(res.data.mmPerPx).toFixed(3) + ' mm/px (noch nicht gespeichert)');
+				$msg.text('Punkte gesetzt. Bitte im Bild prüfen und das Produkt speichern.');
+				drawMarkers();
+			}).fail(function (xhr) {
+				$msg.addClass('ak-error').text(xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data.message : 'Fehler bei der Analyse.');
+			}).always(function () { $btn.prop('disabled', false); });
 		});
 
 		img().on('load', drawMarkers);

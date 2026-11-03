@@ -59,6 +59,11 @@ class AK_Frontend {
 				return true;
 			}
 		}
+		foreach ( $o['adapters'] as $ids ) {
+			if ( in_array( $part_id, $ids, true ) ) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -200,25 +205,35 @@ class AK_Frontend {
 		$weapon['deviceIfs']    = AK_Data::split( AK_Data::meta( $weapon_id, 'muzzle_device_if' ) );
 		$weapon['deviceAnchor'] = AK_Data::point( $weapon_id, 'muzzle_device_anchor' );
 
-		$groups = array();
+		$groups   = array();
+		$rail_ids = array();
 		foreach ( AK_Data::GROUPS as $key => $def ) {
 			if ( empty( $options['parts'][ $key ] ) ) {
 				continue;
+			}
+			$items = array();
+			foreach ( $options['parts'][ $key ] as $pid ) {
+				$item             = AK_Data::item_payload( $pid );
+				$item['adapters'] = isset( $options['adapters'][ $pid ] ) ? $options['adapters'][ $pid ] : array();
+				$rail_ids         = array_merge( $rail_ids, $item['adapters'] );
+				$items[]          = $item;
 			}
 			$groups[] = array(
 				'key'   => $key,
 				'slot'  => $def[0],
 				'label' => $def[1],
 				'layer' => $def[2],
-				'items' => array_map( array( 'AK_Data', 'item_payload' ), $options['parts'][ $key ] ),
+				'items' => $items,
 			);
 		}
+		$rails = array_map( array( 'AK_Data', 'item_payload' ), array_values( array_unique( $rail_ids ) ) );
 
 		$config = array(
 			'weapon'    => $weapon,
 			'optics'    => $optics,
 			'mounts'    => $mounts,
 			'groups'    => $groups,
+			'adapters'  => $rails,
 			'preselect' => $part_id,
 			'ajaxUrl'   => WC_AJAX::get_endpoint( 'ak_add_package' ),
 			'cartUrl'   => wc_get_cart_url(),

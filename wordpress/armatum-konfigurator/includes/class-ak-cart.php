@@ -84,13 +84,22 @@ class AK_Cart {
 			}
 		}
 
-		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id, $parts );
+		$adapters     = array();
+		$raw_adapters = isset( $_POST['adapters'] ) && is_array( $_POST['adapters'] ) ? wp_unslash( $_POST['adapters'] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification
+		foreach ( $raw_adapters as $group => $pid ) {
+			$pid = absint( $pid );
+			if ( $pid ) {
+				$adapters[ sanitize_key( $group ) ] = $pid;
+			}
+		}
+
+		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id, $parts, $adapters );
 		if ( is_wp_error( $valid ) ) {
 			wp_send_json_error( array( 'message' => $valid->get_error_message() ), 400 );
 		}
 
 		$montage_id = self::ensure_montage_product();
-		$group      = substr( md5( uniqid( '', true ) ), 0, 10 );
+		$package    = substr( md5( uniqid( '', true ) ), 0, 10 );
 		$lines      = array( 'waffe' => $weapon_id );
 		if ( $mount_id ) {
 			$lines['montage'] = $mount_id;
@@ -98,8 +107,11 @@ class AK_Cart {
 		if ( $optic_id ) {
 			$lines['optik'] = $optic_id;
 		}
-		foreach ( $parts as $group => $pid ) {
-			$lines[ $group ] = $pid;
+		foreach ( $parts as $part_group => $pid ) {
+			$lines[ $part_group ] = $pid;
+			if ( ! empty( $adapters[ $part_group ] ) ) {
+				$lines[ 'adapter_' . $part_group ] = $adapters[ $part_group ];
+			}
 		}
 		$lines['service'] = $montage_id;
 
@@ -113,7 +125,7 @@ class AK_Cart {
 				0,
 				array(),
 				array(
-					'ak_group'  => $group,
+					'ak_group'  => $package,
 					'ak_role'   => $role,
 					'ak_weapon' => $weapon_id,
 				)

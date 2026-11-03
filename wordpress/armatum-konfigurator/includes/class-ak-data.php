@@ -43,6 +43,28 @@ class AK_Data {
 		'laser'          => array( 'seite', 'Laser', 3 ),
 		'schaft'         => array( 'schaft', 'Schulterstütze', 2 ),
 		'griff'          => array( 'griff', 'Griff', 2 ),
+		// Adapterschiene (z.B. M-LOK → Picatinny): kein eigener Schritt, wird beim Handgriff/Laser mitgewählt.
+		'adapterschiene' => array( '', 'Adapterschiene (z.B. M-LOK auf Picatinny)', 2 ),
+	);
+
+	/** Gängige Schnittstellen (Vorschläge im Backend). */
+	const KNOWN_INTERFACES = array( 'picatinny', 'm-lok', 'keymod', '1/2x28', '5/8x24', 'm14x1-lh', 'm15x1', '1.375x24', '1.5x24', '1.75x24', '3-lug', 'taper-lok', 'ar15-buffer', 'ar15-griff' );
+
+	/** Schreibweisen, die auf eine Schnittstelle vereinheitlicht werden. */
+	const ALIASES = array(
+		'mlok'               => 'm-lok',
+		'm-lock'             => 'm-lok',
+		'mlock'              => 'm-lok',
+		'picatiny'           => 'picatinny',
+		'picatinnyschiene'   => 'picatinny',
+		'picatinny-schiene'  => 'picatinny',
+		'picatinnyrail'      => 'picatinny',
+		'picatinny-rail'     => 'picatinny',
+		'pica'               => 'picatinny',
+		'mil-std-1913'       => 'picatinny',
+		'1913'               => 'picatinny',
+		'weaver/picatinny'   => 'picatinny',
+		'key-mod'            => 'keymod',
 	);
 
 	/**
@@ -148,7 +170,7 @@ class AK_Data {
 		if ( 'zubehoer' === $role && ! self::group( $product_id ) ) {
 			return false;
 		}
-		if ( 'zubehoer' === $role && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'hub' ), true ) && ( ! self::point( $product_id, 'tube_anchor' ) || ! self::outputs( $product_id ) ) ) {
+		if ( 'zubehoer' === $role && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'hub', 'adapterschiene' ), true ) && ( ! self::point( $product_id, 'tube_anchor' ) || ! self::outputs( $product_id ) ) ) {
 			return false;
 		}
 		return true;
@@ -221,6 +243,7 @@ class AK_Data {
 			$p = preg_replace( '/^mt(?=\d)/', '', $p );
 			$p = preg_replace( '/^(\d+(?:[\/.]\d+)?)\s*-\s*(\d+)$/', '$1x$2', $p );
 			$p = preg_replace( '/\s+/', '', $p );
+			$p = isset( self::ALIASES[ $p ] ) ? self::ALIASES[ $p ] : $p;
 			$out[] = $p;
 		}
 		return array_values( array_unique( $out ) );
@@ -366,12 +389,31 @@ class AK_Data {
 
 		$parts = array();
 		$muzzle = array();
-		foreach ( array_diff( self::products_by_role( 'zubehoer' ), $blocked ) as $acc_id ) {
+		$all_acc  = array_diff( self::products_by_role( 'zubehoer' ), $blocked );
+		$rails    = array_values(
+			array_filter(
+				$all_acc,
+				function ( $id ) {
+					return 'adapterschiene' === self::group( $id );
+				}
+			)
+		);
+		$adapters = array();
+		foreach ( $all_acc as $acc_id ) {
 			$g = self::group( $acc_id );
+			if ( 'adapterschiene' === $g ) {
+				continue;
+			}
 			if ( in_array( $g, self::MUZZLE_CHAIN, true ) ) {
 				$muzzle[ $g ][] = $acc_id;
 			} elseif ( self::accessory_fits( $weapon_id, $acc_id ) ) {
 				$parts[ $g ][] = $acc_id;
+			} else {
+				$via = self::adapters_for( $weapon_id, $acc_id, $rails );
+				if ( $via ) {
+					$parts[ $g ][]       = $acc_id;
+					$adapters[ $acc_id ] = $via;
+				}
 			}
 		}
 		// Mündung: nur Teile, die in mindestens einer gültigen Kette vorkommen.
@@ -403,8 +445,29 @@ class AK_Data {
 		return array(
 			'optics' => $optics,
 			'mounts' => array_values( array_unique( $used_mounts ) ),
-			'parts'  => $parts,
+			'parts'    => $parts,
+			'adapters' => $adapters,
 		);
+	}
+
+	/** Adapterschienen, über die ein Zubehör an seinen Steckplatz passt (Eingang = Steckplatz, Ausgang = Zubehör). */
+	public static function adapters_for( $weapon_id, $acc_id, $rails ) {
+		$g = self::group( $acc_id );
+		if ( ! $g || ! self::GROUPS[ $g ][0] ) {
+			return array();
+		}
+		$slot = self::weapon_slot( $weapon_id, self::GROUPS[ $g ][0] );
+		if ( ! $slot ) {
+			return array();
+		}
+		$need = self::interfaces( $acc_id );
+		$out  = array();
+		foreach ( $rails as $r ) {
+			if ( array_intersect( $slot['interfaces'], self::interfaces( $r ) ) && array_intersect( self::outputs( $r ), $need ) ) {
+				$out[] = (int) $r;
+			}
+		}
+		return $out;
 	}
 
 	/**
@@ -415,7 +478,7 @@ class AK_Data {
 	 * @param int   $mount_id  Montage oder 0.
 	 * @param array $parts     Gruppe => Produkt-ID.
 	 */
-	public static function validate_selection( $weapon_id, $optic_id, $mount_id, $parts = array() ) {
+	public static function validate_selection( $weapon_id, $optic_id, $mount_id, $parts = array(), $adapters = array() ) {
 		if ( 'waffe' !== self::role( $weapon_id ) || ! self::is_ready( $weapon_id ) ) {
 			return new WP_Error( 'ak_weapon', 'Diese Waffe ist nicht für den Konfigurator eingerichtet.' );
 		}
@@ -439,6 +502,19 @@ class AK_Data {
 				return new WP_Error( 'ak_part', 'Ein gewähltes Zubehör passt nicht auf diese Waffe.' );
 			}
 		}
+		foreach ( $parts as $group => $acc_id ) {
+			$need = isset( $options['adapters'][ $acc_id ] ) ? $options['adapters'][ $acc_id ] : array();
+			$got  = isset( $adapters[ $group ] ) ? (int) $adapters[ $group ] : 0;
+			if ( $need && ! in_array( $got, $need, true ) ) {
+				return new WP_Error( 'ak_adapter', 'Für ' . get_the_title( $acc_id ) . ' braucht es eine passende Adapterschiene.' );
+			}
+			if ( ! $need && $got ) {
+				return new WP_Error( 'ak_adapter', 'Für ' . get_the_title( $acc_id ) . ' braucht es keine Adapterschiene.' );
+			}
+		}
+		if ( array_diff_key( $adapters, $parts ) ) {
+			return new WP_Error( 'ak_adapter', 'Eine Adapterschiene gibt es nur zusammen mit einem Zubehör.' );
+		}
 		$chain = array_intersect_key( $parts, array_flip( self::MUZZLE_CHAIN ) );
 		if ( $chain && ! self::muzzle_chain_valid( $weapon_id, $chain ) ) {
 			return new WP_Error( 'ak_muzzle', 'Die gewählten Teile an der Mündung passen nicht zusammen. Ein Schalldämpfer braucht einen passenden HUB.' );
@@ -447,6 +523,26 @@ class AK_Data {
 			return new WP_Error( 'ak_empty', 'Bitte mindestens ein Zubehör wählen.' );
 		}
 		return true;
+	}
+
+	/** Bekannte Schnittstellen: Standardliste, im Shop verwendete Werte und Gewinde-Attribute. */
+	public static function known_interfaces() {
+		global $wpdb;
+		$list = self::KNOWN_INTERFACES;
+		$rows = $wpdb->get_col( "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} WHERE meta_key IN ('_ak_schnittstelle','_ak_ausgang','_ak_muzzle_device_if') OR meta_key LIKE '\\_ak\\_slot\\_%\\_if'" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		foreach ( (array) $rows as $r ) {
+			$list = array_merge( $list, self::split( $r ) );
+		}
+		foreach ( array( 'pa_muendungsgewinde', 'pa_hub-gewinde' ) as $tax ) {
+			$terms = taxonomy_exists( $tax ) ? get_terms( array( 'taxonomy' => $tax, 'hide_empty' => false, 'fields' => 'names' ) ) : array();
+			if ( ! is_wp_error( $terms ) ) {
+				foreach ( $terms as $t ) {
+					$list = array_merge( $list, self::split( $t ) );
+				}
+			}
+		}
+		$list = array_values( array_unique( array_filter( $list ) ) );
+		return $list;
 	}
 
 	/** Daten eines Produkts für die Vorschau (JavaScript). */

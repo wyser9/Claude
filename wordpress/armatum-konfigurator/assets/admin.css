@@ -18,3 +18,14 @@
 .ak-box[data-role="optik"] .ak-only-optik,
 .ak-box[data-role="montage"] .ak-only-montage { display: inline-flex !important; }
 .ak-box[data-role="waffe"] p.ak-only-waffe { display: flex !important; }
+.ak-auto-row { margin: 1em 0; padding: .6em .8em; background: #f0f6fc; border-left: 3px solid #2271b1; display: flex; flex-wrap: wrap; gap: .5em 1em; align-items: center; }
+.ak-auto-row .description { flex-basis: 100%; }
+.ak-auto-msg { font-weight: 600; }
+.ak-auto-msg.ak-error, .ak-run-table .ak-error { color: #b32d2e; }
+.ak-run-table .ak-skip { color: #777; }
+.ak-run-table .ak-ok { color: #00a32a; }
+.ak-catmap select { min-width: 320px; min-height: 6em; }
+.ak-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0 6px; }
+.ak-chip { border: 1px solid #c3c4c7; background: #fff; border-radius: 10px; padding: 0 8px; font-size: 12px; line-height: 20px; cursor: pointer; }
+.ak-chip-on { background: #2271b1; border-color: #2271b1; color: #fff; }
+.ak-chip-warn { color: #b32d2e; font-size: 12px; flex-basis: 100%; }

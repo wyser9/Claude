@@ -16,6 +16,16 @@ class AK_Settings {
 		add_action( 'admin_post_ak_save_settings', array( __CLASS__, 'save' ) );
 		add_action( 'admin_post_ak_create_page', array( __CLASS__, 'create_page' ) );
 		add_filter( 'display_post_states', array( __CLASS__, 'post_state' ), 10, 2 );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'assets' ) );
+	}
+
+	public static function assets( $hook ) {
+		if ( false === strpos( (string) $hook, self::SLUG ) ) {
+			return;
+		}
+		wp_enqueue_style( 'ak-admin', AK_URL . 'assets/admin.css', array(), AK_VERSION );
+		wp_enqueue_script( 'ak-settings', AK_URL . 'assets/settings.js', array( 'jquery' ), AK_VERSION, true );
+		wp_localize_script( 'ak-settings', 'akSettings', array( 'nonce' => wp_create_nonce( 'ak_auto' ) ) );
 	}
 
 	public static function menu() {
@@ -41,6 +51,14 @@ class AK_Settings {
 		check_admin_referer( 'ak_settings' );
 		update_option( 'ak_page_id', isset( $_POST['ak_page_id'] ) ? absint( $_POST['ak_page_id'] ) : 0 );
 		update_option( 'ak_testmode', empty( $_POST['ak_testmode'] ) ? 'no' : 'yes' );
+		$map = array();
+		$raw = isset( $_POST['ak_cat'] ) && is_array( $_POST['ak_cat'] ) ? wp_unslash( $_POST['ak_cat'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		foreach ( array_keys( AK_Auto::TARGETS ) as $t ) {
+			if ( ! empty( $raw[ $t ] ) && is_array( $raw[ $t ] ) ) {
+				$map[ $t ] = array_values( array_filter( array_map( 'absint', $raw[ $t ] ) ) );
+			}
+		}
+		update_option( 'ak_cat_map', $map, false );
 		self::back( 'saved' );
 	}
 
@@ -115,6 +133,34 @@ class AK_Settings {
 						</td>
 					</tr>
 				</table>
+				<h2>Kategorien zuordnen</h2>
+				<p>Produkte ohne Rolle bekommen beim automatischen Einrichten Rolle und Gruppe aus ihrer Kategorie. Mehrfachauswahl mit Ctrl/Cmd. Produkte mit eingetragener Rolle bleiben unverändert.</p>
+				<table class="form-table ak-catmap" role="presentation">
+					<?php
+					$map   = AK_Auto::cat_map();
+					$terms = get_terms(
+						array(
+							'taxonomy'   => 'product_cat',
+							'hide_empty' => true,
+							'orderby'    => 'name',
+						)
+					);
+					$terms = is_wp_error( $terms ) ? array() : $terms;
+					foreach ( AK_Auto::TARGETS as $tkey => $def ) :
+						$sel = isset( $map[ $tkey ] ) ? array_map( 'intval', $map[ $tkey ] ) : array();
+						?>
+						<tr>
+							<th scope="row"><?php echo esc_html( $def[3] ); ?></th>
+							<td>
+								<select name="ak_cat[<?php echo esc_attr( $tkey ); ?>][]" multiple size="5">
+									<?php foreach ( $terms as $term ) : ?>
+										<option value="<?php echo (int) $term->term_id; ?>" <?php selected( in_array( (int) $term->term_id, $sel, true ) ); ?>><?php echo esc_html( $term->name . ' (' . $term->count . ')' ); ?></option>
+									<?php endforeach; ?>
+								</select>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				</table>
 				<?php submit_button( 'Speichern' ); ?>
 			</form>
 			<?php if ( ! $page_id || ! get_post( $page_id ) ) : ?>
@@ -124,6 +170,19 @@ class AK_Settings {
 					<p>Noch keine Seite? <?php submit_button( 'Seite anlegen', 'secondary', 'submit', false ); ?> (privat, nur für Admins sichtbar)</p>
 				</form>
 			<?php endif; ?>
+			<hr>
+			<h2>Automatisch einrichten</h2>
+			<p>Geht alle Produkte mit Rolle oder in einer zugeordneten Kategorie durch: setzt fehlende Rollen aus der Kategorie und misst das Bild ein (Umriss erkennen, Länge aus Attribut «Länge [mm]» oder Feld «Länge»). Bereits eingemessene Produkte werden übersprungen.</p>
+			<p>
+				<button type="button" class="button ak-run" data-dry="1">Probelauf (nichts speichern)</button>
+				<button type="button" class="button button-primary ak-run" data-dry="0">Einrichten</button>
+				<label><input type="checkbox" class="ak-overwrite"> Bestehende Punkte überschreiben</label>
+				<span class="ak-run-status"></span>
+			</p>
+			<table class="widefat striped ak-run-table" hidden>
+				<thead><tr><th>Produkt</th><th>Rolle / Gruppe</th><th>Länge</th><th>Ergebnis</th></tr></thead>
+				<tbody></tbody>
+			</table>
 		</div>
 		<?php
 	}

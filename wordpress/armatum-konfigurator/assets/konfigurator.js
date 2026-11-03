@@ -48,6 +48,9 @@
 		this.mountsById = {};
 		var self = this;
 		$.each(this.cfg.mounts, function (_, m) { self.mountsById[m.id] = m; });
+		this.railsById = {};
+		$.each(this.cfg.adapters || [], function (_, r) { self.railsById[r.id] = r; });
+		this.rails = {};
 		this.optic = null;
 		this.mount = null;
 		this.parts = {};
@@ -111,9 +114,10 @@
 		}
 		$.each(this.groups, function (i, g) {
 			var list = self.noneCard('ak_g_' + g.key, NONE[g.key] || 'Kein ' + g.label);
-			$.each(g.items, function (_, it) { list += self.card(it, 'ak_g_' + g.key); });
+			$.each(g.items, function (_, it) { list += self.card(it, 'ak_g_' + g.key, it.adapters && it.adapters.length ? 'mit Adapterschiene' : ''); });
 			var note = g.key === 'schalldaempfer' ? 'Zuerst einen passenden HUB wählen.' : g.key === 'hub' ? 'Für die gewählte Mündung ist kein HUB erfasst.' : '';
-			html += self.step(g.key, g.label, (note ? '<p class="ak-step-note">' + esc(note) + '</p>' : '') + self.filterBar(g.items) + '<div class="ak-list" role="radiogroup">' + list + '</div>', !html);
+			html += self.step(g.key, g.label, (note ? '<p class="ak-step-note">' + esc(note) + '</p>' : '') + self.filterBar(g.items) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
+				'<div class="ak-step-adapter" hidden><h4>Adapterschiene</h4><div class="ak-list ak-adapters" role="radiogroup"></div></div>', !html);
 		});
 		this.$root.find('.ak-steps').html(html);
 	};
@@ -129,8 +133,12 @@
 			self.mount = self.mountsById[parseInt(this.value, 10)] || null;
 			self.update();
 		});
-		$steps.on('change', '.ak-step:not([data-group="optik"]) .ak-list input', function () {
+		$steps.on('change', '.ak-step:not([data-group="optik"]) > .ak-step-body > .ak-list input', function () {
 			self.setPart($(this).closest('.ak-step').data('group'), parseInt(this.value, 10));
+			self.update();
+		});
+		$steps.on('change', '.ak-adapters input', function () {
+			self.rails[$(this).closest('.ak-step').data('group')] = self.railsById[parseInt(this.value, 10)] || null;
 			self.update();
 		});
 		$steps.on('input change', '.ak-search, .ak-brand', function () {
@@ -165,6 +173,28 @@
 		var g = this.group(key);
 		this.parts[key] = id && g ? (g.items.filter(function (it) { return it.id === id; })[0] || null) : null;
 		this.$root.find('input[name="ak_g_' + key + '"][value="' + (this.parts[key] ? id : 0) + '"]').prop('checked', true);
+		this.renderRails(key);
+	};
+
+	/** Adapterschiene für ein Zubehör, das nicht direkt auf den Steckplatz passt (z.B. Picatinny-Laser auf M-LOK). */
+	Konfigurator.prototype.renderRails = function (key, railId) {
+		var self = this;
+		var it = this.parts[key];
+		var $box = this.$root.find('.ak-step[data-group="' + key + '"] .ak-step-adapter');
+		this.rails[key] = null;
+		if (!it || !it.adapters || !it.adapters.length) {
+			$box.prop('hidden', true).find('.ak-adapters').empty();
+			return;
+		}
+		var html = '';
+		$.each(it.adapters, function (_, id) {
+			if (self.railsById[id]) { html += self.card(self.railsById[id], 'ak_r_' + key); }
+		});
+		$box.prop('hidden', false).find('.ak-adapters').html(html);
+		var $pick = railId ? $box.find('input[value="' + railId + '"]') : $();
+		if (!$pick.length) { $pick = $box.find('input').first(); }
+		$pick.prop('checked', true);
+		this.rails[key] = this.railsById[parseInt($pick.val(), 10)] || null;
 	};
 
 	/** Teil aus ?teil= vorwählen; beim Schalldämpfer eine passende Kette (Aufsatz/HUB) suchen. */
@@ -248,7 +278,7 @@
 				text = self.optic ? self.optic.name + (self.mount && !self.optic.direct ? ' + ' + self.mount.name : '') : NONE.optik;
 			} else {
 				var g = self.group(key);
-				text = self.parts[key] ? self.parts[key].name : (NONE[key] || 'Kein ' + (g ? g.label : ''));
+				text = self.parts[key] ? self.parts[key].name + (self.rails[key] ? ' + ' + self.rails[key].name : '') : (NONE[key] || 'Kein ' + (g ? g.label : ''));
 			}
 			$(this).toggleClass('ak-step-set', key === 'optik' ? !!self.optic : !!self.parts[key])
 				.find('.ak-step-choice').text(text);
@@ -355,6 +385,12 @@
 				var sp = w.slots && w.slots[x.g.slot];
 				if (!sp) { return; }
 				at = self.weaponPoint(sp);
+				var r = self.rails[x.g.key];
+				if (r) {
+					list.push($.extend(place(r, r.anchor, at[0], at[1]), { z: x.g.layer - 1 }));
+					var ra = pt(r, r.anchor), rt = pt(r, r.tubeAnchor);
+					at = [at[0] + (rt[0] - ra[0]) * r.mmPerPx, at[1] + (rt[1] - ra[1]) * r.mmPerPx];
+				}
 			}
 			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer }));
 		});
@@ -396,7 +432,13 @@
 		var lines = [cfg.weapon];
 		if (this.mount && this.optic && !this.optic.direct) { lines.push(this.mount); }
 		if (this.optic) { lines.push(this.optic); }
-		$.each(this.selectedParts(), function (_, x) { lines.push(x.item); });
+		var self = this;
+		var railMissing = false;
+		$.each(this.selectedParts(), function (_, x) {
+			lines.push(x.item);
+			if (self.rails[x.g.key]) { lines.push(self.rails[x.g.key]); }
+			if (x.item.adapters && x.item.adapters.length && !self.rails[x.g.key]) { railMissing = true; }
+		});
 		var total = 0;
 		var html = '';
 		$.each(lines, function (_, l) {
@@ -409,7 +451,7 @@
 		this.$root.find('.ak-lines').html(html);
 		this.$root.find('.ak-total').html('Total <strong>' + fmt(total, cfg) + '</strong>');
 		var opticOk = !this.optic || this.optic.direct || this.mount;
-		var ready = opticOk && lines.length > 1;
+		var ready = opticOk && !railMissing && lines.length > 1;
 		this.$root.find('.ak-add').prop('disabled', !ready);
 		this.draw();
 	};
@@ -423,7 +465,10 @@
 			optic: this.optic ? this.optic.id : 0,
 			mount: this.optic && this.mount && !this.optic.direct ? this.mount.id : 0
 		};
-		$.each(this.selectedParts(), function (_, x) { data['parts[' + x.g.key + ']'] = x.item.id; });
+		$.each(this.selectedParts(), function (_, x) {
+			data['parts[' + x.g.key + ']'] = x.item.id;
+			if (self.rails[x.g.key]) { data['adapters[' + x.g.key + ']'] = self.rails[x.g.key].id; }
+		});
 		$.post(this.cfg.ajaxUrl, data).done(function (res) {
 			$msg.html(esc(res.data.message) + ' <a href="' + esc(self.cfg.cartUrl) + '">Zum Warenkorb</a>');
 			$(document.body).trigger('wc_fragment_refresh');
