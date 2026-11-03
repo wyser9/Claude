@@ -1,0 +1,26 @@
+.ak-konfigurator { margin: 2.5em 0; padding: 1.5em; border: 1px solid #e2e2e2; border-radius: 6px; background: #fff; clear: both; }
+.ak-konfigurator h2 { margin: 0 0 .3em; }
+.ak-konfigurator h3 { font-size: 1.05em; margin: 1em 0 .5em; }
+.ak-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr); gap: 1.5em; align-items: start; }
+@media (max-width: 860px) { .ak-layout { grid-template-columns: 1fr; } }
+.ak-stage-wrap { position: sticky; top: 1em; }
+.ak-stage { position: relative; width: 100%; min-height: 120px; background: #fff; overflow: hidden; }
+.ak-layer { position: absolute; max-width: none; height: auto; mix-blend-mode: multiply; transition: opacity .2s; }
+.ak-layer.ak-flip { transform: scaleX(-1); }
+.ak-note { font-size: .8em; color: #777; margin-top: .5em; }
+.ak-list { display: grid; gap: .5em; }
+.ak-card { display: grid; grid-template-columns: auto 56px 1fr; gap: .6em; align-items: center; padding: .5em .6em; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }
+.ak-card:has(input:checked) { border-color: #333; box-shadow: 0 0 0 1px #333; }
+.ak-card img { width: 56px; height: 56px; object-fit: contain; }
+.ak-card-text { display: flex; flex-direction: column; font-size: .9em; line-height: 1.3; }
+.ak-card-name { font-weight: 600; }
+.ak-card-stock { color: #777; font-size: .85em; }
+.ak-summary { margin-top: 1.2em; padding-top: 1em; border-top: 1px solid #e2e2e2; }
+.ak-lines { list-style: none; margin: 0 0 .5em; padding: 0; font-size: .9em; }
+.ak-lines li { display: flex; justify-content: space-between; gap: 1em; padding: .2em 0; }
+.ak-lines .ak-free span:last-child { color: #2e7d32; font-weight: 600; }
+.ak-total { font-size: 1.1em; text-align: right; }
+.ak-add { width: 100%; }
+.ak-msg { margin-top: .5em; }
+.ak-msg.ak-error { color: #b32d2e; }
+.ak-legal { font-size: .8em; color: #777; }
