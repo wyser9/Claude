@@ -24,7 +24,7 @@ Quelle: Monatsmail Google Search Console, vom Inhaber am 03.11.2026 weitergeleit
 - Fast zwei Drittel der Besucher sind mobil.
 
 ## Vorschläge
-1. Alte Glock-45-Hunter-URL per 301 auf die Glock-Pistolen-Kategorie (oder Nachfolgeartikel) umleiten.
+1. ✅ Erledigt 03.11.: 301-Umleitung (Redirection #258) /produkt/glock-45-hunter-edition-mit-aimpoint-coa-und-gtl-ii/ → Glock 45 Gen6/DC8/Combo mit COA (ID 22399).
 2. SG711-Seite pflegen: Verfügbarkeit, Erwerbsbedingungen, Zubehör verlinken (Magazine, Optik), Titel/Meta mit «SIG 711».
 3. Bildersuche: Dateinamen/Alt-Texte beschreibend (bei neuen Artikeln schon gut, z. B. Sako S20), Bilder-Sitemap in Yoast prüfen.
 4. Mobile Ladezeit verbessern (armatum.ch ist zeitweise sehr langsam, 503-Fehler im Oktober).
