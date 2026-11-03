@@ -2,8 +2,10 @@
 (function ($) {
 	'use strict';
 
-	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a' };
-	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R' };
+	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a',
+		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a' };
+	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R',
+		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_schaft_anchor: 'S', slot_griff_anchor: 'G' };
 
 	$(function () {
 		var $box = $('.ak-box');

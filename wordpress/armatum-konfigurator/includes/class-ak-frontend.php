@@ -36,7 +36,7 @@ class AK_Frontend {
 			return '';
 		}
 		$options = AK_Data::options_for_weapon( $weapon_id );
-		if ( empty( $options['optics'] ) ) {
+		if ( empty( $options['optics'] ) && empty( $options['parts'] ) ) {
 			return '';
 		}
 
@@ -48,10 +48,34 @@ class AK_Frontend {
 		}
 		$mounts = array_map( array( 'AK_Data', 'item_payload' ), $options['mounts'] );
 
+		$weapon          = AK_Data::item_payload( $weapon_id );
+		$weapon['slots'] = array();
+		foreach ( array_keys( AK_Data::SLOTS ) as $slot ) {
+			$data = AK_Data::weapon_slot( $weapon_id, $slot );
+			if ( $data ) {
+				$weapon['slots'][ $slot ] = $data['anchor'];
+			}
+		}
+
+		$groups = array();
+		foreach ( AK_Data::GROUPS as $key => $def ) {
+			if ( empty( $options['parts'][ $key ] ) ) {
+				continue;
+			}
+			$groups[] = array(
+				'key'   => $key,
+				'slot'  => $def[0],
+				'label' => $def[1],
+				'layer' => $def[2],
+				'items' => array_map( array( 'AK_Data', 'item_payload' ), $options['parts'][ $key ] ),
+			);
+		}
+
 		$config = array(
-			'weapon'   => AK_Data::item_payload( $weapon_id ),
+			'weapon'   => $weapon,
 			'optics'   => $optics,
 			'mounts'   => $mounts,
+			'groups'   => $groups,
 			'ajaxUrl'  => WC_AJAX::get_endpoint( 'ak_add_package' ),
 			'cartUrl'  => wc_get_cart_url(),
 			'currency' => get_woocommerce_currency_symbol(),
@@ -69,7 +93,7 @@ class AK_Frontend {
 					<p class="ak-testmode">Testmodus: nur für Admins sichtbar.</p>
 				<?php endif; ?>
 				<h2>Waffe konfigurieren</h2>
-				<p>Wähle eine Optik und sieh direkt, wie sie auf der <?php echo esc_html( get_the_title( $weapon_id ) ); ?> aussieht. Die Montage ist im Paket gratis.</p>
+				<p>Wähle Optik und Zubehör und sieh direkt, wie die <?php echo esc_html( get_the_title( $weapon_id ) ); ?> damit aussieht. Die Montage ist im Paket gratis.</p>
 			</div>
 			<div class="ak-layout">
 				<div class="ak-stage-wrap">
@@ -77,18 +101,21 @@ class AK_Frontend {
 					<p class="ak-note">Vorschau mit Herstellerbildern. Proportionen sind massstabsgetreu, Farben und Details können abweichen.</p>
 				</div>
 				<div class="ak-panel">
-					<h3>1. Optik</h3>
-					<div class="ak-list ak-optics" role="radiogroup" aria-label="Optik"></div>
-					<div class="ak-step-mount" hidden>
-						<h3>2. Montage</h3>
-						<div class="ak-list ak-mounts" role="radiogroup" aria-label="Montage"></div>
+					<div class="ak-step-optic" <?php echo empty( $optics ) ? 'hidden' : ''; ?>>
+						<h3>Optik</h3>
+						<div class="ak-list ak-optics" role="radiogroup" aria-label="Optik"></div>
+						<div class="ak-step-mount" hidden>
+							<h3>Montage</h3>
+							<div class="ak-list ak-mounts" role="radiogroup" aria-label="Montage"></div>
+						</div>
 					</div>
+					<div class="ak-groups"></div>
 					<div class="ak-summary">
 						<ul class="ak-lines"></ul>
 						<p class="ak-total"></p>
 						<button type="button" class="button alt ak-add" disabled>Paket in den Warenkorb</button>
 						<p class="ak-msg" role="status"></p>
-						<p class="ak-legal">Die Waffe wird erst nach Prüfung der Erwerbsdokumente ausgeliefert. Im Paket montieren wir die Optik kostenlos.</p>
+						<p class="ak-legal">Die Waffe wird erst nach Prüfung der Erwerbsdokumente ausgeliefert. Im Paket montieren wir Optik und Zubehör kostenlos.</p>
 					</div>
 				</div>
 			</div>

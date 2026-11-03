@@ -7,6 +7,10 @@
 .ak-stage { position: relative; width: 100%; min-height: 120px; background: #fff; overflow: hidden; }
 .ak-layer { position: absolute; max-width: none; height: auto; mix-blend-mode: multiply; transition: opacity .2s; }
 .ak-layer.ak-flip { transform: scaleX(-1); }
+.ak-layer.ak-cutout { mix-blend-mode: normal; }
+.ak-card-hint { color: #b45309; font-size: .85em; font-weight: 600; }
+.ak-card-none { grid-template-columns: auto 56px 1fr; }
+.ak-card-none > span:nth-child(2) { width: 56px; }
 .ak-note { font-size: .8em; color: #777; margin-top: .5em; }
 .ak-list { display: grid; gap: .5em; }
 .ak-card { display: grid; grid-template-columns: auto 56px 1fr; gap: .6em; align-items: center; padding: .5em .6em; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }

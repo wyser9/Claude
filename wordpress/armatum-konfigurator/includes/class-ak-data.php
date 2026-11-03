@@ -7,6 +7,8 @@
  *  - montage: sitzt auf einer Schnittstelle, hat Ringe für ein Mittelrohr (mm) und eine Rohrmitte.
  *  - optik:   entweder "direkt" auf eine Schnittstelle (Rotpunkt, Optik mit integrierter Montage)
  *             oder mit Mittelrohr, dann braucht sie eine passende Montage.
+ *  - zubehoer: gehört zu einer Gruppe (Schalldämpfer, Handgriff, Laser, Schulterstütze, Griff),
+ *             die zu einem Steckplatz der Waffe gehört. Passt, wenn die Schnittstellen übereinstimmen.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +17,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Data {
 
-	const ROLES = array( 'waffe', 'montage', 'optik' );
+	const ROLES = array( 'waffe', 'montage', 'optik', 'zubehoer' );
+
+	/** Steckplätze an der Waffe (ausser Optik, die den Hauptanker nutzt). */
+	const SLOTS = array(
+		'muendung' => 'Mündung',
+		'unten'    => 'Handschutz unten',
+		'seite'    => 'Handschutz seitlich/oben',
+		'schaft'   => 'Schaftaufnahme',
+		'griff'    => 'Griffaufnahme',
+	);
+
+	/** Zubehörgruppen: Schlüssel => array( Steckplatz, Bezeichnung, Ebene ). */
+	const GROUPS = array(
+		'schalldaempfer' => array( 'muendung', 'Schalldämpfer', 3 ),
+		'handgriff'      => array( 'unten', 'Handgriff', 3 ),
+		'laser'          => array( 'seite', 'Laser', 3 ),
+		'schaft'         => array( 'schaft', 'Schulterstütze', 2 ),
+		'griff'          => array( 'griff', 'Griff', 2 ),
+	);
 
 	/**
 	 * Testmodus: Konfigurator nur für Shop-Manager/Admins sichtbar.
@@ -106,6 +126,9 @@ class AK_Data {
 		if ( 'montage' === $role && ! self::point( $product_id, 'tube_anchor' ) ) {
 			return false;
 		}
+		if ( 'zubehoer' === $role && ! self::group( $product_id ) ) {
+			return false;
+		}
 		return true;
 	}
 
@@ -134,6 +157,35 @@ class AK_Data {
 	public static function blocked( $weapon_id ) {
 		$raw = (string) self::meta( $weapon_id, 'gesperrt' );
 		return array_filter( array_map( 'intval', explode( ',', $raw ) ) );
+	}
+
+	public static function group( $product_id ) {
+		$g = (string) self::meta( $product_id, 'gruppe' );
+		return isset( self::GROUPS[ $g ] ) ? $g : '';
+	}
+
+	/** Steckplatz der Waffe: Anker (Bildpixel) und Schnittstellen, oder null. */
+	public static function weapon_slot( $weapon_id, $slot ) {
+		$anchor = self::point( $weapon_id, 'slot_' . $slot . '_anchor' );
+		if ( ! $anchor ) {
+			return null;
+		}
+		$raw  = (string) self::meta( $weapon_id, 'slot_' . $slot . '_if' );
+		$list = array_values( array_unique( array_filter( array_map( 'trim', explode( ',', strtolower( $raw ) ) ) ) ) );
+		return array(
+			'anchor'     => $anchor,
+			'interfaces' => $list,
+		);
+	}
+
+	/** Passt das Zubehör auf den Steckplatz der Waffe? */
+	public static function accessory_fits( $weapon_id, $acc_id ) {
+		$g = self::group( $acc_id );
+		if ( ! $g ) {
+			return false;
+		}
+		$slot = self::weapon_slot( $weapon_id, self::GROUPS[ $g ][0] );
+		return $slot && array_intersect( $slot['interfaces'], self::interfaces( $acc_id ) );
 	}
 
 	/** Produkte einer Rolle, die eingerichtet und kaufbar sind. */
@@ -189,30 +241,54 @@ class AK_Data {
 			}
 		}
 
+		$parts = array();
+		foreach ( array_diff( self::products_by_role( 'zubehoer' ), $blocked ) as $acc_id ) {
+			if ( self::accessory_fits( $weapon_id, $acc_id ) ) {
+				$parts[ self::group( $acc_id ) ][] = $acc_id;
+			}
+		}
+
 		return array(
 			'optics' => $optics,
 			'mounts' => array_values( array_unique( $used_mounts ) ),
+			'parts'  => $parts,
 		);
 	}
 
-	/** Serverseitige Prüfung einer Auswahl. */
-	public static function validate_selection( $weapon_id, $optic_id, $mount_id ) {
+	/**
+	 * Serverseitige Prüfung einer Auswahl.
+	 *
+	 * @param int   $weapon_id Waffe.
+	 * @param int   $optic_id  Optik oder 0.
+	 * @param int   $mount_id  Montage oder 0.
+	 * @param array $parts     Gruppe => Produkt-ID.
+	 */
+	public static function validate_selection( $weapon_id, $optic_id, $mount_id, $parts = array() ) {
 		if ( 'waffe' !== self::role( $weapon_id ) || ! self::is_ready( $weapon_id ) ) {
 			return new WP_Error( 'ak_weapon', 'Diese Waffe ist nicht für den Konfigurator eingerichtet.' );
 		}
-		if ( ! $optic_id ) {
-			return new WP_Error( 'ak_optic', 'Bitte eine Optik wählen.' );
-		}
 		$options = self::options_for_weapon( $weapon_id );
-		if ( ! array_key_exists( $optic_id, $options['optics'] ) ) {
-			return new WP_Error( 'ak_optic', 'Diese Optik passt nicht auf die gewählte Waffe.' );
+		if ( $optic_id ) {
+			if ( ! array_key_exists( $optic_id, $options['optics'] ) ) {
+				return new WP_Error( 'ak_optic', 'Diese Optik passt nicht auf die gewählte Waffe.' );
+			}
+			$needs_mount = ! empty( $options['optics'][ $optic_id ] );
+			if ( $needs_mount && ! in_array( $mount_id, $options['optics'][ $optic_id ], true ) ) {
+				return new WP_Error( 'ak_mount', 'Bitte eine passende Montage wählen.' );
+			}
+			if ( ! $needs_mount && $mount_id ) {
+				return new WP_Error( 'ak_mount', 'Diese Optik braucht keine zusätzliche Montage.' );
+			}
+		} elseif ( $mount_id ) {
+			return new WP_Error( 'ak_mount', 'Eine Montage gibt es nur zusammen mit einer Optik.' );
 		}
-		$needs_mount = ! empty( $options['optics'][ $optic_id ] );
-		if ( $needs_mount && ! in_array( $mount_id, $options['optics'][ $optic_id ], true ) ) {
-			return new WP_Error( 'ak_mount', 'Bitte eine passende Montage wählen.' );
+		foreach ( $parts as $group => $acc_id ) {
+			if ( ! isset( self::GROUPS[ $group ] ) || empty( $options['parts'][ $group ] ) || ! in_array( $acc_id, $options['parts'][ $group ], true ) ) {
+				return new WP_Error( 'ak_part', 'Ein gewähltes Zubehör passt nicht auf diese Waffe.' );
+			}
 		}
-		if ( ! $needs_mount && $mount_id ) {
-			return new WP_Error( 'ak_mount', 'Diese Optik braucht keine zusätzliche Montage.' );
+		if ( ! $optic_id && ! $parts ) {
+			return new WP_Error( 'ak_empty', 'Bitte mindestens ein Zubehör wählen.' );
 		}
 		return true;
 	}
@@ -243,6 +319,9 @@ class AK_Data {
 			'flip'       => 'yes' === self::meta( $product_id, 'flip', 'no' ),
 			'direct'     => self::is_direct( $product_id ),
 			'tube'       => self::tube( $product_id ),
+			'group'      => self::group( $product_id ),
+			'hinweis'    => (string) self::meta( $product_id, 'hinweis' ),
+			'cutout'     => 'yes' === self::meta( $product_id, 'freigestellt', 'no' ),
 		);
 	}
 }

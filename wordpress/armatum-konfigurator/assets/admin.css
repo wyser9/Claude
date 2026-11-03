@@ -9,7 +9,11 @@
 .ak-box .ak-canvas.ak-picking img { cursor: crosshair; outline: 2px dashed #d63638; }
 .ak-box .ak-marker { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; color: #fff; font: bold 11px/18px sans-serif; text-align: center; pointer-events: none; box-shadow: 0 0 0 2px #fff; }
 .ak-box .ak-status { font-weight: 600; }
-.ak-box .ak-only-waffe, .ak-box .ak-only-optik, .ak-box .ak-only-montage { display: none !important; }
+.ak-box .ak-only-waffe, .ak-box .ak-only-optik, .ak-box .ak-only-montage, .ak-box .ak-only-zubehoer { display: none !important; }
+.ak-box[data-role="zubehoer"] .ak-only-zubehoer { display: inline-flex !important; }
+.ak-box[data-role="zubehoer"] p.ak-only-zubehoer { display: flex !important; }
+.ak-box[data-role="waffe"] div.ak-only-waffe { display: block !important; margin: 10px 0; }
+.ak-box .ak-slots .ak-row { margin: 4px 0; }
 .ak-box[data-role="waffe"] .ak-only-waffe,
 .ak-box[data-role="optik"] .ak-only-optik,
 .ak-box[data-role="montage"] .ak-only-montage { display: inline-flex !important; }

@@ -42,14 +42,14 @@ class AK_Cart {
 			return (int) $existing;
 		}
 		$p = new WC_Product_Simple();
-		$p->set_name( 'Montage Optik (gratis im Paket)' );
+		$p->set_name( 'Montage (gratis im Paket)' );
 		$p->set_sku( self::MONTAGE_SKU );
 		$p->set_status( 'publish' );
 		$p->set_catalog_visibility( 'hidden' );
 		$p->set_virtual( true );
 		$p->set_regular_price( '0' );
 		$p->set_tax_status( 'none' );
-		$p->set_short_description( '<p>Fachgerechte Montage der Optik auf die Waffe. Kostenlos beim Kauf eines Pakets aus dem Konfigurator.</p>' );
+		$p->set_short_description( '<p>Fachgerechte Montage von Optik und Zubehör auf die Waffe. Kostenlos beim Kauf eines Pakets aus dem Konfigurator.</p>' );
 		$id = $p->save();
 		update_option( self::OPTION_MONTAGE, $id );
 		return (int) $id;
@@ -74,25 +74,39 @@ class AK_Cart {
 		$weapon_id = isset( $_POST['weapon'] ) ? absint( $_POST['weapon'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
 		$optic_id  = isset( $_POST['optic'] ) ? absint( $_POST['optic'] ) : 0;   // phpcs:ignore WordPress.Security.NonceVerification
 		$mount_id  = isset( $_POST['mount'] ) ? absint( $_POST['mount'] ) : 0;   // phpcs:ignore WordPress.Security.NonceVerification
+		$parts     = array();
+		$raw_parts = isset( $_POST['parts'] ) && is_array( $_POST['parts'] ) ? wp_unslash( $_POST['parts'] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification
+		foreach ( $raw_parts as $group => $pid ) {
+			$group = sanitize_key( $group );
+			$pid   = absint( $pid );
+			if ( $pid ) {
+				$parts[ $group ] = $pid;
+			}
+		}
 
-		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id );
+		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id, $parts );
 		if ( is_wp_error( $valid ) ) {
 			wp_send_json_error( array( 'message' => $valid->get_error_message() ), 400 );
 		}
 
 		$montage_id = self::ensure_montage_product();
 		$group      = substr( md5( uniqid( '', true ) ), 0, 10 );
-		$parts      = array( 'waffe' => $weapon_id );
+		$lines      = array( 'waffe' => $weapon_id );
 		if ( $mount_id ) {
-			$parts['montage'] = $mount_id;
+			$lines['montage'] = $mount_id;
 		}
-		$parts['optik']   = $optic_id;
-		$parts['service'] = $montage_id;
+		if ( $optic_id ) {
+			$lines['optik'] = $optic_id;
+		}
+		foreach ( $parts as $group => $pid ) {
+			$lines[ $group ] = $pid;
+		}
+		$lines['service'] = $montage_id;
 
 		self::$adding = true;
 		$added        = array();
 		$failed       = false;
-		foreach ( $parts as $role => $pid ) {
+		foreach ( $lines as $role => $pid ) {
 			$key = WC()->cart->add_to_cart(
 				$pid,
 				1,
@@ -137,6 +151,13 @@ class AK_Cart {
 				'key'   => 'Paket',
 				'value' => esc_html( get_the_title( (int) $item['ak_weapon'] ) ),
 			);
+			$hinweis = (string) get_post_meta( (int) $item['product_id'], '_ak_hinweis', true );
+			if ( '' !== $hinweis ) {
+				$data[] = array(
+					'key'   => 'Hinweis',
+					'value' => esc_html( $hinweis ),
+				);
+			}
 		}
 		return $data;
 	}
@@ -154,7 +175,7 @@ class AK_Cart {
 		}
 	}
 
-	/** Entfernt die Montage, wenn Waffe oder Optik des Pakets fehlen. */
+	/** Entfernt die Montage, wenn die Waffe oder alle Zubehörteile des Pakets fehlen. */
 	public static function cleanup() {
 		static $running = false;
 		$cart = WC()->cart;
@@ -174,7 +195,8 @@ class AK_Cart {
 				continue;
 			}
 			$g = isset( $item['ak_group'] ) ? $item['ak_group'] : '';
-			if ( ! $g || empty( $present[ $g ]['waffe'] ) || empty( $present[ $g ]['optik'] ) ) {
+			$others = $g && isset( $present[ $g ] ) ? array_diff( array_keys( $present[ $g ] ), array( 'waffe', 'service' ) ) : array();
+			if ( ! $g || empty( $present[ $g ]['waffe'] ) || ! $others ) {
 				$cart->remove_cart_item( $key );
 			}
 		}
