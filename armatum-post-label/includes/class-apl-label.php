@@ -11,6 +11,7 @@ class APL_Label {
 	const META_CREATED = '_apl_created';
 	const META_PREVIEW = '_apl_preview';
 	const META_INFO    = '_apl_info';
+	const META_NOTIFIED = '_apl_customer_notified';
 
 	const DIR = 'armatum-post-labels';
 
@@ -321,7 +322,39 @@ class APL_Label {
 		 * @param bool     $preview Testlabel (SPECIMEN).
 		 */
 		do_action( 'apl_label_created', $order, $result['ident_code'], $preview );
+
+		if ( ! $preview ) {
+			self::notify_customer( $order, $result['ident_code'] );
+		}
 		return $result['ident_code'];
+	}
+
+	/**
+	 * Schickt dem Kunden die Sendungsnummer sofort (WooCommerce-Mail „Kundenhinweis“), je Nummer nur einmal.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @param string   $ident Sendungsnummer.
+	 * @return bool Ob eine Nachricht ausgelöst wurde.
+	 */
+	public static function notify_customer( WC_Order $order, $ident ) {
+		if ( 'yes' !== get_option( 'armatum_post_notify_customer', 'yes' ) || '' === (string) $ident || ! $order->get_billing_email() ) {
+			return false;
+		}
+		if ( (string) $order->get_meta( self::META_NOTIFIED ) === (string) $ident ) {
+			return false;
+		}
+		$order->update_meta_data( self::META_NOTIFIED, (string) $ident );
+		$order->save();
+		$order->add_order_note(
+			sprintf(
+				"Ihr Paket ist unterwegs.\n\nSendungsnummer der Schweizerischen Post: %s\nSendungsverfolgung: %s",
+				$ident,
+				APL_Util::tracking_url( $ident )
+			),
+			1,
+			false
+		);
+		return true;
 	}
 
 	public static function service_label( $code ) {

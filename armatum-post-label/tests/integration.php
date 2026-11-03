@@ -45,6 +45,7 @@ $p = new WC_Product_Simple(); $p->set_props( array( 'name' => 'Holster', 'regula
 $order = wc_create_order();
 $order->add_product( wc_get_product( $p->get_id() ), 2 );
 $order->set_address( array( 'first_name' => 'Anna', 'last_name' => 'Beispiel', 'company' => 'Muster AG', 'address_1' => 'Bahnhofstrasse 12a', 'address_2' => 'c/o Lager', 'postcode' => '8001', 'city' => 'Zürich', 'country' => 'CH' ), 'shipping' );
+$order->set_billing_email( 'anna@beispiel.ch' ); $order->set_billing_first_name( 'Anna' ); $order->save();
 $ship = new WC_Order_Item_Shipping(); $ship->set_method_title( 'Kleinsendung Signature' ); $ship->set_method_id( 'wbsng' ); $order->add_item( $ship );
 $order->calculate_totals(); $order->save();
 
@@ -73,10 +74,20 @@ t( 'PDF im geschützten Ordner mit Zufallsnamen', preg_match( '/^label-\d+-[A-Za
 $notes = wc_get_order_notes( array( 'order_id' => $order->get_id() ) );
 t( 'Notiz kennzeichnet Testlabel', false !== strpos( $notes[0]->content, 'TESTLABEL' ) && false !== strpos( $notes[0]->content, 'Signature' ) );
 
+$cnotes = function ( $o ) { return array_values( array_filter( wc_get_order_notes( array( 'order_id' => $o->get_id() ) ), function ( $n ) { return $n->customer_note; } ) ); };
+t( 'Testlabel: Kunde nicht informiert', ! $cnotes( $order ) );
+
 // Token wird zwischengespeichert.
 $GLOBALS['apl_req'] = array();
 update_option( 'armatum_post_test_mode', 'no' );
+$GLOBALS['apl_mails'] = array();
+add_filter( 'pre_wp_mail', function ( $r, $atts ) { $GLOBALS['apl_mails'][] = $atts; return true; }, 10, 2 );
 APL_Label::create( $order, 1500, false, true );
+$cn = $cnotes( wc_get_order( $order->get_id() ) );
+t( 'Echtes Label: Kundenhinweis mit Sendungsnummer', 1 === count( $cn ) && false !== strpos( $cn[0]->content, '996012345600000099' ) && false !== strpos( $cn[0]->content, 'swisspost-tracking' ), wp_json_encode( $cn ) );
+$to_customer = array_filter( $GLOBALS['apl_mails'], function ( $m ) use ( $order ) { return $order->get_billing_email() === $m['to'] || ( is_array( $m['to'] ) && in_array( $order->get_billing_email(), $m['to'], true ) ); } );
+t( 'Kundenhinweis-Mail verschickt', 1 === count( $to_customer ), wp_json_encode( wp_list_pluck( $GLOBALS['apl_mails'], 'subject' ) ) );
+t( 'Gleiche Nummer nicht doppelt', false === APL_Label::notify_customer( wc_get_order( $order->get_id() ), '996012345600000099' ) );
 $tokens = array_filter( $GLOBALS['apl_req'], function ( $q ) { return false !== strpos( $q[0], 'OAuth' ); } );
 t( 'Token wiederverwendet', 0 === count( $tokens ) );
 $last = json_decode( end( $GLOBALS['apl_req'] )[1]['body'], true );
