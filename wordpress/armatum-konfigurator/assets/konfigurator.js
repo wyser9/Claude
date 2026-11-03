@@ -33,6 +33,15 @@
 
 	var CHAIN = ['muendungsaufsatz', 'hub', 'schalldaempfer'];
 
+	var NONE = {
+		optik: 'Keine Optik',
+		schaft: 'Keine Schulterstütze',
+		hub: 'Kein HUB',
+		muendungsaufsatz: 'Original-Mündungsaufsatz behalten',
+		griff: 'Original-Griff behalten'
+	};
+	var FILTER_MIN = 6;
+
 	function Konfigurator($root) {
 		this.$root = $root;
 		this.cfg = $root.data('config');
@@ -43,13 +52,15 @@
 		this.mount = null;
 		this.parts = {};
 		this.groups = this.cfg.groups || [];
-		this.renderLists();
+		this.renderSteps();
+		this.bind();
+		this.preselect(parseInt(this.cfg.preselect, 10) || 0);
 		this.update();
 		$(window).on('resize', function () { self.draw(); });
 	}
 
 	Konfigurator.prototype.card = function (item, name, extra) {
-		return '<label class="ak-card">' +
+		return '<label class="ak-card" data-id="' + item.id + '" data-search="' + esc((item.name + ' ' + (item.brand || '')).toLowerCase()) + '" data-brand="' + esc(item.brand || '') + '">' +
 			'<input type="radio" name="' + name + '" value="' + item.id + '">' +
 			'<img src="' + esc(item.thumb) + '" alt="" loading="lazy">' +
 			'<span class="ak-card-text"><span class="ak-card-name">' + esc(item.name) + '</span>' +
@@ -60,42 +71,188 @@
 	};
 
 	Konfigurator.prototype.noneCard = function (name, label) {
-		return '<label class="ak-card ak-card-none"><input type="radio" name="' + name + '" value="0" checked>' +
+		return '<label class="ak-card ak-card-none" data-id="0"><input type="radio" name="' + name + '" value="0" checked>' +
 			'<span></span><span class="ak-card-text"><span class="ak-card-name">' + esc(label) + '</span></span></label>';
 	};
 
-	Konfigurator.prototype.renderLists = function () {
-		var self = this;
-		var html = this.noneCard('ak_optic', 'Keine Optik');
-		$.each(this.cfg.optics, function (_, o) {
-			html += self.card(o, 'ak_optic', o.direct ? 'direkt auf Schiene' : 'Mittelrohr ' + o.tube + 'mm');
+	/** Suche und Herstellerfilter, sobald eine Liste mehr als FILTER_MIN Artikel hat. */
+	Konfigurator.prototype.filterBar = function (items) {
+		if (items.length <= FILTER_MIN) { return ''; }
+		var brands = [];
+		$.each(items, function (_, it) {
+			if (it.brand && brands.indexOf(it.brand) < 0) { brands.push(it.brand); }
 		});
-		this.$root.find('.ak-optics').html(html).on('change', 'input', function () {
-			var id = parseInt(this.value, 10);
-			self.optic = self.cfg.optics.filter(function (o) { return o.id === id; })[0] || null;
-			self.mount = null;
-			self.renderMounts();
+		brands.sort();
+		var html = '<div class="ak-filter"><input type="search" class="ak-search" placeholder="Suchen …" aria-label="Suchen">';
+		if (brands.length > 1) {
+			html += '<select class="ak-brand" aria-label="Hersteller"><option value="">Alle Hersteller</option>';
+			$.each(brands, function (_, b) { html += '<option value="' + esc(b) + '">' + esc(b) + '</option>'; });
+			html += '</select>';
+		}
+		return html + '</div>';
+	};
+
+	Konfigurator.prototype.step = function (key, title, inner, open) {
+		return '<details class="ak-step" data-group="' + esc(key) + '"' + (open ? ' open' : '') + '>' +
+			'<summary><span class="ak-step-title">' + esc(title) + '</span><span class="ak-step-choice"></span></summary>' +
+			'<div class="ak-step-body">' + inner + '</div></details>';
+	};
+
+	Konfigurator.prototype.renderSteps = function () {
+		var self = this;
+		var html = '';
+		if (this.cfg.optics.length) {
+			var list = this.noneCard('ak_optic', NONE.optik);
+			$.each(this.cfg.optics, function (_, o) {
+				list += self.card(o, 'ak_optic', o.direct ? 'direkt auf Schiene' : 'Mittelrohr ' + o.tube + 'mm');
+			});
+			html += this.step('optik', 'Optik', this.filterBar(this.cfg.optics) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
+				'<div class="ak-step-mount" hidden><h4>Montage</h4><div class="ak-list ak-mounts" role="radiogroup"></div></div>', true);
+		}
+		$.each(this.groups, function (i, g) {
+			var list = self.noneCard('ak_g_' + g.key, NONE[g.key] || 'Kein ' + g.label);
+			$.each(g.items, function (_, it) { list += self.card(it, 'ak_g_' + g.key); });
+			var note = g.key === 'schalldaempfer' ? 'Zuerst einen passenden HUB wählen.' : g.key === 'hub' ? 'Für die gewählte Mündung ist kein HUB erfasst.' : '';
+			html += self.step(g.key, g.label, (note ? '<p class="ak-step-note">' + esc(note) + '</p>' : '') + self.filterBar(g.items) + '<div class="ak-list" role="radiogroup">' + list + '</div>', !html);
+		});
+		this.$root.find('.ak-steps').html(html);
+	};
+
+	Konfigurator.prototype.bind = function () {
+		var self = this;
+		var $steps = this.$root.find('.ak-steps');
+		$steps.on('change', '.ak-step[data-group="optik"] > .ak-step-body > .ak-list input', function () {
+			self.setOptic(parseInt(this.value, 10));
 			self.update();
 		});
-		this.$root.find('.ak-mounts').on('change', 'input', function () {
+		$steps.on('change', '.ak-mounts input', function () {
 			self.mount = self.mountsById[parseInt(this.value, 10)] || null;
 			self.update();
 		});
-		var ghtml = '';
-		$.each(this.groups, function (_, g) {
-			ghtml += '<div class="ak-step" data-group="' + esc(g.key) + '"><h3>' + esc(g.label) + '</h3><div class="ak-list" role="radiogroup">' +
-				self.noneCard('ak_g_' + g.key, (g.key === 'schaft' ? 'Keine Schulterstütze' : g.key === 'hub' ? 'Kein HUB' : g.key === 'muendungsaufsatz' ? 'Original-Mündungsaufsatz behalten' : 'Kein ' + g.label));
-			$.each(g.items, function (_, it) { ghtml += self.card(it, 'ak_g_' + g.key); });
-			ghtml += '</div></div>';
-		});
-		this.$root.find('.ak-groups').html(ghtml).on('change', 'input', function () {
-			var key = $(this).closest('.ak-step').data('group');
-			var id = parseInt(this.value, 10);
-			var g = self.groups.filter(function (x) { return x.key === key; })[0];
-			self.parts[key] = id && g ? (g.items.filter(function (it) { return it.id === id; })[0] || null) : null;
+		$steps.on('change', '.ak-step:not([data-group="optik"]) .ak-list input', function () {
+			self.setPart($(this).closest('.ak-step').data('group'), parseInt(this.value, 10));
 			self.update();
 		});
+		$steps.on('input change', '.ak-search, .ak-brand', function () {
+			self.applyFilter($(this).closest('.ak-step'));
+		});
 		this.$root.find('.ak-add').on('click', function () { self.add(); });
+	};
+
+	Konfigurator.prototype.applyFilter = function ($step) {
+		var q = ($step.find('.ak-search').val() || '').toLowerCase().trim();
+		var brand = $step.find('.ak-brand').val() || '';
+		$step.find('> .ak-step-body > .ak-list > .ak-card').each(function () {
+			var $c = $(this);
+			if ($c.data('id') === 0 || $c.find('input').prop('checked')) { $c.removeClass('ak-hide-filter'); return; }
+			var ok = (!q || String($c.data('search')).indexOf(q) >= 0) && (!brand || $c.data('brand') === brand);
+			$c.toggleClass('ak-hide-filter', !ok);
+		});
+	};
+
+	Konfigurator.prototype.group = function (key) {
+		return this.groups.filter(function (x) { return x.key === key; })[0] || null;
+	};
+
+	Konfigurator.prototype.setOptic = function (id, mountId) {
+		this.optic = this.cfg.optics.filter(function (o) { return o.id === id; })[0] || null;
+		this.mount = null;
+		this.$root.find('input[name="ak_optic"][value="' + (this.optic ? id : 0) + '"]').prop('checked', true);
+		this.renderMounts(mountId);
+	};
+
+	Konfigurator.prototype.setPart = function (key, id) {
+		var g = this.group(key);
+		this.parts[key] = id && g ? (g.items.filter(function (it) { return it.id === id; })[0] || null) : null;
+		this.$root.find('input[name="ak_g_' + key + '"][value="' + (this.parts[key] ? id : 0) + '"]').prop('checked', true);
+	};
+
+	/** Teil aus ?teil= vorwählen; beim Schalldämpfer eine passende Kette (Aufsatz/HUB) suchen. */
+	Konfigurator.prototype.preselect = function (id) {
+		if (!id) { return; }
+		var self = this;
+		var key = null;
+		if (this.cfg.optics.some(function (o) { return o.id === id; })) {
+			this.setOptic(id);
+			key = 'optik';
+		} else if (this.mountsById[id]) {
+			var o = this.cfg.optics.filter(function (x) { return x.mounts.indexOf(id) >= 0; })[0];
+			if (o) { this.setOptic(o.id, id); key = 'optik'; }
+		} else {
+			$.each(this.groups, function (_, g) {
+				if (g.items.some(function (it) { return it.id === id; })) { key = g.key; }
+			});
+			if (key && CHAIN.indexOf(key) >= 0) {
+				this.preselectChain(key, id);
+			} else if (key) {
+				this.setPart(key, id);
+			}
+		}
+		if (!key) { return; }
+		this.$root.find('.ak-step').prop('open', false);
+		var $step = this.$root.find('.ak-step[data-group="' + key + '"]').prop('open', true);
+		if ($step[0] && $step[0].scrollIntoView) {
+			setTimeout(function () { self.$root[0].scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+		}
+	};
+
+	/** Probiert Kombinationen der vorgelagerten Kettenglieder, bis das Teil passt. */
+	Konfigurator.prototype.preselectChain = function (key, id) {
+		var self = this;
+		var idx = CHAIN.indexOf(key);
+		var before = CHAIN.slice(0, idx);
+		var options = before.map(function (g) {
+			var grp = self.group(g);
+			return [0].concat(grp ? grp.items.map(function (it) { return it.id; }) : []);
+		});
+		var combo = [];
+		var found = false;
+		var tryAt = function (i) {
+			if (found) { return; }
+			if (i === before.length) {
+				$.each(before, function (j, g) { self.setPart(g, combo[j]); });
+				self.setPart(key, id);
+				if (self.chainFits(key, id)) { found = true; }
+				return;
+			}
+			for (var k = 0; k < options[i].length && !found; k++) {
+				combo[i] = options[i][k];
+				tryAt(i + 1);
+			}
+		};
+		tryAt(0);
+		if (!found) {
+			$.each(CHAIN, function (_, g) { self.setPart(g, 0); });
+		}
+	};
+
+	/** Passt das Kettenglied key/id zu den aktuell gewählten vorgelagerten Teilen? */
+	Konfigurator.prototype.chainFits = function (key, id) {
+		var it = this.group(key).items.filter(function (x) { return x.id === id; })[0];
+		var state = this.muzzle(key);
+		// Vorgelagerte Teile müssen selbst sitzen.
+		for (var g in state.placed) {
+			if (Object.prototype.hasOwnProperty.call(state.placed, g) && !state.placed[g]) { return false; }
+		}
+		if (key === 'muendungsaufsatz') { return !!(state.thread && meets(it.ifs, state.thread.ifs)); }
+		return state.ends.some(function (e) { return meets(it.ifs, e.ifs); });
+	};
+
+	/** Zeigt im Kopf jedes Schritts die aktuelle Wahl. */
+	Konfigurator.prototype.updateChoices = function () {
+		var self = this;
+		this.$root.find('.ak-step').each(function () {
+			var key = $(this).data('group');
+			var text;
+			if (key === 'optik') {
+				text = self.optic ? self.optic.name + (self.mount && !self.optic.direct ? ' + ' + self.mount.name : '') : NONE.optik;
+			} else {
+				var g = self.group(key);
+				text = self.parts[key] ? self.parts[key].name : (NONE[key] || 'Kein ' + (g ? g.label : ''));
+			}
+			$(this).toggleClass('ak-step-set', key === 'optik' ? !!self.optic : !!self.parts[key])
+				.find('.ak-step-choice').text(text);
+		});
 	};
 
 	/** Punkt des Waffenbildes in Welt-Millimetern (Hauptanker = 0,0). */
@@ -112,11 +269,11 @@
 			.filter(function (x) { return x.item; });
 	};
 
-	Konfigurator.prototype.renderMounts = function () {
+	Konfigurator.prototype.renderMounts = function (mountId) {
 		var self = this;
 		var $step = this.$root.find('.ak-step-mount');
 		if (!this.optic || this.optic.direct || !this.optic.mounts.length) {
-			$step.prop('hidden', true);
+			$step.prop('hidden', true).find('.ak-mounts').empty();
 			return;
 		}
 		var html = '';
@@ -124,9 +281,10 @@
 			if (self.mountsById[id]) { html += self.card(self.mountsById[id], 'ak_mount'); }
 		});
 		$step.prop('hidden', false).find('.ak-mounts').html(html);
-		var $first = $step.find('input').first();
-		$first.prop('checked', true);
-		this.mount = this.mountsById[parseInt($first.val(), 10)] || null;
+		var $pick = mountId ? $step.find('input[value="' + mountId + '"]') : $();
+		if (!$pick.length) { $pick = $step.find('input').first(); }
+		$pick.prop('checked', true);
+		this.mount = this.mountsById[parseInt($pick.val(), 10)] || null;
 	};
 
 	/**
@@ -169,15 +327,17 @@
 				return g === 'muendungsaufsatz' ? !!(state.thread && meets(it.ifs, state.thread.ifs))
 					: state.ends.some(function (e) { return meets(it.ifs, e.ifs); });
 			};
-			var grp = self.groups.filter(function (x) { return x.key === g; })[0];
+			var grp = self.group(g);
 			$.each(grp.items, function (_, it) {
 				var ok = fits(it);
-				$step.find('input[value="' + it.id + '"]').closest('.ak-card').toggle(ok);
+				$step.find('input[value="' + it.id + '"]').closest('.ak-card').toggleClass('ak-hide-fit', !ok);
 				if (!ok && self.parts[g] && self.parts[g].id === it.id) {
 					self.parts[g] = null;
 					$step.find('input[value="0"]').prop('checked', true);
 				}
 			});
+			var visible = grp.items.some(function (it) { return fits(it); });
+			$step.toggleClass('ak-step-empty', !visible);
 		});
 	};
 
@@ -232,6 +392,7 @@
 	Konfigurator.prototype.update = function () {
 		var cfg = this.cfg;
 		this.filterMuzzle();
+		this.updateChoices();
 		var lines = [cfg.weapon];
 		if (this.mount && this.optic && !this.optic.direct) { lines.push(this.mount); }
 		if (this.optic) { lines.push(this.optic); }

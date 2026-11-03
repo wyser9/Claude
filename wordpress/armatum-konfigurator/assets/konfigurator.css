@@ -29,3 +29,29 @@
 .ak-msg.ak-error { color: #b32d2e; }
 .ak-legal { font-size: .8em; color: #777; }
 .ak-testmode { display: inline-block; background: #fff3cd; color: #664d03; padding: .2em .6em; border-radius: 3px; font-size: .85em; margin: 0 0 .5em; }
+/* v0.4: Schritte, Filter, Waffenauswahl */
+.ak-steps { display: grid; gap: .6em; }
+.ak-step { border: 1px solid #e2e2e2; border-radius: 4px; }
+.ak-step > summary { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3em 1em; padding: .7em .9em; cursor: pointer; list-style: none; }
+.ak-step > summary::-webkit-details-marker { display: none; }
+.ak-step > summary::after { content: '▾'; color: #777; }
+.ak-step[open] > summary::after { content: '▴'; }
+.ak-step-title { font-weight: 600; }
+.ak-step-choice { flex: 1; text-align: right; color: #777; font-size: .9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.ak-step-set .ak-step-choice { color: #2e7d32; }
+.ak-step-body { padding: 0 .9em .9em; }
+.ak-step-body h4 { font-size: 1em; margin: 1em 0 .5em; }
+.ak-step-body > .ak-list { max-height: 26em; overflow-y: auto; padding: 2px; }
+.ak-filter { display: flex; gap: .5em; margin-bottom: .6em; }
+.ak-filter .ak-search { flex: 1; min-width: 0; }
+.ak-filter .ak-brand { max-width: 45%; }
+.ak-hide-filter, .ak-hide-fit { display: none !important; }
+.ak-step-note { display: none; color: #777; font-size: .9em; margin: 0 0 .5em; }
+.ak-step-empty .ak-step-note { display: block; }
+.ak-step-empty .ak-filter { display: none; }
+.ak-head p { margin: 0 0 1em; }
+.ak-weapon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1em; margin-top: 1em; }
+.ak-weapon-card { display: flex; flex-direction: column; gap: .3em; padding: .8em; border: 1px solid #ddd; border-radius: 4px; color: inherit; text-decoration: none; }
+.ak-weapon-card:hover, .ak-weapon-card:focus { border-color: #333; }
+.ak-weapon-card img { width: 100%; height: 140px; object-fit: contain; }
+.ak-product-cta { margin: 1em 0; }

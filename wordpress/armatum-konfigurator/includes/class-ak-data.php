@@ -480,6 +480,7 @@ class AK_Data {
 			'outs'       => self::outputs( $product_id ),
 			'hinweis'    => (string) self::meta( $product_id, 'hinweis' ),
 			'cutout'     => 'yes' === self::meta( $product_id, 'freigestellt', 'no' ),
+			'brand'      => trim( (string) $product->get_attribute( 'pa_hersteller' ) ),
 		);
 	}
 }

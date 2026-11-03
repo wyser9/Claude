@@ -1,6 +1,10 @@
 # Armatum Konfigurator
 
-WordPress-Plugin für armatum.ch (WooCommerce). Auf der Produktseite einer eingerichteten Waffe erscheint der Bereich «Waffe konfigurieren». Der Kunde wählt eine Optik und, falls nötig, eine Montage, sieht eine massstabsgetreue Vorschau und legt das Paket in den Warenkorb.
+WordPress-Plugin für armatum.ch (WooCommerce). Der Konfigurator läuft auf einer eigenen Seite (ab 0.4). Der Kunde wählt dort eine Waffe, dann Optik, Montage und Zubehör, sieht eine massstabsgetreue Vorschau und legt das Paket in den Warenkorb.
+
+- Produktseite einer Waffe: Knopf «Diese Waffe konfigurieren» (öffnet die Seite mit `?waffe=ID`).
+- Produktseite von Optik, Montage oder Zubehör: Knopf «Im Konfigurator ansehen» (`?teil=ID`). Passt das Teil nur auf eine Waffe, ist sie gleich gewählt, sonst wählt der Kunde zuerst unter den passenden Waffen. Beim Schalldämpfer wählt der Konfigurator einen passenden HUB (und falls nötig Mündungsaufsatz) mit.
+- Jede Gruppe ist ein aufklappbarer Schritt. Ab 7 Artikeln gibt es eine Suche und einen Herstellerfilter (Attribut «Hersteller», `pa_hersteller`).
 
 - Jede Komponente ist eine **eigene Warenkorbposition** (Lager, bexio, Versandcodes bleiben korrekt).
 - Die **Montage** erscheint als eigene Position «Montage Optik (gratis im Paket)» mit CHF 0.00. Das Produkt legt das Plugin beim ersten Paket im Warenkorb an (SKU `AK-MONTAGE`, im Katalog versteckt). Einzeln kann man es nicht kaufen. Fehlt im Warenkorb die Waffe oder die Optik des Pakets, wird die Montage automatisch entfernt.
@@ -11,12 +15,13 @@ WordPress-Plugin für armatum.ch (WooCommerce). Auf der Produktseite einer einge
 ## Installation
 
 1. Ordner `armatum-konfigurator` als ZIP packen (oder die fertige ZIP verwenden).
-2. wp-admin → Plugins → Installieren → Plugin hochladen → aktivieren.
+2. wp-admin → Plugins → Installieren → Plugin hochladen → aktivieren (bei Update «Ersetzen»).
+3. WooCommerce → Konfigurator → «Seite anlegen». Das legt die private Seite «Konfigurator» mit dem Shortcode an.
 3. Die Produktseite einer Waffe aus dem Cache von WP Super Cache leeren, nachdem sie eingerichtet ist.
 
 ## Testmodus
 
-Nach der Installation ist der Testmodus an: Den Konfigurator sehen nur eingeloggte Admins und Shop-Manager (WP Super Cache liefert eingeloggten Benutzern keine Cache-Seiten aus). Freischalten für alle: Option `ak_testmode` auf `no` setzen.
+Nach der Installation ist der Testmodus an: Den Konfigurator sehen nur eingeloggte Admins und Shop-Manager (WP Super Cache liefert eingeloggten Benutzern keine Cache-Seiten aus). Freischalten für alle: unter WooCommerce → Konfigurator den Testmodus ausschalten und die Seite veröffentlichen.
 
 ## Einrichtung pro Produkt
 
@@ -63,4 +68,4 @@ Ist bei Waffe (Steckplatz Mündung), Mündungsaufsatz oder Schalldämpfer keine 
 
 ## Shortcode
 
-`[armatum_konfigurator waffe="123"]` zeigt den Konfigurator auf einer beliebigen Seite.
+`[armatum_konfigurator]` zeigt die Waffenauswahl (oder mit `?waffe=ID` direkt den Konfigurator). `[armatum_konfigurator waffe="123"]` zeigt den Konfigurator einer festen Waffe.
