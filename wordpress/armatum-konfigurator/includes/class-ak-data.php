@@ -82,6 +82,9 @@ class AK_Data {
 		$list = self::split( self::meta( $product_id, 'schnittstelle' ) );
 		// Attribut «Mündungsgewinde» = Eingang bei Mündungsaufsatz und Schalldämpfer.
 		// Beim HUB ist es der Ausgang zum Schalldämpfer (siehe outputs()), der Eingang muss eingetragen werden.
+		if ( ! $list && 'schalldaempfer' === self::group( $product_id ) ) {
+			$list = self::hub_attribute( $product_id );
+		}
 		if ( ! $list && 'zubehoer' === self::role( $product_id ) && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'schalldaempfer' ), true ) ) {
 			$list = self::thread_attribute( $product_id );
 		}
@@ -223,6 +226,12 @@ class AK_Data {
 		return array_values( array_unique( $out ) );
 	}
 
+	/** HUB-Gewinde (Schalldämpfer-Seite) aus dem Produktattribut «HUB-Gewinde». */
+	public static function hub_attribute( $product_id ) {
+		$product = wc_get_product( $product_id );
+		return $product ? self::split( $product->get_attribute( 'pa_hub-gewinde' ) ) : array();
+	}
+
 	/** Mündungsgewinde aus dem Produktattribut «Mündungsgewinde». */
 	public static function thread_attribute( $product_id ) {
 		$product = wc_get_product( $product_id );
@@ -232,6 +241,9 @@ class AK_Data {
 	/** Ausgang (Schnittstelle nach vorne) eines Mündungsaufsatzes oder HUBs. */
 	public static function outputs( $product_id ) {
 		$list = self::split( self::meta( $product_id, 'ausgang' ) );
+		if ( ! $list && 'hub' === self::group( $product_id ) ) {
+			$list = self::hub_attribute( $product_id );
+		}
 		if ( ! $list && 'hub' === self::group( $product_id ) ) {
 			$list = array_values( array_intersect( self::thread_attribute( $product_id ), self::HUB_STANDARDS ) );
 		}
