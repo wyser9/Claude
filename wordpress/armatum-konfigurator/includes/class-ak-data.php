@@ -31,6 +31,9 @@ class AK_Data {
 	/** Mündungskette in Reihenfolge: jedes Teil sitzt auf dem Ausgang des vorherigen. */
 	const MUZZLE_CHAIN = array( 'muendungsaufsatz', 'hub', 'schalldaempfer' );
 
+	/** Gewinde, die als HUB-Standard (Ausgang zum Schalldämpfer) gelten. */
+	const HUB_STANDARDS = array( '1.375x24', '1.5x24', '1.5x18', '1.75x24' );
+
 	/** Zubehörgruppen: Schlüssel => array( Steckplatz, Bezeichnung, Ebene ). */
 	const GROUPS = array(
 		'muendungsaufsatz' => array( 'muendung', 'Mündungsaufsatz', 2 ),
@@ -81,6 +84,10 @@ class AK_Data {
 		// Beim HUB ist es der Ausgang zum Schalldämpfer (siehe outputs()), der Eingang muss eingetragen werden.
 		if ( ! $list && 'zubehoer' === self::role( $product_id ) && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'schalldaempfer' ), true ) ) {
 			$list = self::thread_attribute( $product_id );
+		}
+		// HUB: Attributwerte, die kein HUB-Standard sind, gelten als Eingang (z.B. 1/2-28" neben 1.375x24 UNEF).
+		if ( ! $list && 'hub' === self::group( $product_id ) ) {
+			$list = array_values( array_diff( self::thread_attribute( $product_id ), self::HUB_STANDARDS ) );
 		}
 		return $list;
 	}
@@ -226,7 +233,7 @@ class AK_Data {
 	public static function outputs( $product_id ) {
 		$list = self::split( self::meta( $product_id, 'ausgang' ) );
 		if ( ! $list && 'hub' === self::group( $product_id ) ) {
-			$list = self::thread_attribute( $product_id );
+			$list = array_values( array_intersect( self::thread_attribute( $product_id ), self::HUB_STANDARDS ) );
 		}
 		return $list;
 	}
