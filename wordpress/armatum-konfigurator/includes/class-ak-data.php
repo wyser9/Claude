@@ -76,9 +76,11 @@ class AK_Data {
 
 	/** Liste von Schnittstellen in Kleinbuchstaben. */
 	public static function interfaces( $product_id ) {
-		$raw = (string) self::meta( $product_id, 'schnittstelle' );
-		$list = array_filter( array_map( 'trim', explode( ',', strtolower( $raw ) ) ) );
-		return array_values( array_unique( $list ) );
+		$list = self::split( self::meta( $product_id, 'schnittstelle' ) );
+		if ( ! $list && 'zubehoer' === self::role( $product_id ) && in_array( self::group( $product_id ), self::MUZZLE_CHAIN, true ) ) {
+			$list = self::thread_attribute( $product_id );
+		}
+		return $list;
 	}
 
 	/** Mittelrohr in mm: eigenes Feld, sonst Attribut pa_mittelrohrdurchmesser. */
@@ -178,16 +180,44 @@ class AK_Data {
 		if ( ! $anchor ) {
 			return null;
 		}
-		$raw  = (string) self::meta( $weapon_id, 'slot_' . $slot . '_if' );
-		$list = array_values( array_unique( array_filter( array_map( 'trim', explode( ',', strtolower( $raw ) ) ) ) ) );
+		$list = self::split( self::meta( $weapon_id, 'slot_' . $slot . '_if' ) );
+		if ( ! $list && 'muendung' === $slot ) {
+			$list = self::thread_attribute( $weapon_id );
+		}
 		return array(
 			'anchor'     => $anchor,
 			'interfaces' => $list,
 		);
 	}
 
+	/**
+	 * Schnittstellen-Liste vereinheitlichen, damit Attributwerte und Eingaben vergleichbar sind:
+	 * «1/2-28"» → 1/2x28, «1.375x24 UNEF» → 1.375x24, «MT5/8-24» → 5/8x24, «M14x1 L» → m14x1-lh,
+	 * «3-Lug und 1/2-28"» → 3-lug, 1/2x28.
+	 */
 	public static function split( $raw ) {
-		return array_values( array_unique( array_filter( array_map( 'trim', explode( ',', strtolower( (string) $raw ) ) ) ) ) );
+		$raw   = strtolower( str_replace( array( '×', '"', '″' ), array( 'x', '', '' ), (string) $raw ) );
+		$parts = preg_split( '/\s*(,|;|\bund\b|\/\/)\s*/u', $raw );
+		$out   = array();
+		foreach ( $parts as $p ) {
+			$p = trim( $p );
+			if ( '' === $p ) {
+				continue;
+			}
+			$p = preg_replace( '/\s+(unef|unf|uns|un|tpi)$/', '', $p );
+			$p = preg_replace( '/\s+(links|lh|l)$/', '-lh', $p );
+			$p = preg_replace( '/^mt(?=\d)/', '', $p );
+			$p = preg_replace( '/^(\d+(?:[\/.]\d+)?)\s*-\s*(\d+)$/', '$1x$2', $p );
+			$p = preg_replace( '/\s+/', '', $p );
+			$out[] = $p;
+		}
+		return array_values( array_unique( $out ) );
+	}
+
+	/** Mündungsgewinde aus dem Produktattribut «Mündungsgewinde». */
+	public static function thread_attribute( $product_id ) {
+		$product = wc_get_product( $product_id );
+		return $product ? self::split( $product->get_attribute( 'pa_muendungsgewinde' ) ) : array();
 	}
 
 	/** Ausgang (Schnittstelle nach vorne) eines Mündungsaufsatzes oder HUBs. */

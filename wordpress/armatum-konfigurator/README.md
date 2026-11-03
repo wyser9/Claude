@@ -51,6 +51,10 @@ Die Mündung ist eine Kette: **Gewinde → Mündungsaufsatz → HUB → Schalld�
 - **Schalldämpfer**: Schnittstelle = HUB-Standard. Er erscheint erst, wenn ein passender HUB gewählt ist.
 - **Waffe**: Steckplatz Mündung = Laufgewinde mit Punkt an der Gewindeschulter. Optional «Original-Mündungsaufsatz»: Schnittstelle für einen HUB und Punkt am vorderen Ende, dann passt ein HUB auch direkt auf den Original-Aufsatz.
 
+## Attribut «Mündungsgewinde» (ab 0.3.1)
+
+Ist bei Waffe (Steckplatz Mündung) oder bei Mündungsaufsatz, HUB und Schalldämpfer keine Schnittstelle eingetragen, nimmt das Plugin das Produktattribut «Mündungsgewinde». Schreibweisen werden vereinheitlicht: «1/2-28"» = `1/2x28`, «1.375x24 UNEF» = `1.375x24`, «MT5/8-24» = `5/8x24`, «M14x1 L» = `m14x1-lh`.
+
 ## Regeln
 
 - Optik «direkt»: passt, wenn eine ihrer Schnittstellen auch an der Waffe ist.
