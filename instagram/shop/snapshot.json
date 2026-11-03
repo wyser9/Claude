@@ -8387,7 +8387,7 @@
 "price": "3300",
 "regular": "3300",
 "short": "Hornady Hülsenhalter Kit mit den Grössen #1, #2, #5, #16 und #35. Robuste, präzise gefertigte Hülsenhalter für zuverlässiges Wiederladen verschiedener Kaliber.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-huelsenhalter-kit-5-teilig-1-2-5-16-35/"
 },
 "18579": {
@@ -9390,13 +9390,13 @@
 "Cleaner & Tumbler / Hülsenreinigung",
 "Hornady"
 ],
-"images": 1,
+"images": 2,
 "name": "Hornady One Shot Tumbler Media Corn Cob 2.15kg",
 "on_sale": false,
 "price": "2990",
 "regular": "2990",
 "short": "Hochwertiges Hornady One Shot Corn Cob Media (76 oz) für Vibrations- und Rotations-Tumbler. Effizient, umweltfreundlich und ideal für saubere Hülsen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-one-shot-tumbler-media-corn-cob-76-oz-reinigungsgranulat-fuer-huelsen/"
 },
 "18830": {
@@ -18410,7 +18410,7 @@
 "price": "27900",
 "regular": "27900",
 "short": "Match Grade Zweimatrizensatz mit Click-Adjust Mikrometereinstellung für exakt reproduzierbare Setztiefen und maximale Präzision.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-match-grade-with-click-adjust-2-die-set-300-win-mag-308/"
 },
 "21292": {
@@ -18438,7 +18438,7 @@
 "price": "27900",
 "regular": "27900",
 "short": "Match Grade Zweimatrizensatz mit Click-Adjust Mikrometereinstellung für exakt reproduzierbare Setztiefen und maximale Präzision.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-match-grade-with-click-adjust-2-die-set-30-06-sprg-308/"
 },
 "21294": {
@@ -21868,7 +21868,7 @@
 "price": "1690",
 "regular": "1690",
 "short": "6er-Set grosser Hornady Entzünderstifte als Ersatzteil für Matrizen und Entzünderstangen in grösseren Kalibern.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-decap-pin-large-6-stueck-ersatz-entzuenderstifte/"
 },
 "21540": {
@@ -21882,7 +21882,7 @@
 "price": "1690",
 "regular": "1690",
 "short": "6er-Set kleiner Hornady Entzünderstifte als Ersatzteil für Matrizen und Entzünderstangen in kleinen Kalibern.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-decap-pin-small-6-stueck-ersatz-entzuenderstifte/"
 },
 "21541": {
@@ -21910,7 +21910,7 @@
 "price": "1490",
 "regular": "1490",
 "short": "Grosszügige Aufbewahrungsbox für Hornady Matrizen und Zubehör mit stabilem Schutz vor Staub und Beschädigung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-die-box-large-aufbewahrungsbox-fuer-matrizen/"
 },
 "21543": {
@@ -43652,7 +43652,7 @@
 "price": "54900",
 "regular": "54900",
 "short": "Kompletter Upper Receiver im Kaliber .22 LR für kostengünstiges Training mit der gewohnten AR15-Plattform. Inklusive 10-Schuss Magazin und 16-Zoll-Lauf.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/schmeisser-ar15-22-wechselsystem-16-zoll-upper-receiver/"
 },
 "27074": {
@@ -64261,7 +64261,7 @@
 "price": "8790",
 "regular": "8790",
 "short": "Schlankes Klappmesser im VOX-Design mit 75 mm Niolox-Klinge in Stonewashed-Optik, schwarzem FRN-Griff und reversiblem Clip. Gefertigt in Italien.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-kita-fx-625-bsw-klappmesser-niolox-stonewashed-schwarz-frn/"
 },
 "32918": {
@@ -64275,7 +64275,7 @@
 "price": "17890",
 "regular": "17890",
 "short": "Klappmesser nach Bob Terzuola mit 85 mm N690Co-Klinge, Liner Lock, Olivenholzgriff und Lederetui. Inspiriert von traditionellen sizilianischen Alltagsmessern.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-the-sicilian-fx-525-ol-klappmesser-olivenholz-design-bob-terzuola/"
 },
 "32919": {
@@ -64303,7 +64303,7 @@
 "price": "7590",
 "regular": "7590",
 "short": "Mini-Klappmesser in Karambit-Form mit 25 mm Klinge aus W 1.4116, schwarzem FRN-Griff und Clip. Nur 80 mm lang und 30 g leicht.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-mini-ta-fx-536-b-mini-karambit-klappmesser-schwarz/"
 },
 "32921": {
@@ -64331,7 +64331,7 @@
 "price": "28490",
 "regular": "28490",
 "short": "Robustes Survival-Messer mit 170 mm N690Co-Klinge, 6.0 mm stark, Full Tang, OD-grünem Micarta-Griff und Cordura-Scheide mit Aussentasche.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-trapper-fx-132-mgt-survival-messer-micarta-od-green/"
 },
 "32923": {
@@ -64345,7 +64345,7 @@
 "price": "23190",
 "regular": "23190",
 "short": "Feststehendes Jagdmesser von Yevgeny Khokhlov mit 120 mm Niolox-Klinge, ergonomischem Olivenholzgriff und Lederscheide.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-fenix-fx-649-ol-jagdmesser-olivenholz-niolox/"
 },
 "32924": {
@@ -64359,7 +64359,7 @@
 "price": "17990",
 "regular": "17990",
 "short": "Klassisches Jagd- und Bushcraftmesser der Rifle-Linie mit 107 mm Becut-Klinge, Olivenholzgriff und Lederscheide.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-rifle-receiver-fx-662-ol-jagdmesser-olivenholz/"
 },
 "32925": {
@@ -64373,7 +64373,7 @@
 "price": "22590",
 "regular": "22590",
 "short": "Taktisches Einsatzmesser der Fox Knives Military Division mit 150 mm N690Co-Klinge, schwarzem G10-Griff und Nylonscheide.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/fox-knives-n-e-r-o-fx-nr01-tt-einsatzmesser-g10-schwarz/"
 },
 "32926": {
@@ -64387,7 +64387,7 @@
 "price": "6190",
 "regular": "6190",
 "short": "Schwarzes Klappmesser mit 85 mm VG10-Klinge, PTFE-Beschichtung, G10-Griff und Clip für den Alltag.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/black-fox-atros-bf-770-bb-klappmesser-vg10-schwarz-g10/"
 },
 "32927": {
@@ -64401,7 +64401,91 @@
 "price": "6590",
 "regular": "6590",
 "short": "Klappmesser mit satinierter D2-Klinge, schwarzem G10-Griff und Clip aus poliertem Edelstahl.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/black-fox-spectrum-bf-782-or-klappmesser-d2-g10/"
+},
+"32938": {
+"cats": [
+"Glock",
+"Pistolen"
+],
+"images": 4,
+"name": "Glock 44 Pistole Kal. .22 LR",
+"on_sale": false,
+"price": "64290",
+"regular": "64290",
+"short": "Kompakte Kleinkaliberpistole im Kaliber .22 LR mit Hybridschlitten, Marksman-Lauf und Safe Action® System. Inklusive zwei Magazinen, verstellbarer Kimme und Beavertail-Griffrücken.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/glock-44-pistole-kal-22-lr/"
+},
+"32939": {
+"cats": [
+"Glock",
+"Pistolen"
+],
+"images": 1,
+"name": "Glock 44 MOS Pistole mit Gewindelauf M9x0.75 Kal. .22 LR",
+"on_sale": false,
+"price": "74390",
+"regular": "74390",
+"short": "G44 im Kaliber .22 LR mit Gewindebuchse M9x0.75 rechts und MOS-Optikvorbereitung. Bereit für Leuchtpunktvisier und Mündungsaufsatz, inklusive zwei Magazinen und Griffrücken.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/glock-44-mos-pistole-mit-gewindelauf-m9x0-75-kal-22-lr/"
+},
+"32940": {
+"cats": [
+"Glock",
+"Magazine"
+],
+"images": 3,
+"name": "Glock 44 Magazin 10 Schuss Kal. .22 LR",
+"on_sale": false,
+"price": "2030",
+"regular": "2030",
+"short": "Originales 10-Schuss-Magazin für die GLOCK G44 im Kaliber .22 LR. Robustes Polymergehäuse und integrierte Ladehilfe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/glock-44-magazin-10-schuss-kal-22-lr/"
+},
+"32941": {
+"cats": [
+"Glock",
+"Magazine"
+],
+"images": 2,
+"name": "Glock 44 Magazin 15 Schuss Zubringer orange Kal. .22 LR",
+"on_sale": false,
+"price": "2030",
+"regular": "2030",
+"short": "Originales 15-Schuss-Magazin für die GLOCK G44 im Kaliber .22 LR mit orangem Zubringer. Polymergehäuse und integrierte Ladehilfe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/glock-44-magazin-15-schuss-zubringer-orange-kal-22-lr/"
+},
+"32943": {
+"cats": [
+"Cleaner & Tumbler / Hülsenreinigung",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady One Shot Sonic Clean Gun Parts Solution 32 oz",
+"on_sale": false,
+"price": "4190",
+"regular": "4190",
+"short": "Reinigungslösung von Hornady für Waffenteile im Ultraschallreiniger. Entfernt Schmauch, Schmutz und Fett und ist für alle Waffenoberflächen geeignet. Flasche mit 32 fl oz (Quart).",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/hornady-one-shot-sonic-clean-gun-parts-solution-32-oz/"
+},
+"32946": {
+"cats": [
+"Cleaner & Tumbler / Hülsenreinigung",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady One Shot Metal Polish 8 oz (Case Polish)",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "Wasserbasierte Politur von Hornady als Zusatz zum Tumbler-Medium. Reinigt, poliert und schützt Hülsen und andere Metalle, ausser Aluminium. Flasche mit 8 oz.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/hornady-one-shot-metal-polish-8-oz-case-polish/"
 }
 }
