@@ -77,7 +77,9 @@ class AK_Data {
 	/** Liste von Schnittstellen in Kleinbuchstaben. */
 	public static function interfaces( $product_id ) {
 		$list = self::split( self::meta( $product_id, 'schnittstelle' ) );
-		if ( ! $list && 'zubehoer' === self::role( $product_id ) && in_array( self::group( $product_id ), self::MUZZLE_CHAIN, true ) ) {
+		// Attribut «Mündungsgewinde» = Eingang bei Mündungsaufsatz und Schalldämpfer.
+		// Beim HUB ist es der Ausgang zum Schalldämpfer (siehe outputs()), der Eingang muss eingetragen werden.
+		if ( ! $list && 'zubehoer' === self::role( $product_id ) && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'schalldaempfer' ), true ) ) {
 			$list = self::thread_attribute( $product_id );
 		}
 		return $list;
@@ -222,7 +224,11 @@ class AK_Data {
 
 	/** Ausgang (Schnittstelle nach vorne) eines Mündungsaufsatzes oder HUBs. */
 	public static function outputs( $product_id ) {
-		return self::split( self::meta( $product_id, 'ausgang' ) );
+		$list = self::split( self::meta( $product_id, 'ausgang' ) );
+		if ( ! $list && 'hub' === self::group( $product_id ) ) {
+			$list = self::thread_attribute( $product_id );
+		}
+		return $list;
 	}
 
 	/**
