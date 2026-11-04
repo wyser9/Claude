@@ -216,7 +216,7 @@ class APL_Label {
 			'labelDefinition' => array(
 				'labelLayout'     => 'A6',
 				'printAddresses'  => 'RECIPIENT_AND_CUSTOMER',
-				'imageFileType'   => 'PDF',
+				'imageFileType'   => APL_Util::use_a4() ? 'PNG' : 'PDF',
 				'imageResolution' => 300,
 				'printPreview'    => (bool) $preview,
 			),
@@ -283,6 +283,18 @@ class APL_Label {
 		$preview = 'yes' === get_option( 'armatum_post_test_mode', 'yes' );
 		$result  = APL_Api::generate_label( self::build_payload( $order, $grams, $signature, $bulky, $preview ) );
 
+		$scale_note = '';
+		if ( APL_Util::use_a4() ) {
+			$a4 = APL_Util::a4_third_pdf( $result['pdf'], 300 );
+			if ( ! $a4 ) {
+				throw new Exception( 'Label konnte nicht auf A4 gesetzt werden (Bild der Post ungültig). Unter Einstellungen > Armatum Post Label auf „A6-PDF“ umstellen und erneut erstellen.' );
+			}
+			$result['pdf'] = $a4['pdf'];
+			if ( $a4['scale'] < 0.999 ) {
+				$scale_note = sprintf( ' A4, oberes Drittel, auf %d %% verkleinert.', (int) round( $a4['scale'] * 100 ) );
+			}
+		}
+
 		$dir  = self::protected_dir();
 		$file = sprintf( 'label-%s-%s.pdf', $order->get_id(), wp_generate_password( 24, false ) );
 		if ( false === file_put_contents( trailingslashit( $dir ) . $file, $result['pdf'] ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions
@@ -307,7 +319,7 @@ class APL_Label {
 				$services,
 				number_format( $grams / 1000, 3, '.', '' ),
 				$result['ident_code'],
-				$check['message']
+				$check['message'] . $scale_note
 			)
 		);
 		$order->save();

@@ -14,7 +14,7 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	$GLOBALS['apl_req'][] = array( $url, $args );
 	if ( false !== strpos( $url, 'OAuth/token' ) ) return r( 200, array( 'access_token' => 'TOKEN123', 'expires_in' => 3600 ) );
 	if ( false !== strpos( $url, 'addresses/validation' ) ) return r( 200, array( 'quality' => $GLOBALS['apl_quality'] ) );
-	if ( false !== strpos( $url, 'generateAddressLabel' ) ) return r( 200, array( 'item' => array( 'identCode' => '996012345600000099', 'label' => array( base64_encode( '%PDF-1.4 test' ) ) ) ) );
+	if ( false !== strpos( $url, 'generateAddressLabel' ) ) return r( 200, array( 'item' => array( 'identCode' => '996012345600000099', 'label' => array( $GLOBALS['apl_label_b64'] ?? base64_encode( '%PDF-1.4 test' ) ) ) ) );
 	return r( 404, array() );
 }, 10, 3 );
 
@@ -23,6 +23,7 @@ update_option( 'armatum_post_client_id', 'cid' );
 update_option( 'armatum_post_client_secret', 'secret' );
 update_option( 'armatum_post_franking_license', '60123456' );
 delete_option( 'armatum_post_test_mode' );
+update_option( 'armatum_post_paper', 'a6' );
 delete_transient( APL_Api::TOKEN_CACHE );
 
 // --- Aufräumen der Version 0.1 bei Aktivierung ---
@@ -114,6 +115,20 @@ t( 'Hinweis in Bestellnotiz', false !== strpos( $notes[0]->content, 'UNUSABLE' )
 $GLOBALS['apl_quality'] = 'CERTIFIED';
 $pick = wc_create_order(); $ps = new WC_Order_Item_Shipping(); $ps->set_method_title( 'Abholung vor Ort' ); $ps->set_method_id( 'local_pickup' ); $pick->add_item( $ps ); $pick->save();
 t( 'Abholung abgelehnt', false !== strpos( $err( function () use ( $pick ) { APL_Label::create( $pick, 1000, false, false ); } ), 'abgeholt' ) );
+
+// A4 mit Label im oberen Drittel.
+update_option( 'armatum_post_paper', 'a4_third' );
+$gd = imagecreatetruecolor( 1240, 1748 ); imagefill( $gd, 0, 0, imagecolorallocate( $gd, 255, 255, 255 ) ); imagefilledrectangle( $gd, 100, 100, 600, 200, imagecolorallocate( $gd, 0, 0, 0 ) );
+ob_start(); imagepng( $gd ); $GLOBALS['apl_label_b64'] = base64_encode( ob_get_clean() );
+$GLOBALS['apl_req'] = array();
+APL_Label::create( $order, 1000, false, false );
+$lr = null; foreach ( $GLOBALS['apl_req'] as $req ) { if ( false !== strpos( $req[0], 'generateAddressLabel' ) ) { $lr = json_decode( $req[1]['body'], true ); } }
+$a4file = $up['basedir'] . '/armatum-post-labels/' . wc_get_order( $order->get_id() )->get_meta( '_apl_label_file' );
+$a4pdf  = (string) @file_get_contents( $a4file );
+t( 'A4: Post liefert PNG, gespeichert als A4-PDF', 'PNG' === $lr['labelDefinition']['imageFileType'] && 0 === strpos( $a4pdf, '%PDF-1.4' ) && false !== strpos( $a4pdf, '/MediaBox [0 0 595.276 841.890]' ) && false !== strpos( $a4pdf, '/Subtype /Image' ) );
+$an = wc_get_order_notes( array( 'order_id' => $order->get_id(), 'limit' => 3 ) );
+t( 'A4: Notiz nennt Verkleinerung', false !== strpos( wp_json_encode( wp_list_pluck( $an, 'content' ) ), 'oberes Drittel' ) );
+update_option( 'armatum_post_paper', 'a6' ); unset( $GLOBALS['apl_label_b64'] );
 
 // Hook für andere Plugins (bexio: Sendungsnummer in den Auftrag).
 $hooked = array();

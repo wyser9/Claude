@@ -33,6 +33,7 @@ class APL_Admin {
 		$sender  = APL_Label::sender();
 		$test    = 'yes' === get_option( 'armatum_post_test_mode', 'yes' );
 		$notify  = 'yes' === get_option( 'armatum_post_notify_customer', 'yes' );
+		$paper   = get_option( 'armatum_post_paper', 'a4_third' );
 		$secret  = (string) get_option( 'armatum_post_client_secret' );
 		$cleanup = get_option( 'apl_legacy_cleanup' );
 		?>
@@ -52,6 +53,17 @@ class APL_Admin {
 					<tr><th><label for="apl_client_id">Client ID</label></th><td><input type="text" id="apl_client_id" name="client_id" value="<?php echo esc_attr( get_option( 'armatum_post_client_id' ) ); ?>" class="regular-text"></td></tr>
 					<tr><th><label for="apl_client_secret">Client Secret</label></th><td><input type="password" id="apl_client_secret" name="client_secret" value="" autocomplete="off" class="regular-text" placeholder="<?php echo $secret ? '•••••••• (gespeichert – leer lassen, um beizubehalten)' : ''; ?>"></td></tr>
 					<tr><th><label for="apl_license">Frankierlizenz</label></th><td><input type="text" id="apl_license" name="franking_license" value="<?php echo esc_attr( get_option( 'armatum_post_franking_license' ) ); ?>" class="regular-text"></td></tr>
+					<tr><th><label for="apl_paper">Druckformat</label></th><td>
+						<select id="apl_paper" name="paper">
+							<option value="a4_third" <?php selected( $paper, 'a4_third' ); ?>>A4 – Label im oberen Drittel (zum Falten in drei Teile)</option>
+							<option value="a6" <?php selected( $paper, 'a6' ); ?>>A6-PDF der Post (Etikettendrucker)</option>
+						</select>
+						<?php if ( 'a6' !== $paper && ! function_exists( 'imagecreatefromstring' ) ) : ?>
+							<p class="description" style="color:#b32d2e">Die PHP-Bildbibliothek GD fehlt auf dem Server – es wird das A6-PDF verwendet.</p>
+						<?php else : ?>
+							<p class="description">A4: Label in Originalgrösse, nur falls nötig leicht verkleinert, damit es ins Drittel passt. Gestrichelte Falzlinien zeigen die Faltstellen. Drucken mit „Tatsächliche Grösse / 100 %“, nicht „An Seite anpassen“.</p>
+						<?php endif; ?>
+					</td></tr>
 					<tr><th>Kunde informieren</th><td><label><input type="checkbox" name="notify_customer" value="yes" <?php checked( $notify ); ?>> Sendungsnummer mit Tracking-Link sofort beim Erstellen des Labels an den Kunden senden (E-Mail „Kundenhinweis“, nicht bei Testlabels)</label></td></tr>
 					<tr><th>Testmodus</th><td><label><input type="checkbox" name="test_mode" value="yes" <?php checked( $test ); ?>> Labels als Muster („SPECIMEN“) erstellen – nicht versandfähig, wird nicht verrechnet</label></td></tr>
 				</table>
@@ -85,6 +97,7 @@ class APL_Admin {
 		update_option( 'armatum_post_franking_license', sanitize_text_field( wp_unslash( $_POST['franking_license'] ?? '' ) ) );
 		update_option( 'armatum_post_test_mode', empty( $_POST['test_mode'] ) ? 'no' : 'yes' );
 		update_option( 'armatum_post_notify_customer', empty( $_POST['notify_customer'] ) ? 'no' : 'yes' );
+		update_option( 'armatum_post_paper', ( isset( $_POST['paper'] ) && 'a6' === $_POST['paper'] ) ? 'a6' : 'a4_third' );
 		$sender = array( 'country' => 'CH' );
 		foreach ( array( 'name1', 'street', 'zip', 'city' ) as $key ) {
 			$sender[ $key ] = sanitize_text_field( wp_unslash( $_POST['sender'][ $key ] ?? '' ) );
