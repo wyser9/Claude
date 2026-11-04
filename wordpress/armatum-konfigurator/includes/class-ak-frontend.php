@@ -50,6 +50,20 @@ class AK_Frontend {
 
 	/** Kommt das Produkt in den Optionen dieser Waffe vor? */
 	public static function part_fits_weapon( $weapon_id, $part_id ) {
+		return (bool) self::resolve_part( $weapon_id, $part_id );
+	}
+
+	/** ID im Konfigurator für ein Produkt: es selbst oder (bei variablen Produkten) die erste passende Variante, sonst 0. */
+	public static function resolve_part( $weapon_id, $part_id ) {
+		foreach ( array_merge( array( (int) $part_id ), AK_Data::variations( $part_id ) ) as $id ) {
+			if ( self::in_options( $weapon_id, $id ) ) {
+				return $id;
+			}
+		}
+		return 0;
+	}
+
+	private static function in_options( $weapon_id, $part_id ) {
 		$o = AK_Data::options_for_weapon( $weapon_id );
 		if ( array_key_exists( $part_id, $o['optics'] ) || in_array( $part_id, $o['mounts'], true ) ) {
 			return true;
@@ -214,13 +228,14 @@ class AK_Frontend {
 			$items = array();
 			foreach ( $options['parts'][ $key ] as $pid ) {
 				$item             = AK_Data::item_payload( $pid );
+				$item['slot']     = isset( $options['slots'][ $pid ] ) ? $options['slots'][ $pid ] : '';
 				$item['adapters'] = isset( $options['adapters'][ $pid ] ) ? $options['adapters'][ $pid ] : array();
 				$rail_ids         = array_merge( $rail_ids, $item['adapters'] );
 				$items[]          = $item;
 			}
 			$groups[] = array(
 				'key'   => $key,
-				'slot'  => $def[0],
+				'slot'  => AK_Data::group_slots( $key )[0] ?? '',
 				'label' => $def[1],
 				'layer' => $def[2],
 				'items' => $items,
@@ -234,8 +249,9 @@ class AK_Frontend {
 			'mounts'    => $mounts,
 			'groups'    => $groups,
 			'adapters'  => $rails,
-			'preselect' => $part_id,
+			'preselect' => $part_id ? self::resolve_part( $weapon_id, $part_id ) : 0,
 			'ajaxUrl'   => WC_AJAX::get_endpoint( 'ak_add_package' ),
+			'reportUrl' => WC_AJAX::get_endpoint( 'ak_report' ),
 			'cartUrl'   => wc_get_cart_url(),
 			'currency'  => get_woocommerce_currency_symbol(),
 			'decimals'  => wc_get_price_decimals(),
@@ -256,6 +272,15 @@ class AK_Frontend {
 				<div class="ak-stage-wrap">
 					<div class="ak-stage" aria-live="polite"></div>
 					<p class="ak-note">Vorschau mit Herstellerbildern. Proportionen sind massstabsgetreu, Farben und Details können abweichen.</p>
+					<details class="ak-report">
+						<summary>Passt etwas nicht? Melden</summary>
+						<textarea class="ak-report-text" rows="3" maxlength="2000" aria-label="Was stimmt nicht?" placeholder="Was stimmt nicht? Zum Beispiel: Teil passt in Wirklichkeit nicht, Bild sitzt schief."></textarea>
+						<input type="email" class="ak-report-mail" placeholder="E-Mail für Rückfragen (freiwillig)" aria-label="E-Mail für Rückfragen (freiwillig)">
+						<input type="text" class="ak-report-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+						<button type="button" class="button ak-report-send">Meldung senden</button>
+						<span class="ak-report-msg" role="status"></span>
+						<small>Deine aktuelle Auswahl wird automatisch mitgeschickt.</small>
+					</details>
 				</div>
 				<div class="ak-panel">
 					<div class="ak-steps"></div>

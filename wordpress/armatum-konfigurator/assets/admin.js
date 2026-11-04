@@ -46,27 +46,73 @@
 			$box.attr('data-role', $box.find('.ak-role').val());
 		}
 
-		// Schnittstellen: Vorschläge als Knöpfe, Klick fügt hinzu oder entfernt.
-		var known = $box.data('ifs') || [];
+		// Schnittstellen: passende Vorschläge als Knöpfe (Rest unter «weitere»), Klick fügt hinzu oder entfernt.
+		var known = $box.data('ifs') || {};
+		var KIND_LABEL = {
+			waffe: 'Optik-Aufnahme (Schiene oder Footprint)',
+			optik: 'Optik-Aufnahme (nur bei «direkt»: Schiene oder Footprint)',
+			montage: 'Passt auf (Schiene)',
+			gewinde: 'Passt auf (Gewinde)',
+			schiene: 'Passt auf (Schiene)',
+			schaft: 'Passt auf (Schaftaufnahme)',
+			griff: 'Passt auf (Griffaufnahme)'
+		};
+		var GROUP_KIND = { muendungsaufsatz: 'gewinde', hub: 'gewinde', schalldaempfer: 'gewinde', handgriff: 'schiene', laser: 'schiene', lampe: 'schiene', adapterschiene: 'schiene', schaft: 'schaft', griff: 'griff' };
+		function esc(t) { return $('<i>').text(t).html(); }
 		function norm(v) { return v.toLowerCase().replace(/\s+/g, ''); }
 		function values($in) { return $in.val().split(/\s*[,;]\s*/).map($.trim).filter(Boolean); }
+		function fieldKinds($in) {
+			var k = $in.data('kind');
+			var role = $box.find('.ak-role').val();
+			var g = $box.find('[name="ak[gruppe]"]').val();
+			if (k === 'auto') {
+				if (role === 'waffe' || role === 'optik') { return ['schiene', 'optik']; }
+				if (role === 'montage') { return ['schiene']; }
+				return GROUP_KIND[g] ? [GROUP_KIND[g]] : [];
+			}
+			if (k === 'auto-out') { return g === 'adapterschiene' ? ['schiene'] : ['gewinde']; }
+			return [k];
+		}
+		function fieldLabel() {
+			var role = $box.find('.ak-role').val();
+			var g = $box.find('[name="ak[gruppe]"]').val();
+			var key = role === 'zubehoer' ? GROUP_KIND[g] : role;
+			$box.find('.ak-if-label').text(KIND_LABEL[key] || 'Schnittstelle(n)');
+		}
+		function buildChips($in) {
+			var kinds = fieldKinds($in);
+			var main = '', more = '';
+			$.each(known, function (v, kind) {
+				var b = '<button type="button" class="ak-chip" data-v="' + esc(v) + '">' + esc(v) + '</button>';
+				if (!kinds.length || kinds.indexOf(kind) >= 0) { main += b; } else { more += b; }
+			});
+			var html = '<span class="ak-chips">' + main +
+				(more ? '<button type="button" class="ak-chip-more">weitere …</button><span class="ak-chips-more" hidden>' + more + '</span>' : '') +
+				'<span class="ak-chip-warn"></span></span>';
+			$in.next('.ak-chips').remove();
+			$in.after(html);
+			paintChips($in);
+		}
 		function paintChips($in) {
 			var cur = values($in).map(norm);
 			$in.next('.ak-chips').find('.ak-chip').each(function () {
 				$(this).toggleClass('ak-chip-on', cur.indexOf(String($(this).data('v'))) >= 0);
 			});
-			var unknown = cur.filter(function (v) { return known.indexOf(v) < 0; });
+			var unknown = cur.filter(function (v) { return !Object.prototype.hasOwnProperty.call(known, v); });
 			$in.next('.ak-chips').find('.ak-chip-warn').text(unknown.length ? 'Neu: ' + unknown.join(', ') + ' (Schreibweise prüfen)' : '');
 		}
-		$box.find('.ak-if').each(function () {
-			var $in = $(this);
-			var html = '<span class="ak-chips">';
-			$.each(known, function (_, k) { html += '<button type="button" class="ak-chip" data-v="' + $('<i>').text(k).html() + '">' + $('<i>').text(k).html() + '</button>'; });
-			html += '<span class="ak-chip-warn"></span></span>';
-			$in.after(html);
-			paintChips($in);
-		});
+		function rebuildAll() {
+			fieldLabel();
+			$box.find('.ak-if').each(function () { buildChips($(this)); });
+		}
+		rebuildAll();
+		$box.on('change', '.ak-role, [name="ak[gruppe]"]', rebuildAll);
 		$box.on('input', '.ak-if', function () { paintChips($(this)); });
+		$box.on('click', '.ak-chip-more', function () {
+			var $m = $(this).next('.ak-chips-more');
+			$m.prop('hidden', !$m.prop('hidden'));
+			$(this).text($m.prop('hidden') ? 'weitere …' : 'weniger');
+		});
 		$box.on('click', '.ak-chip', function () {
 			var $in = $(this).closest('.ak-chips').prev('.ak-if');
 			var v = String($(this).data('v'));
@@ -103,7 +149,14 @@
 
 		$box.on('click', '.ak-pick-image', function (e) {
 			e.preventDefault();
-			var frame = wp.media({ title: 'Vorschaubild wählen', multiple: false, library: { type: 'image' } });
+			var ids = $box.data('gallery') || [];
+			var all = $(this).hasClass('ak-pick-all') || !ids.length;
+			var frame = wp.media({
+				title: all ? 'Vorschaubild aus der Mediathek wählen' : 'Vorschaubild aus den Bildern dieses Produkts wählen',
+				button: { text: 'Bild verwenden' },
+				multiple: false,
+				library: all ? { type: 'image' } : { type: 'image', post__in: ids, orderby: 'post__in', posts_per_page: -1 }
+			});
 			frame.on('select', function () {
 				var a = frame.state().get('selection').first().toJSON();
 				$box.find('.ak-image-id').val(a.id);

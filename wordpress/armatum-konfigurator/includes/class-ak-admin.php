@@ -49,8 +49,14 @@ class AK_Admin {
 		$image_id = $v['image_id'] ? (int) $v['image_id'] : (int) get_post_thumbnail_id( $post->ID );
 		$src      = $image_id ? wp_get_attachment_image_src( $image_id, 'full' ) : false;
 		$scale    = AK_Data::scale( $post->ID );
+		$product  = wc_get_product( $post->ID );
+		$gallery  = array_values( array_unique( array_filter( array_merge( array( (int) get_post_thumbnail_id( $post->ID ) ), $product ? array_map( 'intval', $product->get_gallery_image_ids() ) : array() ) ) ) );
+		$variable = $product && $product->is_type( 'variable' );
 		?>
-		<div class="ak-box" data-role="<?php echo esc_attr( $v['role'] ); ?>" data-ifs="<?php echo esc_attr( wp_json_encode( AK_Data::known_interfaces() ) ); ?>">
+		<div class="ak-box" data-role="<?php echo esc_attr( $v['role'] ); ?>" data-ifs="<?php echo esc_attr( wp_json_encode( AK_Data::known_interfaces() ) ); ?>" data-gallery="<?php echo esc_attr( wp_json_encode( $gallery ) ); ?>">
+			<?php if ( $variable ) : ?>
+				<p class="ak-variable-note">Variables Produkt: Die Einrichtung gilt für alle Varianten. Jede kaufbare Variante erscheint im Konfigurator einzeln mit eigenem Preis und Lager. Den Mittelrohrdurchmesser nimmt das Plugin aus dem Variantenattribut «Mittelrohrdurchmesser [mm]», das Feld unten bitte leer lassen.</p>
+			<?php endif; ?>
 			<p class="ak-row">
 				<label>Rolle
 					<select name="ak[role]" class="ak-role">
@@ -69,13 +75,13 @@ class AK_Admin {
 						<?php endforeach; ?>
 					</select>
 				</label>
-				<label>Schnittstelle(n)
-					<input type="text" name="ak[schnittstelle]" class="ak-if" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="picatinny">
+				<label><span class="ak-if-label">Schnittstelle(n)</span>
+					<input type="text" name="ak[schnittstelle]" class="ak-if" data-kind="auto" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="picatinny">
 				</label>
 				<label class="ak-only-montage ak-only-optik">Mittelrohr [mm]
 					<input type="text" name="ak[mittelrohr]" value="<?php echo esc_attr( $v['mittelrohr'] ); ?>" placeholder="aus Attribut: <?php echo esc_attr( AK_Data::tube( $post->ID ) ?: '–' ); ?>" size="6">
 				</label>
-				<label class="ak-only-optik"><input type="checkbox" name="ak[direkt]" value="yes" <?php checked( $v['direkt'], 'yes' ); ?>> direkt auf Schiene (Rotpunkt / Montage integriert)</label>
+				<label class="ak-only-optik"><input type="checkbox" name="ak[direkt]" value="yes" <?php checked( $v['direkt'], 'yes' ); ?>> direkt auf Schiene oder Footprint (Rotpunkt / Montage integriert)</label>
 			</p>
 			<p class="ak-row ak-only-zubehoer">
 				<label>Hinweis für Kunden (z.B. «Bewilligungspflichtig»)
@@ -85,7 +91,7 @@ class AK_Admin {
 			</p>
 			<p class="ak-row ak-only-zubehoer">
 				<label>Ausgang (Mündungsaufsatz und HUB: z.B. HUB-Standard 1.375x24; Adapterschiene: picatinny)
-					<input type="text" name="ak[ausgang]" class="ak-if" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
+					<input type="text" name="ak[ausgang]" class="ak-if" data-kind="auto-out" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
 				</label>
 				<span class="description">Bei Mündungsaufsatz und HUB zusätzlich «Ausgangspunkt» (vorderes Ende) setzen. Adapterschiene: Schnittstelle = m-lok, Ausgang = picatinny, Ankerpunkt = Auflage am Handschutz, Ausgangspunkt = Oberfläche der Schiene.</span>
 			</p>
@@ -94,7 +100,7 @@ class AK_Admin {
 				<?php foreach ( AK_Data::SLOTS as $sk => $slabel ) : ?>
 					<p class="ak-row">
 						<label><?php echo esc_html( $slabel ); ?>
-							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
+							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" data-kind="<?php echo esc_attr( array( 'muendung' => 'gewinde', 'unten' => 'schiene', 'seite' => 'schiene', 'schaft' => 'schaft', 'griff' => 'griff' )[ $sk ] ); ?>" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
 						</label>
 						<button type="button" class="button ak-tool" data-target="slot_<?php echo esc_attr( $sk ); ?>_anchor">Punkt setzen</button>
 						<input type="hidden" name="ak[slot_<?php echo esc_attr( $sk ); ?>_anchor]" class="ak-pt" data-pt="slot_<?php echo esc_attr( $sk ); ?>_anchor" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_anchor' ] ); ?>">
@@ -102,7 +108,7 @@ class AK_Admin {
 				<?php endforeach; ?>
 				<p class="ak-row">
 					<label>Original-Mündungsaufsatz: Schnittstelle für HUB (leer = keiner)
-						<input type="text" name="ak[muzzle_device_if]" class="ak-if" value="<?php echo esc_attr( $v['muzzle_device_if'] ); ?>" size="22">
+						<input type="text" name="ak[muzzle_device_if]" class="ak-if" data-kind="gewinde" value="<?php echo esc_attr( $v['muzzle_device_if'] ); ?>" size="22">
 					</label>
 					<button type="button" class="button ak-tool" data-target="muzzle_device_anchor">Vorderes Ende setzen</button>
 					<input type="hidden" name="ak[muzzle_device_anchor]" class="ak-pt" data-pt="muzzle_device_anchor" value="<?php echo esc_attr( $v['muzzle_device_anchor'] ); ?>">
@@ -116,7 +122,8 @@ class AK_Admin {
 
 			<p class="ak-row">
 				<input type="hidden" name="ak[image_id]" class="ak-image-id" value="<?php echo esc_attr( $v['image_id'] ); ?>">
-				<button type="button" class="button ak-pick-image">Vorschaubild wählen</button>
+				<button type="button" class="button ak-pick-image">Vorschaubild aus Produktbildern</button>
+				<button type="button" class="button-link ak-pick-image ak-pick-all">andere Bilder (Mediathek)</button>
 				<span class="description">Seitenansicht von rechts. Leer = Produktbild.</span>
 				<label><input type="checkbox" name="ak[flip]" value="yes" <?php checked( $v['flip'], 'yes' ); ?>> Bild spiegeln (wenn es die linke Seite zeigt)</label>
 			</p>

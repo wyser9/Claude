@@ -93,6 +93,7 @@ class AK_Settings {
 			'saved'   => 'Einstellungen gespeichert.',
 			'created' => 'Seite «Konfigurator» als private Seite angelegt.',
 			'error'   => 'Die Seite konnte nicht angelegt werden.',
+			'cleared' => 'Alle Meldungen gelöscht.',
 		);
 		?>
 		<div class="wrap">
@@ -183,6 +184,7 @@ class AK_Settings {
 				<thead><tr><th>Produkt</th><th>Rolle / Gruppe</th><th>Länge</th><th>Ergebnis</th></tr></thead>
 				<tbody></tbody>
 			</table>
+			<?php AK_Report::render_list(); ?>
 		</div>
 		<?php
 	}

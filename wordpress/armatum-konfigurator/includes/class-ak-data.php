@@ -22,10 +22,10 @@ class AK_Data {
 	/** Steckplätze an der Waffe (ausser Optik, die den Hauptanker nutzt). */
 	const SLOTS = array(
 		'muendung' => 'Mündung',
-		'unten'    => 'Handschutz unten',
-		'seite'    => 'Handschutz seitlich/oben',
+		'unten'    => 'Schiene unten (Handschutz oder Pistolenrahmen)',
+		'seite'    => 'Schiene seitlich/oben am Handschutz',
 		'schaft'   => 'Schaftaufnahme',
-		'griff'    => 'Griffaufnahme',
+		'griff'    => 'Aufnahme Pistolengriff',
 	);
 
 	/** Mündungskette in Reihenfolge: jedes Teil sitzt auf dem Ausgang des vorherigen. */
@@ -34,21 +34,44 @@ class AK_Data {
 	/** Gewinde, die als HUB-Standard (Ausgang zum Schalldämpfer) gelten. */
 	const HUB_STANDARDS = array( '1.375x24', '1.5x24', '1.5x18', '1.75x24' );
 
-	/** Zubehörgruppen: Schlüssel => array( Steckplatz, Bezeichnung, Ebene ). */
+	/** Zubehörgruppen: Schlüssel => array( Steckplatz (mehrere mit Komma, erster passender gilt), Bezeichnung, Ebene ). */
 	const GROUPS = array(
 		'muendungsaufsatz' => array( 'muendung', 'Mündungsaufsatz', 2 ),
 		'hub'            => array( 'muendung', 'HUB (Schalldämpfer-Adapter)', 3 ),
 		'schalldaempfer' => array( 'muendung', 'Schalldämpfer', 4 ),
-		'handgriff'      => array( 'unten', 'Handgriff', 3 ),
-		'laser'          => array( 'seite', 'Laser', 3 ),
+		'handgriff'      => array( 'unten', 'Frontgriff (am Handschutz)', 3 ),
+		'laser'          => array( 'seite,unten', 'Laser', 3 ),
+		'lampe'          => array( 'unten,seite', 'Lampe (Waffenlicht)', 3 ),
 		'schaft'         => array( 'schaft', 'Schulterstütze', 2 ),
-		'griff'          => array( 'griff', 'Griff', 2 ),
+		'griff'          => array( 'griff', 'Pistolengriff (beim Abzug)', 2 ),
 		// Adapterschiene (z.B. M-LOK → Picatinny): kein eigener Schritt, wird beim Handgriff/Laser mitgewählt.
 		'adapterschiene' => array( '', 'Adapterschiene (z.B. M-LOK auf Picatinny)', 2 ),
 	);
 
 	/** Gängige Schnittstellen (Vorschläge im Backend). */
-	const KNOWN_INTERFACES = array( 'picatinny', 'm-lok', 'keymod', '1/2x28', '5/8x24', 'm14x1-lh', 'm15x1', '1.375x24', '1.5x24', '1.75x24', '3-lug', 'taper-lok', 'ar15-buffer', 'ar15-griff' );
+	const KNOWN_INTERFACES = array(
+		'picatinny'   => 'schiene',
+		'rmr'         => 'optik',
+		'dpp'         => 'optik',
+		'rms'         => 'optik',
+		'rmsc'        => 'optik',
+		'acro'        => 'optik',
+		'docter'      => 'optik',
+		'm-lok'       => 'schiene',
+		'keymod'      => 'schiene',
+		'1/2x28'      => 'gewinde',
+		'5/8x24'      => 'gewinde',
+		'm14x1-lh'    => 'gewinde',
+		'm13.5x1-lh'  => 'gewinde',
+		'm15x1'       => 'gewinde',
+		'1.375x24'    => 'gewinde',
+		'1.5x24'      => 'gewinde',
+		'1.75x24'     => 'gewinde',
+		'3-lug'       => 'gewinde',
+		'taper-lok'   => 'gewinde',
+		'ar15-buffer' => 'schaft',
+		'ar15-griff'  => 'griff',
+	);
 
 	/** Schreibweisen, die auf eine Schnittstelle vereinheitlicht werden. */
 	const ALIASES = array(
@@ -65,7 +88,58 @@ class AK_Data {
 		'1913'               => 'picatinny',
 		'weaver/picatinny'   => 'picatinny',
 		'key-mod'            => 'keymod',
+		// Footprints für Rotpunkte (Pistolenschlitten, Adapterplatten).
+		'rmr/sro'            => 'rmr',
+		'trijiconrmr'        => 'rmr',
+		'trijiconrmr/sro'    => 'rmr',
+		'sro'                => 'rmr',
+		'deltapointpro'      => 'dpp',
+		'deltapoint'         => 'dpp',
+		'leupolddeltapointpro' => 'dpp',
+		'delta-point-pro'    => 'dpp',
+		'leupold-dpp'        => 'dpp',
+		'shieldrms'          => 'rms',
+		'shieldrmsc'         => 'rmsc',
+		'rms/rmsc'           => 'rms',
+		'aimpointacro'       => 'acro',
+		'docter/noblex'      => 'docter',
+		'doctor/noblex'      => 'docter',
+		'noblex'             => 'docter',
+		'doctor'             => 'docter',
 	);
+
+	/** Steckplätze einer Gruppe in Reihenfolge. */
+	public static function group_slots( $group ) {
+		if ( ! isset( self::GROUPS[ $group ] ) || '' === self::GROUPS[ $group ][0] ) {
+			return array();
+		}
+		return explode( ',', self::GROUPS[ $group ][0] );
+	}
+
+	/** Elternprodukt einer Variante, sonst 0. */
+	public static function parent_of( $product_id ) {
+		static $cache = array();
+		if ( ! isset( $cache[ $product_id ] ) ) {
+			$cache[ $product_id ] = 'product_variation' === get_post_type( $product_id ) ? (int) wp_get_post_parent_id( $product_id ) : 0;
+		}
+		return $cache[ $product_id ];
+	}
+
+	/** Kaufbare Varianten eines variablen Produkts. */
+	public static function variations( $product_id ) {
+		$product = wc_get_product( $product_id );
+		if ( ! $product || ! $product->is_type( 'variable' ) ) {
+			return array();
+		}
+		$out = array();
+		foreach ( $product->get_children() as $vid ) {
+			$v = wc_get_product( $vid );
+			if ( $v && $v->is_purchasable() && $v->is_in_stock() && $v->variation_is_visible() ) {
+				$out[] = (int) $vid;
+			}
+		}
+		return $out;
+	}
 
 	/**
 	 * Testmodus: Konfigurator nur für Shop-Manager/Admins sichtbar.
@@ -81,6 +155,10 @@ class AK_Data {
 	/** Liest einen Meta-Wert mit Präfix _ak_. */
 	public static function meta( $product_id, $key, $default = '' ) {
 		$value = get_post_meta( $product_id, '_ak_' . $key, true );
+		if ( ( '' === $value || null === $value ) && self::parent_of( $product_id ) ) {
+			// Varianten übernehmen die Einrichtung des Hauptprodukts.
+			$value = get_post_meta( self::parent_of( $product_id ), '_ak_' . $key, true );
+		}
 		return ( '' === $value || null === $value ) ? $default : $value;
 	}
 
@@ -119,6 +197,13 @@ class AK_Data {
 
 	/** Mittelrohr in mm: eigenes Feld, sonst Attribut pa_mittelrohrdurchmesser. */
 	public static function tube( $product_id ) {
+		if ( self::parent_of( $product_id ) ) {
+			$v = wc_get_product( $product_id );
+			$a = $v ? (string) $v->get_attribute( 'pa_mittelrohrdurchmesser' ) : '';
+			if ( preg_match( '/^\s*(\d+(?:[.,]\d+)?)\s*$/', $a, $m ) ) {
+				return (float) str_replace( ',', '.', $m[1] );
+			}
+		}
 		$own = self::meta( $product_id, 'mittelrohr' );
 		if ( '' !== $own ) {
 			return (float) str_replace( ',', '.', $own );
@@ -131,7 +216,8 @@ class AK_Data {
 		if ( '' === $attr ) {
 			return 0.0;
 		}
-		return (float) str_replace( ',', '.', preg_replace( '/[^0-9.,]/', '', $attr ) );
+		// Bei mehreren Werten (z.B. «30, 34» am variablen Hauptprodukt) gilt der erste.
+		return preg_match( '/\d+(?:[.,]\d+)?/', $attr, $m ) ? (float) str_replace( ',', '.', $m[0] ) : 0.0;
 	}
 
 	public static function is_direct( $product_id ) {
@@ -153,7 +239,8 @@ class AK_Data {
 	public static function image_id( $product_id ) {
 		$id = (int) self::meta( $product_id, 'image_id', 0 );
 		if ( ! $id ) {
-			$id = (int) get_post_thumbnail_id( $product_id );
+			$parent = self::parent_of( $product_id );
+			$id     = (int) get_post_thumbnail_id( $parent ? $parent : $product_id );
 		}
 		return $id;
 	}
@@ -200,7 +287,11 @@ class AK_Data {
 	/** Ausnahmen: manuell gesperrte Produkt-IDs an der Waffe. */
 	public static function blocked( $weapon_id ) {
 		$raw = (string) self::meta( $weapon_id, 'gesperrt' );
-		return array_filter( array_map( 'intval', explode( ',', $raw ) ) );
+		$ids = array_filter( array_map( 'intval', explode( ',', $raw ) ) );
+		foreach ( $ids as $id ) {
+			$ids = array_merge( $ids, self::variations( $id ) );
+		}
+		return array_values( array_unique( $ids ) );
 	}
 
 	public static function group( $product_id ) {
@@ -330,8 +421,19 @@ class AK_Data {
 		if ( in_array( $g, self::MUZZLE_CHAIN, true ) ) {
 			return true; // Mündungsteile werden in options_for_weapon über die Kette geprüft.
 		}
-		$slot = self::weapon_slot( $weapon_id, self::GROUPS[ $g ][0] );
-		return $slot && array_intersect( $slot['interfaces'], self::interfaces( $acc_id ) );
+		return '' !== self::fitting_slot( $weapon_id, $acc_id );
+	}
+
+	/** Erster Steckplatz der Waffe, auf den das Zubehör direkt passt, sonst ''. */
+	public static function fitting_slot( $weapon_id, $acc_id ) {
+		$need = self::interfaces( $acc_id );
+		foreach ( self::group_slots( self::group( $acc_id ) ) as $slot_key ) {
+			$slot = self::weapon_slot( $weapon_id, $slot_key );
+			if ( $slot && array_intersect( $slot['interfaces'], $need ) ) {
+				return $slot_key;
+			}
+		}
+		return '';
 	}
 
 	/** Produkte einer Rolle, die eingerichtet und kaufbar sind. */
@@ -346,15 +448,20 @@ class AK_Data {
 				'meta_value'     => $role,
 			)
 		);
-		return array_values(
-			array_filter(
-				$ids,
-				function ( $id ) {
-					$p = wc_get_product( $id );
-					return $p && $p->is_purchasable() && $p->is_in_stock() && self::is_ready( $id );
-				}
-			)
-		);
+		$out = array();
+		foreach ( $ids as $id ) {
+			$p = wc_get_product( $id );
+			if ( ! $p || ! self::is_ready( $id ) ) {
+				continue;
+			}
+			if ( $p->is_type( 'variable' ) ) {
+				// Jede kaufbare Variante ist ein eigener Eintrag (eigener Preis, Lager, Mittelrohr).
+				$out = array_merge( $out, self::variations( $id ) );
+			} elseif ( $p->is_purchasable() && $p->is_in_stock() ) {
+				$out[] = (int) $id;
+			}
+		}
+		return $out;
 	}
 
 	/**
@@ -399,6 +506,7 @@ class AK_Data {
 			)
 		);
 		$adapters = array();
+		$slots    = array();
 		foreach ( $all_acc as $acc_id ) {
 			$g = self::group( $acc_id );
 			if ( 'adapterschiene' === $g ) {
@@ -406,13 +514,15 @@ class AK_Data {
 			}
 			if ( in_array( $g, self::MUZZLE_CHAIN, true ) ) {
 				$muzzle[ $g ][] = $acc_id;
-			} elseif ( self::accessory_fits( $weapon_id, $acc_id ) ) {
-				$parts[ $g ][] = $acc_id;
+			} elseif ( '' !== ( $slot_key = self::fitting_slot( $weapon_id, $acc_id ) ) ) { // phpcs:ignore
+				$parts[ $g ][]      = $acc_id;
+				$slots[ $acc_id ]   = $slot_key;
 			} else {
-				$via = self::adapters_for( $weapon_id, $acc_id, $rails );
+				list( $via, $slot_key ) = self::adapters_for( $weapon_id, $acc_id, $rails );
 				if ( $via ) {
 					$parts[ $g ][]       = $acc_id;
 					$adapters[ $acc_id ] = $via;
+					$slots[ $acc_id ]    = $slot_key;
 				}
 			}
 		}
@@ -447,27 +557,29 @@ class AK_Data {
 			'mounts' => array_values( array_unique( $used_mounts ) ),
 			'parts'    => $parts,
 			'adapters' => $adapters,
+			'slots'    => $slots,
 		);
 	}
 
 	/** Adapterschienen, über die ein Zubehör an seinen Steckplatz passt (Eingang = Steckplatz, Ausgang = Zubehör). */
 	public static function adapters_for( $weapon_id, $acc_id, $rails ) {
-		$g = self::group( $acc_id );
-		if ( ! $g || ! self::GROUPS[ $g ][0] ) {
-			return array();
-		}
-		$slot = self::weapon_slot( $weapon_id, self::GROUPS[ $g ][0] );
-		if ( ! $slot ) {
-			return array();
-		}
 		$need = self::interfaces( $acc_id );
-		$out  = array();
-		foreach ( $rails as $r ) {
-			if ( array_intersect( $slot['interfaces'], self::interfaces( $r ) ) && array_intersect( self::outputs( $r ), $need ) ) {
-				$out[] = (int) $r;
+		foreach ( self::group_slots( self::group( $acc_id ) ) as $slot_key ) {
+			$slot = self::weapon_slot( $weapon_id, $slot_key );
+			if ( ! $slot ) {
+				continue;
+			}
+			$out = array();
+			foreach ( $rails as $r ) {
+				if ( array_intersect( $slot['interfaces'], self::interfaces( $r ) ) && array_intersect( self::outputs( $r ), $need ) ) {
+					$out[] = (int) $r;
+				}
+			}
+			if ( $out ) {
+				return array( $out, $slot_key );
 			}
 		}
-		return $out;
+		return array( array(), '' );
 	}
 
 	/**
@@ -517,7 +629,7 @@ class AK_Data {
 		}
 		$chain = array_intersect_key( $parts, array_flip( self::MUZZLE_CHAIN ) );
 		if ( $chain && ! self::muzzle_chain_valid( $weapon_id, $chain ) ) {
-			return new WP_Error( 'ak_muzzle', 'Die gewählten Teile an der Mündung passen nicht zusammen. Ein Schalldämpfer braucht einen passenden HUB.' );
+			return new WP_Error( 'ak_muzzle', 'Die gewählten Teile an der Mündung passen nicht zusammen. Ein Schalldämpfer passt direkt auf ein gleiches Mündungsgewinde oder auf einen passenden HUB.' );
 		}
 		if ( ! $optic_id && ! $parts ) {
 			return new WP_Error( 'ak_empty', 'Bitte mindestens ein Zubehör wählen.' );
@@ -528,7 +640,7 @@ class AK_Data {
 	/** Bekannte Schnittstellen: Standardliste, im Shop verwendete Werte und Gewinde-Attribute. */
 	public static function known_interfaces() {
 		global $wpdb;
-		$list = self::KNOWN_INTERFACES;
+		$list = array_keys( self::KNOWN_INTERFACES );
 		$rows = $wpdb->get_col( "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} WHERE meta_key IN ('_ak_schnittstelle','_ak_ausgang','_ak_muzzle_device_if') OR meta_key LIKE '\\_ak\\_slot\\_%\\_if'" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 		foreach ( (array) $rows as $r ) {
 			$list = array_merge( $list, self::split( $r ) );
@@ -541,8 +653,28 @@ class AK_Data {
 				}
 			}
 		}
-		$list = array_values( array_unique( array_filter( $list ) ) );
-		return $list;
+		$out = array();
+		foreach ( array_unique( array_filter( $list ) ) as $v ) {
+			$out[ $v ] = self::interface_kind( $v );
+		}
+		return $out;
+	}
+
+	/** Art einer Schnittstelle für die Vorschläge im Backend: optik, schiene, gewinde, schaft, griff, andere. */
+	public static function interface_kind( $v ) {
+		if ( isset( self::KNOWN_INTERFACES[ $v ] ) ) {
+			return self::KNOWN_INTERFACES[ $v ];
+		}
+		if ( preg_match( '/buffer|schaft|stock/', $v ) ) {
+			return 'schaft';
+		}
+		if ( preg_match( '/griff|grip/', $v ) ) {
+			return 'griff';
+		}
+		if ( preg_match( '/\d.*x\s*\d|-lh$|lug|taper/', $v ) ) {
+			return 'gewinde';
+		}
+		return 'andere';
 	}
 
 	/** Daten eines Produkts für die Vorschau (JavaScript). */
@@ -560,7 +692,7 @@ class AK_Data {
 			'price'      => (float) wc_get_price_to_display( $product ),
 			'priceHtml'  => $product->get_price_html(),
 			'stock'      => $product->is_on_backorder() ? 'Lieferbar auf Bestellung' : 'An Lager',
-			'url'        => get_permalink( $product_id ),
+			'url'        => $product->get_permalink(),
 			'img'        => $src ? $src[0] : '',
 			'imgW'       => $src ? (int) $src[1] : 0,
 			'imgH'       => $src ? (int) $src[2] : 0,

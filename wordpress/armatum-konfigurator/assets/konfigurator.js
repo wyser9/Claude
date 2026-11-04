@@ -38,7 +38,10 @@
 		schaft: 'Keine Schulterstütze',
 		hub: 'Kein HUB',
 		muendungsaufsatz: 'Original-Mündungsaufsatz behalten',
-		griff: 'Original-Griff behalten'
+		griff: 'Original-Griff behalten',
+		handgriff: 'Kein Frontgriff',
+		laser: 'Kein Laser',
+		lampe: 'Keine Lampe'
 	};
 	var FILTER_MIN = 6;
 
@@ -115,7 +118,7 @@
 		$.each(this.groups, function (i, g) {
 			var list = self.noneCard('ak_g_' + g.key, NONE[g.key] || 'Kein ' + g.label);
 			$.each(g.items, function (_, it) { list += self.card(it, 'ak_g_' + g.key, it.adapters && it.adapters.length ? 'mit Adapterschiene' : ''); });
-			var note = g.key === 'schalldaempfer' ? 'Zuerst einen passenden HUB wählen.' : g.key === 'hub' ? 'Für die gewählte Mündung ist kein HUB erfasst.' : '';
+			var note = g.key === 'schalldaempfer' ? 'Kein Schalldämpfer passt direkt auf das Mündungsgewinde. Wähle zuerst einen passenden HUB.' : g.key === 'hub' ? 'Für die gewählte Mündung ist kein HUB erfasst.' : '';
 			html += self.step(g.key, g.label, (note ? '<p class="ak-step-note">' + esc(note) + '</p>' : '') + self.filterBar(g.items) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
 				'<div class="ak-step-adapter" hidden><h4>Adapterschiene</h4><div class="ak-list ak-adapters" role="radiogroup"></div></div>', !html);
 		});
@@ -145,6 +148,7 @@
 			self.applyFilter($(this).closest('.ak-step'));
 		});
 		this.$root.find('.ak-add').on('click', function () { self.add(); });
+		this.$root.find('.ak-report-send').on('click', function () { self.report(); });
 	};
 
 	Konfigurator.prototype.applyFilter = function ($step) {
@@ -382,7 +386,7 @@
 				at = mz.placed[x.g.key];
 				if (!at) { return; }
 			} else {
-				var sp = w.slots && w.slots[x.g.slot];
+				var sp = w.slots && w.slots[x.item.slot || x.g.slot];
 				if (!sp) { return; }
 				at = self.weaponPoint(sp);
 				var r = self.rails[x.g.key];
@@ -456,10 +460,9 @@
 		this.draw();
 	};
 
-	Konfigurator.prototype.add = function () {
+	/** Auswahl als Formulardaten (für Warenkorb und Meldung). */
+	Konfigurator.prototype.selection = function () {
 		var self = this;
-		var $btn = this.$root.find('.ak-add').prop('disabled', true).addClass('loading');
-		var $msg = this.$root.find('.ak-msg').removeClass('ak-error').text('');
 		var data = {
 			weapon: this.cfg.weapon.id,
 			optic: this.optic ? this.optic.id : 0,
@@ -469,6 +472,31 @@
 			data['parts[' + x.g.key + ']'] = x.item.id;
 			if (self.rails[x.g.key]) { data['adapters[' + x.g.key + ']'] = self.rails[x.g.key].id; }
 		});
+		return data;
+	};
+
+	Konfigurator.prototype.report = function () {
+		var $r = this.$root.find('.ak-report');
+		var $msg = $r.find('.ak-report-msg').removeClass('ak-error').text('');
+		var text = $.trim($r.find('.ak-report-text').val());
+		if (text.length < 5) { $msg.addClass('ak-error').text('Bitte kurz beschreiben, was nicht stimmt.'); return; }
+		var $btn = $r.find('.ak-report-send').prop('disabled', true);
+		var data = $.extend(this.selection(), {
+			text: text, email: $r.find('.ak-report-mail').val(), website: $r.find('.ak-report-hp').val(), url: window.location.href
+		});
+		$.post(this.cfg.reportUrl, data).done(function (res) {
+			$msg.text(res.data.message);
+			$r.find('.ak-report-text').val('');
+		}).fail(function (xhr) {
+			$msg.addClass('ak-error').text(xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data.message : 'Senden fehlgeschlagen.');
+		}).always(function () { $btn.prop('disabled', false); });
+	};
+
+	Konfigurator.prototype.add = function () {
+		var self = this;
+		var $btn = this.$root.find('.ak-add').prop('disabled', true).addClass('loading');
+		var $msg = this.$root.find('.ak-msg').removeClass('ak-error').text('');
+		var data = this.selection();
 		$.post(this.cfg.ajaxUrl, data).done(function (res) {
 			$msg.html(esc(res.data.message) + ' <a href="' + esc(self.cfg.cartUrl) + '">Zum Warenkorb</a>');
 			$(document.body).trigger('wc_fragment_refresh');

@@ -98,3 +98,12 @@ Gruppe «Adapterschiene», z.B. M-LOK auf Picatinny: Schnittstelle `m-lok`, Ausg
 ## Schnittstellen-Schreibweise (ab 0.5)
 
 Unter jedem Schnittstellen-Feld stehen die bekannten Werte als Knöpfe. Neue Werte werden rot markiert. Beim Speichern werden Schreibweisen vereinheitlicht (z.B. `mlok`, `M Lok` → `m-lok`; `Picatinny-Schiene`, `1913` → `picatinny`).
+
+## Neu in 0.6
+
+- **Variable Produkte:** Einrichtung einmal am Hauptprodukt. Jede kaufbare Variante erscheint einzeln (eigener Preis, Lager). Mittelrohr kommt aus dem Variantenattribut «Mittelrohrdurchmesser [mm]». Im Warenkorb landet die Variante.
+- **Pistolen:** Footprints als Schnittstelle (`rmr`, `dpp`, `rms`, `rmsc`, `acro`, `docter`; Schreibweisen wie «Trijicon RMR/SRO» werden vereinheitlicht). Rotpunkt mit «direkt» + Footprint passt auf die Pistole mit gleichem Footprint. Schalldämpfer mit gleichem Mündungsgewinde passen ohne HUB.
+- **Gruppe Lampe** (Waffenlicht). Laser und Lampe passen an die Schiene unten oder seitlich (direkt bevorzugt, sonst über Adapterschiene).
+- **Bezeichnungen:** «Frontgriff (am Handschutz)» und «Pistolengriff (beim Abzug)». Das Schnittstellen-Feld heisst je nach Rolle «Optik-Aufnahme» oder «Passt auf (…)», die Knöpfe zeigen nur passende Werte (Rest unter «weitere»).
+- **Bildauswahl:** «Vorschaubild aus Produktbildern» zeigt Beitragsbild und Galerie, «andere Bilder» die ganze Mediathek.
+- **Fehler melden:** Link «Passt etwas nicht? Melden» unter der Vorschau. Die Auswahl wird mitgeschickt, die Meldung geht per E-Mail an den Shop und steht unter WooCommerce → Konfigurator.

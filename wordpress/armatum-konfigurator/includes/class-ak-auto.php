@@ -20,10 +20,11 @@ class AK_Auto {
 		'muendungsaufsatz' => array( 'zubehoer', 'muendungsaufsatz', false, 'Mündungsaufsatz' ),
 		'hub'              => array( 'zubehoer', 'hub', false, 'HUB' ),
 		'schalldaempfer'   => array( 'zubehoer', 'schalldaempfer', false, 'Schalldämpfer' ),
-		'handgriff'        => array( 'zubehoer', 'handgriff', false, 'Handgriff' ),
+		'handgriff'        => array( 'zubehoer', 'handgriff', false, 'Frontgriff (am Handschutz)' ),
 		'laser'            => array( 'zubehoer', 'laser', false, 'Laser' ),
+		'lampe'            => array( 'zubehoer', 'lampe', false, 'Lampe (Waffenlicht)' ),
 		'schaft'           => array( 'zubehoer', 'schaft', false, 'Schulterstütze' ),
-		'griff'            => array( 'zubehoer', 'griff', false, 'Griff' ),
+		'griff'            => array( 'zubehoer', 'griff', false, 'Pistolengriff (beim Abzug)' ),
 		'adapterschiene'   => array( 'zubehoer', 'adapterschiene', false, 'Adapterschiene (M-LOK auf Picatinny)' ),
 	);
 
@@ -46,7 +47,7 @@ class AK_Auto {
 			return '';
 		}
 		$map   = self::cat_map();
-		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'schaft', 'griff', 'montage', 'optik_direkt', 'optik', 'waffe' );
+		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'lampe', 'schaft', 'griff', 'montage', 'optik_direkt', 'optik', 'waffe' );
 		foreach ( $order as $t ) {
 			if ( ! empty( $map[ $t ] ) && array_intersect( array_map( 'intval', $map[ $t ] ), $cats ) ) {
 				return $t;

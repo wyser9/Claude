@@ -119,11 +119,17 @@ class AK_Cart {
 		$added        = array();
 		$failed       = false;
 		foreach ( $lines as $role => $pid ) {
+			$parent = AK_Data::parent_of( $pid );
+			$attrs  = array();
+			if ( $parent ) {
+				$variation = wc_get_product( $pid );
+				$attrs     = $variation ? $variation->get_variation_attributes() : array();
+			}
 			$key = WC()->cart->add_to_cart(
-				$pid,
+				$parent ? $parent : $pid,
 				1,
-				0,
-				array(),
+				$parent ? $pid : 0,
+				$attrs,
 				array(
 					'ak_group'  => $package,
 					'ak_role'   => $role,
