@@ -577,36 +577,6 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/holosun-hs507c-x2-red-dot-visier/"
 },
-"12951": {
-"cats": [
-"Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
-],
-"images": 2,
-"name": "Holosun HS403C-FDE",
-"on_sale": false,
-"price": "28995",
-"regular": "28995",
-"short": "Entdecken Sie das Holosun HS403C-FDE – Ihr zuverlässiges Rotpunktvisier in FDE Das Holosun HS403C-FDE ist ein hochwertiges Rotpunktvisier für Schützen, die Präzision und Zuverlässigkeit schätzen. Mit seinem robusten Design und seiner klaren Optik ist dieses Visier die perfekte Wahl für alle, die Wer",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/holosun-hs403c-fde/"
-},
-"12952": {
-"cats": [
-"Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
-],
-"images": 8,
-"name": "Holosun HS403C",
-"on_sale": false,
-"price": "28995",
-"regular": "28995",
-"short": "Entdecken Sie das Holosun HS403C – Ihr zuverlässiges Rotpunktvisier Das Holosun HS403C ist ein hochwertiges Rotpunktvisier , das für seine Präzision und Zuverlässigkeit bekannt ist. Mit seinem robusten Design und seiner klaren Optik ist dieses Visier die perfekte Wahl für Schützen, die Wert auf Qual",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/holosun-hs403c/"
-},
 "12953": {
 "cats": [
 "Holosun",
@@ -9396,7 +9366,7 @@
 "price": "2990",
 "regular": "2990",
 "short": "Hochwertiges Hornady One Shot Corn Cob Media (76 oz) für Vibrations- und Rotations-Tumbler. Effizient, umweltfreundlich und ideal für saubere Hülsen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hornady-one-shot-tumbler-media-corn-cob-76-oz-reinigungsgranulat-fuer-huelsen/"
 },
 "18830": {
@@ -36094,15 +36064,14 @@
 "23857": {
 "cats": [
 "Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
+"Rotpunkt / Red Dots"
 ],
-"images": 4,
-"name": "Holosun ARO MRS RD Reflexvisier – Red Circle Dot  Multi-Reticle  Shake Awake",
+"images": 2,
+"name": "Holosun ARO-CORE-MRS-RD Reflexvisier – Red Circle Dot Multi-Reticle",
 "on_sale": false,
-"price": "33990",
-"regular": "33990",
-"short": "Reflexvisier mit Red Circle Dot und Multi-Reticle System. Kompakt, robust und ideal für schnelles und präzises Schiessen.",
+"price": "27990",
+"regular": "27990",
+"short": "Geschlossenes Reflexvisier mit Red Circle Dot und Multi-Reticle System. Aluminiumgehäuse, geneigte Frontlinse, Shake Awake und IP67. Nachfolger des Holosun ARO-MRS-RD.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-aro-mrs-rd-red-circle-dot-reflexvisier/"
 },
@@ -38566,14 +38535,13 @@
 "24556": {
 "cats": [
 "Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
+"Rotpunkt / Red Dots"
 ],
-"images": 1,
+"images": 2,
 "name": "Holosun ARO CORE RD2 Rotpunktvisier",
 "on_sale": false,
-"price": "28990",
-"regular": "28990",
+"price": "23890",
+"regular": "23890",
 "short": "Kompaktes Red Dot mit 2 MOA Punkt. Robust, präzise und ideal für Carbine und dynamische Einsätze.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-aro-core-rd2/"
@@ -38596,14 +38564,13 @@
 "24563": {
 "cats": [
 "Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
+"Rotpunkt / Red Dots"
 ],
-"images": 1,
+"images": 2,
 "name": "Holosun ARO CORE RD2 BRN Rotpunktvisier",
 "on_sale": false,
-"price": "28990",
-"regular": "28990",
+"price": "23890",
+"regular": "23890",
 "short": "Kompaktes Red Dot in BRN mit 2 MOA Punkt. Robust, präzise und ideal für Carbine und dynamische Einsätze.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-aro-core-rd2-brn/"
@@ -38611,14 +38578,13 @@
 "24566": {
 "cats": [
 "Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
+"Rotpunkt / Red Dots"
 ],
-"images": 1,
+"images": 2,
 "name": "Holosun ARO CORE RD2 FDE Rotpunktvisier",
 "on_sale": false,
-"price": "30990",
-"regular": "30990",
+"price": "23890",
+"regular": "23890",
 "short": "Kompaktes Red Dot in FDE mit 2 MOA Punkt. Robust, präzise und ideal für Carbine und dynamische Einsätze.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-aro-core-rd2-fde/"
