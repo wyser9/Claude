@@ -250,4 +250,40 @@ class BWS_Util {
 		}
 		return $until;
 	}
+
+	/**
+	 * Name für Vergleiche: klein, Umlaute ausgeschrieben, Akzente und Satzzeichen entfernt.
+	 *
+	 * @param string $name Name.
+	 * @return string
+	 */
+	public static function normalize_name( $name ) {
+		$name = function_exists( 'mb_strtolower' ) ? mb_strtolower( trim( (string) $name ), 'UTF-8' ) : strtolower( trim( (string) $name ) );
+		$name = strtr( $name, array( 'ä' => 'ae', 'ö' => 'oe', 'ü' => 'ue', 'ß' => 'ss' ) );
+		$name = function_exists( 'remove_accents' ) ? remove_accents( $name ) : strtr( $name, array( 'à' => 'a', 'á' => 'a', 'â' => 'a', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'î' => 'i', 'ï' => 'i', 'ñ' => 'n', 'ô' => 'o', 'ù' => 'u', 'û' => 'u' ) );
+		$name = preg_replace( '/[^a-z0-9]+/', ' ', $name );
+		return trim( preg_replace( '/\s+/', ' ', $name ) );
+	}
+
+	/**
+	 * Telefonnummer für Vergleiche: nur Ziffern, Schweizer Format ohne Vorwahl +41/0041/0.
+	 *
+	 * @param string $phone Nummer.
+	 * @return string
+	 */
+	public static function normalize_phone( $phone ) {
+		$digits = preg_replace( '/\D+/', '', (string) $phone );
+		$digits = preg_replace( '/^(0041|41|0)/', '', $digits );
+		return strlen( $digits ) >= 8 ? $digits : '';
+	}
+
+	/**
+	 * Schweizer Mobilnummer (07x)?
+	 *
+	 * @param string $phone Nummer.
+	 * @return bool
+	 */
+	public static function is_mobile_phone( $phone ) {
+		return (bool) preg_match( '/^7[5-9]/', self::normalize_phone( $phone ) );
+	}
 }

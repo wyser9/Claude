@@ -74,5 +74,11 @@ check( 'Platzhalter TWINT Express', true, BWS_Util::is_placeholder_customer( 'Fi
 check( 'Platzhalter nur Name', true, BWS_Util::is_placeholder_customer( 'First', 'Last', '', '123 Main St' ) );
 check( 'Echter Kunde', false, BWS_Util::is_placeholder_customer( 'Hans', 'Muster', 'hans@muster.ch', 'Bahnhofstrasse 1' ) );
 check( 'Echter Kunde namens Last', false, BWS_Util::is_placeholder_customer( 'First', 'Last', 'first.last@gmx.ch', 'Dorfstrasse 3' ) );
+check( 'Name normalisiert', 'pluess flavio', BWS_Util::normalize_name( '  Plüss   Flavio ' ) );
+check( 'Name Akzent', 'rene', BWS_Util::normalize_name( 'René' ) );
+check( 'Telefon +41', '791234567', BWS_Util::normalize_phone( '+41 79 123 45 67' ) );
+check( 'Telefon 0', '791234567', BWS_Util::normalize_phone( '079/123 45 67' ) );
+check( 'Mobil', true, BWS_Util::is_mobile_phone( '0791234567' ) );
+check( 'Festnetz', false, BWS_Util::is_mobile_phone( '062 123 45 67' ) );
 echo $failures ? "\n$failures Fehler\n" : "\nAlle Tests bestanden.\n";
 exit( $failures ? 1 : 0 );

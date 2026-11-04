@@ -37,7 +37,10 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 		if ( isset( $body['article_type_id'] ) ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'Widget schema does not include the following field(s): article_type_id' ) ), 422 );
 		return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
 	}
-	if ( 'POST' === $m && '2.0/contact/search' === $path ) return resp( array() );
+	if ( 'POST' === $m && '2.0/contact/search' === $path ) {
+		return resp( array_values( array_filter( $GLOBALS['bws_contacts'] ?? array(), function ( $c ) use ( $body ) { return isset( $c[ $body[0]['field'] ] ) && strtolower( (string) $c[ $body[0]['field'] ] ) === strtolower( (string) $body[0]['value'] ); } ) ) );
+	}
+	if ( 'POST' === $m && preg_match( '#^2\.0/contact/(\d+)$#', $path, $mm ) ) return resp( array_merge( $body, array( 'id' => (int) $mm[1] ) ) );
 	if ( 'POST' === $m && '2.0/contact' === $path ) return resp( array_merge( $body, array( 'id' => 500 ) ) );
 	if ( 'POST' === $m && '2.0/kb_order/search' === $path ) {
 		// bexio "like" = Teilstring-Suche.
@@ -518,6 +521,23 @@ $GLOBALS['bws_requests'] = array();
 $phr = BWS_Order_Sync::sync( wc_get_order( $ph->get_id() ) );
 t( 'Platzhalter-Bestellung nicht übertragen', 0 === $phr && ! array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0]; } ) && ! wc_get_order( $ph->get_id() )->get_meta( '_bws_order_id' ) );
 t( 'Platzhalter: Notiz', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $ph->get_id() ) ), 'content' ) ), 'Platzhalterdaten' ) );
+
+// --- Keine Kontakt-Doubletten: bestehender Kontakt ohne E-Mail ---
+$GLOBALS['bws_contacts'] = array(
+	array( 'id' => 300, 'contact_type_id' => 2, 'name_1' => 'Pluess', 'name_2' => 'Flavio', 'postcode' => '4616', 'city' => 'Kappel', 'mail' => '', 'phone_fixed' => '', 'phone_mobile' => '', 'user_id' => 7, 'owner_id' => 7 ),
+	array( 'id' => 301, 'contact_type_id' => 2, 'name_1' => 'Plüss', 'name_2' => 'Anna', 'postcode' => '4616', 'mail' => '' ),
+	array( 'id' => 302, 'contact_type_id' => 2, 'name_1' => 'Plüss', 'name_2' => 'Flavio', 'postcode' => '8000', 'mail' => '' ),
+);
+$dup = wc_create_order(); $dup->set_address( array( 'first_name' => 'Flavio', 'last_name' => 'Plüss', 'address_1' => 'Kaltbachstrasse 1', 'postcode' => '4616', 'city' => 'Kappel', 'country' => 'CH', 'email' => 'flavio@example.ch', 'phone' => '079 123 45 67' ), 'billing' ); $dup->save();
+$GLOBALS['bws_requests'] = array();
+$cid = BWS_Contact_Sync::ensure_contact( $dup );
+$posted = array(); foreach ( $GLOBALS['bws_requests'] as $q ) { if ( 'POST' === $q[0] && false === strpos( $q[1], 'search' ) ) { $posted[ $q[1] ] = $q[2]; } }
+t( 'Bestehender Kontakt über PLZ + Name (Umlaut) gefunden', 300 === $cid && ! isset( $posted['2.0/contact'] ), $cid . ' ' . wp_json_encode( array_keys( $posted ) ) );
+t( 'Fehlende E-Mail und Mobilnummer ergänzt, Name unverändert', isset( $posted['2.0/contact/300'] ) && 'flavio@example.ch' === $posted['2.0/contact/300']['mail'] && '079 123 45 67' === $posted['2.0/contact/300']['phone_mobile'] && 'Pluess' === $posted['2.0/contact/300']['name_1'] && ! isset( $posted['2.0/contact/300']['street_name'] ), wp_json_encode( $posted ) );
+$other = wc_create_order(); $other->set_address( array( 'first_name' => 'Flavio', 'last_name' => 'Plüss', 'postcode' => '3000', 'city' => 'Bern', 'country' => 'CH', 'email' => 'f2@example.ch' ), 'billing' ); $other->save();
+$GLOBALS['bws_requests'] = array();
+t( 'Gleicher Name, andere PLZ -> neuer Kontakt', 500 === BWS_Contact_Sync::ensure_contact( $other ) );
+$GLOBALS['bws_contacts'] = array();
 
 // --- Bestellstatus aus bexio ---
 BWS_Settings::save( array( 'status_from_bexio' => 'yes', 'sync_orders' => 'yes' ) );

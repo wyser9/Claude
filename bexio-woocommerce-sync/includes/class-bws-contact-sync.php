@@ -4,7 +4,9 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Besteller (Rechnungsadresse) als bexio-Kontakt anlegen bzw. wiederfinden.
  *
- * Reihenfolge: gespeicherte Kontakt-ID am Kundenkonto -> Suche per E-Mail in bexio -> neu anlegen.
+ * Reihenfolge: gespeicherte Kontakt-ID am Kundenkonto -> Suche per E-Mail -> Suche über PLZ und Name
+ * (bzw. Telefon) -> neu anlegen. So entstehen keine Doubletten, wenn ein bestehender bexio-Kontakt noch
+ * keine E-Mail hat. Fehlende E-Mail/Telefonnummer werden beim gefundenen Kontakt ergänzt.
  * Firmenkunden (Feld "Firma" ausgefüllt) werden als Firma, alle anderen als Person angelegt.
  */
 class BWS_Contact_Sync {
@@ -25,8 +27,19 @@ class BWS_Contact_Sync {
 
 		$contact_id = $customer_id ? (int) get_user_meta( $customer_id, self::META_CONTACT_ID, true ) : 0;
 
+		$match = null;
 		if ( ! $contact_id && ! empty( $payload['mail'] ) ) {
 			$contact_id = self::find_by_email( $payload['mail'] );
+		}
+		if ( ! $contact_id ) {
+			$match = self::find_by_address( $payload );
+			if ( $match ) {
+				$contact_id = (int) $match['id'];
+				bws_log( 'info', sprintf( 'Bestellung #%s: bestehender bexio-Kontakt %d über Name und PLZ gefunden – kein neuer Kontakt.', $order->get_order_number(), $contact_id ) );
+				if ( ! BWS_Settings::enabled( 'update_contacts' ) ) {
+					self::fill_missing( $contact_id, $match, $payload );
+				}
+			}
 		}
 
 		if ( $contact_id && BWS_Settings::enabled( 'update_contacts' ) ) {
@@ -57,19 +70,109 @@ class BWS_Contact_Sync {
 	}
 
 	/**
-	 * Sucht einen Kontakt per E-Mail.
+	 * Sucht einen Kontakt per E-Mail (Haupt- oder Zweitadresse).
 	 *
 	 * @param string $email E-Mail.
 	 * @return int|null
 	 */
 	public static function find_by_email( $email ) {
-		$hits = BWS_Client::instance()->search( '2.0/contact/search', 'mail', $email );
-		foreach ( $hits as $hit ) {
-			if ( isset( $hit['mail'] ) && strtolower( $hit['mail'] ) === strtolower( $email ) ) {
-				return (int) $hit['id'];
+		$email = strtolower( trim( $email ) );
+		foreach ( array( 'mail', 'mail_second' ) as $field ) {
+			foreach ( BWS_Client::instance()->search( '2.0/contact/search', $field, $email ) as $hit ) {
+				if ( isset( $hit[ $field ] ) && strtolower( trim( $hit[ $field ] ) ) === $email ) {
+					return (int) $hit['id'];
+				}
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Sucht einen Kontakt mit gleicher PLZ und gleichem Namen (Umlaute, Gross-/Kleinschreibung und
+	 * vertauschte Vor-/Nachnamen egal) oder gleicher Telefonnummer.
+	 *
+	 * @param array $payload Kontaktdaten der Bestellung.
+	 * @return array|null bexio-Kontakt.
+	 */
+	public static function find_by_address( array $payload ) {
+		if ( empty( $payload['postcode'] ) ) {
+			return null;
+		}
+		$hits = BWS_Client::instance()->post(
+			'2.0/contact/search',
+			array(
+				array(
+					'field'    => 'postcode',
+					'value'    => (string) $payload['postcode'],
+					'criteria' => '=',
+				),
+			),
+			array( 'limit' => 500 )
+		);
+		$phone = BWS_Util::normalize_phone( $payload['phone_fixed'] ?? '' );
+		$found = array();
+		foreach ( is_array( $hits ) ? $hits : array() as $hit ) {
+			if ( self::same_name( $hit, $payload ) || ( '' !== $phone && in_array( $phone, array( BWS_Util::normalize_phone( $hit['phone_fixed'] ?? '' ), BWS_Util::normalize_phone( $hit['phone_mobile'] ?? '' ) ), true ) && self::same_name( $hit, $payload, true ) ) ) {
+				$found[ (int) $hit['id'] ] = $hit;
+			}
+		}
+		if ( ! $found ) {
+			return null;
+		}
+		ksort( $found ); // Bei mehreren Treffern den ältesten Kontakt nehmen.
+		return reset( $found );
+	}
+
+	/**
+	 * Gleicher Name? Personen: Vor- und Nachname (auch vertauscht). Firmen: Firmenname.
+	 *
+	 * @param array $hit       bexio-Kontakt.
+	 * @param array $payload   Kontaktdaten der Bestellung.
+	 * @param bool  $last_only Nur Nach- bzw. Firmenname vergleichen (bei gleicher Telefonnummer).
+	 * @return bool
+	 */
+	private static function same_name( array $hit, array $payload, $last_only = false ) {
+		$n = array( 'BWS_Util', 'normalize_name' );
+		$a1 = $n( $hit['name_1'] ?? '' );
+		$a2 = $n( $hit['name_2'] ?? '' );
+		$b1 = $n( $payload['name_1'] ?? '' );
+		$b2 = $n( $payload['name_2'] ?? '' );
+		if ( '' === $b1 || (int) ( $hit['contact_type_id'] ?? 0 ) !== (int) $payload['contact_type_id'] ) {
+			return false;
+		}
+		if ( 1 === (int) $payload['contact_type_id'] || $last_only ) {
+			return $a1 === $b1 || ( ! $last_only ? false : $a2 === $b1 );
+		}
+		return ( $a1 === $b1 && $a2 === $b2 ) || ( $a1 === $b2 && $a2 === $b1 );
+	}
+
+	/**
+	 * Ergänzt beim gefundenen Kontakt nur leere Felder (E-Mail, Telefon). Bestehende Werte bleiben.
+	 *
+	 * @param int   $contact_id bexio-Kontakt-ID.
+	 * @param array $existing   bexio-Kontakt.
+	 * @param array $payload    Kontaktdaten der Bestellung.
+	 */
+	private static function fill_missing( $contact_id, array $existing, array $payload ) {
+		$fields = array();
+		if ( ! empty( $payload['mail'] ) && empty( $existing['mail'] ) ) {
+			$fields['mail'] = $payload['mail'];
+		}
+		if ( ! empty( $payload['phone_fixed'] ) && empty( $existing['phone_fixed'] ) && empty( $existing['phone_mobile'] ) ) {
+			$key            = BWS_Util::is_mobile_phone( $payload['phone_fixed'] ) ? 'phone_mobile' : 'phone_fixed';
+			$fields[ $key ] = $payload['phone_fixed'];
+		}
+		if ( ! $fields ) {
+			return;
+		}
+		// bexio verlangt beim Bearbeiten die Grunddaten des Kontakts.
+		$base = array_intersect_key( $existing, array_flip( array( 'contact_type_id', 'name_1', 'name_2', 'user_id', 'owner_id' ) ) );
+		try {
+			BWS_Client::instance()->post( '2.0/contact/' . (int) $contact_id, array_filter( $base, array( __CLASS__, 'not_empty' ) ) + $fields );
+			bws_log( 'info', sprintf( 'bexio-Kontakt %d ergänzt: %s.', $contact_id, implode( ', ', array_keys( $fields ) ) ) );
+		} catch ( BWS_Exception $e ) {
+			bws_log( 'warning', sprintf( 'bexio-Kontakt %d konnte nicht ergänzt werden: %s', $contact_id, $e->getMessage() ) );
+		}
 	}
 
 	/**

@@ -84,8 +84,9 @@ bexio führt das Lager. Einmal täglich holt das Plugin alle Artikel aus bexio u
 
 ### Besteller → Kontakt
 1. Kontakt-ID am Kundenkonto (bei Stammkunden)
-2. Suche in bexio per **E-Mail**
-3. Sonst Neuanlage: Ist das Feld *Firma* ausgefüllt, als **Firma** (Ansprechperson in Zeile 2), sonst als **Person**.
+2. Suche in bexio per **E-Mail** (Haupt- und Zweitadresse)
+3. Suche über **PLZ + Name**. Gross-/Kleinschreibung, Umlaute (Plüss = Pluess), Akzente und vertauschte Vor-/Nachnamen spielen keine Rolle. Alternativ zählen PLZ, Nachname und gleiche Telefonnummer. So entsteht keine Doublette, wenn der bestehende Kontakt noch keine E-Mail hat. Beim gefundenen Kontakt werden **nur leere Felder** ergänzt: E-Mail und Telefon, eine 07x-Nummer als Mobilnummer. Bei mehreren Treffern gilt der älteste Kontakt.
+4. Sonst Neuanlage: Ist das Feld *Firma* ausgefüllt, als **Firma** (Ansprechperson in Zeile 2), sonst als **Person**.
 - Die Adresse wird in Strasse und Hausnummer zerlegt (`Bahnhofstrasse 12a`, `12 Rue du Lac`), Land, Telefon und E-Mail werden übernommen.
 - Bestehende bexio-Kontakte werden standardmässig **nicht** überschrieben (Option „Bestehende Kontakte aktualisieren“).
 
