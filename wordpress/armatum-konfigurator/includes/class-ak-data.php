@@ -271,6 +271,43 @@ class AK_Data {
 		return (bool) array_intersect( self::interfaces( $weapon_id ), self::interfaces( $optic_id ) );
 	}
 
+	/** Höhe der Rohrachse über der Schiene in mm (Montage: Ankerpunkt Unterseite → Rohrmitte). */
+	public static function axis_height( $mount_id ) {
+		$a = self::point( $mount_id, 'anchor' );
+		$t = self::point( $mount_id, 'tube_anchor' );
+		return $a && $t ? ( $a[1] - $t[1] ) * self::scale( $mount_id ) : 0.0;
+	}
+
+	/**
+	 * Wie weit die Optik unter die Rohrachse reicht (Objektiv/Okular) in mm.
+	 * Aus dem Punkt «Tiefster Punkt», sonst geschätzt aus dem Attribut Objektivdurchmesser (+ 4 mm Gehäuse), sonst 0 = unbekannt.
+	 */
+	public static function optic_depth( $optic_id ) {
+		$a = self::point( $optic_id, 'anchor' );
+		$b = self::point( $optic_id, 'bottom' );
+		if ( $a && $b && self::scale( $optic_id ) > 0 ) {
+			return max( 0.0, ( $b[1] - $a[1] ) * self::scale( $optic_id ) );
+		}
+		$p   = wc_get_product( $optic_id );
+		$obj = $p ? (string) $p->get_attribute( 'pa_objektivdurchmesser' ) : '';
+		return preg_match( '/\d+(?:[.,]\d+)?/', $obj, $m ) ? (float) str_replace( ',', '.', $m[0] ) / 2 + 4 : 0.0;
+	}
+
+	/** Freiraum der Waffe unter der Optik in mm (wie tief unter der Schienen-Oberkante vor/hinter der Montage noch Platz ist). */
+	public static function clearance( $weapon_id ) {
+		return max( 0.0, (float) str_replace( ',', '.', (string) self::meta( $weapon_id, 'freiraum', '0' ) ) );
+	}
+
+	/** Steht die Optik mit dieser Montage auf der Waffe auf? 1 mm Luft. Unbekannte Werte = kein Ausschluss. */
+	public static function height_ok( $weapon_id, $mount_id, $optic_id ) {
+		$depth  = self::optic_depth( $optic_id );
+		$height = self::axis_height( $mount_id );
+		if ( $depth <= 0 || $height <= 0 ) {
+			return true;
+		}
+		return $height + self::clearance( $weapon_id ) >= $depth + 1;
+	}
+
 	/** Passt die Montage auf die Waffe und zur Optik? */
 	public static function mount_fits( $weapon_id, $mount_id, $optic_id ) {
 		if ( self::is_direct( $optic_id ) ) {
@@ -281,7 +318,7 @@ class AK_Data {
 		}
 		$optic_tube = self::tube( $optic_id );
 		$mount_tube = self::tube( $mount_id );
-		return $optic_tube > 0 && abs( $optic_tube - $mount_tube ) < 0.01;
+		return $optic_tube > 0 && abs( $optic_tube - $mount_tube ) < 0.01 && self::height_ok( $weapon_id, $mount_id, $optic_id );
 	}
 
 	/** Ausnahmen: manuell gesperrte Produkt-IDs an der Waffe. */

@@ -107,3 +107,13 @@ Unter jedem Schnittstellen-Feld stehen die bekannten Werte als Knöpfe. Neue Wer
 - **Bezeichnungen:** «Frontgriff (am Handschutz)» und «Pistolengriff (beim Abzug)». Das Schnittstellen-Feld heisst je nach Rolle «Optik-Aufnahme» oder «Passt auf (…)», die Knöpfe zeigen nur passende Werte (Rest unter «weitere»).
 - **Bildauswahl:** «Vorschaubild aus Produktbildern» zeigt Beitragsbild und Galerie, «andere Bilder» die ganze Mediathek.
 - **Fehler melden:** Link «Passt etwas nicht? Melden» unter der Vorschau. Die Auswahl wird mitgeschickt, die Meldung geht per E-Mail an den Shop und steht unter WooCommerce → Konfigurator.
+
+## Bauhöhe (ab 0.7)
+
+Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
+
+**Achshöhe der Montage + Freiraum der Waffe ≥ Tiefe der Optik unter der Rohrachse + 1 mm**
+
+- **Achshöhe:** aus Ankerpunkt (Unterseite) und Rohrmitte der Montage. Steht im Produkt unter dem Bild.
+- **Tiefe der Optik:** aus dem Punkt «Tiefster Punkt» (meist Unterkante Objektiv, beim Einmessen automatisch gesetzt). Fehlt er, wird sie aus dem Attribut «Objektivdurchmesser» geschätzt (halber Durchmesser + 4 mm). Ohne beides wird nicht geprüft.
+- **Freiraum (Waffe):** wie weit unter der Oberkante der Schiene unter Objektiv und Okular Platz ist. Durchgehende Schiene (AR15) = 0, Repetierer mit Montagebasis z.B. 10–15 mm.

@@ -194,6 +194,7 @@ class AK_Auto {
 
 		$anchor = null;
 		$tube_a = null;
+		$bottom = null;
 		$group  = (string) $o['gruppe'];
 		switch ( $o['role'] ) {
 			case 'waffe':
@@ -225,6 +226,15 @@ class AK_Auto {
 					}
 				}
 				$anchor = array( $cx, null === $best ? $cy : ( $a['top'][ $best ] + $a['bot'][ $best ] ) / 2 );
+				// Tiefster Punkt (meist Objektiv): Spalte mit der grössten Unterkante.
+				$low_x = $cx;
+				foreach ( $a['bot'] as $x => $by ) {
+					if ( $by >= $a['maxy'] ) {
+						$low_x = $x;
+						break;
+					}
+				}
+				$bottom = array( $low_x, $a['maxy'] );
 				break;
 			case 'zubehoer':
 				if ( in_array( $group, array( 'muendungsaufsatz', 'hub', 'schalldaempfer' ), true ) ) {
@@ -264,6 +274,7 @@ class AK_Auto {
 			'ref_mm'      => $length,
 			'anchor'      => $scale( $anchor ),
 			'tube_anchor' => $scale( $tube_a ),
+			'bottom'      => $scale( $bottom ),
 			'mmPerPx'     => $mmpp,
 		);
 	}
@@ -335,7 +346,7 @@ class AK_Auto {
 			return array_merge( $res, array( 'status' => 'error', 'msg' => $res['msg'] . $pts->get_error_message() ) );
 		}
 		if ( ! $dry ) {
-			foreach ( array( 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor' ) as $k ) {
+			foreach ( array( 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'bottom' ) as $k ) {
 				if ( '' !== $pts[ $k ] ) {
 					update_post_meta( $product_id, '_ak_' . $k, (string) $pts[ $k ] );
 				}

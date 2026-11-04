@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Admin {
 
-	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge' );
+	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum' );
 
 	/** Alle gespeicherten Felder inkl. Steckplätze der Waffe. */
 	public static function fields() {
@@ -119,6 +119,12 @@ class AK_Admin {
 					<input type="text" name="ak[gesperrt]" value="<?php echo esc_attr( $v['gesperrt'] ); ?>" size="30">
 				</label>
 			</p>
+			<p class="ak-row ak-only-waffe">
+				<label>Freiraum unter der Optik [mm]
+					<input type="text" name="ak[freiraum]" value="<?php echo esc_attr( $v['freiraum'] ); ?>" size="5" placeholder="0">
+				</label>
+				<span class="description">Wie weit unter der Oberkante der Schiene unter Objektiv und Okular Platz ist. Durchgehende Schiene (z.B. AR15) = 0, Repetierer mit Montagebasis über dem Lauf z.B. 10–15. Eine Montage passt nur, wenn Achshöhe + Freiraum mindestens 1 mm mehr ist, als die Optik unter die Rohrachse reicht.</span>
+			</p>
 
 			<p class="ak-row">
 				<input type="hidden" name="ak[image_id]" class="ak-image-id" value="<?php echo esc_attr( $v['image_id'] ); ?>">
@@ -142,6 +148,7 @@ class AK_Admin {
 				<button type="button" class="button ak-tool" data-target="anchor">Ankerpunkt</button>
 				<button type="button" class="button ak-tool ak-only-montage" data-target="tube_anchor">Rohrmitte</button>
 				<button type="button" class="button ak-tool ak-only-zubehoer" data-target="tube_anchor">Ausgangspunkt</button>
+				<button type="button" class="button ak-tool ak-only-optik" data-target="bottom">Tiefster Punkt</button>
 				<span class="ak-scale">Massstab: <?php echo $scale > 0 ? esc_html( number_format( $scale, 3, '.', '' ) ) . ' mm/px' : 'noch nicht gesetzt'; ?></span>
 			</div>
 			<div class="ak-help">
@@ -151,7 +158,7 @@ class AK_Admin {
 				<p><b>Zubehör-Anker:</b> Mündungsaufsatz, HUB und Schalldämpfer = hinteres Ende auf der Laufachse; Ausgangspunkt = vorderes Ende auf der Laufachse. Handgriff und Laser = Mitte der Befestigungsfläche. Schulterstütze = vorderes Ende auf der Achse des Buffer Tubes. Griff = oberer vorderer Punkt am Gehäuse.</p>
 				<p><b>Steckplätze der Waffe:</b> Mündung = Gewindeschulter (Beginn des Laufgewindes) auf der Laufachse. Original-Mündungsaufsatz = sein vorderes Ende. Handschutz = Stelle für Griff bzw. Laser. Schaft = hinteres Gehäuseende auf der Achse des Buffer Tubes. Griff = Griffaufnahme oben vorne.</p>
 			</div>
-			<?php foreach ( array( 'p1', 'p2', 'anchor', 'tube_anchor' ) as $pt ) : ?>
+			<?php foreach ( array( 'p1', 'p2', 'anchor', 'tube_anchor', 'bottom' ) as $pt ) : ?>
 				<input type="hidden" name="ak[<?php echo esc_attr( $pt ); ?>]" class="ak-pt" data-pt="<?php echo esc_attr( $pt ); ?>" value="<?php echo esc_attr( $v[ $pt ] ); ?>">
 			<?php endforeach; ?>
 			<div class="ak-canvas">
@@ -161,7 +168,14 @@ class AK_Admin {
 					<p class="ak-noimg">Kein Bild. Bitte Produktbild oder Vorschaubild setzen.</p>
 				<?php endif; ?>
 			</div>
-			<p class="ak-status"><?php echo AK_Data::is_ready( $post->ID ) ? '✔ Eingerichtet' : 'Noch nicht vollständig eingerichtet'; ?></p>
+			<p class="ak-status"><?php echo AK_Data::is_ready( $post->ID ) ? '✔ Eingerichtet' : 'Noch nicht vollständig eingerichtet'; ?>
+				<?php if ( 'montage' === $v['role'] && AK_Data::axis_height( $post->ID ) > 0 ) : ?>
+					· Achshöhe über Schiene: <?php echo esc_html( number_format( AK_Data::axis_height( $post->ID ), 1, '.', '' ) ); ?> mm
+				<?php endif; ?>
+				<?php if ( 'optik' === $v['role'] && 'yes' !== $v['direkt'] && AK_Data::optic_depth( $post->ID ) > 0 ) : ?>
+					· Reicht <?php echo esc_html( number_format( AK_Data::optic_depth( $post->ID ), 1, '.', '' ) ); ?> mm unter die Rohrachse<?php echo AK_Data::point( $post->ID, 'bottom' ) ? '' : ' (geschätzt aus Objektivdurchmesser)'; ?>
+				<?php endif; ?>
+			</p>
 		</div>
 		<?php
 	}

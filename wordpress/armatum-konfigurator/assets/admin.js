@@ -2,9 +2,9 @@
 (function ($) {
 	'use strict';
 
-	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a',
+	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a', bottom: '#e65100',
 		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a', muzzle_device_anchor: '#8c5fd6' };
-	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R',
+	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R', bottom: 'T',
 		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_schaft_anchor: 'S', slot_griff_anchor: 'G', muzzle_device_anchor: 'O' };
 
 	$(function () {
@@ -178,7 +178,7 @@
 				mittelrohr: val('mittelrohr'), laenge: val('laenge'), image_id: val('image_id')
 			}).done(function (res) {
 				if (!res.success) { $msg.addClass('ak-error').text(res.data.message); return; }
-				$.each(['p1', 'p2', 'anchor', 'tube_anchor'], function (_, k) {
+				$.each(['p1', 'p2', 'anchor', 'tube_anchor', 'bottom'], function (_, k) {
 					if (res.data[k]) { $box.find('.ak-pt[data-pt="' + k + '"]').val(res.data[k]); }
 				});
 				$box.find('.ak-ref').val(res.data.ref_mm);
