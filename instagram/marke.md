@@ -177,3 +177,9 @@ Anlässe immer mindestens als Story, mit eigenem Foto auch im Feed. Ton: augenzw
 
 ## Sensibles Thema: Brand bei B&T Thun (29.10.2026)
 - Story der Anteilnahme am 31.10. gepostet (Inhaber-OK). Bis mind. 15.11.2026 keine B&T-Produkte bewerben (auch keine Story aus dem Shop-Check), keine Kommentare zur Täterschaft, Bekennervideo nie teilen. Kommentare dazu nur nach Rücksprache mit dem Inhaber beantworten.
+
+## Story-Erwähnungen (@armatum_ch in fremden Storys) – ab 04.11.2026
+- Erwähnung durch Partner, Kunden oder Vereine: **innert 24 h** in der eigenen Story teilen («Zu deiner Story hinzufügen»), kurzer eigener Text + @-Markierung zurück, dazu ein kurzes Merci per DM.
+- Vor dem Teilen prüfen: keine Preise, keine Personen ohne erkennbares Einverständnis im Vordergrund, nichts Heikles (Schalldämpfer/Halbautomaten im Fokus, Kampf-Anmutung) – im Zweifel nur per DM bedanken.
+- Gute Partner-Erwähnungen (z. B. RAD Solutions) zusätzlich im Highlight «Partner» speichern.
+- Teilen geht nur in der App (die Schnittstelle kann fremde Storys nicht teilen) – das macht der Inhaber selbst.
