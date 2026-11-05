@@ -9,7 +9,7 @@ WordPress-Plugin: erstellt Versandlabels der Schweizerischen Post (Digital Comme
 ## Ablauf in der Bestellung
 Box **„Schweizerische Post“** (rechts):
 1. Gewicht prüfen – vorausgefüllt aus den Produktgewichten (Warnung, wenn Produkte kein Gewicht haben).
-2. **Signature** / **Sperrgut** ankreuzen – vorgeschlagen wird Signature, wenn die Versandart „Signature“ oder „Waffen“ enthält, Sperrgut bei „Sperrgut“.
+2. **Signature** / **Sperrgut** ankreuzen – vorgeschlagen wird Signature, wenn die Versandart „Signature“ oder „Waffen“ enthält, Sperrgut bei „Sperrgut“ oder „Überlänge“. Ausschliessende Zusätze wie „(ohne Munition/Waffen)“ zählen nicht.
 3. **„Post-Label erstellen“** – die Adresse wird bei der Post geprüft, das Label als PDF erzeugt. Standard ist **A4 mit dem Label im oberen Drittel** und Falzlinien, zum Falten wie ein Brief. Alternativ gibt es das A6-PDF der Post (Einstellung *Druckformat*). Gedruckt wird in Originalgrösse (100 %).
 4. **„Label öffnen / drucken“** – das PDF ist nur für angemeldete Shop-Mitarbeitende abrufbar (geschützter Ordner, zufälliger Dateiname).
 

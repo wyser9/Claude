@@ -76,7 +76,7 @@ class APL_Admin {
 				<?php submit_button( 'Einstellungen speichern' ); ?>
 			</form>
 			<h2>Versandarten</h2>
-			<p>Produkt ist immer <strong>PostPac Economy</strong>. Die Gewichtsstufe (bis 2 / 10 / 30 kg) ergibt sich aus dem Gewicht. In der Bestellung werden „Signature“ und „Sperrgut“ angekreuzt; vorgeschlagen wird Signature, wenn die Versandart „Signature“ oder „Waffen“ enthält, Sperrgut bei „Sperrgut“.</p>
+			<p>Produkt ist immer <strong>PostPac Economy</strong>. Die Gewichtsstufe (bis 2 / 10 / 30 kg) ergibt sich aus dem Gewicht. In der Bestellung werden „Signature“ und „Sperrgut“ angekreuzt; vorgeschlagen wird Signature, wenn die Versandart „Signature“ oder „Waffen“ enthält, Sperrgut bei „Sperrgut“ oder „Überlänge“. Ausschliessende Zusätze wie „(ohne Munition/Waffen)“ zählen nicht.</p>
 			<?php if ( is_array( $cleanup ) ) : ?>
 				<p class="description">Aufräumen Version 0.1: <?php echo (int) $cleanup['deleted']; ?> alte Muster-Labels gelöscht am <?php echo esc_html( wp_date( 'd.m.Y H:i', $cleanup['time'] ) ); ?>.</p>
 			<?php endif; ?>

@@ -28,6 +28,11 @@ check( 'Economy + Signature + Sperrgut', array( 'ECO', 'SI', 'SP' ), APL_Util::s
 check( 'Signature-Vorschlag', true, APL_Util::suggest_signature( array( 'Kleinsendung Signature' ) ) );
 check( 'Signature bei Waffen', true, APL_Util::suggest_signature( array( 'Waffen Standard' ) ) );
 check( 'Kein Signature-Vorschlag', false, APL_Util::suggest_signature( array( 'bis 10kg', 'Versandkosten' ) ) );
+check( 'Kein Signature bei „ohne Munition/Waffen“', false, APL_Util::suggest_signature( array( 'Gratisversand ab CHF 150 (ohne Munition/Waffen)' ) ) );
+check( 'Kein Signature bei „exkl. Waffen“', false, APL_Util::suggest_signature( array( 'Standard exkl. Waffen' ) ) );
+check( 'Signature trotz Zusatz', true, APL_Util::suggest_signature( array( 'Waffenversand Signature (ohne Munition)' ) ) );
+check( 'Sperrgut bei Überlänge', true, APL_Util::suggest_bulky( array( 'Versandkosten PostPac Economy Signature Überlänge' ) ) );
+check( 'Kein Sperrgut bei „ohne Sperrgut“', false, APL_Util::suggest_bulky( array( 'Paket (ohne Sperrgut)' ) ) );
 check( 'Sperrgut-Vorschlag', true, APL_Util::suggest_bulky( array( 'PostPac Economy Sperrgut' ) ) );
 check( 'Tracking-Link', 'https://www.post.ch/swisspost-tracking?formattedParcelCodes=996016135300000001', APL_Util::tracking_url( '9960 1613 5300 0000 01' ) );
 

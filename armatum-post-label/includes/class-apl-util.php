@@ -88,11 +88,22 @@ class APL_Util {
 	 */
 	public static function suggest_signature( array $shipping_names ) {
 		foreach ( $shipping_names as $name ) {
-			if ( preg_match( '/signatur|waffe/i', (string) $name ) ) {
+			if ( preg_match( '/signatur|waffe/i', self::without_exclusions( $name ) ) ) {
 				return true;
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Entfernt ausschliessende Zusätze aus einem Versandart-Namen, z. B. „(ohne Munition/Waffen)“,
+	 * „exkl. Waffen“ oder „keine Waffen“ – sonst würde „Waffen“ fälschlich Signature vorschlagen.
+	 *
+	 * @param string $name Versandart-Name.
+	 * @return string
+	 */
+	public static function without_exclusions( $name ) {
+		return (string) preg_replace( '/\b(ohne|exkl\.?|exklusive|keine?|nicht\s+für)\b[^)\],;]*/iu', ' ', (string) $name );
 	}
 
 	/**
@@ -103,7 +114,7 @@ class APL_Util {
 	 */
 	public static function suggest_bulky( array $shipping_names ) {
 		foreach ( $shipping_names as $name ) {
-			if ( preg_match( '/sperrgut/i', (string) $name ) ) {
+			if ( preg_match( '/sperrgut|überlänge|ueberlaenge/iu', self::without_exclusions( $name ) ) ) {
 				return true;
 			}
 		}
