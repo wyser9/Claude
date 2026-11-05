@@ -64462,5 +64462,19 @@
 "short": "Magazin mit 22 Schuss im Kaliber 9mm Para für die Pistolen HS Produkt XDM und SF19 Elite. Erwerb nur mit kleiner Ausnahmebewilligung für Sportschützen.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/hs-produkt-xdm-sf19-elite-magazin-22-schuss-9mm-para/"
+},
+"33460": {
+"cats": [
+"Aero Precision",
+"Lower"
+],
+"images": 5,
+"name": "Aero Precision M4E1 Stripped Lower Receiver AR15 Schwarz",
+"on_sale": false,
+"price": "23985",
+"regular": "23985",
+"short": "Stripped Lower Receiver für AR15 aus geschmiedetem 7075-T6 Aluminium. Gewindebolzen für den Bolt Catch, integrierter Abzugsbügel und Upper Tension Screw erleichtern den Aufbau. Mil-Spec-kompatibel, 237g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/aero-precision-m4e1-stripped-lower-receiver-ar15-schwarz/"
 }
 }
