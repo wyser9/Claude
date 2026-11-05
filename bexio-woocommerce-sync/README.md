@@ -36,6 +36,8 @@ WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führ
 
 **Varianten** brauchen eine eigene Artikelnummer. Nur wenn ein Variantenprodukt genau eine Variante hat, übernimmt sie die Nummer des Hauptprodukts. Haben sich früher mehrere Varianten einen bexio-Artikel geteilt, behält ihn die Variante mit der kleinsten ID. Die anderen werden beim nächsten Speichern über ihre eigene Nummer verknüpft oder neu angelegt.
 
+**Preis:** In bexio steht der aktuelle Verkaufspreis. Während eine Aktion läuft, ist das der **Aktionspreis**, sonst der reguläre Preis. Geplante Aktionen berücksichtigt das Plugin mit Beginn und Ende, denn WooCommerce speichert das Produkt dabei per Cron, und das löst den Abgleich aus. In Aufträgen steht ohnehin der Preis, den der Kunde bezahlt hat.
+
 ### Neue Artikel in bexio
 Nur beim **Neuanlegen** eines Artikels setzt das Plugin zusätzlich:
 - **„Ist ein Produkt mit Lager“** (Lagerbestand und Mindestbestand 0, Lagerort und Lagerplatz aus den bexio-Zuordnungen), abschaltbar mit „Neue Artikel als Lagerartikel“. Virtuelle Produkte werden ohne Lager angelegt.

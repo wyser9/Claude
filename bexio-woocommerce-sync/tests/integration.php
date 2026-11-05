@@ -515,6 +515,14 @@ t( 'Nummer in bexio vergeben -> mit diesem Artikel verknüpft', 6001 === (int) g
 $va2 = wc_get_product( $va->get_id() ); $va2->set_sku( '' ); $va2->save();
 t( 'Variante ohne eigene Nummer meldet fehlende SKU', false !== strpos( $err_v, 'keine Artikelnummer' ), $err_v );
 
+// --- Aktionspreis ---
+$sp = new WC_Product_Simple(); $sp->set_props( array( 'name' => 'Aktion', 'sku' => 'AKT-1', 'regular_price' => '100', 'sale_price' => '79.90' ) ); $sp->save();
+t( 'Aktionspreis wird übertragen', '79.9' === BWS_Product_Sync::build_payload( wc_get_product( $sp->get_id() ) )['sale_price'], BWS_Product_Sync::build_payload( wc_get_product( $sp->get_id() ) )['sale_price'] );
+$sp = wc_get_product( $sp->get_id() ); $sp->set_date_on_sale_from( time() + 3 * DAY_IN_SECONDS ); $sp->save();
+t( 'Geplante Aktion noch nicht aktiv -> regulärer Preis', '100' === BWS_Product_Sync::build_payload( wc_get_product( $sp->get_id() ) )['sale_price'], BWS_Product_Sync::build_payload( wc_get_product( $sp->get_id() ) )['sale_price'] );
+$sp = wc_get_product( $sp->get_id() ); $sp->set_date_on_sale_from( time() - 2 * DAY_IN_SECONDS ); $sp->set_date_on_sale_to( time() - DAY_IN_SECONDS ); $sp->save();
+t( 'Abgelaufene Aktion -> regulärer Preis', '100' === BWS_Product_Sync::build_payload( wc_get_product( $sp->get_id() ) )['sale_price'] );
+
 // --- Platzhalter-Bestellungen (TWINT Express vor der Zahlung) ---
 $ph = wc_create_order(); $ph->set_address( array( 'first_name' => 'First', 'last_name' => 'Last', 'address_1' => '123 Main St', 'city' => 'City', 'country' => 'CH', 'email' => 'email@example.com' ), 'billing' ); $ph->set_payment_method( 'twint_express' ); $ph->save();
 $GLOBALS['bws_requests'] = array();

@@ -532,6 +532,23 @@ class BWS_Product_Sync {
 	 * @param WC_Product $product Produkt.
 	 * @return array
 	 */
+	/**
+	 * Aktueller Verkaufspreis: der Aktionspreis, solange die Aktion läuft (inkl. geplanter Zeiträume),
+	 * sonst der reguläre Preis. Beginn und Ende geplanter Aktionen speichert WooCommerce per Cron am
+	 * Produkt – das löst den Abgleich erneut aus.
+	 *
+	 * @param WC_Product $product Produkt oder Variante.
+	 * @return float
+	 */
+	public static function current_price( WC_Product $product ) {
+		$sale    = $product->get_sale_price( 'edit' );
+		$regular = $product->get_regular_price( 'edit' );
+		if ( '' !== (string) $sale && $product->is_on_sale( 'edit' ) ) {
+			return (float) $sale;
+		}
+		return '' !== (string) $regular ? (float) $regular : (float) $product->get_price( 'edit' );
+	}
+
 	public static function build_payload( WC_Product $product ) {
 		$name = $product->get_name();
 		if ( $product->is_type( 'variation' ) ) {
@@ -549,7 +566,7 @@ class BWS_Product_Sync {
 			'intern_code'       => self::intern_code( $product ),
 			'intern_name'       => BWS_Util::truncate( wp_strip_all_tags( $name ), 255 ),
 			'intern_description' => $description,
-			'sale_price'        => BWS_Util::amount( (float) $product->get_regular_price(), 2 ),
+			'sale_price'        => BWS_Util::amount( self::current_price( $product ), 2 ),
 			'tax_income_id'     => BWS_Lookup::tax_id_for_rate( self::tax_rate( $product ) ),
 		);
 
