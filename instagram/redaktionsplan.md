@@ -1183,3 +1183,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-02 | Story «Laden geschlossen 5./12.11.» (01-ankuendigung) veröffentlicht ca. 10:01, WhatsApp-Bild an Inhaber, Bitte ums Highlight «Laden». |
 | 2026-11-03 | #25 Nightforce als Story gepostet (Fall B, kein eigenes Foto); Sicherheitsnetze gelöscht. Inhaber um Nightforce-Foto für späteren Feed-Post gebeten. |
 | 2026-11-04 | Story «Morgen geschlossen (5.11.)» (02-morgen-05) veröffentlicht ca. 18:02, WhatsApp-Bild an Inhaber. |
+| 2026-11-05 | Story «Heute geschlossen (5.11.)» (03-heute-05) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine «Heute offen»-Story. |
