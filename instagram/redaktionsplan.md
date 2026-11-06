@@ -736,6 +736,38 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ---
 
+### #26 – Fr 06.11.2026, 18:30 – Karussell – Säule: Werkstatt – Umbau «Rebel» (eigene Fotos)
+
+**Status:** Autopilot – geplant. Eigene Fotos des Inhabers (4), Seriennummern (Gehäuse, Visier) unkenntlich gemacht. Offen: Modellbezeichnung K11 oder K31 (Gravur zeigt «K11 REBEL», Inhaber schrieb «K31 Rebel») – ohne Antwort neutral als «Schweizer Ordonnanz-Karabiner».
+
+**Grafiken:** `instagram/grafiken/26-k31-rebel/01.jpg`–`06.jpg` (01–04 Fotos, 05 Umbau-Liste, 06 CTA).
+
+**Caption zum Kopieren:**
+Aus unserer Werkstatt: der «Rebel» 🔧🇨🇭
+
+Ein Schweizer Ordonnanz-Karabiner – und jetzt ein Unikat. Das haben wir gemacht:
+
+▪️ Cerakote-Beschichtung
+▪️ Ladehebel – Eigenbau, mit persönlicher Gravur
+▪️ Schaft abgeändert
+▪️ Mündungsbremse – Eigenbau
+▪️ Picatinny-Aufnahme fürs Visier und am Schaft für Zubehör
+
+Kenner entdecken die kleinen Details auf dem Ladehebel und am Schaft 😉
+
+👉 Swipe für die Details.
+
+Du hast einen Klassiker im Schrank und eine Idee? Unsere Werkstatt in Fulenbach berät dich gerne – vom Visier bis zum kompletten Umbau.
+
+📸 Für die Fotos ist die Waffe entladen.
+
+Umbau oder Original – was ist dein Ding? 👇
+
+**Hashtags:**
+#werkstatt #ordonnanzwaffe #cerakote #customrifle #schweiz
+
+**Regel-Check:** ✅ eigene Fotos · ✅ keine Preise · ✅ entladen · ✅ Seriennummern unkenntlich · ✅ kein Schalldämpfer · ⚠️ Gravuren mit Film-Motiven (Logo, Figur) – nur gezeigt, nicht als Marke genannt, keine Film-Hashtags.
+
 ### #25 – Di 03.11.2026, 18:30 – Karussell – Säule 3: Neu – Nightforce, die ganze Familie
 
 **Status:** ✅ Als **Story** gepostet 03.11.2026, 18:31 (armatum_ch) mit `whatsapp/posts/25-nightforce.jpg` – kein eigenes Nightforce-Foto vorhanden, daher kein Feed-Post (Regel 4c). Feed-Post später möglich, sobald ein Foto aus dem Laden vorliegt (Karussell 01–06 bleibt bereit).
@@ -1184,3 +1216,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-03 | #25 Nightforce als Story gepostet (Fall B, kein eigenes Foto); Sicherheitsnetze gelöscht. Inhaber um Nightforce-Foto für späteren Feed-Post gebeten. |
 | 2026-11-04 | Story «Morgen geschlossen (5.11.)» (02-morgen-05) veröffentlicht ca. 18:02, WhatsApp-Bild an Inhaber. |
 | 2026-11-05 | Story «Heute geschlossen (5.11.)» (03-heute-05) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine «Heute offen»-Story. |
+| 2026-11-06 | #26 Werkstatt-Umbau «Rebel» aus 4 Inhaber-Fotos erstellt, Fr 06.11. 18:30 geplant; Seriennummern weichgezeichnet. Rückfrage K11/K31 an Inhaber. |
