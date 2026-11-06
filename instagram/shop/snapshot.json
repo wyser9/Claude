@@ -1998,8 +1998,8 @@
 ],
 "images": 1,
 "name": "HS SF19 4.5 AFDE",
-"on_sale": true,
-"price": "57900",
+"on_sale": false,
+"price": "65500",
 "regular": "65500",
 "short": "Die HS SF19 4.5 AFDE ist eine Selbstladepistole im Kaliber 9mm mit einer 4,5-Zoll-Lauflänge und einem robusten Edelstahl-Schlitten. Das «AFDE»-Finish sorgt für Widerstandsfähigkeit und ein ansprechendes Design. Ideal für Präzisionsschüsse und den täglichen Einsatz.",
 "stock": "in-stock",
@@ -26730,7 +26730,7 @@
 "price": "8990",
 "regular": "8990",
 "short": "Der Magpul DT-PR Carbine Stock Mil-Spec Schwarz ist ein hochwertiger Präzisionsschaft für AR15- und AR10-Plattformen mit Mil-Spec Buffer Tube. Er kombiniert hohe Stabilität, präzise Einstellmöglichkeiten und hervorragende Ergonomie für sportliches Präzisionsschiessen und anspruchsvolle Einsätze.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/magpul-dt-pr-carbine-stock-mil-spec/"
 },
 "22676": {
@@ -55618,7 +55618,7 @@
 "price": "5790",
 "regular": "5790",
 "short": "MOLLE-Doppelmagazintasche von Agilite für zwei doppelreihige 9mm-Magazine. Der patentierte, trichterförmige Magazinhalter erlaubt das einhändige Greifen und Neupositionieren. Mit höhenverstellbarer Klappe für Multitools oder Taschenlampen. Ausführung: Ranger Green.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/agilite-pincer-pistol-double-pouch-ranger-green/"
 },
 "30406": {
@@ -56864,7 +56864,7 @@
 "price": "65900",
 "regular": "65900",
 "short": "Ruger RXM Modell 19442 in 9mm Luger mit 17+1 Schuss und 4″-Lauf. Striker-Fired-Pistole mit Magpul Enhanced Handgun Grip in Schwarz, Optics Ready (RMR, DPP, RMSc) und Tritium-Korn. Gesamtlänge 18.1cm, Gewicht 663g.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ruger-rxm-9mm-luger-4-17-schuss-schwarz/"
 },
 "30615": {
@@ -61934,7 +61934,7 @@
 "price": "2690",
 "regular": "2690",
 "short": "HKS Magazin-Speedloader GL-940 im Kaliber 9mm Para für Glock 17, 19, 22, 23, 26, 27, 33, 34 und weitere.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hks-magazin-speedloader-gl-940-9mm-para-fuer-glock-17-19-22-23-26-27-33-34/"
 },
 "32221": {
@@ -64460,7 +64460,7 @@
 "price": "3490",
 "regular": "3490",
 "short": "Magazin mit 22 Schuss im Kaliber 9mm Para für die Pistolen HS Produkt XDM und SF19 Elite. Erwerb nur mit kleiner Ausnahmebewilligung für Sportschützen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/hs-produkt-xdm-sf19-elite-magazin-22-schuss-9mm-para/"
 },
 "33460": {
@@ -64476,5 +64476,19 @@
 "short": "Stripped Lower Receiver für AR15 aus geschmiedetem 7075-T6 Aluminium. Gewindebolzen für den Bolt Catch, integrierter Abzugsbügel und Upper Tension Screw erleichtern den Aufbau. Mil-Spec-kompatibel, 237g.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/aero-precision-m4e1-stripped-lower-receiver-ar15-schwarz/"
+},
+"33507": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 4,
+"name": "MDT CKYE-POD Gen 3 Single Pull Standard Zweibein Schwarz",
+"on_sale": false,
+"price": "66990",
+"regular": "66990",
+"short": "Wettkampferprobtes Zweibein mit Single-Pull-Höhenverstellung von ca. 9 bis 15″, 3 Beinwinkeln, ±170° Neigung und 360° Schwenk. Hart anodisiertes Aluminium, integrierter Barricade Stop und getrennte Spannungseinstellung für Schwenk und Neigung.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/mdt-ckye-pod-gen-3-single-pull-standard-zweibein-schwarz/"
 }
 }
