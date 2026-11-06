@@ -738,7 +738,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #26 – Fr 06.11.2026, 18:30 – Karussell – Säule: Werkstatt – Umbau «Rebel» (eigene Fotos)
 
-**Status:** Autopilot – geplant. Eigene Fotos des Inhabers (4), Seriennummern (Gehäuse, Visier) unkenntlich gemacht. Offen: Modellbezeichnung K11 oder K31 (Gravur zeigt «K11 REBEL», Inhaber schrieb «K31 Rebel») – ohne Antwort neutral als «Schweizer Ordonnanz-Karabiner».
+**Status:** ✅ Veröffentlicht 06.11.2026, 18:31 (armatum_ch, pünktlich) als Karussell (6 Slides) – https://www.instagram.com/p/DfaJfYdlJtb/ – Story mit Slide 01. Modell neutral als «Schweizer Ordonnanz-Karabiner» (keine Antwort K11/K31).
 
 **Grafiken:** `instagram/grafiken/26-k31-rebel/01.jpg`–`06.jpg` (01–04 Fotos, 05 Umbau-Liste, 06 CTA).
 
@@ -1217,3 +1217,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-04 | Story «Morgen geschlossen (5.11.)» (02-morgen-05) veröffentlicht ca. 18:02, WhatsApp-Bild an Inhaber. |
 | 2026-11-05 | Story «Heute geschlossen (5.11.)» (03-heute-05) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine «Heute offen»-Story. |
 | 2026-11-06 | #26 Werkstatt-Umbau «Rebel» aus 4 Inhaber-Fotos erstellt, Fr 06.11. 18:30 geplant; Seriennummern weichgezeichnet. Rückfrage K11/K31 an Inhaber. |
+| 2026-11-06 | #26 «Rebel» veröffentlicht 18:31 – https://www.instagram.com/p/DfaJfYdlJtb/ – Story Slide 01, WhatsApp-Bild 26-k31-rebel.jpg. |
