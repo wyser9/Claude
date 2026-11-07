@@ -736,6 +736,37 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ---
 
+### #27 – So 08.11.2026, 19:00 – Karussell – Säule: Produkt – Phoenix Predator (eigene Fotos)
+
+**Status:** Autopilot – geplant. 4 eigene Fotos des Inhabers (07.11.), Seriennummer am Griffstück unkenntlich gemacht. Angaben aus dem Shop (ID 32098): 9×19, SA, Alu/Polymer 890 g, 115.5 mm, LPA, 17 Schuss, Ausweiskopie + WES.
+
+**Grafiken:** `instagram/grafiken/27-phoenix-predator/01.jpg`–`06.jpg` (01–04 Fotos, 05 Steckbrief, 06 CTA).
+
+**Caption zum Kopieren:**
+Phoenix Predator – Schweizer Pistole für IPSC und Stand 🇨🇭🎯
+
+Schlank, leicht und ganz auf Sport ausgelegt:
+
+▪️ Kaliber 9×19 mm
+▪️ reiner Single-Action-Abzug
+▪️ Alu-/Polymer-Rahmen, rund 890 g
+▪️ 115.5-mm-Lauf, LPA-Visier mit rotem Fiberkorn
+▪️ Magazin mit 17 Schuss
+▪️ inkl. zwei Magazinen, Cordura-Tasche und Reinigungskit
+
+👉 Swipe für alle Ansichten und den Steckbrief.
+
+📸 Für die Fotos ist die Pistole entladen.
+
+Lieber selbst in die Hand nehmen? Komm vorbei in Fulenbach – wir beraten dich gerne. Alle Infos auf armatum.ch (Link in der Bio).
+
+Single Action oder DA/SA – was schiesst du lieber? 👇
+
+**Hashtags:**
+#phoenix #ipsc #sportschiessen #pistole #schweiz
+
+**Regel-Check:** ✅ eigene Fotos · ✅ keine Preise · ✅ entladen · ✅ Seriennummer unkenntlich · ✅ Magazin ≤ 20 Schuss · ✅ kein Schalldämpfer, keine Kampf-Anmutung.
+
 ### #26 – Fr 06.11.2026, 18:30 – Karussell – Säule: Werkstatt – Umbau «Rebel» (eigene Fotos)
 
 **Status:** ✅ Veröffentlicht 06.11.2026, 18:31 (armatum_ch, pünktlich) als Karussell (6 Slides) – https://www.instagram.com/p/DfaJfYdlJtb/ – Story mit Slide 01. Modell neutral als «Schweizer Ordonnanz-Karabiner» (keine Antwort K11/K31).
@@ -1218,3 +1249,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-05 | Story «Heute geschlossen (5.11.)» (03-heute-05) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine «Heute offen»-Story. |
 | 2026-11-06 | #26 Werkstatt-Umbau «Rebel» aus 4 Inhaber-Fotos erstellt, Fr 06.11. 18:30 geplant; Seriennummern weichgezeichnet. Rückfrage K11/K31 an Inhaber. |
 | 2026-11-06 | #26 «Rebel» veröffentlicht 18:31 – https://www.instagram.com/p/DfaJfYdlJtb/ – Story Slide 01, WhatsApp-Bild 26-k31-rebel.jpg. |
+| 2026-11-07 | #27 Phoenix Predator aus 4 Inhaber-Fotos erstellt, So 08.11. 19:00 geplant; Seriennummer weichgezeichnet. |
