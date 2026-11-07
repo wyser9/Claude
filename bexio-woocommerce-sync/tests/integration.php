@@ -658,4 +658,35 @@ t( 'Storno: sonst nichts in bexio geändert', 1 === count( array_filter( $GLOBAL
 BWS_Order_Events::run_comment_job( $ox->get_id(), 'cancelled', '' );
 t( 'Storno nur einmal gemeldet', 1 === count( $comments() ) && 1 === count( $bws_mails() ) );
 
+// --- Tägliche Warn-Mail ---
+BWS_Settings::save( array( 'health_mail' => 'yes', 'stock_mode' => 'from_bexio', 'order_statuses' => array( 'processing', 'on-hold' ), 'notify_email' => 'shop@armatum.ch' ) );
+foreach ( wc_get_orders( array( 'limit' => -1, 'status' => array( 'processing', 'on-hold', 'completed' ) ) ) as $o ) { if ( ! $o->get_meta( '_bws_order_id' ) ) { $o->update_meta_data( '_bws_order_id', 1 ); $o->save(); } }
+global $wpdb; $wpdb->query( "DELETE FROM {$wpdb->postmeta} WHERE meta_key = '_bws_last_error'" );
+update_option( BWS_Stock_Import::OPTION_LAST, array( 'time' => time() - HOUR_IN_SECONDS, 'errors' => 0 ) );
+update_option( BWS_Status_Import::OPTION_LAST, array( 'time' => time() - 600, 'checked' => 0, 'paid' => 0, 'completed' => 0, 'errors' => 0 ) );
+$since = time() - 60;
+t( 'Warn-Mail: ohne Befund nichts', array() === BWS_Health::findings( $since ), wp_json_encode( BWS_Health::findings( $since ) ) );
+$fid = as_enqueue_async_action( 'bws_sync_product', array( 4711 ), BWS_AS_GROUP );
+ActionScheduler::store()->mark_failure( $fid );
+ActionScheduler::logger()->log( $fid, 'Produkt #4711 hat keine Artikelnummer (SKU).' );
+update_option( BWS_Stock_Import::OPTION_LAST, array( 'time' => time() - 40 * HOUR_IN_SECONDS, 'errors' => 0 ) );
+$miss = wc_create_order(); $miss->set_billing_first_name( 'Hans' ); $miss->set_billing_email( 'hans@muster.ch' ); $miss->set_status( 'processing' ); $miss->set_date_created( time() - 2 * HOUR_IN_SECONDS ); $miss->save();
+$miss->delete_meta_data( '_bws_order_id' ); $miss->save();
+$ep = new WC_Product_Simple(); $ep->set_props( array( 'name' => 'Fehlerprodukt', 'regular_price' => '1', 'status' => 'publish' ) ); $ep->save(); update_post_meta( $ep->get_id(), '_bws_last_error', 'Produkt hat keine Artikelnummer (SKU).' );
+$GLOBALS['bws_mails'] = array();
+$found = BWS_Health::run();
+$hm = array_values( array_filter( $GLOBALS['bws_mails'], function ( $m ) { return false !== strpos( $m['subject'], 'bexio-Abgleich' ); } ) );
+$txt = wp_json_encode( $found, JSON_UNESCAPED_UNICODE );
+t( 'Warn-Mail: fehlgeschlagene Aufgabe mit Fehlertext', false !== strpos( $txt, 'Artikel nach bexio' ) && false !== strpos( $txt, 'keine Artikelnummer' ), $txt );
+t( 'Warn-Mail: Lagerabgleich veraltet', false !== strpos( $txt, 'Lagerabgleich: letzter erfolgreicher Lauf' ) );
+t( 'Warn-Mail: Bestellung ohne bexio-Auftrag', false !== strpos( $txt, '#' . $miss->get_order_number() ) );
+t( 'Warn-Mail: Produkt mit Fehler', false !== strpos( $txt, 'Fehlerprodukt' ) );
+t( 'Warn-Mail verschickt', 1 === count( $hm ) && 'shop@armatum.ch' === $hm[0]['to'] && 4 === count( $found ), count( $found ) . ' ' . wp_json_encode( $hm ) );
+$GLOBALS['bws_mails'] = array();
+update_option( BWS_Stock_Import::OPTION_LAST, array( 'time' => time(), 'errors' => 0 ) ); $miss->update_meta_data( '_bws_order_id', 2 ); $miss->save(); delete_post_meta( $ep->get_id(), '_bws_last_error' );
+BWS_Health::run();
+t( 'Warn-Mail: gleicher Fehler nicht erneut, ohne Befund keine Mail', ! array_filter( $GLOBALS['bws_mails'], function ( $m ) { return false !== strpos( $m['subject'], 'bexio-Abgleich' ); } ) );
+BWS_Health::ensure_schedule();
+t( 'Warn-Mail täglich eingeplant', is_int( as_next_scheduled_action( BWS_Health::HOOK, array(), BWS_AS_GROUP ) ) );
+
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

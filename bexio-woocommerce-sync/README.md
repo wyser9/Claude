@@ -128,6 +128,16 @@ Wird eine bereits übertragene Bestellung storniert, bekommt der bexio-Auftrag e
 
 > In bexio fügt das Plugin bei diesen drei Funktionen nur Kommentare hinzu. Auftrag, Positionen, Status, Rechnungen und Lager bleiben unverändert.
 
+### Warn-Mail bei Problemen (täglich 07:50)
+Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail an *Hinweise an*. Geprüft wird:
+- fehlgeschlagene Hintergrundaufgaben seit der letzten Prüfung, mit Fehlertext
+- Lagerabgleich mit Fehler beendet oder seit über 36 Stunden nicht abgeschlossen
+- Statusabgleich (Bezahlt/Erledigt) seit über 3 Stunden nicht gelaufen
+- bezahlte bzw. wartende Bestellungen der letzten 7 Tage ohne bexio-Auftrag (Platzhalter-Bestellungen zählen nicht)
+- Produkte, die sich nicht nach bexio übertragen lassen
+
+Sofort prüfen: Knopf **„Jetzt prüfen (Warn-Mail)“** oder `wp bexio health`. Abschalten: Einstellung *Warn-Mail bei Problemen*.
+
 ## Fehler & Protokoll
 - Log: *WooCommerce → Status → Logs*, Quelle **bexio-sync**
 - Hintergrund-Jobs: *WooCommerce → Status → Geplante Aktionen*, Gruppe **bexio-sync**. Fehlgeschlagene Jobs lassen sich dort erneut ausführen.

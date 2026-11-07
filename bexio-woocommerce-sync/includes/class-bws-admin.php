@@ -123,6 +123,7 @@ class BWS_Admin {
 					self::checkbox( 'sync_orders', 'Bestellungen übertragen', 'Bestellungen werden inkl. Besteller als Auftrag in bexio angelegt.', $s );
 					self::checkbox( 'status_from_bexio', 'Bestellstatus aus bexio', 'Stündlich prüfen: Rechnung zum Auftrag bezahlt &rarr; Bestellung „In Bearbeitung“ (bezahlt); Rechnung bezahlt und Auftrag „Erledigt“ &rarr; „Abgeschlossen“. Der Kunde erhält dabei die üblichen WooCommerce-E-Mails.', $s );
 					self::checkbox( 'tracking_to_bexio', 'Sendungsnummer nach bexio', 'Wird mit „Armatum Post Label“ ein Label erstellt (nicht im Testmodus), steht die Sendungsnummer mit Tracking-Link als interner Kommentar im bexio-Auftrag.', $s );
+					self::checkbox( 'health_mail', 'Warn-Mail bei Problemen', 'Täglich um ' . BWS_Health::CHECK_TIME . ' Uhr prüfen und nur bei Befund eine E-Mail an „Hinweise an“ senden: fehlgeschlagene Hintergrundaufgaben, Lager- oder Statusabgleich nicht gelaufen, Bestellungen ohne bexio-Auftrag, Produkte mit Übertragungsfehler.', $s );
 					self::checkbox( 'cancel_to_bexio', 'Storno melden', 'Wird eine übertragene Bestellung im Shop storniert, erhält der bexio-Auftrag einen Kommentar und du eine E-Mail, den Auftrag in bexio zu stornieren (die bexio-Schnittstelle kann Aufträge nicht selbst stornieren).', $s );
 					?>
 					<tr>
@@ -282,10 +283,17 @@ class BWS_Admin {
 					<?php if ( BWS_Status_Import::active() ) : ?>
 						<button class="button" name="tool" value="import_status">Bestellstatus jetzt aus bexio holen</button>
 					<?php endif; ?>
+					<button class="button" name="tool" value="health">Jetzt prüfen (Warn-Mail)</button>
 					<button class="button" name="tool" value="backfill">Bestehende Artikel nachrüsten (Lager, Aufwandkonto, Vorsteuer)</button>
 					<button class="button" name="tool" value="flush_cache">bexio-Stammdaten neu laden</button>
 				</form>
 				<?php
+				$hl = get_option( BWS_Health::OPTION );
+				if ( is_array( $hl ) ) :
+					?>
+					<p class="description">Letzte Prüfung (<?php echo esc_html( wp_date( 'd.m.Y H:i', $hl['time'] ) ); ?>): <?php echo $hl['findings'] ? esc_html( count( $hl['findings'] ) . ' Hinweis(e) – ' . implode( ' | ', $hl['findings'] ) ) : 'alles in Ordnung'; ?></p>
+					<?php
+				endif;
 				$st = get_option( BWS_Status_Import::OPTION_LAST );
 				if ( is_array( $st ) ) :
 					?>
@@ -365,7 +373,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'health_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -403,6 +411,7 @@ class BWS_Admin {
 		BWS_Stock_Import::ensure_schedule();
 		BWS_Status_Import::ensure_schedule();
 		BWS_Order_Events::ensure_schedule();
+		BWS_Health::ensure_schedule();
 		self::redirect( 'Einstellungen gespeichert.' );
 	}
 
@@ -428,6 +437,10 @@ class BWS_Admin {
 		if ( 'import_status' === $tool ) {
 			as_enqueue_async_action( BWS_Status_Import::HOOK, array(), BWS_AS_GROUP );
 			self::redirect( 'Statusabgleich aus bexio wurde im Hintergrund gestartet.' );
+		}
+		if ( 'health' === $tool ) {
+			$found = BWS_Health::run();
+			self::redirect( $found ? sprintf( 'Prüfung: %d Hinweis(e) gefunden, E-Mail an %s gesendet.', count( $found ), BWS_Order_Events::notify_email() ) : 'Prüfung: alles in Ordnung.' );
 		}
 		if ( 'flush_cache' === $tool ) {
 			BWS_Lookup::flush();

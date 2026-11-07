@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
  *     wp bexio import-stock
  *     wp bexio backfill
  *     wp bexio import-status
+ *     wp bexio health
  */
 class BWS_CLI {
 
@@ -72,6 +73,20 @@ class BWS_CLI {
 			WP_CLI::success( sprintf( '%d Artikel: %d Vorrätig, %d Lieferrückstand, %d unverändert, %d nicht im Shop, %d übersprungen, %d Fehler.', $s['articles'], $s['instock'], $s['backorder'], $s['unchanged'], $s['not_found'], $s['skipped'], $s['errors'] ) );
 		} catch ( BWS_Exception $e ) {
 			WP_CLI::error( $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Prüft den Abgleich und schickt bei Befund die Warn-Mail.
+	 */
+	public function health() {
+		$found = BWS_Health::run();
+		if ( ! $found ) {
+			WP_CLI::success( 'Alles in Ordnung.' );
+			return;
+		}
+		foreach ( $found as $line ) {
+			WP_CLI::warning( $line );
 		}
 	}
 
