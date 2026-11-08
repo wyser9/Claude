@@ -184,3 +184,15 @@ Follower 2478 (+12 seit 18.10.), Gefolgt 4502 (vorher 5542). Kommentare: K31 3, 
 
 ## Wochen-Routine 01.11.2026 (Autopilot, Konto armatum_ch, Stand 15:50 UTC)
 Follower 2480 (31.10.: 2478), 361 Beiträge. Konto «armatum» ACTIVE geprüft. Letzte Posts 18.–30.10. unverändert (siehe Auswertung 31.10.); #24 Reel steht noch aus (So 01.11. 20:00).
+
+## Wochen-Routine 08.11.2026 (Autopilot, Konto armatum_ch, Stand 15:50 UTC)
+Follower 2496 (01.11.: 2480, +16), 363 Beiträge. Konto «armatum» ACTIVE geprüft.
+| Beitrag | Datum | Likes | Kommentare |
+|---|---|---|---|
+| #26 Rebel (K31-Umbau, Inhaber-Fotos) | 06.11. | 154 | 6 |
+| #24 Reel FFP + MIL | 01.11. | 9 | 0 |
+| #23 Geschosse | 30.10. | 28 | 0 |
+| #22 Gehörschutz | 29.10. | 8 | 0 |
+| #21 K31 (Inhaber-Foto) | 28.10. | 143 | 4 |
+| #20 GPO-Spektive | 27.10. | 8 | 0 |
+Schluss bestätigt: Inhaber-Fotos konkreter Arbeiten/Waffen (#26: 154, #21: 143) schlagen alles andere um Faktor 10+.
