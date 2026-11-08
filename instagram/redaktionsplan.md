@@ -1251,3 +1251,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-06 | #26 «Rebel» veröffentlicht 18:31 – https://www.instagram.com/p/DfaJfYdlJtb/ – Story Slide 01, WhatsApp-Bild 26-k31-rebel.jpg. |
 | 2026-11-07 | #27 Phoenix Predator aus 4 Inhaber-Fotos erstellt, So 08.11. 19:00 geplant; Seriennummer weichgezeichnet. |
 | 2026-11-08 | Inhaber-OK: Antworten unter #26 gepostet («Thanks! 🇨🇭 Would be a cool upgrade 🔥 – an adapted Stgw 57 mag on a K11 …» und «Great tip 👌»). Eine erste Version von «Great tip» war versehentlich an den falschen Nutzer adressiert und wurde sofort gelöscht. Regel «Kommentar-Ton» in marke.md ergänzt. |
+| 2026-11-08 | Inhaber-OK: Antwort auf «Needs one of my gp11 stripper-clip bandoleers» gepostet («That would complete the look 😍🇨🇭 Send us a DM – we'd love to see them!»). Möglicher Hersteller/Partner – DM beobachten. |
