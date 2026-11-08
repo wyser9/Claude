@@ -183,3 +183,9 @@ Anlässe immer mindestens als Story, mit eigenem Foto auch im Feed. Ton: augenzw
 - Vor dem Teilen prüfen: keine Preise, keine Personen ohne erkennbares Einverständnis im Vordergrund, nichts Heikles (Schalldämpfer/Halbautomaten im Fokus, Kampf-Anmutung) – im Zweifel nur per DM bedanken.
 - Gute Partner-Erwähnungen (z. B. RAD Solutions) zusätzlich im Highlight «Partner» speichern.
 - Teilen geht nur in der App (die Schnittstelle kann fremde Storys nicht teilen) – das macht der Inhaber selbst.
+
+## Kommentar-Antworten – Ton (Inhaber, 08.11.2026)
+- Locker und fachlich, **nicht belehrend**: keine ungefragten Hinweise auf Bewilligungen, Gesetze oder Erwerbsregeln in Kommentaren (nur wenn jemand ausdrücklich danach fragt).
+- Grosse Magazine sind für Sportschützen normal – nicht problematisieren.
+- Keine politischen Aussagen (z. B. zur EU-Waffenrichtlinie) in öffentlichen Kommentaren.
+- Bei Antworten auf Unter-Kommentare: nur @-markieren, wenn der Benutzername sicher bekannt ist.
