@@ -738,7 +738,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #27 – So 08.11.2026, 19:00 – Karussell – Säule: Produkt – Phoenix Predator (eigene Fotos)
 
-**Status:** Autopilot – geplant. 4 eigene Fotos des Inhabers (07.11.), Seriennummer am Griffstück unkenntlich gemacht. Angaben aus dem Shop (ID 32098): 9×19, SA, Alu/Polymer 890 g, 115.5 mm, LPA, 17 Schuss, Ausweiskopie + WES.
+**Status:** ✅ Veröffentlicht 08.11.2026, 19:01 (armatum_ch, pünktlich) als Karussell (6 Slides) – https://www.instagram.com/p/DffWibpiaPv/ – Story mit Slide 01.
 
 **Grafiken:** `instagram/grafiken/27-phoenix-predator/01.jpg`–`06.jpg` (01–04 Fotos, 05 Steckbrief, 06 CTA).
 
@@ -1254,3 +1254,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-08 | Inhaber-OK: Antwort auf «Needs one of my gp11 stripper-clip bandoleers» gepostet («That would complete the look 😍🇨🇭 Send us a DM – we'd love to see them!»). Möglicher Hersteller/Partner – DM beobachten. |
 | 2026-11-08 | **Korrektur Inhaber:** Do 12.11. offen, geschlossen ist Do 19.11. Umgesetzt: Footer armatum.ch (block-12), neue Story-Grafiken 06-korrektur/04-morgen-19/05-heute-19, Aushang aushang-geschlossen-2026-11-19.pdf, Termine verschoben (18.11. 18:00, 19.11. 08:00, Footer-Entfernung 20.11.), Newsletter-Hinweise, marke.md. Korrektur-Story sofort gepostet. |
 | 2026-11-08 | Wochen-Routine 09.–15.11.: **nichts neu geplant.** Grund 1: Kein neues Inhaber-Foto seit #27 (Regel 4c: ohne eigenes Foto kein Feed-Post). Grund 2: In der Routine-Sitzung stehen keine dauerhaften Termin-Werkzeuge (send_later/create_trigger für die Hauptsession) zur Verfügung, nur sitzungsgebundene (verboten) – eine verlässliche zeitgesteuerte Veröffentlichung wäre nicht gewährleistet. #27 Phoenix (So 08.11. 19:00) unverändert. Insights in auswertungen.md. Inhaber um Fotos und Termin-Werkzeug-Klärung gebeten. |
+| 2026-11-08 | #27 Phoenix Predator veröffentlicht 19:01 – https://www.instagram.com/p/DffWibpiaPv/ – Story Slide 01, WhatsApp-Bild 27-phoenix-predator.jpg. |
