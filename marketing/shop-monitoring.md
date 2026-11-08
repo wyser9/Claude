@@ -52,3 +52,4 @@
 | 07.11.2026 | Keine Neuheiten. MDT CKYE-POD Gen 3 jetzt «auf Bestellung» (gestern neu an Lager – vermutlich bexio-Sync ohne Bestand). Occasionen erneut zurückgesetzt. | Kein Post. Inhaber: CKYE-POD-Bestand in bexio buchen (Story lief gestern). |
 | 07.11.2026 (Abend) | Keine Änderungen. 2 neue Kommentare unter #26 «Rebel» (Wunsch nach 12-Schuss-Magazin für K11; Antwort eines Nutzers: Stgw-57-Magazin umbauen) – Antwortvorschlag an Inhaber, Hinweis Magazin > 10 Schuss bei Langwaffen = Ausnahmebewilligung. |
 | 08.11.2026 | Keine Neuheiten. SIG SG550-Magazin 30 Schuss (mit Nocken) wieder an Lager. Occasionen erneut zurückgesetzt. | Kein Post (Magazin > 20, Meta). Mark: SG550-Magazine im Newsletter für Stgw-90-Schützen (Wintertraining, passt zu .223-Staffelpreisen). |
+| 08.11.2026 (Abend) | Keine Änderungen, keine neuen Kommentare. |
