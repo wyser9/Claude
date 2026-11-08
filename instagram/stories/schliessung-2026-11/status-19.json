@@ -1,0 +1,26 @@
+{
+ "logo": "/home/user/Claude/instagram/assets/logo-weiss.png",
+ "status": [
+  {
+   "name": "06-korrektur",
+   "kicker": "Korrektur",
+   "title": "Do 12.11.\nwie gewohnt offen",
+   "body": "Wir haben uns vertan:\nAm **Donnerstag, 12. November**\nist unser Laden **offen, 17–21 Uhr**.\n\nGeschlossen ist dafür am\n**Donnerstag, 19. November**.",
+   "pill": "Onlineshop: armatum.ch"
+  },
+  {
+   "name": "04-morgen-19",
+   "kicker": "Kurze Erinnerung",
+   "title": "Morgen\ngeschlossen",
+   "body": "Am **Donnerstag, 19. November**\nbleibt unser Laden zu.\n\nWieder für dich da:\n**Samstag, 21. November, 9–13 Uhr**",
+   "pill": "Onlineshop: armatum.ch"
+  },
+  {
+   "name": "05-heute-19",
+   "kicker": "Heute",
+   "title": "Laden\ngeschlossen",
+   "body": "Heute, **Donnerstag, 19. November**,\nbleibt unser Laden zu.\n\nWieder für dich da:\n**Samstag, 21. November, 9–13 Uhr**",
+   "pill": "Onlineshop: armatum.ch"
+  }
+ ]
+}

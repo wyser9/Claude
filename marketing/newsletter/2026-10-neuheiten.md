@@ -38,4 +38,4 @@ Dein Armatum-Team
 **An der Kasse (Laden):** Pufferpatronen mit Sicherheitsfahne gut sichtbar bei der Kasse platzieren – günstiger Mitnahmeartikel, passt zu jedem Waffenkauf und zum Endschiessen-Saisonschluss.
 
 ---
-**Hinweis Öffnungszeiten (bitte im Newsletter oben aufnehmen):** Unser Laden bleibt am **Donnerstag, 5. November** und **Donnerstag, 12. November** geschlossen. Am Samstag, 7. November sind wir wie gewohnt von 9 bis 13 Uhr für dich da, ab Donnerstag, 19. November wieder von 17 bis 21 Uhr. Der Onlineshop auf armatum.ch ist rund um die Uhr offen.
+**Hinweis Öffnungszeiten (bitte im Newsletter oben aufnehmen):** Unser Laden bleibt am **Donnerstag, 5. November** und **Donnerstag, 19. November** geschlossen (Do 12.11. offen). Am Samstag, 7. November sind wir wie gewohnt von 9 bis 13 Uhr für dich da, ab Donnerstag, 19. November wieder von 17 bis 21 Uhr. Der Onlineshop auf armatum.ch ist rund um die Uhr offen.
