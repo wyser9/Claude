@@ -9265,8 +9265,8 @@
 "images": 4,
 "name": "Burris Fullfield Zielfernrohr 2.5-10x42mm",
 "on_sale": false,
-"price": "26900",
-"regular": "26900",
+"price": "25900",
+"regular": "25900",
 "short": "Burris Fullfield 2.5-10x42mm Zielfernrohr für Jagd und Sport. Klare Optik, robustes Design, variable 2,5-10x Vergrößerung und 42 mm Objektiv.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/burris-fullfield-2-5-10x42mm-robustes-zielfernrohr-fuer-jagd-und-sport/"
@@ -10335,8 +10335,8 @@
 "images": 7,
 "name": "Shotkam Gen4",
 "on_sale": false,
-"price": "69900",
-"regular": "69900",
+"price": "59900",
+"regular": "59900",
 "short": "ShotKam Gen 4 – hochauflösende 4K Waffen- und Jagdkamera, bis zu 15 h Akku, integrierter 128 GB Speicher, robust und einfach montierbar.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/shotkam-gen-4-4k-waffen-jagdkamera/"
@@ -23174,21 +23174,6 @@
 "short": "Kompaktes Zielfernrohr mit 1–4x Vergrösserung, beleuchtetem 3P#4 Absehen und schneller Zielerfassung. Perfekt für Jagd, dynamisches Schiessen und taktische Einsätze.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/burris-four-xe-1-4x24-beleuchtetes-jagd-zielfernrohr/"
-},
-"21933": {
-"cats": [
-"Burris",
-"Visiere / Optik",
-"Zielfernrohre / Scopes"
-],
-"images": 3,
-"name": "Burris Four Xe 2.5-10×50 Zielfernrohr 3P#4 ILLUM",
-"on_sale": false,
-"price": "59900",
-"regular": "59900",
-"short": "Leistungsstarkes Zielfernrohr mit 2.5–10x Vergrösserung, 50 mm Objektiv und beleuchtetem 3P#4 Absehen. Ideal für Ansitzjagd, Pirsch und präzises Schiessen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/burris-four-xe-2-5-10x50-beleuchtetes-jagd-zielfernrohr/"
 },
 "21936": {
 "cats": [
@@ -56472,7 +56457,7 @@
 "price": "8690",
 "regular": "8690",
 "short": "Kompakte Hängetasche von Agilite für zusätzlichen Stauraum unter dem Plattenträger. Einhändiger Zugriff, Klappe für ein Tourniquet, zwei Reissverschlusstaschen, Umbaugurt zur Hüfttasche, 154.5g. Ausführung: Schwarz.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/agilite-six-pack-hanger-pouch-schwarz/"
 },
 "30557": {
@@ -63087,7 +63072,7 @@
 "price": "4590",
 "regular": "4590",
 "short": "Das Black Fox The Corner ist ein Klappmesser mit Liner Lock, einer 70 mm langen Klinge aus 10Cr15CoMov und einem Griff aus Ziricote-Holz.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/black-fox-bf-787-zw-the-corner-klappmesser-ziricote/"
 },
 "32467": {
@@ -64197,7 +64182,7 @@
 "price": "8790",
 "regular": "8790",
 "short": "Schlankes Klappmesser im VOX-Design mit 75 mm Niolox-Klinge in Stonewashed-Optik, schwarzem FRN-Griff und reversiblem Clip. Gefertigt in Italien.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-kita-fx-625-bsw-klappmesser-niolox-stonewashed-schwarz-frn/"
 },
 "32918": {
@@ -64211,7 +64196,7 @@
 "price": "17890",
 "regular": "17890",
 "short": "Klappmesser nach Bob Terzuola mit 85 mm N690Co-Klinge, Liner Lock, Olivenholzgriff und Lederetui. Inspiriert von traditionellen sizilianischen Alltagsmessern.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-the-sicilian-fx-525-ol-klappmesser-olivenholz-design-bob-terzuola/"
 },
 "32919": {
@@ -64239,7 +64224,7 @@
 "price": "7590",
 "regular": "7590",
 "short": "Mini-Klappmesser in Karambit-Form mit 25 mm Klinge aus W 1.4116, schwarzem FRN-Griff und Clip. Nur 80 mm lang und 30 g leicht.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-mini-ta-fx-536-b-mini-karambit-klappmesser-schwarz/"
 },
 "32921": {
@@ -64267,7 +64252,7 @@
 "price": "28490",
 "regular": "28490",
 "short": "Robustes Survival-Messer mit 170 mm N690Co-Klinge, 6.0 mm stark, Full Tang, OD-grünem Micarta-Griff und Cordura-Scheide mit Aussentasche.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-trapper-fx-132-mgt-survival-messer-micarta-od-green/"
 },
 "32923": {
@@ -64281,7 +64266,7 @@
 "price": "23190",
 "regular": "23190",
 "short": "Feststehendes Jagdmesser von Yevgeny Khokhlov mit 120 mm Niolox-Klinge, ergonomischem Olivenholzgriff und Lederscheide.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-fenix-fx-649-ol-jagdmesser-olivenholz-niolox/"
 },
 "32924": {
@@ -64295,7 +64280,7 @@
 "price": "17990",
 "regular": "17990",
 "short": "Klassisches Jagd- und Bushcraftmesser der Rifle-Linie mit 107 mm Becut-Klinge, Olivenholzgriff und Lederscheide.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-rifle-receiver-fx-662-ol-jagdmesser-olivenholz/"
 },
 "32925": {
@@ -64309,7 +64294,7 @@
 "price": "22590",
 "regular": "22590",
 "short": "Taktisches Einsatzmesser der Fox Knives Military Division mit 150 mm N690Co-Klinge, schwarzem G10-Griff und Nylonscheide.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/fox-knives-n-e-r-o-fx-nr01-tt-einsatzmesser-g10-schwarz/"
 },
 "32926": {
@@ -64323,7 +64308,7 @@
 "price": "6190",
 "regular": "6190",
 "short": "Schwarzes Klappmesser mit 85 mm VG10-Klinge, PTFE-Beschichtung, G10-Griff und Clip für den Alltag.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/black-fox-atros-bf-770-bb-klappmesser-vg10-schwarz-g10/"
 },
 "32927": {
@@ -64337,7 +64322,7 @@
 "price": "6590",
 "regular": "6590",
 "short": "Klappmesser mit satinierter D2-Klinge, schwarzem G10-Griff und Clip aus poliertem Edelstahl.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/black-fox-spectrum-bf-782-or-klappmesser-d2-g10/"
 },
 "32938": {
@@ -64516,7 +64501,7 @@
 "price": "9990",
 "regular": "9990",
 "short": "Feuerscheindämpfer von B&T mit Gewinde 5/8×24. Er dämpft das Mündungsfeuer und dient als Aufnahme für B&T M.A.R.S. QD Schalldämpfer, die Sie ohne Werkzeug in wenigen Sekunden montieren.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-feuerscheindaempfer-fuer-m-a-r-s-qd-sd/"
 },
 "33549": {
@@ -64530,7 +64515,7 @@
 "price": "9990",
 "regular": "9990",
 "short": "Feuerscheindämpfer von B&T mit Gewinde 1/2×28. Er dämpft das Mündungsfeuer und dient als Aufnahme für B&T M.A.R.S. QD Schalldämpfer, die Sie ohne Werkzeug in wenigen Sekunden montieren.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-feuerscheindaempfer-fuer-m-a-r-s-qd-sd-1-2x28/"
 },
 "33559": {
@@ -64544,7 +64529,7 @@
 "price": "690",
 "regular": "690",
 "short": "Manipulierpatrone von B&T aus hochfestem Aluminium in den Originalabmessungen einer 5.56 x 45 mm / .223 Rem. Patrone, eloxiert in RAL 5018 Türkisblau. Der Preis gilt pro Stück. Das Bild zeigt eine Packung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-manipulierpatrone-kal-5-56-x-45-mm-223-rem/"
 },
 "33561": {
@@ -64558,7 +64543,7 @@
 "price": "390",
 "regular": "390",
 "short": "Manipulierpatrone von B&T aus hochfestem Aluminium in den Originalabmessungen einer 9x19mm Patrone, eloxiert in RAL 2004 Reinorange. Der Preis gilt pro Stück. Das Bild zeigt eine Packung.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-manipulierpatrone-kal-9x19mm/"
 }
 }
