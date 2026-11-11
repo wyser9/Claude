@@ -57,3 +57,4 @@
 | 09.11.2026 (Abend) | Keine Änderungen. Neue Kommentare: #27 Predator «Sweet🤩»; #26 Rebel 1 Kommentar ohne Text (GIF/Sticker) – Antwortvorschläge an Inhaber. |
 | 10.11.2026 | Bestand gebucht: alle Fox-/Black-Fox-Messer, B&T Manipulierpatronen und Feuerscheindämpfer, Agilite Six Pack Hanger jetzt an Lager (bexio-Sync greift). Preis geändert: Shotkam Gen4, Burris Fullfield 2.5-10×42. Entfernt: Burris Four Xe 2.5-10×50. Occasionen weiterhin täglich zurückgesetzt. | Kein Post. Mark: Fox-Messer jetzt wirklich lieferbar → Geschenkideen-Newsletter (Olivenholz-Messer); Shotkam-Preis im Advents-Newsletter prüfen. |
 | 10.11.2026 (Abend) | Keine Änderungen, keine neuen Kommentare. |
+| 11.11.2026 | Nur Occasionen (bexio-Sync) – zurückgesetzt. Sonst keine Änderungen. |
