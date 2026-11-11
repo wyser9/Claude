@@ -720,4 +720,54 @@ t( 'TWINT: Export mit Totalzeile', 0 === strpos( $ex, "\xEF\xBB\xBF" ) && false 
 $bad = ''; try { BWS_Twint::parse( "a;b\n1;2" ); } catch ( Exception $e ) { $bad = $e->getMessage(); }
 t( 'TWINT: falsche Datei abgelehnt', false !== strpos( $bad, 'keine TWINT-Abrechnung' ) );
 
+// --- TWINT-Gutschrift ohne Portal (Protokoll des TWINT-Plugins) ---
+global $wpdb;
+$lt = $wpdb->prefix . 'twint_transactions_log';
+$wpdb->query( "CREATE TABLE IF NOT EXISTS {$lt} (id INTEGER PRIMARY KEY AUTOINCREMENT, pairing_id TEXT, order_id INTEGER, soap_action TEXT, api_method TEXT, request TEXT, response TEXT, soap_request TEXT, soap_response TEXT, exception_text TEXT, created_at TEXT)" );
+$wpdb->query( "DELETE FROM {$lt}" );
+$addlog = function ( $method, $order, $pairing, $ref, $amount, $fee, $at ) use ( $wpdb, $lt ) {
+	$wpdb->insert( $lt, array( 'pairing_id' => $pairing, 'order_id' => $order, 'api_method' => $method, 'response' => wp_json_encode( array( 'id' => $pairing, 'merchantTransactionReference' => $ref, 'status' => 'SUCCESS', 'amount' => array( 'currency' => 'CHF', 'amount' => $amount ) ) ), 'soap_response' => null === $fee ? '[]' : '["<ns2:Order><ns2:Fee><Amount>' . $fee . '</Amount><Currency>CHF</Currency></ns2:Fee></ns2:Order>"]', 'created_at' => $at ) );
+};
+// Echte Werte der Abrechnung vom 04./09.11.2026.
+$addlog( 'confirmOrder', 32837, 'p-32837', '32837-RKeP', 379.9, '5.13', '2026-11-01 13:22:25' );
+$addlog( 'confirmOrder', 32947, 'p-32947', '32947-jZwq', 299, '4.04', '2026-11-03 10:20:21' );
+$addlog( 'confirmOrder', 33510, 'p-33510', '33510-NCIc', 87.5, '1.18', '2026-11-06 11:03:06' );
+$addlog( 'confirmOrder', 33519, '06d2e0db', '33519-RiQj', 169.5, '2.29', '2026-11-06 18:30:16' );
+$addlog( 'confirmOrder', 33529, 'p-33529', '33529-fQ7O', 37.5, '0.51', '2026-11-07 17:58:23' );
+$addlog( 'confirmOrder', 33531, 'p-33531', '33531-B9ob', 199, '2.69', '2026-11-07 18:27:00' );
+$addlog( 'reverseOrder', 33519, '06d2e0db', 'R-06d2e0db-HwKv', 169.5, null, '2026-11-08 06:29:40' );
+$addlog( 'confirmOrder', 33534, 'p-33534', '33534-Jp6y', 799, '10.79', '2026-11-08 15:34:00' );
+$addlog( 'confirmOrder', 33534, 'p-33534', '33534-Jp6y', 799, '10.79', '2026-11-08 15:34:01' ); // doppelt protokolliert
+$addlog( 'confirmOrder', 33535, 'p-33535', '33535-evM5', 150.3, '2.03', '2026-11-08 16:12:04' );
+$addlog( 'confirmOrder', 33537, 'p-33537', '33537-rM5F', 261.9, '3.54', '2026-11-08 17:45:24' );
+$addlog( 'confirmOrder', 33538, 'p-33538', '33538-ng74', 439.9, '5.94', '2026-11-08 20:33:24' );
+$ledger = BWS_Twint::ledger( '2026-11-01' );
+$rev = array_values( array_filter( $ledger, function ( $t ) { return $t['refund']; } ) );
+t( 'TWINT-Protokoll: 11 Transaktionen, Duplikat ignoriert', 11 === count( $ledger ), (string) count( $ledger ) );
+t( 'TWINT-Protokoll: Rückerstattung mit zurückerstatteter Kommission', 1 === count( $rev ) && -169.5 === $rev[0]['amount'] && -2.29 === $rev[0]['fee'] && -167.21 === $rev[0]['net'] );
+t( 'TWINT: Gutschrift am nächsten Werktag', '2026-11-02' === BWS_Twint::payout_date( '2026-11-01' ) && '2026-11-04' === BWS_Twint::payout_date( '2026-11-03' ) && '2026-11-09' === BWS_Twint::payout_date( '2026-11-06' ) && '2026-11-09' === BWS_Twint::payout_date( '2026-11-08' ) );
+$exp = BWS_Twint::expected( 35 );
+t( 'TWINT: Gutschrift 09.11. = 1948.42 wie Abrechnung', isset( $exp['2026-11-09'] ) && 9 === count( $exp['2026-11-09']['lines'] ) && abs( $exp['2026-11-09']['net'] - 1948.42 ) < 0.005 && abs( $exp['2026-11-09']['fee'] - 26.68 ) < 0.005, isset( $exp['2026-11-09'] ) ? wp_json_encode( array( $exp['2026-11-09']['net'], $exp['2026-11-09']['fee'] ) ) : '' );
+t( 'TWINT: Gutschrift 04.11. = 294.96', abs( $exp['2026-11-04']['net'] - 294.96 ) < 0.005 );
+$m = BWS_Twint::match_credit( 1948.42 );
+t( 'TWINT: Bankbetrag 1948.42 zugeordnet', is_array( $m ) && 9 === count( $m ) );
+$m2 = BWS_Twint::match_credit( 294.96 + 374.77 );
+t( 'TWINT: Gutschrift über 2 Tage (Feiertag) gefunden', is_array( $m2 ) && array( 32837, 32947 ) === wp_list_pluck( $m2, 'order_id' ), wp_json_encode( $m2 ) );
+t( 'TWINT: falscher Betrag -> nichts', null === BWS_Twint::match_credit( 1234.56 ) );
+BWS_Settings::save( array( 'twint_payout_mail' => 'yes', 'notify_email' => 'shop@armatum.ch' ) );
+delete_option( BWS_Twint::OPT_MAILED );
+$GLOBALS['bws_mails'] = array();
+add_filter( 'pre_option_timezone_string', function () { return 'Europe/Zurich'; } );
+$today_fn = function () { return wp_date( 'Y-m-d' ); };
+// Gutschriftsmail für "heute": Transaktion von gestern (Werktag) bzw. letztem Werktag.
+$prev = new DateTime( 'now', wp_timezone() ); do { $prev->modify( '-1 day' ); } while ( BWS_Twint::payout_date( $prev->format( 'Y-m-d' ) ) !== $today_fn() && $prev > new DateTime( '-5 days', wp_timezone() ) );
+$addlog( 'confirmOrder', 33600, 'p-33600', '33600-AbCd', 50, '0.68', $prev->format( 'Y-m-d' ) . ' 12:00:00' );
+$sent = BWS_Twint::send_payout_mail();
+$weekend = (int) wp_date( 'N' ) >= 6;
+$tm = array_values( array_filter( $GLOBALS['bws_mails'], function ( $x ) { return false !== strpos( $x['subject'], 'TWINT-Gutschrift' ); } ) );
+t( 'TWINT: Gutschriftsmail am Werktag (nicht am Wochenende)', $weekend ? ( ! $sent && ! $tm ) : ( $sent && 1 === count( $tm ) && false !== strpos( $tm[0]['subject'], '49.32' ) && false !== strpos( $tm[0]['message'], '#33600' ) ), wp_json_encode( $tm ) );
+t( 'TWINT: Gutschriftsmail nur einmal pro Tag', ! BWS_Twint::send_payout_mail() );
+BWS_Twint::ensure_schedule();
+t( 'TWINT: Mail täglich eingeplant', is_int( as_next_scheduled_action( BWS_Twint::HOOK_MAIL, array(), BWS_AS_GROUP ) ) );
+
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

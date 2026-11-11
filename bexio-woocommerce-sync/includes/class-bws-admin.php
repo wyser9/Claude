@@ -124,6 +124,7 @@ class BWS_Admin {
 					self::checkbox( 'status_from_bexio', 'Bestellstatus aus bexio', 'Stündlich prüfen: Rechnung zum Auftrag bezahlt &rarr; Bestellung „In Bearbeitung“ (bezahlt); Rechnung bezahlt und Auftrag „Erledigt“ &rarr; „Abgeschlossen“. Der Kunde erhält dabei die üblichen WooCommerce-E-Mails.', $s );
 					self::checkbox( 'tracking_to_bexio', 'Sendungsnummer nach bexio', 'Wird mit „Armatum Post Label“ ein Label erstellt (nicht im Testmodus), steht die Sendungsnummer mit Tracking-Link als interner Kommentar im bexio-Auftrag.', $s );
 					self::checkbox( 'health_mail', 'Warn-Mail bei Problemen', 'Täglich um ' . BWS_Health::CHECK_TIME . ' Uhr prüfen und nur bei Befund eine E-Mail an „Hinweise an“ senden: fehlgeschlagene Hintergrundaufgaben, Lager- oder Statusabgleich nicht gelaufen, Bestellungen ohne bexio-Auftrag, Produkte mit Übertragungsfehler.', $s );
+					self::checkbox( 'twint_payout_mail', 'TWINT-Gutschrift per Mail', 'Am Morgen jedes Gutschriftstags (' . BWS_Twint::MAIL_TIME . ' Uhr) eine Mail mit den Bestellungen, der Kommission und dem Netto-Betrag der TWINT-Sammelgutschrift – ohne Login im TWINT-Portal. Details unter WooCommerce &rarr; TWINT-Abrechnung.', $s );
 					self::checkbox( 'cancel_to_bexio', 'Storno melden', 'Wird eine übertragene Bestellung im Shop storniert, erhält der bexio-Auftrag einen Kommentar und du eine E-Mail, den Auftrag in bexio zu stornieren (die bexio-Schnittstelle kann Aufträge nicht selbst stornieren).', $s );
 					?>
 					<tr>
@@ -373,7 +374,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'health_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -412,6 +413,7 @@ class BWS_Admin {
 		BWS_Status_Import::ensure_schedule();
 		BWS_Order_Events::ensure_schedule();
 		BWS_Health::ensure_schedule();
+		BWS_Twint::ensure_schedule();
 		self::redirect( 'Einstellungen gespeichert.' );
 	}
 

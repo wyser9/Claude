@@ -16,11 +16,247 @@ class BWS_Twint {
 	const PAGE         = 'bws-twint';
 	const META_PAYOUT  = '_bws_twint_payout';
 	const TRANSIENT    = 'bws_twint_report_';
+	const HOOK_MAIL    = 'bws_twint_payout_mail';
+	const MAIL_TIME    = '07:55';
+	const OPT_MAILED   = 'bws_twint_mailed';
 
 	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'menu' ), 20 );
 		add_action( 'admin_post_bws_twint_upload', array( __CLASS__, 'handle_upload' ) );
 		add_action( 'admin_post_bws_twint_export', array( __CLASS__, 'handle_export' ) );
+	}
+
+	/**
+	 * Tägliche Gutschrift-Mail (läuft auch ausserhalb des Admin-Bereichs).
+	 */
+	public static function init_cron() {
+		add_action( self::HOOK_MAIL, array( __CLASS__, 'send_payout_mail' ) );
+		add_action( 'action_scheduler_init', array( __CLASS__, 'ensure_schedule' ) );
+	}
+
+	public static function ensure_schedule() {
+		if ( ! function_exists( 'as_schedule_recurring_action' ) ) {
+			return;
+		}
+		$active    = BWS_Settings::enabled( 'twint_payout_mail' ) && self::has_log();
+		$scheduled = as_next_scheduled_action( self::HOOK_MAIL, array(), BWS_AS_GROUP );
+		if ( $active && ! $scheduled ) {
+			list( $h, $m ) = array_map( 'intval', explode( ':', self::MAIL_TIME ) );
+			$next          = new DateTime( 'now', wp_timezone() );
+			$next->setTime( $h, $m, 0 );
+			if ( $next->getTimestamp() <= time() ) {
+				$next->modify( '+1 day' );
+			}
+			as_schedule_recurring_action( $next->getTimestamp(), DAY_IN_SECONDS, self::HOOK_MAIL, array(), BWS_AS_GROUP );
+		} elseif ( ! $active && $scheduled ) {
+			as_unschedule_all_actions( self::HOOK_MAIL, array(), BWS_AS_GROUP );
+		}
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Gutschriften aus dem Protokoll des TWINT-Plugins (ohne Portal)       */
+	/* ------------------------------------------------------------------ */
+
+	private static function log_table() {
+		global $wpdb;
+		return $wpdb->prefix . 'twint_transactions_log';
+	}
+
+	public static function has_log() {
+		global $wpdb;
+		$table = self::log_table();
+		return $table === $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	}
+
+	/**
+	 * Nächster Werktag (Mo–Fr) nach dem Datum – TWINT überweist am Werktag nach der Zahlung.
+	 * Feiertage verschieben die Gutschrift; „Bankgutschrift prüfen“ findet sie trotzdem.
+	 *
+	 * @param string $date Y-m-d.
+	 * @return string Y-m-d.
+	 */
+	public static function payout_date( $date ) {
+		$d = new DateTime( $date . ' 12:00:00', wp_timezone() );
+		do {
+			$d->modify( '+1 day' );
+		} while ( (int) $d->format( 'N' ) >= 6 );
+		return $d->format( 'Y-m-d' );
+	}
+
+	/**
+	 * Alle TWINT-Zahlungen und -Rückerstattungen seit $since mit Kommission und erwartetem Gutschriftsdatum.
+	 * Quelle: Protokoll des TWINT-Plugins (Antwort von TWINT inkl. Gebühr). Rückerstattungen erhalten die
+	 * anteilige Kommission der ursprünglichen Zahlung zurück (so rechnet TWINT ab).
+	 *
+	 * @param string $since Y-m-d.
+	 * @return array[] time, date, payout, order_id, ref, amount, fee, net, refund.
+	 */
+	public static function ledger( $since ) {
+		if ( ! self::has_log() ) {
+			return array();
+		}
+		global $wpdb;
+		$table = self::log_table();
+		$rows  = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->prepare(
+				"SELECT order_id, pairing_id, api_method, response, soap_response, created_at FROM {$table}
+				 WHERE api_method IN ('confirmOrder','reverseOrder') AND created_at >= %s ORDER BY id",
+				$since . ' 00:00:00'
+			)
+		);
+		$confirm = array();
+		$out     = array();
+		$seen    = array();
+		foreach ( (array) $rows as $r ) {
+			$res = json_decode( (string) $r->response, true );
+			if ( ! is_array( $res ) || 'SUCCESS' !== ( $res['status'] ?? '' ) ) {
+				continue;
+			}
+			$ref = (string) ( $res['merchantTransactionReference'] ?? '' );
+			if ( '' === $ref || isset( $seen[ $ref ] ) ) {
+				continue;
+			}
+			$seen[ $ref ] = true;
+			$amount       = round( (float) ( $res['amount']['amount'] ?? 0 ), 2 );
+			$refund       = 'reverseOrder' === $r->api_method;
+			if ( $refund ) {
+				$orig   = $confirm[ (string) $r->pairing_id ] ?? self::original_fee( (string) $r->pairing_id );
+				$fee    = $orig && $orig['amount'] > 0 ? -round( $orig['fee'] * $amount / $orig['amount'], 2 ) : 0.0;
+				$amount = -$amount;
+			} else {
+				$fee = preg_match( '#<ns2:Fee><Amount>([0-9.]+)</Amount>#', (string) $r->soap_response, $m ) ? round( (float) $m[1], 2 ) : 0.0;
+				$confirm[ (string) $r->pairing_id ] = array( 'amount' => $amount, 'fee' => $fee );
+			}
+			$date  = substr( (string) $r->created_at, 0, 10 );
+			$out[] = array(
+				'time'     => (string) $r->created_at,
+				'date'     => $date,
+				'payout'   => self::payout_date( $date ),
+				'order_id' => (int) $r->order_id,
+				'ref'      => $ref,
+				'amount'   => $amount,
+				'fee'      => $fee,
+				'net'      => round( $amount - $fee, 2 ),
+				'refund'   => $refund,
+			);
+		}
+		return $out;
+	}
+
+	private static function original_fee( $pairing_id ) {
+		global $wpdb;
+		$table = self::log_table();
+		$r     = $wpdb->get_row( $wpdb->prepare( "SELECT response, soap_response FROM {$table} WHERE api_method = 'confirmOrder' AND pairing_id = %s ORDER BY id DESC LIMIT 1", $pairing_id ) ); // phpcs:ignore WordPress.DB
+		if ( ! $r ) {
+			return null;
+		}
+		$res = json_decode( (string) $r->response, true );
+		return array(
+			'amount' => round( (float) ( $res['amount']['amount'] ?? 0 ), 2 ),
+			'fee'    => preg_match( '#<ns2:Fee><Amount>([0-9.]+)</Amount>#', (string) $r->soap_response, $m ) ? round( (float) $m[1], 2 ) : 0.0,
+		);
+	}
+
+	/**
+	 * Erwartete Gutschriften: Transaktionen nach Gutschriftsdatum gruppiert (neueste zuerst).
+	 *
+	 * @param int $days Zeitraum in Tagen.
+	 * @return array<string,array{date:string,lines:array,amount:float,fee:float,net:float}>
+	 */
+	public static function expected( $days = 35 ) {
+		$out = array();
+		foreach ( self::ledger( gmdate( 'Y-m-d', time() - $days * DAY_IN_SECONDS ) ) as $t ) {
+			if ( ! isset( $out[ $t['payout'] ] ) ) {
+				$out[ $t['payout'] ] = array( 'date' => $t['payout'], 'lines' => array(), 'amount' => 0.0, 'fee' => 0.0, 'net' => 0.0 );
+			}
+			$out[ $t['payout'] ]['lines'][]  = $t;
+			$out[ $t['payout'] ]['amount'] += $t['amount'];
+			$out[ $t['payout'] ]['fee']    += $t['fee'];
+			$out[ $t['payout'] ]['net']    += $t['net'];
+		}
+		krsort( $out );
+		return $out;
+	}
+
+	/**
+	 * Findet die Transaktionen zu einem Bankeingang: zuerst eine erwartete Gutschrift mit genau diesem Betrag,
+	 * sonst eine lückenlose Folge von Transaktionen (z. B. bei Feiertagen), deren Netto-Summe passt.
+	 *
+	 * @param float $amount Gutgeschriebener Betrag.
+	 * @return array|null Lines.
+	 */
+	public static function match_credit( $amount ) {
+		$amount = round( (float) $amount, 2 );
+		foreach ( self::expected( 60 ) as $p ) {
+			if ( abs( round( $p['net'], 2 ) - $amount ) < 0.005 ) {
+				return $p['lines'];
+			}
+		}
+		$ledger = self::ledger( gmdate( 'Y-m-d', time() - 60 * DAY_IN_SECONDS ) );
+		$n      = count( $ledger );
+		for ( $end = $n - 1; $end >= 0; $end-- ) {
+			$sum = 0.0;
+			for ( $start = $end; $start >= 0; $start-- ) {
+				$sum += $ledger[ $start ]['net'];
+				if ( abs( round( $sum, 2 ) - $amount ) < 0.005 ) {
+					return array_slice( $ledger, $start, $end - $start + 1 );
+				}
+				if ( $sum > $amount + 0.005 && $ledger[ $start ]['net'] > 0 ) {
+					break;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Mail am Morgen des Gutschriftstags: welche Bestellungen die heutige Sammelgutschrift enthält.
+	 *
+	 * @return bool Ob eine Mail verschickt wurde.
+	 */
+	public static function send_payout_mail() {
+		$today = wp_date( 'Y-m-d' );
+		if ( (int) wp_date( 'N' ) >= 6 || get_option( self::OPT_MAILED ) === $today ) {
+			return false;
+		}
+		$expected = self::expected( 14 );
+		if ( empty( $expected[ $today ] ) ) {
+			return false;
+		}
+		$p     = $expected[ $today ];
+		$money = function ( $n ) {
+			return number_format( (float) $n, 2, '.', "'" );
+		};
+		$lines = array();
+		foreach ( $p['lines'] as $t ) {
+			$order   = wc_get_order( $t['order_id'] );
+			$lines[] = sprintf(
+				'#%s  %s  %s  %s  Kommission %s  Netto %s%s',
+				$order ? $order->get_order_number() : $t['order_id'],
+				$order ? trim( $order->get_formatted_billing_full_name() ) : '',
+				$order && $order->get_meta( BWS_Order_Sync::META_ORDER_NR ) ? '(' . $order->get_meta( BWS_Order_Sync::META_ORDER_NR ) . ')' : '',
+				$money( $t['amount'] ),
+				$money( $t['fee'] ),
+				$money( $t['net'] ),
+				$t['refund'] ? '  RÜCKERSTATTUNG' : ''
+			);
+		}
+		$sent = wp_mail(
+			BWS_Order_Events::notify_email(),
+			sprintf( '[%s] TWINT-Gutschrift heute: CHF %s (%d Transaktionen)', wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ), $money( $p['net'] ), count( $p['lines'] ) ),
+			sprintf(
+				"Heute erwartete TWINT-Sammelgutschrift laut Shop:\n\nBetrag Transaktionen: CHF %s\nKommission:           CHF %s\nGutschrift (netto):   CHF %s\n\n%s\n\nWeicht der Bankeingang ab (z. B. Feiertag), den Betrag unter WooCommerce > TWINT-Abrechnung bei „Bankgutschrift prüfen“ eingeben: %s\n",
+				$money( $p['amount'] ),
+				$money( $p['fee'] ),
+				$money( $p['net'] ),
+				implode( "\n", $lines ),
+				admin_url( 'admin.php?page=' . self::PAGE )
+			)
+		);
+		if ( $sent ) {
+			update_option( self::OPT_MAILED, $today, false );
+		}
+		return (bool) $sent;
 	}
 
 	public static function menu() {
@@ -337,6 +573,39 @@ class BWS_Twint {
 		return $csv;
 	}
 
+	/**
+	 * Tabelle mit Transaktionen einer Gutschrift.
+	 */
+	private static function render_lines( $title, array $lines, $money ) {
+		$sum = array( 0.0, 0.0, 0.0 );
+		?>
+		<h3><?php echo esc_html( $title ); ?></h3>
+		<table class="widefat striped" style="max-width:1100px">
+			<thead><tr><th>Bestellung</th><th>Kunde</th><th>bexio-Auftrag</th><th>Zahlung</th><th style="text-align:right">Betrag</th><th style="text-align:right">Kommission</th><th style="text-align:right">Netto</th></tr></thead>
+			<tbody>
+			<?php
+			foreach ( $lines as $t ) :
+				$order   = wc_get_order( $t['order_id'] );
+				$sum[0] += $t['amount'];
+				$sum[1] += $t['fee'];
+				$sum[2] += $t['net'];
+				?>
+				<tr>
+					<td><?php echo $order ? '<a href="' . esc_url( $order->get_edit_order_url() ) . '">#' . esc_html( $order->get_order_number() ) . '</a>' : esc_html( $t['ref'] ); ?><?php echo $t['refund'] ? ' <em>(Rückerstattung)</em>' : ''; ?></td>
+					<td><?php echo $order ? esc_html( trim( $order->get_formatted_billing_full_name() ) ) : ''; ?></td>
+					<td><?php echo $order ? esc_html( (string) $order->get_meta( BWS_Order_Sync::META_ORDER_NR ) ) : ''; ?></td>
+					<td><?php echo esc_html( wp_date( 'd.m.Y H:i', strtotime( $t['time'] ) ) ); ?></td>
+					<td style="text-align:right"><?php echo esc_html( $money( $t['amount'] ) ); ?></td>
+					<td style="text-align:right"><?php echo esc_html( $money( $t['fee'] ) ); ?></td>
+					<td style="text-align:right"><?php echo esc_html( $money( $t['net'] ) ); ?></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+			<tfoot><tr><th colspan="4">Total</th><th style="text-align:right"><?php echo esc_html( $money( $sum[0] ) ); ?></th><th style="text-align:right"><?php echo esc_html( $money( $sum[1] ) ); ?></th><th style="text-align:right"><?php echo esc_html( $money( $sum[2] ) ); ?></th></tr></tfoot>
+		</table>
+		<?php
+	}
+
 	public static function render_page() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			return;
@@ -353,6 +622,53 @@ class BWS_Twint {
 			<?php if ( $msg ) : ?>
 				<div class="notice notice-error"><p><?php echo esc_html( $msg ); ?></p></div>
 			<?php endif; ?>
+			<?php
+			$check    = isset( $_GET['credit'] ) ? (float) str_replace( array( "'", ',' ), array( '', '.' ), sanitize_text_field( wp_unslash( $_GET['credit'] ) ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
+			$expected = self::expected( 35 );
+			?>
+			<h2>Bankgutschrift prüfen</h2>
+			<form method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>">
+				<input type="hidden" name="page" value="<?php echo esc_attr( self::PAGE ); ?>">
+				CHF <input type="text" name="credit" value="<?php echo $check ? esc_attr( number_format( $check, 2, '.', '' ) ) : ''; ?>" placeholder="1948.42" class="small-text" style="width:110px">
+				<button class="button button-primary">Zuordnen</button>
+				<span class="description">Betrag der TWINT-Gutschrift auf der Bank – zeigt, welche Bestellungen darin enthalten sind.</span>
+			</form>
+			<?php
+			if ( $check ) :
+				$match = self::match_credit( $check );
+				if ( $match ) :
+					self::render_lines( 'Gutschrift CHF ' . $money( $check ) . ' enthält:', $match, $money );
+				else :
+					?>
+					<div class="notice notice-warning inline"><p>Keine passende Kombination von TWINT-Transaktionen der letzten 60 Tage gefunden. Ist der Betrag richtig? Sonst die CSV aus dem TWINT-Portal unten hochladen.</p></div>
+					<?php
+				endif;
+			endif;
+			?>
+
+			<h2>Gutschriften laut Shop</h2>
+			<p class="description">Berechnet aus den TWINT-Zahlungen im Shop (inkl. Kommission, wie von TWINT gemeldet). TWINT überweist am nächsten Werktag; an Feiertagen kann sich das verschieben.<?php echo BWS_Settings::enabled( 'twint_payout_mail' ) ? ' Am Gutschriftstag kommt um ' . esc_html( self::MAIL_TIME ) . ' Uhr eine Mail an „Hinweise an“.' : ''; ?></p>
+			<?php if ( ! self::has_log() ) : ?>
+				<p>Kein Protokoll des TWINT-Plugins gefunden.</p>
+			<?php else : ?>
+				<table class="widefat striped" style="max-width:900px">
+					<thead><tr><th>Gutschrift am</th><th style="text-align:right">Transaktionen</th><th style="text-align:right">Betrag</th><th style="text-align:right">Kommission</th><th style="text-align:right">Gutschrift netto</th><th></th></tr></thead>
+					<tbody>
+					<?php foreach ( $expected as $p ) : ?>
+						<tr>
+							<td><?php echo esc_html( wp_date( 'D, d.m.Y', strtotime( $p['date'] . ' 12:00' ) ) ); ?><?php echo $p['date'] >= wp_date( 'Y-m-d' ) ? ' <em>(erwartet)</em>' : ''; ?></td>
+							<td style="text-align:right"><?php echo count( $p['lines'] ); ?></td>
+							<td style="text-align:right"><?php echo esc_html( $money( $p['amount'] ) ); ?></td>
+							<td style="text-align:right"><?php echo esc_html( $money( $p['fee'] ) ); ?></td>
+							<td style="text-align:right"><strong><?php echo esc_html( $money( $p['net'] ) ); ?></strong></td>
+							<td><a href="<?php echo esc_url( add_query_arg( array( 'page' => self::PAGE, 'credit' => number_format( $p['net'], 2, '.', '' ) ), admin_url( 'admin.php' ) ) ); ?>">Details</a></td>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			<?php endif; ?>
+
+			<h2>Optional: Abrechnung aus dem TWINT-Portal</h2>
 			<p>Im TWINT-Portal die Abrechnung als CSV herunterladen und hier hochladen. Pro Sammelgutschrift siehst du, welche Bestellungen bezahlt bzw. erstattet wurden und wie viel Kommission abgezogen wurde. In bexio wird nichts gebucht.</p>
 			<form method="post" enctype="multipart/form-data" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="bws_twint_upload">

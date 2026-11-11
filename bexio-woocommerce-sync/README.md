@@ -139,7 +139,13 @@ Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail 
 Sofort prüfen: Knopf **„Jetzt prüfen (Warn-Mail)“** oder `wp bexio health`. Abschalten: Einstellung *Warn-Mail bei Problemen*.
 
 ### TWINT-Abrechnung (Sammelgutschrift → Bestellungen)
-*WooCommerce → TWINT-Abrechnung*: Lade die Abrechnungs-CSV aus dem TWINT-Portal hoch.
+**Ohne TWINT-Portal:** Das TWINT-Plugin protokolliert jede Zahlung samt der Kommission, die TWINT meldet. Daraus berechnet das Plugin die Sammelgutschriften selbst. TWINT überweist am nächsten Werktag, Wochenend-Zahlungen kommen am Montag. Rückerstattungen werden abgezogen, ihre Kommission wird zurückgerechnet.
+- **Mail am Gutschriftstag** um 07:55 an *Hinweise an*: Bestellungen, Kunde, bexio-Auftrag, Betrag, Kommission und Netto-Gutschrift. Einstellung *TWINT-Gutschrift per Mail*.
+- *WooCommerce → TWINT-Abrechnung*: Tabelle «Gutschriften laut Shop» der letzten fünf Wochen.
+- **Bankgutschrift prüfen**: Den Betrag vom Bankeingang eingeben, und die Seite zeigt die enthaltenen Bestellungen. Das funktioniert auch, wenn TWINT wegen eines Feiertags mehrere Tage zusammenfasst.
+- Geprüft gegen die echte Abrechnung vom 04./09.11.2026: Alle Beträge und Kommissionen stimmen auf den Rappen.
+
+**Optional mit CSV:** *WooCommerce → TWINT-Abrechnung*: Lade die Abrechnungs-CSV aus dem TWINT-Portal hoch.
 - **Pro Überweisung (Sammelgutschrift)** siehst du alle Zahlungen und Rückerstattungen mit Bestellung, Kunde, bexio-Auftrag, Betrag, Kommission und gutgeschriebenem Betrag, dazu die Totale. Das Netto-Total entspricht der Gutschrift auf der Bank.
 - **Zuordnung** über die Händlertransaktions-ID: Zahlungen `<Bestell-ID>-xxxx`, Rückerstattungen `R-<TWINT-Order-ID>-xxxx`.
 - **Rot markiert** sind Abweichungen: Bestellung nicht gefunden, Betrag weicht ab, im Shop keine Rückerstattung erfasst, doppelte Zeile.
