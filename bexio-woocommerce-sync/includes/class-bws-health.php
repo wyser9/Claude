@@ -54,8 +54,8 @@ class BWS_Health {
 	 */
 	public static function run() {
 		$last     = get_option( self::OPTION );
-		$since    = is_array( $last ) && ! empty( $last['time'] ) ? (int) $last['time'] : time() - DAY_IN_SECONDS;
-		$findings = self::findings( $since );
+		$reported = is_array( $last ) && ! empty( $last['reported'] ) ? array_map( 'intval', (array) $last['reported'] ) : array();
+		$findings = self::findings( time() - 2 * DAY_IN_SECONDS, $reported );
 
 		$sent = false;
 		if ( $findings ) {
@@ -71,6 +71,7 @@ class BWS_Health {
 				'time'     => time(),
 				'findings' => $findings,
 				'sent'     => $sent,
+				'reported' => array_slice( $reported, -500 ),
 			),
 			false
 		);
@@ -83,14 +84,15 @@ class BWS_Health {
 	/**
 	 * Alle Befunde.
 	 *
-	 * @param int $since Fehlgeschlagene Aufgaben ab diesem Zeitpunkt.
+	 * @param int   $since    Fehlgeschlagene Aufgaben ab diesem Zeitpunkt.
+	 * @param int[] $reported Bereits gemeldete Aufgaben-IDs (wird ergänzt).
 	 * @return string[]
 	 */
-	public static function findings( $since ) {
+	public static function findings( $since, array &$reported = array() ) {
 		$findings = array();
 
-		// 1. Fehlgeschlagene Hintergrundaufgaben.
-		foreach ( self::failed_actions( $since ) as $hook => $info ) {
+		// 1. Fehlgeschlagene Hintergrundaufgaben (jede nur einmal melden).
+		foreach ( self::failed_actions( $since, $reported ) as $hook => $info ) {
 			$findings[] = sprintf( '%d× fehlgeschlagen: %s. Letzter Fehler: %s', $info['count'], self::hook_label( $hook ), $info['message'] );
 		}
 
@@ -138,10 +140,11 @@ class BWS_Health {
 	/**
 	 * Fehlgeschlagene Aufgaben seit $since, je Hook mit Anzahl und letzter Fehlermeldung.
 	 *
-	 * @param int $since Zeitpunkt.
+	 * @param int   $since    Zeitpunkt.
+	 * @param int[] $reported Bereits gemeldete IDs – werden übersprungen, neue werden ergänzt.
 	 * @return array<string,array{count:int,message:string}>
 	 */
-	public static function failed_actions( $since ) {
+	public static function failed_actions( $since, array &$reported = array() ) {
 		if ( ! function_exists( 'as_get_scheduled_actions' ) || ! class_exists( 'ActionScheduler' ) ) {
 			return array();
 		}
@@ -159,7 +162,11 @@ class BWS_Health {
 		);
 		$out = array();
 		foreach ( (array) $ids as $id ) {
-			$action = ActionScheduler::store()->fetch_action( $id );
+			if ( in_array( (int) $id, $reported, true ) ) {
+				continue;
+			}
+			$reported[] = (int) $id;
+			$action     = ActionScheduler::store()->fetch_action( $id );
 			$hook   = $action ? $action->get_hook() : '?';
 			if ( ! isset( $out[ $hook ] ) ) {
 				$message = '';

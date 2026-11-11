@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
  *     wp bexio backfill
  *     wp bexio import-status
  *     wp bexio health
+ *     wp bexio twint abrechnung.csv
  */
 class BWS_CLI {
 
@@ -73,6 +74,29 @@ class BWS_CLI {
 			WP_CLI::success( sprintf( '%d Artikel: %d Vorrätig, %d Lieferrückstand, %d unverändert, %d nicht im Shop, %d übersprungen, %d Fehler.', $s['articles'], $s['instock'], $s['backorder'], $s['unchanged'], $s['not_found'], $s['skipped'], $s['errors'] ) );
 		} catch ( BWS_Exception $e ) {
 			WP_CLI::error( $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Wertet eine TWINT-Abrechnungs-CSV aus (Sammelgutschrift -> Bestellungen, Kommission).
+	 *
+	 * <datei>
+	 * : CSV aus dem TWINT-Portal.
+	 */
+	public function twint( $args ) {
+		try {
+			$report = BWS_Twint::report( BWS_Twint::parse( (string) file_get_contents( $args[0] ) ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		} catch ( Exception $e ) {
+			WP_CLI::error( $e->getMessage() );
+		}
+		foreach ( $report['payouts'] as $p ) {
+			WP_CLI::log( sprintf( 'Überweisung %s: Betrag %.2f, Kommission %.2f, gutgeschrieben %.2f', $p['date'], $p['amount'], $p['fee'], $p['credited'] ) );
+			foreach ( $p['lines'] as $l ) {
+				WP_CLI::log( sprintf( '  #%s %s %s %.2f / %.2f %s', $l['number'] ?: $l['row']['merchant_ref'], $l['refund'] ? 'Rückerstattung' : 'Zahlung', $l['customer'], $l['row']['amount'], $l['row']['fee'], implode( '; ', $l['issues'] ) ) );
+			}
+		}
+		foreach ( $report['open'] as $o ) {
+			WP_CLI::warning( sprintf( '#%s %s (%.2f) noch in keiner Abrechnung', $o['number'], $o['customer'], $o['total'] ) );
 		}
 	}
 

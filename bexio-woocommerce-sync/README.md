@@ -138,6 +138,16 @@ Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail 
 
 Sofort prüfen: Knopf **„Jetzt prüfen (Warn-Mail)“** oder `wp bexio health`. Abschalten: Einstellung *Warn-Mail bei Problemen*.
 
+### TWINT-Abrechnung (Sammelgutschrift → Bestellungen)
+*WooCommerce → TWINT-Abrechnung*: Lade die Abrechnungs-CSV aus dem TWINT-Portal hoch.
+- **Pro Überweisung (Sammelgutschrift)** siehst du alle Zahlungen und Rückerstattungen mit Bestellung, Kunde, bexio-Auftrag, Betrag, Kommission und gutgeschriebenem Betrag, dazu die Totale. Das Netto-Total entspricht der Gutschrift auf der Bank.
+- **Zuordnung** über die Händlertransaktions-ID: Zahlungen `<Bestell-ID>-xxxx`, Rückerstattungen `R-<TWINT-Order-ID>-xxxx`.
+- **Rot markiert** sind Abweichungen: Bestellung nicht gefunden, Betrag weicht ab, im Shop keine Rückerstattung erfasst, doppelte Zeile.
+- **Noch nicht abgerechnet:** TWINT-Zahlungen aus dem gleichen Zeitraum, die in keiner Zeile vorkommen.
+- **Vermerk an der Bestellung:** Jede Bestellung bekommt eine Notiz «ausbezahlt mit Sammelgutschrift vom …» samt Kommission.
+- **Export** als Excel-taugliche CSV für die Buchhaltung. In bexio wird nichts gebucht.
+- Auch per `wp bexio twint <datei.csv>`.
+
 ## Fehler & Protokoll
 - Log: *WooCommerce → Status → Logs*, Quelle **bexio-sync**
 - Hintergrund-Jobs: *WooCommerce → Status → Geplante Aktionen*, Gruppe **bexio-sync**. Fehlgeschlagene Jobs lassen sich dort erneut ausführen.

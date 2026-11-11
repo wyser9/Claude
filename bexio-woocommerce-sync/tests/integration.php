@@ -689,4 +689,35 @@ t( 'Warn-Mail: gleicher Fehler nicht erneut, ohne Befund keine Mail', ! array_fi
 BWS_Health::ensure_schedule();
 t( 'Warn-Mail täglich eingeplant', is_int( as_next_scheduled_action( BWS_Health::HOOK, array(), BWS_AS_GROUP ) ) );
 
+// --- TWINT-Abrechnung ---
+$tw = function ( $total, $paid ) { $o = wc_create_order(); $o->set_payment_method( 'twint_regular' ); $o->set_billing_first_name( 'Kunde' ); $o->set_billing_last_name( (string) $total ); $o->set_total( $total ); $o->set_date_paid( strtotime( $paid ) ); $o->set_status( 'processing' ); $o->update_meta_data( '_bws_order_nr', 'AU-' . $total ); $o->save(); return $o; };
+$t1 = $tw( 299, '2026-11-03 10:20' ); $t2 = $tw( 169.5, '2026-11-06 18:30' ); $t3 = $tw( 87.5, '2026-11-06 11:03' ); $t4 = $tw( 100, '2026-11-07 17:58' ); $t5 = $tw( 55, '2026-11-08 09:00' );
+wc_create_refund( array( 'order_id' => $t2->get_id(), 'amount' => 169.5, 'reason' => 'Test' ) );
+$csv  = "\xEF\xBB\xBF\"Datum Überweisung\";\"09.11.2026\"\n\"Datum Abrechnung\";\"09.11.2026\"\n\"Währung\";\"CHF\"\n";
+$csv .= '"Überweisung am";"Transaktionsgebühr";"Währung";"Gutgeschriebener Betrag";"Kennung Verkaufsstelle";"UUID Store";"Betrag Transaktion";"Währung";"Transaktionsdatum";"Transaktionszeit";"Typ";"Order ID";"Terminal ID";"Transaktions-ID";"Händlertransaktions-ID"' . "\n";
+$line = function ( $payout, $fee, $cred, $amount, $date, $type, $uuid, $ref ) { return "\"$payout\";\"$fee\";\"CHF\";\"$cred\";\"Webshop\";\"store\";\"$amount\";\"CHF\";\"$date\";\"10:00\";\"$type\";\"$uuid\";\"term\";\"tx\";\"$ref\"\n"; };
+$u2 = '06d2e0db-b771-4da2-9e0a-7448a2940d1f';
+$csv .= $line( '04.11.2026', '4.04', '294.96', '299', '03.11.2026', 'Product', 'aaaaaaaa-0000-0000-0000-000000000001', $t1->get_id() . '-jZwq' );
+$csv .= $line( '09.11.2026', '2.29', '167.21', '169.5', '06.11.2026', 'Product', $u2, $t2->get_id() . '-RiQj' );
+$csv .= $line( '09.11.2026', '1.18', '86.32', '87.5', '06.11.2026', 'Product', 'aaaaaaaa-0000-0000-0000-000000000003', $t3->get_id() . '-NCIc' );
+$csv .= $line( '09.11.2026', '0.51', '36.99', '37.5', '07.11.2026', 'Product', 'aaaaaaaa-0000-0000-0000-000000000004', $t4->get_id() . '-fQ7O' );
+$csv .= $line( '09.11.2026', '-2.29', '-167.21', '-169.5', '08.11.2026', 'Cancellation', 'bbbbbbbb-0000-0000-0000-000000000009', 'R-' . $u2 . '-HwKv' );
+$csv .= $line( '09.11.2026', '1.00', '99.00', '100', '08.11.2026', 'Product', 'aaaaaaaa-0000-0000-0000-000000000005', '999999-XXXX' );
+$parsed = BWS_Twint::parse( $csv );
+t( 'TWINT: CSV gelesen', 6 === count( $parsed['rows'] ) && '09.11.2026' === $parsed['meta']['Datum Überweisung'] && '2026-11-04' === $parsed['rows'][0]['payout_date'] && 4.04 === $parsed['rows'][0]['fee'] );
+$rep = BWS_Twint::report( $parsed );
+$p9 = $rep['payouts']['2026-11-09']; $p4 = $rep['payouts']['2026-11-04'];
+t( 'TWINT: nach Überweisung gruppiert, Totale', 2 === count( $rep['payouts'] ) && 5 === count( $p9['lines'] ) && abs( $p9['credited'] - ( 167.21 + 86.32 + 36.99 - 167.21 + 99 ) ) < 0.001 && abs( $p9['fee'] - ( 2.29 + 1.18 + 0.51 - 2.29 + 1 ) ) < 0.001 && 294.96 === $p4['credited'], wp_json_encode( array( $p9['credited'], $p9['fee'] ) ) );
+$byref = array(); foreach ( $p9['lines'] as $l ) { $byref[ $l['row']['merchant_ref'] ] = $l; }
+t( 'TWINT: Zahlung -> Bestellung mit bexio-Auftrag', $t3->get_id() === $byref[ $t3->get_id() . '-NCIc' ]['order_id'] && 'AU-87.5' === $byref[ $t3->get_id() . '-NCIc' ]['bexio'] && ! $byref[ $t3->get_id() . '-NCIc' ]['issues'] );
+t( 'TWINT: Rückerstattung über TWINT-Order-ID zugeordnet', $t2->get_id() === $byref[ 'R-' . $u2 . '-HwKv' ]['order_id'] && $byref[ 'R-' . $u2 . '-HwKv' ]['refund'] && ! $byref[ 'R-' . $u2 . '-HwKv' ]['issues'], wp_json_encode( $byref[ 'R-' . $u2 . '-HwKv' ]['issues'] ) );
+t( 'TWINT: Betragsabweichung erkannt', false !== strpos( implode( ' ', $byref[ $t4->get_id() . '-fQ7O' ]['issues'] ), 'Betrag weicht ab' ) );
+t( 'TWINT: unbekannte Bestellung erkannt', array( 'Bestellung nicht gefunden' ) === $byref['999999-XXXX']['issues'] );
+t( 'TWINT: noch nicht abgerechnete Zahlung', in_array( $t5->get_id(), wp_list_pluck( $rep['open'], 'order_id' ), true ) && ! in_array( $t3->get_id(), wp_list_pluck( $rep['open'], 'order_id' ), true ), wp_json_encode( wp_list_pluck( $rep['open'], 'order_id' ) ) );
+t( 'TWINT: Bestellungen vermerkt (einmal)', 4 === BWS_Twint::mark_orders( $rep ) && 0 === BWS_Twint::mark_orders( $rep ) && 0 === strpos( wc_get_order( $t3->get_id() )->get_meta( '_bws_twint_payout' ), '2026-11-09|87.50|1.18' ) );
+$ex = BWS_Twint::export_csv( $rep );
+t( 'TWINT: Export mit Totalzeile', 0 === strpos( $ex, "\xEF\xBB\xBF" ) && false !== strpos( $ex, 'TOTAL' ) && false !== strpos( $ex, 'Rückerstattung' ) );
+$bad = ''; try { BWS_Twint::parse( "a;b\n1;2" ); } catch ( Exception $e ) { $bad = $e->getMessage(); }
+t( 'TWINT: falsche Datei abgelehnt', false !== strpos( $bad, 'keine TWINT-Abrechnung' ) );
+
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";
