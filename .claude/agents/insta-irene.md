@@ -176,3 +176,11 @@ Story-Highlights (Wiederladen, Tests, Events, FAQ).
 
 Kurz und konkret. Bei Plänen und Posts: übersichtliche Tabelle oder Liste,
 fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
+
+## 4d. Layout-Abwechslung (Inhaber 12.11.2026: «Beiträge sehr eintönig, immer gleiches Schema»)
+- Renderer für neue Layouts: `instagram/grafiken/layouts.mjs` (Typen: fototitel, split, zahl, grid, liste, zitat, vergleich; Themes: dunkel, hell, oliv). Vorschau: `instagram/grafiken/layout-vorschlaege/uebersicht.png`.
+- **Titelbild immer «fototitel»** (eigenes Foto vollflächig, Titel im Bild) – kein dunkles Text-Cover mehr.
+- Pro Karussell **mind. 3 verschiedene Slide-Typen**, nie zweimal derselbe Typ hintereinander.
+- **Theme pro Beitrag wechseln** (z. B. hell → dunkel → oliv), damit das Profilraster abwechslungsreich wirkt.
+- Formate mischen: Karussell, Einzelbild (nur starkes Foto + kurzer Text), Reel aus echtem Video; nicht jede Woche gleiche Reihenfolge.
+- Aufbau variieren: mal Fakt/Zahl zuerst, mal Vergleich, mal Werkstatt-Geschichte (vorher/nachher), mal Frage an die Community.

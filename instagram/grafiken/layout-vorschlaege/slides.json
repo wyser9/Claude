@@ -1,0 +1,10 @@
+{"slides":[
+ {"type":"fototitel","image":"01.jpg","kicker":"Neu im Laden","title":"Phoenix\nPredator","sub":"Schweizer Sportpistole · 9×19"},
+ {"type":"zahl","theme":"hell","kicker":"Gewicht","zahl":"890 g","text":"Alu-/Polymer-Rahmen – leicht genug für schnelle Wechsel, stabil genug für jedes Match."},
+ {"type":"split","theme":"oliv","image":"02.jpg","photoH":760,"tag":"Detail","title":"Single Action","body":"Kurzer, klarer Abzug – gemacht für IPSC und Präzision auf dem Stand."},
+ {"type":"grid","theme":"dunkel","kicker":"Aus jeder Richtung","title":"Alle Ansichten","items":[{"image":"01.jpg","label":"Seite"},{"image":"03.jpg","label":"Front"},{"image":"04.jpg","label":"Visier"},{"image":"02.jpg","label":"Logo"}]},
+ {"type":"vergleich","theme":"hell","kicker":"Was passt zu dir?","title":"SA oder DA/SA?","links":{"kopf":"Single Action","punkte":["kurzer Abzug","schnelle Serien","IPSC & Präzision"]},"rechts":{"kopf":"DA/SA","punkte":["erster Schuss lang","danach kurz","vielseitig"]}},
+ {"type":"liste","theme":"oliv","kicker":"Werkstatt-Umbau","title":"So entsteht ein Unikat","items":["**Cerakote** – Farbe & Schutz","**Schaft** neu geformt","**Ladehebel** aus eigener Fertigung","**Picatinny** für Visier & Zubehör"]},
+ {"type":"zitat","theme":"dunkel","text":"Jede Waffe hat eine Geschichte. Wir helfen dir, das nächste Kapitel zu schreiben.","von":"– Werkstatt Armatum, Fulenbach"},
+ {"type":"fototitel","image":"r1.jpg","kicker":"Aus der Werkstatt","title":"Der «Rebel»","sub":"Ordonnanz-Karabiner als Unikat","size":96}
+]}
