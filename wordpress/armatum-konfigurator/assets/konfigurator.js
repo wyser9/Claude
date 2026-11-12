@@ -41,7 +41,8 @@
 		griff: 'Original-Griff behalten',
 		handgriff: 'Kein Frontgriff',
 		laser: 'Kein Laser',
-		lampe: 'Keine Lampe'
+		lampe: 'Keine Lampe',
+		zweibein: 'Kein Zweibein'
 	};
 	var FILTER_MIN = 6;
 

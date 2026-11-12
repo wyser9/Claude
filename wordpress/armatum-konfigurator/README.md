@@ -117,3 +117,10 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 - **Achshöhe:** aus Ankerpunkt (Unterseite) und Rohrmitte der Montage. Steht im Produkt unter dem Bild.
 - **Tiefe der Optik:** aus dem Punkt «Tiefster Punkt» (meist Unterkante Objektiv, beim Einmessen automatisch gesetzt). Fehlt er, wird sie aus dem Attribut «Objektivdurchmesser» geschätzt (halber Durchmesser + 4 mm). Ohne beides wird nicht geprüft.
 - **Freiraum (Waffe):** wie weit unter der Oberkante der Schiene unter Objektiv und Okular Platz ist. Durchgehende Schiene (AR15) = 0, Repetierer mit Montagebasis z.B. 10–15 mm.
+
+## Neu in 0.8
+
+- **Prüfliste** (WooCommerce → Konfigurator-Prüfliste): jedes eingerichtete Produkt mit Bild und Punkten. «OK» markiert es als geprüft, «Bearbeiten» öffnet das Produkt. Filter: Offen, Mit Bildhinweis, Geprüft, Alle; nach Rolle. Neu eingemessene Produkte gelten wieder als offen.
+- **Bildhinweise** beim Einmessen: Hintergrund nicht weiss/einheitlich, Produkt angeschnitten, sehr klein, wohl keine gerade Seitenansicht (lange Produkte zu wenig gestreckt). Gespeichert in `_ak_warn`.
+- **REST** `ak/v1` (nur `manage_woocommerce`): `GET /products` (Status, Attribute, Filter role/category/status), `POST /setup` (`ids`, `set` = Felder wie role, gruppe, schnittstelle, laenge …, `measure`, `overwrite`, `dry`), `POST /check`.
+- **Zweibein**: Gruppe `zweibein`, Steckplatz «Schiene unten vorne» (sonst Steckplatz unten).

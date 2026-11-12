@@ -24,6 +24,7 @@ class AK_Data {
 		'muendung' => 'Mündung',
 		'unten'    => 'Schiene unten (Handschutz oder Pistolenrahmen)',
 		'seite'    => 'Schiene seitlich/oben am Handschutz',
+		'vorne'    => 'Schiene unten vorne (Zweibein)',
 		'schaft'   => 'Schaftaufnahme',
 		'griff'    => 'Aufnahme Pistolengriff',
 	);
@@ -42,6 +43,7 @@ class AK_Data {
 		'handgriff'      => array( 'unten', 'Frontgriff (am Handschutz)', 3 ),
 		'laser'          => array( 'seite,unten', 'Laser', 3 ),
 		'lampe'          => array( 'unten,seite', 'Lampe (Waffenlicht)', 3 ),
+		'zweibein'       => array( 'vorne,unten', 'Zweibein', 3 ),
 		'schaft'         => array( 'schaft', 'Schulterstütze', 2 ),
 		'griff'          => array( 'griff', 'Pistolengriff (beim Abzug)', 2 ),
 		// Adapterschiene (z.B. M-LOK → Picatinny): kein eigener Schritt, wird beim Handgriff/Laser mitgewählt.

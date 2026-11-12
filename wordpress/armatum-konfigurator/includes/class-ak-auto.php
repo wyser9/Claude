@@ -23,6 +23,7 @@ class AK_Auto {
 		'handgriff'        => array( 'zubehoer', 'handgriff', false, 'Frontgriff (am Handschutz)' ),
 		'laser'            => array( 'zubehoer', 'laser', false, 'Laser' ),
 		'lampe'            => array( 'zubehoer', 'lampe', false, 'Lampe (Waffenlicht)' ),
+		'zweibein'         => array( 'zubehoer', 'zweibein', false, 'Zweibein' ),
 		'schaft'           => array( 'zubehoer', 'schaft', false, 'Schulterstütze' ),
 		'griff'            => array( 'zubehoer', 'griff', false, 'Pistolengriff (beim Abzug)' ),
 		'adapterschiene'   => array( 'zubehoer', 'adapterschiene', false, 'Adapterschiene (M-LOK auf Picatinny)' ),
@@ -47,7 +48,7 @@ class AK_Auto {
 			return '';
 		}
 		$map   = self::cat_map();
-		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'lampe', 'schaft', 'griff', 'montage', 'optik_direkt', 'optik', 'waffe' );
+		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'lampe', 'zweibein', 'schaft', 'griff', 'montage', 'optik_direkt', 'optik', 'waffe' );
 		foreach ( $order as $t ) {
 			if ( ! empty( $map[ $t ] ) && array_intersect( array_map( 'intval', $map[ $t ] ), $cats ) ) {
 				return $t;
@@ -105,6 +106,13 @@ class AK_Auto {
 		}
 		$transparent = $alpha / 4 > 100;
 		$bg          = array( $bg[0] / 4, $bg[1] / 4, $bg[2] / 4 );
+		// Ecken unterschiedlich = kein einheitlicher Hintergrund.
+		$spread = 0;
+		foreach ( $corners as $c ) {
+			$px     = imagecolorat( $im, max( 0, $c[0] ), max( 0, $c[1] ) );
+			$spread = max( $spread, abs( ( ( $px >> 16 ) & 0xFF ) - $bg[0] ), abs( ( ( $px >> 8 ) & 0xFF ) - $bg[1] ), abs( ( $px & 0xFF ) - $bg[2] ) );
+		}
+		$bg_light = min( $bg ) > 200;
 
 		$top = array();
 		$bot = array();
@@ -149,6 +157,10 @@ class AK_Auto {
 			'top'         => $top,
 			'bot'         => $bot,
 			'transparent' => $transparent,
+			'bg_uniform'  => $transparent || $spread < 25,
+			'bg_light'    => $transparent || $bg_light,
+			'sw'          => $sw,
+			'sh'          => $sh,
 		);
 	}
 
@@ -279,6 +291,40 @@ class AK_Auto {
 		);
 	}
 
+	/**
+	 * Hinweise zur Bildeignung: Hintergrund nicht einheitlich/hell, Produkt angeschnitten,
+	 * zu klein, oder bei langen Produkten nicht in Seitenansicht (zu wenig gestreckt).
+	 */
+	public static function warnings( $a, $o ) {
+		$w    = array();
+		$bw   = $a['maxx'] - $a['minx'];
+		$bh   = max( 1, $a['maxy'] - $a['miny'] );
+		if ( ! $a['bg_uniform'] || ! $a['bg_light'] ) {
+			$w[] = 'hintergrund';
+		}
+		if ( $a['minx'] <= 1 || $a['miny'] <= 1 || $a['maxx'] >= $a['sw'] - 2 || $a['maxy'] >= $a['sh'] - 2 ) {
+			$w[] = 'angeschnitten';
+		}
+		if ( $bw * $a['factor'] < 300 ) {
+			$w[] = 'klein';
+		}
+		$long = 'waffe' === $o['role'] || ( 'optik' === $o['role'] && empty( $o['direkt'] ) ) || in_array( $o['gruppe'], array( 'schalldaempfer', 'adapterschiene' ), true );
+		if ( $long && $bw / $bh < 2.2 ) {
+			$w[] = 'winkel';
+		}
+		return $w;
+	}
+
+	/** Lesbare Bezeichnung der Bildhinweise. */
+	public static function warning_labels() {
+		return array(
+			'hintergrund'   => 'Hintergrund nicht weiss/einheitlich',
+			'angeschnitten' => 'Produkt am Bildrand angeschnitten',
+			'klein'         => 'Produkt im Bild sehr klein',
+			'winkel'        => 'wohl keine gerade Seitenansicht',
+		);
+	}
+
 	/** Optionen eines gespeicherten Produkts für compute(). */
 	public static function options_for( $product_id ) {
 		return array(
@@ -352,6 +398,14 @@ class AK_Auto {
 				}
 			}
 			update_post_meta( $product_id, '_ak_auto', gmdate( 'Y-m-d' ) );
+			$warn = self::warnings( $a, $o );
+			if ( $warn ) {
+				update_post_meta( $product_id, '_ak_warn', implode( ' ', $warn ) );
+			} else {
+				delete_post_meta( $product_id, '_ak_warn' );
+			}
+			delete_post_meta( $product_id, '_ak_checked' );
+			$res['warn'] = $warn;
 		}
 		$res['msg'] .= 'Eingemessen (' . round( $pts['mmPerPx'], 3 ) . ' mm/px).' . ( 'waffe' === $role ? ' Steckplätze und Ankerpunkt bitte selbst setzen.' : '' );
 		return $res;

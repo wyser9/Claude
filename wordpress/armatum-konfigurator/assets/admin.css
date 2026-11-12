@@ -33,3 +33,16 @@
 .ak-chips-more { display: contents; }
 .ak-chips-more[hidden] { display: none; }
 .ak-variable-note { background: #fcf9e8; border-left: 3px solid #dba617; padding: .5em .8em; }
+/* Prüfliste */
+.ak-review-filter { clear: both; margin: .5em 0 1em; display: flex; gap: 1em; align-items: center; }
+.ak-review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.ak-review-card { background: #fff; border: 1px solid #dcdcde; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+.ak-review-card.is-checked { border-color: #00a32a; box-shadow: inset 3px 0 0 #00a32a; }
+.ak-review-img { position: relative; background: #f6f7f7; }
+.ak-review-img img { display: block; width: 100%; height: auto; }
+.ak-review-img img.ak-flip { transform: scaleX(-1); }
+.ak-review-img .ak-marker { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; color: #fff; font: bold 11px/18px sans-serif; text-align: center; box-shadow: 0 0 0 2px #fff; }
+.ak-review-info { font-size: 12px; color: #50575e; }
+.ak-review-legend { font-size: 11px; color: #8c8f94; }
+.ak-review-warn { font-size: 12px; color: #b32d2e; font-weight: 600; }
+.ak-review-actions { display: flex; gap: 6px; margin-top: 4px; }

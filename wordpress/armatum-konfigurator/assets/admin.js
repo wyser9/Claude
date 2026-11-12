@@ -3,9 +3,9 @@
 	'use strict';
 
 	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a', bottom: '#e65100',
-		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a', muzzle_device_anchor: '#8c5fd6' };
+		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_vorne_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a', muzzle_device_anchor: '#8c5fd6' };
 	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R', bottom: 'T',
-		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_schaft_anchor: 'S', slot_griff_anchor: 'G', muzzle_device_anchor: 'O' };
+		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_vorne_anchor: 'Z', slot_schaft_anchor: 'S', slot_griff_anchor: 'G', muzzle_device_anchor: 'O' };
 
 	$(function () {
 		var $box = $('.ak-box');
@@ -57,7 +57,7 @@
 			schaft: 'Passt auf (Schaftaufnahme)',
 			griff: 'Passt auf (Griffaufnahme)'
 		};
-		var GROUP_KIND = { muendungsaufsatz: 'gewinde', hub: 'gewinde', schalldaempfer: 'gewinde', handgriff: 'schiene', laser: 'schiene', lampe: 'schiene', adapterschiene: 'schiene', schaft: 'schaft', griff: 'griff' };
+		var GROUP_KIND = { muendungsaufsatz: 'gewinde', hub: 'gewinde', schalldaempfer: 'gewinde', handgriff: 'schiene', laser: 'schiene', lampe: 'schiene', zweibein: 'schiene', adapterschiene: 'schiene', schaft: 'schaft', griff: 'griff' };
 		function esc(t) { return $('<i>').text(t).html(); }
 		function norm(v) { return v.toLowerCase().replace(/\s+/g, ''); }
 		function values($in) { return $in.val().split(/\s*[,;]\s*/).map($.trim).filter(Boolean); }

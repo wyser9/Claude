@@ -100,7 +100,7 @@ class AK_Admin {
 				<?php foreach ( AK_Data::SLOTS as $sk => $slabel ) : ?>
 					<p class="ak-row">
 						<label><?php echo esc_html( $slabel ); ?>
-							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" data-kind="<?php echo esc_attr( array( 'muendung' => 'gewinde', 'unten' => 'schiene', 'seite' => 'schiene', 'schaft' => 'schaft', 'griff' => 'griff' )[ $sk ] ); ?>" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
+							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" data-kind="<?php echo esc_attr( array( 'muendung' => 'gewinde', 'unten' => 'schiene', 'seite' => 'schiene', 'vorne' => 'schiene', 'schaft' => 'schaft', 'griff' => 'griff' )[ $sk ] ); ?>" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
 						</label>
 						<button type="button" class="button ak-tool" data-target="slot_<?php echo esc_attr( $sk ); ?>_anchor">Punkt setzen</button>
 						<input type="hidden" name="ak[slot_<?php echo esc_attr( $sk ); ?>_anchor]" class="ak-pt" data-pt="slot_<?php echo esc_attr( $sk ); ?>_anchor" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_anchor' ] ); ?>">
