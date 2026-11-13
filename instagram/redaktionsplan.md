@@ -736,6 +736,36 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ---
 
+### #28 – Fr 13.11.2026, 18:30 – Karussell (neue Layouts) – Säule: Werkstatt – Stoeger M3000 Umbau (eigene Fotos)
+
+**Status:** Autopilot – geplant. 4 eigene Fotos des Inhabers (13.11.), Seriennummer «CHE…» und Nummern am Gehäuse unkenntlich gemacht. Erster Beitrag mit den neuen Layouts (layouts.mjs: fototitel, liste hell, split oliv, grid, vergleich hell, zitat oliv).
+
+**Grafiken:** `instagram/grafiken/28-stoeger-m3000/01.jpg`–`06.jpg`.
+
+**Caption zum Kopieren:**
+Aus unserer Werkstatt: Stoeger M3000 – neu aufgebaut 🔧
+
+Die halbautomatische Flinte kam serienmässig zu uns – raus ging sie mit:
+
+▪️ Milspec-Schulterstütze, längenverstellbar
+▪️ Pistolengriff für sicheren Halt
+▪️ Magazinrohr-Verlängerung
+▪️ Picatinny-Schiene für Optik
+▪️ Mündungsaufsatz mit Spiral-Fräsung
+
+👉 Swipe für Details und den Vorher-nachher-Vergleich.
+
+📸 Für die Fotos ist die Flinte entladen.
+
+Deine Flinte, dein Setup: Unsere Werkstatt in Fulenbach baut sie so um, wie du schiesst. Komm vorbei oder schreib uns.
+
+Serie oder Umbau – wie schiesst du deine Flinte? 👇
+
+**Hashtags:**
+#werkstatt #stoeger #flinte #dynamischesschiessen #schweiz
+
+**Regel-Check:** ✅ eigene Fotos · ✅ keine Preise · ✅ entladen · ✅ Seriennummern unkenntlich · ✅ keine Magazinkapazität genannt · ⚠️ taktische Optik (Pistolengriff, Mündungsaufsatz) – sportlich formuliert, kein Einsatz-/Kampfbezug, Begriff «Glasbrecher» bewusst nicht verwendet.
+
 ### #27 – So 08.11.2026, 19:00 – Karussell – Säule: Produkt – Phoenix Predator (eigene Fotos)
 
 **Status:** ✅ Veröffentlicht 08.11.2026, 19:01 (armatum_ch, pünktlich) als Karussell (6 Slides) – https://www.instagram.com/p/DffWibpiaPv/ – Story mit Slide 01.
@@ -1255,3 +1285,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-08 | **Korrektur Inhaber:** Do 12.11. offen, geschlossen ist Do 19.11. Umgesetzt: Footer armatum.ch (block-12), neue Story-Grafiken 06-korrektur/04-morgen-19/05-heute-19, Aushang aushang-geschlossen-2026-11-19.pdf, Termine verschoben (18.11. 18:00, 19.11. 08:00, Footer-Entfernung 20.11.), Newsletter-Hinweise, marke.md. Korrektur-Story sofort gepostet. |
 | 2026-11-08 | Wochen-Routine 09.–15.11.: **nichts neu geplant.** Grund 1: Kein neues Inhaber-Foto seit #27 (Regel 4c: ohne eigenes Foto kein Feed-Post). Grund 2: In der Routine-Sitzung stehen keine dauerhaften Termin-Werkzeuge (send_later/create_trigger für die Hauptsession) zur Verfügung, nur sitzungsgebundene (verboten) – eine verlässliche zeitgesteuerte Veröffentlichung wäre nicht gewährleistet. #27 Phoenix (So 08.11. 19:00) unverändert. Insights in auswertungen.md. Inhaber um Fotos und Termin-Werkzeug-Klärung gebeten. |
 | 2026-11-08 | #27 Phoenix Predator veröffentlicht 19:01 – https://www.instagram.com/p/DffWibpiaPv/ – Story Slide 01, WhatsApp-Bild 27-phoenix-predator.jpg. |
+| 2026-11-13 | #28 Stoeger M3000 Umbau aus 4 Inhaber-Fotos, erster Beitrag mit neuen Layouts, Fr 13.11. 18:30 geplant. |

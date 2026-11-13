@@ -1,0 +1,8 @@
+{"slides":[
+ {"type":"fototitel","image":"p3.jpg","kicker":"Aus der Werkstatt","title":"Stoeger\nM3000","sub":"Halbautomatische Flinte – neu aufgebaut","size":110},
+ {"type":"liste","theme":"hell","kicker":"Umbau","title":"Was wir verbaut haben","items":["**Milspec-Schulterstütze**, längenverstellbar","**Pistolengriff** für sicheren Halt","**Magazinrohr-Verlängerung**","**Picatinny-Schiene** für Optik","**Mündungsaufsatz** mit markanter Spiral-Fräsung"]},
+ {"type":"split","theme":"oliv","image":"p1.jpg","photoH":760,"tag":"Detail","title":"Die Mündung","body":"Spiral-Fräsung und Lochbild – der Aufsatz sitzt direkt auf dem Lauf, darunter das verlängerte Magazinrohr."},
+ {"type":"grid","theme":"dunkel","kicker":"Rundum","title":"Alle Ansichten","items":[{"image":"p4.jpg","label":"Schaft","pos":"center 70%"},{"image":"p2.jpg","label":"Schiene","pos":"center 30%"},{"image":"p1.jpg","label":"Mündung"},{"image":"p3.jpg","label":"Gesamt"}]},
+ {"type":"vergleich","theme":"hell","kicker":"Vorher – nachher","title":"Serie vs. Umbau","links":{"kopf":"Serie","punkte":["Standardschaft","Serien-Magazinrohr","ohne Schiene"]},"rechts":{"kopf":"Umbau","punkte":["Milspec-Stütze","verlängertes Magazinrohr","Picatinny & Mündungsaufsatz"]}},
+ {"type":"zitat","theme":"oliv","text":"Deine Flinte, dein Setup. Wir bauen sie so um, wie du schiesst.","von":"– Werkstatt Armatum, Fulenbach"}
+]}
