@@ -45840,11 +45840,11 @@
 "Tyrant CNC"
 ],
 "images": 2,
-"name": "Tyrant CNC Erweiterter Magazinhalter für Springfield Echelon Gold",
+"name": "Tyrant CNC verlängerter Magazinauslöser für Springfield Echelon Gold",
 "on_sale": false,
 "price": "5990",
 "regular": "5990",
-"short": "Der Tyrant CNC Erweiterte Magazinhalter für die Springfield Armory Echelon in Gold ermöglicht schnellere Magazinwechsel und eine verbesserte Ergonomie. Gefertigt aus CNC-gefrästem 6061-T6 Aluminium mit robuster Harteloxierung für maximale Langlebigkeit.",
+"short": "Der verlängerte Magazinauslöser von Tyrant CNC für die Springfield Armory Echelon in Gold ermöglicht schnellere Magazinwechsel und eine verbesserte Ergonomie. Gefertigt aus CNC-gefrästem 6061-T6 Aluminium mit robuster Harteloxierung für maximale Langlebigkeit.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/tyrant-cnc-echelon-magazinhalter-gold-extended-magazine-release/"
 },
@@ -45854,11 +45854,11 @@
 "Tyrant CNC"
 ],
 "images": 1,
-"name": "Tyrant CNC Erweiterter Magazinhalter für Springfield Echelon Schwarz",
+"name": "Tyrant CNC verlängerter Magazinauslöser für Springfield Echelon Schwarz",
 "on_sale": false,
 "price": "5990",
 "regular": "5990",
-"short": "Der Tyrant CNC Erweiterte Magazinhalter für die Springfield Armory Echelon in Schwarz ermöglicht schnellere Magazinwechsel und verbessert die Ergonomie der Pistole. Gefertigt aus CNC-gefrästem 6061-T6 Aluminium mit robuster Harteloxierung für höchste Langlebigkeit.",
+"short": "Der verlängerte Magazinauslöser von Tyrant CNC für die Springfield Armory Echelon in Schwarz ermöglicht schnellere Magazinwechsel und verbessert die Ergonomie der Pistole. Gefertigt aus CNC-gefrästem 6061-T6 Aluminium mit robuster Harteloxierung für höchste Langlebigkeit.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/tyrant-cnc-echelon-magazinhalter-schwarz-extended-magazine-release/"
 },
@@ -61231,20 +61231,6 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/beretta-mod-70-pistole-7-65-mm-browning-gebraucht-zweifarbig/"
 },
-"32028": {
-"cats": [
-"Gebrauchtwaffen / Occasionen",
-"Pistolen"
-],
-"images": 4,
-"name": "Beretta Mod. 70 Pistole 7.65 mm Browning gebraucht, Holzgriffschalen",
-"on_sale": false,
-"price": "24900",
-"regular": "24900",
-"short": "Gebrauchte Beretta Mod. 70 im Kaliber 7.65 mm Browning (.32 ACP) mit Holzgriffschalen. Technisch in Ordnung, Zustand gemäss Bildern. Einzelstück.",
-"stock": "in-stock",
-"url": "https://armatum.ch/produkt/beretta-mod-70-pistole-7-65-mm-browning-gebraucht-holzgriffschalen/"
-},
 "32034": {
 "cats": [
 "Gebrauchtwaffen / Occasionen",
@@ -64626,5 +64612,19 @@
 "short": "Spektiv von Anschütz Optics mit 20- bis 60-facher Vergrösserung, 70mm Objektiv und HD-Linsen. Stickstoffgefüllt, beschlagfrei und wasser- und staubdicht nach IP67. Mit Stativ und Transporttasche.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/anschuetz-optics-view-pro-20-60x70-hd-spektiv/"
+},
+"33753": {
+"cats": [
+"Brügger & Thomet",
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 3,
+"name": "B&T SPC9 SD PDW 9x19mm gebraucht, mit Aimpoint T1 und Magpul Vordergriff",
+"on_sale": false,
+"price": "319900",
+"regular": "319900",
+"short": "Gebrauchter B&T SPC9 SD PDW im Kaliber 9x19mm, Zustand sehr gut, ca. 1500 Schuss Belastung. Mit Schubschaft, Aimpoint T1, Magpul Vordergriff, BCM Ladehebel und 3 Magazinen à 30 Schuss.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-spc9-sd-pdw-9x19mm-gebraucht-mit-aimpoint-t1-und-magpul-vordergriff/"
 }
 }
