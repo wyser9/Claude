@@ -738,7 +738,7 @@ Speichern für deinen nächsten Tag am Stand. Team MIL oder Team MOA? 👇
 
 ### #28 – Fr 13.11.2026, 18:30 – Karussell (neue Layouts) – Säule: Werkstatt – Stoeger M3000 Umbau (eigene Fotos)
 
-**Status:** Autopilot – geplant. 4 eigene Fotos des Inhabers (13.11.), Seriennummer «CHE…» und Nummern am Gehäuse unkenntlich gemacht. Erster Beitrag mit den neuen Layouts (layouts.mjs: fototitel, liste hell, split oliv, grid, vergleich hell, zitat oliv).
+**Status:** ✅ Veröffentlicht 13.11.2026, 18:31 (armatum_ch, pünktlich) als Karussell (6 Slides, neue Layouts) – https://www.instagram.com/p/DfsLCWnFBwS/ – Story mit Slide 01.
 
 **Grafiken:** `instagram/grafiken/28-stoeger-m3000/01.jpg`–`06.jpg`.
 
@@ -1286,3 +1286,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-08 | Wochen-Routine 09.–15.11.: **nichts neu geplant.** Grund 1: Kein neues Inhaber-Foto seit #27 (Regel 4c: ohne eigenes Foto kein Feed-Post). Grund 2: In der Routine-Sitzung stehen keine dauerhaften Termin-Werkzeuge (send_later/create_trigger für die Hauptsession) zur Verfügung, nur sitzungsgebundene (verboten) – eine verlässliche zeitgesteuerte Veröffentlichung wäre nicht gewährleistet. #27 Phoenix (So 08.11. 19:00) unverändert. Insights in auswertungen.md. Inhaber um Fotos und Termin-Werkzeug-Klärung gebeten. |
 | 2026-11-08 | #27 Phoenix Predator veröffentlicht 19:01 – https://www.instagram.com/p/DffWibpiaPv/ – Story Slide 01, WhatsApp-Bild 27-phoenix-predator.jpg. |
 | 2026-11-13 | #28 Stoeger M3000 Umbau aus 4 Inhaber-Fotos, erster Beitrag mit neuen Layouts, Fr 13.11. 18:30 geplant. |
+| 2026-11-13 | #28 Stoeger M3000 veröffentlicht 18:31 – https://www.instagram.com/p/DfsLCWnFBwS/ – Story Slide 01, WhatsApp-Bild 28-stoeger-m3000.jpg. |
