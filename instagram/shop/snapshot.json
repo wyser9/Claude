@@ -14039,7 +14039,7 @@
 "on_sale": false,
 "price": "2820",
 "regular": "2820",
-"short": "Hochwertige Messinghülsen von Norma für Wiederlader. Präzise gefertigt, langlebig und ideal für konstante Laborierungen.",
+"short": "Matchpatrone von Norma im Kaliber .223 Rem mit 69gr / 4.5g HPBT-Geschoss. Konstante Präzision für Training, Wettkampf und Präzisionsschiessen auf mittlere Distanzen. Packung mit 20 Patronen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/norma-223-rem-golden-target-45g-69gr/"
 },
@@ -24049,7 +24049,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul AFG-2 – Angled Fore Grip – Schwarz",
 "on_sale": false,
 "price": "4490",
@@ -24315,7 +24315,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul Barricade Stop – M-LOK Schwarz",
 "on_sale": false,
 "price": "3490",
@@ -24329,7 +24329,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul Barricade Stop – M-LOK FDE",
 "on_sale": false,
 "price": "3490",
@@ -28865,7 +28865,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul M-LOK AFG – Angled Fore Grip – FDE",
 "on_sale": false,
 "price": "3190",
@@ -34836,7 +34836,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul AFG – Angled Fore Grip – Schwarz",
 "on_sale": false,
 "price": "4490",
@@ -34850,7 +34850,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul AFG-2 – Angled Fore Grip – FDE",
 "on_sale": false,
 "price": "4490",
@@ -34864,12 +34864,12 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
-"name": "Magpul AFG – Angled Fore Grip – ODG",
+"images": 2,
+"name": "Magpul AFG-2 – Angled Fore Grip – ODG",
 "on_sale": false,
-"price": "4490",
-"regular": "4490",
-"short": "Magpul AFG-2 – Angled Fore Grip von Magpul robust, präzise und ideal für taktische Anwendungen.",
+"price": "4690",
+"regular": "4690",
+"short": "Schlanker Vordergriff von Magpul für M1913 Picatinny-Schienen in OD-Green. Kürzer und schmaler als das ursprüngliche AFG, für eine stabile Handhaltung und bessere Rückstosskontrolle.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/magpul-afg-angled-fore-grip-odg-2/"
 },
@@ -34892,7 +34892,7 @@
 "Griffe",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul M-LOK MVG – MOE Vertical Grip – FDE",
 "on_sale": false,
 "price": "2690",
@@ -36017,36 +36017,6 @@
 "short": "Geschlossenes Reflexvisier mit Red Circle Dot und Multi-Reticle System. Aluminiumgehäuse, geneigte Frontlinse, Shake Awake und IP67. Nachfolger des Holosun ARO-MRS-RD.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/holosun-aro-mrs-rd-red-circle-dot-reflexvisier/"
-},
-"23860": {
-"cats": [
-"Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
-],
-"images": 2,
-"name": "Holosun ARO RD2 Red Dot – 2 MOA  Shake Awake  Compact",
-"on_sale": false,
-"price": "28990",
-"regular": "28990",
-"short": "Kompaktes Red Dot mit 2 MOA Punkt und langer Batterielaufzeit für zuverlässige Performance",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/holosun-aro-rd2-red-dot-2-moa-shake-awake-compact/"
-},
-"23862": {
-"cats": [
-"Holosun",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
-],
-"images": 1,
-"name": "Holosun ARO GD2 Gold Dot Visier 2 MOA Compact",
-"on_sale": false,
-"price": "28990",
-"regular": "28990",
-"short": "Reflexvisier mit Gold Dot für maximale Kontraste und vielseitige Einsatzmöglichkeiten",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/holosun-aro-gd2-gold-dot-kompaktes-reflexvisier-2-moa/"
 },
 "23863": {
 "cats": [
@@ -47126,6 +47096,20 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/strike-picatinny-vertical-grip-kurz-schwarz/"
 },
+"28434": {
+"cats": [
+"Griffe",
+"Strike Industries"
+],
+"images": 2,
+"name": "Strike Industries Picatinny Angled Vertical Grip Short FDE",
+"on_sale": false,
+"price": "2990",
+"regular": "2990",
+"short": "Der Strike Industries Picatinny Angled Vertical Grip Short FDE ist ein kompakter, angewinkelter Vordergriff zur direkten Montage auf Picatinny-Schienen. Die kurze Bauweise bietet eine ergonomische Griffposition und ergänzt FDE-Konfigurationen optimal.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/strike-picatinny-grip-fde-angled-vertical-grip/"
+},
 "28437": {
 "cats": [
 "Griffe",
@@ -47159,7 +47143,7 @@
 "Griffe",
 "Strike Industries"
 ],
-"images": 2,
+"images": 3,
 "name": "Strike Industries LINK Cobra Tactical Fore Grip M-LOK / KeyMod FDE",
 "on_sale": false,
 "price": "3990",
@@ -47313,7 +47297,7 @@
 "Griffe",
 "Strike Industries"
 ],
-"images": 5,
+"images": 6,
 "name": "Strike Industries LINK Mini HandStop Cable Management M-LOK Schwarz",
 "on_sale": false,
 "price": "1990",
@@ -47327,7 +47311,7 @@
 "Griffe",
 "Strike Industries"
 ],
-"images": 3,
+"images": 4,
 "name": "Strike Industries LINK Mini HandStop Cable Management M-LOK Schwarz (Kopie)",
 "on_sale": false,
 "price": "1990",
@@ -62112,8 +62096,8 @@
 "images": 1,
 "name": "Hornady Frontier .223 Rem 55gr FMJ – 20 Stk.",
 "on_sale": false,
-"price": "1890",
-"regular": "1890",
+"price": "1450",
+"regular": "1450",
 "short": "Hornady Frontier .223 Remington mit 55gr FMJ-Geschoss: preiswerte Büchsenmunition für Training und Zielschiessen. Packungsinhalt: 20 Patronen.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/hornady-frontier-223-rem-55gr-fmj-20-stk/"
@@ -64374,7 +64358,7 @@
 "price": "3490",
 "regular": "3490",
 "short": "Magazin mit 22 Schuss im Kaliber 9mm Para für die Pistolen HS Produkt XDM und SF19 Elite. Erwerb nur mit kleiner Ausnahmebewilligung für Sportschützen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/hs-produkt-xdm-sf19-elite-magazin-22-schuss-9mm-para/"
 },
 "33460": {
