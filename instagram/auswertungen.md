@@ -196,3 +196,14 @@ Follower 2496 (01.11.: 2480, +16), 363 Beiträge. Konto «armatum» ACTIVE gepr�
 | #21 K31 (Inhaber-Foto) | 28.10. | 143 | 4 |
 | #20 GPO-Spektive | 27.10. | 8 | 0 |
 Schluss bestätigt: Inhaber-Fotos konkreter Arbeiten/Waffen (#26: 154, #21: 143) schlagen alles andere um Faktor 10+.
+
+## Wochen-Routine 15.11.2026 (Autopilot, Konto armatum_ch, Stand 15:50 UTC)
+Follower 2511 (08.11.: 2496, +15), 365 Beiträge. Konto «armatum» ACTIVE geprüft (alle Aufrufe mit account «armatum», username armatum_ch).
+Konto 08.–14.11.: Reichweite 2525, interagierende Konten 225, Interaktionen 322, Profilbesuche 143, Website-Klicks 20.
+| Beitrag | Datum | Reichweite | Views | Likes | Komm. | Saves | Shares |
+|---|---|---|---|---|---|---|---|
+| #28 Stoeger M3000 Umbau (Inhaber-Fotos, neue Layouts) | 13.11. | 347 | 768 | 24 | 0 | 2 | 2 |
+| #27 Phoenix Predator (Inhaber-Fotos) | 08.11. | 419 | 945 | 50 | 1 | 0 | 0 |
+| #26 Rebel (K31-Umbau, Inhaber-Fotos) | 06.11. | 2497 | 4648 | 233 | 7 | 30 | 39 |
+| #24 Reel FFP + MIL | 01.11. | 607 | 725 | 9 | 0 | 1 | 0 |
+Schluss: #26 Rebel bleibt der Ausreisser (K31/Swiss-Custom zieht, viele Shares). #27/#28 mit Inhaber-Fotos solide, aber deutlich unter K31-Niveau – Schweizer Klassiker/Custom-Umbauten weiter bevorzugen. #28 nach 2 Tagen, Werte noch nicht final.
