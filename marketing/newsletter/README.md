@@ -22,12 +22,20 @@ Ausgaben kommen als `JJJJ-MM-thema.md` in diesen Ordner.
 - Das Häkchen an der Kasse ist in FluentCRM gratis nicht verfügbar (WooCommerce-Integration nur Pro). Deshalb das Snippet in `code/`.
   In Code Snippets als Nr. 23 angelegt, **noch inaktiv**: muss von Pascal eingefügt/aktiviert werden.
 
+- Datenschutzerklärung (Seite 3): Abschnitt «Datenschutzerklärung für den Newsletter» eingefügt (15.11.2026).
+- Abmeldehinweis in den Bestellmails «Bestellung in Wartestellung» und «Bestellung in Bearbeitung» (15.11.2026).
+- Seite «Newsletter» (ID 33781, /newsletter/) als Entwurf mit `[armatum_newsletter]`.
+
+## Snippet einfügen (Pascal)
+
+WordPress → Snippets → «Armatum News: Anmeldung Kasse + Formular» (Nr. 23) → Inhalt von
+`code/armatum-news-anmeldung.php` komplett einfügen → «Speichern und aktivieren».
+
 ## Offen
 
 - [ ] Snippet 23 aktivieren (Pascal), danach Testanmeldung
-- [ ] Seite /newsletter/ mit `[armatum_newsletter]`, Formular in Fusszeile und Startseite
-- [ ] Abmeldehinweis in der Bestellbestätigung, Newsletter-Link in der Bewertungsmail
-- [ ] Abschnitt Newsletter in der Datenschutzerklärung
+- [ ] Seite /newsletter/ veröffentlichen, Formular in Fusszeile und Startseite
+- [ ] Newsletter-Link in der Bewertungsmail
 - [ ] Willkommensmail, Vorlage im Armatum-Design
 - [ ] QR-Karte für den Laden
 - [ ] Erste Ausgabe Dezember 2026 (Black Week 26.–30.11. siehe ../verkaufsplan-nov-dez-2026.md)

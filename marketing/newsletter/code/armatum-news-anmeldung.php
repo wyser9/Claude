@@ -1,4 +1,3 @@
-<?php
 // Armatum News: Anmeldung an der Kasse und per Shortcode [armatum_newsletter], Double-Opt-in via FluentCRM (Liste 1)
 if ( ! defined( 'ABSPATH' ) ) { return; }
 
