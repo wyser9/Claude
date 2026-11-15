@@ -11,12 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Auto {
 
-	/** Ziele der Kategorie-Zuordnung: Schlüssel => [Rolle, Gruppe, direkt, Bezeichnung]. */
+	/** Ziele der Kategorie-Zuordnung: Schlüssel => [Rolle, Gruppe, direkt, Bezeichnung, Montage-Art]. */
 	const TARGETS = array(
 		'waffe'            => array( 'waffe', '', false, 'Waffe' ),
 		'optik'            => array( 'optik', '', false, 'Optik mit Mittelrohr (braucht Montage)' ),
 		'optik_direkt'     => array( 'optik', '', true, 'Optik direkt auf Schiene (Rotpunkt, integrierte Montage)' ),
 		'montage'          => array( 'montage', '', false, 'Montage für Optik' ),
+		'montage_mag'      => array( 'montage', '', false, 'Montage nur für Magnifier', 'magnifier' ),
+		'montage_platte'   => array( 'montage', '', false, 'Adapterplatte / Erhöhung für Rotpunkt', 'footprint' ),
+		'magnifier'        => array( 'magnifier', '', true, 'Magnifier mit Halterung' ),
+		'magnifier_rohr'   => array( 'magnifier', '', false, 'Magnifier ohne Halterung (braucht Montage)' ),
 		'muendungsaufsatz' => array( 'zubehoer', 'muendungsaufsatz', false, 'Mündungsaufsatz' ),
 		'hub'              => array( 'zubehoer', 'hub', false, 'HUB' ),
 		'schalldaempfer'   => array( 'zubehoer', 'schalldaempfer', false, 'Schalldämpfer' ),
@@ -48,7 +52,7 @@ class AK_Auto {
 			return '';
 		}
 		$map   = self::cat_map();
-		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'lampe', 'zweibein', 'schaft', 'griff', 'montage', 'optik_direkt', 'optik', 'waffe' );
+		$order = array( 'adapterschiene', 'schalldaempfer', 'hub', 'muendungsaufsatz', 'handgriff', 'laser', 'lampe', 'zweibein', 'schaft', 'griff', 'montage_mag', 'montage_platte', 'montage', 'magnifier', 'magnifier_rohr', 'optik_direkt', 'optik', 'waffe' );
 		foreach ( $order as $t ) {
 			if ( ! empty( $map[ $t ] ) && array_intersect( array_map( 'intval', $map[ $t ] ), $cats ) ) {
 				return $t;
@@ -213,11 +217,17 @@ class AK_Auto {
 				break;
 			case 'montage':
 				$anchor = array( $cx, $a['maxy'] );
+				if ( 'footprint' === ( $o['montage_art'] ?? '' ) ) {
+					// Adapterplatte: Ausgang = Mitte der Oberseite (Auflage des Rotpunkts).
+					$tube_a = array( $cx, $a['miny'] );
+					break;
+				}
 				$tube   = $o['tube'] > 0 ? $o['tube'] : 30;
 				// Ringmitte: Oberkante der Ringe plus Rohrradius plus ca. 3 mm Ringwandstärke.
 				$tube_a = array( $cx, $a['miny'] + ( $tube / 2 + 3 ) / ( $mmpp * $f ) );
 				break;
 			case 'optik':
+			case 'magnifier':
 				if ( ! empty( $o['direkt'] ) ) {
 					$anchor = array( $cx, $a['maxy'] );
 					break;
@@ -334,7 +344,58 @@ class AK_Auto {
 			'flip'   => 'yes' === AK_Data::meta( $product_id, 'flip', 'no' ),
 			'tube'   => AK_Data::tube( $product_id ),
 			'length' => self::length( $product_id ),
+			'montage_art' => AK_Data::mount_type( $product_id ),
 		);
+	}
+
+	/** Bilder eines Produkts: Konfigurator-Bild, Beitragsbild, Galerie (bei Varianten vom Hauptprodukt). */
+	public static function image_candidates( $product_id ) {
+		$parent = AK_Data::parent_of( $product_id );
+		$p      = wc_get_product( $parent ? $parent : $product_id );
+		$ids    = array( AK_Data::image_id( $product_id ), (int) get_post_thumbnail_id( $parent ? $parent : $product_id ) );
+		if ( $p ) {
+			$ids = array_merge( $ids, array_map( 'intval', $p->get_gallery_image_ids() ) );
+		}
+		return array_values( array_unique( array_filter( $ids ) ) );
+	}
+
+	/**
+	 * Bestes Bild zum Einmessen: das aktuelle, ausser es ist schräg («winkel») oder nicht lesbar.
+	 * Dann werden die Galeriebilder durchprobiert; gewählt wird das mit den wenigsten Hinweisen
+	 * und bei Gleichstand das gestreckteste (gerade Seitenansicht).
+	 *
+	 * @return array{0:int,1:array|WP_Error}
+	 */
+	public static function best_image( $product_id, $o ) {
+		$cands = self::image_candidates( $product_id );
+		if ( ! $cands ) {
+			return array( 0, new WP_Error( 'ak_noimg', 'Kein Bild.' ) );
+		}
+		$first = self::analyse_file( get_attached_file( $cands[0] ) );
+		if ( ! is_wp_error( $first ) && ! in_array( 'winkel', self::warnings( $first, $o ), true ) ) {
+			return array( $cands[0], $first );
+		}
+		$best    = array( $cands[0], $first );
+		$best_sc = is_wp_error( $first ) ? INF : self::image_score( $first, $o );
+		foreach ( array_slice( $cands, 1, 8 ) as $img ) {
+			$a = self::analyse_file( get_attached_file( $img ) );
+			if ( is_wp_error( $a ) ) {
+				continue;
+			}
+			$sc = self::image_score( $a, $o );
+			if ( $sc < $best_sc ) {
+				$best    = array( $img, $a );
+				$best_sc = $sc;
+			}
+		}
+		return $best;
+	}
+
+	/** Kleiner = besser: Anzahl Hinweise (schräg zählt doppelt), dann weniger gestreckt. */
+	private static function image_score( $a, $o ) {
+		$w     = self::warnings( $a, $o );
+		$ratio = ( $a['maxx'] - $a['minx'] ) / max( 1, $a['maxy'] - $a['miny'] );
+		return count( $w ) + ( in_array( 'winkel', $w, true ) ? 1 : 0 ) - min( 0.99, $ratio / 100 );
 	}
 
 	/**
@@ -366,24 +427,34 @@ class AK_Auto {
 				if ( $def[2] ) {
 					update_post_meta( $product_id, '_ak_direkt', 'yes' );
 				}
+				if ( ! empty( $def[4] ) ) {
+					update_post_meta( $product_id, '_ak_montage_art', $def[4] );
+				}
 			}
 			$res['msg'] = 'Rolle aus Kategorie: ' . $def[3] . '. ';
 			$role       = $def[0];
 		}
 		$o = $dry && ! AK_Data::role( $product_id ) && isset( $def )
-			? array_merge( self::options_for( $product_id ), array( 'role' => $def[0], 'gruppe' => $def[1], 'direkt' => $def[2] ) )
+			? array_merge( self::options_for( $product_id ), array( 'role' => $def[0], 'gruppe' => $def[1], 'direkt' => $def[2], 'montage_art' => $def[4] ?? '' ) )
 			: self::options_for( $product_id );
 		$res['role']   = $o['gruppe'] ? AK_Data::GROUPS[ $o['gruppe'] ][1] : ucfirst( $o['role'] ) . ( $o['direkt'] ? ' (direkt)' : '' );
 		$res['length'] = $o['length'];
 
-		if ( ! $overwrite && AK_Data::point( $product_id, 'p1' ) && ( 'waffe' === $role || AK_Data::point( $product_id, 'anchor' ) ) ) {
+		// Überspringen nur, wenn wirklich fertig (Waffe: Messpunkte gesetzt, Rest von Hand).
+		if ( ! $overwrite && AK_Data::point( $product_id, 'p1' ) && ( 'waffe' === $role ? true : AK_Data::is_ready( $product_id ) ) ) {
 			return array_merge( $res, array( 'status' => 'skip', 'msg' => $res['msg'] . 'Schon eingemessen.' ) );
 		}
-		$image = AK_Data::image_id( $product_id );
+		list( $image, $a ) = self::best_image( $product_id, $o );
 		if ( ! $image ) {
 			return array_merge( $res, array( 'status' => 'error', 'msg' => $res['msg'] . 'Kein Bild.' ) );
 		}
-		$a = self::analyse_file( get_attached_file( $image ) );
+		if ( $image !== AK_Data::image_id( $product_id ) && ! is_wp_error( $a ) ) {
+			$res['msg']     .= 'Geradere Seitenansicht aus der Galerie gewählt (Bild ' . $image . '). ';
+			$res['image_id'] = $image;
+			if ( ! $dry ) {
+				update_post_meta( $product_id, '_ak_image_id', (string) $image );
+			}
+		}
 		if ( is_wp_error( $a ) ) {
 			return array_merge( $res, array( 'status' => 'error', 'msg' => $res['msg'] . $a->get_error_message() ) );
 		}
@@ -490,6 +561,7 @@ class AK_Auto {
 			'flip'   => ! empty( $p['flip'] ),
 			'tube'   => $tube > 0 ? $tube : AK_Data::tube( $id ),
 			'length' => $len > 0 ? $len : self::length( $id ),
+			'montage_art' => sanitize_key( $p['montage_art'] ?? '' ),
 		);
 		if ( ! $o['role'] ) {
 			wp_send_json_error( array( 'message' => 'Zuerst eine Rolle wählen.' ) );

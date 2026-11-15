@@ -74,6 +74,8 @@ class AK_Cart {
 		$weapon_id = isset( $_POST['weapon'] ) ? absint( $_POST['weapon'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
 		$optic_id  = isset( $_POST['optic'] ) ? absint( $_POST['optic'] ) : 0;   // phpcs:ignore WordPress.Security.NonceVerification
 		$mount_id  = isset( $_POST['mount'] ) ? absint( $_POST['mount'] ) : 0;   // phpcs:ignore WordPress.Security.NonceVerification
+		$mag_id    = isset( $_POST['mag'] ) ? absint( $_POST['mag'] ) : 0;       // phpcs:ignore WordPress.Security.NonceVerification
+		$mag_mount = isset( $_POST['mag_mount'] ) ? absint( $_POST['mag_mount'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
 		$parts     = array();
 		$raw_parts = isset( $_POST['parts'] ) && is_array( $_POST['parts'] ) ? wp_unslash( $_POST['parts'] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification
 		foreach ( $raw_parts as $group => $pid ) {
@@ -93,7 +95,7 @@ class AK_Cart {
 			}
 		}
 
-		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id, $parts, $adapters );
+		$valid = AK_Data::validate_selection( $weapon_id, $optic_id, $mount_id, $parts, $adapters, $mag_id, $mag_mount );
 		if ( is_wp_error( $valid ) ) {
 			wp_send_json_error( array( 'message' => $valid->get_error_message() ), 400 );
 		}
@@ -106,6 +108,12 @@ class AK_Cart {
 		}
 		if ( $optic_id ) {
 			$lines['optik'] = $optic_id;
+		}
+		if ( $mag_mount ) {
+			$lines['magnifier_montage'] = $mag_mount;
+		}
+		if ( $mag_id ) {
+			$lines['magnifier'] = $mag_id;
 		}
 		foreach ( $parts as $part_group => $pid ) {
 			$lines[ $part_group ] = $pid;

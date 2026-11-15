@@ -54,9 +54,15 @@
 		$.each(this.cfg.mounts, function (_, m) { self.mountsById[m.id] = m; });
 		this.railsById = {};
 		$.each(this.cfg.adapters || [], function (_, r) { self.railsById[r.id] = r; });
+		this.magsById = {};
+		$.each(this.cfg.mags || [], function (_, m) { self.magsById[m.id] = m; });
+		this.magMountsById = {};
+		$.each(this.cfg.magMounts || [], function (_, m) { self.magMountsById[m.id] = m; });
 		this.rails = {};
 		this.optic = null;
 		this.mount = null;
+		this.mag = null;
+		this.magMount = null;
 		this.parts = {};
 		this.groups = this.cfg.groups || [];
 		this.renderSteps();
@@ -114,7 +120,9 @@
 				list += self.card(o, 'ak_optic', o.direct ? 'direkt auf Schiene' : 'Mittelrohr ' + o.tube + 'mm');
 			});
 			html += this.step('optik', 'Optik', this.filterBar(this.cfg.optics) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
-				'<div class="ak-step-mount" hidden><h4>Montage</h4><div class="ak-list ak-mounts" role="radiogroup"></div></div>', true);
+				'<div class="ak-step-mount" hidden><h4>Montage</h4><div class="ak-list ak-mounts" role="radiogroup"></div></div>' +
+				'<div class="ak-step-mag" hidden><h4>Magnifier dazu?</h4><div class="ak-list ak-mags" role="radiogroup"></div>' +
+				'<div class="ak-step-magmount" hidden><h4>Halterung für den Magnifier</h4><div class="ak-list ak-magmounts" role="radiogroup"></div></div></div>', true);
 		}
 		$.each(this.groups, function (i, g) {
 			var list = self.noneCard('ak_g_' + g.key, NONE[g.key] || 'Kein ' + g.label);
@@ -135,6 +143,15 @@
 		});
 		$steps.on('change', '.ak-mounts input', function () {
 			self.mount = self.mountsById[parseInt(this.value, 10)] || null;
+			self.renderMags(self.mag ? self.mag.id : 0, self.magMount ? self.magMount.id : 0);
+			self.update();
+		});
+		$steps.on('change', '.ak-mags input', function () {
+			self.setMag(parseInt(this.value, 10));
+			self.update();
+		});
+		$steps.on('change', '.ak-magmounts input', function () {
+			self.magMount = self.magMountsById[parseInt(this.value, 10)] || null;
 			self.update();
 		});
 		$steps.on('change', '.ak-step:not([data-group="optik"]) > .ak-step-body > .ak-list input', function () {
@@ -172,6 +189,76 @@
 		this.mount = null;
 		this.$root.find('input[name="ak_optic"][value="' + (this.optic ? id : 0) + '"]').prop('checked', true);
 		this.renderMounts(mountId);
+		this.renderMags(0, 0);
+	};
+
+	/** Passt der Magnifier (mit Halterung mm) hinter den gewählten Rotpunkt (mit Platte)? Wie AK_Data::mag_combo_ok. */
+	Konfigurator.prototype.magFits = function (mag, mm) {
+		var o = this.optic;
+		if (!o) { return false; }
+		var plate = this.mount;
+		var a = o.axis > 0 ? o.axis + (plate ? plate.axisHeight : 0) : 0;
+		var b = mm ? mm.axisHeight : mag.axis;
+		if (a > 0 && b > 0 && Math.abs(a - b) > this.cfg.weapon.magTol) { return false; }
+		return !!this.pairOffsets(mag, mm);
+	};
+
+	/** x-Lage von Rotpunkt und Magnifier in mm (Mitte des Paars am Anker, Rotpunkt vorne, innerhalb der Schiene). */
+	Konfigurator.prototype.pairOffsets = function (mag, mm) {
+		var w = this.cfg.weapon;
+		var lr = Math.max(this.optic.length || 0, this.mount ? this.mount.length || 0 : 0);
+		var lm = Math.max(mag.length || 0, mm ? mm.length || 0 : 0);
+		var total = lr + w.magGap + lm;
+		var xr = total / 2 - lr / 2;
+		var xm = -total / 2 + lm / 2;
+		if (w.railFront === null || w.railRear === null || w.railFront === undefined || w.railRear === undefined) { return [xr, xm]; }
+		var front = Math.max(w.railFront, w.railRear), rear = Math.min(w.railFront, w.railRear);
+		if (total > front - rear + 0.5) { return null; }
+		var shift = Math.min(0, front - (xr + lr / 2)) + Math.max(0, rear - (xm - lm / 2));
+		return [xr + shift, xm + shift];
+	};
+
+	/** Magnifier-Auswahl unter der Optik (nur Rotpunkte). */
+	Konfigurator.prototype.renderMags = function (magId, mountId) {
+		var self = this;
+		var $box = this.$root.find('.ak-step-mag');
+		var list = this.optic && this.optic.mags ? this.optic.mags.map(function (id) { return self.magsById[id]; }).filter(function (m) {
+			return m && (m.mounts.length ? m.mounts.some(function (mid) { return self.magMountsById[mid] && self.magFits(m, self.magMountsById[mid]); }) : self.magFits(m, null));
+		}) : [];
+		if (!list.length) {
+			this.mag = null;
+			this.magMount = null;
+			$box.prop('hidden', true).find('.ak-mags').empty();
+			$box.find('.ak-step-magmount').prop('hidden', true).find('.ak-magmounts').empty();
+			return;
+		}
+		var html = this.noneCard('ak_mag', 'Kein Magnifier');
+		$.each(list, function (_, m) { html += self.card(m, 'ak_mag', m.mounts.length ? 'braucht Halterung' : 'mit Halterung'); });
+		$box.prop('hidden', false).find('.ak-mags').html(html);
+		var keep = list.some(function (m) { return m.id === magId; }) ? magId : 0;
+		this.setMag(keep, mountId);
+	};
+
+	Konfigurator.prototype.setMag = function (id, mountId) {
+		var self = this;
+		this.mag = id ? this.magsById[id] || null : null;
+		this.magMount = null;
+		this.$root.find('input[name="ak_mag"][value="' + (this.mag ? id : 0) + '"]').prop('checked', true);
+		var $box = this.$root.find('.ak-step-magmount');
+		if (!this.mag || !this.mag.mounts.length) {
+			$box.prop('hidden', true).find('.ak-magmounts').empty();
+			return;
+		}
+		var html = '';
+		$.each(this.mag.mounts, function (_, mid) {
+			var mm = self.magMountsById[mid];
+			if (mm && self.magFits(self.mag, mm)) { html += self.card(mm, 'ak_magmount'); }
+		});
+		$box.prop('hidden', false).find('.ak-magmounts').html(html);
+		var $pick = mountId ? $box.find('input[value="' + mountId + '"]') : $();
+		if (!$pick.length) { $pick = $box.find('input').first(); }
+		$pick.prop('checked', true);
+		this.magMount = this.magMountsById[parseInt($pick.val(), 10)] || null;
 	};
 
 	Konfigurator.prototype.setPart = function (key, id) {
@@ -213,6 +300,14 @@
 		} else if (this.mountsById[id]) {
 			var o = this.cfg.optics.filter(function (x) { return x.mounts.indexOf(id) >= 0; })[0];
 			if (o) { this.setOptic(o.id, id); key = 'optik'; }
+		} else if (this.magsById[id] || this.magMountsById[id]) {
+			var magId = this.magsById[id] ? id : ((this.cfg.mags || []).filter(function (m) { return m.mounts.indexOf(id) >= 0; })[0] || {}).id;
+			var ro = this.cfg.optics.filter(function (x) { return (x.mags || []).indexOf(magId) >= 0; })[0];
+			if (ro && magId) {
+				this.setOptic(ro.id);
+				this.renderMags(magId, this.magMountsById[id] ? id : 0);
+				key = 'optik';
+			}
 		} else {
 			$.each(this.groups, function (_, g) {
 				if (g.items.some(function (it) { return it.id === id; })) { key = g.key; }
@@ -280,7 +375,7 @@
 			var key = $(this).data('group');
 			var text;
 			if (key === 'optik') {
-				text = self.optic ? self.optic.name + (self.mount && !self.optic.direct ? ' + ' + self.mount.name : '') : NONE.optik;
+				text = self.optic ? self.optic.name + (self.mount ? ' + ' + self.mount.name : '') + (self.mag ? ' + ' + self.mag.name : '') : NONE.optik;
 			} else {
 				var g = self.group(key);
 				text = self.parts[key] ? self.parts[key].name + (self.rails[key] ? ' + ' + self.rails[key].name : '') : (NONE[key] || 'Kein ' + (g ? g.label : ''));
@@ -307,10 +402,12 @@
 	Konfigurator.prototype.renderMounts = function (mountId) {
 		var self = this;
 		var $step = this.$root.find('.ak-step-mount');
-		if (!this.optic || this.optic.direct || !this.optic.mounts.length) {
+		if (!this.optic || !this.optic.mounts.length) {
 			$step.prop('hidden', true).find('.ak-mounts').empty();
 			return;
 		}
+		// Rotpunkt mit Footprint auf einer Schiene: Adapterplatte statt Ringmontage.
+		$step.find('h4').text(this.optic.direct ? 'Adapterplatte' : 'Montage');
 		var html = '';
 		$.each(this.optic.mounts, function (_, id) {
 			if (self.mountsById[id]) { html += self.card(self.mountsById[id], 'ak_mount'); }
@@ -399,14 +496,24 @@
 			}
 			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer }));
 		});
-		if (this.optic && this.optic.direct) {
-			list.push($.extend(place(this.optic, this.optic.anchor, 0, 0), { z: 4 }));
-		} else if (this.optic && this.mount) {
-			var m = this.mount;
-			var a = pt(m, m.anchor);
-			var t = pt(m, m.tubeAnchor);
-			list.push($.extend(place(this.optic, this.optic.anchor, (t[0] - a[0]) * m.mmPerPx, (t[1] - a[1]) * m.mmPerPx), { z: 4 }));
-			list.push($.extend(place(m, m.anchor, 0, 0), { z: 5 }));
+		// Mit Magnifier: Rotpunkt nach vorne, Magnifier dahinter.
+		var off = this.optic && this.mag ? this.pairOffsets(this.mag, this.magMount) : null;
+		var dx = off ? off[0] : 0;
+		var mounted = function (item, mount, x, z) {
+			if (!mount) {
+				list.push($.extend(place(item, item.anchor, x, 0), { z: z }));
+				return;
+			}
+			var a = pt(mount, mount.anchor);
+			var t = pt(mount, mount.tubeAnchor);
+			list.push($.extend(place(item, item.anchor, x + (t[0] - a[0]) * mount.mmPerPx, (t[1] - a[1]) * mount.mmPerPx), { z: z }));
+			list.push($.extend(place(mount, mount.anchor, x, 0), { z: z + 1 }));
+		};
+		if (this.optic && (this.optic.direct || this.mount)) {
+			mounted(this.optic, this.mount, dx, 4);
+		}
+		if (off) {
+			mounted(this.mag, this.magMount, off[1], 4);
 		}
 		return list;
 	};
@@ -435,8 +542,10 @@
 		this.filterMuzzle();
 		this.updateChoices();
 		var lines = [cfg.weapon];
-		if (this.mount && this.optic && !this.optic.direct) { lines.push(this.mount); }
+		if (this.mount && this.optic) { lines.push(this.mount); }
 		if (this.optic) { lines.push(this.optic); }
+		if (this.optic && this.magMount && this.mag) { lines.push(this.magMount); }
+		if (this.optic && this.mag) { lines.push(this.mag); }
 		var self = this;
 		var railMissing = false;
 		$.each(this.selectedParts(), function (_, x) {
@@ -455,7 +564,7 @@
 		}
 		this.$root.find('.ak-lines').html(html);
 		this.$root.find('.ak-total').html('Total <strong>' + fmt(total, cfg) + '</strong>');
-		var opticOk = !this.optic || this.optic.direct || this.mount;
+		var opticOk = (!this.optic || !this.optic.mounts.length || this.mount) && (!this.mag || !this.mag.mounts.length || this.magMount);
 		var ready = opticOk && !railMissing && lines.length > 1;
 		this.$root.find('.ak-add').prop('disabled', !ready);
 		this.draw();
@@ -467,7 +576,9 @@
 		var data = {
 			weapon: this.cfg.weapon.id,
 			optic: this.optic ? this.optic.id : 0,
-			mount: this.optic && this.mount && !this.optic.direct ? this.mount.id : 0
+			mount: this.optic && this.mount ? this.mount.id : 0,
+			mag: this.optic && this.mag ? this.mag.id : 0,
+			mag_mount: this.optic && this.mag && this.magMount ? this.magMount.id : 0
 		};
 		$.each(this.selectedParts(), function (_, x) {
 			data['parts[' + x.g.key + ']'] = x.item.id;

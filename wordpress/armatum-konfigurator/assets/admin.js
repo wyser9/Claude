@@ -3,9 +3,9 @@
 	'use strict';
 
 	var COLORS = { p1: '#0073aa', p2: '#0073aa', anchor: '#d63638', tube_anchor: '#00a32a', bottom: '#e65100',
-		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_vorne_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a', muzzle_device_anchor: '#8c5fd6' };
+		slot_muendung_anchor: '#8c5fd6', slot_unten_anchor: '#dba617', slot_seite_anchor: '#dba617', slot_vorne_anchor: '#dba617', slot_schaft_anchor: '#3c434a', slot_griff_anchor: '#3c434a', muzzle_device_anchor: '#8c5fd6', rail_front: '#007017', rail_rear: '#007017' };
 	var LABELS = { p1: '1', p2: '2', anchor: 'A', tube_anchor: 'R', bottom: 'T',
-		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_vorne_anchor: 'Z', slot_schaft_anchor: 'S', slot_griff_anchor: 'G', muzzle_device_anchor: 'O' };
+		slot_muendung_anchor: 'M', slot_unten_anchor: 'U', slot_seite_anchor: 'L', slot_vorne_anchor: 'Z', slot_schaft_anchor: 'S', slot_griff_anchor: 'G', muzzle_device_anchor: 'O', rail_front: '▶', rail_rear: '◀' };
 
 	$(function () {
 		var $box = $('.ak-box');
@@ -51,6 +51,7 @@
 		var KIND_LABEL = {
 			waffe: 'Optik-Aufnahme (Schiene oder Footprint)',
 			optik: 'Optik-Aufnahme (nur bei «direkt»: Schiene oder Footprint)',
+			magnifier: 'Passt auf (nur bei «direkt»: Schiene)',
 			montage: 'Passt auf (Schiene)',
 			gewinde: 'Passt auf (Gewinde)',
 			schiene: 'Passt auf (Schiene)',
@@ -66,11 +67,11 @@
 			var role = $box.find('.ak-role').val();
 			var g = $box.find('[name="ak[gruppe]"]').val();
 			if (k === 'auto') {
-				if (role === 'waffe' || role === 'optik') { return ['schiene', 'optik']; }
+				if (role === 'waffe' || role === 'optik' || role === 'magnifier') { return ['schiene', 'optik']; }
 				if (role === 'montage') { return ['schiene']; }
 				return GROUP_KIND[g] ? [GROUP_KIND[g]] : [];
 			}
-			if (k === 'auto-out') { return g === 'adapterschiene' ? ['schiene'] : ['gewinde']; }
+			if (k === 'auto-out') { return role === 'montage' ? ['optik'] : g === 'adapterschiene' ? ['schiene'] : ['gewinde']; }
 			return [k];
 		}
 		function fieldLabel() {
@@ -175,7 +176,7 @@
 			$.post(window.ajaxurl, {
 				action: 'ak_auto_preview', nonce: $btn.data('nonce'), id: $btn.data('id'),
 				role: val('role'), gruppe: val('gruppe'), direkt: on('direkt'), flip: on('flip'),
-				mittelrohr: val('mittelrohr'), laenge: val('laenge'), image_id: val('image_id')
+				mittelrohr: val('mittelrohr'), laenge: val('laenge'), image_id: val('image_id'), montage_art: val('montage_art')
 			}).done(function (res) {
 				if (!res.success) { $msg.addClass('ak-error').text(res.data.message); return; }
 				$.each(['p1', 'p2', 'anchor', 'tube_anchor', 'bottom'], function (_, k) {

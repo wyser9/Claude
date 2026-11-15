@@ -7,6 +7,8 @@
  *  - montage: sitzt auf einer Schnittstelle, hat Ringe für ein Mittelrohr (mm) und eine Rohrmitte.
  *  - optik:   entweder "direkt" auf eine Schnittstelle (Rotpunkt, Optik mit integrierter Montage)
  *             oder mit Mittelrohr, dann braucht sie eine passende Montage.
+ *  - magnifier: Vergrösserung hinter einem Rotpunkt. «direkt» = mit eigener Halterung,
+ *             sonst mit Mittelrohr und Montage der Art «magnifier».
  *  - zubehoer: gehört zu einer Gruppe (Schalldämpfer, Handgriff, Laser, Schulterstütze, Griff),
  *             die zu einem Steckplatz der Waffe gehört. Passt, wenn die Schnittstellen übereinstimmen.
  */
@@ -17,7 +19,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Data {
 
-	const ROLES = array( 'waffe', 'montage', 'optik', 'zubehoer' );
+	const ROLES = array( 'waffe', 'montage', 'optik', 'magnifier', 'zubehoer' );
+
+	/** Arten von Montagen: '' = für Optik mit Mittelrohr (Zielfernrohr). */
+	const MOUNT_TYPES = array(
+		''          => 'Optik mit Mittelrohr (Zielfernrohr)',
+		'magnifier' => 'nur Magnifier',
+		'footprint' => 'Adapterplatte / Erhöhung für Rotpunkt (Schiene auf Footprint)',
+	);
+
+	/** Abstand Rotpunkt – Magnifier in mm und erlaubte Abweichung der Achshöhe. */
+	const MAG_GAP = 10;
+	const MAG_TOL = 1.5;
 
 	/** Steckplätze an der Waffe (ausser Optik, die den Hauptanker nutzt). */
 	const SLOTS = array(
@@ -59,6 +72,7 @@ class AK_Data {
 		'rmsc'        => 'optik',
 		'acro'        => 'optik',
 		'docter'      => 'optik',
+		'micro'       => 'optik',
 		'm-lok'       => 'schiene',
 		'keymod'      => 'schiene',
 		'1/2x28'      => 'gewinde',
@@ -108,6 +122,12 @@ class AK_Data {
 		'doctor/noblex'      => 'docter',
 		'noblex'             => 'docter',
 		'doctor'             => 'docter',
+		'aimpointmicro'      => 'micro',
+		'aimpoint-micro'     => 'micro',
+		'microt1'            => 'micro',
+		't1'                 => 'micro',
+		't2'                 => 'micro',
+		't1/t2'              => 'micro',
 	);
 
 	/** Steckplätze einer Gruppe in Reihenfolge. */
@@ -256,6 +276,9 @@ class AK_Data {
 		if ( 'montage' === $role && ! self::point( $product_id, 'tube_anchor' ) ) {
 			return false;
 		}
+		if ( 'montage' === $role && 'footprint' === self::mount_type( $product_id ) && ! self::outputs( $product_id ) ) {
+			return false;
+		}
 		if ( 'zubehoer' === $role && ! self::group( $product_id ) ) {
 			return false;
 		}
@@ -312,7 +335,7 @@ class AK_Data {
 
 	/** Passt die Montage auf die Waffe und zur Optik? */
 	public static function mount_fits( $weapon_id, $mount_id, $optic_id ) {
-		if ( self::is_direct( $optic_id ) ) {
+		if ( self::is_direct( $optic_id ) || '' !== self::mount_type( $mount_id ) ) {
 			return false;
 		}
 		if ( ! array_intersect( self::interfaces( $weapon_id ), self::interfaces( $mount_id ) ) ) {
@@ -321,6 +344,105 @@ class AK_Data {
 		$optic_tube = self::tube( $optic_id );
 		$mount_tube = self::tube( $mount_id );
 		return $optic_tube > 0 && abs( $optic_tube - $mount_tube ) < 0.01 && self::height_ok( $weapon_id, $mount_id, $optic_id );
+	}
+
+	/** Art der Montage: '', 'magnifier' oder 'footprint'. */
+	public static function mount_type( $mount_id ) {
+		$t = (string) self::meta( $mount_id, 'montage_art' );
+		return isset( self::MOUNT_TYPES[ $t ] ) ? $t : '';
+	}
+
+	/** Länge des Produkts im Bild in mm (Abstand der Messpunkte, sonst Feld/Attribut Länge). */
+	public static function length_mm( $product_id ) {
+		$ref = (float) str_replace( ',', '.', (string) self::meta( $product_id, 'ref_mm', '0' ) );
+		return $ref > 0 ? $ref : AK_Auto::length( $product_id );
+	}
+
+	/** Eigene Achshöhe in mm über der Auflagefläche (Rotpunkt, Magnifier mit Halterung), 0 = unbekannt. */
+	public static function own_axis( $product_id ) {
+		return max( 0.0, (float) str_replace( ',', '.', (string) self::meta( $product_id, 'achshoehe', '0' ) ) );
+	}
+
+	/** Passt die Adapterplatte (Montage-Art footprint) auf die Waffe und zum Footprint des Rotpunkts? */
+	public static function plate_fits( $weapon_id, $plate_id, $optic_id ) {
+		return self::is_direct( $optic_id ) && 'footprint' === self::mount_type( $plate_id )
+			&& array_intersect( self::interfaces( $weapon_id ), self::interfaces( $plate_id ) )
+			&& array_intersect( self::outputs( $plate_id ), self::interfaces( $optic_id ) );
+	}
+
+	/** Passt die Magnifier-Montage auf die Waffe und zum Mittelrohr des Magnifiers? */
+	public static function mag_mount_fits( $weapon_id, $mount_id, $mag_id ) {
+		if ( self::is_direct( $mag_id ) || 'magnifier' !== self::mount_type( $mount_id ) ) {
+			return false;
+		}
+		$tube = self::tube( $mag_id );
+		return $tube > 0 && abs( $tube - self::tube( $mount_id ) ) < 0.01 && array_intersect( self::interfaces( $weapon_id ), self::interfaces( $mount_id ) );
+	}
+
+	/** Kann ein Magnifier hinter diese Optik? Nur Rotpunkte (direkt, ohne Mittelrohr). */
+	public static function takes_magnifier( $optic_id ) {
+		return self::is_direct( $optic_id ) && self::tube( $optic_id ) <= 0;
+	}
+
+	/** Achshöhe des Rotpunkts über der Schiene (mit Adapterplatte), 0 = unbekannt. */
+	public static function red_axis( $optic_id, $plate_id = 0 ) {
+		$own = self::own_axis( $optic_id );
+		if ( $own <= 0 ) {
+			return 0.0;
+		}
+		return $own + ( $plate_id ? self::axis_height( $plate_id ) : 0.0 );
+	}
+
+	/** Achshöhe des Magnifiers über der Schiene, 0 = unbekannt. */
+	public static function mag_axis( $mag_id, $mount_id = 0 ) {
+		return $mount_id ? self::axis_height( $mount_id ) : self::own_axis( $mag_id );
+	}
+
+	/** x eines Punkts der Waffe in mm relativ zum Optik-Anker (Mündung = +x). */
+	public static function weapon_x( $weapon_id, $key ) {
+		$p = self::point( $weapon_id, $key );
+		$a = self::point( $weapon_id, 'anchor' );
+		$s = self::scale( $weapon_id );
+		if ( ! $p || ! $a || $s <= 0 ) {
+			return null;
+		}
+		$dx = $p[0] - $a[0];
+		return ( 'yes' === self::meta( $weapon_id, 'flip', 'no' ) ? -$dx : $dx ) * $s;
+	}
+
+	/**
+	 * Lage von Rotpunkt und Magnifier auf der Schiene: Mitte des Paars am Optik-Anker,
+	 * Rotpunkt vorne, wenn nötig verschoben bis zum Schienenende. Liefert [x Rotpunkt, x Magnifier] oder null (kein Platz).
+	 */
+	public static function pair_offsets( $weapon_id, $len_red, $len_mag ) {
+		$total = $len_red + self::MAG_GAP + $len_mag;
+		$xr    = $total / 2 - $len_red / 2;
+		$xm    = -$total / 2 + $len_mag / 2;
+		$front = self::weapon_x( $weapon_id, 'rail_front' );
+		$rear  = self::weapon_x( $weapon_id, 'rail_rear' );
+		if ( null === $front || null === $rear ) {
+			return array( $xr, $xm );
+		}
+		if ( $front < $rear ) {
+			list( $front, $rear ) = array( $rear, $front );
+		}
+		if ( $total > $front - $rear + 0.5 ) {
+			return null;
+		}
+		$shift = min( 0, $front - ( $xr + $len_red / 2 ) ) + max( 0, $rear - ( $xm - $len_mag / 2 ) );
+		return array( $xr + $shift, $xm + $shift );
+	}
+
+	/** Passt diese Kombination aus Rotpunkt (+ Platte) und Magnifier (+ Montage)? Unbekannte Höhen = kein Ausschluss. */
+	public static function mag_combo_ok( $weapon_id, $optic_id, $plate_id, $mag_id, $mag_mount_id ) {
+		$a = self::red_axis( $optic_id, $plate_id );
+		$b = self::mag_axis( $mag_id, $mag_mount_id );
+		if ( $a > 0 && $b > 0 && abs( $a - $b ) > self::MAG_TOL ) {
+			return false;
+		}
+		$lr = max( self::length_mm( $optic_id ), $plate_id ? self::length_mm( $plate_id ) : 0 );
+		$lm = max( self::length_mm( $mag_id ), $mag_mount_id ? self::length_mm( $mag_mount_id ) : 0 );
+		return null !== self::pair_offsets( $weapon_id, $lr, $lm );
 	}
 
 	/** Ausnahmen: manuell gesperrte Produkt-IDs an der Waffe. */
@@ -519,6 +641,22 @@ class AK_Data {
 				$optics[ $optic_id ] = array();
 				continue;
 			}
+			if ( self::is_direct( $optic_id ) ) {
+				// Rotpunkt mit Footprint auf Schiene: über eine passende Adapterplatte.
+				$plates = array_values(
+					array_filter(
+						$mounts,
+						function ( $plate_id ) use ( $weapon_id, $optic_id ) {
+							return self::plate_fits( $weapon_id, $plate_id, $optic_id );
+						}
+					)
+				);
+				if ( $plates ) {
+					$optics[ $optic_id ] = $plates;
+					$used_mounts         = array_merge( $used_mounts, $plates );
+				}
+				continue;
+			}
 			$fitting = array_values(
 				array_filter(
 					$mounts,
@@ -591,12 +729,56 @@ class AK_Data {
 			}
 		}
 
+		// Magnifier: mit eigener Halterung direkt auf die Schiene, sonst über eine Magnifier-Montage.
+		$mags       = array();
+		$mag_mounts = array();
+		foreach ( array_diff( self::products_by_role( 'magnifier' ), $blocked ) as $mag_id ) {
+			if ( self::optic_direct_fits( $weapon_id, $mag_id ) ) {
+				$mags[ $mag_id ] = array();
+				continue;
+			}
+			$fit = array_values(
+				array_filter(
+					$mounts,
+					function ( $m ) use ( $weapon_id, $mag_id ) {
+						return self::mag_mount_fits( $weapon_id, $m, $mag_id );
+					}
+				)
+			);
+			if ( $fit ) {
+				$mags[ $mag_id ] = $fit;
+				$mag_mounts      = array_merge( $mag_mounts, $fit );
+			}
+		}
+		$optic_mags = array();
+		foreach ( $optics as $optic_id => $plates ) {
+			if ( ! $mags || ! self::takes_magnifier( $optic_id ) ) {
+				continue;
+			}
+			foreach ( $mags as $mag_id => $mm ) {
+				$ok = false;
+				foreach ( ( $plates ? $plates : array( 0 ) ) as $plate ) {
+					foreach ( ( $mm ? $mm : array( 0 ) ) as $m ) {
+						if ( ! $ok && self::mag_combo_ok( $weapon_id, $optic_id, $plate, $mag_id, $m ) ) {
+							$ok = true;
+						}
+					}
+				}
+				if ( $ok ) {
+					$optic_mags[ $optic_id ][] = (int) $mag_id;
+				}
+			}
+		}
+
 		return array(
-			'optics' => $optics,
-			'mounts' => array_values( array_unique( $used_mounts ) ),
-			'parts'    => $parts,
-			'adapters' => $adapters,
-			'slots'    => $slots,
+			'optics'     => $optics,
+			'mounts'     => array_values( array_unique( $used_mounts ) ),
+			'parts'      => $parts,
+			'adapters'   => $adapters,
+			'slots'      => $slots,
+			'magnifiers' => $mags,
+			'mag_mounts' => array_values( array_unique( $mag_mounts ) ),
+			'optic_mags' => $optic_mags,
 		);
 	}
 
@@ -629,7 +811,7 @@ class AK_Data {
 	 * @param int   $mount_id  Montage oder 0.
 	 * @param array $parts     Gruppe => Produkt-ID.
 	 */
-	public static function validate_selection( $weapon_id, $optic_id, $mount_id, $parts = array(), $adapters = array() ) {
+	public static function validate_selection( $weapon_id, $optic_id, $mount_id, $parts = array(), $adapters = array(), $mag_id = 0, $mag_mount_id = 0 ) {
 		if ( 'waffe' !== self::role( $weapon_id ) || ! self::is_ready( $weapon_id ) ) {
 			return new WP_Error( 'ak_weapon', 'Diese Waffe ist nicht für den Konfigurator eingerichtet.' );
 		}
@@ -647,6 +829,23 @@ class AK_Data {
 			}
 		} elseif ( $mount_id ) {
 			return new WP_Error( 'ak_mount', 'Eine Montage gibt es nur zusammen mit einer Optik.' );
+		}
+		if ( $mag_id ) {
+			if ( ! $optic_id || empty( $options['optic_mags'][ $optic_id ] ) || ! in_array( $mag_id, $options['optic_mags'][ $optic_id ], true ) ) {
+				return new WP_Error( 'ak_mag', 'Dieser Magnifier passt nicht zur gewählten Optik.' );
+			}
+			$need = $options['magnifiers'][ $mag_id ];
+			if ( $need && ! in_array( $mag_mount_id, $need, true ) ) {
+				return new WP_Error( 'ak_mag', 'Bitte eine passende Halterung für den Magnifier wählen.' );
+			}
+			if ( ! $need && $mag_mount_id ) {
+				return new WP_Error( 'ak_mag', 'Dieser Magnifier hat schon eine Halterung.' );
+			}
+			if ( ! self::mag_combo_ok( $weapon_id, $optic_id, $mount_id, $mag_id, $mag_mount_id ) ) {
+				return new WP_Error( 'ak_mag', 'Magnifier und Rotpunkt haben nicht die gleiche Achshöhe oder zu wenig Platz auf der Schiene.' );
+			}
+		} elseif ( $mag_mount_id ) {
+			return new WP_Error( 'ak_mag', 'Eine Magnifier-Halterung gibt es nur zusammen mit einem Magnifier.' );
 		}
 		foreach ( $parts as $group => $acc_id ) {
 			if ( ! isset( self::GROUPS[ $group ] ) || empty( $options['parts'][ $group ] ) || ! in_array( $acc_id, $options['parts'][ $group ], true ) ) {
@@ -748,6 +947,10 @@ class AK_Data {
 			'hinweis'    => (string) self::meta( $product_id, 'hinweis' ),
 			'cutout'     => 'yes' === self::meta( $product_id, 'freigestellt', 'no' ),
 			'brand'      => trim( (string) $product->get_attribute( 'pa_hersteller' ) ),
+			'length'     => self::length_mm( $product_id ),
+			'axis'       => self::own_axis( $product_id ),
+			'axisHeight' => 'montage' === self::role( $product_id ) ? self::axis_height( $product_id ) : 0,
+			'mountType'  => 'montage' === self::role( $product_id ) ? self::mount_type( $product_id ) : '',
 		);
 	}
 }

@@ -51,9 +51,9 @@ class AK_Review {
 			return 'A = Oberkante Schiene (Optik), 1/2 = Gesamtlänge';
 		}
 		if ( 'montage' === $role ) {
-			return 'A = Mitte Unterseite, R = Ringmitte (Rohrachse)';
+			return 'A = Mitte Unterseite, R = ' . ( 'footprint' === $group ? 'Mitte Oberseite (Auflage Rotpunkt)' : 'Ringmitte (Rohrachse)' );
 		}
-		if ( 'optik' === $role ) {
+		if ( 'optik' === $role || 'magnifier' === $role ) {
 			return 'A = Rohrachse (Rotpunkt: Mitte Unterseite), T = tiefster Punkt';
 		}
 		if ( in_array( $group, array( 'muendungsaufsatz', 'hub' ), true ) ) {
@@ -118,7 +118,7 @@ class AK_Review {
 				<input type="hidden" name="ak_status" value="<?php echo esc_attr( $status ); ?>">
 				<select name="ak_role" onchange="this.form.submit()">
 					<option value="">Alle Rollen</option>
-					<?php foreach ( array( 'waffe' => 'Waffen', 'optik' => 'Optiken', 'montage' => 'Montagen', 'zubehoer' => 'Zubehör' ) as $k => $t ) : ?>
+					<?php foreach ( array( 'waffe' => 'Waffen', 'optik' => 'Optiken', 'montage' => 'Montagen', 'magnifier' => 'Magnifier', 'zubehoer' => 'Zubehör' ) as $k => $t ) : ?>
 						<option value="<?php echo esc_attr( $k ); ?>" <?php selected( $role, $k ); ?>><?php echo esc_html( $t ); ?></option>
 					<?php endforeach; ?>
 				</select>
@@ -129,7 +129,7 @@ class AK_Review {
 				foreach ( $q->posts as $id ) :
 					$id    = (int) $id;
 					$r     = AK_Data::role( $id );
-					$g     = AK_Data::group( $id );
+					$g     = 'montage' === $r ? AK_Data::mount_type( $id ) : AK_Data::group( $id );
 					$img   = AK_Data::image_id( $id );
 					$full  = $img ? wp_get_attachment_image_src( $img, 'full' ) : false;
 					$show  = $img ? wp_get_attachment_image_src( $img, 'medium_large' ) : false;
@@ -143,7 +143,9 @@ class AK_Review {
 						'bottom'      => array( 'T', '#e65100' ),
 					);
 					$info = array();
-					if ( $g ) {
+					if ( 'montage' === $r ) {
+						$info[] = 'Montage: ' . AK_Data::MOUNT_TYPES[ $g ];
+					} elseif ( $g ) {
 						$info[] = AK_Data::GROUPS[ $g ][1];
 					} else {
 						$info[] = ucfirst( $r ) . ( AK_Data::is_direct( $id ) ? ' (direkt)' : '' );
@@ -156,6 +158,9 @@ class AK_Review {
 					}
 					if ( 'optik' === $r && ! AK_Data::is_direct( $id ) && AK_Data::optic_depth( $id ) > 0 ) {
 						$info[] = 'unter Achse ' . number_format( AK_Data::optic_depth( $id ), 1, '.', '' ) . ' mm';
+					}
+					if ( AK_Data::own_axis( $id ) > 0 ) {
+						$info[] = 'Achshöhe ' . AK_Data::own_axis( $id ) . ' mm';
 					}
 					$ifs = AK_Data::interfaces( $id );
 					if ( $ifs ) {

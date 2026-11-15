@@ -16,8 +16,11 @@
 .ak-box .ak-slots .ak-row { margin: 4px 0; }
 .ak-box[data-role="waffe"] .ak-only-waffe,
 .ak-box[data-role="optik"] .ak-only-optik,
+.ak-box[data-role="magnifier"] .ak-only-optik,
 .ak-box[data-role="montage"] .ak-only-montage { display: inline-flex !important; }
 .ak-box[data-role="waffe"] p.ak-only-waffe { display: flex !important; }
+.ak-box[data-role="montage"] p.ak-only-montage, .ak-box[data-role="optik"] p.ak-only-optik, .ak-box[data-role="magnifier"] p.ak-only-optik { display: flex !important; }
+.ak-box[data-role="montage"] p.description.ak-only-montage, .ak-box[data-role="optik"] p.description.ak-only-optik, .ak-box[data-role="magnifier"] p.description.ak-only-optik { display: block !important; }
 .ak-auto-row { margin: 1em 0; padding: .6em .8em; background: #f0f6fc; border-left: 3px solid #2271b1; display: flex; flex-wrap: wrap; gap: .5em 1em; align-items: center; }
 .ak-auto-row .description { flex-basis: 100%; }
 .ak-auto-msg { font-weight: 600; }

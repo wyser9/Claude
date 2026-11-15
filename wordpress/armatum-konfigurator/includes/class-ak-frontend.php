@@ -65,7 +65,10 @@ class AK_Frontend {
 
 	private static function in_options( $weapon_id, $part_id ) {
 		$o = AK_Data::options_for_weapon( $weapon_id );
-		if ( array_key_exists( $part_id, $o['optics'] ) || in_array( $part_id, $o['mounts'], true ) ) {
+		if ( array_key_exists( $part_id, $o['optics'] ) || in_array( $part_id, $o['mounts'], true ) || in_array( $part_id, $o['mag_mounts'], true ) ) {
+			return true;
+		}
+		if ( isset( $o['magnifiers'][ $part_id ] ) && array_filter( $o['optic_mags'], function ( $l ) use ( $part_id ) { return in_array( $part_id, $l, true ); } ) ) {
 			return true;
 		}
 		foreach ( $o['parts'] as $ids ) {
@@ -202,9 +205,17 @@ class AK_Frontend {
 		foreach ( $options['optics'] as $optic_id => $mount_ids ) {
 			$item           = AK_Data::item_payload( $optic_id );
 			$item['mounts'] = array_map( 'intval', $mount_ids );
+			$item['mags']   = isset( $options['optic_mags'][ $optic_id ] ) ? $options['optic_mags'][ $optic_id ] : array();
 			$optics[]       = $item;
 		}
 		$mounts = array_map( array( 'AK_Data', 'item_payload' ), $options['mounts'] );
+		$mags   = array();
+		foreach ( $options['magnifiers'] as $mag_id => $mm ) {
+			$item           = AK_Data::item_payload( $mag_id );
+			$item['mounts'] = array_map( 'intval', $mm );
+			$mags[]         = $item;
+		}
+		$mag_mounts = array_map( array( 'AK_Data', 'item_payload' ), $options['mag_mounts'] );
 
 		$weapon          = AK_Data::item_payload( $weapon_id );
 		$weapon['slots'] = array();
@@ -218,6 +229,10 @@ class AK_Frontend {
 		$weapon['threadIfs']    = $thread ? $thread['interfaces'] : array();
 		$weapon['deviceIfs']    = AK_Data::split( AK_Data::meta( $weapon_id, 'muzzle_device_if' ) );
 		$weapon['deviceAnchor'] = AK_Data::point( $weapon_id, 'muzzle_device_anchor' );
+		$weapon['railFront']    = AK_Data::weapon_x( $weapon_id, 'rail_front' );
+		$weapon['railRear']     = AK_Data::weapon_x( $weapon_id, 'rail_rear' );
+		$weapon['magGap']       = AK_Data::MAG_GAP;
+		$weapon['magTol']       = AK_Data::MAG_TOL;
 
 		$groups   = array();
 		$rail_ids = array();
@@ -247,6 +262,8 @@ class AK_Frontend {
 			'weapon'    => $weapon,
 			'optics'    => $optics,
 			'mounts'    => $mounts,
+			'mags'      => $mags,
+			'magMounts' => $mag_mounts,
 			'groups'    => $groups,
 			'adapters'  => $rails,
 			'preselect' => $part_id ? self::resolve_part( $weapon_id, $part_id ) : 0,

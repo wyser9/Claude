@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Admin {
 
-	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum' );
+	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear' );
 
 	/** Alle gespeicherten Felder inkl. Steckplätze der Waffe. */
 	public static function fields() {
@@ -64,6 +64,7 @@ class AK_Admin {
 						<option value="waffe" <?php selected( $v['role'], 'waffe' ); ?>>Waffe</option>
 						<option value="optik" <?php selected( $v['role'], 'optik' ); ?>>Optik</option>
 						<option value="montage" <?php selected( $v['role'], 'montage' ); ?>>Montage (für Optik)</option>
+						<option value="magnifier" <?php selected( $v['role'], 'magnifier' ); ?>>Magnifier (hinter Rotpunkt)</option>
 						<option value="zubehoer" <?php selected( $v['role'], 'zubehoer' ); ?>>Zubehör</option>
 					</select>
 				</label>
@@ -81,15 +82,27 @@ class AK_Admin {
 				<label class="ak-only-montage ak-only-optik">Mittelrohr [mm]
 					<input type="text" name="ak[mittelrohr]" value="<?php echo esc_attr( $v['mittelrohr'] ); ?>" placeholder="aus Attribut: <?php echo esc_attr( AK_Data::tube( $post->ID ) ?: '–' ); ?>" size="6">
 				</label>
-				<label class="ak-only-optik"><input type="checkbox" name="ak[direkt]" value="yes" <?php checked( $v['direkt'], 'yes' ); ?>> direkt auf Schiene oder Footprint (Rotpunkt / Montage integriert)</label>
+				<label class="ak-only-optik"><input type="checkbox" name="ak[direkt]" value="yes" <?php checked( $v['direkt'], 'yes' ); ?>> direkt auf Schiene oder Footprint (Rotpunkt / Montage integriert, Magnifier mit Halterung)</label>
+				<label class="ak-only-montage">Art
+					<select name="ak[montage_art]">
+						<?php foreach ( AK_Data::MOUNT_TYPES as $mk => $ml ) : ?>
+							<option value="<?php echo esc_attr( $mk ); ?>" <?php selected( $v['montage_art'], $mk ); ?>><?php echo esc_html( $ml ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<label class="ak-only-optik">Achshöhe [mm]
+					<input type="text" name="ak[achshoehe]" value="<?php echo esc_attr( $v['achshoehe'] ); ?>" size="5" placeholder="z.B. 39">
+				</label>
 			</p>
+			<p class="description ak-only-optik">Achshöhe nur bei Rotpunkt und Magnifier mit Halterung: Höhe der optischen Achse über der Auflagefläche (Schiene oder Footprint), z.B. 39 mm (absolute co-witness) oder 49 mm (lower 1/3). Magnifier und Rotpunkt passen nur zusammen, wenn sie höchstens <?php echo esc_html( (string) AK_Data::MAG_TOL ); ?> mm auseinanderliegen. Leer = nicht geprüft.</p>
+			<p class="description ak-only-montage">Art «nur Magnifier»: Ringe für einen Magnifier, erscheint nicht bei Zielfernrohren. Art «Adapterplatte»: Schnittstelle = Schiene (picatinny), Ausgang = Footprint des Rotpunkts (z.B. rmr, acro, micro), Rohrmitte = Mitte der Oberseite.</p>
 			<p class="ak-row ak-only-zubehoer">
 				<label>Hinweis für Kunden (z.B. «Bewilligungspflichtig»)
 					<input type="text" name="ak[hinweis]" value="<?php echo esc_attr( $v['hinweis'] ); ?>" size="40">
 				</label>
 				<label><input type="checkbox" name="ak[freigestellt]" value="yes" <?php checked( $v['freigestellt'], 'yes' ); ?>> Bild ist freigestellt (PNG ohne Hintergrund, verdeckt Originalteil)</label>
 			</p>
-			<p class="ak-row ak-only-zubehoer">
+			<p class="ak-row ak-only-zubehoer ak-only-montage">
 				<label>Ausgang (Mündungsaufsatz und HUB: z.B. HUB-Standard 1.375x24; Adapterschiene: picatinny)
 					<input type="text" name="ak[ausgang]" class="ak-if" data-kind="auto-out" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
 				</label>
@@ -106,6 +119,13 @@ class AK_Admin {
 						<input type="hidden" name="ak[slot_<?php echo esc_attr( $sk ); ?>_anchor]" class="ak-pt" data-pt="slot_<?php echo esc_attr( $sk ); ?>_anchor" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_anchor' ] ); ?>">
 					</p>
 				<?php endforeach; ?>
+				<p class="ak-row">
+					<span>Obere Schiene (für Rotpunkt + Magnifier):</span>
+					<button type="button" class="button ak-tool" data-target="rail_rear">Hinteres Ende setzen</button>
+					<button type="button" class="button ak-tool" data-target="rail_front">Vorderes Ende setzen</button>
+					<input type="hidden" name="ak[rail_rear]" class="ak-pt" data-pt="rail_rear" value="<?php echo esc_attr( $v['rail_rear'] ); ?>">
+					<input type="hidden" name="ak[rail_front]" class="ak-pt" data-pt="rail_front" value="<?php echo esc_attr( $v['rail_front'] ); ?>">
+				</p>
 				<p class="ak-row">
 					<label>Original-Mündungsaufsatz: Schnittstelle für HUB (leer = keiner)
 						<input type="text" name="ak[muzzle_device_if]" class="ak-if" data-kind="gewinde" value="<?php echo esc_attr( $v['muzzle_device_if'] ); ?>" size="22">
@@ -156,6 +176,7 @@ class AK_Admin {
 				<p><b>Ankerpunkt:</b> Waffe = Stelle auf der Oberkante der Schiene, wo die Optik sitzen soll. Montage = Mitte der Unterseite (Schienenauflage). Optik mit Mittelrohr = Mitte des Mittelrohrs (Rohrachse). Rotpunkt = Mitte der Unterseite.</p>
 				<p><b>Rohrmitte (nur Montage):</b> Mitte der Ringe, wo die Rohrachse der Optik liegt.</p>
 				<p><b>Zubehör-Anker:</b> Mündungsaufsatz, HUB und Schalldämpfer = hinteres Ende auf der Laufachse; Ausgangspunkt = vorderes Ende auf der Laufachse. Handgriff und Laser = Mitte der Befestigungsfläche. Schulterstütze = vorderes Ende auf der Achse des Buffer Tubes. Griff = oberer vorderer Punkt am Gehäuse.</p>
+				<p><b>Magnifier:</b> wie ein Rotpunkt (mit Halterung: «direkt», Ankerpunkt = Mitte Unterseite) oder wie eine Optik mit Mittelrohr (braucht Montage der Art «nur Magnifier»). Mit Magnifier rückt der Rotpunkt nach vorne, das Paar sitzt um den Ankerpunkt der Waffe und bleibt zwischen den Schienenenden.</p>
 				<p><b>Steckplätze der Waffe:</b> Mündung = Gewindeschulter (Beginn des Laufgewindes) auf der Laufachse. Original-Mündungsaufsatz = sein vorderes Ende. Handschutz = Stelle für Griff bzw. Laser. Schaft = hinteres Gehäuseende auf der Achse des Buffer Tubes. Griff = Griffaufnahme oben vorne.</p>
 			</div>
 			<?php foreach ( array( 'p1', 'p2', 'anchor', 'tube_anchor', 'bottom' ) as $pt ) : ?>
@@ -200,6 +221,9 @@ class AK_Admin {
 				$val = '';
 			}
 			if ( 'gruppe' === $f && ! isset( AK_Data::GROUPS[ $val ] ) ) {
+				$val = '';
+			}
+			if ( 'montage_art' === $f && ! isset( AK_Data::MOUNT_TYPES[ $val ] ) ) {
 				$val = '';
 			}
 			if ( in_array( $f, array( 'schnittstelle', 'ausgang', 'muzzle_device_if' ), true ) || preg_match( '/^slot_.+_if$/', $f ) ) {

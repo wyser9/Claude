@@ -60,6 +60,8 @@ class AK_Report {
 			array(
 				'optik'   => absint( $p['optic'] ?? 0 ),
 				'montage' => absint( $p['mount'] ?? 0 ),
+				'magnifier' => absint( $p['mag'] ?? 0 ),
+				'magnifier_montage' => absint( $p['mag_mount'] ?? 0 ),
 			),
 			self::ids( $p['parts'] ?? array() ),
 			array_combine(

@@ -124,3 +124,14 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 - **Bildhinweise** beim Einmessen: Hintergrund nicht weiss/einheitlich, Produkt angeschnitten, sehr klein, wohl keine gerade Seitenansicht (lange Produkte zu wenig gestreckt). Gespeichert in `_ak_warn`.
 - **REST** `ak/v1` (nur `manage_woocommerce`): `GET /products` (Status, Attribute, Filter role/category/status), `POST /setup` (`ids`, `set` = Felder wie role, gruppe, schnittstelle, laenge …, `measure`, `overwrite`, `dry`), `POST /check`.
 - **Zweibein**: Gruppe `zweibein`, Steckplatz «Schiene unten vorne» (sonst Steckplatz unten).
+
+## Neu in 0.9
+
+- **Magnifier:** neue Rolle «Magnifier». Mit eigener Halterung «direkt» ankreuzen (Schnittstelle z.B. `picatinny`), sonst Mittelrohr eintragen, dann braucht er eine Montage der Art «nur Magnifier». Im Konfigurator erscheint er unter der Optik («Magnifier dazu?»), aber nur bei Rotpunkten (direkt, ohne Mittelrohr).
+- **Rotpunkt rückt nach vorne:** Mit Magnifier sitzt das Paar (Rotpunkt, 10 mm Abstand, Magnifier) mittig um den Optik-Anker der Waffe, der Rotpunkt vorne Richtung Laufende. An der Waffe lassen sich das hintere und vordere Ende der oberen Schiene setzen. Das Paar wird dann so verschoben, dass es auf der Schiene bleibt. Passt es nicht, wird der Magnifier nicht angeboten.
+- **Achshöhe:** neues Feld bei Rotpunkt und Magnifier mit Halterung (Höhe der optischen Achse über der Auflagefläche, z.B. 39 mm absolute co-witness, 49 mm lower 1/3). Bei Magnifier-Montagen kommt sie aus Ankerpunkt und Rohrmitte. Magnifier und Rotpunkt passen nur bei höchstens 1.5 mm Unterschied. Leer = nicht geprüft.
+- **Montage-Art:** «Optik mit Mittelrohr» (wie bisher), «nur Magnifier» (erscheint nie bei Zielfernrohren) und «Adapterplatte / Erhöhung für Rotpunkt».
+- **Adapterplatten:** Montage-Art «Adapterplatte», Schnittstelle = Schiene (`picatinny`), Ausgang = Footprint (z.B. `rmr`, `acro`, `micro`). Ein Rotpunkt mit Footprint erscheint damit auch auf Gewehren mit Picatinny-Schiene, die Platte wird mitgewählt und ist eine eigene Warenkorbposition. Beim Einmessen ist die «Rohrmitte» die Mitte der Oberseite. Neuer Footprint `micro` (Aimpoint Micro T1/T2).
+- **Einmessen:** Schräge Bilder (Hinweis «wohl keine gerade Seitenansicht») oder nicht lesbare Bilder werden automatisch durch das geradeste Galeriebild ersetzt (gespeichert als Vorschaubild). Produkte, die eingemessen, aber nicht vollständig eingerichtet sind, werden nicht mehr als «Schon eingemessen» übersprungen.
+- **Kategorien zuordnen:** neue Ziele «Montage nur für Magnifier», «Adapterplatte», «Magnifier mit Halterung», «Magnifier ohne Halterung».
+- **REST:** `set` kennt zusätzlich `montage_art`, `achshoehe`, `rail_front`, `rail_rear` (Punkt «x,y»). `status` zeigt `montage_art`, `achshoehe`, `axis_height`.

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class AK_Rest {
 
 	/** Felder, die über /setup gesetzt werden dürfen. */
-	const SETTABLE = array( 'role', 'gruppe', 'direkt', 'schnittstelle', 'ausgang', 'laenge', 'mittelrohr', 'hinweis', 'freigestellt', 'flip', 'image_id', 'freiraum' );
+	const SETTABLE = array( 'role', 'gruppe', 'direkt', 'schnittstelle', 'ausgang', 'laenge', 'mittelrohr', 'hinweis', 'freigestellt', 'flip', 'image_id', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear' );
 
 	public static function init() {
 		add_action( 'rest_api_init', array( __CLASS__, 'routes' ) );
@@ -72,6 +72,9 @@ class AK_Rest {
 			'ifs'      => AK_Data::interfaces( $id ),
 			'outs'     => AK_Data::outputs( $id ),
 			'tube'     => AK_Data::tube( $id ),
+			'montage_art' => 'montage' === $role ? AK_Data::mount_type( $id ) : '',
+			'achshoehe'   => AK_Data::own_axis( $id ),
+			'axis_height' => 'montage' === $role ? round( AK_Data::axis_height( $id ), 1 ) : 0,
 			'laenge'   => AK_Auto::length( $id ),
 			'image_id' => AK_Data::image_id( $id ),
 			'mmPerPx'  => round( AK_Data::scale( $id ), 4 ),
@@ -149,6 +152,12 @@ class AK_Rest {
 				$v = '';
 			}
 			if ( 'gruppe' === $k && ! isset( AK_Data::GROUPS[ $v ] ) ) {
+				$v = '';
+			}
+			if ( 'montage_art' === $k && ! isset( AK_Data::MOUNT_TYPES[ $v ] ) ) {
+				$v = '';
+			}
+			if ( in_array( $k, array( 'rail_front', 'rail_rear' ), true ) && ! preg_match( '/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/', $v ) ) {
 				$v = '';
 			}
 			if ( in_array( $k, array( 'schnittstelle', 'ausgang' ), true ) ) {
