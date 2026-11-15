@@ -818,7 +818,7 @@
 "regular": "88900",
 "short": "Zuverlässige Glock 17 Gen5 / MOS / FS im Kaliber 9x19mm: Leistungsfähigkeit trifft auf Vielseitigkeit Die Glock 17 Gen5 / MOS / FS im Kaliber 9x19mm ist die ideale Wahl für Schützen, die höchste Zuverlässigkeit, Präzision und Anpassungsfähigkeit suchen. Mit ihrer bewährten Konstruktion, hochwertigen",
 "stock": "in-stock",
-"url": "https://armatum.ch/produkt/glock-17-gen5-mos-fs-kopie/"
+"url": "https://armatum.ch/produkt/glock-17-gen5-mos-fs/"
 },
 "13526": {
 "cats": [
@@ -9148,7 +9148,8 @@
 "18763": {
 "cats": [
 "Hornady",
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 3,
 "name": "Hornady Precision Lab Scale Präzisionswaage",
@@ -9162,7 +9163,8 @@
 "18768": {
 "cats": [
 "Hornady",
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 3,
 "name": "Hornady M2 Digital Bench Scale 1500 gr",
@@ -14534,7 +14536,8 @@
 "20547": {
 "cats": [
 "Hornady",
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 2,
 "name": "Pulverwaagen & Zubehör Hornady G3-1500 Digital Scale",
@@ -14796,6 +14799,19 @@
 "short": "Matchpatrone im Kaliber .308 Win mit 176gr HPBT-Geschoss für präzises Long-Range-Schiessen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/swiss-p-308-win-ds-1-176gr-hpbt-matchmunition/"
+},
+"20622": {
+"cats": [
+"Swiss P"
+],
+"images": 1,
+"name": "Swiss P 9X19  ID-1 124gr/8.0g",
+"on_sale": false,
+"price": "1890",
+"regular": "1890",
+"short": "Leistungsstarke 9×19 Patrone mit 124gr Geschoss für zuverlässige Funktion und kontrollierte Wirkung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/swiss-p-9x19-id-1-124gr-einsatz-und-verteidigungspatrone/"
 },
 "20670": {
 "cats": [
@@ -15308,7 +15324,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 9mm Luger 4-Die Set",
 "on_sale": false,
 "price": "19380",
@@ -15319,7 +15335,8 @@
 },
 "20801": {
 "cats": [
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 2,
 "name": "Lyman Accu-Touch 2000 – Electronic Scale (115/230V w/ universal plug)",
@@ -15452,7 +15469,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 450 Bushmaster 4-Die Set",
 "on_sale": false,
 "price": "15750",
@@ -15465,7 +15482,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 458 SOCOM 4-Die Set",
 "on_sale": false,
 "price": "15750",
@@ -15478,7 +15495,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 50 Beowulf 4-Die Set",
 "on_sale": false,
 "price": "15750",
@@ -15582,7 +15599,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 223 Rem (5.56mm) Carbide Deluxe Rifle 3 Die Set",
 "on_sale": false,
 "price": "13320",
@@ -15595,7 +15612,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 6.5 x 55 S Carbide Deluxe Rifle 3 Die Set",
 "on_sale": false,
 "price": "13320",
@@ -15608,7 +15625,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 308 Win/307 Win. Carbide Deluxe Rifle 3 Die Set",
 "on_sale": false,
 "price": "13320",
@@ -15621,7 +15638,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 338 Lapua Carbide Deluxe Rifle 3 Die Set",
 "on_sale": false,
 "price": "13320",
@@ -15634,7 +15651,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 6.5 Creedmoor Carbide Deluxe Rifle 3 Die Set",
 "on_sale": false,
 "price": "13320",
@@ -15647,7 +15664,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 223 Rem 3-Die Set",
 "on_sale": false,
 "price": "12720",
@@ -15660,7 +15677,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 350 Legend 4-Die Set",
 "on_sale": false,
 "price": "12720",
@@ -15673,7 +15690,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 300 Blackout 3-Die Set",
 "on_sale": false,
 "price": "12720",
@@ -15686,7 +15703,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 308 Win 3-Die Set",
 "on_sale": false,
 "price": "12720",
@@ -15699,7 +15716,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman MSR Precision Die System 6.5 Grendel 3-Die Set",
 "on_sale": false,
 "price": "12720",
@@ -15947,7 +15964,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 5.7 x 28mm FN Specialty 3 Die Set",
 "on_sale": false,
 "price": "9090",
@@ -15974,7 +15991,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Shellholder Set (12X Shellholders)",
 "on_sale": false,
 "price": "8180",
@@ -16282,6 +16299,20 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-9-3mm-x-62-rifle-2-die-set/"
 },
+"20903": {
+"cats": [
+"Lyman",
+"Werkzeug"
+],
+"images": 1,
+"name": "Lyman «E-ZEE Prime» Hand Priming Tool – Ergonomisches Handzündhütchensetzgerät",
+"on_sale": false,
+"price": "7640",
+"regular": "7640",
+"short": "Das Lyman E-ZEE Prime Hand Priming Tool ermöglicht das präzise Setzen von Zündhütchen mit direkter Kontrolle und hohem Bedienkomfort.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-e-zee-prime-hand-priming-tool/"
+},
 "20905": {
 "cats": [
 "Presse"
@@ -16299,7 +16330,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Pro Universal Decapping Die",
 "on_sale": false,
 "price": "7140",
@@ -16325,7 +16356,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Multi Expand Powder Charge Die",
 "on_sale": false,
 "price": "6900",
@@ -16456,7 +16487,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Decapping Rod, w/ Carbide Button, 22 Caliber – 222 Rem, 223 Rem, 22-250, 220 Swift, 223 WSSM",
 "on_sale": false,
 "price": "5700",
@@ -16469,7 +16500,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Decapping Rod, w/ Carbide Button, 30 Caliber – 30-30, 300 Sav, 308 Win, 30-06, 300 Win Mag",
 "on_sale": false,
 "price": "5700",
@@ -16482,7 +16513,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Decapping Rod, w/ Carbide Button, 338 – 338 Lapua, 338 Win Mag",
 "on_sale": false,
 "price": "5700",
@@ -16493,7 +16524,8 @@
 },
 "20929": {
 "cats": [
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 1,
 "name": "Lyman Shooters Check Weight Set",
@@ -16503,6 +16535,33 @@
 "short": "Das Lyman Shooters Check Weight Set enthält präzisionsgefertigte Kontrollgewichte zur Überprüfung und Kalibrierung von Pulverwaagen. Ideal für Wiederlader, die Wert auf maximale Messgenauigkeit und Sicherheit legen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-kontrollgewichte-shooters-check-weight-set/"
+},
+"20935": {
+"cats": [
+"Hülsenbearbeitung",
+"Lyman"
+],
+"images": 1,
+"name": "Lyman «E-ZEE Trim» Hand Case Trimmer (Rifle Set) – Hülsentrimmer für Gewehrkaliber",
+"on_sale": false,
+"price": "5330",
+"regular": "5330",
+"short": "Der Lyman E-ZEE Trim Hand Case Trimmer – Rifle Set ermöglicht präzises Trimmen von Patronenhülsen und unterstützt gleichmässige Wiederladeergebnisse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-e-zee-trim-hand-case-trimmer-rifle-set/"
+},
+"20936": {
+"cats": [
+"Hülsenbearbeitung"
+],
+"images": 1,
+"name": "Lyman «E-ZEE Trim» Hand Case Trimmer (Handgun Set) – Hülsentrimmer für Kurzwaffen",
+"on_sale": false,
+"price": "5330",
+"regular": "5330",
+"short": "Der Lyman E-ZEE Trim Hand Case Trimmer – Handgun Set ermöglicht präzises Trimmen von Patronenhülsen und unterstützt gleichmässige Wiederladeergebnisse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-e-zee-trim-hand-case-trimmer-handgun-set/"
 },
 "20939": {
 "cats": [
@@ -16769,7 +16828,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 9mm Luger Taper Crimp Die Only",
 "on_sale": false,
 "price": "4370",
@@ -16782,7 +16841,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 38 Spec./357 Mag./357 Rem Maximum Taper Crimp Die Only",
 "on_sale": false,
 "price": "4370",
@@ -16795,7 +16854,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 45 A.C.P./45 Win Mag/45 Colt/45 Schofield Taper Crimp Die Only",
 "on_sale": false,
 "price": "4370",
@@ -16808,7 +16867,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 45 Caliber Short Black Powder Taper Crimp Die",
 "on_sale": false,
 "price": "4370",
@@ -16892,7 +16951,7 @@
 "Lyman",
 "Werkzeug"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman 300 AAC Blackout Case Length/Headspace Gauge – Hülsenprüflehre",
 "on_sale": false,
 "price": "4370",
@@ -17058,7 +17117,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Ram Prime Die with Large & Small Punches",
 "on_sale": false,
 "price": "4250",
@@ -17066,6 +17125,19 @@
 "short": "Die Lyman Ram Prime Die ist eine Matrize zum Setzen von Zündhütchen, geliefert mit grossen und kleinen Setzstempeln (Large & Small Punches).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-ram-prime-die-with-large-small-punches/"
+},
+"20987": {
+"cats": [
+"Hülsenbearbeitung"
+],
+"images": 1,
+"name": "Lyman «E-ZEE Trim» Hand Case Trimmer – Universeller Hülsentrimmer",
+"on_sale": false,
+"price": "4130",
+"regular": "4130",
+"short": "Der Lyman E-ZEE Trim Hand Case Trimmer ermöglicht präzises Trimmen von Patronenhülsen und unterstützt gleichmässige Wiederladeergebnisse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-e-zee-trim-hand-case-trimmer/"
 },
 "20989": {
 "cats": [
@@ -17097,7 +17169,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Stuck Case Remover Kit",
 "on_sale": false,
 "price": "3630",
@@ -17202,6 +17274,19 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/lyman-pilot-set-9-pilot-multi-pack/"
 },
+"21026": {
+"cats": [
+"Powder Measure / Pulverfüllgerät"
+],
+"images": 1,
+"name": "Lyman E-ZEE FLO Universal Powder Trickler",
+"on_sale": false,
+"price": "3350",
+"regular": "3350",
+"short": "Universeller Pulver-Trickler mit verstellbarem Fuss und Rohrverlängerung, passend zu jeder mechanischen oder elektronischen Waage.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-e-zee-flo-universal-powder-trickler/"
+},
 "21042": {
 "cats": [
 "Lyman",
@@ -17229,11 +17314,25 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ammo-checker-6-5-prc-lyman-patronenlehre/"
 },
+"21061": {
+"cats": [
+"Lyman",
+"Presse"
+],
+"images": 1,
+"name": "Lyman Priming Arm (Fits T-Mag & Crusher Presses)",
+"on_sale": false,
+"price": "2890",
+"regular": "2890",
+"short": "Zündhütchensetzarm für Lyman T-Mag und Crusher Pressen zur präzisen und kontrollierten Zündhütchensetzung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/lyman-priming-arm-fuer-t-mag-crusher-wiederladepressen/"
+},
 "21067": {
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman J to X Shellholder Adapter",
 "on_sale": false,
 "price": "2670",
@@ -17296,7 +17395,8 @@
 },
 "21142": {
 "cats": [
-"Powder Measure / Pulverfüllgerät"
+"Powder Measure / Pulverfüllgerät",
+"Pulverwaagen"
 ],
 "images": 1,
 "name": "Lyman Powder Pal Electronic Scale Funnel Pan – Pulverpfanne mit Einfülltrichter",
@@ -17792,7 +17892,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Decapping Pins 10 Pack",
 "on_sale": false,
 "price": "980",
@@ -17909,7 +18009,7 @@
 "cats": [
 "Die / Matrizen"
 ],
-"images": 0,
+"images": 1,
 "name": "Lyman Split Lock Ring",
 "on_sale": false,
 "price": "890",
@@ -22987,7 +23087,7 @@
 "regular": "31900",
 "short": "Premium Kopfbügel mit Leder- und GEL-Polster für Sordin X2 Gehörschutz – erhöht Komfort und Druckverteilung bei langen Einsätzen.",
 "stock": "in-stock",
-"url": "https://armatum.ch/produkt/sordin-supreme-x2-black-headband-gel-kopie/"
+"url": "https://armatum.ch/produkt/sordin-supreme-x2-black-headband-gel/"
 },
 "21884": {
 "cats": [
@@ -47884,7 +47984,7 @@
 "Geschosse",
 "Hornady"
 ],
-"images": 0,
+"images": 1,
 "name": "Hornady Geschoss 22 Cal .224 73gr ELD Match (1-8″) (100)",
 "on_sale": false,
 "price": "4790",
@@ -51300,7 +51400,7 @@
 "Geschosse",
 "Hornady"
 ],
-"images": 0,
+"images": 1,
 "name": "Hornady Geschoss 45 Cal .452 245gr SP InterLock (450 Bushmaster) (50)",
 "on_sale": false,
 "price": "4800",
