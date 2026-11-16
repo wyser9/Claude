@@ -658,8 +658,8 @@
 ],
 "images": 1,
 "name": "Fiocchi Slug Cervo 12/67.5 28g Schrotpatronen",
-"on_sale": false,
-"price": "2450",
+"on_sale": true,
+"price": "2205",
 "regular": "2450",
 "short": "Slug-Patronen für Flinte. Präzise, leistungsstark und ideal für jagdliche Einsätze.",
 "stock": "in-stock",
@@ -1760,11 +1760,11 @@
 "Präzisionsgewehre",
 "Sako"
 ],
-"images": 9,
+"images": 10,
 "name": "Sako TRG M10",
 "on_sale": false,
-"price": "0",
-"regular": "0",
+"price": "1119900",
+"regular": "1119900",
 "short": "Die Sako TRG M10 ist eine hochmoderne, modulare Präzisionsbüchse für professionelle Schützen. Mit herausragender Genauigkeit, vielseitiger Anpassungsfähigkeit und robuster Konstruktion ist sie ideal für Langstreckenpräzision und anspruchsvolle Einsätze.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sako-trg-m10/"
@@ -5863,7 +5863,7 @@
 "on_sale": true,
 "price": "470250",
 "regular": "495000",
-"short": "Das SIG SG711 überzeugt mit modularer Bauweise, hoher Präzision und ergonomischem Design – ideal für dynamische Einsätze und professionelle Anwendungen.",
+"short": "Das SIG SG711 ist ein halbautomatisches Sportgewehr im Kaliber 7.5×55 (GP11) auf Basis des bewährten Stgw 90. Es nimmt die Magazine des Stgw 57 auf und ist für das präzise Schiessen auf 300 Meter gemacht.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sig-sg711-modernes-sturmgewehr-mit-hoher-modularitaet/"
 },
@@ -39870,7 +39870,6 @@
 },
 "25249": {
 "cats": [
-"12\"",
 "Fiocchi",
 "Munition"
 ],
@@ -46997,6 +46996,328 @@
 "short": "Die WBP Piast B5 Systems 12.5″ Fully Railed kombiniert hochwertige B5 Systems Komponenten mit einem vielseitigen Handschutz und einer kompakten Bauweise. Ideal für Sportschiessen und dynamische Schiessdisziplinen.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/wbp-piast-b5-systems-12-5-fully-railed-halbautomat/"
+},
+"28226": {
+"cats": [
+"AK Ersatzteile",
+"Griffe",
+"WBP"
+],
+"images": 1,
+"name": "WBP Vordergriff (Picatinny) für AKM",
+"on_sale": false,
+"price": "3190",
+"regular": "3190",
+"short": "Picatinny-Vordergriff zur Montage an einer passenden Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-vordergriff-picatinny-fuer-akm/"
+},
+"28228": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Unterer Handschutz aus Polymer mit QD-Aufnahme für AKM",
+"on_sale": false,
+"price": "9790",
+"regular": "9790",
+"short": "Unterer Handschutz aus Polymer mit QD-Aufnahme für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-unterer-handschutz-aus-polymer-mit-qd-aufnahme-fuer-akm/"
+},
+"28229": {
+"cats": [
+"AK Ersatzteile",
+"Hinterschäfte / Stock",
+"WBP"
+],
+"images": 1,
+"name": "WBP Polymerschaft mit QD-Aufnahme für AKM",
+"on_sale": false,
+"price": "9690",
+"regular": "9690",
+"short": "Polymerschaft mit QD-Aufnahme als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-polymerschaft-mit-qd-aufnahme-fuer-akm/"
+},
+"28230": {
+"cats": [
+"AK Ersatzteile",
+"Mündungsfeuerdämpfer",
+"WBP"
+],
+"images": 1,
+"name": "WBP Mündungsaufsatz A2 mit Gewinde 14x1L für AKM",
+"on_sale": false,
+"price": "9090",
+"regular": "9090",
+"short": "A2-Mündungsaufsatz mit Gewinde 14x1L für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-muendungsaufsatz-a2-mit-gewinde-14x1l-fuer-akm/"
+},
+"28231": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Staubschutzdeckel für AKM",
+"on_sale": false,
+"price": "7290",
+"regular": "7290",
+"short": "Staubschutzdeckel als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-staubschutzdeckel-fuer-akm/"
+},
+"28243": {
+"cats": [
+"AK Ersatzteile",
+"Hinterschäfte / Stock",
+"WBP"
+],
+"images": 1,
+"name": "WBP Holz-Hinterschaft für AKM",
+"on_sale": false,
+"price": "15490",
+"regular": "15490",
+"short": "Hölzerner Hinterschaft als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-holz-hinterschaft-fuer-akm/"
+},
+"28244": {
+"cats": [
+"AK Ersatzteile",
+"Hinterschäfte / Stock",
+"WBP"
+],
+"images": 1,
+"name": "WBP Polymer-Hinterschaft für AKM",
+"on_sale": false,
+"price": "7390",
+"regular": "7390",
+"short": "Hinterschaft aus Polymer als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-polymer-hinterschaft-fuer-akm/"
+},
+"28245": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Unterer Handschutz aus Polymer für AKM",
+"on_sale": false,
+"price": "2990",
+"regular": "2990",
+"short": "Unterer Handschutz aus Polymer als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-unterer-handschutz-aus-polymer-fuer-akm/"
+},
+"28246": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Unterer Holz-Handschutz für AKM",
+"on_sale": false,
+"price": "12290",
+"regular": "12290",
+"short": "Unterer Handschutz aus Holz als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-unterer-holz-handschutz-fuer-akm/"
+},
+"28248": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Oberer Handschutz aus Polymer für AKM",
+"on_sale": false,
+"price": "2090",
+"regular": "2090",
+"short": "Oberer Handschutz aus Polymer als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-oberer-handschutz-aus-polymer-fuer-akm/"
+},
+"28249": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Oberer Holz-Handschutz für AKM",
+"on_sale": false,
+"price": "12290",
+"regular": "12290",
+"short": "Oberer Handschutz aus Holz als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-oberer-holz-handschutz-fuer-akm/"
+},
+"28250": {
+"cats": [
+"AK Ersatzteile",
+"Pistolengriffe",
+"WBP"
+],
+"images": 1,
+"name": "WBP Polymergriff für AKM",
+"on_sale": false,
+"price": "1590",
+"regular": "1590",
+"short": "Pistolengriff aus Polymer als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-polymergriff-fuer-akm/"
+},
+"28267": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Hahnfeder für AKM",
+"on_sale": false,
+"price": "1690",
+"regular": "1690",
+"short": "Feder für den Schlaghammer eines AKM.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-hahnfeder-fuer-akm/"
+},
+"28269": {
+"cats": [
+"AK Ersatzteile",
+"Handschutz",
+"WBP"
+],
+"images": 1,
+"name": "WBP Handschutzhalter für AKM",
+"on_sale": false,
+"price": "6990",
+"regular": "6990",
+"short": "Halter zur Befestigung des Handschutzes an einem AKM.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-handschutzhalter-fuer-akm/"
+},
+"28275": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Auszieherfeder für AKM",
+"on_sale": false,
+"price": "790",
+"regular": "790",
+"short": "Feder für den Auszieher eines AKM.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-auszieherfeder-fuer-akm/"
+},
+"28278": {
+"cats": [
+"AK Ersatzteile",
+"Hinterschäfte / Stock",
+"WBP"
+],
+"images": 1,
+"name": "WBP Holzschaft im AK-74-Stil für AKM",
+"on_sale": false,
+"price": "15490",
+"regular": "15490",
+"short": "Holzschaft im AK-74-Stil als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-holzschaft-im-ak-74-stil-fuer-akm/"
+},
+"28281": {
+"cats": [
+"AK Ersatzteile",
+"Mündungsfeuerdämpfer",
+"WBP"
+],
+"images": 1,
+"name": "WBP Mündungsaufsatz für AKM",
+"on_sale": false,
+"price": "5490",
+"regular": "5490",
+"short": "Mündungsaufsatz als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-muendungsaufsatz-fuer-akm/"
+},
+"28285": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Sicherungs- und Wahlhebel für AKM",
+"on_sale": false,
+"price": "6590",
+"regular": "6590",
+"short": "Sicherungshebel als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-sicherungs-und-wahlhebel-fuer-akm/"
+},
+"28287": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Anschlag für Sicherungshebel für AKM",
+"on_sale": false,
+"price": "1590",
+"regular": "1590",
+"short": "Anschlagplatte als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-anschlag-fuer-sicherungshebel-fuer-akm/"
+},
+"28298": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Laufstift (vorderes Trunnion) für AKM",
+"on_sale": false,
+"price": "790",
+"regular": "790",
+"short": "Stift für den vorderen Laufhalter als Ersatzteil für AKM-Gewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-laufstift-vorderes-trunnion-fuer-akm/"
+},
+"28311": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Griffmutter für AKM",
+"on_sale": false,
+"price": "1790",
+"regular": "1790",
+"short": "Griffmutter zur Befestigung des Griffs an AKM-Gewehren.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-griffmutter-fuer-akm/"
+},
+"28312": {
+"cats": [
+"AK Ersatzteile",
+"WBP"
+],
+"images": 1,
+"name": "WBP Griffschraube für AKM",
+"on_sale": false,
+"price": "1790",
+"regular": "1790",
+"short": "Griffschraube zur Befestigung des Griffs an AKM-Gewehren.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/wbp-griffschraube-fuer-akm/"
 },
 "28339": {
 "cats": [
@@ -57782,8 +58103,8 @@
 ],
 "images": 3,
 "name": "Pistole CZ TS 2 Orange 9mm Para 20-Schuss – Meistermodell für IPSC Standard",
-"on_sale": false,
-"price": "307900",
+"on_sale": true,
+"price": "277110",
 "regular": "307900",
 "short": "Die CZ TS 2 Orange ist das Meistermodell des CZ Shooting Teams: Stahlpistole in 9mm Para mit 20 Schuss, Bull-Lauf, Single-Action-Abzug (8 N) und beidhändiger Sicherung. Für die IPSC Standard Division. Gewicht 1460g.",
 "stock": "in-stock",
@@ -57824,8 +58145,8 @@
 ],
 "images": 5,
 "name": "Schmeisser AR15 M4A2 14.5″ .223 Rem – Classic Limited Edition",
-"on_sale": false,
-"price": "158900",
+"on_sale": true,
+"price": "143010",
 "regular": "158900",
 "short": "Die Schmeisser AR15 M4A2 Classic Limited Edition ist eine auf 1000 Stück limitierte Selbstladebüchse in .223 Rem mit 14.5″ Lauf (M4-Kontur), fester M4-Frontvisierbasis, M4/M16 Carry Handle und gravierter Holzbox.",
 "stock": "in-stock",
@@ -64726,5 +65047,131 @@
 "short": "Gebrauchter B&T SPC9 SD PDW im Kaliber 9x19mm, Zustand sehr gut, ca. 1500 Schuss Belastung. Mit Schubschaft, Aimpoint T1, Magpul Vordergriff, BCM Ladehebel und 3 Magazinen à 30 Schuss.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/bt-spc9-sd-pdw-9x19mm-gebraucht-mit-aimpoint-t1-und-magpul-vordergriff/"
+},
+"33959": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"RCBS"
+],
+"images": 3,
+"name": "RCBS Partner Wiederladepresse gebraucht",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "Gebrauchte RCBS Partner Einstationen-Wiederladepresse mit O-Rahmen und Hebelsystem, für Matrizen mit 7/8-14 Gewinde. Kompakt und leicht, ideal für Einsteiger oder als Zweitpresse.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/rcbs-partner-wiederladepresse-gebraucht/"
+},
+"34025": {
+"cats": [
+"Präzisionsgewehre",
+"Sako"
+],
+"images": 2,
+"name": "Sako TRG 22 A1",
+"on_sale": false,
+"price": "694900",
+"regular": "694900",
+"short": "Die Sako TRG 22 A1 ist die modernisierte Version der bewährten TRG 22: Präzisionsrepetierer in .308 Win oder 6.5 Creedmoor mit 26-Zoll-Lauf, verstellbarem Zweistufenabzug und voll einstellbarem Schaft, wahlweise als Klappschaft oder fester Schaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sako-trg-22-a1/"
+},
+"34026": {
+"cats": [
+"Präzisionsgewehre",
+"Sako"
+],
+"images": 2,
+"name": "Sako TRG 42 A1",
+"on_sale": false,
+"price": "774900",
+"regular": "774900",
+"short": "Die Sako TRG 42 A1 ist der Präzisionsrepetierer für Magnum-Kaliber: .300 Win Mag oder .338 Lapua Magnum, 27- oder 20-Zoll-Lauf, verstellbarer Zweistufenabzug und voll einstellbarer Schaft, wahlweise als Klappschaft oder fester Schaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sako-trg-42-a1/"
+},
+"34027": {
+"cats": [
+"Präzisionsgewehre",
+"Sako"
+],
+"images": 2,
+"name": "Sako TRG 22",
+"on_sale": false,
+"price": "369900",
+"regular": "369900",
+"short": "Die Sako TRG 22 ist der klassische finnische Präzisionsrepetierer in .308 Win oder 6.5 Creedmoor: einstellbarer Schaft, verstellbarer Zweistufenabzug, 10-Schuss-Magazin und Lauf mit 20 oder 26 Zoll.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sako-trg-22/"
+},
+"34028": {
+"cats": [
+"Präzisionsgewehre",
+"Sako"
+],
+"images": 8,
+"name": "Sako TRG 42",
+"on_sale": false,
+"price": "444900",
+"regular": "444900",
+"short": "Die Sako TRG 42 ist der klassische Präzisionsrepetierer für Magnum-Kaliber: .300 Win Mag oder .338 Lapua Magnum, 27-Zoll-Lauf, verstellbarer Zweistufenabzug und einstellbarer Schaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sako-trg-42/"
+},
+"34083": {
+"cats": [
+"Revolver",
+"Ruger"
+],
+"images": 3,
+"name": "Ruger Super Redhawk .357 Magnum 2.75″ – 8 Schuss, Satin Stainless",
+"on_sale": false,
+"price": "177090",
+"regular": "177090",
+"short": "Ruger Super Redhawk im Kaliber .357 Magnum mit 2.75″ Lauf und 8-Schuss-Trommel. Kompakter Double-Action-Revolver aus Edelstahl mit Hogue Tamer Monogrip und verstellbarer Kimme.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/ruger-super-redhawk-357-magnum-2-75-8-schuss-satin-stainless/"
+},
+"34084": {
+"cats": [
+"Präzisionsgewehre",
+"Ruger"
+],
+"images": 3,
+"name": "Ruger American Rimfire .22 LR 16.1″ mit Gewinde 1/2-28 – 10 Schuss, Schwarz",
+"on_sale": false,
+"price": "62890",
+"regular": "62890",
+"short": "Ruger American Rimfire Repetierbüchse im Kaliber .22 LR mit 16.1″ Lauf, Mündungsgewinde 1/2-28 und 10-Schuss-Magazin. Schwarzer Kunststoffschaft, ohne Visierung, mit Montageschiene für Optiken.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/ruger-american-rimfire-22-lr-16-1-mit-gewinde-1-2-28-10-schuss-schwarz/"
+},
+"34088": {
+"cats": [
+"Pistolen",
+"Ruger"
+],
+"images": 3,
+"name": "Ruger 22 Charger Pistole .22 LR 8″ mit Gewinde 1/2-28 – 15 Schuss, Satin Black",
+"on_sale": false,
+"price": "60690",
+"regular": "60690",
+"short": "Ruger 22 Charger Pistole im Kaliber .22 LR mit 8″ Lauf, Mündungsgewinde 1/2-28, BX-Trigger und 15-Schuss-Magazin BX-15. Ohne Visierung, mit montierter Picatinny-Schiene für Optiken.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/ruger-22-charger-pistole-22-lr-8-mit-gewinde-1-2-28-15-schuss-satin-black/"
+},
+"34092": {
+"cats": [
+"Marlin",
+"Unterhebelrepetierer"
+],
+"images": 3,
+"name": "Marlin 1894 Dark Series .357 Magnum 16.17″ mit Gewinde 1/2-28 – Satin Black",
+"on_sale": false,
+"price": "184190",
+"regular": "184190",
+"short": "Marlin 1894 Dark Series Unterhebelrepetierer im Kaliber .357 Magnum / .38 Special mit 16.17″ Lauf und Mündungsgewinde 1/2-28. Polymerschaft, Ghost-Ring-Kimme und Fiberoptik-Korn mit Tritium-Ring.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/marlin-1894-dark-series-357-magnum-16-17-mit-gewinde-1-2-28-satin-black/"
 }
 }
