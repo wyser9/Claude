@@ -34,8 +34,10 @@ WordPress → Snippets → «Armatum News: Anmeldung Kasse + Formular» (Nr. 23)
 
 ## Offen
 
-- [ ] Snippet 23 aktivieren (Pascal), danach Testanmeldung
-- [ ] Seite /newsletter/ veröffentlichen, Formular in Fusszeile und Startseite
+- [x] Snippet 23 aktiv (16.11.). **Nachtrag nötig:** Häkchen erscheint nicht, weil die Kasse der Checkout-Block ist → erweiterten Code (Abschnitt «Block-Kasse») in Snippet 23 ersetzen.
+- [ ] Testanmeldung (Inhaber, eigene Adresse)
+- [x] Seite /newsletter/ veröffentlicht, Formular in Fusszeile (Widget block-15, ersetzt Link-Widget block-14) – 16.11.
+- [ ] Formular auf Startseite
 - [ ] Newsletter-Link in der Bewertungsmail
 - [ ] Willkommensmail, Vorlage im Armatum-Design
 - [ ] QR-Karte für den Laden

@@ -82,3 +82,23 @@ function armatum_nl_handle() {
 }
 add_action( 'admin_post_nopriv_armatum_nl', 'armatum_nl_handle' );
 add_action( 'admin_post_armatum_nl', 'armatum_nl_handle' );
+
+// Block-Kasse (armatum.ch nutzt den Checkout-Block): Haekchen als Zusatzfeld, nicht vorausgewaehlt
+add_action( 'woocommerce_init', function () {
+	if ( ! function_exists( 'woocommerce_register_additional_checkout_field' ) ) { return; }
+	woocommerce_register_additional_checkout_field( array(
+		'id'       => 'armatum/newsletter',
+		'label'    => 'Ja, ich möchte Armatum News erhalten: einmal im Monat Neuheiten, Occasionen und Aktionen. Abmeldung jederzeit möglich.',
+		'location' => 'order',
+		'type'     => 'checkbox',
+	) );
+} );
+
+add_action( 'woocommerce_store_api_checkout_order_processed', function ( $order ) {
+	if ( ! $order ) { return; }
+	$v = $order->get_meta( '_wc_other/armatum/newsletter' );
+	if ( ! filter_var( $v, FILTER_VALIDATE_BOOLEAN ) ) { return; }
+	$order->update_meta_data( '_armatum_newsletter', 'yes' );
+	$order->save();
+	armatum_nl_add( $order->get_billing_email(), $order->get_billing_first_name(), $order->get_billing_last_name() );
+} );
