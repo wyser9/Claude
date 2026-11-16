@@ -126,7 +126,15 @@ class BWS_Admin {
 					self::checkbox( 'health_mail', 'Warn-Mail bei Problemen', 'Täglich um ' . BWS_Health::CHECK_TIME . ' Uhr prüfen und nur bei Befund eine E-Mail an „Hinweise an“ senden: fehlgeschlagene Hintergrundaufgaben, Lager- oder Statusabgleich nicht gelaufen, Bestellungen ohne bexio-Auftrag, Produkte mit Übertragungsfehler.', $s );
 					self::checkbox( 'twint_payout_mail', 'TWINT-Gutschrift per Mail', 'Am Morgen jedes Gutschriftstags (' . BWS_Twint::MAIL_TIME . ' Uhr) eine Mail mit den Bestellungen, der Kommission und dem Netto-Betrag der TWINT-Sammelgutschrift – ohne Login im TWINT-Portal. Details unter WooCommerce &rarr; TWINT-Abrechnung.', $s );
 					self::checkbox( 'cancel_to_bexio', 'Storno melden', 'Wird eine übertragene Bestellung im Shop storniert, erhält der bexio-Auftrag einen Kommentar und du eine E-Mail, den Auftrag in bexio zu stornieren (die bexio-Schnittstelle kann Aufträge nicht selbst stornieren).', $s );
+					self::checkbox( 'refund_to_bexio', 'Rückerstattung melden', 'Wird für eine übertragene Bestellung im Shop eine Rückerstattung erfasst (ganz oder teilweise, z. B. über TWINT), erhält der bexio-Auftrag einen Kommentar mit Betrag und Grund und du eine E-Mail, in bexio zu stornieren bzw. eine Gutschrift zu erstellen.', $s );
 					?>
+					<tr>
+						<th><label for="bws_customer_reminder_days">Kunde an Zahlung erinnern nach</label></th>
+						<td>
+							<input type="number" min="0" max="365" id="bws_customer_reminder_days" name="customer_reminder_days" value="<?php echo (int) $s['customer_reminder_days']; ?>" class="small-text"> Tagen
+							<p class="description">Täglich um <?php echo esc_html( BWS_Order_Events::REMINDER_TIME ); ?> Uhr: Kunden mit Banküberweisung, deren Bestellung nach dieser Frist noch „Wartend“ ist, erhalten einmal eine freundliche Erinnerung mit den Bankdaten (aus WooCommerce &rarr; Zahlungen &rarr; Direkte Banküberweisung). Gilt für Bestellungen ab dem Einschalten. 0 = aus.</p>
+						</td>
+					</tr>
 					<tr>
 						<th><label for="bws_payment_reminder_days">Unbezahlte Vorkasse melden nach</label></th>
 						<td>
@@ -138,7 +146,7 @@ class BWS_Admin {
 						<th><label for="bws_notify_email">Hinweise an</label></th>
 						<td>
 							<input type="email" id="bws_notify_email" name="notify_email" value="<?php echo esc_attr( $s['notify_email'] ); ?>" class="regular-text" placeholder="<?php echo esc_attr( get_option( 'admin_email' ) ); ?>">
-							<p class="description">E-Mail für Zahlungs- und Storno-Hinweise. Leer = Admin-E-Mail der Website.</p>
+							<p class="description">E-Mail für Zahlungs-, Storno- und Rückerstattungs-Hinweise. Leer = Admin-E-Mail der Website.</p>
 						</td>
 					</tr>
 					<?php
@@ -374,7 +382,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'refund_to_bexio', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';
@@ -387,6 +395,7 @@ class BWS_Admin {
 		$values['stock_field']        = ( isset( $_POST['stock_field'] ) && 'stock_available_nr' === $_POST['stock_field'] ) ? 'stock_available_nr' : 'stock_nr';
 		$values['order_statuses']     = isset( $_POST['order_statuses'] ) ? array_map( 'sanitize_key', (array) wp_unslash( $_POST['order_statuses'] ) ) : array();
 		$values['price_mode']         = ( isset( $_POST['price_mode'] ) && 'net' === $_POST['price_mode'] ) ? 'net' : 'gross';
+		$values['customer_reminder_days'] = isset( $_POST['customer_reminder_days'] ) ? min( 365, absint( $_POST['customer_reminder_days'] ) ) : 0;
 		$values['payment_reminder_days'] = isset( $_POST['payment_reminder_days'] ) ? min( 365, absint( $_POST['payment_reminder_days'] ) ) : 0;
 		$values['notify_email']          = isset( $_POST['notify_email'] ) ? sanitize_email( wp_unslash( $_POST['notify_email'] ) ) : '';
 		$values['order_title_prefix'] = isset( $_POST['order_title_prefix'] ) ? sanitize_text_field( wp_unslash( $_POST['order_title_prefix'] ) ) : '';

@@ -640,7 +640,47 @@ $GLOBALS['bws_mails'] = array();
 t( 'Zweiter Lauf meldet nichts erneut', 0 === BWS_Order_Events::run_reminder() && ! $GLOBALS['bws_mails'] );
 BWS_Order_Events::ensure_schedule();
 t( 'Täglicher Hinweis eingeplant', is_int( as_next_scheduled_action( BWS_Order_Events::HOOK_REMINDER, array(), BWS_AS_GROUP ) ) );
+
+// Zahlungserinnerung an den Kunden.
+update_option( 'woocommerce_bacs_accounts', array( array( 'account_name' => 'Armatum GmbH', 'bank_name' => 'Testbank', 'iban' => 'CH93 0076 2011 6238 5295 7', 'bic' => 'TESTCHZZ', 'account_number' => '', 'sort_code' => '' ) ) );
+BWS_Settings::save( array( 'customer_reminder_days' => 7 ) );
+delete_option( BWS_Order_Events::OPTION_CUSTOMER_SINCE );
+BWS_Order_Events::ensure_schedule();
+$since = (int) get_option( BWS_Order_Events::OPTION_CUSTOMER_SINCE );
+t( 'Kunden-Erinnerung: Startzeitpunkt gesetzt', $since > time() - 60 );
+$GLOBALS['bws_mails'] = array();
+t( 'Kunden-Erinnerung: Altbestellungen vor dem Einschalten nicht erinnert', 0 === BWS_Order_Events::run_customer_reminders() && ! $GLOBALS['bws_mails'] );
+update_option( BWS_Order_Events::OPTION_CUSTOMER_SINCE, time() - 30 * DAY_IN_SECONDS, false );
+$c1 = $mk( 'on-hold', 816 ); $c1->set_billing_email( 'kunde1@muster.ch' ); $c1->set_billing_first_name( 'Anna' ); $c1->set_billing_last_name( 'Beispiel' ); $c1->set_date_created( time() - 8 * DAY_IN_SECONDS ); $c1->save();
+$c2 = $mk( 'on-hold', 817 ); $c2->set_billing_email( 'kunde2@muster.ch' ); $c2->set_date_created( time() - 2 * DAY_IN_SECONDS ); $c2->save();
+$c3 = $mk( 'on-hold', 818 ); $c3->set_billing_email( 'kunde3@muster.ch' ); $c3->set_payment_method( 'twint_regular' ); $c3->set_date_created( time() - 8 * DAY_IN_SECONDS ); $c3->save();
+$c4 = $mk( 'processing', 819 ); $c4->set_billing_email( 'kunde4@muster.ch' ); $c4->set_date_created( time() - 8 * DAY_IN_SECONDS ); $c4->save();
+$GLOBALS['bws_mails'] = array();
+$n = BWS_Order_Events::run_customer_reminders();
+$cm = array_values( array_filter( $GLOBALS['bws_mails'], function ( $m ) { return false !== strpos( $m['subject'], 'Zahlungserinnerung' ); } ) );
+$to = array_map( function ( $m ) { return is_array( $m['to'] ) ? implode( ',', $m['to'] ) : $m['to']; }, $cm );
+t( 'Kunden-Erinnerung: nur überfällige Banküberweisung', 1 === $n && array( 'kunde1@muster.ch' ) === $to, wp_json_encode( $to ) );
+$msg = $cm[0]['message'] ?? '';
+t( 'Kunden-Erinnerung: Bankdaten, Betrag und Mitteilung', false !== strpos( $msg, 'CH93 0076 2011 6238 5295 7' ) && false !== strpos( $msg, 'Armatum GmbH' ) && false !== strpos( $msg, 'Bestellung ' . $c1->get_order_number() ) && false !== strpos( $msg, '120.00' ) && false !== strpos( $msg, 'Guten Tag Anna Beispiel' ), $msg );
+t( 'Kunden-Erinnerung: HTML im Shop-Layout', false !== strpos( $msg, '<table' ) && false !== strpos( implode( ' ', (array) ( $cm[0]['headers'] ?? '' ) ), 'text/html' ), wp_json_encode( $cm[0]['headers'] ?? '' ) );
+t( 'Kunden-Erinnerung: Notiz in der Bestellung', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $c1->get_id() ) ), 'content' ) ), 'Zahlungserinnerung' ) );
+$GLOBALS['bws_mails'] = array();
+t( 'Kunden-Erinnerung: nur einmal', 0 === BWS_Order_Events::run_customer_reminders() && ! $GLOBALS['bws_mails'] );
+$c1 = wc_get_order( $c1->get_id() ); $c1->set_date_created( time() - 11 * DAY_IN_SECONDS ); $c1->save();
+$GLOBALS['bws_mails'] = array();
+BWS_Order_Events::run_reminder();
+$sm = array_values( array_filter( $GLOBALS['bws_mails'], function ( $m ) { return 'shop@armatum.ch' === $m['to']; } ) );
+t( 'Shop-Hinweis nennt die Kunden-Erinnerung', 1 === count( $sm ) && false !== strpos( $sm[0]['message'], 'Kunde erinnert am' ), wp_json_encode( $sm ) );
+delete_option( 'woocommerce_bacs_accounts' );
+$c5 = $mk( 'on-hold', 820 ); $c5->set_billing_email( 'kunde5@muster.ch' ); $c5->set_date_created( time() - 8 * DAY_IN_SECONDS ); $c5->save();
+$GLOBALS['bws_mails'] = array();
+t( 'Kunden-Erinnerung: ohne Bankdaten nichts senden', 0 === BWS_Order_Events::run_customer_reminders() && ! $GLOBALS['bws_mails'] && ! wc_get_order( $c5->get_id() )->get_meta( BWS_Order_Events::META_CUSTOMER_REMINDED ) );
+foreach ( array( $c2, $c3, $c4, $c5 ) as $o ) { $o->set_status( 'completed' ); $o->save(); }
+
 BWS_Settings::save( array( 'payment_reminder_days' => 0 ) );
+BWS_Order_Events::ensure_schedule();
+t( 'Täglicher Job läuft weiter, solange die Kunden-Erinnerung aktiv ist', is_int( as_next_scheduled_action( BWS_Order_Events::HOOK_REMINDER, array(), BWS_AS_GROUP ) ) );
+BWS_Settings::save( array( 'payment_reminder_days' => 0, 'customer_reminder_days' => 0 ) );
 BWS_Order_Events::ensure_schedule();
 t( 'Hinweis abschaltbar', false === as_next_scheduled_action( BWS_Order_Events::HOOK_REMINDER, array(), BWS_AS_GROUP ) );
 
@@ -657,6 +697,32 @@ t( 'Storno-Mail an Shop', 1 === count( $bws_mails() ) && 'shop@armatum.ch' === $
 t( 'Storno: sonst nichts in bexio geändert', 1 === count( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' !== $r[0]; } ) ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
 BWS_Order_Events::run_comment_job( $ox->get_id(), 'cancelled', '' );
 t( 'Storno nur einmal gemeldet', 1 === count( $comments() ) && 1 === count( $bws_mails() ) );
+
+// Rückerstattung.
+$GLOBALS['bws_requests'] = array(); $GLOBALS['bws_mails'] = array();
+$or = $mk( 'processing', 821 ); $or->set_payment_method_title( 'TWINT' ); $or->save();
+$r1 = wc_create_refund( array( 'order_id' => $or->get_id(), 'amount' => 20, 'reason' => 'Artikel defekt' ) );
+t( 'Rückerstattung: Job eingeplant', as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $or->get_id(), 'refund', (string) $r1->get_id() ), BWS_AS_GROUP ) );
+BWS_Order_Events::run_comment_job( $or->get_id(), 'refund', (string) $r1->get_id() );
+$c = $comments();
+$rm = function () { return array_values( array_filter( $GLOBALS['bws_mails'], function ( $m ) { return false !== strpos( $m['subject'], 'erstattung' ); } ) ); };
+t( 'Teilerstattung: Kommentar mit Betrag, Grund und Gutschrift-Hinweis', 1 === count( $c ) && '2.0/kb_order/821/comment' === $c[0][1] && false !== strpos( $c[0][2]['text'], '20.00' ) && false !== strpos( $c[0][2]['text'], 'Artikel defekt' ) && false !== strpos( $c[0][2]['text'], 'Gutschrift' ) && false !== strpos( $c[0][2]['text'], 'manuell' ) && false === $c[0][2]['is_public'], wp_json_encode( $c ) );
+t( 'Teilerstattung: Mail an Shop', 1 === count( $rm() ) && 'shop@armatum.ch' === $rm()[0]['to'] && false !== strpos( $rm()[0]['subject'], 'Teilerstattung' ) && false !== strpos( $rm()[0]['subject'], '821' ), wp_json_encode( $rm() ) );
+BWS_Order_Events::run_comment_job( $or->get_id(), 'refund', (string) $r1->get_id() );
+t( 'Rückerstattung nur einmal gemeldet', 1 === count( $comments() ) && 1 === count( $rm() ) );
+$r2 = wc_create_refund( array( 'order_id' => $or->get_id(), 'amount' => 100, 'reason' => '' ) );
+BWS_Order_Events::run_comment_job( $or->get_id(), 'refund', (string) $r2->get_id() );
+$c = $comments();
+t( 'Zweite Erstattung = vollständig: Storno-Hinweis', 2 === count( $c ) && false !== strpos( $c[1][2]['text'], 'vollständig erstattet' ) && false !== strpos( $c[1][2]['text'], '100.00' ) && 2 === count( $rm() ) && false !== strpos( $rm()[1]['subject'], 'Rückerstattung' ), wp_json_encode( $c ) );
+t( 'Rückerstattung: sonst nichts in bexio geändert', 2 === count( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' !== $r[0]; } ) ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
+$nolink = wc_create_order(); $nolink->add_product( $ship_product, 1 ); $nolink->calculate_totals(); $nolink->save();
+$r3 = wc_create_refund( array( 'order_id' => $nolink->get_id(), 'amount' => 1 ) );
+t( 'Rückerstattung ohne bexio-Auftrag: nichts', ! as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $nolink->get_id(), 'refund', (string) $r3->get_id() ), BWS_AS_GROUP ) );
+BWS_Settings::save( array( 'refund_to_bexio' => 'no' ) );
+$or2 = $mk( 'processing', 822 );
+$r4 = wc_create_refund( array( 'order_id' => $or2->get_id(), 'amount' => 5 ) );
+t( 'Rückerstattung melden abschaltbar', ! as_has_scheduled_action( BWS_Order_Events::HOOK_COMMENT, array( $or2->get_id(), 'refund', (string) $r4->get_id() ), BWS_AS_GROUP ) );
+BWS_Settings::save( array( 'refund_to_bexio' => 'yes' ) );
 
 // --- Tägliche Warn-Mail ---
 BWS_Settings::save( array( 'health_mail' => 'yes', 'stock_mode' => 'from_bexio', 'order_statuses' => array( 'processing', 'on-hold' ), 'notify_email' => 'shop@armatum.ch' ) );

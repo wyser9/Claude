@@ -19,6 +19,48 @@ class APL_Label {
 		add_action( 'admin_post_apl_create_label', array( __CLASS__, 'handle_create' ) );
 		add_action( 'admin_post_apl_download_label', array( __CLASS__, 'handle_download' ) );
 		add_action( 'woocommerce_email_order_meta', array( __CLASS__, 'email_tracking' ), 20, 3 );
+		add_filter( 'woocommerce_email_subject_customer_note', array( __CLASS__, 'tracking_subject' ), 20, 3 );
+		add_filter( 'woocommerce_email_heading_customer_note', array( __CLASS__, 'tracking_heading' ), 20, 3 );
+	}
+
+	/** Anfang des Kundenhinweises mit der Sendungsnummer – daran erkennen wir die Tracking-Mail. */
+	const TRACKING_NOTE_START = 'Ihr Paket ist unterwegs.';
+
+	/**
+	 * Ist diese „Kundenhinweis“-Mail die Tracking-Mail?
+	 *
+	 * @param WC_Email|null $email E-Mail-Objekt.
+	 * @return bool
+	 */
+	private static function is_tracking_mail( $email ) {
+		return is_object( $email ) && isset( $email->customer_note ) && 0 === strpos( trim( wp_strip_all_tags( (string) $email->customer_note ) ), self::TRACKING_NOTE_START );
+	}
+
+	/**
+	 * Eigener Betreff statt „Ihrer Bestellung … wurde ein Hinweis hinzugefügt“.
+	 *
+	 * @param string        $subject Betreff.
+	 * @param WC_Order|null $order   Bestellung.
+	 * @param WC_Email|null $email   E-Mail-Objekt.
+	 * @return string
+	 */
+	public static function tracking_subject( $subject, $order = null, $email = null ) {
+		if ( ! self::is_tracking_mail( $email ) || ! $order instanceof WC_Order ) {
+			return $subject;
+		}
+		return sprintf( 'Ihr Paket ist unterwegs – Bestellung #%s', $order->get_order_number() );
+	}
+
+	/**
+	 * Eigene Überschrift in der Tracking-Mail.
+	 *
+	 * @param string        $heading Überschrift.
+	 * @param WC_Order|null $order   Bestellung.
+	 * @param WC_Email|null $email   E-Mail-Objekt.
+	 * @return string
+	 */
+	public static function tracking_heading( $heading, $order = null, $email = null ) {
+		return self::is_tracking_mail( $email ) ? 'Ihr Paket ist unterwegs' : $heading;
 	}
 
 	/* ------------------------------------------------------------------ */
@@ -359,7 +401,7 @@ class APL_Label {
 		$order->save();
 		$order->add_order_note(
 			sprintf(
-				"Ihr Paket ist unterwegs.\n\nSendungsnummer der Schweizerischen Post: %s\nSendungsverfolgung: %s",
+				self::TRACKING_NOTE_START . "\n\nSendungsnummer der Schweizerischen Post: %s\nSendungsverfolgung: %s",
 				$ident,
 				APL_Util::tracking_url( $ident )
 			),

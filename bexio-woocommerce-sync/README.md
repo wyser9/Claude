@@ -126,7 +126,13 @@ Banküberweisungs-Bestellungen (auch Scheck), die nach der eingestellten Frist (
 ### Storno im Shop
 Wird eine bereits übertragene Bestellung storniert, bekommt der bexio-Auftrag einen internen Kommentar („im Shop storniert“). Zusätzlich geht eine E-Mail an *Hinweise an*, den Auftrag und eine allfällige Rechnung in bexio zu stornieren. Die bexio-Schnittstelle kann Aufträge nicht stornieren, Rechnungen fasst das Plugin bewusst nicht an. Einstellung: *Storno melden*.
 
-> In bexio fügt das Plugin bei diesen drei Funktionen nur Kommentare hinzu. Auftrag, Positionen, Status, Rechnungen und Lager bleiben unverändert.
+### Rückerstattung im Shop
+Wird für eine übertragene Bestellung eine Rückerstattung erfasst (ganz oder teilweise, z. B. über TWINT), bekommt der bexio-Auftrag einen internen Kommentar mit Betrag, Datum, Grund und Art (über die Zahlungsart oder manuell). Dazu geht eine E-Mail an *Hinweise an*: bei einer Teilerstattung in bexio eine Gutschrift erstellen, bei einer vollständigen Erstattung Auftrag und Rechnung stornieren. Jede Rückerstattung wird nur einmal gemeldet. Einstellung: *Rückerstattung melden*.
+
+### Zahlungserinnerung an den Kunden (täglich 07:45)
+Kunden mit Banküberweisung, deren Bestellung nach der eingestellten Frist (Standard 7 Tage) noch *Wartend* ist, bekommen einmal eine freundliche E-Mail im Shop-Layout. Sie enthält die Bankdaten aus *WooCommerce → Einstellungen → Zahlungen → Direkte Banküberweisung*, den Betrag und die Mitteilung „Bestellung Nr.“. Erinnert werden nur Bestellungen ab dem Einschalten, nicht nachträglich alle alten. Ohne hinterlegte Bankverbindung wird nichts gesendet. Die Sammel-Mail an den Shop (nach 10 Tagen) zeigt, wann der Kunde erinnert wurde. 0 Tage = aus.
+
+> In bexio fügt das Plugin bei diesen Funktionen nur Kommentare hinzu. Auftrag, Positionen, Status, Rechnungen und Lager bleiben unverändert.
 
 ### Warn-Mail bei Problemen (täglich 07:50)
 Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail an *Hinweise an*. Geprüft wird:

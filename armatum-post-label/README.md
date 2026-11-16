@@ -13,7 +13,7 @@ Box **„Schweizerische Post“** (rechts):
 3. **„Post-Label erstellen“** – die Adresse wird bei der Post geprüft, das Label als PDF erzeugt. Standard ist **A4 mit dem Label im oberen Drittel** und Falzlinien, zum Falten wie ein Brief. Alternativ gibt es das A6-PDF der Post (Einstellung *Druckformat*). Gedruckt wird in Originalgrösse (100 %).
 4. **„Label öffnen / drucken“** – das PDF ist nur für angemeldete Shop-Mitarbeitende abrufbar (geschützter Ordner, zufälliger Dateiname).
 
-Die Sendungsnummer steht in der Box und als Bestellnotiz. Der Kunde bekommt sie **sofort beim Erstellen des Labels** mit Link zur Sendungsverfolgung, als WooCommerce-E-Mail „Kundenhinweis“. Jede Nummer wird nur einmal geschickt, abschaltbar unter *Kunde informieren*. Zusätzlich steht sie in der E-Mail **„Bestellung abgeschlossen“**. Bei Testlabels gibt es keines von beidem. Abholungen werden erkannt, Briefe (z. B. „Grossbrief B-Post“) nicht unterstützt.
+Die Sendungsnummer steht in der Box und als Bestellnotiz. Der Kunde bekommt sie **sofort beim Erstellen des Labels** mit Link zur Sendungsverfolgung, als WooCommerce-E-Mail „Kundenhinweis“ mit eigenem Betreff „Ihr Paket ist unterwegs – Bestellung #…“. Jede Nummer wird nur einmal geschickt, abschaltbar unter *Kunde informieren*. Zusätzlich steht sie in der E-Mail **„Bestellung abgeschlossen“**. Bei Testlabels gibt es keines von beidem. Abholungen werden erkannt, Briefe (z. B. „Grossbrief B-Post“) nicht unterstützt.
 
 ## Einstellungen
 *Einstellungen → Armatum Post Label*: Client ID, Client Secret, Frankierlizenz, Absender, **Testmodus**.

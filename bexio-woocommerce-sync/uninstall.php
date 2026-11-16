@@ -4,6 +4,7 @@ defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 delete_option( 'bws_settings' );
 delete_option( 'bws_stock_import_last' );
 delete_option( 'bws_stock_import_scheduled' );
+delete_option( 'bws_customer_reminder_since' );
 if ( function_exists( 'as_unschedule_all_actions' ) ) {
 	as_unschedule_all_actions( 'bws_import_stock' );
 }

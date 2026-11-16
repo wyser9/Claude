@@ -25,6 +25,8 @@ class BWS_Settings {
 			'tracking_to_bexio'  => 'yes', // Post-Sendungsnummer als Kommentar in den bexio-Auftrag.
 			'cancel_to_bexio'    => 'yes', // Storno im Shop: Kommentar in bexio + Hinweis an den Shop.
 			'payment_reminder_days' => 10, // Hinweis bei unbezahlter Vorkasse nach X Tagen (0 = aus).
+			'customer_reminder_days' => 7, // Zahlungserinnerung mit Bankdaten an den Kunden nach X Tagen (0 = aus).
+			'refund_to_bexio'    => 'yes', // Rückerstattung im Shop: Kommentar in bexio + Hinweis an den Shop.
 			'notify_email'       => '', // Empfänger der Hinweise (leer = Admin-E-Mail).
 			'health_mail'        => 'yes', // Tägliche Warn-Mail, wenn ein Abgleich nicht läuft.
 			'twint_payout_mail'  => 'yes', // Mail am Gutschriftstag: welche Bestellungen die TWINT-Sammelgutschrift enthält.
