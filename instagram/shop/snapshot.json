@@ -29908,7 +29908,7 @@
 "on_sale": false,
 "price": "10990",
 "regular": "10990",
-"short": "Robustes und leichtes Zweibein für stabile Schusspositionen, präzises Schiessen und maximale Zuverlässigkeit auf dem Schiessstand und im Gelände.",
+"short": "Robustes und leichtes Zweibein für stabile Schusspositionen, präzises Schiessen und maximale Zuverlässigkeit auf dem Schiessstand und im Gelände. Montage auf Sling Swivel Stud (Riemenbügelöse).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/magpul-moe-bipod/"
 },
@@ -29922,7 +29922,7 @@
 "on_sale": false,
 "price": "10990",
 "regular": "10990",
-"short": "Robustes und leichtes Zweibein in Flat Dark Earth für stabile Schusspositionen, präzises Schiessen und maximale Zuverlässigkeit auf dem Schiessstand und im Gelände.",
+"short": "Robustes und leichtes Zweibein in Flat Dark Earth für stabile Schusspositionen, präzises Schiessen und maximale Zuverlässigkeit auf dem Schiessstand und im Gelände. Montage auf Sling Swivel Stud (Riemenbügelöse).",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/magpul-moe-bipod-2/"
 },
@@ -63428,7 +63428,7 @@
 "Mündungsfeuerdämpfer",
 "Strike Industries"
 ],
-"images": 1,
+"images": 2,
 "name": "Strike Industries Micro Threaded Comp Quad V Pistolenkompensator 9 mm 1/2″-28 Schwarz",
 "on_sale": false,
 "price": "11990",
@@ -64816,7 +64816,7 @@
 "Mündungsfeuerdämpfer"
 ],
 "images": 4,
-"name": "B&T Feuerscheindämpfer für M.A.R.S. QD SD",
+"name": "B&T Feuerscheindämpfer für M.A.R.S. QD SD 5/8×24",
 "on_sale": false,
 "price": "9990",
 "regular": "9990",
@@ -65129,7 +65129,7 @@
 "price": "177090",
 "regular": "177090",
 "short": "Ruger Super Redhawk im Kaliber .357 Magnum mit 2.75″ Lauf und 8-Schuss-Trommel. Kompakter Double-Action-Revolver aus Edelstahl mit Hogue Tamer Monogrip und verstellbarer Kimme.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ruger-super-redhawk-357-magnum-2-75-8-schuss-satin-stainless/"
 },
 "34084": {
@@ -65143,7 +65143,7 @@
 "price": "62890",
 "regular": "62890",
 "short": "Ruger American Rimfire Repetierbüchse im Kaliber .22 LR mit 16.1″ Lauf, Mündungsgewinde 1/2-28 und 10-Schuss-Magazin. Schwarzer Kunststoffschaft, ohne Visierung, mit Montageschiene für Optiken.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ruger-american-rimfire-22-lr-16-1-mit-gewinde-1-2-28-10-schuss-schwarz/"
 },
 "34088": {
@@ -65157,7 +65157,7 @@
 "price": "60690",
 "regular": "60690",
 "short": "Ruger 22 Charger Pistole im Kaliber .22 LR mit 8″ Lauf, Mündungsgewinde 1/2-28, BX-Trigger und 15-Schuss-Magazin BX-15. Ohne Visierung, mit montierter Picatinny-Schiene für Optiken.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ruger-22-charger-pistole-22-lr-8-mit-gewinde-1-2-28-15-schuss-satin-black/"
 },
 "34092": {
@@ -65171,7 +65171,455 @@
 "price": "184190",
 "regular": "184190",
 "short": "Marlin 1894 Dark Series Unterhebelrepetierer im Kaliber .357 Magnum / .38 Special mit 16.17″ Lauf und Mündungsgewinde 1/2-28. Polymerschaft, Ghost-Ring-Kimme und Fiberoptik-Korn mit Tritium-Ring.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/marlin-1894-dark-series-357-magnum-16-17-mit-gewinde-1-2-28-satin-black/"
+},
+"34100": {
+"cats": [
+"Dan Wesson",
+"Pistolen"
+],
+"images": 7,
+"name": "Dan Wesson DWX Pistole 9mm Para 5″ – 19 Schuss, DLC",
+"on_sale": false,
+"price": "378490",
+"regular": "378490",
+"short": "Dan Wesson DWX im Kaliber 9mm Para mit 5″ Match-Lauf und 19-Schuss-Magazin. Single-Action-Abzug, Doublestack-Griff, Edelstahlrahmen mit DLC-Beschichtung, Aluminium-Griffschalen und optics ready.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/dan-wesson-dwx-pistole-9mm-para-5-19-schuss-dlc/"
+},
+"34107": {
+"cats": [
+"Dan Wesson",
+"Pistolen"
+],
+"images": 6,
+"name": "Dan Wesson DWX Compact Rail OR Pistole 9mm Para 4″ – 15 Schuss",
+"on_sale": false,
+"price": "378490",
+"regular": "378490",
+"short": "Dan Wesson DWX Compact mit Lichtschiene im Kaliber 9mm Para, 4″ Match-Lauf und 15-Schuss-Magazin. Single-Action-Abzug, Aluminiumrahmen, DLC-Verschluss, Tritium-Korn und optics ready.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/dan-wesson-dwx-compact-rail-or-pistole-9mm-para-4-15-schuss/"
+},
+"34111": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .30-06 Springfield 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .30-06 Springfield mit 508 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-30-06-springfield-20-5-schuss-m15x1/"
+},
+"34112": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO 6.5 Creedmoor 22″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber 6.5 Creedmoor mit 559 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-6-5-creedmoor-22-5-schuss-m15x1/"
+},
+"34113": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .308 Win 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .308 Win mit 508 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-308-win-20-5-schuss-m15x1/"
+},
+"34114": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .300 Win Mag 24″ – 3 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .300 Win Mag mit 610 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-300-win-mag-24-3-schuss-m15x1/"
+},
+"34115": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO 8×57 IS 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber 8×57 IS mit 508 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-8x57-is-20-5-schuss-m15x1/"
+},
+"34116": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .223 Rem 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .223 Rem mit 508 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-223-rem-20-5-schuss-m15x1/"
+},
+"34117": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO 7.62×39 18″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber 7.62×39 mit 457 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-7-62x39-18-5-schuss-m15x1/"
+},
+"34124": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Range Laminate 6mm Creedmoor 24″ – 5 Schuss, M18x1",
+"on_sale": false,
+"price": "174490",
+"regular": "174490",
+"short": "CZ 600 Range Repetierbüchse im Kaliber 6mm Creedmoor mit schwerem 610 mm Lauf und Mündungsgewinde M18x1. Laminatschaft mit verstellbarer Schaftbacke und verstellbarem Schaftrücken, garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-range-laminate-6mm-creedmoor-24-5-schuss-m18x1/"
+},
+"34125": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Range Laminate .308 Win 24″ – 5 Schuss, M18x1",
+"on_sale": false,
+"price": "174490",
+"regular": "174490",
+"short": "CZ 600 Range Repetierbüchse im Kaliber .308 Win mit schwerem 610 mm Lauf und Mündungsgewinde M18x1. Laminatschaft mit verstellbarer Schaftbacke und verstellbarem Schaftrücken, garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-range-laminate-308-win-24-5-schuss-m18x1/"
+},
+"34129": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Alpha 6.5 PRC 24″ – 3 Schuss, M15x1",
+"on_sale": false,
+"price": "136990",
+"regular": "136990",
+"short": "CZ 600 Alpha Repetierbüchse im Kaliber 6.5 PRC mit mittelschwerem 610 mm Lauf und Mündungsgewinde M15x1. Robuster Polymerschaft mit Soft-Touch-Einlagen, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-alpha-6-5-prc-24-3-schuss-m15x1/"
+},
+"34133": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Alpha .243 Win 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "136990",
+"regular": "136990",
+"short": "CZ 600 Alpha Repetierbüchse im Kaliber .243 Win mit mittelschwerem 508 mm Lauf und Mündungsgewinde M15x1. Robuster Polymerschaft mit Soft-Touch-Einlagen, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-alpha-243-win-20-5-schuss-m15x1/"
+},
+"34137": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Alpha .270 Win 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "136990",
+"regular": "136990",
+"short": "CZ 600 Alpha Repetierbüchse im Kaliber .270 Win mit mittelschwerem 508 mm Lauf und Mündungsgewinde M15x1. Robuster Polymerschaft mit Soft-Touch-Einlagen, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-alpha-270-win-20-5-schuss-m15x1/"
+},
+"34141": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Range Laminate 6.5 Creedmoor 24″ – 5 Schuss, M18x1",
+"on_sale": false,
+"price": "174490",
+"regular": "174490",
+"short": "CZ 600 Range Repetierbüchse im Kaliber 6.5 Creedmoor mit schwerem 610 mm Lauf und Mündungsgewinde M18x1. Laminatschaft mit verstellbarer Schaftbacke und verstellbarem Schaftrücken, garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-range-laminate-6-5-creedmoor-24-5-schuss-m18x1/"
+},
+"34145": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Range Laminate .223 Rem 24″ – 5 Schuss",
+"on_sale": false,
+"price": "174490",
+"regular": "174490",
+"short": "CZ 600 Range Repetierbüchse im Kaliber .223 Rem mit schwerem 610 mm Lauf und Mündungsgewinde. Laminatschaft mit verstellbarer Schaftbacke und verstellbarem Schaftrücken, garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-range-laminate-223-rem-24-5-schuss/"
+},
+"34147": {
+"cats": [
+"CZ",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "CZ Riemenbügel für CZ 600 Ergo",
+"on_sale": false,
+"price": "2990",
+"regular": "2990",
+"short": "Original CZ Riemenbügel für die Repetierbüchse CZ 600 Ergo. Ersatz- oder Zusatzbügel zur Befestigung eines Gewehrriemens.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-riemenbuegel-fuer-cz-600-ergo/"
+},
+"34151": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 MDT Deep Bronze .308 Win 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "331490",
+"regular": "331490",
+"short": "CZ 600 Präzisionsgewehr im MDT-Chassis mit Deep Bronze Cerakote, Kaliber .308 Win, schwerer 610 mm Lauf mit Mündungsbremse, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-mdt-deep-bronze-308-win-24-10-schuss-m18x1/"
+},
+"34155": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 MDT Deep Bronze 6mm Creedmoor 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "331490",
+"regular": "331490",
+"short": "CZ 600 Präzisionsgewehr im MDT-Chassis mit Deep Bronze Cerakote, Kaliber 6mm Creedmoor, schwerer 610 mm Lauf mit Mündungsbremse, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-mdt-deep-bronze-6mm-creedmoor-24-10-schuss-m18x1/"
+},
+"34165": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 MDT Deep Bronze 6.5 Creedmoor 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "331490",
+"regular": "331490",
+"short": "CZ 600 Präzisionsgewehr im MDT-Chassis mit Deep Bronze Cerakote, Kaliber 6.5 Creedmoor, schwerer 610 mm Lauf mit Mündungsbremse, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-mdt-deep-bronze-6-5-creedmoor-24-10-schuss-m18x1/"
+},
+"34166": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 MDT Grey 6mm Creedmoor 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "280490",
+"regular": "280490",
+"short": "CZ 600 Präzisionsgewehr im MDT CCS Chassis mit hellgrauem Cerakote, Kaliber 6mm Creedmoor, schwerer 610 mm Lauf mit Gewinde M18x1, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-mdt-grey-6mm-creedmoor-24-10-schuss-m18x1/"
+},
+"34167": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 MDT Grey .308 Win 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "280490",
+"regular": "280490",
+"short": "CZ 600 Präzisionsgewehr im MDT CCS Chassis mit hellgrauem Cerakote, Kaliber .308 Win, schwerer 610 mm Lauf mit Gewinde M18x1, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-mdt-grey-308-win-24-10-schuss-m18x1/"
+},
+"34170": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Plus MDT Grey 6.5 Creedmoor 24″ – 10 Schuss, M18x1",
+"on_sale": false,
+"price": "280490",
+"regular": "280490",
+"short": "CZ 600 Plus Präzisionsgewehr im MDT CCS Chassis mit hellgrauem Cerakote, Kaliber 6.5 Creedmoor, schwerer 610 mm Lauf mit Gewinde M18x1, 10-Schuss AICS-Magazin und garantierte Präzision unter 0.75 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-plus-mdt-grey-6-5-creedmoor-24-10-schuss-m18x1/"
+},
+"34181": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Ergo Driven Hunt .308 Win 20″ – 10 Schuss, M15x1",
+"on_sale": false,
+"price": "168990",
+"regular": "168990",
+"short": "CZ 600 Ergo Driven Hunt im Kaliber .308 Win für die Bewegungsjagd: 508 mm Lauf mit Radialkompensator, 10-Schuss-Magazin, Daumenlochschaft mit orangen Einlagen und verstellbarer Direktabzug.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-driven-hunt-308-win-20-10-schuss-m15x1/"
+},
+"34182": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 457 Ergo BM .22 LR 525 mm – 1/2×20, ohne Visierung",
+"on_sale": false,
+"price": "80990",
+"regular": "80990",
+"short": "CZ 457 Ergo Kleinkaliberbüchse im Kaliber .22 LR mit kaltgehämmertem 525 mm Lauf und Mündungsgewinde 1/2×20. Ohne Visierung, ideal für die Montage eines Zielfernrohrs.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-457-ergo-bm-22-lr-525-mm-1-2x20-ohne-visierung/"
+},
+"34183": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 457 Ergo .22 LR 525 mm – 1/2×20, mit Visierung",
+"on_sale": false,
+"price": "80990",
+"regular": "80990",
+"short": "CZ 457 Ergo Kleinkaliberbüchse im Kaliber .22 LR mit kaltgehämmertem 525 mm Lauf und Mündungsgewinde 1/2×20. Mit mechanischer Visierung, Zielfernrohrmontage ebenfalls möglich.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-457-ergo-22-lr-525-mm-1-2x20-mit-visierung/"
+},
+"34195": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 457 Ergo BM .22 LR 412 mm – 1/2×20, ohne Visierung (limitiert)",
+"on_sale": false,
+"price": "80990",
+"regular": "80990",
+"short": "Limitierte Spezialausführung der CZ 457 Ergo im Kaliber .22 LR mit kurzem, kaltgehämmertem 412 mm Lauf und Mündungsgewinde 1/2×20. Ohne Visierung, ideal für die Montage eines Zielfernrohrs.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-457-ergo-bm-22-lr-412-mm-1-2x20-ohne-visierung-limitiert/"
+},
+"34196": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 Ergo 6.5 PRC 24″ – 3 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber 6.5 PRC mit 610 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-6-5-prc-24-3-schuss-m15x1/"
+},
+"34197": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 457 Ergo .17 HMR 525 mm – 1/2×20",
+"on_sale": false,
+"price": "80990",
+"regular": "80990",
+"short": "CZ 457 Ergo Kleinkaliberbüchse im Kaliber .17 HMR mit kaltgehämmertem 525 mm Lauf und Mündungsgewinde 1/2×20, glasfaserverstärkter Polymerschaft mit abnehmbarer Wangenauflage.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-457-ergo-17-hmr-525-mm-1-2x20/"
+},
+"34198": {
+"cats": [
+"Abzüge / Trigger",
+"CZ"
+],
+"images": 2,
+"name": "CZ Flyweight Abzug für CZ 457 – Zweistufenabzug",
+"on_sale": false,
+"price": "35490",
+"regular": "35490",
+"short": "CZ Flyweight Zweistufenabzug für die CZ 457. Vielfältig einstellbar, kompatibel mit bestehenden CZ 457 Büchsen, Anschtütz-Abzugszüngel weiter verwendbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-flyweight-abzug-fuer-cz-457-zweistufenabzug/"
+},
+"34205": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .17 Hornet 20″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "149490",
+"regular": "149490",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .17 Hornet mit 508 mm Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-17-hornet-20-5-schuss-m15x1/"
+},
+"34206": {
+"cats": [
+"CZ",
+"Präzisionsgewehre"
+],
+"images": 3,
+"name": "CZ 600 ERGO .222 Rem 22″ – 5 Schuss, M15x1",
+"on_sale": false,
+"price": "152990",
+"regular": "152990",
+"short": "CZ 600 ERGO Repetierbüchse im Kaliber .222 Rem mit 22″ Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/cz-600-ergo-222-rem-22-5-schuss-m15x1/"
 }
 }
