@@ -1,0 +1,8 @@
+{"slides":[
+ {"type":"fototitel","image":"p4.jpg","kicker":"IPSC Standard","title":"CZ TS 2\nOrange","sub":"Das Meistermodell des CZ Shooting Teams","size":112},
+ {"type":"zahl","theme":"hell","kicker":"Stahl statt Polymer","zahl":"1460 g","size":230,"text":"Griffstück aus **Stahl**, Griffschalen aus **Duraluminium**. Die Masse hält die Mündung ruhig – Schuss für Schuss."},
+ {"type":"split","theme":"oliv","image":"p2.jpg","photoH":760,"tag":"Abzug","title":"Single Action, 8 N","body":"3–4 mm Abzugsweg, ebenso kurzer Reset. Gebaut für schnelle, präzise Schussfolgen."},
+ {"type":"grid","theme":"dunkel","kicker":"Rundum","title":"Alle Ansichten","items":[{"image":"p1.jpg","label":"Front","pos":"center 45%"},{"image":"p5.jpg","label":"Kimme","pos":"center 40%"},{"image":"p3.jpg","label":"Koffer","pos":"center 60%"},{"image":"p2.jpg","label":"Seite"}]},
+ {"type":"liste","theme":"hell","kicker":"Steckbrief","title":"Auf einen Blick","items":["**9×19 mm**, Magazin mit **20 Schuss**","**130-mm-Bull-Lauf** – präzise und langlebig","Sicherung **beidhändig**, höher gesetzt","**Leuchtkorn** und geriffelte Kimme","Im Koffer mit Zubehör"]},
+ {"type":"zitat","theme":"oliv","text":"Lieber selbst in die Hand nehmen? Komm vorbei – wir beraten dich gern.","von":"– Laden Armatum, Fulenbach"}
+]}
