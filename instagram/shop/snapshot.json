@@ -7319,7 +7319,7 @@
 "on_sale": false,
 "price": "14490",
 "regular": "14490",
-"short": "Optik-Montageschiene aus Stahl mit Tenifer-QPQ-Oberfläche für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
+"short": "Optik-Montageschiene aus eloxiertem Aluminium für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sg55x-picatinny-montage-optikloesung-fuer-dein-stgw-90/"
 },
@@ -65629,7 +65629,7 @@
 "on_sale": false,
 "price": "26990",
 "regular": "26990",
-"short": "Lange Optik-Montageschiene aus Stahl mit Tenifer-QPQ-Oberfläche für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
+"short": "Lange Optik-Montageschiene aus eloxiertem Aluminium für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/rad-solutions-sg55x-picatinny-montage-fuer-optik-lang/"
 },
@@ -66654,5 +66654,33 @@
 "short": "MDT One-Piece Zielfernrohrmontage für 30-mm-Mittelrohre, Bauhöhe Medium: sehr stabile Plattform mit robustem Klemmsystem und integriertem Rückstossanschlag.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/mdt-one-piece-montage-30mm-medium-schwarz/"
+},
+"34450": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"SIG Sauer"
+],
+"images": 4,
+"name": "SIG P210 Ordonnanzpistole ex Armee 9x19mm gebraucht, mit 2 Magazinen und Lederholster",
+"on_sale": false,
+"price": "109000",
+"regular": "109000",
+"short": "Gebrauchte SIG P210 aus Armeebestand im Kaliber 9x19mm. Zustand gut, technisch einwandfrei. Mit 2 Magazinen und Lederholster. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/sig-p210-ordonnanzpistole-ex-armee-9x19mm-gebraucht-mit-2-magazinen-und-lederholster/"
+},
+"34455": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"N.E.D.I."
+],
+"images": 4,
+"name": "N.E.D.I. AK-47 Halbautomat 7.62x39mm gebraucht, Festschaft, mit 4 Magazinen",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "Gebrauchtes N.E.D.I. AK-47 im Kaliber 7.62x39mm, Halbautomat mit Festschaft. Ausgezeichneter Zustand, erst ca. 50 Schuss geschossen. Mit 4 Magazinen. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/n-e-d-i-ak-47-halbautomat-7-62x39mm-gebraucht-festschaft-mit-4-magazinen/"
 }
 }
