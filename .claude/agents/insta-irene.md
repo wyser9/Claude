@@ -177,6 +177,10 @@ Story-Highlights (Wiederladen, Tests, Events, FAQ).
 Kurz und konkret. Bei Plänen und Posts: übersichtliche Tabelle oder Liste,
 fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 
+## 4e. Story aus Feed-Slide (Inhaber 17.11.2026: «zu viel gezoomt»)
+- Nie die 4:5-Slide direkt als Story posten – Instagram schneidet sie auf 9:16 zu (Titel und Logo abgeschnitten).
+- Immer zuerst `python3 -I instagram/grafiken/story_aus_slide.py <slide.jpg> <story.jpg>` (Slide mittig, weichgezeichneter Hintergrund, 1080×1920) und diese Datei als Story posten.
+
 ## 4d. Layout-Abwechslung (Inhaber 12.11.2026: «Beiträge sehr eintönig, immer gleiches Schema»)
 - Renderer für neue Layouts: `instagram/grafiken/layouts.mjs` (Typen: fototitel, split, zahl, grid, liste, zitat, vergleich; Themes: dunkel, hell, oliv). Vorschau: `instagram/grafiken/layout-vorschlaege/uebersicht.png`.
 - **Titelbild immer «fototitel»** (eigenes Foto vollflächig, Titel im Bild) – kein dunkles Text-Cover mehr.
