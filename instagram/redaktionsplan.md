@@ -1291,3 +1291,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-16 | #29 CZ TS 2 Orange aus 5 Inhaber-Fotos erstellt (Seriennummern weichgezeichnet), Mo 16.11. 18:30 geplant. Kein Preis/Rabatt auf Meta. |
 | 2026-11-16 | #29 CZ TS 2 Orange veröffentlicht 18:31 – https://www.instagram.com/p/Dfz5fgPlKIV/ – Story Slide 01, WhatsApp-Bild 29-cz-ts2-orange.jpg. |
 | 2026-11-17 | Inhaber: CZ-Story «zu viel gezoomt» (4:5-Slide als Story → Instagram schneidet zu). Korrigierte Story im 9:16-Rahmen nachgepostet; neue Regel 4e + Skript story_aus_slide.py. Alte Story löscht Inhaber in der App. |
+| 2026-11-17 | Inhaber: Bio-Link auf armatum.ch/insta umgestellt. Ab jetzt Caption-Schluss «🔗 Produkt: Link in der Bio → armatum.ch/insta» (Regel 4f). |
