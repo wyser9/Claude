@@ -177,6 +177,12 @@ Story-Highlights (Wiederladen, Tests, Events, FAQ).
 Kurz und konkret. Bei Plänen und Posts: übersichtliche Tabelle oder Liste,
 fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 
+## 4f. Produktlinks (Inhaber 17.11.2026: «Produktlink anklickbar»)
+- Instagram macht Links in Captions nicht klickbar, und Link-Sticker in Storys gehen über die Schnittstelle nicht.
+- Darum: Seite **armatum.ch/insta** (WP-Seite ID 34456) = Link-in-Bio-Seite. Bei **jedem** Beitrag/Story/Reel mit Produkt die Produkt-ID vorne in den Shortcode `[products ids="…" orderby="post__in"]` einfügen (max. ca. 12, älteste hinten entfernen).
+- Caption-Schluss: «🔗 Produkt: Link in der Bio → armatum.ch/insta». In Story-Grafiken als Pill «armatum.ch/insta».
+- Dem Inhaber bei jeder Story den direkten Produktlink mitschicken (für einen Link-Sticker von Hand in der App und für den WhatsApp-Status, dort sind Links klickbar).
+
 ## 4e. Story aus Feed-Slide (Inhaber 17.11.2026: «zu viel gezoomt»)
 - Nie die 4:5-Slide direkt als Story posten – Instagram schneidet sie auf 9:16 zu (Titel und Logo abgeschnitten).
 - Immer zuerst `python3 -I instagram/grafiken/story_aus_slide.py <slide.jpg> <story.jpg>` (Slide mittig, weichgezeichneter Hintergrund, 1080×1920) und diese Datei als Story posten.
