@@ -7311,18 +7311,15 @@
 },
 "17606": {
 "cats": [
-"Hinterschäfte / Stock",
 "Montagen",
-"Ordonanz",
-"RAD Solutions",
-"Visiere / Optik"
+"RAD Solutions"
 ],
 "images": 8,
 "name": "RAD Solutions SG55X Picatinny-Montage für Optik",
 "on_sale": false,
-"price": "14400",
-"regular": "14400",
-"short": "Präzise CNC-gefräste Picatinny-Montage für Optiken auf SG55X / Stgw 90. Flache Bauweise, harteloxiertes Aluminium, stabil & rückrüstbar.",
+"price": "14490",
+"regular": "14490",
+"short": "Optik-Montageschiene aus Stahl mit Tenifer-QPQ-Oberfläche für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sg55x-picatinny-montage-optikloesung-fuer-dein-stgw-90/"
 },
@@ -14215,8 +14212,8 @@
 },
 "20384": {
 "cats": [
-"Bipod / Zweibein",
-"Birchwood Casey"
+"Birchwood Casey",
+"Schiessauflagen / Support Bags"
 ],
 "images": 1,
 "name": "Birchwood Casey Schiess-Sack Steady-Shot Delta+",
@@ -14229,11 +14226,11 @@
 },
 "20388": {
 "cats": [
-"Bipod / Zweibein",
-"Birchwood Casey"
+"Birchwood Casey",
+"Schiessauflagen / Support Bags"
 ],
 "images": 1,
-"name": "Birchwood Casey Schiess-Sack Steady-Shot Delta+ (Kopie)",
+"name": "Birchwood Casey Schiess-Sack Steady-Shot Foxtrot",
 "on_sale": false,
 "price": "10900",
 "regular": "10900",
@@ -65621,5 +65618,1041 @@
 "short": "CZ 600 ERGO Repetierbüchse im Kaliber .222 Rem mit 22″ Lauf und Mündungsgewinde M15x1. Ergonomischer Polymerschaft mit Soft-Touch-Oberfläche, verstellbarer Direktabzug und garantierte Präzision unter 1 MOA.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/cz-600-ergo-222-rem-22-5-schuss-m15x1/"
+},
+"34217": {
+"cats": [
+"Montagen",
+"RAD Solutions"
+],
+"images": 4,
+"name": "RAD Solutions SG55X Picatinny-Montage für Optik lang",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "Lange Optik-Montageschiene aus Stahl mit Tenifer-QPQ-Oberfläche für die SIG Sturmgewehre 550, 551, 552 und 553 sowie deren zivile Varianten. Picatinny-Schnittstelle für Zielfernrohre und Rotpunktvisiere.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/rad-solutions-sg55x-picatinny-montage-fuer-optik-lang/"
+},
+"34218": {
+"cats": [
+"Handschutz",
+"MDT"
+],
+"images": 1,
+"name": "MDT M-LOK Spare Round Holder Patronenhalter Schwarz",
+"on_sale": false,
+"price": "6490",
+"regular": "6490",
+"short": "MDT M-LOK Spare Round Holder in Schwarz: nimmt 2 zusätzliche Patronen direkt am M-LOK-Handschutz Ihres Gewehrs auf. Für verschiedene Kaliber geeignet.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-m-lok-spare-round-holder-patronenhalter-schwarz/"
+},
+"34223": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 3,
+"name": "MDT GRND-POD Zweibein M-LOK Schwarz",
+"on_sale": false,
+"price": "25990",
+"regular": "25990",
+"short": "MDT GRND-POD Zweibein mit M-LOK-Aufnahme in Schwarz: verstellbare Beinlängen, Neigung mit einstellbarem Widerstand und schnelles Ausklappen. Aus 6061-T6-Aluminium mit Carbon-Finish.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-m-lok-schwarz/"
+},
+"34229": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 3,
+"name": "MDT GRND-POD Zweibein M-LOK Grün",
+"on_sale": false,
+"price": "25990",
+"regular": "25990",
+"short": "MDT GRND-POD Zweibein mit M-LOK-Aufnahme in Grün: verstellbare Beinlängen, Neigung mit einstellbarem Widerstand und schnelles Ausklappen. Aus 6061-T6-Aluminium mit Carbon-Finish.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-m-lok-gruen/"
+},
+"34230": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 2,
+"name": "MDT GRND-POD Zweibein Picatinny Schwarz",
+"on_sale": false,
+"price": "25990",
+"regular": "25990",
+"short": "MDT GRND-POD Zweibein mit Picatinny-Aufnahme in Schwarz: verstellbare Beinlängen, Neigung mit einstellbarem Widerstand und schnelles Ausklappen. Aus 6061-T6-Aluminium mit Carbon-Finish.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-picatinny-schwarz/"
+},
+"34233": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 2,
+"name": "MDT GRND-POD Zweibein RRS Dovetail Schwarz",
+"on_sale": false,
+"price": "25990",
+"regular": "25990",
+"short": "MDT GRND-POD Zweibein mit RRS-Dovetail-Aufnahme in Schwarz: verstellbare Beinlängen, Neigung mit einstellbarem Widerstand und schnelles Ausklappen. Aus 6061-T6-Aluminium mit Carbon-Finish.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-rrs-dovetail-schwarz/"
+},
+"34237": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 3,
+"name": "MDT GRND-POD Zweibein ARMS 17 Schwarz",
+"on_sale": false,
+"price": "25490",
+"regular": "25490",
+"short": "MDT GRND-POD Zweibein mit ARMS-17-Montage in Schwarz: verstellbare Beinlängen, Neigung mit einstellbarem Widerstand und schnelles Ausklappen. Aus 6061-T6-Aluminium mit Cerakote-Finish.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-arms-17-schwarz/"
+},
+"34241": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 3,
+"name": "MDT GRND-POD Zweibein Sling Swivel Grün",
+"on_sale": false,
+"price": "25990",
+"regular": "25990",
+"short": "MDT GRND-POD Zweibein für die Riemenbügelöse (Sling Swivel) in Grün: einhändig verstellbare Höhe von 114 bis 229 mm, 4 Verriegelungspositionen und kompatibel mit Atlas- und CKYE-POD-Füssen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-grnd-pod-zweibein-sling-swivel-gruen/"
+},
+"34248": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 5,
+"name": "MDT Lightweight CKYE-POD RRS BTC Double Pull Zweibein Schwarz",
+"on_sale": false,
+"price": "111990",
+"regular": "111990",
+"short": "MDT Lightweight CKYE-POD mit RRS-BTC-Aufnahme und Double-Pull-Beinen: Höhe 9″ bis 18.5″, 170° Neigung, 360° Schwenk und unabhängig verstellbare Beine. Entwickelt für anspruchsvolle Wettkampfschützen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-lightweight-ckye-pod-rrs-btc-double-pull-zweibein-schwarz/"
+},
+"34249": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 1,
+"name": "MDT CKYE-POD Gummifuss Medium Schwarz",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "MDT CKYE-POD Gummifuss Medium: Gummifüsse mit hoher Reibung und Aluminiumkern für sicheren Halt des Zweibeins auf glatten, harten Oberflächen wie Beton oder Autodächern.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-ckye-pod-gummifuss-medium-schwarz/"
+},
+"34252": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT One-Piece Montage 34mm Low Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 34-mm-Mittelrohre, Bauhöhe Low, für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-34mm-low-schwarz/"
+},
+"34255": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT One-Piece Montage 34mm High Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 34-mm-Mittelrohre, Bauhöhe High, für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-34mm-high-schwarz/"
+},
+"34258": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT One-Piece Montage 34mm Medium Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 34-mm-Mittelrohre, Bauhöhe Medium, für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-34mm-medium-schwarz/"
+},
+"34262": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Hunt Mündungsbremse Magnum .338 5/8-24 Titan",
+"on_sale": false,
+"price": "27990",
+"regular": "27990",
+"short": "MDT Hunt Mündungsbremse aus Titan für .338 Magnum mit Gewinde 5/8″-24: nur ca. 48 g leicht, selbstjustierend und mit bis zu 80 % Reduktion des Rückstosses.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-hunt-muendungsbremse-magnum-338-5-8-24-titan/"
+},
+"34263": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Hunt Mündungsbremse Standard .30 5/8-24 Titan",
+"on_sale": false,
+"price": "27990",
+"regular": "27990",
+"short": "MDT Hunt Mündungsbremse aus Titan für Kaliber .30 mit Gewinde 5/8″-24: nur ca. 48 g leicht, selbstjustierend und mit bis zu 80 % Reduktion des Rückstosses.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-hunt-muendungsbremse-standard-30-5-8-24-titan/"
+},
+"34265": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT Rear Bag Rider M-LOK Stahl Schwarz",
+"on_sale": false,
+"price": "10490",
+"regular": "10490",
+"short": "MDT Rear Bag Rider für M-LOK in Stahl: 5″ (ca. 127 mm) zusätzliche Auflagefläche für den Rear Bag, flache Unterseite für lineare Rückstosskontrolle und abgerundetes Profil gegen Verhaken.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-rear-bag-rider-m-lok-stahl-schwarz/"
+},
+"34266": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT Rear Bag Rider M-LOK Aluminium Schwarz",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "MDT Rear Bag Rider für M-LOK aus hart-eloxiertem Aluminium: 5″ (ca. 127 mm) zusätzliche Auflagefläche für den Rear Bag, flache Unterseite für lineare Rückstosskontrolle und abgerundetes Profil gegen Verhaken.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-rear-bag-rider-m-lok-aluminium-schwarz/"
+},
+"34272": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 5,
+"name": "MDT Mountain Zweibein ARCA Schwarz",
+"on_sale": false,
+"price": "55990",
+"regular": "55990",
+"short": "MDT Mountain Zweibein mit ARCA-Aufnahme: Twist-Lock-Beine zum schnellen Einstellen, Push-Button-Ausklappen auch mit Handschuhen und robuste Bauweise für die Bergjagd.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-mountain-zweibein-arca-schwarz/"
+},
+"34277": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT Composite Carbine Stock Hinterschaft FDE",
+"on_sale": false,
+"price": "17990",
+"regular": "17990",
+"short": "MDT Composite Carbine Stock in FDE: robuster, leichter Polymer-Hinterschaft für AR-15-Carbine-Schnittstellen und MDT LSS Chassis, mit M-LOK-Slot und 4 LOP-Spacern.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-composite-carbine-stock-hinterschaft-fde/"
+},
+"34278": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT Composite Carbine Stock Hinterschaft Schwarz",
+"on_sale": false,
+"price": "17990",
+"regular": "17990",
+"short": "MDT Composite Carbine Stock in Schwarz: robuster, leichter Polymer-Hinterschaft für AR-15-Carbine-Schnittstellen und MDT LSS Chassis, mit M-LOK-Slot und 4 LOP-Spacern.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-composite-carbine-stock-hinterschaft-schwarz/"
+},
+"34284": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 2,
+"name": "MDT ACC Elite Chassis Tikka T3x Kurzsystem Rechts Blue Mist",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für Tikka T3x, Kurzsystem, Rechtshänder, in Blue Mist: Wettkampfchassis aus Aluminium mit hervorragender Balance, Rückstosskontrolle und Gewichtsmanagement.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-tikka-t3x-kurzsystem-rechts-blue-mist/"
+},
+"34285": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 2,
+"name": "MDT ACC Elite Chassis Tikka T3x Kurzsystem Rechts FDE",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für Tikka T3x, Kurzsystem, Rechtshänder, in FDE: Wettkampfchassis aus Aluminium mit hervorragender Balance, Rückstosskontrolle und Gewichtsmanagement.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-tikka-t3x-kurzsystem-rechts-fde/"
+},
+"34286": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 3,
+"name": "MDT ACC Elite Chassis Tikka T3x Kurzsystem Rechts Schwarz",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für Tikka T3x, Kurzsystem, Rechtshänder, in Schwarz: Wettkampfchassis aus Aluminium mit hervorragender Balance, Rückstosskontrolle und Gewichtsmanagement.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-tikka-t3x-kurzsystem-rechts-schwarz/"
+},
+"34287": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Premier AR-15 Schwarz",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "MDT Vertical Grip Premier für AR-Plattformen in Schwarz: vertikaler Pistolengriff für das Long-Range-Schiessen, vorne und hinten verstellbar für jede Handgrösse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-premier-ar-15-schwarz/"
+},
+"34290": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Premier AR-15 FDE",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "MDT Vertical Grip Premier für AR-Plattformen in FDE: vertikaler Pistolengriff für das Long-Range-Schiessen, vorne und hinten verstellbar für jede Handgrösse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-premier-ar-15-fde/"
+},
+"34295": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 4,
+"name": "MDT Oryx Sportsman Chassis Tikka T3 Langsystem Rechts ODG",
+"on_sale": false,
+"price": "67990",
+"regular": "67990",
+"short": "MDT Oryx Sportsman Chassis für Tikka T3, Langsystem, Rechtshänder, in Olive Drab Green: Aluminium-Chassis mit V-Bettung, freischwingendem Vorderschaft, verstellbarer Schulterstütze, AR15-Griffaufnahme, ARCA-Schiene und M-LOK.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-oryx-sportsman-chassis-tikka-t3-langsystem-rechts-odg/"
+},
+"34298": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Pistol Grip Elite AR-15 FDE",
+"on_sale": false,
+"price": "3690",
+"regular": "3690",
+"short": "MDT Pistol Grip Elite für AR-15 in FDE: einteiliger, verstärkter Kern mit rutschfester Gummierung und integrierten Handballenwölbungen, für Rechts- und Linkshänder.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-pistol-grip-elite-ar-15-fde/"
+},
+"34299": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Pistol Grip Elite AR-15 Schwarz",
+"on_sale": false,
+"price": "3690",
+"regular": "3690",
+"short": "MDT Pistol Grip Elite für AR-15 und MDT Chassis in Schwarz: einteiliger, verstärkter Kern mit rutschfester Gummierung und integrierten Handballenwölbungen, für Rechts- und Linkshänder.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-pistol-grip-elite-ar-15-schwarz/"
+},
+"34303": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT ACC Elite Chassis CZ 457 Rechts Blue Mist",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für CZ 457, Rechtshänder, in Blue Mist: das Wettkampfchassis Nr. 1 der PRS mit durchgehendem ARCA-Vorderschaft, Gewichtssystem, werkzeuglos verstellbarem SRS-X Elite Schaft und Vertical Grip Elite.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-cz-457-rechts-blue-mist/"
+},
+"34304": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT ACC Elite Chassis CZ 457 Rechts FDE",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für CZ 457, Rechtshänder, in FDE: das Wettkampfchassis Nr. 1 der PRS mit durchgehendem ARCA-Vorderschaft, Gewichtssystem, werkzeuglos verstellbarem SRS-X Elite Schaft und Vertical Grip Elite.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-cz-457-rechts-fde/"
+},
+"34305": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT ACC Elite Chassis CZ 457 Rechts Schwarz",
+"on_sale": false,
+"price": "199990",
+"regular": "199990",
+"short": "MDT ACC Elite Chassis für CZ 457, Rechtshänder, in Schwarz: das Wettkampfchassis Nr. 1 der PRS mit durchgehendem ARCA-Vorderschaft, Gewichtssystem, werkzeuglos verstellbarem SRS-X Elite Schaft und Vertical Grip Elite.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-elite-chassis-cz-457-rechts-schwarz/"
+},
+"34308": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT Picatinny Montageschiene 30 MOA CZ 452 Schwarz",
+"on_sale": false,
+"price": "8490",
+"regular": "8490",
+"short": "MDT Picatinny-Montageschiene für CZ 452 mit 30 MOA Vorneigung: aus 6061-T6-Aluminium, schwarz hart-eloxiert, mit profilierter Unterseite für eine bündige Montage auf dem System.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-picatinny-montageschiene-30-moa-cz-452-schwarz/"
+},
+"34311": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Elite AR-15 FDE",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Vertical Grip Elite in FDE: laut MDT der derzeit am vielseitigsten verstellbare Griff für die AR-15-Griffschnittstelle, passend für Chassis-Gewehre und AR-10/15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-elite-ar-15-fde/"
+},
+"34312": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Elite AR-15 Schwarz",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Vertical Grip Elite in Schwarz: laut MDT der derzeit am vielseitigsten verstellbare Griff für die AR-15-Griffschnittstelle, passend für Chassis-Gewehre und AR-10/15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-elite-ar-15-schwarz/"
+},
+"34320": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Premier Zielfernrohrringe 34mm X-High Schwarz",
+"on_sale": false,
+"price": "16490",
+"regular": "16490",
+"short": "MDT Premier Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe X-High (1.50″), für Picatinny: präzisionsgefertigtes Aluminium, nach STANAG 4694 (NATO-Spezifikation) konstruiert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-premier-zielfernrohrringe-34mm-x-high-schwarz/"
+},
+"34324": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Premier Zielfernrohrringe 34mm High Schwarz",
+"on_sale": false,
+"price": "16490",
+"regular": "16490",
+"short": "MDT Premier Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe High (1.25″), für Picatinny: präzisionsgefertigtes Aluminium, nach STANAG 4694 (NATO-Spezifikation) konstruiert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-premier-zielfernrohrringe-34mm-high-schwarz/"
+},
+"34325": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Premier Zielfernrohrringe 34mm Medium Schwarz",
+"on_sale": false,
+"price": "16490",
+"regular": "16490",
+"short": "MDT Premier Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe Medium (1.00″), für Picatinny: präzisionsgefertigtes Aluminium, nach STANAG 4694 (NATO-Spezifikation) konstruiert.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-premier-zielfernrohrringe-34mm-medium-schwarz/"
+},
+"34329": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 3,
+"name": "MDT ACC Premier Gen2 Chassis Tikka T1x Rimfire Rechts Charcoal",
+"on_sale": false,
+"price": "135990",
+"regular": "135990",
+"short": "MDT ACC Premier Gen2 Chassis für Tikka T1x Rimfire, Rechtshänder, in Charcoal: breiter, flacher Vorderschaft ohne Verwindung, durchgehende ARCA-Schiene, Gewichtssystem und einfache Montage mit zwei Schrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-acc-premier-gen2-chassis-tikka-t1x-rimfire-rechts-charcoal/"
+},
+"34330": {
+"cats": [
+"Hinterschäfte / Stock",
+"MDT"
+],
+"images": 1,
+"name": "MDT Carbine to Fixed Stock Adapter Schwarz",
+"on_sale": false,
+"price": "6490",
+"regular": "6490",
+"short": "MDT Carbine to Fixed Stock Adapter: verbindet den MDT Skeleton Rifle Stock mit einem MDT Chassis für Carbine-Schäfte, in Sekunden montiert, verlängert die Schaftlänge um 0.75″.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-carbine-to-fixed-stock-adapter-schwarz/"
+},
+"34339": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 3,
+"name": "MDT Pistol Grip Carbon Fiber Schwarz",
+"on_sale": false,
+"price": "17990",
+"regular": "17990",
+"short": "MDT Pistolengriff aus Carbonfaser für MDT Chassis-Systeme und AR-15, mit integrierten Handballenwölbungen, für Rechts- und Linkshänder.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-pistol-grip-carbon-fiber-schwarz/"
+},
+"34340": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Picatinny Montageschiene 30 MOA Tikka T3x Schwarz",
+"on_sale": false,
+"price": "8490",
+"regular": "8490",
+"short": "MDT Picatinny-Montageschiene für Tikka T3x mit 30 MOA Vorneigung: aus 6061-T6-Aluminium, schwarz hart-eloxiert, mit profilierter Unterseite für eine bündige Montage auf dem System.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-picatinny-montageschiene-30-moa-tikka-t3x-schwarz/"
+},
+"34341": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 3,
+"name": "MDT Pistol Grip Premier Schwarz",
+"on_sale": false,
+"price": "2390",
+"regular": "2390",
+"short": "MDT Pistol Grip Premier in Schwarz: ergonomischer Pistolengriff für MDT Chassis-Systeme und AR-15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-pistol-grip-premier-schwarz/"
+},
+"34343": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port 5.56/6mm 1/2-28 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .224 (5.56 mm) und 6 mm, Gewinde 1/2-28: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-5-56-6mm-1-2-28-gruen/"
+},
+"34348": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port .308 5/8-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .308, Gewinde 5/8-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-308-5-8-24-gruen/"
+},
+"34349": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port 6.5mm 3/4-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. 6.5 mm, Gewinde 3/4-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-6-5mm-3-4-24-gruen/"
+},
+"34350": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port .308 3/4-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .308, Gewinde 3/4-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-308-3-4-24-gruen/"
+},
+"34351": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port 6.5mm 5/8-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. 6.5 mm, Gewinde 5/8-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-6-5mm-5-8-24-gruen/"
+},
+"34352": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port 5.56/6mm 5/8-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .224 (5.56 mm) und 6 mm, Gewinde 5/8-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-5-56-6mm-5-8-24-gruen/"
+},
+"34353": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port .338 5/8-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .338, Gewinde 5/8-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-338-5-8-24-gruen/"
+},
+"34354": {
+"cats": [
+"MDT",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "MDT Comp Mündungsbremse 4 Port .338 3/4-24 Grün",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT Comp Mündungsbremse mit 4 Ports für Kal. .338, Gewinde 3/4-24: maximale Rückstossreduktion, wenig Druckwelle für den Schützen und verstellbare Ports, aus nitriertem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-comp-muendungsbremse-4-port-338-3-4-24-gruen/"
+},
+"34356": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Accessory Ring Caps Elite 34mm Schwarz",
+"on_sale": false,
+"price": "4990",
+"regular": "4990",
+"short": "MDT Accessory Ring Caps für 34-mm-Ringe: Zubehör-Ringdeckel zur Befestigung von Schienen und Rotpunkt-Platten, passend für MDT One-Piece Montage und Elite Ringe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-accessory-ring-caps-elite-34mm-schwarz/"
+},
+"34357": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 4,
+"name": "MDT One-Piece Montage 35mm High Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 35-mm-Mittelrohre, Bauhöhe High, für Picatinny-Schienen: sehr stabile Plattform mit robustem Klemmsystem und integriertem Rückstossanschlag.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-35mm-high-schwarz/"
+},
+"34364": {
+"cats": [
+"Handschutz",
+"MDT"
+],
+"images": 3,
+"name": "MDT Control Points Rifle M-LOK Schwarz",
+"on_sale": false,
+"price": "14990",
+"regular": "14990",
+"short": "MDT Rifle Control Points für M-LOK: fester Referenzpunkt für die Unterstützungshand, mit Daumenauflage und V-Hull-Profil für mehr Kontrolle beim Schiessen ab der Auflage.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-control-points-rifle-m-lok-schwarz/"
+},
+"34368": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT Elite Zielfernrohrringe 30mm High Schwarz",
+"on_sale": false,
+"price": "35490",
+"regular": "35490",
+"short": "MDT Elite Zielfernrohrringe für 30-mm-Mittelrohre, Bauhöhe High (1.25″), für Picatinny: leicht und stabil, mit integrierter Libelle, nach STANAG 4694.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-elite-zielfernrohrringe-30mm-high-schwarz/"
+},
+"34369": {
+"cats": [
+"MDT",
+"Schiessauflagen / Support Bags"
+],
+"images": 3,
+"name": "MDT Support Bag Chunky Peanut Glasfüllung Grulla",
+"on_sale": false,
+"price": "13990",
+"regular": "13990",
+"short": "MDT Support Bag Chunky Peanut mit Glasfüllung: lange, schmale Schiessauflage aus gewachstem Canvas, ideal für PRS-Props und Barrikaden.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-support-bag-chunky-peanut-glasfuellung-grulla/"
+},
+"34374": {
+"cats": [
+"MDT",
+"Schiessauflagen / Support Bags"
+],
+"images": 5,
+"name": "MDT Renegade Ultra-Light Shooting Bag Olive Drab Green",
+"on_sale": false,
+"price": "10490",
+"regular": "10490",
+"short": "MDT Renegade Ultra-Light Shooting Bag in Olive Drab Green: ultraleichte Schiessauflage unter 57 g aus reissfestem Ripstop, ideal für die Bergjagd.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-renegade-ultra-light-shooting-bag-olive-drab-green/"
+},
+"34382": {
+"cats": [
+"MDT",
+"Schiessauflagen / Support Bags"
+],
+"images": 7,
+"name": "MDT Renegade Ultra-Light Shooting Bag Braun",
+"on_sale": false,
+"price": "10490",
+"regular": "10490",
+"short": "MDT Renegade Ultra-Light Shooting Bag in Braun: ultraleichte Schiessauflage unter 57 g aus reissfestem Ripstop, ideal für die Bergjagd.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-renegade-ultra-light-shooting-bag-braun/"
+},
+"34388": {
+"cats": [
+"MDT",
+"Schiessauflagen / Support Bags"
+],
+"images": 5,
+"name": "MDT Renegade Ultra-Light Shooting Bag Grau",
+"on_sale": false,
+"price": "10490",
+"regular": "10490",
+"short": "MDT Renegade Ultra-Light Shooting Bag in Grau: ultraleichte Schiessauflage unter 57 g aus reissfestem Ripstop, ideal für die Bergjagd.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-renegade-ultra-light-shooting-bag-grau/"
+},
+"34392": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT M-LOK auf V-Mount 90 Adapter Schwarz",
+"on_sale": false,
+"price": "3290",
+"regular": "3290",
+"short": "MDT Adapter M-LOK auf V-Mount 90: montiert das SEND iT GEN2 Level (V-Mount) direkt am M-LOK-Vorderschaft, aus eloxiertem Aluminium, nur ca. 14 g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-m-lok-auf-v-mount-90-adapter-schwarz/"
+},
+"34393": {
+"cats": [
+"Handschutz",
+"MDT"
+],
+"images": 1,
+"name": "MDT M-LOK Barricade Stop Round Face Schwarz",
+"on_sale": false,
+"price": "4990",
+"regular": "4990",
+"short": "MDT M-LOK Barricade Stop mit runder Kontaktfläche: stabile Auflage an Barrikaden und sanftes Schwenken, aus hart-eloxiertem Aluminium.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-m-lok-barricade-stop-round-face-schwarz/"
+},
+"34405": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 4,
+"name": "MDT Oryx Zweibein M-LOK Schwarz",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Oryx Zweibein mit M-LOK-Befestigung in Schwarz: Polymer-Beine, Einhandbedienung und griffige Gummifüsse für sicheren Halt.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-oryx-zweibein-m-lok-schwarz/"
+},
+"34406": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 2,
+"name": "MDT Oryx Zweibein M-LOK FDE",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Oryx Zweibein mit M-LOK-Befestigung in FDE: Polymer-Beine, Einhandbedienung und griffige Gummifüsse für sicheren Halt.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-oryx-zweibein-m-lok-fde/"
+},
+"34407": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 3,
+"name": "MDT Oryx Zweibein M-LOK Olive Drab Green",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Oryx Zweibein mit M-LOK-Befestigung in Olive Drab Green: Polymer-Beine, Einhandbedienung und griffige Gummifüsse für sicheren Halt.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-oryx-zweibein-m-lok-olive-drab-green/"
+},
+"34408": {
+"cats": [
+"Bipod / Zweibein",
+"MDT"
+],
+"images": 2,
+"name": "MDT Oryx Zweibein M-LOK Grau",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Oryx Zweibein mit M-LOK-Befestigung in Grau: Polymer-Beine, Einhandbedienung und griffige Gummifüsse für sicheren Halt.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-oryx-zweibein-m-lok-grau/"
+},
+"34415": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT One-Piece Montage 35mm Low Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 35-mm-Mittelrohre, Bauhöhe Low, für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-35mm-low-schwarz/"
+},
+"34420": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT One-Piece Montage 35mm Medium 1.34″ Schwarz",
+"on_sale": false,
+"price": "49990",
+"regular": "49990",
+"short": "MDT One-Piece Zielfernrohrmontage für 35-mm-Mittelrohre, Bauhöhe Medium (1.34″), für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-35mm-medium-1-34-schwarz/"
+},
+"34421": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT One-Piece Montage 35mm High 1.5″ Schwarz",
+"on_sale": false,
+"price": "49990",
+"regular": "49990",
+"short": "MDT One-Piece Zielfernrohrmontage für 35-mm-Mittelrohre, Bauhöhe High (1.5″), für Picatinny-Schienen: hohe Steifigkeit und Wiederholgenauigkeit, inklusive MDT Accessory Ring Caps.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-35mm-high-1-5-schwarz/"
+},
+"34422": {
+"cats": [
+"MDT",
+"Zubehör"
+],
+"images": 4,
+"name": "MDT CRUSH IT Stage Timer mit Picatinny-Halterung",
+"on_sale": false,
+"price": "31990",
+"regular": "31990",
+"short": "MDT CRUSH IT Stage Timer: frei programmierbarer Wettkampf-Timer mit Alarmpunkten, Stoppuhr und grafischer oder digitaler Anzeige, inklusive Picatinny-Halterung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-crush-it-stage-timer-mit-picatinny-halterung/"
+},
+"34429": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT Elite Zielfernrohrringe 34mm X-High Schwarz",
+"on_sale": false,
+"price": "35490",
+"regular": "35490",
+"short": "MDT Elite Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe X-High (1.50″), für Picatinny: leicht und stabil, mit integrierter Libelle, nach STANAG 4694.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-elite-zielfernrohrringe-34mm-x-high-schwarz/"
+},
+"34431": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 1,
+"name": "MDT Elite Zielfernrohrringe 34mm High Schwarz",
+"on_sale": false,
+"price": "35490",
+"regular": "35490",
+"short": "MDT Elite Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe High (1.25″), für Picatinny: leicht und stabil, mit integrierter Libelle, nach STANAG 4694.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-elite-zielfernrohrringe-34mm-high-schwarz/"
+},
+"34432": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 2,
+"name": "MDT Elite Zielfernrohrringe 34mm Medium Schwarz",
+"on_sale": false,
+"price": "35490",
+"regular": "35490",
+"short": "MDT Elite Zielfernrohrringe für 34-mm-Mittelrohre, Bauhöhe Medium (1.00″), für Picatinny: leicht und stabil, mit integrierter Libelle, nach STANAG 4694.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-elite-zielfernrohrringe-34mm-medium-schwarz/"
+},
+"34433": {
+"cats": [
+"Handschutz",
+"MDT"
+],
+"images": 1,
+"name": "MDT Interior Forend Gewichte ACC 5er-Pack Schwarz",
+"on_sale": false,
+"price": "21490",
+"regular": "21490",
+"short": "MDT Interior Forend Gewichte für das ACC Chassis, 5er-Pack: bis zu ca. 1180 g zusätzliches Gewicht im Vorderschaft, Montage ohne Ausbau des Systems.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-interior-forend-gewichte-acc-5er-pack-schwarz/"
+},
+"34444": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 5,
+"name": "MDT One-Piece Montage 30mm Low Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 30-mm-Mittelrohre, Bauhöhe Low: sehr stabile Plattform mit robustem Klemmsystem und integriertem Rückstossanschlag.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-30mm-low-schwarz/"
+},
+"34445": {
+"cats": [
+"MDT",
+"Montagen"
+],
+"images": 5,
+"name": "MDT One-Piece Montage 30mm Medium Schwarz",
+"on_sale": false,
+"price": "50990",
+"regular": "50990",
+"short": "MDT One-Piece Zielfernrohrmontage für 30-mm-Mittelrohre, Bauhöhe Medium: sehr stabile Plattform mit robustem Klemmsystem und integriertem Rückstossanschlag.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-one-piece-montage-30mm-medium-schwarz/"
 }
 }
