@@ -65708,7 +65708,7 @@
 "Bipod / Zweibein",
 "MDT"
 ],
-"images": 3,
+"images": 4,
 "name": "MDT GRND-POD Zweibein ARMS 17 Schwarz",
 "on_sale": false,
 "price": "25490",
@@ -65806,7 +65806,7 @@
 "MDT",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 4,
 "name": "MDT Hunt Mündungsbremse Magnum .338 5/8-24 Titan",
 "on_sale": false,
 "price": "27990",
@@ -65820,7 +65820,7 @@
 "MDT",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 4,
 "name": "MDT Hunt Mündungsbremse Standard .30 5/8-24 Titan",
 "on_sale": false,
 "price": "27990",
@@ -66095,6 +66095,34 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/mdt-vertical-grip-elite-ar-15-schwarz/"
 },
+"34315": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Elite AR Compatible Schwarz",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Vertical Grip Elite in der AR-kompatiblen Ausführung, Schwarz: laut MDT der derzeit am vielseitigsten verstellbare Griff für die AR-15-Griffschnittstelle, passend für Chassis-Gewehre und AR-10/15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-elite-ar-compatible-schwarz/"
+},
+"34316": {
+"cats": [
+"MDT",
+"Pistolengriffe"
+],
+"images": 1,
+"name": "MDT Vertical Grip Elite AR Compatible FDE",
+"on_sale": false,
+"price": "12490",
+"regular": "12490",
+"short": "MDT Vertical Grip Elite in der AR-kompatiblen Ausführung, FDE: laut MDT der derzeit am vielseitigsten verstellbare Griff für die AR-15-Griffschnittstelle, passend für Chassis-Gewehre und AR-10/15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/mdt-vertical-grip-elite-ar-compatible-fde/"
+},
 "34320": {
 "cats": [
 "MDT",
@@ -66198,7 +66226,7 @@
 "MDT",
 "Pistolengriffe"
 ],
-"images": 3,
+"images": 4,
 "name": "MDT Pistol Grip Premier Schwarz",
 "on_sale": false,
 "price": "2390",
@@ -66506,7 +66534,7 @@
 "Bipod / Zweibein",
 "MDT"
 ],
-"images": 2,
+"images": 3,
 "name": "MDT Oryx Zweibein M-LOK Grau",
 "on_sale": false,
 "price": "12490",
@@ -66548,7 +66576,7 @@
 "MDT",
 "Montagen"
 ],
-"images": 2,
+"images": 3,
 "name": "MDT One-Piece Montage 35mm High 1.5″ Schwarz",
 "on_sale": false,
 "price": "49990",
@@ -66682,5 +66710,33 @@
 "short": "Gebrauchtes N.E.D.I. AK-47 im Kaliber 7.62x39mm, Halbautomat mit Festschaft. Ausgezeichneter Zustand, erst ca. 50 Schuss geschossen. Mit 4 Magazinen. Einzelstück.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/n-e-d-i-ak-47-halbautomat-7-62x39mm-gebraucht-festschaft-mit-4-magazinen/"
+},
+"34462": {
+"cats": [
+"Chiappa",
+"Präzisionsgewehre"
+],
+"images": 2,
+"name": "Chiappa Little Badger Deluxe .22 LR Einzellader 18.5″ – 1/2×20, Swiss Edition mit Holzschaft",
+"on_sale": false,
+"price": "33490",
+"regular": "33490",
+"short": "Einschüssige Kleinkaliberbüchse im Kaliber .22 LR in der Swiss Edition: 47 cm Lauf mit Mündungsgewinde 1/2×20 und Holzschaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/chiappa-little-badger-deluxe-22-lr-einzellader-18-5-1-2x20-swiss-edition-mit-holzschaft/"
+},
+"34503": {
+"cats": [
+"Bond Arms",
+"Pistolen"
+],
+"images": 2,
+"name": "Bond Arms Roughneck Derringer 9mm Para 2.5″ Lauf",
+"on_sale": false,
+"price": "62490",
+"regular": "62490",
+"short": "Kompakter, doppelläufiger Derringer im Kaliber 9mm Para mit 2.5″ Lauf. Break-Open-Mechanismus, Rückprallhahn und Querbolzensicherung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bond-arms-roughneck-derringer-9mm-para-2-5-lauf/"
 }
 }
