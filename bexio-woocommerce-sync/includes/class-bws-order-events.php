@@ -255,7 +255,13 @@ class BWS_Order_Events {
 			} elseif ( 'refund' === $type ) {
 				self::send_refund( $order, (int) $value );
 			}
+			BWS_Retry::reset( self::HOOK_COMMENT, array( (int) $order_id, $type, $value ) );
 		} catch ( BWS_Exception $e ) {
+			$next = BWS_Retry::later( self::HOOK_COMMENT, array( (int) $order_id, $type, $value ), $e );
+			if ( $next ) {
+				bws_log( 'warning', sprintf( 'Bestellung #%s: bexio-Kommentar – %s – neuer Versuch um %s.', $order->get_order_number(), $e->getMessage(), wp_date( 'H:i', $next ) ) );
+				return;
+			}
 			bws_log( 'error', sprintf( 'Bestellung #%s: Kommentar in bexio fehlgeschlagen: %s', $order->get_order_number(), $e->getMessage() ) );
 			$order->add_order_note( 'bexio-Kommentar fehlgeschlagen: ' . $e->getMessage() );
 			throw $e;

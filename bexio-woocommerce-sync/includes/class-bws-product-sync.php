@@ -111,9 +111,15 @@ class BWS_Product_Sync {
 		}
 		try {
 			self::sync( $product );
+			BWS_Retry::reset( 'bws_sync_product', array( (int) $product_id ) );
 		} catch ( BWS_Exception $e ) {
-			bws_log( 'error', sprintf( 'Produkt #%d: %s', $product_id, $e->getMessage() ) );
 			update_post_meta( $product->get_id(), self::META_ERROR, $e->getMessage() );
+			$next = BWS_Retry::later( 'bws_sync_product', array( (int) $product_id ), $e );
+			if ( $next ) {
+				bws_log( 'warning', sprintf( 'Produkt #%d: %s – neuer Versuch um %s.', $product_id, $e->getMessage(), wp_date( 'H:i', $next ) ) );
+				return;
+			}
+			bws_log( 'error', sprintf( 'Produkt #%d: %s', $product_id, $e->getMessage() ) );
 			throw $e;
 		}
 	}

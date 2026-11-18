@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       bexio WooCommerce Sync
  * Description:       Überträgt Artikel und Bestellungen inkl. Besteller (Kontakt) von WooCommerce nach bexio übernimmt täglich den Lagerstatus und stündlich den Zahlungs-/Erledigt-Status aus bexio.
- * Version:           1.10.0
+ * Version:           1.10.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Requires Plugins:  woocommerce
@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BWS_VERSION', '1.10.0' );
+define( 'BWS_VERSION', '1.10.1' );
 define( 'BWS_FILE', __FILE__ );
 define( 'BWS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BWS_LOG_SOURCE', 'bexio-sync' );
@@ -21,6 +21,7 @@ define( 'BWS_AS_GROUP', 'bexio-sync' );
 
 require_once BWS_DIR . 'includes/class-bws-util.php';
 require_once BWS_DIR . 'includes/class-bws-exception.php';
+require_once BWS_DIR . 'includes/class-bws-retry.php';
 require_once BWS_DIR . 'includes/class-bws-settings.php';
 require_once BWS_DIR . 'includes/class-bws-client.php';
 require_once BWS_DIR . 'includes/class-bws-lookup.php';

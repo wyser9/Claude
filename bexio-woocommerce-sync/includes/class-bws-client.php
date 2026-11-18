@@ -128,7 +128,7 @@ class BWS_Client {
 					sleep( 2 ** $attempt );
 					continue;
 				}
-				throw new BWS_Exception( sprintf( 'bexio nicht erreichbar (%s %s): %s', $method, $path, $response->get_error_message() ) );
+				throw new BWS_Exception( sprintf( 'bexio nicht erreichbar (%s %s): %s', $method, $path, $response->get_error_message() ), 0, null, true );
 			}
 
 			$status = (int) wp_remote_retrieve_response_code( $response );
@@ -149,13 +149,17 @@ class BWS_Client {
 			if ( is_array( $data ) && ! empty( $data['errors'] ) ) {
 				$detail .= ' ' . wp_json_encode( $data['errors'] );
 			}
-			$hint = '';
-			if ( 401 === $status ) {
+			$hint        = '';
+			$maintenance = false !== stripos( (string) $detail, 'maintenance' ) || false !== stripos( (string) $detail, 'wartung' );
+			$temporary   = $maintenance || 429 === $status || $status >= 500;
+			if ( $maintenance ) {
+				$hint = ' – bexio ist gerade in Wartung.';
+			} elseif ( 401 === $status ) {
 				$hint = ' – API-Token ungültig oder abgelaufen.';
 			} elseif ( 403 === $status ) {
 				$hint = ' – fehlende Berechtigung (Scope) für diesen Bereich.';
 			}
-			throw new BWS_Exception( sprintf( 'bexio-Fehler %d bei %s %s: %s%s', $status, $method, $path, $detail, $hint ), $status, $data );
+			throw new BWS_Exception( sprintf( 'bexio-Fehler %d bei %s %s: %s%s', $status, $method, $path, $detail, $hint ), $status, $data, $temporary );
 		}
 
 		return $data;

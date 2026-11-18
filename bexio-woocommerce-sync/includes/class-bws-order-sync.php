@@ -64,9 +64,17 @@ class BWS_Order_Sync {
 		}
 		try {
 			self::sync( $order );
+			BWS_Retry::reset( 'bws_sync_order', array( (int) $order_id ) );
 		} catch ( BWS_Exception $e ) {
-			bws_log( 'error', sprintf( 'Bestellung #%s: %s', $order->get_order_number(), $e->getMessage() ) );
 			$order->update_meta_data( self::META_ERROR, $e->getMessage() );
+			$next = BWS_Retry::later( 'bws_sync_order', array( (int) $order_id ), $e );
+			if ( $next ) {
+				bws_log( 'warning', sprintf( 'Bestellung #%s: %s – neuer Versuch um %s.', $order->get_order_number(), $e->getMessage(), wp_date( 'H:i', $next ) ) );
+				$order->add_order_note( sprintf( 'bexio vorübergehend nicht verfügbar (%s). Neuer Versuch automatisch um %s Uhr.', $e->getMessage(), wp_date( 'H:i', $next ) ) );
+				$order->save();
+				return;
+			}
+			bws_log( 'error', sprintf( 'Bestellung #%s: %s', $order->get_order_number(), $e->getMessage() ) );
 			$order->add_order_note( 'bexio-Übertragung fehlgeschlagen: ' . $e->getMessage() );
 			$order->save();
 			throw $e;

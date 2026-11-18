@@ -161,6 +161,8 @@ Sofort prüfen: Knopf **„Jetzt prüfen (Warn-Mail)“** oder `wp bexio health`
 - Auch per `wp bexio twint <datei.csv>`.
 
 ## Fehler & Protokoll
+Ist bexio vorübergehend nicht erreichbar (Wartung, Überlastung, Netzwerk), gibt das Plugin nicht auf, sondern versucht es automatisch erneut: nach 10 und 30 Minuten, dann nach 1, 2, 4 und 8 Stunden. Die Bestellung erhält dazu eine Notiz mit dem Zeitpunkt des nächsten Versuchs. Erst wenn alle Versuche scheitern, gilt der Job als fehlgeschlagen und erscheint in der Warn-Mail. Das gilt für Bestellungen, Artikel und Kommentare (Sendungsnummer, Storno, Rückerstattung). Fehler in den Daten (z. B. fehlende Artikelnummer) werden nicht wiederholt.
+
 - Log: *WooCommerce → Status → Logs*, Quelle **bexio-sync**
 - Hintergrund-Jobs: *WooCommerce → Status → Geplante Aktionen*, Gruppe **bexio-sync**. Fehlgeschlagene Jobs lassen sich dort erneut ausführen.
 - Fehler bei Bestellungen erscheinen zusätzlich als Bestellnotiz und in der bexio-Box der Bestellung.

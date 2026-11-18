@@ -15,6 +15,7 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	$body = isset( $args['body'] ) ? json_decode( $args['body'], true ) : null;
 	$GLOBALS['bws_requests'][] = array( $args['method'], $path, $body, $args['headers'] );
 	$m = $args['method'];
+	if ( ! empty( $GLOBALS['bws_maintenance'] ) ) return resp( array( 'error_code' => 403, 'message' => 'Scheduled maintenance in progress.' ), 403 );
 	if ( 'GET' === $m && '3.0/users/me' === $path ) return resp( array( 'id' => 7, 'firstname' => 'Max', 'lastname' => 'Muster', 'email' => 'm@x.ch' ) );
 	if ( 'GET' === $m && '3.0/taxes' === $path && false !== strpos( $url, 'pre_tax' ) ) return resp( array( array( 'id' => 21, 'code' => 'VM81', 'name' => 'VM81', 'value' => 8.1 ), array( 'id' => 22, 'code' => 'VM26', 'name' => 'VM26', 'value' => 2.6 ) ) );
 	if ( 'GET' === $m && '3.0/accounts' === $path ) return resp( array( array( 'id' => 43, 'account_no' => '3200', 'name' => 'Handelserlös' ), array( 'id' => 42, 'account_no' => '4200', 'name' => 'Einkauf Handelsware' ) ) );
@@ -697,6 +698,30 @@ t( 'Storno-Mail an Shop', 1 === count( $bws_mails() ) && 'shop@armatum.ch' === $
 t( 'Storno: sonst nichts in bexio geändert', 1 === count( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'GET' !== $r[0]; } ) ), wp_json_encode( wp_list_pluck( $GLOBALS['bws_requests'], 1 ) ) );
 BWS_Order_Events::run_comment_job( $ox->get_id(), 'cancelled', '' );
 t( 'Storno nur einmal gemeldet', 1 === count( $comments() ) && 1 === count( $bws_mails() ) );
+
+// Wartung bei bexio: automatisch später erneut versuchen.
+$om = $mk( 'processing', 0 ); $om->delete_meta_data( BWS_Order_Sync::META_ORDER_ID ); $om->set_billing_email( 'wartung@muster.ch' ); $om->save();
+as_unschedule_all_actions( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP );
+$GLOBALS['bws_maintenance'] = true;
+$thrown = false;
+try { BWS_Order_Sync::run_job( $om->get_id() ); } catch ( Exception $e ) { $thrown = true; }
+$next = as_next_scheduled_action( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP );
+$om = wc_get_order( $om->get_id() );
+t( 'Wartung: kein Fehlschlag, sondern neuer Versuch eingeplant', ! $thrown && is_int( $next ) && $next > time() + 500 && $next < time() + 700, var_export( $next, true ) );
+t( 'Wartung: Notiz mit Zeitpunkt, Hinweis „Wartung“ statt „Scope“', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $om->get_id() ) ), 'content' ), JSON_UNESCAPED_UNICODE ), 'Neuer Versuch automatisch' ) && false !== strpos( $om->get_meta( BWS_Order_Sync::META_ERROR ), 'Wartung' ) && false === strpos( $om->get_meta( BWS_Order_Sync::META_ERROR ), 'Scope' ), $om->get_meta( BWS_Order_Sync::META_ERROR ) );
+as_unschedule_all_actions( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP );
+try { BWS_Order_Sync::run_job( $om->get_id() ); } catch ( Exception $e ) {}
+$next2 = as_next_scheduled_action( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP );
+t( 'Wartung: zweiter Versuch nach 30 Minuten', is_int( $next2 ) && $next2 > time() + 1700, var_export( $next2, true ) );
+for ( $k = 2; $k < count( BWS_Retry::DELAYS ); $k++ ) { as_unschedule_all_actions( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP ); try { BWS_Order_Sync::run_job( $om->get_id() ); } catch ( Exception $e ) {} }
+as_unschedule_all_actions( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP );
+$thrown = false;
+try { BWS_Order_Sync::run_job( $om->get_id() ); } catch ( Exception $e ) { $thrown = true; }
+t( 'Wartung: nach allen Versuchen endgültig fehlgeschlagen', $thrown && false === as_next_scheduled_action( 'bws_sync_order', array( $om->get_id() ), BWS_AS_GROUP ) );
+$GLOBALS['bws_maintenance'] = false;
+BWS_Order_Sync::run_job( $om->get_id() );
+t( 'Nach der Wartung: Bestellung übertragen', (bool) wc_get_order( $om->get_id() )->get_meta( BWS_Order_Sync::META_ORDER_ID ) );
+t( 'Fehler mit falschen Daten werden nicht wiederholt', ! ( new BWS_Exception( 'Produkt hat keine Artikelnummer (SKU).' ) )->is_temporary() && ( new BWS_Exception( 'x', 503, null, true ) )->is_temporary() );
 
 // Rückerstattung.
 $GLOBALS['bws_requests'] = array(); $GLOBALS['bws_mails'] = array();
