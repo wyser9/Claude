@@ -927,9 +927,9 @@
 ],
 "images": 1,
 "name": "Stoeger Pump Action P3000 Synthetic Tactical",
-"on_sale": true,
+"on_sale": false,
 "price": "39900",
-"regular": "41300",
+"regular": "39900",
 "short": "Die Vorderschaftrepetierflinte P3000 von Stoeger , Gewinner des „Great Buy“-Awards 2016 der Zeitschrift Outdoor Life, setzt neue Standards in Sachen Zuverlässigkeit, und das zu einem Preis, der Ihren Geldbeutel schont. Diese Vorderschaftrepetierflinte von Stoeger managt zuverlässige alle 12-Kaliber-",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/stoeger-pump-action-p3000-tactical/"
@@ -7537,7 +7537,7 @@
 "price": "6590",
 "regular": "6590",
 "short": "Der Tikka Ace Bagrider sorgt für maximale Stabilität und Kontrolle beim Distanzschiessen. Ideal für Rear Bags und Long-Range-Anwendungen.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/tikka-ace-bagrider-optimale-stabilitaet-fuer-praezisionsschuetzen/"
 },
 "17777": {
@@ -61635,20 +61635,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/dpm-systems-recoil-reduction-system-fuer-springfield-echelon-4-5-5-28/"
 },
-"32023": {
-"cats": [
-"Gebrauchtwaffen / Occasionen",
-"Pistolen"
-],
-"images": 3,
-"name": "Beretta Mod. 70 Pistole 7.65 mm Browning gebraucht, zweifarbig",
-"on_sale": false,
-"price": "24900",
-"regular": "24900",
-"short": "Gebrauchte Beretta Mod. 70 im Kaliber 7.65 mm Browning (.32 ACP) mit grauem Rahmen und schwarzem Schlitten. Technisch in Ordnung, Zustand gemäss Bildern. Einzelstück.",
-"stock": "in-stock",
-"url": "https://armatum.ch/produkt/beretta-mod-70-pistole-7-65-mm-browning-gebraucht-zweifarbig/"
-},
 "32034": {
 "cats": [
 "Gebrauchtwaffen / Occasionen",
@@ -66738,5 +66724,495 @@
 "short": "Kompakter, doppelläufiger Derringer im Kaliber 9mm Para mit 2.5″ Lauf. Break-Open-Mechanismus, Rückprallhahn und Querbolzensicherung.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bond-arms-roughneck-derringer-9mm-para-2-5-lauf/"
+},
+"34510": {
+"cats": [
+"Area 419",
+"Werkzeuge"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Wrench Montageschlüssel",
+"on_sale": false,
+"price": "3980",
+"regular": "3980",
+"short": "Montageschlüssel für HELLFIRE Suppressor Mounts Aus 6061-T6 Aluminium gefräst, robust und langlebig Mit integriertem Flaschenöffner Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-wrench-montageschluessel/"
+},
+"34513": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse 6mm (.22-6mm) 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "32480",
+"regular": "32480",
+"short": "4-Port-Mündungsbremse für Kaliber .22 bis 6mm (.243) Optimale Rückstoss- und Mündungshochschlagkontrolle ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl, Finish Black Nitride, Gewinde 5/8-24 Made in ",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-6mm-22-6mm-5-8-24-black-nitride/"
+},
+"34514": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 4,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "18500",
+"regular": "18500",
+"short": "4-Port-Mündungsbremse für Kaliber .25 bis 6.5mm Optimale Rückstoss- und Mündungshochschlagkontrolle ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl, Finish Black Nitride, Gewinde 5/8-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-6-5mm-25-6-5mm-5-8-24-black-nitride/"
+},
+"34515": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "18500",
+"regular": "18500",
+"short": "4-Port-Mündungsbremse für Kaliber 7mm (.284) bis .30 (.308) Optimale Rückstoss- und Mündungshochschlagkontrolle ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl, Finish Black Nitride, Gewinde 5/8-24 M",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-30-kaliber-7mm-30-5-8-24-black-nitride/"
+},
+"34516": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse 6mm (.22-6mm) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "32480",
+"regular": "32480",
+"short": "4-Port-Mündungsbremse für Kaliber .22 bis 6mm (.243) Optimale Rückstoss- und Mündungshochschlagkontrolle ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl blank (Stainless), Gewinde 5/8-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-6mm-22-6mm-5-8-24-edelstahl/"
+},
+"34517": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "32480",
+"regular": "32480",
+"short": "4-Port-Mündungsbremse für Kaliber .25 bis 6.5mm Optimale Rückstoss- und Mündungshochschlagkontrolle ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl blank (Stainless), Gewinde 5/8-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-6-5mm-25-6-5mm-5-8-24-edelstahl/"
+},
+"34528": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE MATCH Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "32480",
+"regular": "32480",
+"short": "4-Port-Mündungsbremse für Kaliber 7mm (.284) bis .30 (.308) Weicherer Rückstoss und flacherer Mündungshochschlag ohne zusätzlichen Schalldruck an der Schützenposition Patentiertes HELLFIRE Self-Timing-System, kompatibel mit HELLFIRE Universal Adapters Edelstahl blank (Stainless), Gewinde 5/8-24 Made",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-match-muendungsbremse-30-kaliber-7mm-30-5-8-24-edelstahl/"
+},
+"34535": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "27480",
+"regular": "27480",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber .25 bis 6.5mm Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl blank, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-6-5mm-25-6-5mm-5-8-24-edelstahl/"
+},
+"34557": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE Mündungsbremse 6mm (.22-6mm) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "27480",
+"regular": "27480",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber .22 bis 6mm (.243) Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl blank, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-6mm-22-6mm-5-8-24-edelstahl/"
+},
+"34558": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "27480",
+"regular": "27480",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber 7mm (.284) bis .30 (.308) Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl blank, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-30-kaliber-7mm-30-5-8-24-edelstahl/"
+},
+"34559": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Mattschwarz",
+"on_sale": false,
+"price": "15000",
+"regular": "15000",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber 7mm (.284) bis .30 (.308) Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl mattschwarz, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-30-kaliber-7mm-30-5-8-24-mattschwarz/"
+},
+"34560": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Mündungsbremse 6mm (.22-6mm) 5/8-24 Mattschwarz",
+"on_sale": false,
+"price": "15000",
+"regular": "15000",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber .22 bis 6mm (.243) Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl mattschwarz, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-6mm-22-6mm-5-8-24-mattschwarz/"
+},
+"34561": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Mattschwarz",
+"on_sale": false,
+"price": "15000",
+"regular": "15000",
+"short": "Selbstausrichtende Mündungsbremse für Kaliber .25 bis 6.5mm Reduziert den Rückstoss und verbessert die Kontrolle Unabhängiger Klemmring: Ports ohne Unterlegscheiben ausrichten Treffpunktlage bleibt nach Montage oder Demontage erhalten Edelstahl mattschwarz, Gewinde 5/8-24, Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-muendungsbremse-6-5mm-25-6-5mm-5-8-24-mattschwarz/"
+},
+"34583": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Universal Adapter 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "5000",
+"regular": "5000",
+"short": "Universal Adapter für Laufgewinde 5/8-24 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-5-8-24-black-nitride/"
+},
+"34584": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Universal Adapter 1/2-28 Black Nitride",
+"on_sale": false,
+"price": "5000",
+"regular": "5000",
+"short": "Universal Adapter für Laufgewinde 1/2-28 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-1-2-28-black-nitride/"
+},
+"34585": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Universal Adapter 3/4-24 Black Nitride",
+"on_sale": false,
+"price": "7480",
+"regular": "7480",
+"short": "Universal Adapter für Laufgewinde 3/4-24 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-3-4-24-black-nitride/"
+},
+"34586": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Universal Adapter 5/8-32 Black Nitride",
+"on_sale": false,
+"price": "6980",
+"regular": "6980",
+"short": "Universal Adapter für Laufgewinde 5/8-32 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-5-8-32-black-nitride/"
+},
+"34587": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Universal Adapter 9/16-24 Black Nitride",
+"on_sale": false,
+"price": "6980",
+"regular": "6980",
+"short": "Universal Adapter für Laufgewinde 9/16-24 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-9-16-24-black-nitride/"
+},
+"34588": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Universal Adapter M18x1 Black Nitride",
+"on_sale": false,
+"price": "5000",
+"regular": "5000",
+"short": "Universal Adapter für Laufgewinde M18x1 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-m18x1-black-nitride/"
+},
+"34589": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Universal Adapter M18x1.5 Black Nitride",
+"on_sale": false,
+"price": "5000",
+"regular": "5000",
+"short": "Universal Adapter für Laufgewinde M18x1.5 Für Area 419 HELLFIRE Mündungsbremsen und Suppressor-Adapter Konische Auflagefläche für präzise Ausrichtung CNC-gefräster Edelstahl, Black Nitride Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-universal-adapter-m18x1-5-black-nitride/"
+},
+"34592": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 2,
+"name": "Area 419 HELLFIRE Taper & Thread Protector Gewindeschutz",
+"on_sale": false,
+"price": "5480",
+"regular": "5480",
+"short": "Gewinde- und Konusschutz für Area 419 HELLFIRE Universal Adapter Schützt Gewinde und konische Auflagefläche, wenn keine Bremse montiert ist Präzise Passform, aus 6061-T6 Aluminium Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-taper-thread-protector-gewindeschutz/"
+},
+"34598": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE 2P Mündungsbremse 6mm (.22-6mm) 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "13000",
+"regular": "13000",
+"short": "Mündungsbremse für Halbautomaten und Jagdwaffen mit Läufen bis 20″ Kaliber .22 bis 6mm (.243), Gewinde 5/8-24 Self-Timing: gerändelte Mutter, Ausrichtung ohne Werkzeug 17-4PH Edelstahl, wärmebehandelt, Black Nitride 100 % Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-2p-muendungsbremse-6mm-22-6mm-5-8-24-black-nitride/"
+},
+"34605": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE 2P Mündungsbremse .30 Kaliber (6.5mm-.30) 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "13000",
+"regular": "13000",
+"short": "Mündungsbremse für Halbautomaten und Jagdwaffen mit Läufen bis 20″ Kaliber 6.5mm bis .30 (.308), Gewinde 5/8-24 Self-Timing: gerändelte Mutter, Ausrichtung ohne Werkzeug 17-4PH Edelstahl, wärmebehandelt, Black Nitride 100 % Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-2p-muendungsbremse-30-kaliber-6-5mm-30-5-8-24-black-nitride/"
+},
+"34615": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE 2P Mündungsbremse 9mm 1/2-28 Black Nitride",
+"on_sale": false,
+"price": "23480",
+"regular": "23480",
+"short": "Mündungsbremse für 9mm-Halbautomaten (.355-.356) mit Läufen bis 20″ Gewinde 1/2-28 Self-Timing: gerändelte Mutter, Ausrichtung ohne Werkzeug 17-4PH Edelstahl, wärmebehandelt, Black Nitride 100 % Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-2p-muendungsbremse-9mm-1-2-28-black-nitride/"
+},
+"34618": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Linear Flash Suppressor Linearkompensator 5/8-24 Black Nitride",
+"on_sale": false,
+"price": "13500",
+"regular": "13500",
+"short": "Linearer Mündungsfeuerdämpfer: lenkt Mündungsfeuer und Druckwelle nach vorne Weniger Knall für Schütze und Nachbarn, kein aufgewirbelter Staub in Bauchlage .45-Bohrung, passend für Kaliber bis .458 SOCOM 17-4PH Edelstahl, Black Nitride, Gewinde 5/8-24 Kompatibel mit allen HELLFIRE Universal Adapters",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-linear-flash-suppressor-linearkompensator-5-8-24-black-nitride/"
+},
+"34619": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Area 419 HELLFIRE Linear Flash Suppressor Linearkompensator 1/2-28 Black Nitride",
+"on_sale": false,
+"price": "13500",
+"regular": "13500",
+"short": "Linearer Mündungsfeuerdämpfer: lenkt Mündungsfeuer und Druckwelle nach vorne Weniger Knall für Schütze und Nachbarn, kein aufgewirbelter Staub in Bauchlage .45-Bohrung, passend für Kaliber bis .458 SOCOM 17-4PH Edelstahl, Black Nitride, Gewinde 1/2-28 Kompatibel mit allen HELLFIRE Universal Adapters",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-linear-flash-suppressor-linearkompensator-1-2-28-black-nitride/"
+},
+"34631": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 3,
+"name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .30 und kleiner Grau",
+"on_sale": false,
+"price": "31980",
+"regular": "31980",
+"short": "Self-Timing-Mündungsbremse aus Grade 5 Titan (6Al-4V) für Jagd- und Matchgewehre Für Kaliber .30 und kleiner (.308, .300 Win Mag, 7mm, 6.5mm usw.) 30 % leichter als die HELLFIRE OG, 27 % mehr Bremsfläche Edelstahl-Klemmring, graue Titananodisierung Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-ti-muendungsbremse-titan-30-und-kleiner-grau/"
+},
+"34632": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 4,
+"name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .40 und kleiner Grau",
+"on_sale": false,
+"price": "33980",
+"regular": "33980",
+"short": "Self-Timing-Mündungsbremse aus Grade 5 Titan (6Al-4V) für Jagd- und Matchgewehre Für Kaliber .40 und kleiner (grösser als .30, z.B. .338er, .357/9mm) 30 % leichter als die HELLFIRE OG, 27 % mehr Bremsfläche Edelstahl-Klemmring, graue Titananodisierung Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-ti-muendungsbremse-titan-40-und-kleiner-grau/"
+},
+"34633": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 4,
+"name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .50 und kleiner Grau",
+"on_sale": false,
+"price": "33980",
+"regular": "33980",
+"short": "Self-Timing-Mündungsbremse aus Grade 5 Titan (6Al-4V) für Jagd- und Matchgewehre Für Kaliber .50 und kleiner (grösser als .40, z.B. .458er, .45-70, .450 Bushmaster, .50 Beowulf), nicht für .50 BMG 30 % leichter als die HELLFIRE OG, 27 % mehr Bremsfläche Edelstahl-Klemmring, graue Titananodisierung M",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-hellfire-ti-muendungsbremse-titan-50-und-kleiner-grau/"
+},
+"34718": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 3,
+"name": "Area 419 Sidewinder Thread & Taper Protector Gewindeschutz",
+"on_sale": false,
+"price": "5480",
+"regular": "5480",
+"short": "Gewinde- und Konusschutz für das Area 419 Sidewinder System Schützt die Auflagefläche, wenn keine Bremse und kein Schalldämpfer montiert ist Schwarz nitriert, Beschichtung gegen Festfressen",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-thread-taper-protector-gewindeschutz/"
+},
+"34719": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Area 419 Sidewinder Magnum Mündungsbremse .338 3/4-24 Mattschwarz",
+"on_sale": false,
+"price": "18000",
+"regular": "18000",
+"short": "Magnum-Mündungsbremse für Kaliber .338 Montage ohne Shims und ohne aufwendiges Timing Unabhängig drehbare Mutter zum Ausrichten der Ports 17-4PH Edelstahl, wärmebehandelt, Matte Black, Gewinde 3/4-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-magnum-muendungsbremse-338-3-4-24-mattschwarz/"
+},
+"34720": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Area 419 Sidewinder Magnum Mündungsbremse .22-.30 5/8-24 Mattschwarz",
+"on_sale": false,
+"price": "18000",
+"regular": "18000",
+"short": "Magnum-Mündungsbremse für Kaliber .22 bis .30 Montage ohne Shims und ohne aufwendiges Timing Unabhängig drehbare Mutter zum Ausrichten der Ports 17-4PH Edelstahl, wärmebehandelt, Matte Black, Gewinde 5/8-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-magnum-muendungsbremse-22-30-5-8-24-mattschwarz/"
+},
+"34721": {
+"cats": [
+"Area 419",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Area 419 Sidewinder Magnum Mündungsbremse .22-.30 5/8-24 Edelstahl",
+"on_sale": false,
+"price": "31480",
+"regular": "31480",
+"short": "Magnum-Mündungsbremse für Kaliber .22 bis .30 Montage ohne Shims und ohne aufwendiges Timing Unabhängig drehbare Mutter zum Ausrichten der Ports 17-4PH Edelstahl, wärmebehandelt, Stainless (Edelstahl blank), Gewinde 5/8-24 Made in USA",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-magnum-muendungsbremse-22-30-5-8-24-edelstahl/"
+},
+"34722": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 3,
+"name": "Area 419 Sidewinder Universal Adapter 5/8-24",
+"on_sale": false,
+"price": "7980",
+"regular": "7980",
+"short": "Universal Adapter für Area 419 Sidewinder Bremsen, Laufgewinde 5/8-24 Bremse ohne Werkzeug zwischen mehreren Waffen wechseln Konische Auflage für präzise Ausrichtung, kein Verlust der Treffpunktlage Edelstahl mattschwarz, ohne Bremse geliefert",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-universal-adapter-5-8-24/"
+},
+"34723": {
+"cats": [
+"Adapter",
+"Area 419"
+],
+"images": 3,
+"name": "Area 419 Sidewinder Universal Adapter M18x1",
+"on_sale": false,
+"price": "7980",
+"regular": "7980",
+"short": "Universal Adapter für Area 419 Sidewinder Bremsen, Laufgewinde M18x1 Bremse ohne Werkzeug zwischen mehreren Waffen wechseln Konische Auflage für präzise Ausrichtung, kein Verlust der Treffpunktlage Edelstahl mattschwarz, ohne Bremse geliefert",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/area-419-sidewinder-universal-adapter-m18x1/"
 }
 }
