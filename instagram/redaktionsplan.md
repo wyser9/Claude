@@ -1294,3 +1294,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-17 | Inhaber: Bio-Link auf armatum.ch/insta umgestellt. Ab jetzt Caption-Schluss «🔗 Produkt: Link in der Bio → armatum.ch/insta» (Regel 4f). |
 | 2026-11-18 | Story «Morgen geschlossen (19.11.)» (04-morgen-19) veröffentlicht ca. 18:01, WhatsApp-Bild an Inhaber. |
 | 2026-11-19 | Story «Heute geschlossen (19.11.)» (05-heute-19) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine Heute-offen-Story, keine Foto-Erinnerung. |
+| 2026-11-19 | Facebook-Seite «Armatum GmbH» verbunden (Regel 4g). #29 CZ TS 2 Orange auf Facebook nachgeholt: Post 130239823495660_122327106242032290 (6 Bilder, Direktlink zum Produkt). |
