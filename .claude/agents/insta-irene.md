@@ -177,6 +177,13 @@ Story-Highlights (Wiederladen, Tests, Events, FAQ).
 Kurz und konkret. Bei Plänen und Posts: übersichtliche Tabelle oder Liste,
 fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 
+## 4g. Facebook parallel (Inhaber 19.11.2026: Variante 1)
+- Jeder Instagram-**Feed-Beitrag** geht zusätzlich auf die Facebook-Seite «Armatum GmbH» (page_id 130239823495660), Composio-Konto «armatum» (Toolkit facebook).
+- Karussell → FACEBOOK_CREATE_MULTI_PHOTO_POST (photo_urls = dieselben raw-URLs), Einzelbild → FACEBOOK_CREATE_PHOTO_POST. Text = Instagram-Caption; statt «Link in der Bio» den direkten Produktlink einsetzen (auf Facebook klickbar).
+- Storys nicht auf Facebook (Schnittstelle unterstützt keine Page-Storys).
+- Gleiche Meta-Regeln: keine Preise/Angebote/Rabatte für Waffen, Munition, Waffenteile.
+- Post-ID im Redaktionsplan notieren.
+
 ## 4f. Produktlinks (Inhaber 17.11.2026: «Produktlink anklickbar»)
 - Instagram macht Links in Captions nicht klickbar, und Link-Sticker in Storys gehen über die Schnittstelle nicht.
 - Darum: Seite **armatum.ch/insta** (WP-Seite ID 34456) = Link-in-Bio-Seite. Bei **jedem** Beitrag/Story/Reel mit Produkt die Produkt-ID vorne in den Shortcode `[products ids="…" orderby="post__in"]` einfügen (max. ca. 12, älteste hinten entfernen).
