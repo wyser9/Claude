@@ -105,6 +105,15 @@
 		return html + '</div>';
 	};
 
+	/** Pistole: Optik-Schritt heisst «Rotpunkt» (nur Rotpunkte, direkt oder mit Adapterplatte). */
+	Konfigurator.prototype.isPistol = function () {
+		return this.cfg.weapon && this.cfg.weapon.art === 'pistole';
+	};
+
+	Konfigurator.prototype.noneOptic = function () {
+		return this.isPistol() ? 'Kein Rotpunkt' : NONE.optik;
+	};
+
 	Konfigurator.prototype.step = function (key, title, inner, open) {
 		return '<details class="ak-step" data-group="' + esc(key) + '"' + (open ? ' open' : '') + '>' +
 			'<summary><span class="ak-step-title">' + esc(title) + '</span><span class="ak-step-choice"></span></summary>' +
@@ -114,12 +123,14 @@
 	Konfigurator.prototype.renderSteps = function () {
 		var self = this;
 		var html = '';
+		var pistol = this.isPistol();
 		if (this.cfg.optics.length) {
-			var list = this.noneCard('ak_optic', NONE.optik);
+			var list = this.noneCard('ak_optic', this.noneOptic());
 			$.each(this.cfg.optics, function (_, o) {
-				list += self.card(o, 'ak_optic', o.direct ? 'direkt auf Schiene' : 'Mittelrohr ' + o.tube + 'mm');
+				var sub = o.mounts && o.mounts.length ? 'mit Adapterplatte' : (pistol ? 'direkt auf Schlitten' : 'direkt auf Schiene');
+				list += self.card(o, 'ak_optic', o.direct ? sub : 'Mittelrohr ' + o.tube + 'mm');
 			});
-			html += this.step('optik', 'Optik', this.filterBar(this.cfg.optics) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
+			html += this.step('optik', pistol ? 'Rotpunkt' : 'Optik', this.filterBar(this.cfg.optics) + '<div class="ak-list" role="radiogroup">' + list + '</div>' +
 				'<div class="ak-step-mount" hidden><h4>Montage</h4><div class="ak-list ak-mounts" role="radiogroup"></div></div>' +
 				'<div class="ak-step-mag" hidden><h4>Magnifier dazu?</h4><div class="ak-list ak-mags" role="radiogroup"></div>' +
 				'<div class="ak-step-magmount" hidden><h4>Halterung für den Magnifier</h4><div class="ak-list ak-magmounts" role="radiogroup"></div></div></div>', true);
@@ -375,7 +386,7 @@
 			var key = $(this).data('group');
 			var text;
 			if (key === 'optik') {
-				text = self.optic ? self.optic.name + (self.mount ? ' + ' + self.mount.name : '') + (self.mag ? ' + ' + self.mag.name : '') : NONE.optik;
+				text = self.optic ? self.optic.name + (self.mount ? ' + ' + self.mount.name : '') + (self.mag ? ' + ' + self.mag.name : '') : self.noneOptic();
 			} else {
 				var g = self.group(key);
 				text = self.parts[key] ? self.parts[key].name + (self.rails[key] ? ' + ' + self.rails[key].name : '') : (NONE[key] || 'Kein ' + (g ? g.label : ''));

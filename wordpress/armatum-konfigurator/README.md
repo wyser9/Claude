@@ -135,3 +135,12 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 - **Einmessen:** Schräge Bilder (Hinweis «wohl keine gerade Seitenansicht») oder nicht lesbare Bilder werden automatisch durch das geradeste Galeriebild ersetzt (gespeichert als Vorschaubild). Produkte, die eingemessen, aber nicht vollständig eingerichtet sind, werden nicht mehr als «Schon eingemessen» übersprungen.
 - **Kategorien zuordnen:** neue Ziele «Montage nur für Magnifier», «Adapterplatte», «Magnifier mit Halterung», «Magnifier ohne Halterung».
 - **REST:** `set` kennt zusätzlich `montage_art`, `achshoehe`, `rail_front`, `rail_rear` (Punkt «x,y»). `status` zeigt `montage_art`, `achshoehe`, `axis_height`.
+
+## Neu in 1.0
+
+- **Waffenart Pistole / Langwaffe:** Feld «Waffenart» an der Waffe (leer = automatisch aus der Kategorie: Pistole/Revolver, sonst Langwaffe). Die Waffenauswahl zeigt Reiter «Langwaffen» und «Pistolen» (`?art=pistole`), sobald es beide gibt. Bei Pistolen heisst der Schritt «Rotpunkt»: nur Rotpunkte (direkt auf den Optik-Schnitt oder über eine Adapterplatte), keine Zielfernrohre und Magnifier. Mündung = Laufgewinde (Kompensator, Adapter), Unterschiene = Lampe.
+- **Plattformen:** Feld «Plattform» (ar15, ar10, ak, repetierer, pistole, flinte, andere). Waffe: eine Plattform. Teil: eine oder mehrere, leer = passt auf alle. Ein Teil mit Plattform erscheint nur bei Waffen dieser Plattform.
+- **Kaliber-Prüfung:** Mündungsteile passen nur, wenn ihr Kaliber (Bohrung) mindestens so gross ist wie das der Waffe. Kaliber aus Feld «Kaliber», sonst Attribut «Kaliber», sonst Produktname (.308, 6.5 Creedmoor, .30 cal, 9mm …). Unbekannt = keine Einschränkung.
+- **Achshöhe von Hand bei Montagen:** überschreibt die Bildmessung (bei Schrägbildern oft zu hoch). Status zeigt «von Hand» oder «gemessen».
+- **Vorbelegung aus Attributen:** Schnittstelle, Ausgang, Mündungsgewinde der Waffe und Kaliber zeigen im Produkt-Editor als Platzhalter, was das Plugin aus den Attributen nimmt. Schienenteile nehmen die Schnittstelle aus dem Attribut «Montage» (Picatinny, M-LOK), wenn das Feld leer ist.
+- **REST ak/v1/setup:** setzt jetzt auch Bildpunkte (anchor, p1, p2, tube_anchor, bottom, muzzle_device_anchor, slot_*_anchor als «x,y»), Steckplätze slot_*_if, muzzle_device_if, ref_mm, gesperrt, waffenart, plattform, kaliber. Der Status liefert Steckplätze, Punkte mit Bildgrösse, Waffenart, Plattform, Kaliber und gemessene Achshöhe.

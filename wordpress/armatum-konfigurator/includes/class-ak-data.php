@@ -28,6 +28,46 @@ class AK_Data {
 		'footprint' => 'Adapterplatte / Erhöhung für Rotpunkt (Schiene auf Footprint)',
 	);
 
+	/** Waffenarten: bestimmen die Auswahl im Konfigurator (Pistolen: Rotpunkt mit Footprint, Lauf, Unterschiene). */
+	const WEAPON_TYPES = array(
+		'langwaffe' => 'Langwaffe',
+		'pistole'   => 'Pistole',
+	);
+
+	/** Plattformen (Waffe: eine, Teil: eine oder mehrere, leer = passt auf alle). */
+	const PLATFORMS = array(
+		'ar15'   => 'AR-15 / M4',
+		'ar10'   => 'AR-10 / SR-25',
+		'ak'     => 'AK (Kalaschnikow)',
+		'repetierer' => 'Repetierer (Bolt Action)',
+		'pistole'    => 'Pistole',
+		'flinte'     => 'Flinte',
+		'andere'     => 'andere',
+	);
+
+	/**
+	 * Geschossdurchmesser in mm je Kaliber-Schreibweise (Reihenfolge egal, es gilt der grösste Treffer).
+	 * Mündungsteile passen nur, wenn ihre Bohrung mindestens so gross ist wie das Kaliber der Waffe.
+	 */
+	const CALIBERS = array(
+		'/\.50\b|\.50\s*bmg|12[.,]7\s*x/i'                                  => 12.95,
+		'/\.45\b|\.45\s*acp|11[.,]43/i'                                      => 11.5,
+		'/\.416\b/i'                                                             => 10.6,
+		'/\.40\b|\.40\s*s\s*&?\s*w|\b10\s*mm\b|10x25/i'                  => 10.2,
+		'/\.375\b|9[.,]3\s*x/i'                                                 => 9.5,
+		'/\.35[5-8]\b|\.38\b|\.380\b|\b9\s*mm\b|\b9\s*x\s*(19|21|18|17)\b|\b9mm/i' => 9.1,
+		'/\.338\b|8[.,]6\s*(x|mm|blk)/i'                                        => 8.6,
+		'/\b8\s*x\s*(57|68|60)|\.32[3-5]\b|\b8\s*mm\b/i'                  => 8.2,
+		'/\.303\b|7[.,]62\s*x\s*54|7[.,]7\s*x/i'                             => 7.9,
+		'/\.30\b|\.30-|\.30\s*cal|\.30[0-9]\b|7[.,]62|7[.,]5\s*x\s*55|\.300\b/i' => 7.8,
+		'/\b7\s*mm\b|\b7mm|\.28[04]\b|\b7\s*x\s*(57|64|65)|7-08/i'      => 7.2,
+		'/\.270\b|6[.,]8\s*(x|mm|spc|blk)?/i'                                  => 7.0,
+		'/6[.,]5\s*(x|mm|creed|prc|grendel)?|\.26[04]\b/i'                     => 6.7,
+		'/\.25\b|\.25-|\.257\b/i'                                            => 6.5,
+		'/\b6\s*mm\b|\b6mm|\.243\b|\.24\b|6\s*arc|6\s*creedmoor/i'     => 6.2,
+		'/\.22\b|\.22[0-9]\b|\.22-|5[.,]56|5[.,]45|\.204\b|\.17\b/i'    => 5.7,
+	);
+
 	/** Abstand Rotpunkt – Magnifier in mm und erlaubte Abweichung der Achshöhe. */
 	const MAG_GAP = 10;
 	const MAG_TOL = 1.5;
@@ -214,7 +254,85 @@ class AK_Data {
 		if ( ! $list && 'hub' === self::group( $product_id ) ) {
 			$list = array_values( array_diff( self::thread_attribute( $product_id ), self::HUB_STANDARDS ) );
 		}
+		// Schienenteile (Montage, Rotpunkt, Griff, Laser, Lampe, Zweibein): Attribut «Montage», z.B. Picatinny oder M-LOK.
+		if ( ! $list && self::role( $product_id ) && 'waffe' !== self::role( $product_id ) && ! in_array( self::group( $product_id ), array_merge( self::MUZZLE_CHAIN, array( 'schaft', 'griff' ) ), true ) ) {
+			$list = self::attribute_interfaces( $product_id );
+		}
 		return $list;
+	}
+
+	/** Schnittstellen aus dem Attribut «Montage» (nur bekannte Schienen und Footprints). */
+	public static function attribute_interfaces( $product_id ) {
+		$product = wc_get_product( $product_id );
+		if ( ! $product ) {
+			return array();
+		}
+		$known = array_keys( self::KNOWN_INTERFACES );
+		return array_values( array_intersect( self::split( $product->get_attribute( 'pa_montage' ) ), $known ) );
+	}
+
+	/** Waffenart: Feld, sonst aus der Kategorie (Pistole, Revolver), sonst Langwaffe. */
+	public static function weapon_type( $product_id ) {
+		$t = (string) self::meta( $product_id, 'waffenart' );
+		if ( isset( self::WEAPON_TYPES[ $t ] ) ) {
+			return $t;
+		}
+		$pid   = self::parent_of( $product_id ) ? self::parent_of( $product_id ) : $product_id;
+		$names = wp_get_post_terms( $pid, 'product_cat', array( 'fields' => 'names' ) );
+		foreach ( is_wp_error( $names ) ? array() : $names as $n ) {
+			if ( preg_match( '/pistol|revolver/i', $n ) ) {
+				return 'pistole';
+			}
+		}
+		return 'langwaffe';
+	}
+
+	/** Plattformen eines Produkts (Feld «plattform», kommagetrennt), leer = keine Einschränkung. */
+	public static function platforms( $product_id ) {
+		$raw = strtolower( (string) self::meta( $product_id, 'plattform' ) );
+		return array_values( array_intersect( array_map( 'trim', explode( ',', $raw ) ), array_keys( self::PLATFORMS ) ) );
+	}
+
+	/** Passt das Teil zur Plattform der Waffe? Teil ohne Plattform passt immer, Teil mit Plattform nur auf Waffen dieser Plattform. */
+	public static function platform_ok( $weapon_id, $part_id ) {
+		$need = self::platforms( $part_id );
+		return ! $need || (bool) array_intersect( $need, self::platforms( $weapon_id ) );
+	}
+
+	/** Grösster Geschossdurchmesser in mm aus einem Text, 0 = unbekannt. */
+	public static function caliber_from_text( $text ) {
+		$text = (string) $text;
+		if ( preg_match( '/^\s*(\d+(?:[.,]\d+)?)\s*$/', $text, $m ) ) {
+			return (float) str_replace( ',', '.', $m[1] ); // Zahl = mm.
+		}
+		$best = 0.0;
+		foreach ( self::CALIBERS as $re => $mm ) {
+			if ( preg_match( $re, $text ) ) {
+				$best = max( $best, $mm );
+			}
+		}
+		return $best;
+	}
+
+	/** Kaliber (Bohrung) in mm: Feld «kaliber», sonst Attribut «Kaliber», sonst Produktname. 0 = unbekannt. */
+	public static function caliber_mm( $product_id ) {
+		$own = self::caliber_from_text( self::meta( $product_id, 'kaliber' ) );
+		if ( $own > 0 ) {
+			return $own;
+		}
+		$product = wc_get_product( $product_id );
+		if ( ! $product ) {
+			return 0.0;
+		}
+		$attr = self::caliber_from_text( $product->get_attribute( 'pa_kaliber' ) );
+		return $attr > 0 ? $attr : self::caliber_from_text( $product->get_name() );
+	}
+
+	/** Ist die Bohrung des Mündungsteils gross genug für das Kaliber der Waffe? Unbekannt = kein Ausschluss. */
+	public static function caliber_ok( $weapon_id, $part_id ) {
+		$w = self::caliber_mm( $weapon_id );
+		$p = self::caliber_mm( $part_id );
+		return $w <= 0 || $p <= 0 || $p >= $w - 0.05;
 	}
 
 	/** Mittelrohr in mm: eigenes Feld, sonst Attribut pa_mittelrohrdurchmesser. */
@@ -298,6 +416,15 @@ class AK_Data {
 
 	/** Höhe der Rohrachse über der Schiene in mm (Montage: Ankerpunkt Unterseite → Rohrmitte). */
 	public static function axis_height( $mount_id ) {
+		$own = self::own_axis( $mount_id );
+		if ( $own > 0 && 'montage' === self::role( $mount_id ) ) {
+			return $own; // Von Hand eingetragen (Bildmessung bei Schrägbildern oft zu hoch).
+		}
+		return self::measured_axis_height( $mount_id );
+	}
+
+	/** Achshöhe aus den Bildpunkten Anker → Rohrmitte. */
+	public static function measured_axis_height( $mount_id ) {
 		$a = self::point( $mount_id, 'anchor' );
 		$t = self::point( $mount_id, 'tube_anchor' );
 		return $a && $t ? ( $a[1] - $t[1] ) * self::scale( $mount_id ) : 0.0;
@@ -548,6 +675,11 @@ class AK_Data {
 	 * Mündungsaufsatz ersetzt den Originalaufsatz und sitzt immer auf dem Gewinde.
 	 */
 	public static function muzzle_chain_valid( $weapon_id, $chain ) {
+		foreach ( $chain as $id ) {
+			if ( $id && ! self::caliber_ok( $weapon_id, $id ) ) {
+				return false; // Bohrung zu klein für das Kaliber der Waffe.
+			}
+		}
 		$thread = self::weapon_slot( $weapon_id, 'muendung' );
 		if ( ! empty( $chain['muendungsaufsatz'] ) ) {
 			$id = $chain['muendungsaufsatz'];
@@ -632,11 +764,25 @@ class AK_Data {
 	 */
 	public static function options_for_weapon( $weapon_id ) {
 		$blocked = self::blocked( $weapon_id );
-		$mounts  = array_diff( self::products_by_role( 'montage' ), $blocked );
+		$allowed = function ( $ids ) use ( $weapon_id, $blocked ) {
+			return array_values(
+				array_filter(
+					array_diff( $ids, $blocked ),
+					function ( $id ) use ( $weapon_id ) {
+						return self::platform_ok( $weapon_id, $id );
+					}
+				)
+			);
+		};
+		$mounts  = $allowed( self::products_by_role( 'montage' ) );
 		$optics  = array();
 		$used_mounts = array();
 
-		foreach ( array_diff( self::products_by_role( 'optik' ), $blocked ) as $optic_id ) {
+		$pistol = 'pistole' === self::weapon_type( $weapon_id );
+		foreach ( $allowed( self::products_by_role( 'optik' ) ) as $optic_id ) {
+			if ( $pistol && ! self::is_direct( $optic_id ) ) {
+				continue; // Pistole: nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre.
+			}
 			if ( self::optic_direct_fits( $weapon_id, $optic_id ) ) {
 				$optics[ $optic_id ] = array();
 				continue;
@@ -673,7 +819,7 @@ class AK_Data {
 
 		$parts = array();
 		$muzzle = array();
-		$all_acc  = array_diff( self::products_by_role( 'zubehoer' ), $blocked );
+		$all_acc  = $allowed( self::products_by_role( 'zubehoer' ) );
 		$rails    = array_values(
 			array_filter(
 				$all_acc,
@@ -732,7 +878,7 @@ class AK_Data {
 		// Magnifier: mit eigener Halterung direkt auf die Schiene, sonst über eine Magnifier-Montage.
 		$mags       = array();
 		$mag_mounts = array();
-		foreach ( array_diff( self::products_by_role( 'magnifier' ), $blocked ) as $mag_id ) {
+		foreach ( $pistol ? array() : $allowed( self::products_by_role( 'magnifier' ) ) as $mag_id ) {
 			if ( self::optic_direct_fits( $weapon_id, $mag_id ) ) {
 				$mags[ $mag_id ] = array();
 				continue;
@@ -923,6 +1069,10 @@ class AK_Data {
 		$thumb    = wp_get_attachment_image_src( (int) get_post_thumbnail_id( $product_id ), 'woocommerce_thumbnail' );
 		$anchor   = self::point( $product_id, 'anchor' );
 		$tube_a   = self::point( $product_id, 'tube_anchor' );
+		if ( $anchor && 'montage' === self::role( $product_id ) && self::own_axis( $product_id ) > 0 && self::scale( $product_id ) > 0 ) {
+			// Achshöhe von Hand: Rohrmitte senkrecht über dem Ankerpunkt in der eingetragenen Höhe.
+			$tube_a = array( $tube_a ? $tube_a[0] : $anchor[0], $anchor[1] - self::own_axis( $product_id ) / self::scale( $product_id ) );
+		}
 
 		return array(
 			'id'         => $product_id,

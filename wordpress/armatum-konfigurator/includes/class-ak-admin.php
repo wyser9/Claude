@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Admin {
 
-	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear' );
+	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear', 'waffenart', 'plattform', 'kaliber' );
 
 	/** Alle gespeicherten Felder inkl. Steckplätze der Waffe. */
 	public static function fields() {
@@ -52,6 +52,15 @@ class AK_Admin {
 		$product  = wc_get_product( $post->ID );
 		$gallery  = array_values( array_unique( array_filter( array_merge( array( (int) get_post_thumbnail_id( $post->ID ) ), $product ? array_map( 'intval', $product->get_gallery_image_ids() ) : array() ) ) ) );
 		$variable = $product && $product->is_type( 'variable' );
+		// Vorschläge aus den Produktattributen (leer gelassene Felder nimmt das Plugin automatisch daraus).
+		$hint     = function ( $list ) {
+			$list = array_filter( (array) $list );
+			return $list ? 'aus Attribut: ' . implode( ', ', $list ) : '';
+		};
+		$if_hint  = '' === $v['schnittstelle'] ? $hint( AK_Data::interfaces( $post->ID ) ) : '';
+		$out_hint = '' === $v['ausgang'] ? $hint( AK_Data::outputs( $post->ID ) ) : '';
+		$cal_auto = AK_Data::caliber_mm( $post->ID );
+		$det_type = AK_Data::weapon_type( $post->ID );
 		?>
 		<div class="ak-box" data-role="<?php echo esc_attr( $v['role'] ); ?>" data-ifs="<?php echo esc_attr( wp_json_encode( AK_Data::known_interfaces() ) ); ?>" data-gallery="<?php echo esc_attr( wp_json_encode( $gallery ) ); ?>">
 			<?php if ( $variable ) : ?>
@@ -77,7 +86,7 @@ class AK_Admin {
 					</select>
 				</label>
 				<label><span class="ak-if-label">Schnittstelle(n)</span>
-					<input type="text" name="ak[schnittstelle]" class="ak-if" data-kind="auto" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="picatinny">
+					<input type="text" name="ak[schnittstelle]" class="ak-if" data-kind="auto" value="<?php echo esc_attr( $v['schnittstelle'] ); ?>" placeholder="<?php echo esc_attr( $if_hint ? $if_hint : 'picatinny' ); ?>">
 				</label>
 				<label class="ak-only-montage ak-only-optik">Mittelrohr [mm]
 					<input type="text" name="ak[mittelrohr]" value="<?php echo esc_attr( $v['mittelrohr'] ); ?>" placeholder="aus Attribut: <?php echo esc_attr( AK_Data::tube( $post->ID ) ?: '–' ); ?>" size="6">
@@ -90,11 +99,35 @@ class AK_Admin {
 						<?php endforeach; ?>
 					</select>
 				</label>
-				<label class="ak-only-optik">Achshöhe [mm]
-					<input type="text" name="ak[achshoehe]" value="<?php echo esc_attr( $v['achshoehe'] ); ?>" size="5" placeholder="z.B. 39">
+				<label class="ak-only-optik ak-only-montage">Achshöhe [mm]
+					<input type="text" name="ak[achshoehe]" value="<?php echo esc_attr( $v['achshoehe'] ); ?>" size="5" placeholder="<?php echo esc_attr( 'montage' === $v['role'] && AK_Data::measured_axis_height( $post->ID ) > 0 ? 'gemessen ' . number_format( AK_Data::measured_axis_height( $post->ID ), 1, '.', '' ) : 'z.B. 39' ); ?>">
 				</label>
 			</p>
+			<p class="ak-row">
+				<label class="ak-only-waffe">Waffenart
+					<select name="ak[waffenart]">
+						<option value="">automatisch (<?php echo esc_html( AK_Data::WEAPON_TYPES[ $det_type ] ); ?>)</option>
+						<?php foreach ( AK_Data::WEAPON_TYPES as $tk => $tl ) : ?>
+							<option value="<?php echo esc_attr( $tk ); ?>" <?php selected( $v['waffenart'], $tk ); ?>><?php echo esc_html( $tl ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<label>Plattform
+					<input type="text" name="ak[plattform]" value="<?php echo esc_attr( $v['plattform'] ); ?>" size="18" placeholder="<?php echo esc_attr( 'waffe' === $v['role'] ? 'z.B. ar15' : 'leer = alle' ); ?>" list="ak-platforms">
+				</label>
+				<datalist id="ak-platforms">
+					<?php foreach ( AK_Data::PLATFORMS as $pk => $pl ) : ?>
+						<option value="<?php echo esc_attr( $pk ); ?>"><?php echo esc_html( $pl ); ?></option>
+					<?php endforeach; ?>
+				</datalist>
+				<label class="ak-only-waffe ak-only-zubehoer">Kaliber
+					<input type="text" name="ak[kaliber]" value="<?php echo esc_attr( $v['kaliber'] ); ?>" size="10" placeholder="<?php echo esc_attr( $cal_auto > 0 ? 'erkannt: ' . number_format( $cal_auto, 2, '.', '' ) . ' mm' : 'z.B. .308 oder 7.8' ); ?>">
+				</label>
+			</p>
+			<p class="description">Plattform: <?php echo esc_html( implode( ', ', array_keys( AK_Data::PLATFORMS ) ) ); ?>. Waffe: eine Plattform. Teil (Schaft, Griff, Mündungsteil, Montage): eine oder mehrere, kommagetrennt; leer = passt auf alle Plattformen. Kaliber: bei Waffe und Mündungsteil (z.B. «.308», «6.5 Creedmoor», «.30 cal» oder Bohrung in mm). Leer = aus Attribut «Kaliber» oder Produktname. Ein Mündungsteil passt nur, wenn sein Kaliber mindestens so gross ist wie das der Waffe.</p>
+			<p class="description ak-only-waffe">Pistole: im Konfigurator nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre und Magnifier. Schnittstelle = Optik-Schnitt im Schlitten (z.B. rmr, acro, glock-mos). Adapterplatte: Schnittstelle = Schnitt, Ausgang = Footprint des Rotpunkts. Steckplatz Mündung = Laufgewinde (Kompensator, Adapter), Handschutz unten = Schiene für die Lampe.</p>
 			<p class="description ak-only-optik">Achshöhe nur bei Rotpunkt und Magnifier mit Halterung: Höhe der optischen Achse über der Auflagefläche (Schiene oder Footprint), z.B. 39 mm (absolute co-witness) oder 49 mm (lower 1/3). Magnifier und Rotpunkt passen nur zusammen, wenn sie höchstens <?php echo esc_html( (string) AK_Data::MAG_TOL ); ?> mm auseinanderliegen. Leer = nicht geprüft.</p>
+			<p class="description ak-only-montage">Achshöhe bei Montage: von Hand eingetragen überschreibt sie die Messung aus dem Bild (Mitte Unterseite bis Rohrmitte). Bei Schrägbildern ist die Messung oft zu hoch, dann die Herstellerangabe eintragen.</p>
 			<p class="description ak-only-montage">Art «nur Magnifier»: Ringe für einen Magnifier, erscheint nicht bei Zielfernrohren. Art «Adapterplatte»: Schnittstelle = Schiene (picatinny), Ausgang = Footprint des Rotpunkts (z.B. rmr, acro, micro), Rohrmitte = Mitte der Oberseite.</p>
 			<p class="ak-row ak-only-zubehoer">
 				<label>Hinweis für Kunden (z.B. «Bewilligungspflichtig»)
@@ -104,7 +137,7 @@ class AK_Admin {
 			</p>
 			<p class="ak-row ak-only-zubehoer ak-only-montage">
 				<label>Ausgang (Mündungsaufsatz und HUB: z.B. HUB-Standard 1.375x24; Adapterschiene: picatinny)
-					<input type="text" name="ak[ausgang]" class="ak-if" data-kind="auto-out" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22">
+					<input type="text" name="ak[ausgang]" class="ak-if" data-kind="auto-out" value="<?php echo esc_attr( $v['ausgang'] ); ?>" size="22" placeholder="<?php echo esc_attr( $out_hint ); ?>">
 				</label>
 				<span class="description">Bei Mündungsaufsatz und HUB zusätzlich «Ausgangspunkt» (vorderes Ende) setzen. Adapterschiene: Schnittstelle = m-lok, Ausgang = picatinny, Ankerpunkt = Auflage am Handschutz, Ausgangspunkt = Oberfläche der Schiene.</span>
 			</p>
@@ -113,7 +146,7 @@ class AK_Admin {
 				<?php foreach ( AK_Data::SLOTS as $sk => $slabel ) : ?>
 					<p class="ak-row">
 						<label><?php echo esc_html( $slabel ); ?>
-							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" data-kind="<?php echo esc_attr( array( 'muendung' => 'gewinde', 'unten' => 'schiene', 'seite' => 'schiene', 'vorne' => 'schiene', 'schaft' => 'schaft', 'griff' => 'griff' )[ $sk ] ); ?>" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22">
+							<input type="text" name="ak[slot_<?php echo esc_attr( $sk ); ?>_if]" class="ak-if" data-kind="<?php echo esc_attr( array( 'muendung' => 'gewinde', 'unten' => 'schiene', 'seite' => 'schiene', 'vorne' => 'schiene', 'schaft' => 'schaft', 'griff' => 'griff' )[ $sk ] ); ?>" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_if' ] ); ?>" size="22" placeholder="<?php echo esc_attr( 'muendung' === $sk ? $hint( AK_Data::thread_attribute( $post->ID ) ) : '' ); ?>">
 						</label>
 						<button type="button" class="button ak-tool" data-target="slot_<?php echo esc_attr( $sk ); ?>_anchor">Punkt setzen</button>
 						<input type="hidden" name="ak[slot_<?php echo esc_attr( $sk ); ?>_anchor]" class="ak-pt" data-pt="slot_<?php echo esc_attr( $sk ); ?>_anchor" value="<?php echo esc_attr( $v[ 'slot_' . $sk . '_anchor' ] ); ?>">
@@ -191,7 +224,7 @@ class AK_Admin {
 			</div>
 			<p class="ak-status"><?php echo AK_Data::is_ready( $post->ID ) ? '✔ Eingerichtet' : 'Noch nicht vollständig eingerichtet'; ?>
 				<?php if ( 'montage' === $v['role'] && AK_Data::axis_height( $post->ID ) > 0 ) : ?>
-					· Achshöhe über Schiene: <?php echo esc_html( number_format( AK_Data::axis_height( $post->ID ), 1, '.', '' ) ); ?> mm
+					· Achshöhe über Schiene: <?php echo esc_html( number_format( AK_Data::axis_height( $post->ID ), 1, '.', '' ) ); ?> mm<?php echo AK_Data::own_axis( $post->ID ) > 0 ? ' (von Hand)' : ' (gemessen)'; ?>
 				<?php endif; ?>
 				<?php if ( 'optik' === $v['role'] && 'yes' !== $v['direkt'] && AK_Data::optic_depth( $post->ID ) > 0 ) : ?>
 					· Reicht <?php echo esc_html( number_format( AK_Data::optic_depth( $post->ID ), 1, '.', '' ) ); ?> mm unter die Rohrachse<?php echo AK_Data::point( $post->ID, 'bottom' ) ? '' : ' (geschätzt aus Objektivdurchmesser)'; ?>
@@ -225,6 +258,12 @@ class AK_Admin {
 			}
 			if ( 'montage_art' === $f && ! isset( AK_Data::MOUNT_TYPES[ $val ] ) ) {
 				$val = '';
+			}
+			if ( 'waffenart' === $f && ! isset( AK_Data::WEAPON_TYPES[ $val ] ) ) {
+				$val = '';
+			}
+			if ( 'plattform' === $f ) {
+				$val = implode( ', ', array_intersect( array_map( 'trim', explode( ',', strtolower( $val ) ) ), array_keys( AK_Data::PLATFORMS ) ) );
 			}
 			if ( in_array( $f, array( 'schnittstelle', 'ausgang', 'muzzle_device_if' ), true ) || preg_match( '/^slot_.+_if$/', $f ) ) {
 				$val = implode( ', ', AK_Data::split( $val ) );

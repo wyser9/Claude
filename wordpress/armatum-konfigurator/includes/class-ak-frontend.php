@@ -157,6 +157,18 @@ class AK_Frontend {
 				)
 			);
 		}
+		// Waffenart: Langwaffen und Pistolen getrennt (Reiter nur, wenn es beide gibt).
+		$by_type = array();
+		foreach ( $weapons as $w ) {
+			$by_type[ AK_Data::weapon_type( $w ) ][] = $w;
+		}
+		$art = isset( $_GET['art'] ) ? sanitize_key( wp_unslash( $_GET['art'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+		if ( ! isset( AK_Data::WEAPON_TYPES[ $art ] ) || empty( $by_type[ $art ] ) ) {
+			$art = '';
+		}
+		if ( $art ) {
+			$weapons = $by_type[ $art ];
+		}
 		ob_start();
 		?>
 		<section class="ak-konfigurator ak-picker">
@@ -166,6 +178,16 @@ class AK_Frontend {
 				<p>Waffen, auf die <strong><?php echo esc_html( $part->get_name() ); ?></strong> passt:</p>
 			<?php else : ?>
 				<p>Wähle die Waffe, die du konfigurieren möchtest. Optik und Zubehör wählst du im nächsten Schritt.</p>
+			<?php endif; ?>
+			<?php if ( count( $by_type ) > 1 ) : ?>
+				<nav class="ak-type-tabs">
+					<a href="<?php echo esc_url( remove_query_arg( 'art' ) ); ?>" class="<?php echo $art ? '' : 'is-active'; ?>">Alle</a>
+					<?php foreach ( AK_Data::WEAPON_TYPES as $tk => $tl ) : ?>
+						<?php if ( ! empty( $by_type[ $tk ] ) ) : ?>
+							<a href="<?php echo esc_url( add_query_arg( 'art', $tk ) ); ?>" class="<?php echo $art === $tk ? 'is-active' : ''; ?>"><?php echo esc_html( 'pistole' === $tk ? 'Pistolen' : 'Langwaffen' ); ?> (<?php echo (int) count( $by_type[ $tk ] ); ?>)</a>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				</nav>
 			<?php endif; ?>
 			<?php if ( ! $weapons ) : ?>
 				<p>Zurzeit ist keine passende Waffe im Konfigurator verfügbar.</p>
@@ -233,6 +255,7 @@ class AK_Frontend {
 		$weapon['railRear']     = AK_Data::weapon_x( $weapon_id, 'rail_rear' );
 		$weapon['magGap']       = AK_Data::MAG_GAP;
 		$weapon['magTol']       = AK_Data::MAG_TOL;
+		$weapon['art']          = AK_Data::weapon_type( $weapon_id );
 
 		$groups   = array();
 		$rail_ids = array();
