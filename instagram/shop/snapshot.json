@@ -920,20 +920,6 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/stoeger-str-9c-compact-optic-ready/"
 },
-"13579": {
-"cats": [
-"Flinten",
-"Stoeger"
-],
-"images": 1,
-"name": "Stoeger Pump Action P3000 Synthetic Tactical",
-"on_sale": false,
-"price": "39900",
-"regular": "39900",
-"short": "Die Vorderschaftrepetierflinte P3000 von Stoeger , Gewinner des „Great Buy“-Awards 2016 der Zeitschrift Outdoor Life, setzt neue Standards in Sachen Zuverlässigkeit, und das zu einem Preis, der Ihren Geldbeutel schont. Diese Vorderschaftrepetierflinte von Stoeger managt zuverlässige alle 12-Kaliber-",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/stoeger-pump-action-p3000-tactical/"
-},
 "13581": {
 "cats": [
 "Flinten",
@@ -1222,8 +1208,8 @@
 "images": 2,
 "name": "Glock Magazin 33 Schuss",
 "on_sale": false,
-"price": "4950",
-"regular": "4950",
+"price": "4740",
+"regular": "4740",
 "short": "Glock Magazin 33 Schuss Das Glock Magazin 33 Schuss ist ein hochwertiges, robustes Magazin, das speziell für maximale Kapazität und zuverlässige Leistung entwickelt wurde. Dieses Magazin ist ideal für Besitzer von Glock-Pistolen, die eine hohe Magazinkapazität für Training, Wettkämpfe oder Verteidig",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/glock-magazin-33-schuss/"
@@ -1236,8 +1222,8 @@
 "images": 1,
 "name": "Glock Magazin 33 Schuss oranger Follower",
 "on_sale": false,
-"price": "5350",
-"regular": "5350",
+"price": "5110",
+"regular": "5110",
 "short": "Glock Magazin 33 Schuss Das Glock Magazin 33 Schuss ist ein hochwertiges, robustes Magazin, das speziell für maximale Kapazität und zuverlässige Leistung entwickelt wurde. Dieses Magazin ist ideal für Besitzer von Glock-Pistolen, die eine hohe Magazinkapazität für Training, Wettkämpfe oder Verteidig",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/glock-magazin-33-schuss-2/"
@@ -65054,7 +65040,7 @@
 "on_sale": false,
 "price": "5000",
 "regular": "5000",
-"short": "Der Gutschein, der immer passt: einlösbar für das ganze Sortiment, Kurse und Werkstatt – online auf armatum.ch und im Laden in Fulenbach. Sie erhalten den Gutschein als PDF per E-Mail zum Ausdrucken.",
+"short": "Der Gutschein, der immer passt: einlösbar für das ganze Sortiment, Kurse und Werkstatt – online auf armatum.ch und im Laden in Fulenbach. Sie erhalten den Gutschein mit persönlichem Code sofort nach Zahlungseingang per E-Mail, zum Ausdrucken oder Weiterleiten.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/armatum-geschenkgutschein/"
 },
@@ -67494,12 +67480,54 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/acheron-surrogate-hexalug/"
 },
+"34981": {
+"cats": [
+"Bergara",
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 4,
+"name": "Bergara B14 Hunter Repetierbüchse 6.5×55 SE mit DD Optics 2.5-15×56 NFX gebraucht",
+"on_sale": false,
+"price": "139900",
+"regular": "139900",
+"short": "Gebrauchte Bergara B14 Hunter Repetierbüchse im Kaliber 6.5×55 SE, Zustand gut, mit zwei Magazinen, DD Optics 2.5-15×56 NFX Zielfernrohr, Dentler Montage, Zweibein und Tasche.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bergara-b14-hunter-repetierbuechse-6-5x55-se-mit-dd-optics-2-5-15x56-nfx-gebraucht/"
+},
+"34982": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Röhm"
+],
+"images": 1,
+"name": "Röhm RG4s Schreckschusspistole gebraucht",
+"on_sale": false,
+"price": "2000",
+"regular": "2000",
+"short": "Gebrauchte Röhm RG4s Schreckschusspistole als Occasion, Einzelstück. Erwerb ab 18 Jahren mit Ausweiskopie und schriftlichem Vertrag.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/roehm-rg4s-schreckschusspistole-gebraucht/"
+},
+"34983": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Pistolen"
+],
+"images": 2,
+"name": "Einschüssige Scheibenpistole mit Rollblockverschluss, antik, gebraucht",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "Antike einschüssige Scheibenpistole mit Rollblockverschluss, teilweise achtkantigem Lauf, Holzvorderschaft und gefischtem Holzgriff mit Griffkappe. Occasion, Einzelstück für Sammler.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/einschuessige-scheibenpistole-mit-rollblockverschluss-antik-gebraucht/"
+},
 "34993": {
 "cats": [
 "Vaultek",
 "Waffenschrank"
 ],
-"images": 3,
+"images": 2,
 "name": "Vaultek Universal Magazine Rack MR-8U",
 "on_sale": false,
 "price": "3580",
@@ -67521,5 +67549,201 @@
 "short": "Doppelpistolen-Rack aus hochdichtem Schaumstoff für 2 Pistolen in aufrechter Position. Kompatibel mit der Vaultek MX Serie und dem RS800i.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/vaultek-mx-twin-pistol-rack-tpr-2u/"
+},
+"35003": {
+"cats": [
+"Browning",
+"Flinten"
+],
+"images": 4,
+"name": "Browning B525 Sporter Laminated Adjustable 12/76 30″ Bockflinte",
+"on_sale": false,
+"price": "326890",
+"regular": "326890",
+"short": "Sportliche Bockflinte im Kaliber 12/76 mit 76 cm Lauflänge, verstellbarem Schaft aus grauem Schichtholz, verstellbarem Abzug und Invector Plus Chokesystem.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/browning-b525-sporter-laminated-adjustable-12-76-30-bockflinte/"
+},
+"35009": {
+"cats": [
+"Vaultek",
+"Waffenschrank"
+],
+"images": 3,
+"name": "Vaultek MX Series Shelf Zubehörfach MX-TR-A",
+"on_sale": false,
+"price": "3980",
+"regular": "3980",
+"short": "Ausziehbares Zubehörfach für die Tresore der Vaultek MX Serie, mit kugelgelagerten Führungsschienen und Montagematerial.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/vaultek-mx-series-shelf-zubehoerfach-mx-tr-a/"
+},
+"35037": {
+"cats": [
+"Acheron",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Acheron HexaLug CT Feuerdämpfer 5.56 mm",
+"on_sale": false,
+"price": "12890",
+"regular": "12890",
+"short": "Kompakter Feuerdämpfer für 5.56 mm mit HexaLug-Schnittstelle für Acheron Schalldämpfer. 54 mm lang, 85 g. Erhältlich mit sieben Gewinden inklusive Blank und Steyr AUG.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-hexalug-ct-feuerdaempfer-5-56-mm/"
+},
+"35045": {
+"cats": [
+"Acheron",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Acheron HexaLug CT Feuerdämpfer 7.62 mm",
+"on_sale": false,
+"price": "12890",
+"regular": "12890",
+"short": "Kompakter Feuerdämpfer für 7.62 mm mit HexaLug-Schnittstelle für Acheron Schalldämpfer. 60 mm lang, 76 g. Erhältlich mit acht Gewinden von Blank bis M18x1.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-hexalug-ct-feuerdaempfer-7-62-mm/"
+},
+"35054": {
+"cats": [
+"Acheron",
+"Schalldämpfer"
+],
+"images": 3,
+"name": "Acheron SPR E5 Schalldämpfer 5.56 mm (Mk 12 SPR)",
+"on_sale": false,
+"price": "98490",
+"regular": "98490",
+"short": "Schalldämpfer für 5.56 mm im Stil des Mk 12 SPR mit Montage wie bei OPS Inc. 223 mm lang, 565 g, Full Auto freigegeben. In Schwarz oder FDE. Erwerb mit kantonaler Ausnahmebewilligung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-spr-e5-schalldaempfer-5-56-mm-mk-12-spr/"
+},
+"35057": {
+"cats": [
+"Acheron",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Acheron HexaLug HUB Adapter",
+"on_sale": false,
+"price": "22890",
+"regular": "22890",
+"short": "Adapter von der Acheron HexaLug-Schnittstelle auf den HUB-Standard, für 5.56, 6.5 oder 7.62 mm. 99 g, 23.4 mm Zusatzlänge, Full Auto freigegeben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-hexalug-hub-adapter/"
+},
+"35061": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"W+F Bern"
+],
+"images": 6,
+"name": "W+F Karabiner 31 (K31) 7.5×55, Jg. 1942, mit Centra Irisblende und Ringkorn, gebraucht",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "W+F Karabiner 31 in 7.5×55, Jahrgang 1942, mit nummerngleichem Magazin, Centra Irisblende mit Farbfilter und Ringkorn von Grünig & Elmiger. Einzelstück, Erwerb mit Strafregisterauszug und Ausweiskopie.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/wf-karabiner-31-k31-7-5x55-jg-1942-mit-centra-irisblende-und-ringkorn-gebraucht/"
+},
+"35062": {
+"cats": [
+"Acheron",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "Acheron HUB Adapter für Q Cherry Bomb / Plan B",
+"on_sale": false,
+"price": "9890",
+"regular": "9890",
+"short": "HUB Adapter von Acheron für die Mündungsgeräte Q Cherry Bomb und Q Plan B. 37 g, 13.5 mm Zusatzlänge, aus 17-4PH H900.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-hub-adapter-fuer-q-cherry-bomb-plan-b/"
+},
+"35064": {
+"cats": [
+"Acheron",
+"Handschutz"
+],
+"images": 2,
+"name": "Acheron KWS Rail System SG 551 / SG 751",
+"on_sale": false,
+"price": "54490",
+"regular": "54490",
+"short": "Spielfrei montierter Handschutz für SG 551 und SG 751 mit STANAG-4694-Schiene oben und M-LOK. 403 g, Swiss Made, in Typ 0, 1 oder 2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-kws-rail-system-sg-551-sg-751/"
+},
+"35068": {
+"cats": [
+"Acheron",
+"Handschutz"
+],
+"images": 2,
+"name": "Acheron KWS Rail System HK MP5",
+"on_sale": false,
+"price": "23890",
+"regular": "23890",
+"short": "Leichter M-LOK Handschutz für HK MP5 und Klone, 111 g, aus Aluminium. Nicht passend für MP5K und MP5SD.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-kws-rail-system-hk-mp5/"
+},
+"35069": {
+"cats": [
+"Acheron",
+"Montagen"
+],
+"images": 2,
+"name": "Acheron QD55x Rail Montageschiene für SG 550 / Stgw 90",
+"on_sale": false,
+"price": "25890",
+"regular": "25890",
+"short": "Montageschiene nach STANAG 4694 für SG 550 und Stgw 90, abgestimmt auf das Acheron KWS Rail System Typ 0. Standard 154 mm mit 15 Slots oder verlängerte Ausführung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-qd55x-rail-montageschiene-fuer-sg-550-stgw-90/"
+},
+"35072": {
+"cats": [
+"Acheron",
+"Montagen"
+],
+"images": 2,
+"name": "Acheron M-LOK Laserrail 85 mm",
+"on_sale": false,
+"price": "5890",
+"regular": "5890",
+"short": "Kurzes M-LOK Schienenstück von Acheron für Laser und Lampen. 85 mm, 8 Slots, 31 g, aus Aluminium 7075-T6.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/acheron-m-lok-laserrail-85-mm/"
+},
+"35111": {
+"cats": [
+"Flinten",
+"Stoeger"
+],
+"images": 1,
+"name": "Stoeger P3000 Synthetic Pistol Grip Pumpflinte 12/76, 48 cm",
+"on_sale": false,
+"price": "37690",
+"regular": "37690",
+"short": "Kompakte Pumpflinte Stoeger P3000 im Kaliber 12/76 mit Pistolengriff, 48 cm Lauf mit festem Slug-Choke und Magazin für 4 Patronen. Erwerb mit WES und Ausweiskopie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-p3000-synthetic-pistol-grip-pumpflinte-12-76-48-cm/"
+},
+"35114": {
+"cats": [
+"Flinten",
+"Stoeger"
+],
+"images": 2,
+"name": "Stoeger P3000 Tactical Pumpflinte 12/76 Tungsten",
+"on_sale": false,
+"price": "47090",
+"regular": "47090",
+"short": "Taktische Pumpflinte Stoeger P3000 im Kaliber 12/76 in Tungsten, mit 7 Schuss Magazin, Picatinny-Schiene, M-LOK und verstellbarer Visierung. Erwerb mit WES und Ausweiskopie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-p3000-tactical-pumpflinte-12-76-tungsten/"
 }
 }
