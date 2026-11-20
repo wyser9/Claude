@@ -9423,7 +9423,7 @@
 "price": "2990",
 "regular": "2990",
 "short": "Der Walkers Razor Slim Passive Gehörschützer bietet schlankes Design, hohe Schalldämmung und maximalen Komfort für Jäger und Sportschützen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/walkers-razor-slim-passive-gehoerschuetzer-schlank-komfortabel/"
 },
 "18877": {
@@ -66696,20 +66696,6 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/sig-p210-ordonnanzpistole-ex-armee-9x19mm-gebraucht-mit-2-magazinen-und-lederholster/"
 },
-"34455": {
-"cats": [
-"Gebrauchtwaffen / Occasionen",
-"N.E.D.I."
-],
-"images": 4,
-"name": "N.E.D.I. AK-47 Halbautomat 7.62x39mm gebraucht, Festschaft, mit 4 Magazinen",
-"on_sale": false,
-"price": "39900",
-"regular": "39900",
-"short": "Gebrauchtes N.E.D.I. AK-47 im Kaliber 7.62x39mm, Halbautomat mit Festschaft. Ausgezeichneter Zustand, erst ca. 50 Schuss geschossen. Mit 4 Magazinen. Einzelstück.",
-"stock": "in-stock",
-"url": "https://armatum.ch/produkt/n-e-d-i-ak-47-halbautomat-7-62x39mm-gebraucht-festschaft-mit-4-magazinen/"
-},
 "34462": {
 "cats": [
 "Chiappa",
@@ -67477,7 +67463,7 @@
 "price": "12890",
 "regular": "12890",
 "short": "Dreizack-Feuerdämpfer für 5.56 mm mit HexaLug-Schnittstelle für Acheron ACS Schalldämpfer. 54 mm lang, 74 g. Mit Gewinde 1/2-28, M14x1, M14x1 L, M15x1, M15x1 HK, M13x1 L (Steyr AUG) oder M12x1 L (FN P90).",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/acheron-hexalug-3p-feuerdaempfer-5-56-mm/"
 },
 "34907": {
@@ -67507,5 +67493,33 @@
 "short": "Druckumlenker (Pressure Deflector) mit HexaLug-Schnittstelle. Kein Schalldämpfer: Er lenkt Schall und Gase nach vorne vom Schützen weg. 154 g, 72 mm lang, 40 mm Durchmesser, aus 17-4PH-Stahl. In Schwarz und FDE erhältlich.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/acheron-surrogate-hexalug/"
+},
+"34993": {
+"cats": [
+"Vaultek",
+"Waffenschrank"
+],
+"images": 3,
+"name": "Vaultek Universal Magazine Rack MR-8U",
+"on_sale": false,
+"price": "3580",
+"regular": "3580",
+"short": "Magazinhalter aus hochdichtem Schaumstoff für 8 Pistolenmagazine in aufrechter Position. Mit doppelseitigem Klebeband im Tresor, Schrank oder Regal montierbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/vaultek-universal-magazine-rack-mr-8u/"
+},
+"34997": {
+"cats": [
+"Vaultek",
+"Waffenschrank"
+],
+"images": 2,
+"name": "Vaultek MX Twin Pistol Rack TPR-2U",
+"on_sale": false,
+"price": "3980",
+"regular": "3980",
+"short": "Doppelpistolen-Rack aus hochdichtem Schaumstoff für 2 Pistolen in aufrechter Position. Kompatibel mit der Vaultek MX Serie und dem RS800i.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/vaultek-mx-twin-pistol-rack-tpr-2u/"
 }
 }
