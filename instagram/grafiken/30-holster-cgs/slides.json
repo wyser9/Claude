@@ -1,0 +1,9 @@
+{"slides":[
+ {"type":"fototitel","image":"p-gruppe.jpg","kicker":"Custom Gear Solutions","title":"Kydex-Holster\nfür deine Pistole","sub":"Drei Modelle von @custom_gear.ch","size":104},
+ {"type":"split","theme":"hell","image":"p-umbra-front.jpg","photoH":780,"tag":"Umbra","title":"Springfield Hellcat Pro","body":"Das **Umbra** aus Kydex – passgenau geformt für die Hellcat Pro."},
+ {"type":"grid","theme":"dunkel","kicker":"Rückseite & Details","title":"Clip, Klaue, Schrauben","items":[{"image":"p-umbra-back.jpg","label":"Umbra · Hellcat Pro"},{"image":"p-p320-back.jpg","label":"Citadel · P320 X-Carry"},{"image":"p-pdp-back.jpg","label":"Citadel · PDP Compact"},{"image":"p-pdp-front.jpg","label":"Citadel · Front"}]},
+ {"type":"split","theme":"oliv","image":"p-p320-back.jpg","photoH":780,"tag":"Citadel","title":"SIG P320 X-Carry","body":"Das **Citadel** aus Kydex – exakt auf die X-Carry abgestimmt."},
+ {"type":"liste","theme":"hell","kicker":"Auf einen Blick","title":"Drei Holster","items":["**Umbra** – Springfield Hellcat Pro","**Citadel** – SIG P320 X-Carry","**Citadel** – Walther PDP Compact 4″","Alle aus **Kydex**, von **@custom_gear.ch**"]},
+ {"type":"split","theme":"dunkel","image":"p-pdp-back.jpg","photoH":780,"tag":"Citadel","title":"Walther PDP Compact 4″","body":"Das **Citadel** für die PDP Compact mit 4-Zoll-Lauf."},
+ {"type":"zitat","theme":"oliv","text":"Ein gutes Holster passt zur Pistole wie angegossen.","von":"– Armatum, Fulenbach"}
+]}
