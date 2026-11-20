@@ -1296,3 +1296,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-19 | Story «Heute geschlossen (19.11.)» (05-heute-19) veröffentlicht ca. 08:01, WhatsApp-Bild an Inhaber. Keine Heute-offen-Story, keine Foto-Erinnerung. |
 | 2026-11-19 | Facebook-Seite «Armatum GmbH» verbunden (Regel 4g). #29 CZ TS 2 Orange auf Facebook nachgeholt: Post 130239823495660_122327106242032290 (6 Bilder, Direktlink zum Produkt). |
 | 2026-11-19 | Inhaber: Fox Jupiter 649 → 519. Story «Fox-Messer reduziert» (Geschenkidee, ohne Prozentzahl) gepostet + Facebook-Fotopost mit Link /jahresend-angebote (Post 130239823495660_122327126732032290). Jupiter + FX-662 auf armatum.ch/insta. |
+| 2026-11-20 | Schliessung 19.11. vorbei: Footer-Hinweis (block-12) entfernt, live geprüft; marke.md als erledigt markiert. |

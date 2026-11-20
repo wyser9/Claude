@@ -163,7 +163,7 @@ Tipps, Tests & Einblicke 👇
 - Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
 
 ## Sonderschliessungen (Inhaber, 28.10.2026)
-- **Korrektur Inhaber 08.11.2026: Do 12.11. ist OFFEN (17–21). Geschlossen: Do 05.11.2026 (erledigt) und Do 19.11.2026.** Nächste Öffnung nach dem 19.11.: Sa 21.11., 9–13.
+- **Korrektur Inhaber 08.11.2026: Do 12.11. ist OFFEN (17–21). Geschlossen: Do 05.11.2026 (erledigt) und Do 19.11.2026 (erledigt; Footer-Hinweis am 20.11. entfernt).** Nächste Öffnung nach dem 19.11.: Sa 21.11., 9–13.
 - **Do 05.11.2026 und Do 19.11.2026: Laden geschlossen.** An diesen Tagen keine «Heute offen»-Story, keine Einladung in den Laden («heute Abend sind wir da»), keine Aktion, die Ladenbesuch voraussetzt. Kommunikation siehe instagram/autopilot/auftrag-schliessung-2026-11.md.
 
 ## Saison- und Feiertagskalender (Irene plant mit, Inhaber 31.10.2026 «Kein Halloween post?»)
