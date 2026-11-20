@@ -1,0 +1,18 @@
+{
+ "logo": "/home/user/Claude/instagram/assets/logo-weiss.png",
+ "status": [
+  {
+   "name": "geschenkgutschein",
+   "kicker": "Geschenkidee",
+   "title": "Der Gutschein,\nder immer passt",
+   "images": [
+    {
+     "src": "gs-card.jpg",
+     "caption": "**Zubehör, Optik, Kurse oder Werkstatt** – frei wählbar"
+    }
+   ],
+   "body": "Einlösbar online auf armatum.ch\nund im Laden in Fulenbach",
+   "pill": "armatum.ch/insta"
+  }
+ ]
+}
