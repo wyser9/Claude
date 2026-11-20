@@ -18,6 +18,8 @@ Die Sendungsnummer steht in der Box und als Bestellnotiz. Der Kunde bekommt sie 
 ## Einstellungen
 *Einstellungen → Armatum Post Label*: Client ID, Client Secret, Frankierlizenz, Absender, **Testmodus**.
 
+- **Logo auf dem Label**: Das Logo wird im Absenderfeld gedruckt. Standard ist das Website-Logo, sonst das Website-Icon; eine andere Mediathek-ID kann eingetragen werden. Das Bild wird als PNG verkleinert (max. 30 KB). Lehnt die Post das Logo ab, entsteht das Label trotzdem, dann ohne Logo, mit Hinweis in der Bestellnotiz.
+
 **Testmodus** (bei Installation aktiv): Labels werden mit Aufdruck „SPECIMEN“ erstellt – nicht versandfähig, nicht verrechnet. Nach einem erfolgreichen Testlabel ausschalten.
 
 ## Update von Version 0.1

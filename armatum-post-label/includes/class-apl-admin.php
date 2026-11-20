@@ -69,6 +69,20 @@ class APL_Admin {
 				</table>
 				<h2>Absender</h2>
 				<table class="form-table">
+					<?php
+					$logo_on = 'no' !== get_option( 'armatum_post_logo', 'yes' );
+					$logo_id = APL_Label::logo_id();
+					?>
+					<tr><th>Logo auf dem Label</th><td>
+						<label><input type="checkbox" name="logo" value="yes" <?php checked( $logo_on ); ?>> Logo im Absenderfeld drucken</label>
+						<p><label for="apl_logo_id">Bild aus der Mediathek (ID):</label> <input type="number" min="0" id="apl_logo_id" name="logo_id" value="<?php echo (int) get_option( 'armatum_post_logo_id' ) ?: ''; ?>" class="small-text" placeholder="auto"></p>
+						<p class="description">Leer = Website-Logo (Design &rarr; Customizer), sonst Website-Icon. Die ID steht in der Mediathek in der Adresse des Bildes („item=…“). Am besten ein schwarzes Logo auf weissem/transparentem Grund, quer. Es wird automatisch verkleinert. Mit einem Testlabel prüfen.</p>
+						<?php if ( $logo_on && $logo_id ) : ?>
+							<p><?php echo wp_get_attachment_image( $logo_id, 'medium', false, array( 'style' => 'max-height:60px;width:auto;border:1px solid #ddd;background:#fff;padding:4px' ) ); ?><br><span class="description">Aktuell verwendet (ID <?php echo (int) $logo_id; ?>)</span></p>
+						<?php elseif ( $logo_on ) : ?>
+							<p class="description" style="color:#b32d2e">Kein Logo gefunden – bitte eine Mediathek-ID eintragen.</p>
+						<?php endif; ?>
+					</td></tr>
 					<?php foreach ( array( 'name1' => 'Firma', 'street' => 'Strasse und Nr.', 'zip' => 'PLZ', 'city' => 'Ort' ) as $key => $label ) : ?>
 						<tr><th><label for="apl_sender_<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $label ); ?></label></th><td><input type="text" id="apl_sender_<?php echo esc_attr( $key ); ?>" name="sender[<?php echo esc_attr( $key ); ?>]" value="<?php echo esc_attr( $sender[ $key ] ?? '' ); ?>" class="regular-text"></td></tr>
 					<?php endforeach; ?>
@@ -103,6 +117,8 @@ class APL_Admin {
 			$sender[ $key ] = sanitize_text_field( wp_unslash( $_POST['sender'][ $key ] ?? '' ) );
 		}
 		update_option( 'armatum_post_sender', $sender );
+		update_option( 'armatum_post_logo', empty( $_POST['logo'] ) ? 'no' : 'yes' );
+		update_option( 'armatum_post_logo_id', absint( $_POST['logo_id'] ?? 0 ) );
 		delete_transient( APL_Api::TOKEN_CACHE );
 		wp_safe_redirect( admin_url( 'options-general.php?page=armatum-post-label&saved=1' ) );
 		exit;

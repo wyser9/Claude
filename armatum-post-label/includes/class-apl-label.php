@@ -239,6 +239,93 @@ class APL_Label {
 		return array_filter( wp_parse_args( is_array( $saved ) ? $saved : array(), $defaults ), 'strlen' );
 	}
 
+	/* ------------------------------------------------------------------ */
+	/* Logo auf dem Label                                                  */
+	/* ------------------------------------------------------------------ */
+
+	/** Höchstgrösse des Logos (die Post nimmt nur kleine Bilder an). */
+	const LOGO_MAX_BYTES = 30000;
+
+	/**
+	 * Mediathek-ID des Logos: eigene Auswahl, sonst Website-Logo, sonst Website-Icon.
+	 *
+	 * @return int
+	 */
+	public static function logo_id() {
+		if ( 'no' === get_option( 'armatum_post_logo', 'yes' ) ) {
+			return 0;
+		}
+		foreach ( array( (int) get_option( 'armatum_post_logo_id' ), (int) get_theme_mod( 'custom_logo' ), (int) get_option( 'site_icon' ) ) as $id ) {
+			if ( $id && wp_attachment_is_image( $id ) ) {
+				return $id;
+			}
+		}
+		return 0;
+	}
+
+	/**
+	 * Logo für die Post: PNG, verkleinert, Base64 – zwischengespeichert.
+	 *
+	 * @return array Felder für "customer" (leer, wenn kein Logo).
+	 */
+	public static function logo_fields() {
+		$id   = self::logo_id();
+		$file = $id ? get_attached_file( $id ) : '';
+		if ( ! $file || ! is_readable( $file ) ) {
+			return array();
+		}
+		$cache = 'apl_logo_' . md5( $id . '|' . filemtime( $file ) . '|' . APL_VERSION );
+		$data  = get_transient( $cache );
+		if ( false === $data ) {
+			$data = self::prepare_logo( $file );
+			set_transient( $cache, $data, WEEK_IN_SECONDS );
+		}
+		if ( ! $data ) {
+			return array();
+		}
+		return array(
+			'logo'                => $data,
+			'logoFormat'          => 'PNG',
+			'logoRotation'        => 0,
+			'logoAspectRatio'     => 'KEEP',
+			'logoHorizontalAlign' => 'LEFT',
+			'logoVerticalAlign'   => 'TOP',
+		);
+	}
+
+	/**
+	 * Bild als kleines PNG (Base64), höchstens LOGO_MAX_BYTES gross.
+	 *
+	 * @param string $file Pfad.
+	 * @return string Base64 oder ''.
+	 */
+	public static function prepare_logo( $file ) {
+		$tmp = wp_tempnam( 'apl-logo' );
+		foreach ( array( 600, 450, 300, 200 ) as $width ) {
+			$editor = wp_get_image_editor( $file );
+			if ( is_wp_error( $editor ) ) {
+				return '';
+			}
+			$size = $editor->get_size();
+			if ( $size['width'] > $width || $size['height'] > (int) round( $width / 2 ) ) {
+				$editor->resize( $width, (int) round( $width / 2 ), false );
+			}
+			$saved = $editor->save( $tmp . '.png', 'image/png' );
+			if ( is_wp_error( $saved ) || empty( $saved['path'] ) ) {
+				return '';
+			}
+			$png = (string) file_get_contents( $saved['path'] ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+			wp_delete_file( $saved['path'] );
+			if ( '' !== $png && strlen( $png ) <= self::LOGO_MAX_BYTES ) {
+				wp_delete_file( $tmp );
+				return base64_encode( $png ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions
+			}
+		}
+		wp_delete_file( $tmp );
+		apl_log( 'warning', 'Logo für das Post-Label ist auch verkleinert zu gross – Label ohne Logo.' );
+		return '';
+	}
+
 	/**
 	 * Daten für generateAddressLabel.
 	 *
@@ -247,14 +334,15 @@ class APL_Label {
 	 * @param bool     $signature Signature.
 	 * @param bool     $bulky     Sperrgut.
 	 * @param bool     $preview   Testmodus (SPECIMEN).
+	 * @param bool     $with_logo Logo mitschicken.
 	 * @return array
 	 */
-	public static function build_payload( WC_Order $order, $grams, $signature, $bulky, $preview ) {
+	public static function build_payload( WC_Order $order, $grams, $signature, $bulky, $preview, $with_logo = true ) {
 		$recipient = self::recipient( $order )['label'];
 		return array(
 			'language'        => 'DE',
 			'frankingLicense' => trim( (string) get_option( 'armatum_post_franking_license' ) ),
-			'customer'        => self::sender(),
+			'customer'        => array_merge( self::sender(), $with_logo ? self::logo_fields() : array() ),
 			'labelDefinition' => array(
 				'labelLayout'     => 'A6',
 				'printAddresses'  => 'RECIPIENT_AND_CUSTOMER',
@@ -323,7 +411,18 @@ class APL_Label {
 		}
 
 		$preview = 'yes' === get_option( 'armatum_post_test_mode', 'yes' );
-		$result  = APL_Api::generate_label( self::build_payload( $order, $grams, $signature, $bulky, $preview ) );
+		$logo_note = '';
+		try {
+			$result = APL_Api::generate_label( self::build_payload( $order, $grams, $signature, $bulky, $preview ) );
+		} catch ( Exception $e ) {
+			// Lehnt die Post nur das Logo ab, das Label trotzdem ohne Logo erstellen.
+			if ( ! self::logo_fields() || false === stripos( $e->getMessage(), 'logo' ) ) {
+				throw $e;
+			}
+			apl_log( 'warning', sprintf( 'Bestellung #%s: Logo von der Post abgelehnt (%s) – Label ohne Logo.', $order->get_order_number(), $e->getMessage() ) );
+			$result    = APL_Api::generate_label( self::build_payload( $order, $grams, $signature, $bulky, $preview, false ) );
+			$logo_note = ' Ohne Logo – die Post hat das Logo abgelehnt (siehe Protokoll).';
+		}
 
 		$scale_note = '';
 		if ( APL_Util::use_a4() ) {
@@ -361,7 +460,7 @@ class APL_Label {
 				$services,
 				number_format( $grams / 1000, 3, '.', '' ),
 				$result['ident_code'],
-				$check['message'] . $scale_note
+				$check['message'] . $scale_note . $logo_note
 			)
 		);
 		$order->save();

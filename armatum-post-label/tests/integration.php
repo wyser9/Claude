@@ -14,6 +14,7 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	$GLOBALS['apl_req'][] = array( $url, $args );
 	if ( false !== strpos( $url, 'OAuth/token' ) ) return r( 200, array( 'access_token' => 'TOKEN123', 'expires_in' => 3600 ) );
 	if ( false !== strpos( $url, 'addresses/validation' ) ) return r( 200, array( 'quality' => $GLOBALS['apl_quality'] ) );
+	if ( false !== strpos( $url, 'generateAddressLabel' ) && ! empty( $GLOBALS['apl_reject_logo'] ) && false !== strpos( $args['body'], '"logo"' ) ) return r( 400, array( 'errors' => array( array( 'message' => 'customer.logo: invalid image' ) ) ) );
 	if ( false !== strpos( $url, 'generateAddressLabel' ) ) return r( 200, array( 'item' => array( 'identCode' => '996012345600000099', 'label' => array( $GLOBALS['apl_label_b64'] ?? base64_encode( '%PDF-1.4 test' ) ) ) ) );
 	return r( 404, array() );
 }, 10, 3 );
@@ -145,5 +146,32 @@ t( 'Hook apl_label_created mit Sendungsnummer', 1 === count( $hooked ) && $hooke
 // Box rendert.
 ob_start(); APL_Admin::render_box( $order ); $box = ob_get_clean();
 t( 'Box zeigt Sendungsnummer und Formular', false !== strpos( $box, '996012345600000099' ) && false !== strpos( $box, 'apl_create_label' ) && false !== strpos( $box, 'data-apl="apl_weight"' ) );
+
+// --- Logo auf dem Label ---
+$img = imagecreatetruecolor( 1200, 400 ); imagefill( $img, 0, 0, imagecolorallocate( $img, 255, 255, 255 ) ); imagefilledrectangle( $img, 100, 100, 1100, 300, imagecolorallocate( $img, 0, 0, 0 ) );
+$lp = $up['basedir'] . '/apl-test-logo.png'; imagepng( $img, $lp );
+$att = wp_insert_attachment( array( 'post_mime_type' => 'image/png', 'post_title' => 'Logo', 'post_status' => 'inherit' ), $lp );
+require_once ABSPATH . 'wp-admin/includes/image.php'; wp_update_attachment_metadata( $att, wp_generate_attachment_metadata( $att, $lp ) );
+update_option( 'armatum_post_logo_id', $att ); delete_option( 'armatum_post_logo' );
+$GLOBALS['apl_req'] = array();
+APL_Label::create( $order, 1000, false, false );
+$lr = null; foreach ( $GLOBALS['apl_req'] as $req ) { if ( false !== strpos( $req[0], 'generateAddressLabel' ) ) { $lr = json_decode( $req[1]['body'], true ); } }
+$png = base64_decode( $lr['customer']['logo'] ?? '' );
+$sz  = $png ? getimagesizefromstring( $png ) : array( 0, 0 );
+t( 'Logo: im Absender als PNG mitgeschickt', 'PNG' === ( $lr['customer']['logoFormat'] ?? '' ) && $png && "\x89PNG" === substr( $png, 0, 4 ) && 'Armatum GmbH' === $lr['customer']['name1'], wp_json_encode( array_diff_key( $lr['customer'] ?? array(), array( 'logo' => 1 ) ) ) );
+t( 'Logo: verkleinert und klein genug', $sz[0] <= 600 && $sz[1] <= 300 && strlen( $png ) <= APL_Label::LOGO_MAX_BYTES, wp_json_encode( array( $sz[0], $sz[1], strlen( $png ) ) ) );
+update_option( 'armatum_post_logo', 'no' );
+$GLOBALS['apl_req'] = array();
+APL_Label::create( $order, 1000, false, false );
+$lr = null; foreach ( $GLOBALS['apl_req'] as $req ) { if ( false !== strpos( $req[0], 'generateAddressLabel' ) ) { $lr = json_decode( $req[1]['body'], true ); } }
+t( 'Logo abschaltbar', ! isset( $lr['customer']['logo'] ) );
+delete_option( 'armatum_post_logo' );
+$GLOBALS['apl_reject_logo'] = true; $GLOBALS['apl_req'] = array();
+$okid = APL_Label::create( $order, 1000, false, false );
+$calls = array_values( array_filter( $GLOBALS['apl_req'], function ( $q ) { return false !== strpos( $q[0], 'generateAddressLabel' ); } ) );
+$notes = wc_get_order_notes( array( 'order_id' => $order->get_id() ) );
+t( 'Logo abgelehnt: Label trotzdem ohne Logo erstellt', $okid && 2 === count( $calls ) && false === strpos( $calls[1][1]['body'], '"logo"' ) && false !== strpos( $notes[0]->content, 'Ohne Logo' ), $notes[0]->content );
+$GLOBALS['apl_reject_logo'] = false;
+delete_option( 'armatum_post_logo_id' );
 
 echo $GLOBALS['fail'] ? "\n" . $GLOBALS['fail'] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";
