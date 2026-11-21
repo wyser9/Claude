@@ -54,6 +54,7 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 		}
 		return resp( array( 'id' => 900, 'document_nr' => 'AU-00001', 'total' => number_format( $total, 2, '.', '' ) ) );
 	}
+	if ( 'GET' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) { foreach ( $GLOBALS['bws_bexio_articles'] ?? array() as $a ) { if ( (int) $a['id'] === (int) $mm[1] ) return resp( $a ); } return resp( array( 'message' => 'not found' ), 404 ); }
 	if ( 'GET' === $m && preg_match( '#^2\.0/kb_order/(\d+)$#', $path, $mm ) && isset( $GLOBALS['bws_kb'][ (int) $mm[1] ] ) ) return resp( $GLOBALS['bws_kb'][ (int) $mm[1] ] );
 	if ( 'POST' === $m && preg_match( '#^2\.0/kb_order/(\d+)/comment$#', $path, $mm ) ) {
 		if ( empty( $body['text'] ) || empty( $body['user_id'] ) || empty( $body['user_name'] ) ) return resp( array( 'message' => 'missing' ), 422 );
@@ -403,6 +404,43 @@ t( 'Laser (Waffenzubehör > Lampen / Laser) über Seriennummer an Lager', 'insto
 t( 'Automatische Kategorien: Waffen, Waffenzubehör, Laser', ! array_diff( array( $c_waf, $c_wz, $c_las ), BWS_Stock_Import::serial_category_ids() ) && ! in_array( $c_zub, BWS_Stock_Import::serial_category_ids(), true ) );
 t( 'Statistik Seriennummern', 2 === $ss['serial'], wp_json_encode( $ss ) );
 t( 'Lagerimport schreibt nichts in bexio', ! array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'GET' !== $q[0]; } ) );
+t( 'Seriennummern für Bestellungen gemerkt (älteste zuerst)', array( 6002 => '096-77116', 6003 => '096-77117' ) === ( get_option( BWS_Order_Sync::OPTION_SERIAL_COPIES )['19442'] ?? null ), wp_json_encode( get_option( BWS_Order_Sync::OPTION_SERIAL_COPIES ) ) );
+
+// Bestellte Waffe an Lager -> Kopie mit Seriennummer im bexio-Auftrag.
+BWS_Settings::save( array( 'sync_orders' => 'yes', 'sync_products' => 'yes' ) );
+update_post_meta( $gun->get_id(), '_bws_article_id', 6001 );
+$gunorder = function ( $qty ) use ( $gun ) {
+	$o = wc_create_order(); $o->add_product( wc_get_product( $gun->get_id() ), $qty );
+	$o->set_address( array( 'first_name' => 'Waffen', 'last_name' => 'Käufer', 'address_1' => 'Weg 2', 'postcode' => '4600', 'city' => 'Olten', 'country' => 'CH', 'email' => 'waffe' . wp_rand() . '@muster.ch' ), 'billing' );
+	$o->calculate_totals(); $o->save(); return $o;
+};
+$posof = function () { $r = array_values( array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'POST' === $q[0] && '2.0/kb_order' === $q[1]; } ) ); $last = end( $r ); return array_values( array_filter( $last[2]['positions'], function ( $p ) { return 'KbPositionArticle' === $p['type']; } ) ); };
+$GLOBALS['bws_requests'] = array();
+$w1 = $gunorder( 1 ); BWS_Order_Sync::sync( $w1 );
+$ps = $posof();
+t( 'Waffe: Kopie mit Seriennummer statt Hauptartikel', 1 === count( $ps ) && 6002 === $ps[0]['article_id'] && false !== strpos( $ps[0]['text'], 'Seriennummer: 096-77116' ) && '1' === $ps[0]['amount'], wp_json_encode( $ps ) );
+t( 'Waffe: Notiz mit Seriennummer', false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $w1->get_id() ) ), 'content' ) ), '096-77116' ) );
+t( 'Waffe: live in bexio geprüft, nichts verändert', (bool) array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'GET' === $q[0] && '2.0/article/6002' === $q[1]; } ) && ! array_filter( $GLOBALS['bws_requests'], function ( $q ) { return 'POST' === $q[0] && 0 === strpos( $q[1], '2.0/article/600' ); } ) );
+$GLOBALS['bws_requests'] = array();
+$w2 = $gunorder( 1 ); BWS_Order_Sync::sync( $w2 );
+t( 'Zweite Bestellung: nächste Kopie', 6003 === ( $posof()[0]['article_id'] ?? 0 ), wp_json_encode( $posof() ) );
+$GLOBALS['bws_requests'] = array();
+$w3 = $gunorder( 1 ); BWS_Order_Sync::sync( $w3 );
+$ps = $posof();
+t( 'Keine freie Kopie: Hauptartikel + Hinweis', 6001 === ( $ps[0]['article_id'] ?? 0 ) && false !== strpos( wp_json_encode( wp_list_pluck( wc_get_order_notes( array( 'order_id' => $w3->get_id() ) ), 'content' ), JSON_UNESCAPED_UNICODE ), 'nur 0 von 1' ), wp_json_encode( $ps ) );
+$w1->update_status( 'cancelled' );
+$GLOBALS['bws_bexio_articles'][2]['stock_nr'] = 0; // 6003 inzwischen verkauft (Laden)
+$GLOBALS['bws_requests'] = array();
+$w4 = $gunorder( 2 ); BWS_Order_Sync::sync( $w4 );
+$ps = $posof();
+t( 'Storno gibt Kopie frei; Menge 2 = Kopie + Rest Hauptartikel', 2 === count( $ps ) && 6002 === $ps[0]['article_id'] && 6001 === $ps[1]['article_id'] && '1' === $ps[1]['amount'], wp_json_encode( $ps ) );
+BWS_Settings::save( array( 'serial_to_order' => 'no' ) );
+$GLOBALS['bws_requests'] = array();
+$w5 = $gunorder( 1 ); BWS_Order_Sync::sync( $w5 );
+t( 'Seriennummer-Zuordnung abschaltbar', 6001 === ( $posof()[0]['article_id'] ?? 0 ) );
+BWS_Settings::save( array( 'serial_to_order' => 'yes' ) );
+$GLOBALS['bws_bexio_articles'][2]['stock_nr'] = 1;
+
 $GLOBALS['bws_bexio_articles'][1]['stock_nr'] = 0; $GLOBALS['bws_bexio_articles'][2]['stock_nr'] = 0;
 BWS_Stock_Import::run();
 t( 'Waffe verkauft (Kopien 0) -> Lieferrückstand', 'onbackorder' === wc_get_product( $gun->get_id() )->get_stock_status() );

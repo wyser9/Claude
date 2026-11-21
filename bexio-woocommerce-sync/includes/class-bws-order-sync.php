@@ -9,6 +9,15 @@ defined( 'ABSPATH' ) || exit;
  */
 class BWS_Order_Sync {
 
+	/** Waffen-Kopien mit Seriennummer an Lager (vom Lagerimport): Hauptartikel-Nr. => [bexio-ID => Seriennummer]. */
+	const OPTION_SERIAL_COPIES = 'bws_serial_copies';
+	/** Bereits Bestellungen zugeordnete Kopien: bexio-ID => Bestell-ID. */
+	const OPTION_SERIAL_ASSIGNED = 'bws_serial_assigned';
+
+	/** @var array Während build_positions gewählte Kopien: bexio-ID => Seriennummer. */
+	private static $serial_picks = array();
+
+
 	const META_ORDER_ID  = '_bws_order_id';
 	const META_ORDER_NR  = '_bws_order_nr';
 	const META_ERROR     = '_bws_last_error';
@@ -137,6 +146,15 @@ class BWS_Order_Sync {
 		$order->delete_meta_data( self::META_ERROR );
 
 		$note = sprintf( 'An bexio übertragen: Auftrag %s (Kontakt-ID %d).', $nr, $contact_id );
+		if ( self::$serial_picks ) {
+			$assigned = self::serial_assignments();
+			foreach ( array_keys( self::$serial_picks ) as $copy_id ) {
+				$assigned[ (int) $copy_id ] = $order->get_id();
+			}
+			update_option( self::OPTION_SERIAL_ASSIGNED, $assigned, false );
+			$order->update_meta_data( '_bws_serials', array_values( self::$serial_picks ) );
+			$note .= ' Waffe aus dem Lager zugeordnet: Seriennummer ' . implode( ', ', self::$serial_picks ) . '.';
+		}
 		if ( self::$warnings ) {
 			$note .= ' Hinweis: ' . implode( '; ', self::$warnings ) . '.';
 		}
@@ -308,13 +326,88 @@ class BWS_Order_Sync {
 	}
 
 	/**
+	 * Zuordnungen Kopie => Bestellung, ohne stornierte/erstattete/gelöschte Bestellungen.
+	 *
+	 * @return array<int,int>
+	 */
+	public static function serial_assignments() {
+		$out = array();
+		foreach ( (array) get_option( self::OPTION_SERIAL_ASSIGNED, array() ) as $copy_id => $order_id ) {
+			$o = wc_get_order( (int) $order_id );
+			if ( $o && ! in_array( $o->get_status(), array( 'cancelled', 'refunded', 'failed', 'trash' ), true ) ) {
+				$out[ (int) $copy_id ] = (int) $order_id;
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Wählt für eine Waffe so viele Kopien mit Seriennummer wie bestellt (älteste zuerst), die laut bexio an Lager
+	 * und noch keiner anderen Bestellung zugeordnet sind. Der Bestand wird live in bexio geprüft, aber nie verändert.
+	 *
+	 * @param WC_Product $product Produkt.
+	 * @param int        $qty     Menge.
+	 * @param WC_Order   $order   Bestellung.
+	 * @return array<int,string> bexio-ID => Seriennummer.
+	 * @throws BWS_Exception Bei vorübergehenden bexio-Fehlern (dann später neuer Versuch).
+	 */
+	public static function pick_serials( WC_Product $product, $qty, WC_Order $order ) {
+		if ( $qty < 1 || ! BWS_Settings::enabled( 'serial_to_order' ) || ! BWS_Product_Sync::in_category_tree( $product, BWS_Stock_Import::serial_category_ids() ) ) {
+			return array();
+		}
+		$sku    = trim( (string) $product->get_sku() );
+		$copies = (array) ( get_option( self::OPTION_SERIAL_COPIES, array() )[ $sku ] ?? array() );
+		if ( '' === $sku || ! $copies ) {
+			return array();
+		}
+		$assigned = self::serial_assignments();
+		$field    = 'stock_available_nr' === BWS_Settings::get( 'stock_field' ) ? 'stock_available_nr' : 'stock_nr';
+		$picks    = array();
+		// Bei erneuter Übertragung derselben Bestellung die bisherigen Kopien zuerst.
+		uksort(
+			$copies,
+			function ( $a, $b ) use ( $assigned, $order ) {
+				$ma = ( $assigned[ $a ] ?? 0 ) === $order->get_id() ? 0 : 1;
+				$mb = ( $assigned[ $b ] ?? 0 ) === $order->get_id() ? 0 : 1;
+				return $ma <=> $mb ?: $a <=> $b;
+			}
+		);
+		foreach ( $copies as $copy_id => $serial ) {
+			if ( count( $picks ) >= $qty ) {
+				break;
+			}
+			if ( isset( self::$serial_picks[ $copy_id ] ) || ( isset( $assigned[ $copy_id ] ) && $assigned[ $copy_id ] !== $order->get_id() ) ) {
+				continue;
+			}
+			try {
+				$article = BWS_Client::instance()->get( '2.0/article/' . (int) $copy_id );
+			} catch ( BWS_Exception $e ) {
+				if ( $e->is_temporary() ) {
+					throw $e;
+				}
+				continue;
+			}
+			if ( empty( $article['is_stock'] ) || (float) ( $article[ $field ] ?? 0 ) < 1 ) {
+				continue;
+			}
+			$picks[ (int) $copy_id ]              = (string) $serial;
+			self::$serial_picks[ (int) $copy_id ] = (string) $serial;
+		}
+		if ( count( $picks ) < $qty ) {
+			self::$warnings[] = sprintf( '„%s“: nur %d von %d Stück mit Seriennummer an Lager – Rest auf den Hauptartikel', $product->get_name(), count( $picks ), $qty );
+		}
+		return $picks;
+	}
+
+	/**
 	 * Auftragspositionen: Artikel, Rabatte, Versand, Gebühren.
 	 *
 	 * @param WC_Order $order Bestellung.
 	 * @return array
 	 */
 	public static function build_positions( WC_Order $order ) {
-		self::$warnings = array();
+		self::$warnings     = array();
+		self::$serial_picks = array();
 		$gross     = self::is_gross();
 		$unit_id   = BWS_Settings::id( 'unit_id' );
 		$account   = BWS_Settings::id( 'account_id' );
@@ -359,6 +452,30 @@ class BWS_Order_Sync {
 					if ( $article_id ) {
 						$position['type']       = 'KbPositionArticle';
 						$position['article_id'] = $article_id;
+						// Waffe an Lager: konkrete Kopie mit Seriennummer statt Hauptartikel.
+						$picks = self::pick_serials( $product, (int) $qty, $order );
+						foreach ( $picks as $copy_id => $serial ) {
+							$positions[] = apply_filters(
+								'bws_order_item_position',
+								array_merge(
+									$position,
+									array(
+										'amount'     => '1',
+										'article_id' => (int) $copy_id,
+										'text'       => $text . "\nSeriennummer: " . $serial,
+									)
+								),
+								$item,
+								$order
+							);
+						}
+						if ( $picks ) {
+							$rest = $qty - count( $picks );
+							if ( $rest < 0.001 ) {
+								continue;
+							}
+							$position['amount'] = BWS_Util::amount( $rest );
+						}
 					}
 				} catch ( BWS_Exception $e ) {
 					// Ein Artikelproblem darf die Bestellung nicht blockieren -> freie Position.

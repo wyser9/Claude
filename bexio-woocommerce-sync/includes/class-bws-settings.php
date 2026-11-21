@@ -42,6 +42,7 @@ class BWS_Settings {
 			'tax_expense_id'     => '', // Leer = Vorsteuer VM81 automatisch.
 			'new_article_stock'  => 'yes', // Neue Artikel als Lagerartikel anlegen.
 			'description_bullets' => 'yes', // bexio-Beschreibung als Stichpunkte.
+			'serial_to_order'    => 'yes', // Bestellte Waffe an Lager: Kopie mit Seriennummer in den bexio-Auftrag.
 			'serial_categories'  => array(), // Kategorien der Seriennummer-Artikel (leer = Waffen, Waffenzubehör, Laser).
 			'category_groups'    => array(), // Produktkategorie-ID => bexio Artikelgruppen-ID.
 			'default_tax_id'     => '',

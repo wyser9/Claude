@@ -244,6 +244,7 @@ class BWS_Admin {
 							</td>
 						</tr>
 						<?php
+						self::checkbox( 'serial_to_order', 'Seriennummer in den Auftrag', 'Wird eine Waffe dieser Kategorien bestellt und ist eine Kopie mit Seriennummer an Lager, kommt diese Kopie (älteste zuerst, live in bexio geprüft) in den bexio-Auftrag statt des Hauptartikels – mit „Seriennummer: …“ im Positionstext. Bereits anderen Bestellungen zugeordnete Kopien werden übersprungen. Nichts an Lager → wie bisher der Hauptartikel.', $s );
 						self::select( 'tax_expense_id', 'MWST Vorsteuer (neue Artikel)', $lists['pre_taxes'], array( 'name', 'value' ), $s, 'Leer = automatisch VM81 (Mat/DL 8.1 %).' );
 						self::select( 'default_tax_id', 'Fallback-MWST', $lists['taxes'], array( 'name', 'value' ), $s, 'Wird verwendet, wenn zu einem Woo-Steuersatz keine bexio-Steuer mit gleichem Satz gefunden wird. Normalerweise leer lassen.' );
 						self::select( 'contact_group_id', 'Kontaktgruppe für neue Kunden', $lists['contact_groups'], 'name', $s );
@@ -382,7 +383,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'refund_to_bexio', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'refund_to_bexio', 'serial_to_order', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';

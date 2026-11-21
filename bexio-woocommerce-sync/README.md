@@ -59,6 +59,8 @@ Für jede Waffe gibt es in bexio einen **Hauptartikel** (z. B. „19442“, Best
 
 Gilt nur für Produkte der Kategorien **„Waffen“** und **„Waffenzubehör“** inkl. aller Unterkategorien (damit auch „Lampen / Laser“) – einstellbar unter „Kategorien mit Seriennummern“ –, damit normale Lieferanten-Artikelnummern nicht mitzählen. Shop-Bestellungen laufen weiterhin auf den Hauptartikel. Der Bestand in bexio wird nie verändert.
 
+**Seriennummer in den Auftrag:** Wird eine solche Waffe bestellt, sucht das Plugin eine Kopie mit Seriennummer, die an Lager ist. Es nimmt die älteste zuerst und prüft den Bestand live in bexio. Diese Kopie kommt statt des Hauptartikels in den bexio-Auftrag, mit „Seriennummer: …“ im Positionstext und in der Bestellnotiz. Kopien, die schon einer anderen offenen Bestellung zugeordnet sind, werden übersprungen. Bei einem Storno wird die Kopie wieder frei. Ist keine Kopie verfügbar, kommt wie bisher der Hauptartikel in den Auftrag, mit einem Hinweis in der Notiz. Die Liste der Kopien kommt aus dem täglichen Lagerimport. Am Bestand in bexio ändert das Plugin nichts, er sinkt erst mit der Lieferung in bexio. Einstellung: *Seriennummer in den Auftrag*.
+
 ### Artikelgruppen (Produktkategorien)
 - In den Einstellungen unter **Artikelgruppen** steht jede Hauptkategorie des Shops mit einem Feld für die **bexio Artikelgruppen-ID**.
 - Die Artikelgruppen müssen zuerst **in bexio angelegt** werden. Die bexio-API bietet keine Schnittstelle zum Anlegen oder Auflisten von Artikelgruppen.

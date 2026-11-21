@@ -405,7 +405,19 @@ class BWS_Stock_Import {
 			}
 			$sums[ $parent ]['stock']  += $stock;
 			$sums[ $parent ]['codes'][] = $code;
+			if ( ! empty( $article['id'] ) ) {
+				$sums[ $parent ]['copies'][ (int) $article['id'] ] = $code;
+			}
 		}
+		// Für die Zuordnung bei Bestellungen merken: Hauptartikel-Nr. => [bexio-ID => Seriennummer], älteste zuerst.
+		$copies = array();
+		foreach ( $sums as $parent => $info ) {
+			if ( ! empty( $info['copies'] ) ) {
+				ksort( $info['copies'] );
+				$copies[ $parent ] = $info['copies'];
+			}
+		}
+		update_option( BWS_Order_Sync::OPTION_SERIAL_COPIES, $copies, false );
 		return $sums;
 	}
 
