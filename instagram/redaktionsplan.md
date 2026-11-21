@@ -1298,3 +1298,4 @@ Hinweis: Die Instagram-Verbindung über Composio ist aktiv. Ich veröffentliche 
 | 2026-11-19 | Inhaber: Fox Jupiter 649 → 519. Story «Fox-Messer reduziert» (Geschenkidee, ohne Prozentzahl) gepostet + Facebook-Fotopost mit Link /jahresend-angebote (Post 130239823495660_122327126732032290). Jupiter + FX-662 auf armatum.ch/insta. |
 | 2026-11-20 | Schliessung 19.11. vorbei: Footer-Hinweis (block-12) entfernt, live geprüft; marke.md als erledigt markiert. |
 | 2026-11-20 | #30 Kydex-Holster Custom Gear Solutions (@custom_gear.ch) aus 8 Inhaber-Fotos: Umbra Hellcat Pro, Citadel P320 X-Carry, Citadel PDP Compact 4″. Geplant Sa 21.11. 08:30 (Laden 9–13 offen), Instagram + Facebook, Story im 9:16-Rahmen. Nicht im Shop → kein Produktlink. |
+| 2026-11-21 | #30 Kydex-Holster CGS veröffentlicht 08:31 – https://www.instagram.com/p/Df_sxCdlZih/ – Story (9:16) + Facebook 130239823495660_122327360078032290. Inhaber markiert @custom_gear.ch im Bild von Hand (Erinnerung 08:45). |
