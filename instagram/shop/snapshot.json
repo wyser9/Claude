@@ -740,7 +740,7 @@
 "Brügger & Thomet",
 "Maschinenpistolen"
 ],
-"images": 1,
+"images": 2,
 "name": "B&T SPC9 Selbstladekarabiner",
 "on_sale": false,
 "price": "264900",
@@ -7174,7 +7174,7 @@
 "price": "6990",
 "regular": "6990",
 "short": "Der Nine Reloaded Loader ist das Basismodul für schnelles, kraftsparendes Laden von 9mm Magazinen – Lieferung ohne Adapter.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/nine-reloaded-loader-magazinzufuehrung-fuer-9mm-systeme/"
 },
 "17533": {
@@ -10167,7 +10167,7 @@
 "price": "3900",
 "regular": "3900",
 "short": "Das Springfield Armory Echelon Magazine in OD Green bietet Platz für 20 Schuss im Kaliber 9mm. Hergestellt aus robustem Stahl für dauerhafte Zuverlässigkeit und optimale Leistung.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/springfield-armory-echelon-magazin-od-green-20-schuss-9x19-kopie-2/"
 },
 "19213": {
@@ -14634,7 +14634,7 @@
 "Präzisionsgewehre",
 "Ruger"
 ],
-"images": 1,
+"images": 2,
 "name": "Ruger American Rifle GEN II Scout .308 Win",
 "on_sale": false,
 "price": "112900",
@@ -32034,7 +32034,7 @@
 "price": "5390",
 "regular": "5390",
 "short": "Leichte und robuste Schiesshandschuhe mit hoher Fingerfertigkeit, Touchscreen-Funktion und hervorragendem Tragekomfort.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/magpul-patrol-glove-2-0-4/"
 },
 "23099": {
@@ -39338,7 +39338,7 @@
 "price": "35990",
 "regular": "35990",
 "short": "Leistungsstarkes FFP Zielfernrohr mit VHR MIL Absehen und hoher Präzision für Long-Range und Präzisionsschiessen.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/arken-epl-4-6-24x50-ffp-vhr-mil/"
 },
 "24982": {
@@ -43230,7 +43230,7 @@
 "Beretta",
 "Pistolen"
 ],
-"images": 1,
+"images": 5,
 "name": "Beretta 94X Performance Production 9×19",
 "on_sale": false,
 "price": "156900",
@@ -67729,7 +67729,7 @@
 "price": "37690",
 "regular": "37690",
 "short": "Kompakte Pumpflinte Stoeger P3000 im Kaliber 12/76 mit Pistolengriff, 48 cm Lauf mit festem Slug-Choke und Magazin für 4 Patronen. Erwerb mit WES und Ausweiskopie.",
-"stock": "available-on-backorder",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/stoeger-p3000-synthetic-pistol-grip-pumpflinte-12-76-48-cm/"
 },
 "35114": {
@@ -67745,5 +67745,346 @@
 "short": "Taktische Pumpflinte Stoeger P3000 im Kaliber 12/76 in Tungsten, mit 7 Schuss Magazin, Picatinny-Schiene, M-LOK und verstellbarer Visierung. Erwerb mit WES und Ausweiskopie.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/stoeger-p3000-tactical-pumpflinte-12-76-tungsten/"
+},
+"35144": {
+"cats": [
+"Agilite",
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 2,
+"name": "Agilite Pincer PLACARD Triple 5.56 Mag Pouch Ranger Green, Vorgängerversion, neuwertig",
+"on_sale": false,
+"price": "5900",
+"regular": "5900",
+"short": "Occasion: Agilite Pincer Placard mit drei Magazinschächten für 5.56-Magazine in Ranger Green. Vorgängerversion, neuwertig. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/agilite-pincer-placard-triple-5-56-mag-pouch-ranger-green-vorgaengerversion-neuwertig/"
+},
+"35146": {
+"cats": [
+"Agilite",
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 3,
+"name": "Agilite AG3 Placard Triple Mag Pouch Ranger Green, neuwertig",
+"on_sale": false,
+"price": "4200",
+"regular": "4200",
+"short": "Occasion: Agilite AG3 Placard für drei AR/M4-Magazine in Ranger Green, mit Bungee-Retention. Neuwertig, mit Beutel und Schnallen. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/agilite-ag3-placard-triple-mag-pouch-ranger-green-neuwertig/"
+},
+"35147": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Plattenträger"
+],
+"images": 3,
+"name": "Warrior Assault Systems Low Profile Carrier V1 Multicam Grösse M mit Triple Mag Pouch, gebraucht",
+"on_sale": false,
+"price": "19000",
+"regular": "19000",
+"short": "Occasion: Warrior Assault Systems Low Profile Carrier (LPC) V1 in Multicam, Grösse M, mit Kummerbund und offener Dreifach-Magazintasche vorne. Ohne Platten. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-low-profile-carrier-v1-multicam-groesse-m-mit-triple-mag-pouch-gebraucht/"
+},
+"35148": {
+"cats": [
+"Agilite",
+"Gebrauchtwaffen / Occasionen",
+"Plattenträger Zubehör"
+],
+"images": 2,
+"name": "Agilite Flank Side Plate Carriers Ranger Green (Paar), neuwertig",
+"on_sale": false,
+"price": "5900",
+"regular": "5900",
+"short": "Occasion: Paar Agilite Flank Side Plate Carriers in Ranger Green, Seitentaschen für Seitenplatten mit MOLLE-Front. Neuwertig. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/agilite-flank-side-plate-carriers-ranger-green-paar-neuwertig/"
+},
+"35149": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 1,
+"name": "Blackhawk SERPA Tactical Oberschenkelholster rechts, gebraucht",
+"on_sale": false,
+"price": "4900",
+"regular": "4900",
+"short": "Occasion: Blackhawk SERPA Oberschenkelholster mit Beinplattform für Rechtshänder, gebraucht. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/blackhawk-serpa-tactical-oberschenkelholster-rechts-gebraucht/"
+},
+"35150": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 3,
+"name": "IDOGEAR Pistolenmagazinhalter Schwarz mit Gürtelclip, neu",
+"on_sale": false,
+"price": "1190",
+"regular": "1190",
+"short": "Occasion: IDOGEAR Magazinhalter für ein Pistolenmagazin, Schwarz, mit Gürtelclip. Neu und unbenutzt, 2 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/idogear-pistolenmagazinhalter-schwarz-mit-guertelclip-neu/"
+},
+"35151": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 1,
+"name": "IDOGEAR Waffengürtel (Battle Belt) mit Cobra-Schnalle, Schwarz, Grösse M, neu",
+"on_sale": false,
+"price": "3900",
+"regular": "3900",
+"short": "Occasion: IDOGEAR Waffengürtel mit Cobra-Schnalle und MOLLE-Lasercut, Schwarz, Grösse M. Neu und unbenutzt, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/idogear-waffenguertel-battle-belt-mit-cobra-schnalle-schwarz-groesse-m-neu/"
+},
+"35152": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 4,
+"name": "IDOGEAR Pistolenmagazintasche MOLLE, Schwarz, neu",
+"on_sale": false,
+"price": "1490",
+"regular": "1490",
+"short": "Occasion: IDOGEAR Magazintasche für ein Pistolenmagazin, Schwarz, oben offen mit elastischem Einsatz und MOLLE-Befestigung. Neu und unbenutzt, 2 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/idogear-pistolenmagazintasche-molle-schwarz-neu/"
+},
+"35153": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 1,
+"name": "IDOGEAR Drop Pouch (Abwurfsack) MOLLE, Schwarz, neu",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "Occasion: IDOGEAR Drop Pouch (Abwurfsack) für leere Magazine, Schwarz, 27.5 x 25.5 cm, MOLLE-Befestigung. Neu mit Etikett, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/idogear-drop-pouch-abwurfsack-molle-schwarz-neu/"
+},
+"35155": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Chameleon Fabrics Taschenlampen-Tasche, Schwarz, gebraucht",
+"on_sale": false,
+"price": "1500",
+"regular": "1500",
+"short": "Occasion: Chameleon Fabrics Tasche für eine Taschenlampe, Schwarz, 15 x 4 cm, mit Klettlasche und Gürtelschlaufe. Gebraucht, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/chameleon-fabrics-taschenlampen-tasche-schwarz-gebraucht/"
+},
+"35156": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Olight Taschenlampen-Tasche (Holster), Schwarz, gebraucht",
+"on_sale": false,
+"price": "900",
+"regular": "900",
+"short": "Occasion: Olight Holster für eine Taschenlampe, Schwarz, 13 x 6 x 5 cm, mit Klettdeckel, Gürtelschlaufe und D-Ring. Gebraucht, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/olight-taschenlampen-tasche-holster-schwarz-gebraucht/"
+},
+"35157": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Streamlight Taschenlampen-Holster Nylon, Schwarz, 21 cm, gebraucht",
+"on_sale": false,
+"price": "900",
+"regular": "900",
+"short": "Occasion: Streamlight Nylon-Holster für eine Taschenlampe, Schwarz, 21 x 5 cm, mit Klettdeckel und Gürtelschlaufe. Gebraucht, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/streamlight-taschenlampen-holster-nylon-schwarz-21-cm-gebraucht/"
+},
+"35161": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 3,
+"name": "Warrior Assault Systems Dump Pouch kompakt (Abwurfsack), Multicam, gebraucht",
+"on_sale": false,
+"price": "2000",
+"regular": "2000",
+"short": "Occasion: Warrior Assault Systems Dump Pouch in kompakter Ausführung, Multicam, einrollbar, MOLLE-Befestigung. Gebraucht, guter Zustand, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-dump-pouch-kompakt-abwurfsack-multicam-gebraucht/"
+},
+"35162": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Gewehrmagazintasche offen MOLLE, Multicam, gebraucht",
+"on_sale": false,
+"price": "1500",
+"regular": "1500",
+"short": "Occasion: Warrior Assault Systems Magazintasche für ein Langwaffenmagazin, oben offen mit Bungee-Sicherung, Multicam, MOLLE. Gebraucht, guter Zustand, 2 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-gewehrmagazintasche-offen-molle-multicam-gebraucht/"
+},
+"35165": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Taco Gewehrmagazintasche, Multicam, gebraucht",
+"on_sale": false,
+"price": "2000",
+"regular": "2000",
+"short": "Occasion: Warrior Assault Systems Taco-Magazintasche für ein Gewehrmagazin, mit Kunststoffeinsatz und Bungee-Sicherung, Multicam, MOLLE / Gürtelclips. Gebraucht, guter Zustand, 2 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-taco-gewehrmagazintasche-multicam-gebraucht/"
+},
+"35168": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Jennings",
+"Pistolen"
+],
+"images": 3,
+"name": "Jennings J-22 Pistole .22 LR gebraucht, vernickelt",
+"on_sale": false,
+"price": "19500",
+"regular": "19500",
+"short": "Gebrauchte Jennings J-22 im Kaliber .22 LR, vernickelt mit schwarzen Griffschalen, guter Zustand. Kompakte Taschenpistole, Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/jennings-j-22-pistole-22-lr-gebraucht-vernickelt/"
+},
+"35169": {
+"cats": [
+"Astra",
+"Gebrauchtwaffen / Occasionen",
+"Pistolen"
+],
+"images": 3,
+"name": "Astra Cub Pistole 6.35 mm Browning gebraucht, vernickelt",
+"on_sale": false,
+"price": "18000",
+"regular": "18000",
+"short": "Gebrauchte Astra Cub im Kaliber 6.35 mm Browning (.25 ACP), vernickelt mit hellen Griffschalen. Kompakte Taschenpistole aus Spanien, Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/astra-cub-pistole-6-35-mm-browning-gebraucht-vernickelt/"
+},
+"35170": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Pistolen",
+"SIG Sauer"
+],
+"images": 4,
+"name": "SIG Sauer P225 Pistole 9mm Para ex Kantonspolizei Bern gebraucht, mit 2 Magazinen",
+"on_sale": false,
+"price": "59900",
+"regular": "59900",
+"short": "SIG Sauer P225 im Kaliber 9mm Para, ehemalige Dienstwaffe der Kantonspolizei Bern mit eingraviertem Berner Wappen. Inklusive 2 Magazinen. Gebraucht, Zustand okay.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/sig-sauer-p225-pistole-9mm-para-ex-kantonspolizei-bern-gebraucht-mit-2-magazinen/"
+},
+"35171": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Lampen / Laser",
+"Streamlight"
+],
+"images": 2,
+"name": "Streamlight TLR-1 Waffenlampe Schwarz gebraucht",
+"on_sale": false,
+"price": "7900",
+"regular": "7900",
+"short": "Streamlight TLR-1 Waffenlampe für Picatinny-Schiene, schwarz. Gebraucht, Zustand gut.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/streamlight-tlr-1-waffenlampe-schwarz-gebraucht/"
+},
+"35172": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Lee Precision",
+"Werkzeug"
+],
+"images": 2,
+"name": "Lee Precision Ergo Prime Handzünder (Priming Tool) gebraucht, neuwertig",
+"on_sale": false,
+"price": "4500",
+"regular": "4500",
+"short": "Lee Precision Ergo Prime Handzündgerät zum Setzen von Zündhütchen, mit Zuführungen für grosse und kleine Zündhütchen und Aufbewahrungskoffer. Gebraucht, neuwertig.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/lee-precision-ergo-prime-handzuender-priming-tool-gebraucht-neuwertig/"
+},
+"35173": {
+"cats": [
+"Behälter",
+"Gebrauchtwaffen / Occasionen",
+"MTM Case Gard"
+],
+"images": 2,
+"name": "MTM Case-Gard Patronenbox RL-50 Rifle Large Grün gebraucht",
+"on_sale": false,
+"price": "500",
+"regular": "500",
+"short": "MTM Case-Gard RL-50 Patronenbox für 50 grosse Büchsenpatronen, grün. Gebraucht, Zustand gut.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/mtm-case-gard-patronenbox-rl-50-rifle-large-gruen-gebraucht/"
+},
+"35174": {
+"cats": [
+"Die / Matrizen",
+"Gebrauchtwaffen / Occasionen",
+"Hornady"
+],
+"images": 1,
+"name": "Hornady Neck Size Die 6.5mm (.264) gebraucht",
+"on_sale": false,
+"price": "3000",
+"regular": "3000",
+"short": "Hornady Neck Size Die (Halskalibriermatrize) für 6.5mm (.264), Art.-Nr. 046043, in Originalverpackung. Gebraucht, Zustand gut.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/hornady-neck-size-die-6-5mm-264-gebraucht/"
+},
+"35175": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Lee Precision",
+"Shellholder / Hülsenhalter"
+],
+"images": 2,
+"name": "Lee Precision Hülsenhalter-Set (Shellholder) 12-teilig im Koffer gebraucht",
+"on_sale": false,
+"price": "2000",
+"regular": "2000",
+"short": "Lee Hülsenhalter-Set für Lee Handzündgeräte, 12 Hülsenhalter im roten Originalkoffer. Gebraucht, Zustand gut.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/lee-precision-huelsenhalter-set-shellholder-12-teilig-im-koffer-gebraucht/"
+},
+"35176": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"RCBS",
+"Werkzeug"
+],
+"images": 1,
+"name": "RCBS Quick Change Pulvertrichter-Set mit 5 Adaptern und Fallrohr gebraucht",
+"on_sale": false,
+"price": "1500",
+"regular": "1500",
+"short": "RCBS Quick Change Pulvertrichter-Set zum Abfüllen von Pulver in Hülsen: Trichter, 5 Kaliber-Adapter und Fallrohr. Gebraucht, Zustand gut.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/rcbs-quick-change-pulvertrichter-set-mit-5-adaptern-und-fallrohr-gebraucht/"
 }
 }
