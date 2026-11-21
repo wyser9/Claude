@@ -55,10 +55,12 @@ add_shortcode( 'armatum_newsletter', function ( $atts ) {
 		. '<input type="hidden" name="action" value="armatum_nl">'
 		. '<input type="hidden" name="back" value="' . esc_attr( get_permalink() ) . '">'
 		. '<input type="text" name="firma_web" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">'
+		. '<input type="hidden" name="nl_chk" value="">'
 		. '<input type="text" name="vorname" placeholder="Vorname" style="flex:1 1 140px;min-width:0;">'
 		. '<input type="email" name="email" placeholder="E-Mail-Adresse" required style="flex:2 1 200px;min-width:0;">'
 		. '<button type="submit" class="button">Anmelden</button>'
 		. '</form>'
+		. '<script>setTimeout(function(){document.querySelectorAll(\'input[name="nl_chk"]\').forEach(function(e){e.value=\'arm\'+\'atum-\'+\'ok\';});},2000);</script>'
 		. '<p style="font-size:0.85em;opacity:0.8;margin-top:6px;">Einmal im Monat Neuheiten, Occasionen, Werkstatt und Wiederladen. Abmeldung jederzeit mit einem Klick. <a href="' . esc_url( get_privacy_policy_url() ) . '">Datenschutz</a></p>'
 		. '</div>';
 	return $out;
@@ -68,6 +70,12 @@ function armatum_nl_handle() {
 	$back = isset( $_POST['back'] ) ? esc_url_raw( wp_unslash( $_POST['back'] ) ) : home_url( '/' );
 	$back = wp_validate_redirect( $back, home_url( '/' ) );
 	if ( ! empty( $_POST['firma_web'] ) ) { wp_safe_redirect( add_query_arg( 'nl', 'ok', $back ) ); exit; }
+	// Bot-Schutz (seit 21.11.2026): Feld wird erst 2 s nach dem Laden per JavaScript gesetzt; Tageslimit 30 Web-Anmeldungen
+	if ( ! isset( $_POST['nl_chk'] ) || 'armatum-ok' !== $_POST['nl_chk'] ) { wp_safe_redirect( add_query_arg( 'nl', 'ok', $back ) ); exit; }
+	$day_key = 'armatum_nl_day_' . gmdate( 'Ymd' );
+	$day_n   = (int) get_transient( $day_key );
+	if ( $day_n >= 30 ) { wp_safe_redirect( add_query_arg( 'nl', 'ok', $back ) ); exit; }
+	set_transient( $day_key, $day_n + 1, DAY_IN_SECONDS );
 	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) : '';
 	$key = 'armatum_nl_' . md5( $ip );
 	$n   = (int) get_transient( $key );
