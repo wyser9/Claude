@@ -37,7 +37,7 @@ class AK_Frontend {
 			array(
 				'post_type'      => 'product',
 				'post_status'    => $status,
-				'posts_per_page' => 200,
+				'posts_per_page' => -1,
 				'fields'         => 'ids',
 				'meta_key'       => '_ak_role',
 				'meta_value'     => 'waffe',
@@ -89,6 +89,9 @@ class AK_Frontend {
 		if ( ! $product instanceof WC_Product || ! AK_Data::visible_for_current_user() ) {
 			return;
 		}
+		if ( ! self::page_url() ) {
+			return; // Noch keine Konfigurator-Seite: kein Knopf und keine Prüfung.
+		}
 		$id   = $product->get_id();
 		$role = AK_Data::role( $id );
 		if ( ! $role || ! AK_Data::is_ready( $id ) ) {
@@ -98,17 +101,24 @@ class AK_Frontend {
 			$url   = self::page_url( array( 'waffe' => $id ) );
 			$label = 'Diese Waffe konfigurieren';
 		} else {
-			$fits = array_filter(
-				self::weapons(),
-				function ( $w ) use ( $id ) {
-					return self::part_fits_weapon( $w, $id );
+			// Zubehör: nur zwischengespeicherte Ergebnisse verwenden, damit die Produktseite schnell bleibt.
+			// Die Waffenauswahl im Konfigurator zeigt danach nur passende Waffen.
+			$args   = array( 'teil' => $id );
+			$fits   = array();
+			$all    = true;
+			foreach ( self::weapons() as $w ) {
+				if ( ! AK_Data::options_cached( $w ) ) {
+					$all = false;
+					continue;
 				}
-			);
-			if ( ! $fits ) {
+				if ( self::part_fits_weapon( $w, $id ) ) {
+					$fits[] = $w;
+				}
+			}
+			if ( $all && ! $fits ) {
 				return;
 			}
-			$args = array( 'teil' => $id );
-			if ( 1 === count( $fits ) ) {
+			if ( $all && 1 === count( $fits ) ) {
 				$args['waffe'] = reset( $fits );
 			}
 			$url   = self::page_url( $args );
@@ -119,6 +129,25 @@ class AK_Frontend {
 		}
 		self::assets();
 		echo '<p class="ak-product-cta"><a class="button ak-cta" href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></p>';
+	}
+
+	/**
+	 * Waffen, auf die das Teil passt. Rechnet höchstens $budget Sekunden neu;
+	 * Waffen, die danach noch nicht geprüft sind, werden mit angezeigt (Prüfung beim Öffnen der Waffe).
+	 */
+	public static function weapons_for_part( $weapons, $part_id, $budget = 8 ) {
+		$start = microtime( true );
+		$out   = array();
+		foreach ( $weapons as $w ) {
+			if ( ! AK_Data::options_cached( $w ) && ( microtime( true ) - $start ) > $budget ) {
+				$out[] = $w;
+				continue;
+			}
+			if ( self::part_fits_weapon( $w, $part_id ) ) {
+				$out[] = $w;
+			}
+		}
+		return $out;
 	}
 
 	public static function shortcode( $atts ) {
@@ -148,14 +177,7 @@ class AK_Frontend {
 		$weapons = self::weapons();
 		$part    = $part_id ? wc_get_product( $part_id ) : null;
 		if ( $part ) {
-			$weapons = array_values(
-				array_filter(
-					$weapons,
-					function ( $w ) use ( $part_id ) {
-						return self::part_fits_weapon( $w, $part_id );
-					}
-				)
-			);
+			$weapons = self::weapons_for_part( $weapons, $part_id );
 		}
 		// Waffenart: Langwaffen und Pistolen getrennt (Reiter nur, wenn es beide gibt).
 		$by_type = array();

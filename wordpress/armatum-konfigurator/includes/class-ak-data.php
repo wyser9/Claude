@@ -19,6 +19,49 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Data {
 
+	/** Pro Anfrage: Optionen je Waffe, Produkte je Rolle. */
+	private static $options_memo = array();
+	private static $role_memo    = array();
+	private static $bumped       = false;
+
+	/** Cache leeren, sobald sich Produkte, Lager oder Konfigurator-Felder ändern. */
+	public static function cache_hooks() {
+		$meta = function ( $meta_id, $object_id, $meta_key ) {
+			if ( 0 === strpos( (string) $meta_key, '_ak_' ) ) {
+				self::bump_cache();
+			}
+		};
+		add_action( 'added_post_meta', $meta, 10, 3 );
+		add_action( 'updated_post_meta', $meta, 10, 3 );
+		add_action( 'deleted_post_meta', $meta, 10, 3 );
+		$post = function ( $post_id ) {
+			if ( in_array( get_post_type( $post_id ), array( 'product', 'product_variation' ), true ) ) {
+				self::bump_cache();
+			}
+		};
+		add_action( 'save_post', $post );
+		add_action( 'before_delete_post', $post );
+		add_action( 'trashed_post', $post );
+		add_action( 'woocommerce_product_set_stock_status', array( __CLASS__, 'bump_cache' ) );
+		add_action( 'woocommerce_variation_set_stock_status', array( __CLASS__, 'bump_cache' ) );
+		add_action( 'ak_warm_cache', array( __CLASS__, 'warm_cache' ) );
+	}
+
+	/** Hintergrund (WP-Cron): Optionen aller Waffen vorrechnen, in Etappen von höchstens 20 Sekunden. */
+	public static function warm_cache() {
+		if ( ! class_exists( 'AK_Frontend' ) ) {
+			return;
+		}
+		$start = microtime( true );
+		foreach ( AK_Frontend::weapons() as $w ) {
+			if ( ( microtime( true ) - $start ) > 20 ) {
+				wp_schedule_single_event( time() + 30, 'ak_warm_cache' );
+				return;
+			}
+			self::options_for_weapon( $w );
+		}
+	}
+
 	const ROLES = array( 'waffe', 'montage', 'optik', 'magnifier', 'zubehoer' );
 
 	/** Arten von Montagen: '' = für Optik mit Mittelrohr (Zielfernrohr). */
@@ -731,11 +774,19 @@ class AK_Data {
 
 	/** Produkte einer Rolle, die eingerichtet und kaufbar sind. */
 	public static function products_by_role( $role ) {
+		if ( isset( self::$role_memo[ $role ] ) ) {
+			return self::$role_memo[ $role ];
+		}
+		self::$role_memo[ $role ] = self::query_role( $role );
+		return self::$role_memo[ $role ];
+	}
+
+	private static function query_role( $role ) {
 		$ids = get_posts(
 			array(
 				'post_type'      => 'product',
 				'post_status'    => 'publish',
-				'posts_per_page' => 200,
+				'posts_per_page' => -1,
 				'fields'         => 'ids',
 				'meta_key'       => '_ak_role',
 				'meta_value'     => $role,
@@ -763,6 +814,50 @@ class AK_Data {
 	 * @return array{optics: array, mounts: array}
 	 */
 	public static function options_for_weapon( $weapon_id ) {
+		$weapon_id = (int) $weapon_id;
+		if ( isset( self::$options_memo[ $weapon_id ] ) ) {
+			return self::$options_memo[ $weapon_id ];
+		}
+		$ver = self::cache_version();
+		$hit = get_transient( 'ak_opt_' . $weapon_id ); // Ein Eintrag pro Waffe, mit Version (kein Anwachsen der Tabelle).
+		if ( is_array( $hit ) && isset( $hit['v'], $hit['o'] ) && $ver === (int) $hit['v'] ) {
+			$o = $hit['o'];
+		} else {
+			$o = self::compute_options_for_weapon( $weapon_id );
+			set_transient( 'ak_opt_' . $weapon_id, array( 'v' => $ver, 'o' => $o ), 12 * HOUR_IN_SECONDS );
+		}
+		self::$options_memo[ $weapon_id ] = $o;
+		return $o;
+	}
+
+	/** Liegen die Optionen dieser Waffe schon im Cache? */
+	public static function options_cached( $weapon_id ) {
+		if ( isset( self::$options_memo[ (int) $weapon_id ] ) ) {
+			return true;
+		}
+		$hit = get_transient( 'ak_opt_' . (int) $weapon_id );
+		return is_array( $hit ) && isset( $hit['v'] ) && self::cache_version() === (int) $hit['v'];
+	}
+
+	/** Cache-Version: jede Änderung an Produkten oder _ak_-Feldern macht alle Einträge ungültig. */
+	public static function cache_version() {
+		return (int) get_option( 'ak_cache_ver', 1 );
+	}
+
+	public static function bump_cache() {
+		if ( self::$bumped ) {
+			return;
+		}
+		self::$bumped       = true;
+		self::$options_memo = array();
+		self::$role_memo    = array();
+		update_option( 'ak_cache_ver', self::cache_version() + 1, false );
+		if ( ! wp_next_scheduled( 'ak_warm_cache' ) ) {
+			wp_schedule_single_event( time() + 120, 'ak_warm_cache' );
+		}
+	}
+
+	public static function compute_options_for_weapon( $weapon_id ) {
 		$blocked = self::blocked( $weapon_id );
 		$allowed = function ( $ids ) use ( $weapon_id, $blocked ) {
 			return array_values(
@@ -853,19 +948,58 @@ class AK_Data {
 		$aufs = array_merge( array( 0 ), isset( $muzzle['muendungsaufsatz'] ) ? $muzzle['muendungsaufsatz'] : array() );
 		$hubs = array_merge( array( 0 ), isset( $muzzle['hub'] ) ? $muzzle['hub'] : array() );
 		$sds  = array_merge( array( 0 ), isset( $muzzle['schalldaempfer'] ) ? $muzzle['schalldaempfer'] : array() );
-		$ok   = array();
-		foreach ( $aufs as $a ) {
-			foreach ( $hubs as $h ) {
-				foreach ( $sds as $d ) {
-					if ( ! $a && ! $h && ! $d ) {
-						continue;
-					}
-					$chain = array_filter( array( 'muendungsaufsatz' => $a, 'hub' => $h, 'schalldaempfer' => $d ) );
-					if ( self::muzzle_chain_valid( $weapon_id, $chain ) ) {
-						foreach ( $chain as $g => $id ) {
-							$ok[ $g ][ $id ] = true;
-						}
-					}
+		// Lineare Prüfung statt Dreifachschleife (gleiches Ergebnis wie muzzle_chain_valid für jede Kombination).
+		$ok     = array();
+		$thread = self::weapon_slot( $weapon_id, 'muendung' );
+		$t_ifs  = $thread ? $thread['interfaces'] : array();
+		$base   = array(); // Enden ohne Mündungsaufsatz (Gewinde, Originalaufsatz).
+		foreach ( self::muzzle_ends( $weapon_id ) as $end ) {
+			$base = array_merge( $base, $end['interfaces'] );
+		}
+		$cal = array();
+		$cal_ok = function ( $id ) use ( $weapon_id, &$cal ) {
+			if ( ! isset( $cal[ $id ] ) ) {
+				$cal[ $id ] = self::caliber_ok( $weapon_id, $id );
+			}
+			return $cal[ $id ];
+		};
+		// Ausgänge der gültigen Mündungsaufsätze.
+		$sources = array( 0 => $base ); // 0 = kein Aufsatz.
+		foreach ( array_slice( $aufs, 1 ) as $a ) {
+			if ( $t_ifs && $cal_ok( $a ) && array_intersect( $t_ifs, self::interfaces( $a ) ) ) {
+				$ok['muendungsaufsatz'][ $a ] = true;
+				$sources[ $a ]                = self::outputs( $a );
+			}
+		}
+		// HUBs: auf einem gültigen Ende. Merkt sich, über welche Aufsätze der HUB erreichbar ist.
+		$hub_out = array();
+		foreach ( array_slice( $hubs, 1 ) as $h ) {
+			if ( ! $cal_ok( $h ) ) {
+				continue;
+			}
+			$h_ifs = self::interfaces( $h );
+			foreach ( $sources as $a => $outs ) {
+				if ( array_intersect( $outs, $h_ifs ) ) {
+					$ok['hub'][ $h ] = true;
+					$hub_out[ $h ][] = $a;
+				}
+			}
+		}
+		// Schalldämpfer: direkt auf einem Ende oder auf einem erreichbaren HUB.
+		foreach ( array_slice( $sds, 1 ) as $d ) {
+			if ( ! $cal_ok( $d ) ) {
+				continue;
+			}
+			$d_ifs = self::interfaces( $d );
+			foreach ( $sources as $a => $outs ) {
+				if ( array_intersect( $outs, $d_ifs ) ) {
+					$ok['schalldaempfer'][ $d ] = true;
+					break;
+				}
+			}
+			foreach ( $hub_out as $h => $via ) {
+				if ( array_intersect( self::outputs( $h ), $d_ifs ) ) {
+					$ok['schalldaempfer'][ $d ] = true;
 				}
 			}
 		}
