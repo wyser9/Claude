@@ -207,3 +207,18 @@ Konto 08.–14.11.: Reichweite 2525, interagierende Konten 225, Interaktionen 32
 | #26 Rebel (K31-Umbau, Inhaber-Fotos) | 06.11. | 2497 | 4648 | 233 | 7 | 30 | 39 |
 | #24 Reel FFP + MIL | 01.11. | 607 | 725 | 9 | 0 | 1 | 0 |
 Schluss: #26 Rebel bleibt der Ausreisser (K31/Swiss-Custom zieht, viele Shares). #27/#28 mit Inhaber-Fotos solide, aber deutlich unter K31-Niveau – Schweizer Klassiker/Custom-Umbauten weiter bevorzugen. #28 nach 2 Tagen, Werte noch nicht final.
+
+## Kurs-Check 22.11.2026 (Frage Inhaber: «Sind wir auf Kurs?»)
+Follower 2512 (11.10.: 2450 → +62 in 6 Wochen, ca. +10/Woche). Gefolgt 1511 (11.10.: 5547 – Aufräumen erledigt, Ziel <1500 praktisch erreicht).
+Konto-Reichweite pro Woche: 11.–17.10. 1524 · 08.–14.11. 2525 · 15.–21.11. 1236. Interagierende Konten 212 → 225 → 91. Profilbesuche 98 → 143 → 66. Website-Klicks 12 → 20 → 13.
+| Beitrag | Reichweite | Saves | Shares |
+|---|---|---|---|
+| #26 Rebel (K31-Umbau) | 2831 | 33 | 50 |
+| #21 K31 Klassiker | 1695 | 18 | 22 |
+| #23 Geschosse | 634 | 2 | 1 |
+| #24 Reel FFP+MIL | 611 | 1 | 0 |
+| #27 Phoenix | 457 | 0 | 0 |
+| #28 Stoeger Umbau | 433 | 2 | 2 |
+| #29 CZ TS 2 | 316 | 0 | 0 |
+| #30 Holster CGS (1 Tag) | 166 | 0 | 0 |
+Schluss: Woche 15.–21.11. nur 2 Feed-Posts (Ziel 3) und kein «Schweizer Klassiker» → Reichweite halbiert. Schweizer Ordonnanz/Custom (K31) bringt 4–8× mehr als Produkt-Posts. Nächste Schritte: Occasion K31 1942 + P225 ex Kapo Bern mit Inhaber-Fotos als Feed, Reel aus Video 2, 3 Feed-Posts/Woche halten, Collab-Post mit CGS anfragen.
