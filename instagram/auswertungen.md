@@ -222,3 +222,15 @@ Konto-Reichweite pro Woche: 11.–17.10. 1524 · 08.–14.11. 2525 · 15.–21.1
 | #29 CZ TS 2 | 316 | 0 | 0 |
 | #30 Holster CGS (1 Tag) | 166 | 0 | 0 |
 Schluss: Woche 15.–21.11. nur 2 Feed-Posts (Ziel 3) und kein «Schweizer Klassiker» → Reichweite halbiert. Schweizer Ordonnanz/Custom (K31) bringt 4–8× mehr als Produkt-Posts. Nächste Schritte: Occasion K31 1942 + P225 ex Kapo Bern mit Inhaber-Fotos als Feed, Reel aus Video 2, 3 Feed-Posts/Woche halten, Collab-Post mit CGS anfragen.
+
+## Wochen-Routine 22.11.2026 (Autopilot, Konto armatum_ch, Stand 15:50 UTC)
+Follower 2511 (15.11.: 2511, ±0; Kurs-Check heute früher: 2512), gefolgt 1514, 367 Beiträge. Konto «armatum» ACTIVE geprüft (alle Aufrufe mit account «armatum», username armatum_ch).
+Konto 18.–22.11. (ca. 3,7 Tage): Reichweite 966, interagierende Konten 34, Interaktionen 48, Profilbesuche 40, Website-Klicks 3.
+| Beitrag | Datum | Reichweite | Likes | Komm. | Saves | Shares |
+|---|---|---|---|---|---|---|
+| #30 Holster CGS | 21.11. | 182 | 7 | 0 | 0 | 0 |
+| #29 CZ TS 2 Orange | 16.11. | 321 | 26 | 0 | 0 | 0 |
+| #28 Stoeger M3000 Umbau | 13.11. | 435 | 26 | 0 | 2 | 2 |
+| #27 Phoenix Predator | 08.11. | 460 | 52 | 1 | 0 | 0 |
+| #26 Rebel (K31-Umbau) | 06.11. | 2847 | 261 | 7 | 34 | 50 |
+Schluss: Stagnation bei den Followern, Produkt-/Zubehör-Posts (CZ, Holster) schwach. Für die nächste Woche Schweizer Klassiker mit Inhaber-Fotos (Occasion K31 1942, SIG P225 ex Kapo Bern) priorisieren.
