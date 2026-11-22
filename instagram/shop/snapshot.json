@@ -5814,7 +5814,7 @@
 "SIG Sauer",
 "Sturmgewehre"
 ],
-"images": 1,
+"images": 2,
 "name": "Sig Sauer SG560",
 "on_sale": true,
 "price": "432250",
@@ -5844,10 +5844,10 @@
 "SIG Sauer",
 "Sturmgewehre"
 ],
-"images": 2,
-"name": "SIG SG711",
+"images": 3,
+"name": "SIG SG711 Sport",
 "on_sale": true,
-"price": "470250",
+"price": "455000",
 "regular": "495000",
 "short": "Das SIG SG711 ist ein halbautomatisches Sportgewehr im Kaliber 7.5×55 (GP11) auf Basis des bewährten Stgw 90. Es nimmt die Magazine des Stgw 57 auf und ist für das präzise Schiessen auf 300 Meter gemacht.",
 "stock": "available-on-backorder",
@@ -23586,7 +23586,7 @@
 "Ruger",
 "Sturmgewehre"
 ],
-"images": 1,
+"images": 6,
 "name": "Ruger Harrier 16.1″ 5.56 Nato Magpul",
 "on_sale": false,
 "price": "89900",
@@ -67761,6 +67761,21 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/agilite-pincer-placard-triple-5-56-mag-pouch-ranger-green-vorgaengerversion-neuwertig/"
 },
+"35145": {
+"cats": [
+"Agilite",
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 2,
+"name": "Agilite Pincer PLACARD Triple 5.56 Mag Pouch Ranger Green, Vorgängerversion, neuwertig in Originalverpackung",
+"on_sale": false,
+"price": "6900",
+"regular": "6900",
+"short": "Occasion: Agilite Pincer Placard mit drei Magazinschächten für 5.56-Magazine in Ranger Green. Vorgängerversion, neuwertig in Originalverpackung. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/__trashed-8/"
+},
 "35146": {
 "cats": [
 "Agilite",
@@ -67809,7 +67824,7 @@
 "cats": [
 "Gebrauchtwaffen / Occasionen"
 ],
-"images": 1,
+"images": 0,
 "name": "Blackhawk SERPA Tactical Oberschenkelholster rechts, gebraucht",
 "on_sale": false,
 "price": "4900",
@@ -67863,7 +67878,7 @@
 "cats": [
 "Gebrauchtwaffen / Occasionen"
 ],
-"images": 1,
+"images": 0,
 "name": "IDOGEAR Drop Pouch (Abwurfsack) MOLLE, Schwarz, neu",
 "on_sale": false,
 "price": "1990",
@@ -67871,6 +67886,19 @@
 "short": "Occasion: IDOGEAR Drop Pouch (Abwurfsack) für leere Magazine, Schwarz, 27.5 x 25.5 cm, MOLLE-Befestigung. Neu mit Etikett, 1 Stück verfügbar.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/idogear-drop-pouch-abwurfsack-molle-schwarz-neu/"
+},
+"35154": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 1,
+"name": "IDOGEAR Tourniquet-Halter MOLLE, Schwarz, neu",
+"on_sale": false,
+"price": "1290",
+"regular": "1290",
+"short": "Occasion: IDOGEAR Tourniquet-Halter, Schwarz, elastisch mit Klettband oben. Neu mit Etikett, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/idogear-tourniquet-halter-molle-schwarz-neu/"
 },
 "35155": {
 "cats": [
@@ -67911,6 +67939,45 @@
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/streamlight-taschenlampen-holster-nylon-schwarz-21-cm-gebraucht/"
 },
+"35158": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Dump Pouch (Abwurfsack), Multicam, gebraucht",
+"on_sale": false,
+"price": "2500",
+"regular": "2500",
+"short": "Occasion: Warrior Assault Systems Dump Pouch für leere Magazine, Multicam, rollbar, MOLLE-Befestigung. Geöffnet 30 x 14 x 20 cm. Gebraucht, guter Zustand, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-dump-pouch-abwurfsack-multicam-gebraucht/"
+},
+"35159": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Utility Pouch gross MOLLE, Multicam, gebraucht",
+"on_sale": false,
+"price": "2500",
+"regular": "2500",
+"short": "Occasion: Warrior Assault Systems Utility Pouch gross mit Reissverschluss und MOLLE-Schlaufen, Multicam, 18 x 15 x 4 cm. Gebraucht, guter Zustand, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-utility-pouch-gross-molle-multicam-gebraucht/"
+},
+"35160": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Utility Pouch mittel MOLLE, Multicam, gebraucht",
+"on_sale": false,
+"price": "2000",
+"regular": "2000",
+"short": "Occasion: Warrior Assault Systems Utility Pouch mittel, Multicam, MOLLE-Befestigung, 18 x 14 x 3 cm. Gebraucht, guter Zustand, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-utility-pouch-mittel-molle-multicam-gebraucht/"
+},
 "35161": {
 "cats": [
 "Gebrauchtwaffen / Occasionen"
@@ -67929,7 +67996,7 @@
 "Gebrauchtwaffen / Occasionen",
 "Magazintaschen"
 ],
-"images": 2,
+"images": 1,
 "name": "Warrior Assault Systems Gewehrmagazintasche offen MOLLE, Multicam, gebraucht",
 "on_sale": false,
 "price": "1500",
@@ -67937,6 +68004,33 @@
 "short": "Occasion: Warrior Assault Systems Magazintasche für ein Langwaffenmagazin, oben offen mit Bungee-Sicherung, Multicam, MOLLE. Gebraucht, guter Zustand, 2 Stück verfügbar.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/warrior-assault-systems-gewehrmagazintasche-offen-molle-multicam-gebraucht/"
+},
+"35163": {
+"cats": [
+"Gebrauchtwaffen / Occasionen"
+],
+"images": 3,
+"name": "Warrior Assault Systems Utility Pouch mit Klettdeckel MOLLE, Multicam, gebraucht",
+"on_sale": false,
+"price": "1500",
+"regular": "1500",
+"short": "Occasion: Warrior Assault Systems Tasche mit Klettdeckel, Multicam, MOLLE-Befestigung. Gebraucht, guter Zustand, 1 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-utility-pouch-mit-klettdeckel-molle-multicam-gebraucht/"
+},
+"35164": {
+"cats": [
+"Gebrauchtwaffen / Occasionen",
+"Magazintaschen"
+],
+"images": 2,
+"name": "Warrior Assault Systems Taco Doppel-Magazintasche Gewehr + Pistole, Multicam, gebraucht",
+"on_sale": false,
+"price": "2500",
+"regular": "2500",
+"short": "Occasion: Warrior Assault Systems Taco-Magazintasche für ein Gewehr- und ein Pistolenmagazin, mit Kunststoffeinsatz und Bungee-Sicherung, Multicam, MOLLE. Gebraucht, guter Zustand, 2 Stück verfügbar.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/warrior-assault-systems-taco-doppel-magazintasche-gewehr-pistole-multicam-gebraucht/"
 },
 "35165": {
 "cats": [
@@ -67951,6 +68045,36 @@
 "short": "Occasion: Warrior Assault Systems Taco-Magazintasche für ein Gewehrmagazin, mit Kunststoffeinsatz und Bungee-Sicherung, Multicam, MOLLE / Gürtelclips. Gebraucht, guter Zustand, 2 Stück verfügbar.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/warrior-assault-systems-taco-gewehrmagazintasche-multicam-gebraucht/"
+},
+"35166": {
+"cats": [
+"Carl Walther",
+"Gebrauchtwaffen / Occasionen",
+"Pistolen"
+],
+"images": 4,
+"name": "Walther TPH Pistole .22 LR Ulm/Donau gebraucht, brüniert",
+"on_sale": false,
+"price": "49900",
+"regular": "49900",
+"short": "Gebrauchte Walther TPH im Kaliber .22 LR aus der Fertigung Ulm/Donau, brüniert, mit Walther-Kunststoffgriffschalen. Guter Zustand, kompakte Taschenpistole mit Hahn, Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/walther-tph-pistole-22-lr-ulm-donau-gebraucht-brueniert/"
+},
+"35167": {
+"cats": [
+"Flinten",
+"Gebrauchtwaffen / Occasionen",
+"Mossberg"
+],
+"images": 2,
+"name": "Mossberg 500 Bullpup Vorderschaftrepetierer 12/76 gebraucht",
+"on_sale": false,
+"price": "34900",
+"regular": "34900",
+"short": "Gebrauchte Mossberg 500 in der Bullpup-Version, Vorderschaftrepetierer im Kaliber 12/76. Technisch einwandfrei, mit Gebrauchsspuren. Einzelstück.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/mossberg-500-bullpup-vorderschaftrepetierer-12-76-gebraucht/"
 },
 "35168": {
 "cats": [
@@ -68086,5 +68210,20 @@
 "short": "RCBS Quick Change Pulvertrichter-Set zum Abfüllen von Pulver in Hülsen: Trichter, 5 Kaliber-Adapter und Fallrohr. Gebraucht, Zustand gut.",
 "stock": "in-stock",
 "url": "https://armatum.ch/produkt/rcbs-quick-change-pulvertrichter-set-mit-5-adaptern-und-fallrohr-gebraucht/"
+},
+"35319": {
+"cats": [
+"Sale %",
+"SIG Sauer",
+"Sturmgewehre"
+],
+"images": 1,
+"name": "SIG SG711 DMR",
+"on_sale": true,
+"price": "549000",
+"regular": "599000",
+"short": "Das SIG SG711 DMR ist die Präzisionsversion des SG711 im Kaliber 7.5×55 (GP11): mit verstellbarem Schaft, langem M-LOK-Handschutz, Picatinnyschiene und verstellbarem Zweibein. Geliefert ohne Visierung, mit einem 15-Schuss-Magazin und Koffer.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/sig-sg711-dmr/"
 }
 }
