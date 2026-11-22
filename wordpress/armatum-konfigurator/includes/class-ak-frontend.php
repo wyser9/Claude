@@ -214,16 +214,55 @@ class AK_Frontend {
 			<?php if ( ! $weapons ) : ?>
 				<p>Zurzeit ist keine passende Waffe im Konfigurator verfügbar.</p>
 			<?php else : ?>
+				<?php
+				// Suche und Filter (im Browser, ohne Neuladen).
+				$facets = array( 'brand' => array(), 'plat' => array(), 'kal' => array() );
+				$meta   = array();
+				foreach ( $weapons as $w ) {
+					$m = self::weapon_facets( $w );
+					$meta[ $w ] = $m;
+					foreach ( array( 'brand', 'plat', 'kal' ) as $f ) {
+						foreach ( $m[ $f ] as $v ) {
+							$facets[ $f ][ $v ] = isset( $facets[ $f ][ $v ] ) ? $facets[ $f ][ $v ] + 1 : 1;
+						}
+					}
+				}
+				$labels = array( 'brand' => 'Alle Marken', 'plat' => 'Alle Plattformen', 'kal' => 'Alle Kaliber' );
+				?>
+				<div class="ak-picker-filter">
+					<input type="search" class="ak-pf-q" placeholder="Waffe suchen, z.B. Glock 19 oder .308" aria-label="Waffe suchen">
+					<?php foreach ( $labels as $f => $all ) : ?>
+						<?php
+						if ( count( $facets[ $f ] ) < 2 ) {
+							continue;
+						}
+						uksort( $facets[ $f ], 'strnatcasecmp' );
+						?>
+						<select class="ak-pf-sel" data-facet="<?php echo esc_attr( $f ); ?>" aria-label="<?php echo esc_attr( $all ); ?>">
+							<option value=""><?php echo esc_html( $all ); ?></option>
+							<?php foreach ( $facets[ $f ] as $v => $n ) : ?>
+								<option value="<?php echo esc_attr( $v ); ?>"><?php echo esc_html( ( 'plat' === $f && isset( AK_Data::PLATFORMS[ $v ] ) ? AK_Data::PLATFORMS[ $v ] : $v ) . ' (' . $n . ')' ); ?></option>
+							<?php endforeach; ?>
+						</select>
+					<?php endforeach; ?>
+					<span class="ak-pf-count"><?php echo (int) count( $weapons ); ?> Waffen</span>
+				</div>
+				<p class="ak-pf-none" hidden>Keine Waffe gefunden. Suche oder Filter anpassen.</p>
 				<div class="ak-weapon-grid">
 					<?php
 					foreach ( $weapons as $w ) :
 						$p     = wc_get_product( $w );
+						$m     = $meta[ $w ];
 						$args  = array( 'waffe' => $w );
 						if ( $part ) {
 							$args['teil'] = $part_id;
 						}
 						?>
-						<a class="ak-weapon-card" href="<?php echo esc_url( add_query_arg( $args ) ); ?>">
+						<a class="ak-weapon-card" href="<?php echo esc_url( add_query_arg( $args ) ); ?>"
+							data-q="<?php echo esc_attr( strtolower( $p->get_name() . ' ' . $p->get_sku() . ' ' . implode( ' ', $m['brand'] ) . ' ' . implode( ' ', $m['kal'] ) ) ); ?>"
+							data-brand="<?php echo esc_attr( implode( '|', $m['brand'] ) ); ?>"
+							data-plat="<?php echo esc_attr( implode( '|', $m['plat'] ) ); ?>"
+							data-kal="<?php echo esc_attr( implode( '|', $m['kal'] ) ); ?>">
 							<?php echo wp_get_attachment_image( AK_Data::image_id( $w ), 'woocommerce_thumbnail', false, array( 'loading' => 'lazy' ) ); ?>
 							<span class="ak-card-name"><?php echo esc_html( $p->get_name() ); ?></span>
 							<span class="ak-card-price"><?php echo wp_kses_post( $p->get_price_html() ); ?></span>
@@ -237,6 +276,22 @@ class AK_Frontend {
 		</section>
 		<?php
 		return ob_get_clean();
+	}
+
+	/** Marke, Plattform und Kaliber einer Waffe für die Filter der Waffenauswahl. */
+	public static function weapon_facets( $weapon_id ) {
+		$p     = wc_get_product( $weapon_id );
+		$brand = $p ? trim( (string) $p->get_attribute( 'pa_hersteller' ) ) : '';
+		if ( '' === $brand && $p ) {
+			$terms = taxonomy_exists( 'product_brand' ) ? wp_get_post_terms( $weapon_id, 'product_brand', array( 'fields' => 'names' ) ) : array();
+			$brand = ( $terms && ! is_wp_error( $terms ) ) ? (string) reset( $terms ) : '';
+		}
+		$kal = $p ? array_filter( array_map( 'trim', explode( ',', (string) $p->get_attribute( 'pa_kaliber' ) ) ) ) : array();
+		return array(
+			'brand' => '' !== $brand ? array( html_entity_decode( $brand ) ) : array(),
+			'plat'  => AK_Data::platforms( $weapon_id ),
+			'kal'   => array_values( array_map( 'html_entity_decode', $kal ) ),
+		);
 	}
 
 	public static function render( $weapon_id, $part_id = 0 ) {

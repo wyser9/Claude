@@ -631,7 +631,34 @@
 		});
 	};
 
+	/** Waffenauswahl: Suche und Filter im Browser. */
+	function initPicker($root) {
+		var $cards = $root.find('.ak-weapon-card');
+		var $count = $root.find('.ak-pf-count');
+		var $none = $root.find('.ak-pf-none');
+		function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+		$cards.each(function () { this._q = norm($(this).attr('data-q')); });
+		function apply() {
+			var words = norm($root.find('.ak-pf-q').val()).split(/\s+/).filter(Boolean);
+			var sel = {};
+			$root.find('.ak-pf-sel').each(function () { if (this.value) { sel[$(this).data('facet')] = this.value; } });
+			var n = 0;
+			$cards.each(function () {
+				var el = this, ok = words.every(function (w) { return el._q.indexOf(w) >= 0; });
+				Object.keys(sel).forEach(function (f) {
+					if (ok && String($(el).attr('data-' + f) || '').split('|').indexOf(sel[f]) < 0) { ok = false; }
+				});
+				el.hidden = !ok;
+				if (ok) { n++; }
+			});
+			$count.text(n + (n === 1 ? ' Waffe' : ' Waffen'));
+			$none.prop('hidden', n > 0);
+		}
+		$root.on('input change', '.ak-pf-q, .ak-pf-sel', apply);
+	}
+
 	$(function () {
-		$('.ak-konfigurator').each(function () { new Konfigurator($(this)); });
+		$('.ak-picker').each(function () { initPicker($(this)); });
+		$('.ak-konfigurator').not('.ak-picker').each(function () { new Konfigurator($(this)); });
 	});
 })(jQuery);
