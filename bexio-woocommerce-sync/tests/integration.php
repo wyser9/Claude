@@ -795,6 +795,21 @@ update_option( BWS_Stock_Import::OPTION_LAST, array( 'time' => time() - HOUR_IN_
 update_option( BWS_Status_Import::OPTION_LAST, array( 'time' => time() - 600, 'checked' => 0, 'paid' => 0, 'completed' => 0, 'errors' => 0 ) );
 $since = time() - 60;
 t( 'Warn-Mail: ohne Befund nichts', array() === BWS_Health::findings( $since ), wp_json_encode( BWS_Health::findings( $since ) ) );
+$st = get_option( BWS_Health::OPTION_PRODUCTS ); $st['since'] = time() - 60; update_option( BWS_Health::OPTION_PRODUCTS, $st, false );
+BWS_Health::incomplete_products(); // Bestehende Testprodukte als gemeldet markieren.
+$np = new WC_Product_Simple(); $np->set_props( array( 'name' => 'Neues Produkt ohne alles', 'regular_price' => '9', 'status' => 'publish' ) ); $np->save();
+$nv = new WC_Product_Variable(); $nv->set_props( array( 'name' => 'Neue Variante', 'status' => 'publish', 'sku' => 'NV-1', 'category_ids' => array( $c_waf ) ) ); $nv->save();
+$va = new WC_Product_Variation(); $va->set_props( array( 'parent_id' => $nv->get_id(), 'regular_price' => '5', 'sku' => 'NV-1-A' ) ); $va->save();
+$inc = BWS_Health::incomplete_products( false );
+$txt = implode( "\n", $inc );
+t( 'Neue Produkte: fehlendes Gewicht, Artikelnummer, Kategorie', 2 === count( $inc ) && false !== strpos( $txt, 'Neues Produkt ohne alles – fehlt: Kategorie, Gewicht, Artikelnummer' ) && false !== strpos( $txt, 'Neue Variante – fehlt: Gewicht (1 Variante(n))' ), $txt );
+$f = BWS_Health::findings( $since );
+t( 'Neue Produkte: in der Warn-Mail', (bool) array_filter( $f, function ( $x ) { return false !== strpos( $x, 'unvollständig' ); } ), wp_json_encode( $f, JSON_UNESCAPED_UNICODE ) );
+t( 'Neue Produkte: nur einmal gemeldet', array() === BWS_Health::incomplete_products() );
+$pre = wc_get_product( $va->get_id() ); $pre->set_weight( '0.5' ); $pre->save();
+$old_p = new WC_Product_Simple(); $old_p->set_props( array( 'name' => 'Altes Produkt', 'regular_price' => '1', 'status' => 'publish' ) ); $old_p->set_date_created( time() - 30 * DAY_IN_SECONDS ); $old_p->save();
+t( 'Alte Produkte (vor Einführung) nicht gemeldet', array() === BWS_Health::incomplete_products( false ) );
+$st = get_option( BWS_Health::OPTION_PRODUCTS ); $st['since'] = time() + DAY_IN_SECONDS; update_option( BWS_Health::OPTION_PRODUCTS, $st, false );
 $fid = as_enqueue_async_action( 'bws_sync_product', array( 4711 ), BWS_AS_GROUP );
 ActionScheduler::store()->mark_failure( $fid );
 ActionScheduler::logger()->log( $fid, 'Produkt #4711 hat keine Artikelnummer (SKU).' );

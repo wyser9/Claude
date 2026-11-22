@@ -15,6 +15,15 @@ Box **„Schweizerische Post“** (rechts):
 
 Die Sendungsnummer steht in der Box und als Bestellnotiz. Der Kunde bekommt sie **sofort beim Erstellen des Labels** mit Link zur Sendungsverfolgung, als WooCommerce-E-Mail „Kundenhinweis“ mit eigenem Betreff „Ihr Paket ist unterwegs – Bestellung #…“. Jede Nummer wird nur einmal geschickt, abschaltbar unter *Kunde informieren*. Zusätzlich steht sie in der E-Mail **„Bestellung abgeschlossen“**. Bei Testlabels gibt es keines von beidem. Abholungen werden erkannt, Briefe (z. B. „Grossbrief B-Post“) nicht unterstützt.
 
+## Mehrere Labels auf einmal
+In *WooCommerce → Bestellungen* die gewünschten Bestellungen anhaken und unter „Mehrfachaktionen“ **„Post-Labels erstellen“** wählen. Gewicht, Signature und Sperrgut übernimmt das Plugin wie in der Bestell-Box vorgeschlagen, und jeder Kunde bekommt sofort seine Sendungsnummer. Danach gibt es oben die Schaltfläche **„Alle Labels drucken (PDF)“**: ein PDF, pro Label eine A4-Seite (oberes Drittel). Übersprungen werden mit Grund:
+- Abholungen und Briefe,
+- stornierte und unbezahlte Bestellungen,
+- Bestellungen ohne Produktgewicht,
+- Bestellungen, die schon ein echtes Label haben.
+
+Ein Durchgang verarbeitet etwa 20 Sekunden lang Bestellungen. Was danach noch übrig ist, wird gemeldet und kann erneut ausgewählt werden. Das gemeinsame PDF gibt es nur mit dem Papier „A4, oberes Drittel“.
+
 ## Einstellungen
 *Einstellungen → Armatum Post Label*: Client ID, Client Secret, Frankierlizenz, Absender, **Testmodus**.
 

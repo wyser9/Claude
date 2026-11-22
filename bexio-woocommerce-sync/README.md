@@ -137,6 +137,7 @@ Kunden mit Banküberweisung, deren Bestellung nach der eingestellten Frist (Stan
 > In bexio fügt das Plugin bei diesen Funktionen nur Kommentare hinzu. Auftrag, Positionen, Status, Rechnungen und Lager bleiben unverändert.
 
 ### Warn-Mail bei Problemen (täglich 07:50)
+Neu dabei: **neue Produkte ohne Gewicht, Artikelnummer oder Kategorie**. Gemeldet wird jedes Produkt nur einmal, mit Link zum Bearbeiten, und nur Produkte, die nach dem Update auf 1.12.0 veröffentlicht wurden.
 Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail an *Hinweise an*. Geprüft wird:
 - fehlgeschlagene Hintergrundaufgaben seit der letzten Prüfung, mit Fehlertext
 - Lagerabgleich mit Fehler beendet oder seit über 36 Stunden nicht abgeschlossen

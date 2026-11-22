@@ -8,6 +8,7 @@ defined( 'ABSPATH' ) || exit;
  *  - Statusabgleich (Bezahlt/Erledigt) länger als 3 Stunden nicht gelaufen
  *  - bezahlte bzw. wartende Bestellungen der letzten 7 Tage ohne bexio-Auftrag
  *  - Produkte, deren Übertragung nach bexio fehlschlägt
+ *  - neue Produkte ohne Gewicht, Artikelnummer oder Kategorie (je Produkt einmal)
  *
  * Ohne Befund wird keine Mail verschickt.
  */
@@ -16,6 +17,8 @@ class BWS_Health {
 	const HOOK       = 'bws_health_check';
 	const OPTION     = 'bws_health_last';
 	const CHECK_TIME = '07:50';
+	/** Ab hier erfasste Produkte werden auf Vollständigkeit geprüft; bereits gemeldete Befunde. */
+	const OPTION_PRODUCTS = 'bws_health_products';
 
 	public static function init() {
 		add_action( self::HOOK, array( __CLASS__, 'run' ) );
@@ -128,7 +131,13 @@ class BWS_Health {
 			}
 		}
 
-		// 5. Produkte mit Übertragungsfehler.
+		// 5. Neue Produkte ohne Gewicht, Artikelnummer oder Kategorie.
+		$incomplete = self::incomplete_products();
+		if ( $incomplete ) {
+			$findings[] = sprintf( "%d neue(s) Produkt(e) unvollständig – bitte ergänzen:\n  %s", count( $incomplete ), implode( "\n  ", array_slice( $incomplete, 0, 25 ) ) . ( count( $incomplete ) > 25 ? "\n  …" : '' ) );
+		}
+
+		// 6. Produkte mit Übertragungsfehler.
 		$products = self::products_with_errors();
 		if ( $products['count'] ) {
 			$findings[] = sprintf( '%d Produkt(e) lassen sich nicht nach bexio übertragen, z. B. %s', $products['count'], implode( '; ', $products['examples'] ) );
@@ -229,6 +238,73 @@ class BWS_Health {
 			$out[] = '#' . $order->get_order_number() . ( '' !== $error ? ' (' . mb_substr( $error, 0, 120 ) . ')' : '' );
 		}
 		return $out;
+	}
+
+	/**
+	 * Neu veröffentlichte Produkte (seit Einführung der Prüfung) ohne Gewicht, Artikelnummer oder Kategorie.
+	 * Jeder Befund wird nur einmal gemeldet.
+	 *
+	 * @param bool $mark Befunde als gemeldet speichern.
+	 * @return string[] Zeilen "Name – fehlt: … – Link".
+	 */
+	public static function incomplete_products( $mark = true ) {
+		$state = get_option( self::OPTION_PRODUCTS );
+		if ( ! is_array( $state ) || empty( $state['since'] ) ) {
+			$state = array( 'since' => time(), 'reported' => array() );
+			update_option( self::OPTION_PRODUCTS, $state, false );
+			return array();
+		}
+		$reported = array_flip( (array) $state['reported'] );
+		$default  = (int) get_option( 'default_product_cat' );
+		$products = wc_get_products(
+			array(
+				'status'       => 'publish',
+				'type'         => array( 'simple', 'variable' ),
+				'date_created' => '>=' . (int) $state['since'],
+				'limit'        => 300,
+				'orderby'      => 'date',
+				'order'        => 'ASC',
+			)
+		);
+		$lines = array();
+		foreach ( $products as $product ) {
+			$missing = array();
+			$cats    = array_diff( array_map( 'intval', $product->get_category_ids() ), array( $default ) );
+			if ( ! $cats ) {
+				$missing[] = 'Kategorie';
+			}
+			$items = $product->is_type( 'variable' ) ? array_filter( array_map( 'wc_get_product', $product->get_children() ) ) : array( $product );
+			$no_w  = 0;
+			$no_s  = 0;
+			foreach ( $items as $item ) {
+				if ( ! $item->is_virtual() && (float) $item->get_weight() <= 0 ) {
+					$no_w++;
+				}
+				if ( '' === trim( (string) $item->get_sku() ) ) {
+					$no_s++;
+				}
+			}
+			if ( $no_w ) {
+				$missing[] = $product->is_type( 'variable' ) ? sprintf( 'Gewicht (%d Variante(n))', $no_w ) : 'Gewicht';
+			}
+			if ( $no_s ) {
+				$missing[] = $product->is_type( 'variable' ) ? sprintf( 'Artikelnummer (%d Variante(n))', $no_s ) : 'Artikelnummer';
+			}
+			if ( ! $missing ) {
+				continue;
+			}
+			$key = $product->get_id() . ':' . implode( ',', $missing );
+			if ( isset( $reported[ $key ] ) ) {
+				continue;
+			}
+			$reported[ $key ] = true;
+			$lines[]          = sprintf( '%s – fehlt: %s – %s', $product->get_name(), implode( ', ', $missing ), admin_url( 'post.php?post=' . $product->get_id() . '&action=edit' ) );
+		}
+		if ( $mark && $lines ) {
+			$state['reported'] = array_slice( array_keys( $reported ), -2000 );
+			update_option( self::OPTION_PRODUCTS, $state, false );
+		}
+		return $lines;
 	}
 
 	/**

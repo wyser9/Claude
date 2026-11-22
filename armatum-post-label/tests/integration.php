@@ -147,6 +147,39 @@ t( 'Hook apl_label_created mit Sendungsnummer', 1 === count( $hooked ) && $hooke
 ob_start(); APL_Admin::render_box( $order ); $box = ob_get_clean();
 t( 'Box zeigt Sendungsnummer und Formular', false !== strpos( $box, '996012345600000099' ) && false !== strpos( $box, 'apl_create_label' ) && false !== strpos( $box, 'data-apl="apl_weight"' ) );
 
+// --- Sammel-Labels ---
+update_option( 'armatum_post_paper', 'a4_third' ); update_option( 'armatum_post_test_mode', 'no' );
+$gd = imagecreatetruecolor( 1240, 1748 ); imagefill( $gd, 0, 0, imagecolorallocate( $gd, 255, 255, 255 ) ); imagefilledrectangle( $gd, 100, 100, 600, 200, imagecolorallocate( $gd, 0, 0, 0 ) );
+ob_start(); imagepng( $gd ); $GLOBALS['apl_label_b64'] = base64_encode( ob_get_clean() );
+$mko = function ( $weight, $method = 'PostPac Economy' ) use ( $p ) {
+	$pp = new WC_Product_Simple(); $pp->set_props( array( 'name' => 'Artikel', 'regular_price' => '10', 'weight' => $weight ) ); $pp->save();
+	$o = wc_create_order(); $o->add_product( wc_get_product( $pp->get_id() ), 1 );
+	$o->set_address( array( 'first_name' => 'Max', 'last_name' => 'Muster', 'address_1' => 'Hauptstrasse 3', 'postcode' => '4600', 'city' => 'Olten', 'country' => 'CH' ), 'shipping' );
+	$o->set_billing_email( 'max' . wp_rand() . '@muster.ch' );
+	$sh = new WC_Order_Item_Shipping(); $sh->set_method_title( $method ); $sh->set_method_id( false !== strpos( $method, 'Abholung' ) ? 'local_pickup' : 'flat_rate' ); $o->add_item( $sh );
+	$o->calculate_totals(); $o->set_status( 'processing' ); $o->save(); return $o;
+};
+$b1 = $mko( '1.2' ); $b2 = $mko( '0.5', 'Waffen Signature' ); $b3 = $mko( '' ); $b4 = $mko( '0.3', 'Abholung vor Ort' );
+$GLOBALS['apl_req'] = array();
+$res = APL_Bulk::run( array( $b1->get_id(), $b2->get_id(), $b3->get_id(), $b4->get_id(), $order->get_id() ) );
+t( 'Sammel: 2 Labels erstellt', array( $b1->get_id(), $b2->get_id() ) === $res['created'] && ! $res['preview'], wp_json_encode( $res, JSON_UNESCAPED_UNICODE ) );
+$why = wp_json_encode( $res['skipped'], JSON_UNESCAPED_UNICODE );
+t( 'Sammel: übersprungen mit Grund (Gewicht, Abholung, schon vorhanden)', 3 === count( $res['skipped'] ) && false !== strpos( $why, 'Gewicht fehlt' ) && false !== strpos( $why, 'Abholung' ) && false !== strpos( $why, 'bereits ein Label' ), $why );
+$sig = null; foreach ( $GLOBALS['apl_req'] as $req ) { if ( false !== strpos( $req[0], 'generateAddressLabel' ) ) { $sig[] = json_decode( $req[1]['body'], true )['item']['attributes']; } }
+t( 'Sammel: Gewicht und Signature wie vorgeschlagen', 1200 === $sig[0]['weight'] && 500 === $sig[1]['weight'] && in_array( 'SI', $sig[1]['przl'], true ) && ! in_array( 'SI', $sig[0]['przl'], true ), wp_json_encode( $sig ) );
+t( 'Sammel: Kunden informiert', '' !== (string) wc_get_order( $b1->get_id() )->get_meta( APL_Label::META_NOTIFIED ) );
+$pdfs = array();
+foreach ( $res['created'] as $id ) { $pdfs[] = file_get_contents( trailingslashit( APL_Label::protected_dir() ) . wc_get_order( $id )->get_meta( APL_Label::META_FILE ) ); }
+$m = APL_Util::merge_label_pdfs( $pdfs );
+$okx = $m && preg_match( '/startxref\n(\d+)\n/', $m, $sx ) && 0 === strpos( substr( $m, (int) $sx[1] ), 'xref' );
+if ( $okx ) { preg_match_all( '/^(\d{10}) 00000 n $/m', $m, $offs ); foreach ( $offs[1] as $k => $off ) { if ( 0 !== strpos( substr( $m, (int) $off ), ( $k + 1 ) . ' 0 obj' ) ) { $okx = false; } } }
+t( 'Sammel: ein PDF mit 2 Seiten, gültige Struktur', $m && false !== strpos( $m, '/Count 2' ) && 2 === substr_count( $m, '/Subtype /Image' ) && $okx && 8 === count( $offs[1] ?? array() ) );
+t( 'Sammel: A6-PDF der Post wird nicht zusammengefügt', null === APL_Util::merge_label_pdfs( array( '%PDF-1.4 fremd' ) ) );
+file_put_contents( $up['basedir'] . '/apl-bulk-test.pdf', $m );
+$res2 = APL_Bulk::run( array( $b1->get_id() ) );
+t( 'Sammel: kein doppeltes Label', ! $res2['created'] && false !== strpos( wp_json_encode( $res2['skipped'], JSON_UNESCAPED_UNICODE ), 'bereits ein Label' ) );
+update_option( 'armatum_post_test_mode', 'yes' );
+
 // --- Logo auf dem Label ---
 $img = imagecreatetruecolor( 1200, 400 ); imagefill( $img, 0, 0, imagecolorallocate( $img, 255, 255, 255 ) ); imagefilledrectangle( $img, 100, 100, 1100, 300, imagecolorallocate( $img, 0, 0, 0 ) );
 $lp = $up['basedir'] . '/apl-test-logo.png'; imagepng( $img, $lp );

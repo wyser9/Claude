@@ -227,4 +227,58 @@ class APL_Util {
 			'scale' => $scale,
 		);
 	}
+
+	/**
+	 * Fügt eigene A4-Label-PDFs (aus a4_third_pdf) zu einem mehrseitigen PDF zusammen.
+	 *
+	 * @param string[] $pdfs PDF-Daten.
+	 * @return string|null PDF oder null, wenn ein PDF nicht aus a4_third_pdf stammt (z. B. A6-PDF der Post).
+	 */
+	public static function merge_label_pdfs( array $pdfs ) {
+		$pages = array();
+		foreach ( $pdfs as $pdf ) {
+			if ( ! preg_match( '#3 0 obj\n(<< /Type /Page /Parent 2 0 R .*?>>)\nendobj\n4 0 obj\n#s', $pdf, $pm ) ) {
+				return null;
+			}
+			$a = strpos( $pdf, "4 0 obj\n" );
+			$b = strpos( $pdf, "\nendobj\n5 0 obj\n", $a );
+			$c = $b + strlen( "\nendobj\n5 0 obj\n" );
+			$d = strrpos( $pdf, "\nendobj\nxref\n" );
+			if ( false === $a || false === $b || false === $d || $d < $c ) {
+				return null;
+			}
+			$pages[] = array(
+				'page'    => $pm[1],
+				'content' => substr( $pdf, $a + strlen( "4 0 obj\n" ), $b - $a - strlen( "4 0 obj\n" ) ),
+				'image'   => substr( $pdf, $c, $d - $c ),
+			);
+		}
+		if ( ! $pages ) {
+			return null;
+		}
+		$objects = array( '', '' );
+		$kids    = array();
+		foreach ( $pages as $p ) {
+			$n         = count( $objects ) + 1; // Objektnummer der Seite.
+			$kids[]    = $n . ' 0 R';
+			$objects[] = str_replace( array( '/Im0 5 0 R', '/Contents 4 0 R' ), array( '/Im0 ' . ( $n + 2 ) . ' 0 R', '/Contents ' . ( $n + 1 ) . ' 0 R' ), $p['page'] );
+			$objects[] = $p['content'];
+			$objects[] = $p['image'];
+		}
+		$objects[0] = '<< /Type /Catalog /Pages 2 0 R >>';
+		$objects[1] = '<< /Type /Pages /Kids [' . implode( ' ', $kids ) . '] /Count ' . count( $kids ) . ' >>';
+		$out        = "%PDF-1.4\n%\xE2\xE3\xCF\xD3\n";
+		$offsets    = array();
+		foreach ( $objects as $i => $object ) {
+			$offsets[] = strlen( $out );
+			$out      .= ( $i + 1 ) . " 0 obj\n" . $object . "\nendobj\n";
+		}
+		$xref = strlen( $out );
+		$out .= "xref\n0 " . ( count( $objects ) + 1 ) . "\n0000000000 65535 f \n";
+		foreach ( $offsets as $offset ) {
+			$out .= sprintf( "%010d 00000 n \n", $offset );
+		}
+		$out .= sprintf( "trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n", count( $objects ) + 1, $xref );
+		return $out;
+	}
 }
