@@ -642,6 +642,8 @@
 			var words = norm($root.find('.ak-pf-q').val()).split(/\s+/).filter(Boolean);
 			var sel = {};
 			$root.find('.ak-pf-sel').each(function () { if (this.value) { sel[$(this).data('facet')] = this.value; } });
+			var chip = $root.find('.ak-pf-chips button.is-active').attr('data-value');
+			if (chip) { sel.cat = chip; }
 			var n = 0;
 			$cards.each(function () {
 				var el = this, ok = words.every(function (w) { return el._q.indexOf(w) >= 0; });
@@ -655,6 +657,10 @@
 			$none.prop('hidden', n > 0);
 		}
 		$root.on('input change', '.ak-pf-q, .ak-pf-sel', apply);
+		$root.on('click', '.ak-pf-chips button', function () {
+			$(this).addClass('is-active').siblings().removeClass('is-active');
+			apply();
+		});
 	}
 
 	$(function () {
