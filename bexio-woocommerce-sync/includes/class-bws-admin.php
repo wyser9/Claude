@@ -125,6 +125,7 @@ class BWS_Admin {
 					self::checkbox( 'tracking_to_bexio', 'Sendungsnummer nach bexio', 'Wird mit „Armatum Post Label“ ein Label erstellt (nicht im Testmodus), steht die Sendungsnummer mit Tracking-Link als interner Kommentar im bexio-Auftrag.', $s );
 					self::checkbox( 'health_mail', 'Warn-Mail bei Problemen', 'Täglich um ' . BWS_Health::CHECK_TIME . ' Uhr prüfen und nur bei Befund eine E-Mail an „Hinweise an“ senden: fehlgeschlagene Hintergrundaufgaben, Lager- oder Statusabgleich nicht gelaufen, Bestellungen ohne bexio-Auftrag, Produkte mit Übertragungsfehler.', $s );
 					self::checkbox( 'twint_payout_mail', 'TWINT-Gutschrift per Mail', 'Am Morgen jedes Gutschriftstags (' . BWS_Twint::MAIL_TIME . ' Uhr) eine Mail mit den Bestellungen, der Kommission und dem Netto-Betrag der TWINT-Sammelgutschrift – ohne Login im TWINT-Portal. Details unter WooCommerce &rarr; TWINT-Abrechnung.', $s );
+					self::checkbox( 'twint_invoice', 'TWINT: Rechnung automatisch', 'Bei mit TWINT bezahlten Bestellungen wird in bexio aus dem Auftrag sofort die Rechnung erstellt und ausgestellt. Die Zahlung verbuchst du wie gewohnt in bexio (Bankabgleich der TWINT-Gutschrift). Gilt für Bestellungen, die ab dem Einschalten übertragen werden.', $s );
 					self::checkbox( 'cancel_to_bexio', 'Storno melden', 'Wird eine übertragene Bestellung im Shop storniert, erhält der bexio-Auftrag einen Kommentar und du eine E-Mail, den Auftrag in bexio zu stornieren (die bexio-Schnittstelle kann Aufträge nicht selbst stornieren).', $s );
 					self::checkbox( 'refund_to_bexio', 'Rückerstattung melden', 'Wird für eine übertragene Bestellung im Shop eine Rückerstattung erfasst (ganz oder teilweise, z. B. über TWINT), erhält der bexio-Auftrag einen Kommentar mit Betrag und Grund und du eine E-Mail, in bexio zu stornieren bzw. eine Gutschrift zu erstellen.', $s );
 					?>
@@ -383,7 +384,7 @@ class BWS_Admin {
 		check_admin_referer( 'bws_save' );
 
 		$values = array();
-		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'refund_to_bexio', 'serial_to_order', 'health_mail', 'twint_payout_mail', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
+		foreach ( array( 'sync_products', 'sync_orders', 'status_from_bexio', 'tracking_to_bexio', 'cancel_to_bexio', 'refund_to_bexio', 'serial_to_order', 'health_mail', 'twint_payout_mail', 'twint_invoice', 'sku_fallback', 'update_contacts', 'new_article_stock', 'description_bullets' ) as $key ) {
 			$values[ $key ] = isset( $_POST[ $key ] ) ? 'yes' : 'no';
 		}
 		$token = isset( $_POST['api_token'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_token'] ) ) ) : '';

@@ -147,6 +147,13 @@ Das Plugin prüft jeden Morgen und schickt **nur bei einem Befund** eine E-Mail 
 
 Sofort prüfen: Knopf **„Jetzt prüfen (Warn-Mail)“** oder `wp bexio health`. Abschalten: Einstellung *Warn-Mail bei Problemen*.
 
+### TWINT: Rechnung automatisch (ab 1.13.0)
+Bei Bestellungen, die mit TWINT bezahlt sind, erstellt das Plugin in bexio direkt nach dem Auftrag die **Rechnung aus dem Auftrag** (alle Positionen) und **stellt sie aus** (Status „Offen“). Die Zahlung verbuchst du wie bisher in bexio, z. B. beim Bankabgleich der TWINT-Sammelgutschrift. Das Plugin bucht weder Zahlungen noch Kommissionen.
+- Nur für Bestellungen, die ab dem Update übertragen werden. Ältere Bestellungen und von Hand verknüpfte Aufträge bleiben unverändert.
+- **Keine Doppel-Rechnungen:** Gibt es zum Auftrag schon eine Rechnung (gleiche Suche wie beim Statusabgleich), wird sie nur verknüpft. Die Rechnungs-ID steht in der Bestellnotiz.
+- Lässt sich die Rechnung nicht ausstellen, bleibt sie in bexio als Entwurf, und die Bestellnotiz sagt das. Scheitert das Erstellen, versucht es das Plugin bei bexio-Störungen später erneut. Sonst steht der Fehler in der Bestellnotiz, und die Warn-Mail meldet den fehlgeschlagenen Job.
+- Einstellung: *TWINT: Rechnung automatisch*.
+
 ### TWINT-Abrechnung (Sammelgutschrift → Bestellungen)
 **Ohne TWINT-Portal:** Das TWINT-Plugin protokolliert jede Zahlung samt der Kommission, die TWINT meldet. Daraus berechnet das Plugin die Sammelgutschriften selbst. TWINT überweist am nächsten Werktag, Wochenend-Zahlungen kommen am Montag. Rückerstattungen werden abgezogen, ihre Kommission wird zurückgerechnet.
 - **Mail am Gutschriftstag** um 07:55 an *Hinweise an*: Bestellungen, Kunde, bexio-Auftrag, Betrag, Kommission und Netto-Gutschrift. Einstellung *TWINT-Gutschrift per Mail*.

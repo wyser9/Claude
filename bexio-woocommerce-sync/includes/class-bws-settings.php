@@ -29,6 +29,7 @@ class BWS_Settings {
 			'refund_to_bexio'    => 'yes', // Rückerstattung im Shop: Kommentar in bexio + Hinweis an den Shop.
 			'notify_email'       => '', // Empfänger der Hinweise (leer = Admin-E-Mail).
 			'health_mail'        => 'yes', // Tägliche Warn-Mail, wenn ein Abgleich nicht läuft.
+			'twint_invoice'      => 'yes', // TWINT-Bestellungen: Rechnung in bexio aus dem Auftrag erstellen und ausstellen.
 			'twint_payout_mail'  => 'yes', // Mail am Gutschriftstag: welche Bestellungen die TWINT-Sammelgutschrift enthält.
 			'order_statuses'     => array( 'processing', 'completed' ),
 			'price_mode'         => function_exists( 'wc_prices_include_tax' ) && wc_prices_include_tax() ? 'gross' : 'net',
