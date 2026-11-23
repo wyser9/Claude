@@ -190,3 +190,7 @@ Anlässe immer mindestens als Story, mit eigenem Foto auch im Feed. Ton: augenzw
 - Grosse Magazine sind für Sportschützen normal – nicht problematisieren.
 - Keine politischen Aussagen (z. B. zur EU-Waffenrichtlinie) in öffentlichen Kommentaren.
 - Bei Antworten auf Unter-Kommentare: nur @-markieren, wenn der Benutzername sicher bekannt ist.
+
+## Arbeitsteilung (Inhaber, 23.11.2026)
+- Alles, was etwas **tut** (Shop, Instagram/Facebook, Newsletter, Termine, Auswertungen mit echten Daten): diese Claude-Code-Sitzung.
+- Reine **Inhalte und Fragen** (Texte, Ideen, Recht, Wissen): Projekt «Armatum» im normalen Chat. Ergebnisse von dort bei Bedarf hier ablegen und abgleichen.
