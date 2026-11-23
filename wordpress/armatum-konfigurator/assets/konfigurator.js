@@ -33,6 +33,58 @@
 
 	var CHAIN = ['muendungsaufsatz', 'hub', 'schalldaempfer'];
 
+	/** Teile, deren Shop-Bild im Browser freigestellt wird, damit sie das Originalteil der Waffe verdecken. */
+	var AUTOCUT = ['schaft', 'griff'];
+	var CUT_CACHE = {};
+
+	/** Hintergrund vom Rand her entfernen (einfarbiger Fotohintergrund), Ergebnis als PNG zwischenspeichern. */
+	function autoCut(img) {
+		var url = img.getAttribute('data-src');
+		var run = function () {
+			try {
+				var max = 900, sc = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+				var w = Math.max(1, Math.round(img.naturalWidth * sc)), h = Math.max(1, Math.round(img.naturalHeight * sc));
+				var c = document.createElement('canvas');
+				c.width = w; c.height = h;
+				var ctx = c.getContext('2d');
+				ctx.drawImage(img, 0, 0, w, h);
+				var d = ctx.getImageData(0, 0, w, h), px = d.data;
+				var seen = new Uint8Array(w * h), stack = [];
+				var push = function (x, y) {
+					var i = y * w + x;
+					if (!seen[i]) { seen[i] = 1; stack.push(i); }
+				};
+				var x, y;
+				for (x = 0; x < w; x++) { push(x, 0); push(x, h - 1); }
+				for (y = 0; y < h; y++) { push(0, y); push(w - 1, y); }
+				// Hintergrund = helle, wenig gesättigte Pixel, die vom Rand her zusammenhängen.
+				var bg = function (i) {
+					var o = i * 4, r = px[o], g = px[o + 1], b = px[o + 2];
+					if (px[o + 3] < 20) { return true; }
+					var mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+					return mn > 200 && mx - mn < 25;
+				};
+				while (stack.length) {
+					var i = stack.pop();
+					if (!bg(i)) { continue; }
+					px[i * 4 + 3] = 0;
+					x = i % w; y = (i - x) / w;
+					if (x > 0) { push(x - 1, y); }
+					if (x < w - 1) { push(x + 1, y); }
+					if (y > 0) { push(x, y - 1); }
+					if (y < h - 1) { push(x, y + 1); }
+				}
+				ctx.putImageData(d, 0, 0);
+				CUT_CACHE[url] = c.toDataURL('image/png');
+				img.src = CUT_CACHE[url];
+				$(img).removeClass('ak-autocut').addClass('ak-cutout');
+			} catch (e) {
+				// Fremdes Bild (Canvas gesperrt): Bild bleibt wie es ist.
+			}
+		};
+		if (img.complete && img.naturalWidth) { run(); } else { img.addEventListener('load', run, { once: true }); }
+	}
+
 	var NONE = {
 		optik: 'Keine Optik',
 		schaft: 'Keine Schulterstütze',
@@ -505,7 +557,14 @@
 					at = [at[0] + (rt[0] - ra[0]) * r.mmPerPx, at[1] + (rt[1] - ra[1]) * r.mmPerPx];
 				}
 			}
-			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer }));
+			if (x.g.key === 'schaft') {
+				// Original-Schulterstütze abdecken: alles hinter dem Gehäuseende (Mündung zeigt nach rechts).
+				var wl = list[0];
+				if (at[0] > wl.left) {
+					list.push({ mask: true, left: wl.left, top: wl.top, w: at[0] - wl.left, h: wl.h, z: 1 });
+				}
+			}
+			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer, autocut: AUTOCUT.indexOf(x.g.key) >= 0 && !x.item.cutout }));
 		});
 		// Mit Magnifier: Rotpunkt nach vorne, Magnifier dahinter.
 		var off = this.optic && this.mag ? this.pairOffsets(this.mag, this.magMount) : null;
@@ -541,11 +600,19 @@
 		var k = width / (maxX - minX);
 		var html = '';
 		$.each(layers, function (i, l) {
-			html += '<img class="ak-layer' + (l.item.flip ? ' ak-flip' : '') + (l.item.cutout ? ' ak-cutout' : '') + '" alt="' + esc(l.item.name) + '" src="' + esc(l.item.img) + '" style="' +
-				'left:' + ((l.left - minX) * k).toFixed(1) + 'px;top:' + ((l.top - minY) * k).toFixed(1) + 'px;' +
-				'width:' + (l.w * k).toFixed(1) + 'px;z-index:' + (l.z || (i + 1)) + '">';
+			var box = 'left:' + ((l.left - minX) * k).toFixed(1) + 'px;top:' + ((l.top - minY) * k).toFixed(1) + 'px;' +
+				'width:' + (l.w * k).toFixed(1) + 'px;';
+			if (l.mask) {
+				html += '<div class="ak-mask" style="' + box + 'height:' + (l.h * k).toFixed(1) + 'px;z-index:' + l.z + '"></div>';
+				return;
+			}
+			var src = l.autocut && CUT_CACHE[l.item.img] ? CUT_CACHE[l.item.img] : l.item.img;
+			var cut = l.item.cutout || (l.autocut && CUT_CACHE[l.item.img]);
+			html += '<img class="ak-layer' + (l.item.flip ? ' ak-flip' : '') + (cut ? ' ak-cutout' : '') + (l.autocut && !cut ? ' ak-autocut' : '') +
+				'" alt="' + esc(l.item.name) + '" src="' + esc(src) + '" data-src="' + esc(l.item.img) + '" style="' + box + 'z-index:' + (l.z || (i + 1)) + '">';
 		});
 		$stage.css('height', ((maxY - minY) * k).toFixed(0) + 'px').html(html);
+		$stage.find('img.ak-autocut').each(function () { autoCut(this); });
 	};
 
 	Konfigurator.prototype.update = function () {

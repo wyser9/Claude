@@ -8,6 +8,8 @@
 .ak-layer { position: absolute; max-width: none; height: auto; mix-blend-mode: multiply; transition: opacity .2s; }
 .ak-layer.ak-flip { transform: scaleX(-1); }
 .ak-layer.ak-cutout { mix-blend-mode: normal; }
+.ak-layer.ak-autocut { opacity: 0; }
+.ak-mask { position: absolute; background: #fff; }
 .ak-card-hint { color: #b45309; font-size: .85em; font-weight: 600; }
 .ak-card-none { grid-template-columns: auto 56px 1fr; }
 .ak-card-none > span:nth-child(2) { width: 56px; }
