@@ -94,3 +94,4 @@
 - 41 Produkte ergänzt (Mittelrohr / Winkelmass / Bildebene), bestehende Attribute unverändert, nachgeprüft.
 - Trijicon: auf Wunsch ganz weggelassen.
 - Offen (unsicher, beim Inhaber nachfragen): 21925 Burris LaserScope (Mittelrohr – kein Ringrohr), 21929 + 21936 Burris Four Xe (Klick in cm → MRAD?), 13852 Burris Handgun 2x20 (Bildebene – Fixvergrösserung), 22115 Element Titan 3-18x50, 14056 Eotech Vudu 1-10, 13971 Eotech Vudu 1-6 (Winkelmass hängt vom Absehen ab).
+- Nachtrag (Inhaber-Entscheide): 21925 LaserScope neue Bilder (DB200139, alte Fullfield-Bilder entfernt), Montage «Weaver» (neu angelegt) + «Picatinny», Mittelrohr leer. 21929/21936 Four Xe → MRAD (2 cm bzw. 1 cm/100 m = 0.2 bzw. 0.1 MRAD). 13852 Handgun 2x20 Bildebene bleibt leer (Fixvergrösserung). 22115 Titan, 14056 Vudu 1-10, 13971 Vudu 1-6: Winkelmass «MOA + MRAD» (je nach Absehen-Variante; Quelle Eotech Reticle Index). Liste damit komplett erledigt.
