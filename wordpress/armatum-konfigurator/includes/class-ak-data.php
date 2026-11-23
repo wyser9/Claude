@@ -873,39 +873,65 @@ class AK_Data {
 		$optics  = array();
 		$used_mounts = array();
 
-		$pistol = 'pistole' === self::weapon_type( $weapon_id );
-		foreach ( $allowed( self::products_by_role( 'optik' ) ) as $optic_id ) {
-			if ( $pistol && ! self::is_direct( $optic_id ) ) {
-				continue; // Pistole: nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre.
-			}
-			if ( self::optic_direct_fits( $weapon_id, $optic_id ) ) {
-				$optics[ $optic_id ] = array();
+		// Einmal pro Montage vorrechnen statt für jedes Paar Optik/Montage (sonst bei vielen Montagen zu langsam).
+		$w_ifs     = self::interfaces( $weapon_id );
+		$clearance = self::clearance( $weapon_id );
+		$ring      = array(); // Montagen für Optik mit Mittelrohr: id => array( Rohr, Achshöhe ).
+		$plate_out = array(); // Adapterplatten: id => Ausgänge.
+		foreach ( $mounts as $mount_id ) {
+			$type = self::mount_type( $mount_id );
+			if ( 'magnifier' === $type || ! array_intersect( $w_ifs, self::interfaces( $mount_id ) ) ) {
 				continue;
 			}
-			if ( self::is_direct( $optic_id ) ) {
+			if ( 'footprint' === $type ) {
+				$plate_out[ $mount_id ] = self::outputs( $mount_id );
+			} else {
+				$ring[ $mount_id ] = array( self::tube( $mount_id ), self::axis_height( $mount_id ) );
+			}
+		}
+
+		$pistol = 'pistole' === self::weapon_type( $weapon_id );
+		foreach ( $allowed( self::products_by_role( 'optik' ) ) as $optic_id ) {
+			$direct = self::is_direct( $optic_id );
+			if ( $pistol && ! $direct ) {
+				continue; // Pistole: nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre.
+			}
+			if ( $direct ) {
+				$o_ifs = self::interfaces( $optic_id );
+				if ( array_intersect( $w_ifs, $o_ifs ) ) {
+					$optics[ $optic_id ] = array();
+					continue;
+				}
 				// Rotpunkt mit Footprint auf Schiene: über eine passende Adapterplatte.
-				$plates = array_values(
-					array_filter(
-						$mounts,
-						function ( $plate_id ) use ( $weapon_id, $optic_id ) {
-							return self::plate_fits( $weapon_id, $plate_id, $optic_id );
-						}
-					)
-				);
+				$plates = array();
+				foreach ( $plate_out as $plate_id => $outs ) {
+					if ( array_intersect( $outs, $o_ifs ) ) {
+						$plates[] = $plate_id;
+					}
+				}
 				if ( $plates ) {
 					$optics[ $optic_id ] = $plates;
 					$used_mounts         = array_merge( $used_mounts, $plates );
 				}
 				continue;
 			}
-			$fitting = array_values(
-				array_filter(
-					$mounts,
-					function ( $mount_id ) use ( $weapon_id, $optic_id ) {
-						return self::mount_fits( $weapon_id, $mount_id, $optic_id );
-					}
-				)
-			);
+			$o_tube = self::tube( $optic_id );
+			if ( $o_tube <= 0 ) {
+				continue;
+			}
+			$depth   = self::optic_depth( $optic_id );
+			$fitting = array();
+			foreach ( $ring as $mount_id => $info ) {
+				list( $m_tube, $height ) = $info;
+				if ( abs( $o_tube - $m_tube ) >= 0.01 ) {
+					continue;
+				}
+				// Wie height_ok(): Optik darf nicht auf der Waffe aufliegen.
+				if ( $depth > 0 && $height > 0 && $height + $clearance < $depth + 1 ) {
+					continue;
+				}
+				$fitting[] = $mount_id;
+			}
 			if ( $fitting ) {
 				$optics[ $optic_id ] = $fitting;
 				$used_mounts         = array_merge( $used_mounts, $fitting );
@@ -1039,8 +1065,9 @@ class AK_Data {
 				$ok = false;
 				foreach ( ( $plates ? $plates : array( 0 ) ) as $plate ) {
 					foreach ( ( $mm ? $mm : array( 0 ) ) as $m ) {
-						if ( ! $ok && self::mag_combo_ok( $weapon_id, $optic_id, $plate, $mag_id, $m ) ) {
+						if ( self::mag_combo_ok( $weapon_id, $optic_id, $plate, $mag_id, $m ) ) {
 							$ok = true;
+							break 2;
 						}
 					}
 				}
