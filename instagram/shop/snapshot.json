@@ -6509,7 +6509,7 @@
 "images": 2,
 "name": "Daniel Defense H9",
 "on_sale": true,
-"price": "130410",
+"price": "124900",
 "regular": "144900",
 "short": "Die Daniel Defense H9 ist eine revolutionäre 9mm Pistole , die Innovation und Präzision perfekt kombiniert!",
 "stock": "available-on-backorder",
@@ -57246,7 +57246,7 @@
 "KRISS",
 "Maschinenpistolen"
 ],
-"images": 7,
+"images": 3,
 "name": "KRISS Vector SBR Gen2 Enhanced 9×19",
 "on_sale": false,
 "price": "189000",
@@ -57274,7 +57274,7 @@
 "KRISS",
 "Maschinenpistolen"
 ],
-"images": 2,
+"images": 1,
 "name": "KRISS Vector SBR Gen3 9×19",
 "on_sale": false,
 "price": "230000",
@@ -68196,7 +68196,7 @@
 "price": "1500",
 "regular": "1500",
 "short": "RCBS Quick Change Pulvertrichter-Set zum Abfüllen von Pulver in Hülsen: Trichter, 5 Kaliber-Adapter und Fallrohr. Gebraucht, Zustand gut.",
-"stock": "in-stock",
+"stock": "out-of-stock",
 "url": "https://armatum.ch/produkt/rcbs-quick-change-pulvertrichter-set-mit-5-adaptern-und-fallrohr-gebraucht/"
 },
 "35319": {
