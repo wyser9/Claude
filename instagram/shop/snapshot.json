@@ -1856,6 +1856,7 @@
 "14189": {
 "cats": [
 "Burris",
+"Entfernungsmesser",
 "Visiere / Optik",
 "Zielfernrohre / Scopes"
 ],
@@ -6446,6 +6447,7 @@
 "17105": {
 "cats": [
 "Burris",
+"Entfernungsmesser",
 "Fernglas / Monkular / Binokular"
 ],
 "images": 8,
@@ -23192,7 +23194,7 @@
 "Visiere / Optik",
 "Zielfernrohre / Scopes"
 ],
-"images": 4,
+"images": 3,
 "name": "Burris Ballistic LaserScope 5 5-20×50 Entfernungsmesser Zielfernrohr",
 "on_sale": false,
 "price": "218900",
@@ -23435,9 +23437,9 @@
 "Zielfernrohre / Scopes"
 ],
 "images": 4,
-"name": "Element Optics Zielfernrohr Titan 5-25×56 FFP (MRAD)",
-"on_sale": false,
-"price": "79900",
+"name": "Element Optics Zielfernrohr Titan 5-25×56 FFP",
+"on_sale": true,
+"price": "71900",
 "regular": "79900",
 "short": "Präzisions- Zielfernrohr mit 5- 25× Vergrösserung, 56- mm Objektiv, FFP- MRAD- Absehen und robustem 34- mm Gehäuse für Long- Range und sportliches Präzisionsschiessen.",
 "stock": "available-on-backorder",
@@ -23463,8 +23465,8 @@
 ],
 "images": 6,
 "name": "Element Optics Zielfernrohr TITAN 3-18×50 FFP",
-"on_sale": false,
-"price": "77900",
+"on_sale": true,
+"price": "69900",
 "regular": "77900",
 "short": "Präzisions- Zielfernrohr mit 3– 18× Vergrösserung, 50- mm Objektiv und FFP- Absehen. Robustes 34- mm Gehäuse und präzise MRAD- Türme für Long- Range und Sportschiessen.",
 "stock": "in-stock",
@@ -58087,7 +58089,7 @@
 "images": 3,
 "name": "Pistole CZ TS 2 Orange 9mm Para 20-Schuss – Meistermodell für IPSC Standard",
 "on_sale": true,
-"price": "277110",
+"price": "249900",
 "regular": "307900",
 "short": "Die CZ TS 2 Orange ist das Meistermodell des CZ Shooting Teams: Stahlpistole in 9mm Para mit 20 Schuss, Bull-Lauf, Single-Action-Abzug (8 N) und beidhändiger Sicherung. Für die IPSC Standard Division. Gewicht 1460g.",
 "stock": "in-stock",
@@ -64124,20 +64126,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/nightforce-cfs-s-rap-spotting-scope-rail-accessory-platform-cfs-6-36x50-f1/"
 },
-"32774": {
-"cats": [
-"Nightforce",
-"Zielfernrohre / Scopes"
-],
-"images": 5,
-"name": "Nightforce SHV 4-14×50 F1 Zielfernrohr – Schwarz, MIL-XT",
-"on_sale": false,
-"price": "144990",
-"regular": "144990",
-"short": "Leichtes, kompaktes Allround-Zielfernrohr 4-14×50 mit MIL-XT-Absehen in der ersten Bildebene, ZeroSet-Höhenturm und 27 MRAD Verstellbereich.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/nightforce-shv-4-14x50-f1-zielfernrohr-schwarz-mil-xt/"
-},
 "32782": {
 "cats": [
 "Nightforce",
@@ -68225,5 +68213,3729 @@
 "short": "Das SIG SG711 DMR ist die Präzisionsversion des SG711 im Kaliber 7.5×55 (GP11): mit verstellbarem Schaft, langem M-LOK-Handschutz, Picatinnyschiene und verstellbarem Zweibein. Geliefert ohne Visierung, mit einem 15-Schuss-Magazin und Koffer.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sig-sg711-dmr/"
+},
+"35328": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 30mm, Höhe 23mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 30mm Zielfernrohre mit 23mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-30mm-hoehe-23mm/"
+},
+"35329": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 30mm, Höhe 15mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 30mm Zielfernrohre mit 15mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-30mm-hoehe-15mm/"
+},
+"35330": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 30mm, Höhe 17mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 30mm Zielfernrohre mit 17mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-30mm-hoehe-17mm-20-moa/"
+},
+"35331": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 30mm, Höhe 25mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 30mm Zielfernrohre mit 25mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-30mm-hoehe-25mm-20-moa/"
+},
+"35332": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 13mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 13mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-13mm/"
+},
+"35333": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 21mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 21mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-21mm/"
+},
+"35334": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 31mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 31mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-31mm/"
+},
+"35335": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 15mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 15mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-15mm-20-moa/"
+},
+"35336": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 23mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 23mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-23mm-20-moa/"
+},
+"35337": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 34mm, Höhe 33mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 34mm Zielfernrohre mit 33mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-34mm-hoehe-33mm-20-moa/"
+},
+"35338": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 36mm, Höhe 20mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 36mm Zielfernrohre mit 20mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-36mm-hoehe-20mm/"
+},
+"35339": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage kurz Ø 36mm, Höhe 22mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, kurz, für 36mm Zielfernrohre mit 22mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-kurz-o-36mm-hoehe-22mm-20-moa/"
+},
+"35340": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 30mm, Höhe 23mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 30mm Zielfernrohre mit 23mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-30mm-hoehe-23mm/"
+},
+"35341": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 30mm, Höhe 33mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 30mm Zielfernrohre mit 33mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-30mm-hoehe-33mm/"
+},
+"35342": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 34mm, Höhe 21mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 34mm Zielfernrohre mit 21mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-34mm-hoehe-21mm/"
+},
+"35343": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 34mm, Höhe 31mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 34mm Zielfernrohre mit 31mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-34mm-hoehe-31mm/"
+},
+"35344": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 36mm, Höhe 20mm",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 36mm Zielfernrohre mit 20mm Höhe. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-36mm-hoehe-20mm/"
+},
+"35347": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC ZFIX Ausrichthilfe für Zielfernrohre auf Picatinny",
+"on_sale": false,
+"price": "5490",
+"regular": "5490",
+"short": "ERATAC ZFIX Ausrichthilfe zum senkrechten Ausrichten des Absehens bei der Montage eines Zielfernrohrs auf eine Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-zfix-ausrichthilfe-fuer-zielfernrohre-auf-picatinny/"
+},
+"35349": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny Aufsatz seitlich 20°",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "Seitlich um 20° versetzter ERATAC Picatinny Aufsatz für Rotpunktvisiere und taktisches Zubehör, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-seitlich-20/"
+},
+"35351": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Docter seitlich 20°",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "Seitlich um 20° versetzter ERATAC Aufsatz für Rotpunktvisiere mit Docter-Anschluss, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-docter-seitlich-20/"
+},
+"35353": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter mit Libelle für Schnittstelle",
+"on_sale": false,
+"price": "9590",
+"regular": "9590",
+"short": "ERATAC Halter mit Libelle zur Befestigung an der Schnittstelle der Montage, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-mit-libelle-fuer-schnittstelle/"
+},
+"35355": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Schnittstellenadapter seitlich 20°",
+"on_sale": false,
+"price": "7190",
+"regular": "7190",
+"short": "Seitlich um 20° versetzter ERATAC Schnittstellenadapter für Rotpunktvisiere und taktisches Zubehör, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-schnittstellenadapter-seitlich-20/"
+},
+"35357": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Aimpoint seitlich 20°",
+"on_sale": false,
+"price": "8390",
+"regular": "8390",
+"short": "Seitlich um 20° versetzter ERATAC Aufsatz für die Universalschnittstelle, für Rotpunktvisiere mit Aimpoint-Anschluss, inklusive Torx Schrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-aimpoint-seitlich-20/"
+},
+"35359": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisier mit LUMIFIX-Leuchtkorn für Universalschnittstelle",
+"on_sale": false,
+"price": "29900",
+"regular": "29900",
+"short": "ERATAC Notvisier für die Universalschnittstelle mit rotem LUMIFIX-Leuchtkorn und Klickverstellung 1 MOA für Höhe und Seite.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisier-mit-lumifix-leuchtkorn-fuer-universalschnittstelle/"
+},
+"35360": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisier mit Stahl-Balkenkorn für Universalschnittstelle",
+"on_sale": false,
+"price": "29900",
+"regular": "29900",
+"short": "ERATAC Notvisier für die Universalschnittstelle mit Stahl-Balkenkorn und Klickverstellung 1 MOA für Höhe und Seite.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisier-mit-stahl-balkenkorn-fuer-universalschnittstelle/"
+},
+"35361": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 30mm, Höhe 25mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 30mm Zielfernrohre mit 25mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-30mm-hoehe-25mm-20-moa/"
+},
+"35362": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 34mm, Höhe 23mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 34mm Zielfernrohre mit 23mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-34mm-hoehe-23mm-20-moa/"
+},
+"35363": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 34mm, Höhe 33mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 34mm Zielfernrohre mit 33mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-34mm-hoehe-33mm-20-moa/"
+},
+"35365": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 36mm, Höhe 22mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 36mm Zielfernrohre mit 22mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-36mm-hoehe-22mm-20-moa/"
+},
+"35366": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter mit Libelle für Picatinny-Schiene",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "ERATAC Halter mit Libelle für Picatinny-Schienen gegen Verkanten, mit drehbarer Schutzhülse, links oder rechts montierbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-mit-libelle-fuer-picatinny-schiene/"
+},
+"35368": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny Aufsatz mittig 85mm",
+"on_sale": false,
+"price": "4990",
+"regular": "4990",
+"short": "Mittiger ERATAC Picatinny Aufsatz mit 85mm Länge für Rotpunktvisiere und taktisches Zubehör, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-mittig-85mm/"
+},
+"35370": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Spacer Bauhöhe 5.0mm",
+"on_sale": false,
+"price": "3790",
+"regular": "3790",
+"short": "ERATAC Spacer mit 5.0mm Bauhöhe für das ERATAC Aufsatz-System, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-spacer-bauhoehe-5-0mm/"
+},
+"35372": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Spacer Bauhöhe 10.0mm",
+"on_sale": false,
+"price": "3790",
+"regular": "3790",
+"short": "ERATAC Spacer mit 10.0mm Bauhöhe für das ERATAC Aufsatz-System, inklusive Torxschrauben.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-spacer-bauhoehe-10-0mm/"
+},
+"35374": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage S+B Ultra Short mit Hebel, GEN-2",
+"on_sale": false,
+"price": "55900",
+"regular": "55900",
+"short": "ERATAC Blockmontage S+B Ultra Short GEN-2 mit Hebel und reduziertem Ringabstand von 55mm, bis zu 10% leichter.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-sb-ultra-short-mit-hebel-gen-2/"
+},
+"35377": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 2,
+"name": "ERATAC Picatinny Schiene für AK47/74",
+"on_sale": false,
+"price": "9900",
+"regular": "9900",
+"short": "ERATAC Picatinny Schiene für AK47/74 aus hochfestem, harteloxiertem Aluminium. Ersetzt das Originalvisier, Bauhöhe 11mm, Gewicht 37g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-schiene-fuer-ak47-74/"
+},
+"35381": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 20mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-20mm-0-70-moa-mutter-gen-2/"
+},
+"35383": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage S+B Ultra Short Ø 34mm, 20 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Blockmontage S+B Ultra Short GEN-2 für 34mm Zielfernrohre, 20 MOA, mit Mutter und reduziertem Ringabstand von 55mm.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-sb-ultra-short-o-34mm-20-moa-mutter-gen-2/"
+},
+"35385": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 13mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 13mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-13mm-mutter-gen-2/"
+},
+"35386": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 17mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 17mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-17mm-mutter-gen-2/"
+},
+"35387": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 13mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 13mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-13mm-mutter-gen-2/"
+},
+"35388": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 15mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 15mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-15mm-20-moa-hebel/"
+},
+"35390": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 15mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 15mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-15mm-20-moa-mutter/"
+},
+"35395": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 30mm, Höhe 22mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 30mm Zielfernrohre mit 22mm Bauhöhe. Rund 50% leichter, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-30mm-hoehe-22mm/"
+},
+"35397": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 19.5mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 19.5mm Bauhöhe, 20 MOA, nur 143g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-19-5mm-20-moa/"
+},
+"35398": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 23mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 23mm Bauhöhe, 20 MOA, nur 149g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-23mm-20-moa/"
+},
+"35403": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 1 Zoll, Höhe 24mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 1 Zoll Zielfernrohre mit 24mm Bauhöhe. Rund 50% leichter, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-1-zoll-hoehe-24mm/"
+},
+"35404": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 30mm, Höhe 22mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 30mm Zielfernrohre mit 22mm Bauhöhe und 20 MOA. Rund 50% leichter, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-30mm-hoehe-22mm-20-moa/"
+},
+"35406": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 34mm, Höhe 20mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 34mm Zielfernrohre mit 20mm Bauhöhe und 20 MOA. Rund 50% leichter, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-34mm-hoehe-20mm-20-moa/"
+},
+"35407": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 19.5mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 19.5mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-19-5mm-20-moa-mutter/"
+},
+"35408": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 23mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 23mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-23mm-20-moa-mutter/"
+},
+"35409": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 22mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-22mm-20-moa-mutter/"
+},
+"35411": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 10mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 10mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-10mm-hebel/"
+},
+"35412": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 15mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 15mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-15mm-hebel/"
+},
+"35413": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 20mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-20mm-hebel/"
+},
+"35414": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 23mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 23mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-23mm-hebel/"
+},
+"35415": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 33mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 33mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-33mm-hebel/"
+},
+"35416": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 22mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-22mm-20-moa-hebel/"
+},
+"35417": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 25mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-25mm-20-moa-hebel/"
+},
+"35418": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 35mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 35mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-35mm-20-moa-hebel/"
+},
+"35419": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 13mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 13mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-13mm-hebel/"
+},
+"35420": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 17.5mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 17.5mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-17-5mm-hebel/"
+},
+"35421": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 21.5mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 21.5mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-21-5mm-hebel/"
+},
+"35422": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 25mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-25mm-hebel/"
+},
+"35423": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 31mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 31mm Bauhöhe, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-31mm-hebel/"
+},
+"35424": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 13mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 13mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-13mm-20-moa-hebel/"
+},
+"35425": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 19.5mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 19.5mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-19-5mm-20-moa-hebel/"
+},
+"35426": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 23mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 23mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-23mm-20-moa-hebel/"
+},
+"35427": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 27mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 27mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-27mm-20-moa-hebel/"
+},
+"35428": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 33mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 33mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-33mm-20-moa-hebel/"
+},
+"35429": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 36mm, Höhe 21.5mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 36mm Zielfernrohre, 21.5mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-36mm-hoehe-21-5mm-20-moa-hebel/"
+},
+"35430": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 36mm, Höhe 31.5mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "Kurze ERATAC Blockmontage für 36mm Zielfernrohre, 31.5mm Bauhöhe, 20 MOA, Hebel, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-36mm-hoehe-31-5mm-20-moa-hebel/"
+},
+"35431": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 22mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-22mm-hebel/"
+},
+"35432": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 34mm, Höhe 20mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-34mm-hoehe-20mm-hebel/"
+},
+"35434": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 30mm, Höhe 22mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, Hebel, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-30mm-hoehe-22mm-hebel/"
+},
+"35436": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 10mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 10mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-10mm-mutter/"
+},
+"35437": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 15mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 15mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-15mm-mutter/"
+},
+"35438": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 23mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 23mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-23mm-mutter/"
+},
+"35439": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 33mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 33mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-33mm-mutter/"
+},
+"35440": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 25mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-25mm-20-moa-mutter/"
+},
+"35441": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 35mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 35mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-35mm-20-moa-mutter/"
+},
+"35442": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 21.5mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 21.5mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-21-5mm-mutter/"
+},
+"35443": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 31mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 31mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-31mm-mutter/"
+},
+"35444": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 27mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 27mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-27mm-20-moa-mutter/"
+},
+"35445": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 33mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 33mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-33mm-20-moa-mutter/"
+},
+"35446": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 36mm, Höhe 21.5mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 36mm Zielfernrohre, 21.5mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-36mm-hoehe-21-5mm-20-moa-mutter/"
+},
+"35447": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 36mm, Höhe 31.5mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 36mm Zielfernrohre, 31.5mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-36mm-hoehe-31-5mm-20-moa-mutter/"
+},
+"35449": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 22mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-22mm-mutter/"
+},
+"35450": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 34mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 34mm Bauhöhe, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-34mm-mutter/"
+},
+"35451": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 34mm, Höhe 20mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-34mm-hoehe-20mm-mutter/"
+},
+"35453": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 30mm, Höhe 22mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, Mutter, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-30mm-hoehe-22mm-mutter/"
+},
+"35454": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 34mm, Höhe 20mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, Mutter, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-34mm-hoehe-20mm-mutter/"
+},
+"35457": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 20mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-20mm-0-70-moa-mutter-gen-2/"
+},
+"35458": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 25mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-25mm-0-70-moa-mutter-gen-2/"
+},
+"35459": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 30mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 30mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-30mm-0-70-moa-mutter-gen-2/"
+},
+"35461": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 36mm, Höhe 22mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 36mm Zielfernrohre, 22mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-36mm-hoehe-22mm-0-70-moa-mutter-gen-2/"
+},
+"35462": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 34mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage GEN-2 mit 2″-Verlängerung für 30mm Zielfernrohre, 34mm Bauhöhe, 49mm Achsenhöhe, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-34mm-hebel-gen-2/"
+},
+"35465": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 20mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-20mm-0-20-mrad-hebel-gen-2/"
+},
+"35466": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 25mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-25mm-0-20-mrad-hebel-gen-2/"
+},
+"35467": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 20mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-20mm-0-20-mrad-hebel-gen-2/"
+},
+"35468": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 25mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-25mm-0-20-mrad-hebel-gen-2/"
+},
+"35469": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 30mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 30mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-30mm-0-20-mrad-hebel-gen-2/"
+},
+"35470": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 36mm, Höhe 22mm, 0-20 mrad, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 36mm Zielfernrohre, 22mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-36mm-hoehe-22mm-0-20-mrad-hebel-gen-2/"
+},
+"35473": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 20mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-20mm-0-20-mrad-mutter-gen-2/"
+},
+"35474": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 25mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-25mm-0-20-mrad-mutter-gen-2/"
+},
+"35475": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 20mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-20mm-0-20-mrad-mutter-gen-2/"
+},
+"35476": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 25mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-25mm-0-20-mrad-mutter-gen-2/"
+},
+"35477": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 30mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 30mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-30mm-0-20-mrad-mutter-gen-2/"
+},
+"35478": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 2,
+"name": "ERATAC Blockmontage verstellbar Ø 36mm, Höhe 22mm, 0-20 mrad, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 36mm Zielfernrohre, 22mm Bauhöhe, Vorneigung in 5er Schritten von 0 bis 20 mrad verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-36mm-hoehe-22mm-0-20-mrad-mutter-gen-2/"
+},
+"35498": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 1 Zoll, Höhe 24mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 1 Zoll Zielfernrohre mit 24mm Bauhöhe, 20 MOA. Nur 146g, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-1-zoll-hoehe-24mm-20-moa/"
+},
+"35499": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 10mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 10mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-10mm-hebel-gen-2/"
+},
+"35500": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 13mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 13mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-13mm-hebel-gen-2/"
+},
+"35501": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 17mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 17mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-17mm-hebel-gen-2/"
+},
+"35502": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 20mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 20mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-20mm-hebel-gen-2/"
+},
+"35503": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 10mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 10mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-10mm-hebel-gen-2/"
+},
+"35504": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 13mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 13mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-13mm-hebel-gen-2/"
+},
+"35505": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 18mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 18mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-18mm-hebel-gen-2/"
+},
+"35506": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 25mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "48900",
+"regular": "48900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 25mm Bauhöhe, 25mm Ringbreite, Hebel und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-25mm-hebel-gen-2/"
+},
+"35507": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 10mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 10mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-10mm-mutter-gen-2/"
+},
+"35508": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 30mm, Höhe 20mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 30mm Zielfernrohre, 20mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-30mm-hoehe-20mm-mutter-gen-2/"
+},
+"35509": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 10mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 10mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-10mm-mutter-gen-2/"
+},
+"35510": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 18mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 18mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-18mm-mutter-gen-2/"
+},
+"35511": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ringmontage Ø 34mm, Höhe 25mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "39900",
+"regular": "39900",
+"short": "ERATAC Ringmontage GEN-2 für 34mm Zielfernrohre, 25mm Bauhöhe, 25mm Ringbreite, Sechskantmuttern und UNIVERSAL-Schnittstelle.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ringmontage-o-34mm-hoehe-25mm-mutter-gen-2/"
+},
+"35512": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 10mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 10mm Bauhöhe, nur 122g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-10mm/"
+},
+"35513": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 15mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 15mm Bauhöhe, nur 128g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-15mm/"
+},
+"35514": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 20mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 20mm Bauhöhe, nur 139g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-20mm/"
+},
+"35515": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 23mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 23mm Bauhöhe, nur 145g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-23mm/"
+},
+"35516": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 14mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 14mm Bauhöhe, nur 131g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-14mm/"
+},
+"35517": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 21.5mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 21.5mm Bauhöhe, nur 147g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-21-5mm/"
+},
+"35518": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 34mm, Höhe 20mm, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, Hebel, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-34mm-hoehe-20mm-hebel/"
+},
+"35519": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 25mm, 0-70 MOA, Mutter, GEN-2",
+"on_sale": false,
+"price": "69900",
+"regular": "69900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Mutter, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-25mm-0-70-moa-mutter-gen-2/"
+},
+"35520": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 17.5mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 17.5mm Bauhöhe, nur 139g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-17-5mm/"
+},
+"35521": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage verlängert Ø 34mm, Höhe 20mm",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage, um 56mm verlängert, für 34mm Zielfernrohre mit 20mm Bauhöhe. Nur 148g, für AR15 und IPSC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-verlaengert-o-34mm-hoehe-20mm/"
+},
+"35522": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 30mm, Höhe 20mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-30mm-hoehe-20mm-mutter/"
+},
+"35523": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 25mm, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-25mm-mutter/"
+},
+"35524": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage kurz Ø 34mm, Höhe 13mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Kurze ERATAC Blockmontage für 34mm Zielfernrohre, 13mm Bauhöhe, 20 MOA, Mutter, für Repetierbüchsen und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-kurz-o-34mm-hoehe-13mm-20-moa-mutter/"
+},
+"35525": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 34mm, Höhe 15mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 34mm Zielfernrohre: 15mm Bauhöhe, 20 MOA, nur 133g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-34mm-hoehe-15mm-20-moa/"
+},
+"35526": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 22mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-22mm-20-moa-hebel/"
+},
+"35527": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 34mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 34mm Bauhöhe, 20 MOA, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-34mm-20-moa-hebel/"
+},
+"35528": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 34mm, Höhe 20mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, 20 MOA, Hebel, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-34mm-hoehe-20mm-20-moa-hebel/"
+},
+"35529": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 30mm, Höhe 22mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Hebel, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-30mm-hoehe-22mm-20-moa-hebel/"
+},
+"35530": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 20mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-20mm-0-70-moa-hebel-gen-2/"
+},
+"35531": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 30mm, Höhe 25mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 30mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-30mm-hoehe-25mm-0-70-moa-hebel-gen-2/"
+},
+"35532": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 20mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 20mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-20mm-0-70-moa-hebel-gen-2/"
+},
+"35533": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 25mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 25mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-25mm-0-70-moa-hebel-gen-2/"
+},
+"35534": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 34mm, Höhe 30mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 34mm Zielfernrohre, 30mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-34mm-hoehe-30mm-0-70-moa-hebel-gen-2/"
+},
+"35535": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage verstellbar Ø 36mm, Höhe 22mm, 0-70 MOA, Hebel, GEN-2",
+"on_sale": false,
+"price": "78900",
+"regular": "78900",
+"short": "ERATAC Blockmontage für 36mm Zielfernrohre, 22mm Bauhöhe, Vorneigung in 10er Schritten von 0 bis 70 MOA verstellbar, mit Hebel, GEN-2.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-verstellbar-o-36mm-hoehe-22mm-0-70-moa-hebel-gen-2/"
+},
+"35536": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 22mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-22mm-20-moa-mutter/"
+},
+"35537": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 30mm, Höhe 34mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 30mm Zielfernrohre, 34mm Bauhöhe, 20 MOA, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-30mm-hoehe-34mm-20-moa-mutter/"
+},
+"35538": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 34mm, Höhe 20mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, 20 MOA, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-34mm-hoehe-20mm-20-moa-mutter/"
+},
+"35539": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 2″ verlängert Ø 34mm, Höhe 32mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 2″-Verlängerung für 34mm Zielfernrohre, 32mm Bauhöhe, 20 MOA, Mutter, für AR15 und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-2-verlaengert-o-34mm-hoehe-32mm-20-moa-mutter/"
+},
+"35540": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 30mm, Höhe 22mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 30mm Zielfernrohre, 22mm Bauhöhe, 20 MOA, Mutter, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-30mm-hoehe-22mm-20-moa-mutter/"
+},
+"35541": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 34mm, Höhe 20mm, 20 MOA, Mutter",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, 20 MOA, Mutter, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-34mm-hoehe-20mm-20-moa-mutter/"
+},
+"35542": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 10mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 10mm Bauhöhe, 20 MOA, nur 122g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-10mm-20-moa/"
+},
+"35543": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 15mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 15mm Bauhöhe, 20 MOA, nur 128g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-15mm-20-moa/"
+},
+"35544": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 22mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 22mm Bauhöhe, 20 MOA, nur 143g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-22mm-20-moa/"
+},
+"35545": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Ultralight Blockmontage kurz Ø 30mm, Höhe 25mm, 20 MOA",
+"on_sale": false,
+"price": "30900",
+"regular": "30900",
+"short": "Ultraleichte ERATAC Blockmontage T3, kurz, für 30mm Zielfernrohre: 25mm Bauhöhe, 20 MOA, nur 149g, für Repetierer und AR10.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-ultralight-blockmontage-kurz-o-30mm-hoehe-25mm-20-moa/"
+},
+"35546": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Blockmontage 3″ verlängert Ø 34mm, Höhe 20mm, 20 MOA, Hebel",
+"on_sale": false,
+"price": "51900",
+"regular": "51900",
+"short": "ERATAC Blockmontage mit 3″-Verlängerung für 34mm Zielfernrohre, 20mm Bauhöhe, 20 MOA, Hebel, für AR15.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-blockmontage-3-verlaengert-o-34mm-hoehe-20mm-20-moa-hebel/"
+},
+"35547": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Blockmontage verlängert Ø 30mm, Höhe 35mm, 20 MOA",
+"on_sale": false,
+"price": "44900",
+"regular": "44900",
+"short": "Leichte ERATAC T7 Blockmontage, verlängert, für 30mm Zielfernrohre mit 35mm Höhe und 20 MOA Vorneigung. ERA Grip Inlays, klappbare Hauben und vier Schnittstellen pro Ring für Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-blockmontage-verlaengert-o-30mm-hoehe-35mm-20-moa/"
+},
+"35606": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Schusswinkelkompensator mit Libelle",
+"on_sale": false,
+"price": "35900",
+"regular": "35900",
+"short": "ERATAC Schusswinkelkompensator mit Libelle zur Nachrüstung über die UNIVERSAL-Schnittstelle, ohne das Zielfernrohr zu versetzen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-schusswinkelkompensator-mit-libelle/"
+},
+"35607": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Schusswinkelkompensator mit Libelle Mil-Spec",
+"on_sale": false,
+"price": "43900",
+"regular": "43900",
+"short": "ERATAC Schusswinkelkompensator Mil-Spec mit Libelle, wasserdicht bis 1 Meter, für die UNIVERSAL-Schnittstelle der ERATAC Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-schusswinkelkompensator-mit-libelle-mil-spec/"
+},
+"35608": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter mit Libelle für Montagen Ø 30/34mm",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "ERATAC Halter mit Libelle für Montagen mit 30 oder 34mm, Befestigung über die UNIVERSAL-Schnittstelle, ohne SWK.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-mit-libelle-fuer-montagen-o-30-34mm/"
+},
+"35609": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter mit Libelle für Montagen Ø 36mm",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "ERATAC Halter mit Libelle für Montagen mit 36mm, Befestigung über die UNIVERSAL-Schnittstelle, ohne SWK.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-mit-libelle-fuer-montagen-o-36mm/"
+},
+"35610": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter für SWK mit Libelle Ø 30/34mm RAL 8000",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC Halter für Schusswinkelkompensator mit Libelle in RAL 8000 für Montagen mit 30 oder 34mm.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-fuer-swk-mit-libelle-o-30-34mm-ral-8000/"
+},
+"35611": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Halter für SWK mit Libelle Ø 36mm RAL 8000",
+"on_sale": false,
+"price": "12900",
+"regular": "12900",
+"short": "ERATAC Halter für Schusswinkelkompensator mit Libelle in RAL 8000 für Montagen mit 36mm.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-halter-fuer-swk-mit-libelle-o-36mm-ral-8000/"
+},
+"35612": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Kugeldruck-Riemenbügel",
+"on_sale": false,
+"price": "2190",
+"regular": "2190",
+"short": "ERATAC Kugeldruck-Riemenbügel aus beschichtetem rostfreiem Stahl für 25mm breite Riemen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-kugeldruck-riemenbuegel/"
+},
+"35613": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Kugeldruck-Riemenbügel Heavy Duty",
+"on_sale": false,
+"price": "2890",
+"regular": "2890",
+"short": "Schwerer ERATAC Kugeldruck-Riemenbügel aus beschichtetem rostfreiem Stahl für 25 bis 32mm breite Riemen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-kugeldruck-riemenbuegel-heavy-duty/"
+},
+"35614": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC HK-Karabinerhaken Stahl",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "ERATAC HK-Karabinerhaken aus pulverbeschichtetem Stahl für Gewehrriemen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-hk-karabinerhaken-stahl/"
+},
+"35615": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Adapter für HK-Karabinerhaken",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "ERATAC Adapter zur Befestigung von HK-Karabinerhaken auf der Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-adapter-fuer-hk-karabinerhaken/"
+},
+"35616": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Adapter für HK-Karabinerhaken seitlich",
+"on_sale": false,
+"price": "7490",
+"regular": "7490",
+"short": "Seitlicher, drehbarer ERATAC Adapter für HK-Karabinerhaken zur Montage auf der Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-adapter-fuer-hk-karabinerhaken-seitlich/"
+},
+"35617": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Kugeldruck-Adapter für HK-Karabiner",
+"on_sale": false,
+"price": "4390",
+"regular": "4390",
+"short": "ERATAC Kugeldruck-Adapter für HK-Karabiner aus beschichtetem rostfreiem Stahl.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-kugeldruck-adapter-fuer-hk-karabiner/"
+},
+"35618": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Adapter für Kugeldruck-Riemenbügel",
+"on_sale": false,
+"price": "6590",
+"regular": "6590",
+"short": "ERATAC Picatinny-Adapter für Kugeldruck-Riemenbügel mit vier Positionen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-adapter-fuer-kugeldruck-riemenbuegel/"
+},
+"35619": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC 2-zu-1-Punkt Riemenadapter",
+"on_sale": false,
+"price": "8690",
+"regular": "8690",
+"short": "ERATAC Riemenadapter, um einen 2-Punkt-Riemen bei Bedarf als 1-Punkt-Riemen zu nutzen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-2-zu-1-punkt-riemenadapter/"
+},
+"35620": {
+"cats": [
+"ERATAC",
+"Gewehrriemen"
+],
+"images": 1,
+"name": "ERATAC Riemenbügelhalter drehbar/fest",
+"on_sale": false,
+"price": "7990",
+"regular": "7990",
+"short": "ERATAC Riemenbügelhalter für Riemenbügel, drehbar oder fest.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-riemenbuegelhalter-drehbar-fest/"
+},
+"35621": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Picatinny-Schiene 3 Nuten",
+"on_sale": false,
+"price": "5690",
+"regular": "5690",
+"short": "ERATAC KeyMod Picatinny-Schiene mit 3 Quernuten aus harteloxiertem Aluminium, 23g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-picatinny-schiene-3-nuten/"
+},
+"35622": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Picatinny-Schiene 5 Nuten",
+"on_sale": false,
+"price": "5890",
+"regular": "5890",
+"short": "ERATAC KeyMod Picatinny-Schiene mit 5 Quernuten aus harteloxiertem Aluminium, 27g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-picatinny-schiene-5-nuten/"
+},
+"35623": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Picatinny-Schiene 7 Nuten",
+"on_sale": false,
+"price": "6290",
+"regular": "6290",
+"short": "ERATAC KeyMod Picatinny-Schiene mit 7 Quernuten aus harteloxiertem Aluminium, 32g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-picatinny-schiene-7-nuten/"
+},
+"35624": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Picatinny-Schiene 9 Nuten",
+"on_sale": false,
+"price": "6890",
+"regular": "6890",
+"short": "ERATAC KeyMod Picatinny-Schiene mit 9 Quernuten aus harteloxiertem Aluminium, 40g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-picatinny-schiene-9-nuten/"
+},
+"35625": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 2,
+"name": "ERATAC M-LOK Picatinny-Schiene 3 Nuten",
+"on_sale": false,
+"price": "6590",
+"regular": "6590",
+"short": "ERATAC M-LOK Picatinny-Schiene mit 3 Quernuten aus harteloxiertem Aluminium, 18g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-picatinny-schiene-3-nuten/"
+},
+"35626": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 2,
+"name": "ERATAC M-LOK Picatinny-Schiene 5 Nuten",
+"on_sale": false,
+"price": "6690",
+"regular": "6690",
+"short": "ERATAC M-LOK Picatinny-Schiene mit 5 Quernuten aus harteloxiertem Aluminium, 24g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-picatinny-schiene-5-nuten/"
+},
+"35627": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 2,
+"name": "ERATAC M-LOK Picatinny-Schiene 7 Nuten",
+"on_sale": false,
+"price": "7190",
+"regular": "7190",
+"short": "ERATAC M-LOK Picatinny-Schiene mit 7 Quernuten aus harteloxiertem Aluminium, 29g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-picatinny-schiene-7-nuten/"
+},
+"35628": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 2,
+"name": "ERATAC M-LOK Picatinny-Schiene 9 Nuten",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "ERATAC M-LOK Picatinny-Schiene mit 9 Quernuten aus harteloxiertem Aluminium, 37g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-picatinny-schiene-9-nuten/"
+},
+"35629": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Adapter für Kugeldruck-Riemenbügel",
+"on_sale": false,
+"price": "5490",
+"regular": "5490",
+"short": "ERATAC KeyMod Adapter für Kugeldruck-Riemenbügel aus harteloxiertem Aluminium, 11g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-adapter-fuer-kugeldruck-riemenbuegel/"
+},
+"35630": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Adapter für HK-Karabinerhaken",
+"on_sale": false,
+"price": "6590",
+"regular": "6590",
+"short": "ERATAC KeyMod Adapter für HK-Karabinerhaken aus harteloxiertem Aluminium, 16g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-adapter-fuer-hk-karabinerhaken/"
+},
+"35631": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod Adapter für Harris-Zweibein",
+"on_sale": false,
+"price": "8390",
+"regular": "8390",
+"short": "ERATAC KeyMod Adapter für Harris-Zweibein aus harteloxiertem Aluminium, 24g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-adapter-fuer-harris-zweibein/"
+},
+"35632": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC M-LOK Adapter für Kugeldruck-Riemenbügel",
+"on_sale": false,
+"price": "6290",
+"regular": "6290",
+"short": "ERATAC M-LOK Adapter für Kugeldruck-Riemenbügel aus harteloxiertem Aluminium, 15g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-adapter-fuer-kugeldruck-riemenbuegel/"
+},
+"35633": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC M-LOK Adapter für HK-Karabinerhaken",
+"on_sale": false,
+"price": "7390",
+"regular": "7390",
+"short": "ERATAC M-LOK Adapter für HK-Karabinerhaken aus harteloxiertem Aluminium, 23g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-m-lok-adapter-fuer-hk-karabinerhaken/"
+},
+"35634": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC KeyMod-Nutenstein",
+"on_sale": false,
+"price": "590",
+"regular": "590",
+"short": "ERATAC KeyMod-Nutenstein als Ersatzteil für KeyMod-Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-keymod-nutenstein/"
+},
+"35635": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Torx-Senkschraube M4x10",
+"on_sale": false,
+"price": "60",
+"regular": "60",
+"short": "ERATAC Torx-Senkschraube M4x10, Festigkeit 10.9, Ersatzteil für KeyMod- und M-LOK-Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-torx-senkschraube-m4x10/"
+},
+"35636": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint Micro, Achshöhe 28.5mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint Micro mit 28.5mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-micro-achshoehe-28-5mm/"
+},
+"35637": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint Micro, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint Micro mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-micro-achshoehe-39mm/"
+},
+"35638": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint Micro, Achshöhe 57.4mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint Micro mit 57.4mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-micro-achshoehe-57-4mm/"
+},
+"35639": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint ACRO, Achshöhe 30.5mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint ACRO mit 30.5mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-acro-achshoehe-30-5mm/"
+},
+"35640": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint ACRO, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint ACRO mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-acro-achshoehe-39mm/"
+},
+"35641": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint ACRO, Achshöhe 57.4mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint ACRO mit 57.4mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-acro-achshoehe-57-4mm/"
+},
+"35642": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Aimpoint COA, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Aimpoint COA mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-aimpoint-coa-achshoehe-39mm/"
+},
+"35643": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Trijicon RMR, Achshöhe 29.5mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Trijicon RMR mit 29.5mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-trijicon-rmr-achshoehe-29-5mm/"
+},
+"35644": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Trijicon RMR, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Trijicon RMR mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-trijicon-rmr-achshoehe-39mm/"
+},
+"35645": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Docter/Noblex, Achshöhe 29.5mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Docter/Noblex mit 29.5mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-docter-noblex-achshoehe-29-5mm/"
+},
+"35646": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Docter/Noblex, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Docter/Noblex mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-docter-noblex-achshoehe-39mm/"
+},
+"35647": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Shield RMS/SMS, Achshöhe 27.8mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Shield RMS/SMS mit 27.8mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-shield-rms-sms-achshoehe-27-8mm/"
+},
+"35648": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC USL-Montage Shield RMS/SMS, Achshöhe 39mm",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "Schlanke ERATAC USL-Hebelmontage für Shield RMS/SMS mit 39mm Achshöhe, 7075 Aluminium, 100% schussfest und wiederholgenau.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-usl-montage-shield-rms-sms-achshoehe-39mm/"
+},
+"35649": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Aimpoint ACRO zentrisch",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "ERATAC Aufsatz Aimpoint ACRO zentrisch: Ausführung zentrisch, Bauhöhe 5mm, Gewicht 19g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-aimpoint-acro-zentrisch/"
+},
+"35650": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Aimpoint ACRO seitlich gekröpft",
+"on_sale": false,
+"price": "8390",
+"regular": "8390",
+"short": "ERATAC Aufsatz Aimpoint ACRO seitlich gekröpft: Ausführung seitlich gekröpft, Gewicht 25g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-aimpoint-acro-seitlich-gekroepft/"
+},
+"35651": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Trijicon RMR zentrisch",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "ERATAC Aufsatz Trijicon RMR zentrisch: Ausführung zentrisch, Bauhöhe 6mm, Gewicht 17g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-trijicon-rmr-zentrisch/"
+},
+"35652": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Trijicon RMR seitlich gekröpft",
+"on_sale": false,
+"price": "8390",
+"regular": "8390",
+"short": "ERATAC Aufsatz Trijicon RMR seitlich gekröpft: Ausführung seitlich gekröpft, Gewicht 24g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-trijicon-rmr-seitlich-gekroepft/"
+},
+"35653": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Aufsatz Docter Sight zentrisch",
+"on_sale": false,
+"price": "7390",
+"regular": "7390",
+"short": "ERATAC Aufsatz Docter Sight zentrisch: Ausführung zentrisch, Bauhöhe 5mm, Gewicht 13g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-aufsatz-docter-sight-zentrisch/"
+},
+"35654": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny Aufsatz mittig 35mm",
+"on_sale": false,
+"price": "4190",
+"regular": "4190",
+"short": "ERATAC Picatinny Aufsatz mittig 35mm: Ausführung zentrisch, Länge 35mm, Bauhöhe 8mm, Gewicht 9g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-mittig-35mm/"
+},
+"35655": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny Aufsatz mittig 55mm, Bauhöhe 10mm",
+"on_sale": false,
+"price": "4790",
+"regular": "4790",
+"short": "ERATAC Picatinny Aufsatz mittig 55mm, Bauhöhe 10mm: Ausführung zentrisch, Länge 55mm, Bauhöhe 10mm, Gewicht 17g, für die UNIVERSAL-Schnittstelle (T4/T5), Torxschrauben inklusive.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-mittig-55mm-bauhoehe-10mm/"
+},
+"35656": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Aufsatz für Laserentfernungsmesser, Bauhöhe 14mm",
+"on_sale": false,
+"price": "10900",
+"regular": "10900",
+"short": "ERATAC Aufsatz für Laserentfernungsmesser wie Wilcox Raptar, 14mm Bauhöhe, für die UNIVERSAL-Schnittstelle (T4/T5).",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-fuer-laserentfernungsmesser-bauhoehe-14mm/"
+},
+"35657": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Aufsatz für Laserentfernungsmesser, Bauhöhe 25mm",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "ERATAC Aufsatz für Laserentfernungsmesser wie Wilcox Raptar, 25mm Bauhöhe, für die UNIVERSAL-Schnittstelle (T4/T5).",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-fuer-laserentfernungsmesser-bauhoehe-25mm/"
+},
+"35658": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Aufsatz für Laserentfernungsmesser, Bauhöhe 35mm",
+"on_sale": false,
+"price": "12900",
+"regular": "12900",
+"short": "ERATAC Aufsatz für Laserentfernungsmesser wie Wilcox Raptar, 35mm Bauhöhe, für die UNIVERSAL-Schnittstelle (T4/T5).",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-aufsatz-fuer-laserentfernungsmesser-bauhoehe-35mm/"
+},
+"35659": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Picatinny-Aufsatz zentrisch 55mm",
+"on_sale": false,
+"price": "4190",
+"regular": "4190",
+"short": "ERATAC T7 Picatinny-Aufsatz zentrisch 55mm: Länge 55mm, Bauhöhe 8mm, Gewicht 16g, nur für ERATAC T7 Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-picatinny-aufsatz-zentrisch-55mm/"
+},
+"35660": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Aufsatz für Laserentfernungsmesser, Höhe 25mm",
+"on_sale": false,
+"price": "11900",
+"regular": "11900",
+"short": "ERATAC T7 Aufsatz für Laserentfernungsmesser, Höhe 25mm: Länge 120.5mm, Höhe 25mm, Gewicht 57g, nur für ERATAC T7 Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-aufsatz-fuer-laserentfernungsmesser-hoehe-25mm/"
+},
+"35661": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Aufsatz für Laserentfernungsmesser, Höhe 35mm",
+"on_sale": false,
+"price": "12900",
+"regular": "12900",
+"short": "ERATAC T7 Aufsatz für Laserentfernungsmesser, Höhe 35mm: Länge 120.5mm, Höhe 35mm, Gewicht 68g, nur für ERATAC T7 Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-aufsatz-fuer-laserentfernungsmesser-hoehe-35mm/"
+},
+"35662": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC T7 Aufsatz Aimpoint ACRO / Steiner MPS zentrisch",
+"on_sale": false,
+"price": "7790",
+"regular": "7790",
+"short": "ERATAC T7 Aufsatz Aimpoint ACRO / Steiner MPS zentrisch: Länge 47mm, Höhe 7.7mm, Gewicht 18g, nur für ERATAC T7 Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-aufsatz-aimpoint-acro-steiner-mps-zentrisch/"
+},
+"35663": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 2,
+"name": "ERATAC T7 Aufsatz Aimpoint COA zentrisch",
+"on_sale": false,
+"price": "9190",
+"regular": "9190",
+"short": "ERATAC T7 Aufsatz Aimpoint COA zentrisch: Länge 58.5mm, Höhe 8.4mm, Gewicht 32g, nur für ERATAC T7 Montagen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-t7-aufsatz-aimpoint-coa-zentrisch/"
+},
+"35664": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 1″ / 26mm",
+"on_sale": false,
+"price": "10900",
+"regular": "10900",
+"short": "ERATAC Klemmring Ø 1″ / 26mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-1-26mm/"
+},
+"35665": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 34mm",
+"on_sale": false,
+"price": "10900",
+"regular": "10900",
+"short": "ERATAC Klemmring Ø 34mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-34mm/"
+},
+"35666": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 36mm",
+"on_sale": false,
+"price": "10900",
+"regular": "10900",
+"short": "ERATAC Klemmring Ø 36mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-36mm/"
+},
+"35667": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 48mm",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC Klemmring Ø 48mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-48mm/"
+},
+"35668": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 56mm",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC Klemmring Ø 56mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-56mm/"
+},
+"35669": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 57mm",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC Klemmring Ø 57mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-57mm/"
+},
+"35670": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Klemmring mit Universal-Schnittstelle Ø 62mm",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC Klemmring Ø 62mm mit UNIVERSAL-Schnittstelle für Picatinny-Schienen und Zubehör am Zielfernrohr, 18mm breit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klemmring-mit-universal-schnittstelle-o-62mm/"
+},
+"35671": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Reduzierringe 30mm auf 1 Zoll für T4/T5, 1 Paar",
+"on_sale": false,
+"price": "3990",
+"regular": "3990",
+"short": "ERATAC Reduzierringe aus Kunststoff, 30mm auf 1 Zoll, für Blockmontagen T4 und T5, 1 Paar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-reduzierringe-30mm-auf-1-zoll-fuer-t4-t5-1-paar/"
+},
+"35672": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Reduzierringe 30mm auf 1 Zoll für T3 Ultralight, 1 Paar",
+"on_sale": false,
+"price": "3990",
+"regular": "3990",
+"short": "ERATAC Reduzierringe aus Kunststoff, 30mm auf 1 Zoll, für die Ultralight Blockmontagen T3013, 1 Paar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-reduzierringe-30mm-auf-1-zoll-fuer-t3-ultralight-1-paar/"
+},
+"35673": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Offset-Montage 45° für Picatinny-Schiene",
+"on_sale": false,
+"price": "7890",
+"regular": "7890",
+"short": "ERATAC Offset-Montage für Rotpunktvisiere in 45°-Position auf der Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-offset-montage-45-fuer-picatinny-schiene/"
+},
+"35674": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 49mm, Bauhöhe 15mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "22900",
+"regular": "22900",
+"short": "ERATAC Picatinny-Riser GEN-2, 49mm lang, 15mm Bauhöhe, mit Hebel, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-49mm-bauhoehe-15mm-hebel-gen-2/"
+},
+"35675": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 49mm, Bauhöhe 15mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "18900",
+"regular": "18900",
+"short": "ERATAC Picatinny-Riser GEN-2, 49mm lang, 15mm Bauhöhe, mit Mutter, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-49mm-bauhoehe-15mm-mutter-gen-2/"
+},
+"35676": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 130mm, Bauhöhe 15mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "33900",
+"regular": "33900",
+"short": "ERATAC Picatinny-Riser GEN-2, 130mm lang, 15mm Bauhöhe, mit Hebel, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-130mm-bauhoehe-15mm-hebel-gen-2/"
+},
+"35677": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 160mm, Bauhöhe 15mm, Hebel, GEN-2",
+"on_sale": false,
+"price": "33900",
+"regular": "33900",
+"short": "ERATAC Picatinny-Riser GEN-2, 160mm lang, 15mm Bauhöhe, mit Hebel, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-160mm-bauhoehe-15mm-hebel-gen-2/"
+},
+"35678": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 130mm, Bauhöhe 15mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "25900",
+"regular": "25900",
+"short": "ERATAC Picatinny-Riser GEN-2, 130mm lang, 15mm Bauhöhe, mit Mutter, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-130mm-bauhoehe-15mm-mutter-gen-2/"
+},
+"35679": {
+"cats": [
+"ERATAC",
+"Montagen"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Riser Länge 160mm, Bauhöhe 15mm, Mutter, GEN-2",
+"on_sale": false,
+"price": "25900",
+"regular": "25900",
+"short": "ERATAC Picatinny-Riser GEN-2, 160mm lang, 15mm Bauhöhe, mit Mutter, für Zubehör oder höhere Visierlinie.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-riser-laenge-160mm-bauhoehe-15mm-mutter-gen-2/"
+},
+"35680": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisierung Picatinny komplett, Standard, Korn 1.8mm",
+"on_sale": false,
+"price": "41900",
+"regular": "41900",
+"short": "Klappbare ERATAC Notvisierung für Picatinny, Standard, Korn 1.8mm, nur 9mm Bauhöhe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisierung-picatinny-komplett-standard-korn-1-8mm/"
+},
+"35681": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisierung Picatinny komplett, Standard, Korn 1.35mm",
+"on_sale": false,
+"price": "41900",
+"regular": "41900",
+"short": "Klappbare ERATAC Notvisierung für Picatinny, Standard, Korn 1.35mm, nur 9mm Bauhöhe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisierung-picatinny-komplett-standard-korn-1-35mm/"
+},
+"35682": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisierung Picatinny komplett, HK-Style, Korn 1.8mm",
+"on_sale": false,
+"price": "41900",
+"regular": "41900",
+"short": "Klappbare ERATAC Notvisierung für Picatinny, HK-Style, Korn 1.8mm, nur 9mm Bauhöhe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisierung-picatinny-komplett-hk-style-korn-1-8mm/"
+},
+"35683": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Notvisierung Picatinny komplett, HK-Style, Korn 1.35mm",
+"on_sale": false,
+"price": "41900",
+"regular": "41900",
+"short": "Klappbare ERATAC Notvisierung für Picatinny, HK-Style, Korn 1.35mm, nur 9mm Bauhöhe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-notvisierung-picatinny-komplett-hk-style-korn-1-35mm/"
+},
+"35684": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 2,
+"name": "ERATAC Klappkorn Standard, Korn 1.8mm",
+"on_sale": false,
+"price": "20900",
+"regular": "20900",
+"short": "ERATAC Klappkorn Standard mit 1.8mm Kornbreite für die Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klappkorn-standard-korn-1-8mm/"
+},
+"35685": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 2,
+"name": "ERATAC Klappkorn Standard, Korn 1.35mm",
+"on_sale": false,
+"price": "20900",
+"regular": "20900",
+"short": "ERATAC Klappkorn Standard mit 1.35mm Kornbreite für die Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klappkorn-standard-korn-1-35mm/"
+},
+"35686": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Klappkorn HK-Style, Korn 1.8mm",
+"on_sale": false,
+"price": "20900",
+"regular": "20900",
+"short": "ERATAC Klappkorn HK-Style mit 1.8mm Kornbreite für die Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klappkorn-hk-style-korn-1-8mm/"
+},
+"35687": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Klappkorn HK-Style, Korn 1.35mm",
+"on_sale": false,
+"price": "20900",
+"regular": "20900",
+"short": "ERATAC Klappkorn HK-Style mit 1.35mm Kornbreite für die Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klappkorn-hk-style-korn-1-35mm/"
+},
+"35688": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Klappvisier für Picatinny-Schiene",
+"on_sale": false,
+"price": "21900",
+"regular": "21900",
+"short": "ERATAC Klappvisier mit zwei Ghost Ringen, klappbar, für die Picatinny-Schiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-klappvisier-fuer-picatinny-schiene/"
+},
+"35689": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Korn 1.35mm für Notvisierung",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "ERATAC Wechselkorn mit 1.35mm Breite für die ERATAC Not- und Offset-Visierung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-korn-1-35mm-fuer-notvisierung/"
+},
+"35690": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Korn 1.6mm für Notvisierung",
+"on_sale": false,
+"price": "1790",
+"regular": "1790",
+"short": "ERATAC Wechselkorn mit 1.6mm Breite für die ERATAC Not- und Offset-Visierung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-korn-1-6mm-fuer-notvisierung/"
+},
+"35691": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Korn 1.8mm für Notvisierung",
+"on_sale": false,
+"price": "1990",
+"regular": "1990",
+"short": "ERATAC Wechselkorn mit 1.8mm Breite für die ERATAC Not- und Offset-Visierung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-korn-1-8mm-fuer-notvisierung/"
+},
+"35692": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Offset-Visierung 45° komplett, Standard, Korn 1.8mm",
+"on_sale": false,
+"price": "47900",
+"regular": "47900",
+"short": "ERATAC Offset-Visierung im 45°-Winkel für die Picatinny-Schiene, Standard, Korn 1.8mm, klappbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-offset-visierung-45-komplett-standard-korn-1-8mm/"
+},
+"35693": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Offset-Visierung 45° komplett, Standard, Korn 1.35mm",
+"on_sale": false,
+"price": "47900",
+"regular": "47900",
+"short": "ERATAC Offset-Visierung im 45°-Winkel für die Picatinny-Schiene, Standard, Korn 1.35mm, klappbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-offset-visierung-45-komplett-standard-korn-1-35mm/"
+},
+"35694": {
+"cats": [
+"ERATAC",
+"Visiere / Optik"
+],
+"images": 1,
+"name": "ERATAC Offset-Visierung 45° komplett, HK-Style, Korn 1.8mm",
+"on_sale": false,
+"price": "47900",
+"regular": "47900",
+"short": "ERATAC Offset-Visierung im 45°-Winkel für die Picatinny-Schiene, HK-Style, Korn 1.8mm, klappbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-offset-visierung-45-komplett-hk-style-korn-1-8mm/"
+},
+"35695": {
+"cats": [
+"Abzüge / Trigger",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Trigger Single Stage, Züngel gebogen",
+"on_sale": false,
+"price": "42900",
+"regular": "42900",
+"short": "ERATAC Single Stage Drop-in Abzug für AR-Systeme mit gebogenem Züngel, Abzugsgewicht >1000g oder >1500g umschaltbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-trigger-single-stage-zuengel-gebogen/"
+},
+"35696": {
+"cats": [
+"Abzüge / Trigger",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Trigger Single Stage, Züngel gerade",
+"on_sale": false,
+"price": "42900",
+"regular": "42900",
+"short": "ERATAC Single Stage Drop-in Abzug für AR-Systeme mit geradem Züngel, Abzugsgewicht >1000g oder >1500g umschaltbar.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-trigger-single-stage-zuengel-gerade/"
+},
+"35697": {
+"cats": [
+"Abzüge / Trigger",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Sicherungswelle 45°/90° für ERATAC Trigger",
+"on_sale": false,
+"price": "7990",
+"regular": "7990",
+"short": "Kombinierte ERATAC 45°/90°-Sicherungswelle für AR-Systeme, mit einem Satz Sicherungshebel.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-sicherungswelle-45-90-fuer-eratac-trigger/"
+},
+"35698": {
+"cats": [
+"Abzüge / Trigger",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Sicherungswelle für H&K Sicherungshebel",
+"on_sale": false,
+"price": "7990",
+"regular": "7990",
+"short": "ERATAC Sicherungswelle für vorhandene Original-Sicherungshebel von H&K, Lieferung ohne Hebel.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-sicherungswelle-fuer-hk-sicherungshebel/"
+},
+"35699": {
+"cats": [
+"ERATAC",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "ERATAC Schalldämpfer STAC1 Kal. .223 mit ERATAC LOC",
+"on_sale": false,
+"price": "146900",
+"regular": "146900",
+"short": "ERATAC Schalldämpfer STAC1 Kal. .223 aus 3D-gedrucktem Inconel mit ERATAC LOC, 163mm, 480g, 22.2 dB. Erwerb mit kantonaler Ausnahmebewilligung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-schalldaempfer-stac1-kal-223-mit-eratac-loc/"
+},
+"35700": {
+"cats": [
+"ERATAC",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "ERATAC LOC Gewindeschutzmutter",
+"on_sale": false,
+"price": "9190",
+"regular": "9190",
+"short": "ERATAC Gewindeschutzmutter für die ERATAC LOC Aufnahme, getestet mit 1440 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-loc-gewindeschutzmutter/"
+},
+"35701": {
+"cats": [
+"ERATAC",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "ERATAC Mündungsfeuerdämpfer 1/2″-28 UNEF für ERATAC LOC",
+"on_sale": false,
+"price": "23900",
+"regular": "23900",
+"short": "ERATAC Mündungsfeuerdämpfer 1/2″-28 UNEF für Kal. .223 und .30 mit Aufnahme für ERATAC LOC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-muendungsfeuerdaempfer-1-2-28-unef-fuer-eratac-loc/"
+},
+"35702": {
+"cats": [
+"ERATAC",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "ERATAC Mündungsfeuerdämpfer M15x1 Spigot für ERATAC LOC",
+"on_sale": false,
+"price": "23900",
+"regular": "23900",
+"short": "ERATAC Mündungsfeuerdämpfer M15x1 Spigot für Kal. .223 und .30 mit Aufnahme für ERATAC LOC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-muendungsfeuerdaempfer-m15x1-spigot-fuer-eratac-loc/"
+},
+"35703": {
+"cats": [
+"ERATAC",
+"Mündungsfeuerdämpfer"
+],
+"images": 1,
+"name": "ERATAC Mündungsfeuerdämpfer 5/8″-24 UNEF für ERATAC LOC",
+"on_sale": false,
+"price": "23900",
+"regular": "23900",
+"short": "ERATAC Mündungsfeuerdämpfer 5/8″-24 UNEF für Kal. .223 und .30 mit Aufnahme für ERATAC LOC.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-muendungsfeuerdaempfer-5-8-24-unef-fuer-eratac-loc/"
+},
+"35704": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC ARCA-Rail für M-LOK Handschutz, 2 Nuten",
+"on_sale": false,
+"price": "10900",
+"regular": "10900",
+"short": "ERATAC ARCA-Rail für M-LOK-Handschutz über 2 Nuten, für Zweibeine, Stative und Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-arca-rail-fuer-m-lok-handschutz-2-nuten/"
+},
+"35705": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC ARCA-Rail für M-LOK Handschutz, 4 Nuten",
+"on_sale": false,
+"price": "12900",
+"regular": "12900",
+"short": "ERATAC ARCA-Rail für M-LOK-Handschutz über 4 Nuten, für Zweibeine, Stative und Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-arca-rail-fuer-m-lok-handschutz-4-nuten/"
+},
+"35706": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC ARCA-Rail für M-LOK Handschutz, 6 Nuten",
+"on_sale": false,
+"price": "14900",
+"regular": "14900",
+"short": "ERATAC ARCA-Rail für M-LOK-Handschutz über 6 Nuten, für Zweibeine, Stative und Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-arca-rail-fuer-m-lok-handschutz-6-nuten/"
+},
+"35707": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC ARCA-Rail für M-LOK Handschutz, 8 Nuten",
+"on_sale": false,
+"price": "19900",
+"regular": "19900",
+"short": "ERATAC ARCA-Rail für M-LOK-Handschutz über 8 Nuten, für Zweibeine, Stative und Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-arca-rail-fuer-m-lok-handschutz-8-nuten/"
+},
+"35708": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC ARCA-Rail für M-LOK Handschutz, 10 Nuten",
+"on_sale": false,
+"price": "20900",
+"regular": "20900",
+"short": "ERATAC ARCA-Rail für M-LOK-Handschutz über 10 Nuten, für Zweibeine, Stative und Zubehör.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-arca-rail-fuer-m-lok-handschutz-10-nuten/"
+},
+"35709": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Schiene #17S für ARCA-Slider",
+"on_sale": false,
+"price": "3790",
+"regular": "3790",
+"short": "ERATAC Picatinny-Schiene #17S für den ARCA-Slider.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-schiene-17s-fuer-arca-slider/"
+},
+"35710": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Picatinny-Schiene #17 für ARCA-Slider",
+"on_sale": false,
+"price": "3790",
+"regular": "3790",
+"short": "ERATAC Picatinny-Schiene #17 für den ARCA-Slider.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-picatinny-schiene-17-fuer-arca-slider/"
+},
+"35753": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Adapter für Harris-Zweibein mit Riemenbügelkopf, Hebel",
+"on_sale": false,
+"price": "21900",
+"regular": "21900",
+"short": "ERATAC Adapter mit Riemenbügelkopf und Hebel für Harris-Zweibeine an Picatinny-Schienen, extra langer Grundkörper, 106g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-adapter-fuer-harris-zweibein-mit-riemenbuegelkopf-hebel/"
+},
+"35754": {
+"cats": [
+"Adapter",
+"ERATAC"
+],
+"images": 1,
+"name": "ERATAC Adapter für Harris-Zweibein mit Riemenbügelkopf, Mutter",
+"on_sale": false,
+"price": "17900",
+"regular": "17900",
+"short": "ERATAC Adapter mit Riemenbügelkopf und Mutter für Harris-Zweibeine an Picatinny-Schienen, extra langer Grundkörper, 92g.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/eratac-adapter-fuer-harris-zweibein-mit-riemenbuegelkopf-mutter/"
+},
+"35861": {
+"cats": [
+"Element Optics",
+"Entfernungsmesser"
+],
+"images": 7,
+"name": "Element Optics Titan 3K Entfernungsmesser mit Ballistikrechner",
+"on_sale": true,
+"price": "49400",
+"regular": "54900",
+"short": "Laserentfernungsmesser mit 7-facher Vergrösserung, Messbereich 5–3000m und integriertem Ballistikchip. Liefert per Knopfdruck eine Schusslösung inkl. Wetter, Neigung und Drall, verbindet sich per Bluetooth und lädt den 18650-Akku über USB-C.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/element-optics-titan-3k-entfernungsmesser-mit-ballistikrechner/"
 }
 }
