@@ -68196,7 +68196,7 @@
 "price": "1500",
 "regular": "1500",
 "short": "RCBS Quick Change Pulvertrichter-Set zum Abfüllen von Pulver in Hülsen: Trichter, 5 Kaliber-Adapter und Fallrohr. Gebraucht, Zustand gut.",
-"stock": "out-of-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/rcbs-quick-change-pulvertrichter-set-mit-5-adaptern-und-fallrohr-gebraucht/"
 },
 "35319": {
@@ -71935,7 +71935,329 @@
 "price": "49400",
 "regular": "54900",
 "short": "Laserentfernungsmesser mit 7-facher Vergrösserung, Messbereich 5–3000m und integriertem Ballistikchip. Liefert per Knopfdruck eine Schusslösung inkl. Wetter, Neigung und Drall, verbindet sich per Bluetooth und lädt den 18650-Akku über USB-C.",
-"stock": "in-stock",
+"stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/element-optics-titan-3k-entfernungsmesser-mit-ballistikrechner/"
+},
+"36076": {
+"cats": [
+"Flinten",
+"Stoeger"
+],
+"images": 3,
+"name": "Stoeger V7000 Black Bockflinte 12/76, 71cm",
+"on_sale": false,
+"price": "88390",
+"regular": "88390",
+"short": "Leichte Bockflinte 12/76 mit 71cm Läufen, Monoblock-Gehäuse aus 7075-T6-Aluminium in Schwarz, Ejektoren, selektivem Einzelabzug und geöltem türkischem Nussbaumschaft. Rund 2.8 kg, stahlschrottaugliche Chokes.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-v7000-black-bockflinte-12-76-71cm/"
+},
+"36077": {
+"cats": [
+"Flinten",
+"Stoeger"
+],
+"images": 3,
+"name": "Stoeger V7000 Nickel Bockflinte 12/76, 71cm",
+"on_sale": false,
+"price": "94890",
+"regular": "94890",
+"short": "Bockflinte 12/76 mit 71cm Läufen und vernickeltem Monoblock-Gehäuse aus 7075-T6-Aluminium. Ejektoren, selektiver Einzelabzug, geölter türkischer Nussbaum und stahlschrottaugliche Chokes bei rund 2.8 kg.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-v7000-nickel-bockflinte-12-76-71cm/"
+},
+"36078": {
+"cats": [
+"Beretta",
+"Pistolen"
+],
+"images": 1,
+"name": "Beretta 80X Cheetah 7.65 Browning (.32 Auto) RDO Ready, 12 Schuss, Schwarz",
+"on_sale": false,
+"price": "95390",
+"regular": "95390",
+"short": "Kompakte SA/DA-Pistole im Kaliber 7.65 Browning (.32 Auto) mit 12 Schuss, schlankem Vertec-Griff, skelettiertem Hahn und Optics-Ready-Schlitten. Made in Italy, 680g leer.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/beretta-80x-cheetah-7-65-browning-32-auto-rdo-ready-12-schuss-schwarz/"
+},
+"36080": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX5 Luftgewehr 4.5mm, 7.5 Joule, Black Synthetic",
+"on_sale": false,
+"price": "13990",
+"regular": "13990",
+"short": "Leichtes Knicklauf-Luftgewehr mit Federkolben im Kaliber 4.5mm und 7.5 Joule. Fiberoptik-Visierung, automatische beidseitige Sicherung und 11mm-Prismenschiene für ein Zielfernrohr.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx5-luftgewehr-4-5mm-7-5-joule-black-synthetic/"
+},
+"36081": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX5 Luftgewehr 4.5mm, 7.5 Joule, Green Synthetic",
+"on_sale": false,
+"price": "14590",
+"regular": "14590",
+"short": "Leichtes Knicklauf-Luftgewehr mit Federkolben im Kaliber 4.5mm und 7.5 Joule, grüner Kunststoffschaft. Fiberoptik-Visierung, automatische Sicherung und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx5-luftgewehr-4-5mm-7-5-joule-green-synthetic/"
+},
+"36082": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX5 Luftgewehr 4.5mm, 7.5 Joule, Holzschaft",
+"on_sale": false,
+"price": "18590",
+"regular": "18590",
+"short": "Knicklauf-Luftgewehr mit Federkolben im Kaliber 4.5mm und 7.5 Joule, Schaft aus Hartholz. Fiberoptik-Visierung, automatische Sicherung und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx5-luftgewehr-4-5mm-7-5-joule-holzschaft/"
+},
+"36083": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX20 S3 Suppressor Luftgewehr 4.5mm, 24 Joule, Black Synthetic",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "Knicklauf-Luftgewehr 4.5mm mit 24 Joule und integriertem S3-Schalldämpfer. Verstellbarer T2-Abzug, Multi-Grip-System und 11mm-Prismenschiene. Schwarzer Kunststoffschaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx20-s3-suppressor-luftgewehr-4-5mm-24-joule-black-synthetic/"
+},
+"36084": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX20 S3 Suppressor Luftgewehr 4.5mm, 24 Joule, Green Synthetic",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "Knicklauf-Luftgewehr 4.5mm mit 24 Joule und integriertem S3-Schalldämpfer, grüner Kunststoffschaft. Verstellbarer T2-Abzug, Multi-Grip-System und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx20-s3-suppressor-luftgewehr-4-5mm-24-joule-green-synthetic/"
+},
+"36085": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX20 S3 Suppressor Luftgewehr 4.5mm, 24 Joule, Holzschaft",
+"on_sale": false,
+"price": "32790",
+"regular": "32790",
+"short": "Knicklauf-Luftgewehr 4.5mm mit 24 Joule, integriertem S3-Schalldämpfer und Schaft aus Hartholz. Verstellbarer T2-Abzug und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx20-s3-suppressor-luftgewehr-4-5mm-24-joule-holzschaft/"
+},
+"36086": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX20 S3 Suppressor Luftgewehr 5.5mm, 24 Joule, Black Synthetic",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "Knicklauf-Luftgewehr im Kaliber 5.5mm mit 24 Joule und integriertem S3-Schalldämpfer. Verstellbarer T2-Abzug, Multi-Grip-System und 11mm-Prismenschiene. Schwarzer Kunststoffschaft.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx20-s3-suppressor-luftgewehr-5-5mm-24-joule-black-synthetic/"
+},
+"36087": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX20 TAC S2 Suppressor Combo 4.5mm, 24 Joule, mit ZF 3-9×40 und Zweibein",
+"on_sale": false,
+"price": "34890",
+"regular": "34890",
+"short": "Taktisches Knicklauf-Luftgewehr 4.5mm mit 24 Joule, S2-Schalldämpfer, Picatinny-Seitenschienen, Zielfernrohr 3-9×40 AO mit Montage und Zweibein. Komplett schussbereit.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx20-tac-s2-suppressor-combo-4-5mm-24-joule-mit-zf-3-9x40-und-zweibein/"
+},
+"36088": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX40 Luftgewehr 4.5mm, 20 Joule, Unterhebel, Black Synthetic",
+"on_sale": false,
+"price": "24390",
+"regular": "24390",
+"short": "Unterhebel-Luftgewehr mit festem Lauf im Kaliber 4.5mm und 20 Joule. Klappbare Ladeklappe, verstellbarer T2-Abzug, Fiberoptik-Visierung und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx40-luftgewehr-4-5mm-20-joule-unterhebel-black-synthetic/"
+},
+"36089": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger RX40 Luftgewehr 4.5mm, 20 Joule, Unterhebel, Holzschaft",
+"on_sale": false,
+"price": "28890",
+"regular": "28890",
+"short": "Unterhebel-Luftgewehr mit festem Lauf im Kaliber 4.5mm und 20 Joule, Schaft aus Hartholz. Verstellbarer T2-Abzug, Fiberoptik-Visierung und 11mm-Prismenschiene.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-rx40-luftgewehr-4-5mm-20-joule-unterhebel-holzschaft/"
+},
+"36090": {
+"cats": [
+"Luftpistolen / Luftgewehr",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger XM1 PCP S4 Suppressor Combo 4.5mm, 35 Joule, mit ZF 4×32 und Zweibein",
+"on_sale": false,
+"price": "48390",
+"regular": "48390",
+"short": "PCP-Pressluftgewehr mit Repetierverschluss im Kaliber 4.5mm und 35 Joule. Integrierter S4-Schalldämpfer, Regulator, 9-Schuss-Magazin, Zielfernrohr 4×32 und Zweibein im Set.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-xm1-pcp-s4-suppressor-combo-4-5mm-35-joule-mit-zf-4x32-und-zweibein/"
+},
+"36099": {
+"cats": [
+"Stoeger Airguns",
+"Zielfernrohre / Scopes"
+],
+"images": 1,
+"name": "Stoeger Airguns Zielfernrohr 4×32, 1 Zoll",
+"on_sale": false,
+"price": "7190",
+"regular": "7190",
+"short": "Festvergrösserndes Zielfernrohr 4×32 mit 1-Zoll-Mittelrohr für Luftgewehre, 295mm lang und 290g leicht.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-zielfernrohr-4x32-1-zoll/"
+},
+"36100": {
+"cats": [
+"Stoeger Airguns",
+"Zielfernrohre / Scopes"
+],
+"images": 1,
+"name": "Stoeger Airguns Zielfernrohr 3-9×40 AO, 1 Zoll",
+"on_sale": false,
+"price": "11590",
+"regular": "11590",
+"short": "Variables Zielfernrohr 3-9×40 mit verstellbarer Parallaxe (AO) und 1-Zoll-Mittelrohr für Luftgewehre.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-zielfernrohr-3-9x40-ao-1-zoll/"
+},
+"36101": {
+"cats": [
+"Montagen",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger Airguns Montageringe 1 Zoll für 11mm-Prismenschiene",
+"on_sale": false,
+"price": "990",
+"regular": "990",
+"short": "Zwei Montageringe für Zielfernrohre mit 1-Zoll-Mittelrohr auf der 11mm-Prismenschiene von Luftgewehren, mit integriertem Anschlagstift.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-montageringe-1-zoll-fuer-11mm-prismenschiene/"
+},
+"36103": {
+"cats": [
+"Stoeger Airguns",
+"Zubehör"
+],
+"images": 1,
+"name": "Stoeger Airguns Kugelfang für Zielscheiben 14x14cm",
+"on_sale": false,
+"price": "1790",
+"regular": "1790",
+"short": "Kugelfang aus Metall für Zielscheiben 14x14cm, fängt Diabolos von Luftgewehr und Luftpistole sicher auf.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-kugelfang-fuer-zielscheiben-14x14cm/"
+},
+"36104": {
+"cats": [
+"Stoeger Airguns",
+"Zubehör"
+],
+"images": 1,
+"name": "Stoeger Airguns Zielscheiben 14x14cm, 100 Stück",
+"on_sale": false,
+"price": "990",
+"regular": "990",
+"short": "100 Zielscheiben 14x14cm mit gut sichtbarem rot-blauem Zentrum, passend für den Stoeger-Kugelfang.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-zielscheiben-14x14cm-100-stueck/"
+},
+"36106": {
+"cats": [
+"Bipod / Zweibein",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger Airguns Zweibein für XM1 PCP und RX20 Tac",
+"on_sale": false,
+"price": "7590",
+"regular": "7590",
+"short": "Klappbares, höhenverstellbares Zweibein für die Seitenschiene der Stoeger XM1 PCP und RX20 Tac.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-zweibein-fuer-xm1-pcp-und-rx20-tac/"
+},
+"36107": {
+"cats": [
+"Magazine",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger Airguns Magazin XM1 PCP 4.5mm, 9 Schuss",
+"on_sale": false,
+"price": "1890",
+"regular": "1890",
+"short": "Ersatz-Trommelmagazin für das Stoeger XM1 PCP im Kaliber 4.5mm, 9 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-magazin-xm1-pcp-4-5mm-9-schuss/"
+},
+"36108": {
+"cats": [
+"Magazine",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger Airguns Magazin XM1 Bullpup 4.5mm, 11 Schuss",
+"on_sale": false,
+"price": "3490",
+"regular": "3490",
+"short": "Ersatz-Trommelmagazin für das Stoeger XM1 Bullpup im Kaliber 4.5mm, 11 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-magazin-xm1-bullpup-4-5mm-11-schuss/"
+},
+"36109": {
+"cats": [
+"Magazine",
+"Stoeger Airguns"
+],
+"images": 1,
+"name": "Stoeger Airguns Magazin XM1 Bullpup 5.5mm, 9 Schuss",
+"on_sale": false,
+"price": "3490",
+"regular": "3490",
+"short": "Ersatz-Trommelmagazin für das Stoeger XM1 Bullpup im Kaliber 5.5mm, 9 Schuss.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/stoeger-airguns-magazin-xm1-bullpup-5-5mm-9-schuss/"
 }
 }
