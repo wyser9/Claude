@@ -71,8 +71,9 @@ function armatum_nk_html( $order, $subscriber ) {
 		$p = $item->get_product();
 		if ( ! $p ) { continue; }
 		$img  = wp_get_attachment_image_url( $p->get_image_id(), 'thumbnail' );
-		$link = $p->get_permalink();
-		$buy  = ( $p->is_purchasable() && $p->is_in_stock() ) ? add_query_arg( array( 'add-to-cart' => $p->get_id(), 'quantity' => (int) $item->get_quantity() ), wc_get_cart_url() ) : $link;
+		$utm  = array( 'utm_source' => 'nachkauf-mail', 'utm_medium' => 'email', 'utm_campaign' => 'nachkauf-munition' );
+		$link = add_query_arg( $utm, $p->get_permalink() );
+		$buy  = ( $p->is_purchasable() && $p->is_in_stock() ) ? add_query_arg( array_merge( array( 'add-to-cart' => $p->get_id(), 'quantity' => (int) $item->get_quantity() ), $utm ), wc_get_cart_url() ) : $link;
 		$rows .= '<tr>'
 			. '<td style="padding:10px 0;width:90px;vertical-align:top;">' . ( $img ? '<a href="' . esc_url( $link ) . '"><img src="' . esc_url( $img ) . '" width="80" style="width:80px;height:auto;border:1px solid #eee;"></a>' : '' ) . '</td>'
 			. '<td style="padding:10px 0 10px 12px;vertical-align:top;"><a href="' . esc_url( $link ) . '" style="color:#333;text-decoration:none;font-weight:bold;">' . esc_html( $p->get_name() ) . '</a><br>'
