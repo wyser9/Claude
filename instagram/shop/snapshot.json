@@ -10229,21 +10229,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/sig-sauer-p211-gto-combat-mach3d-compensator/"
 },
-"19245": {
-"cats": [
-"Montagen",
-"Sako",
-"Visiere / Optik"
-],
-"images": 1,
-"name": "Sako Drehmomentschlüssel",
-"on_sale": false,
-"price": "7290",
-"regular": "7290",
-"short": "Sako Drehmomentschlüssel mit einstellbarem Drehmoment von 1.7–9 Nm. Inklusive Torx-, Inbus- und PH-Bits für präzise Optik- und Waffenmontagen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/sako-drehmomentschluessel-praezise-drehmomentkontrolle-fuer-optikmontagen/"
-},
 "19266": {
 "cats": [
 "Kopfbedeckung",
@@ -14253,21 +14238,6 @@
 "short": "Kompaktes Präzisions-Monopod von B&T für Picatinny-Schienen. Leicht, robust und ideal für feine Höhenkorrekturen bei Long-Range-Schüssen",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/bt-industries-accu-shot-precision-rail-monopod-bt12-qk-schwarz/"
-},
-"20409": {
-"cats": [
-"Aimpoint",
-"Rotpunkt / Red Dots",
-"Visiere / Optik"
-],
-"images": 1,
-"name": "Aimpoint Micro T-1 Rotpunktvisier 2 MOA",
-"on_sale": true,
-"price": "69900",
-"regular": "74500",
-"short": "Kompaktes und extrem robustes Rotpunktvisier von Aimpoint mit 2 MOA Punkt, langer Batterielaufzeit und Nachtsichtkompatibilität.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/aimpoint-micro-t-1-rotpunktvisier-2-moa-fuer-behoerden/"
 },
 "20413": {
 "cats": [
@@ -33510,90 +33480,6 @@
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ranger-plate-usgi-magpul-3-pack-4/"
 },
-"23210": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear – Black Frame, Dark Gray Lens",
-"on_sale": false,
-"price": "7990",
-"regular": "7990",
-"short": "Magpul Rider Eyewear – Black Frame, Dark Gray Lens von Magpul robust, präzise und ideal für taktische Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-black-dark-gray/"
-},
-"23211": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear, Polarized – Black Frame, Dark Gray Lens",
-"on_sale": false,
-"price": "10990",
-"regular": "10990",
-"short": "Magpul Rider Eyewear, Polarized – Black Frame, Dark Gray Lens von Magpul robust, präzise und ideal für taktische Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-polarized-black/"
-},
-"23212": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear, Polarized – Black Frame, Gray Lens/Red Mirror",
-"on_sale": false,
-"price": "10990",
-"regular": "10990",
-"short": "Die Magpul Rider Eyewear Polarized mit schwarzem Rahmen sowie grau getönten Gläsern mit roter Verspiegelung bietet effektiven Blendschutz, hohen Tragekomfort und eine klare Sicht für Schiesssport, Outdoor-Aktivitäten und den täglichen Einsatz.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-red-mirror/"
-},
-"23214": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear, Polarized – Desert Verde Frame, Dark Gray Lens",
-"on_sale": false,
-"price": "10990",
-"regular": "10990",
-"short": "Magpul Rider Eyewear, Polarized – Desert Verde Frame, Dark Gray Lens von Magpul robust, präzise und ideal für taktische Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-desert-verde/"
-},
-"23215": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear, Polarized – Gloss Black Frame, Gray Lens/Silver Mirror",
-"on_sale": false,
-"price": "10990",
-"regular": "10990",
-"short": "Magpul Rider Eyewear, Polarized – Gloss Black Frame, Gray Lens/Silver Mirror von Magpul robust, präzise und ideal für taktische Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-silver-mirror/"
-},
-"23216": {
-"cats": [
-"Magpul",
-"Schutzbrillen / Brillen"
-],
-"images": 1,
-"name": "Magpul Rider Eyewear, Polarized – Light Tortoise Frame, Gray Green Lens",
-"on_sale": false,
-"price": "10990",
-"regular": "10990",
-"short": "Magpul Rider Eyewear, Polarized – Light Tortoise Frame, Gray Green Lens von Magpul robust, präzise und ideal für taktische Anwendungen.",
-"stock": "available-on-backorder",
-"url": "https://armatum.ch/produkt/magpul-rider-eyewear-polarized/"
-},
 "23219": {
 "cats": [
 "Gewehrriemen",
@@ -42695,7 +42581,8 @@
 "Hinterschäfte / Stock",
 "Ordonanz",
 "Sale %",
-"SIG Sauer"
+"SIG Sauer",
+"Visiere / Optik"
 ],
 "images": 1,
 "name": "SIG Sauer Visierlinienverlängerung für Stgw 90 mit 11mm Schiene",
@@ -42711,7 +42598,8 @@
 "Hinterschäfte / Stock",
 "Ordonanz",
 "Sale %",
-"SIG Sauer"
+"SIG Sauer",
+"Visiere / Optik"
 ],
 "images": 2,
 "name": "SIG Sauer Visierlinienverlängerung mit Wangenauflage Schwarz für Stgw 90",
@@ -42727,7 +42615,8 @@
 "Hinterschäfte / Stock",
 "Ordonanz",
 "Sale %",
-"SIG Sauer"
+"SIG Sauer",
+"Visiere / Optik"
 ],
 "images": 2,
 "name": "SIG Sauer Visierlinienverlängerung mit Wangenauflage Grün für Stgw 90",
@@ -72259,5 +72148,103 @@
 "short": "Ersatz-Trommelmagazin für das Stoeger XM1 Bullpup im Kaliber 5.5mm, 9 Schuss.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/stoeger-airguns-magazin-xm1-bullpup-5-5mm-9-schuss/"
+},
+"36174": {
+"cats": [
+"Gehmann",
+"Iron Sights / Kimme + Korn"
+],
+"images": 7,
+"name": "Gehmann 590 Kompakt Diopter aus Alu-Vollmaterial",
+"on_sale": false,
+"price": "25400",
+"regular": "25400",
+"short": "Kompakter Diopter von Gehmann, aus Alu-Vollmaterial gefräst, mit sehr kurzem Fuss und Doppelklemmung für alle gängigen Sportwaffen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gehmann-590-kompakt-diopter-aus-alu-vollmaterial/"
+},
+"36175": {
+"cats": [
+"Gehmann",
+"Iron Sights / Kimme + Korn"
+],
+"images": 7,
+"name": "Gehmann 566 Irisblende mit 6 Farbfiltern",
+"on_sale": false,
+"price": "20790",
+"regular": "20790",
+"short": "Gehmann Irisblende 566 mit integrierter Iris-Diopterscheibe 510 (0,5 bis 3,0 mm) und Filterrad mit sechs Farbfiltern.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/gehmann-566-irisblende-mit-6-farbfiltern/"
+},
+"36176": {
+"cats": [
+"Centra",
+"Iron Sights / Kimme + Korn"
+],
+"images": 2,
+"name": "Centra Irisringkorn Vario M18 2.3-3.3, 1.2 Rot",
+"on_sale": false,
+"price": "19900",
+"regular": "19900",
+"short": "Verstellbares Irisringkorn Vario von Centra für Korntunnel M18, Ringdurchmesser 2,3 bis 3,3 mm, Ringbreite 1,2 mm, Ring rot.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/centra-irisringkorn-vario-m18-2-3-3-3-1-2-rot/"
+},
+"36177": {
+"cats": [
+"Grünig + Elmiger",
+"Iron Sights / Kimme + Korn"
+],
+"images": 1,
+"name": "G+E Korntunnel kurz mit Fuss M18, Länge 30 mm",
+"on_sale": false,
+"price": "7300",
+"regular": "7300",
+"short": "Kurzer Korntunnel mit Fuss von Grünig + Elmiger, M18-Gewinde für Ringkorne, Länge 30 mm, für G+E-Waffen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-korntunnel-kurz-mit-fuss-m18-laenge-30-mm/"
+},
+"36178": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Diopterplatte",
+"on_sale": false,
+"price": "38900",
+"regular": "38900",
+"short": "Diopterplatte von Grünig + Elmiger aus der Premium-Visierung für das Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-diopterplatte/"
+},
+"36179": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Kornträger extended",
+"on_sale": false,
+"price": "43800",
+"regular": "43800",
+"short": "Verlängerter Kornträger für das Stgw 90 von Grünig + Elmiger, inkl. Flimmerband und Kornträgerschutz mit Kordel.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-korntraeger-extended/"
+},
+"36180": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Schafterhöhung fest Standardkolben Set",
+"on_sale": false,
+"price": "21500",
+"regular": "21500",
+"short": "Feste Schafterhöhung für den Standardkolben des Stgw 90, Grundausstattung mit 15-mm-Backe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-schafterhoehung-fest-standardkolben-set/"
 }
 }
