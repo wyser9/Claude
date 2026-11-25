@@ -343,8 +343,8 @@ class AK_Data {
 	}
 
 	/** Grösster Geschossdurchmesser in mm aus einem Text, 0 = unbekannt. */
-	public static function caliber_from_text( $text ) {
-		$text = (string) $text;
+	public static function caliber_from_text( $text, $loose = false ) {
+		$text = wp_specialchars_decode( (string) $text );
 		if ( preg_match( '/^\s*(\d+(?:[.,]\d+)?)\s*$/', $text, $m ) ) {
 			return (float) str_replace( ',', '.', $m[1] ); // Zahl = mm.
 		}
@@ -354,12 +354,35 @@ class AK_Data {
 				$best = max( $best, $mm );
 			}
 		}
-		return $best;
+		return ( $best > 0 || ! $loose ) ? $best : self::caliber_loose( $text );
+	}
+
+	/**
+	 * Grobe Erkennung für Kaliberbezeichnungen ohne eigenen Eintrag (nur Feld und Attribut, nicht Produktname):
+	 * «.44 Magnum» = Zoll, «8x57», «5.7x28», «bis 9.3 mm» = mm, «308 Norma» = Zoll ohne Punkt. Schrot = unbekannt.
+	 */
+	private static function caliber_loose( $text ) {
+		if ( preg_match( '/schrot|\b\d{2}\/\d{2}\b|kal\.\s*\d+\s*\(/i', $text ) ) {
+			return 0.0;
+		}
+		if ( preg_match( '/(?:^|[\s(])\.(\d{2,3})(?!\d)/', $text, $m ) ) {
+			return round( (int) $m[1] / ( 3 === strlen( $m[1] ) ? 1000 : 100 ) * 25.4, 2 );
+		}
+		if ( preg_match( '/(?:^|\s)(\d{1,2}(?:\.\d{1,2})?)\s*(?:x\s*\d|mm\b)/i', $text, $m ) ) {
+			return (float) $m[1];
+		}
+		if ( preg_match( '/^\s*([2-5]\d{2})\s+[a-z]/i', $text, $m ) ) {
+			return round( (int) $m[1] / 1000 * 25.4, 2 );
+		}
+		if ( preg_match( '/^\s*(\d{1,2}(?:\.\d{1,2})?)(?:\s|-|$)/', $text, $m ) && (float) $m[1] >= 4 && (float) $m[1] <= 13 ) {
+			return (float) $m[1];
+		}
+		return 0.0;
 	}
 
 	/** Kaliber (Bohrung) in mm: Feld «kaliber», sonst Attribut «Kaliber», sonst Produktname. 0 = unbekannt. */
 	public static function caliber_mm( $product_id ) {
-		$own = self::caliber_from_text( self::meta( $product_id, 'kaliber' ) );
+		$own = self::caliber_from_text( self::meta( $product_id, 'kaliber' ), true );
 		if ( $own > 0 ) {
 			return $own;
 		}
@@ -367,7 +390,7 @@ class AK_Data {
 		if ( ! $product ) {
 			return 0.0;
 		}
-		$attr = self::caliber_from_text( $product->get_attribute( 'pa_kaliber' ) );
+		$attr = self::caliber_from_text( $product->get_attribute( 'pa_kaliber' ), true );
 		return $attr > 0 ? $attr : self::caliber_from_text( $product->get_name() );
 	}
 
@@ -430,23 +453,46 @@ class AK_Data {
 
 	/** Ist das Produkt vollständig eingerichtet (Bild, Massstab, Anker)? */
 	public static function is_ready( $product_id ) {
+		return ! self::missing( $product_id );
+	}
+
+	/** Was fehlt noch bis «eingerichtet»? Liste kurzer Hinweise, leer = alles da. */
+	public static function missing( $product_id ) {
 		$role = self::role( $product_id );
-		if ( ! $role || ! self::image_id( $product_id ) || self::scale( $product_id ) <= 0 || ! self::point( $product_id, 'anchor' ) ) {
-			return false;
+		if ( ! $role ) {
+			return array( 'Rolle wählen' );
+		}
+		$out = array();
+		if ( ! self::image_id( $product_id ) ) {
+			$out[] = 'Bild';
+		}
+		if ( ! self::point( $product_id, 'p1' ) || ! self::point( $product_id, 'p2' ) ) {
+			$out[] = 'Messpunkt 1 und 2';
+		}
+		if ( (float) str_replace( ',', '.', (string) self::meta( $product_id, 'ref_mm', '0' ) ) <= 0 ) {
+			$out[] = 'Abstand der Messpunkte [mm]';
+		}
+		if ( ! self::point( $product_id, 'anchor' ) ) {
+			$out[] = 'Ankerpunkt';
 		}
 		if ( 'montage' === $role && ! self::point( $product_id, 'tube_anchor' ) ) {
-			return false;
+			$out[] = 'Rohrmitte';
 		}
 		if ( 'montage' === $role && 'footprint' === self::mount_type( $product_id ) && ! self::outputs( $product_id ) ) {
-			return false;
+			$out[] = 'Ausgang (Footprint des Rotpunkts)';
 		}
 		if ( 'zubehoer' === $role && ! self::group( $product_id ) ) {
-			return false;
+			$out[] = 'Gruppe';
 		}
-		if ( 'zubehoer' === $role && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'hub', 'adapterschiene' ), true ) && ( ! self::point( $product_id, 'tube_anchor' ) || ! self::outputs( $product_id ) ) ) {
-			return false;
+		if ( 'zubehoer' === $role && in_array( self::group( $product_id ), array( 'muendungsaufsatz', 'hub', 'adapterschiene' ), true ) ) {
+			if ( ! self::point( $product_id, 'tube_anchor' ) ) {
+				$out[] = 'Ausgangspunkt';
+			}
+			if ( ! self::outputs( $product_id ) ) {
+				$out[] = 'Ausgang';
+			}
 		}
-		return true;
+		return $out;
 	}
 
 	/** Kann die Optik ohne Montage auf diese Waffe? */

@@ -192,7 +192,7 @@ class AK_Review {
 						<span class="ak-review-info"><?php echo esc_html( implode( ' · ', $info ) ); ?></span>
 						<span class="ak-review-legend"><?php echo esc_html( self::legend( $r, $g ) ); ?></span>
 						<?php if ( ! AK_Data::is_ready( $id ) ) : ?>
-							<span class="ak-review-warn">Noch nicht vollständig eingerichtet</span>
+							<span class="ak-review-warn">Noch nicht vollständig eingerichtet. Es fehlt: <?php echo esc_html( implode( ', ', AK_Data::missing( $id ) ) ); ?></span>
 						<?php endif; ?>
 						<?php foreach ( $warn as $w ) : ?>
 							<span class="ak-review-warn"><?php echo esc_html( $labels[ $w ] ?? $w ); ?></span>

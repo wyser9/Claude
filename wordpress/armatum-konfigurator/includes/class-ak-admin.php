@@ -121,10 +121,22 @@ class AK_Admin {
 					<?php endforeach; ?>
 				</datalist>
 				<label class="ak-only-waffe ak-only-zubehoer">Kaliber
-					<input type="text" name="ak[kaliber]" value="<?php echo esc_attr( $v['kaliber'] ); ?>" size="10" placeholder="<?php echo esc_attr( $cal_auto > 0 ? 'erkannt: ' . number_format( $cal_auto, 2, '.', '' ) . ' mm' : 'z.B. .308 oder 7.8' ); ?>">
+					<?php
+					$ak_cals = taxonomy_exists( 'pa_kaliber' ) ? get_terms( array( 'taxonomy' => 'pa_kaliber', 'hide_empty' => false, 'fields' => 'names', 'orderby' => 'name' ) ) : array();
+					$ak_cals = is_array( $ak_cals ) ? array_map( 'wp_specialchars_decode', $ak_cals ) : array();
+					if ( '' !== $v['kaliber'] && ! in_array( $v['kaliber'], $ak_cals, true ) ) {
+						array_unshift( $ak_cals, $v['kaliber'] );
+					}
+					?>
+					<select name="ak[kaliber]">
+						<option value=""><?php echo esc_html( $cal_auto > 0 ? 'automatisch (erkannt: ' . number_format( $cal_auto, 2, '.', '' ) . ' mm)' : 'automatisch (nicht erkannt)' ); ?></option>
+						<?php foreach ( $ak_cals as $ak_cal ) : ?>
+							<option value="<?php echo esc_attr( $ak_cal ); ?>" <?php selected( $v['kaliber'], $ak_cal ); ?>><?php echo esc_html( $ak_cal ); ?></option>
+						<?php endforeach; ?>
+					</select>
 				</label>
 			</p>
-			<p class="description">Plattform: <?php echo esc_html( implode( ', ', array_keys( AK_Data::PLATFORMS ) ) ); ?>. Waffe: eine Plattform. Teil (Schaft, Griff, Mündungsteil, Montage): eine oder mehrere, kommagetrennt; leer = passt auf alle Plattformen. Kaliber: bei Waffe und Mündungsteil (z.B. «.308», «6.5 Creedmoor», «.30 cal» oder Bohrung in mm). Leer = aus Attribut «Kaliber» oder Produktname. Ein Mündungsteil passt nur, wenn sein Kaliber mindestens so gross ist wie das der Waffe.</p>
+			<p class="description">Plattform: <?php echo esc_html( implode( ', ', array_keys( AK_Data::PLATFORMS ) ) ); ?>. Waffe: eine Plattform. Teil (Schaft, Griff, Mündungsteil, Montage): eine oder mehrere, kommagetrennt; leer = passt auf alle Plattformen. Kaliber: bei Waffe und Mündungsteil, Auswahl wie im Attribut «Kaliber». «automatisch» = aus Attribut «Kaliber» oder Produktname. Ein Mündungsteil passt nur, wenn sein Kaliber mindestens so gross ist wie das der Waffe.</p>
 			<p class="description ak-only-waffe">Pistole: im Konfigurator nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre und Magnifier. Schnittstelle = Optik-Schnitt im Schlitten (z.B. rmr, acro, glock-mos). Adapterplatte: Schnittstelle = Schnitt, Ausgang = Footprint des Rotpunkts. Steckplatz Mündung = Laufgewinde (Kompensator, Adapter), Handschutz unten = Schiene für die Lampe.</p>
 			<p class="description ak-only-optik">Achshöhe nur bei Rotpunkt und Magnifier mit Halterung: Höhe der optischen Achse über der Auflagefläche (Schiene oder Footprint), z.B. 39 mm (absolute co-witness) oder 49 mm (lower 1/3). Magnifier und Rotpunkt passen nur zusammen, wenn sie höchstens <?php echo esc_html( (string) AK_Data::MAG_TOL ); ?> mm auseinanderliegen. Leer = nicht geprüft.</p>
 			<p class="description ak-only-montage">Achshöhe bei Montage: von Hand eingetragen überschreibt sie die Messung aus dem Bild (Mitte Unterseite bis Rohrmitte). Bei Schrägbildern ist die Messung oft zu hoch, dann die Herstellerangabe eintragen.</p>
@@ -222,7 +234,7 @@ class AK_Admin {
 					<p class="ak-noimg">Kein Bild. Bitte Produktbild oder Vorschaubild setzen.</p>
 				<?php endif; ?>
 			</div>
-			<p class="ak-status"><?php echo AK_Data::is_ready( $post->ID ) ? '✔ Eingerichtet' : 'Noch nicht vollständig eingerichtet'; ?>
+			<p class="ak-status"><?php echo esc_html( AK_Data::is_ready( $post->ID ) ? '✔ Eingerichtet' : 'Noch nicht vollständig eingerichtet. Es fehlt: ' . implode( ', ', AK_Data::missing( $post->ID ) ) ); ?>
 				<?php if ( 'montage' === $v['role'] && AK_Data::axis_height( $post->ID ) > 0 ) : ?>
 					· Achshöhe über Schiene: <?php echo esc_html( number_format( AK_Data::axis_height( $post->ID ), 1, '.', '' ) ); ?> mm<?php echo AK_Data::own_axis( $post->ID ) > 0 ? ' (von Hand)' : ' (gemessen)'; ?>
 				<?php endif; ?>

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Armatum Konfigurator
  * Description: Waffen-Konfigurator für WooCommerce: Kunde wählt Optik, Montage, Magnifier und Zubehör (Schalldämpfer, Frontgriff, Laser, Lampe, Zweibein, Schulterstütze, Pistolengriff), sieht eine Vorschau und legt das Paket (jede Komponente als eigene Position) in den Warenkorb. Montage im Paket gratis.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Armatum GmbH
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AK_VERSION', '1.0.5' );
+define( 'AK_VERSION', '1.0.6' );
 define( 'AK_FILE', __FILE__ );
 define( 'AK_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AK_URL', plugin_dir_url( __FILE__ ) );
