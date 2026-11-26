@@ -26,6 +26,11 @@ class AK_Data {
 
 	/** Cache leeren, sobald sich Produkte, Lager oder Konfigurator-Felder ändern. */
 	public static function cache_hooks() {
+		// Neue Plugin-Version: Regeln können sich geändert haben, Auswahl neu berechnen.
+		if ( defined( 'AK_VERSION' ) && get_option( 'ak_code_ver' ) !== AK_VERSION ) {
+			update_option( 'ak_code_ver', AK_VERSION, false );
+			self::bump_cache();
+		}
 		$meta = function ( $meta_id, $object_id, $meta_key ) {
 			if ( 0 === strpos( (string) $meta_key, '_ak_' ) ) {
 				self::bump_cache();
@@ -76,6 +81,16 @@ class AK_Data {
 		'langwaffe' => 'Langwaffe',
 		'pistole'   => 'Pistole',
 	);
+
+	/** Lampe/Laser: für welche Waffenart (leer = automatisch aus dem Namen). */
+	const PART_WEAPON_TYPES = array(
+		'beide'     => 'Lang- und Kurzwaffen',
+		'langwaffe' => 'nur Langwaffen',
+		'pistole'   => 'nur Kurzwaffen (Pistole)',
+	);
+
+	/** Gruppen, die nach Waffenart getrennt werden. */
+	const TYPED_GROUPS = array( 'lampe', 'laser' );
 
 	/** Plattformen (Waffe: eine, Teil: eine oder mehrere, leer = passt auf alle). */
 	const PLATFORMS = array(
@@ -330,6 +345,37 @@ class AK_Data {
 		return 'langwaffe';
 	}
 
+	/** Lampe/Laser aus dem Namen erkennen: Scout, M600, Rail Mount = Langwaffe; TLR-7, X300, XC1 = Kurzwaffe; sonst beide. */
+	public static function detect_part_weapon_type( $name ) {
+		$name = wp_specialchars_decode( (string) $name );
+		if ( preg_match( '/scout|\bM\d{3}|rail ?mount|TLR[- ]?RM|hellfighter|\bIRIS|PEQ|DBAL|langwaffe|gewehr|long ?gun/i', $name ) ) {
+			return 'langwaffe';
+		}
+		if ( preg_match( '/\bTLR[- ]?\d|\bX[1-4]\d\d|\bXC\d|\bXH\d|\bXR\d|\bGTL\b|pistol|kurzwaffe|glock|\bAPL\b/i', $name ) ) {
+			return 'pistole';
+		}
+		return 'beide';
+	}
+
+	/** Für welche Waffenart ist die Lampe/der Laser: Feld, sonst aus dem Namen. */
+	public static function part_weapon_type( $product_id ) {
+		$t = (string) self::meta( $product_id, 'waffenart' );
+		if ( isset( self::PART_WEAPON_TYPES[ $t ] ) ) {
+			return $t;
+		}
+		$pid = self::parent_of( $product_id ) ? self::parent_of( $product_id ) : $product_id;
+		return self::detect_part_weapon_type( get_the_title( $pid ) );
+	}
+
+	/** Passt Lampe/Laser zur Waffenart (Pistole/Langwaffe)? Andere Teile immer. */
+	public static function weapon_type_ok( $weapon_id, $part_id ) {
+		if ( ! in_array( self::group( $part_id ), self::TYPED_GROUPS, true ) ) {
+			return true;
+		}
+		$t = self::part_weapon_type( $part_id );
+		return 'beide' === $t || self::weapon_type( $weapon_id ) === $t;
+	}
+
 	/** Plattformen eines Produkts (Feld «plattform», kommagetrennt), leer = keine Einschränkung. */
 	public static function platforms( $product_id ) {
 		$raw = strtolower( (string) self::meta( $product_id, 'plattform' ) );
@@ -394,11 +440,78 @@ class AK_Data {
 		return $attr > 0 ? $attr : self::caliber_from_text( $product->get_name() );
 	}
 
-	/** Ist die Bohrung des Mündungsteils gross genug für das Kaliber der Waffe? Unbekannt = kein Ausschluss. */
+	/** Kaliber als Text, wie er gilt: Feld «kaliber», sonst Attribut «Kaliber». Leer = nur aus Produktname erkannt. */
+	public static function caliber_text( $product_id ) {
+		$own = trim( (string) self::meta( $product_id, 'kaliber' ) );
+		if ( '' !== $own ) {
+			return $own;
+		}
+		$product = wc_get_product( $product_id );
+		return $product ? trim( wp_specialchars_decode( (string) $product->get_attribute( 'pa_kaliber' ) ) ) : '';
+	}
+
+	/**
+	 * Kaliberbereiche eines Teils in mm: je Eintrag array( min, max ).
+	 * «7mm - .30 (.308)» = Bereich, «bis .30» = bis, «.308 Win» = genau dieses Kaliber. Leer = unbekannt.
+	 */
+	public static function caliber_ranges( $product_id ) {
+		$text = self::caliber_text( $product_id );
+		if ( '' === $text ) {
+			$mm = self::caliber_from_text( wc_get_product( $product_id ) ? wc_get_product( $product_id )->get_name() : '' );
+			return $mm > 0 ? array( array( $mm, $mm ) ) : array();
+		}
+		$out = array();
+		foreach ( preg_split( '/\s*[,|]\s*/', $text ) as $part ) {
+			if ( '' === $part ) {
+				continue;
+			}
+			if ( preg_match( '/^\s*bis\s+(.+)$/i', $part, $m ) ) {
+				$max = self::caliber_from_text( $m[1], true );
+				if ( $max > 0 ) {
+					$out[] = array( 0.0, $max );
+				}
+				continue;
+			}
+			if ( preg_match( '/^(.+?)\s+[-–]\s+(.+)$/', $part, $m ) ) {
+				$lo = self::caliber_from_text( $m[1], true );
+				$hi = self::caliber_from_text( $m[2], true );
+				if ( $lo > 0 && $hi > 0 ) {
+					$out[] = array( min( $lo, $hi ), max( $lo, $hi ) );
+					continue;
+				}
+			}
+			$mm = self::caliber_from_text( $part, true );
+			if ( $mm > 0 ) {
+				$out[] = array( $mm, $mm );
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Passt das Mündungsteil zum Kaliber der Waffe? Unbekannt = kein Ausschluss.
+	 * Mündungsaufsatz (Bremse, Feuerdämpfer, Kompensator): Kaliber muss passen (gleiches Kaliber oder im Bereich).
+	 * HUB und Schalldämpfer: Bohrung mindestens so gross wie das Kaliber.
+	 */
 	public static function caliber_ok( $weapon_id, $part_id ) {
 		$w = self::caliber_mm( $weapon_id );
+		if ( $w <= 0 ) {
+			return true;
+		}
+		if ( 'muendungsaufsatz' === self::group( $part_id ) ) {
+			$ranges = self::caliber_ranges( $part_id );
+			if ( ! $ranges ) {
+				return true;
+			}
+			foreach ( $ranges as $r ) {
+				if ( $w >= $r[0] - 0.05 && $w <= $r[1] + 0.05 ) {
+					return true;
+				}
+			}
+			return false;
+		}
 		$p = self::caliber_mm( $part_id );
-		return $w <= 0 || $p <= 0 || $p >= $w - 0.05;
+		return $p <= 0 || $p >= $w - 0.05;
 	}
 
 	/** Mittelrohr in mm: eigenes Feld, sonst Attribut pa_mittelrohrdurchmesser. */
@@ -910,7 +1023,7 @@ class AK_Data {
 				array_filter(
 					array_diff( $ids, $blocked ),
 					function ( $id ) use ( $weapon_id ) {
-						return self::platform_ok( $weapon_id, $id );
+						return self::platform_ok( $weapon_id, $id ) && self::weapon_type_ok( $weapon_id, $id );
 					}
 				)
 			);

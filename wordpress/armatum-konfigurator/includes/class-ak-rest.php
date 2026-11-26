@@ -93,7 +93,7 @@ class AK_Rest {
 			'montage_art' => 'montage' === $role ? AK_Data::mount_type( $id ) : '',
 			'achshoehe'   => AK_Data::own_axis( $id ),
 			'achshoehe_gemessen' => 'montage' === $role ? round( AK_Data::measured_axis_height( $id ), 1 ) : 0,
-			'waffenart'   => 'waffe' === $role ? AK_Data::weapon_type( $id ) : '',
+			'waffenart'   => 'waffe' === $role ? AK_Data::weapon_type( $id ) : ( in_array( $g, AK_Data::TYPED_GROUPS, true ) ? AK_Data::part_weapon_type( $id ) : '' ),
 			'plattform'   => AK_Data::platforms( $id ),
 			'kaliber_mm'  => AK_Data::caliber_mm( $id ),
 			'slots'       => 'waffe' === $role ? self::slots( $id ) : array(),
@@ -211,7 +211,7 @@ class AK_Rest {
 			if ( 'montage_art' === $k && ! isset( AK_Data::MOUNT_TYPES[ $v ] ) ) {
 				$v = '';
 			}
-			if ( 'waffenart' === $k && ! isset( AK_Data::WEAPON_TYPES[ $v ] ) ) {
+			if ( 'waffenart' === $k && ! isset( AK_Data::WEAPON_TYPES[ $v ] ) && ! isset( AK_Data::PART_WEAPON_TYPES[ $v ] ) ) {
 				$v = '';
 			}
 			if ( 'plattform' === $k ) {

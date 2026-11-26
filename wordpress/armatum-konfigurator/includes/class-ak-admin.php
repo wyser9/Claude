@@ -104,6 +104,16 @@ class AK_Admin {
 				</label>
 			</p>
 			<p class="ak-row">
+				<?php if ( 'zubehoer' === $v['role'] ) : ?>
+				<label class="ak-only-zubehoer">Für Waffenart (Lampe, Laser)
+					<select name="ak[waffenart]">
+						<option value="">automatisch (<?php echo esc_html( AK_Data::PART_WEAPON_TYPES[ AK_Data::detect_part_weapon_type( $post->post_title ) ] ); ?>)</option>
+						<?php foreach ( AK_Data::PART_WEAPON_TYPES as $tk => $tl ) : ?>
+							<option value="<?php echo esc_attr( $tk ); ?>" <?php selected( $v['waffenart'], $tk ); ?>><?php echo esc_html( $tl ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<?php else : ?>
 				<label class="ak-only-waffe">Waffenart
 					<select name="ak[waffenart]">
 						<option value="">automatisch (<?php echo esc_html( AK_Data::WEAPON_TYPES[ $det_type ] ); ?>)</option>
@@ -112,6 +122,7 @@ class AK_Admin {
 						<?php endforeach; ?>
 					</select>
 				</label>
+				<?php endif; ?>
 				<label>Plattform
 					<input type="text" name="ak[plattform]" value="<?php echo esc_attr( $v['plattform'] ); ?>" size="18" placeholder="<?php echo esc_attr( 'waffe' === $v['role'] ? 'z.B. ar15' : 'leer = alle' ); ?>" list="ak-platforms">
 				</label>
@@ -129,14 +140,17 @@ class AK_Admin {
 					}
 					?>
 					<select name="ak[kaliber]">
-						<option value=""><?php echo esc_html( $cal_auto > 0 ? 'automatisch (erkannt: ' . number_format( $cal_auto, 2, '.', '' ) . ' mm)' : 'automatisch (nicht erkannt)' ); ?></option>
+						<option value=""><?php
+							$ak_attr_cal = $post->ID ? trim( wp_specialchars_decode( (string) ( wc_get_product( $post->ID ) ? wc_get_product( $post->ID )->get_attribute( 'pa_kaliber' ) : '' ) ) ) : '';
+							echo esc_html( '' !== $ak_attr_cal ? 'wie Attribut: ' . $ak_attr_cal : ( $cal_auto > 0 ? 'aus Produktname (' . number_format( $cal_auto, 2, '.', '' ) . ' mm)' : 'nicht erkannt' ) );
+							?></option>
 						<?php foreach ( $ak_cals as $ak_cal ) : ?>
 							<option value="<?php echo esc_attr( $ak_cal ); ?>" <?php selected( $v['kaliber'], $ak_cal ); ?>><?php echo esc_html( $ak_cal ); ?></option>
 						<?php endforeach; ?>
 					</select>
 				</label>
 			</p>
-			<p class="description">Plattform: <?php echo esc_html( implode( ', ', array_keys( AK_Data::PLATFORMS ) ) ); ?>. Waffe: eine Plattform. Teil (Schaft, Griff, Mündungsteil, Montage): eine oder mehrere, kommagetrennt; leer = passt auf alle Plattformen. Kaliber: bei Waffe und Mündungsteil, Auswahl wie im Attribut «Kaliber». «automatisch» = aus Attribut «Kaliber» oder Produktname. Ein Mündungsteil passt nur, wenn sein Kaliber mindestens so gross ist wie das der Waffe.</p>
+			<p class="description">Plattform: <?php echo esc_html( implode( ', ', array_keys( AK_Data::PLATFORMS ) ) ); ?>. Waffe: eine Plattform. Teil (Schaft, Griff, Mündungsteil, Montage): eine oder mehrere, kommagetrennt; leer = passt auf alle Plattformen. Kaliber: bei Waffe und Mündungsteil, Auswahl wie im Attribut «Kaliber». Erste Zeile = Wert aus dem Attribut «Kaliber» (sonst Produktname). Mündungsaufsatz (Bremse, Feuerdämpfer) passt nur bei gleichem Kaliber bzw. wenn das Kaliber der Waffe im Bereich liegt (z.B. «7mm - .30»), dazu muss das Gewinde passen. HUB und Schalldämpfer: Bohrung mindestens so gross wie das Kaliber.</p>
 			<p class="description ak-only-waffe">Pistole: im Konfigurator nur Rotpunkte (direkt oder über Adapterplatte), keine Zielfernrohre und Magnifier. Schnittstelle = Optik-Schnitt im Schlitten (z.B. rmr, acro, glock-mos). Adapterplatte: Schnittstelle = Schnitt, Ausgang = Footprint des Rotpunkts. Steckplatz Mündung = Laufgewinde (Kompensator, Adapter), Handschutz unten = Schiene für die Lampe.</p>
 			<p class="description ak-only-optik">Achshöhe nur bei Rotpunkt und Magnifier mit Halterung: Höhe der optischen Achse über der Auflagefläche (Schiene oder Footprint), z.B. 39 mm (absolute co-witness) oder 49 mm (lower 1/3). Magnifier und Rotpunkt passen nur zusammen, wenn sie höchstens <?php echo esc_html( (string) AK_Data::MAG_TOL ); ?> mm auseinanderliegen. Leer = nicht geprüft.</p>
 			<p class="description ak-only-montage">Achshöhe bei Montage: von Hand eingetragen überschreibt sie die Messung aus dem Bild (Mitte Unterseite bis Rohrmitte). Bei Schrägbildern ist die Messung oft zu hoch, dann die Herstellerangabe eintragen.</p>
@@ -271,7 +285,7 @@ class AK_Admin {
 			if ( 'montage_art' === $f && ! isset( AK_Data::MOUNT_TYPES[ $val ] ) ) {
 				$val = '';
 			}
-			if ( 'waffenart' === $f && ! isset( AK_Data::WEAPON_TYPES[ $val ] ) ) {
+			if ( 'waffenart' === $f && ! isset( AK_Data::WEAPON_TYPES[ $val ] ) && ! isset( AK_Data::PART_WEAPON_TYPES[ $val ] ) ) {
 				$val = '';
 			}
 			if ( 'plattform' === $f ) {
