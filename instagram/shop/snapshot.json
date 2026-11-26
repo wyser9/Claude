@@ -839,7 +839,7 @@
 "Acheron",
 "Schalldämpfer"
 ],
-"images": 2,
+"images": 3,
 "name": "Acheron ACS-K HexaLug FDE",
 "on_sale": false,
 "price": "82890",
@@ -4370,7 +4370,7 @@
 "Schutzbrillen / Brillen",
 "Wiley X"
 ],
-"images": 1,
+"images": 5,
 "name": "Wiley X Schutzbrille SABER ADV Black – Set 3in1",
 "on_sale": false,
 "price": "9900",
@@ -4440,7 +4440,7 @@
 "Schutzbrillen / Brillen",
 "Wiley X"
 ],
-"images": 1,
+"images": 2,
 "name": "Wiley X SPEAR Schutzbrille Tan Smoke Grey Clear Light Rust",
 "on_sale": false,
 "price": "13900",
@@ -4454,7 +4454,7 @@
 "Schutzbrillen / Brillen",
 "Wiley X"
 ],
-"images": 1,
+"images": 5,
 "name": "Wiley X Schutzbrille VALOR 2.2 Matte Black – Polarized Smoke Grey",
 "on_sale": false,
 "price": "15900",
@@ -9814,7 +9814,7 @@
 "Brügger & Thomet",
 "Schalldämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "B&T HUB Adapter QDN – für Print-X (NATO Birdcage)",
 "on_sale": false,
 "price": "26990",
@@ -9828,7 +9828,7 @@
 "Brügger & Thomet",
 "Schalldämpfer"
 ],
-"images": 2,
+"images": 6,
 "name": "B&T HUB Adapter QDM – für Print-X (M.A.R.S. QD)",
 "on_sale": false,
 "price": "14990",
@@ -9842,7 +9842,7 @@
 "Brügger & Thomet",
 "Schalldämpfer"
 ],
-"images": 3,
+"images": 6,
 "name": "B&T HUB Adapter QDSF – für Print-X (Surefire)",
 "on_sale": false,
 "price": "26900",
@@ -9856,7 +9856,7 @@
 "Brügger & Thomet",
 "Schalldämpfer"
 ],
-"images": 2,
+"images": 5,
 "name": "B&T HUB Adapter QDR – für Print-X (Rotex)",
 "on_sale": false,
 "price": "26900",
@@ -24510,7 +24510,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse 2XL – Schwarz",
 "on_sale": false,
 "price": "7490",
@@ -24524,7 +24524,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse L – Schwarz",
 "on_sale": false,
 "price": "7490",
@@ -24538,7 +24538,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse M – Schwarz",
 "on_sale": false,
 "price": "7490",
@@ -24552,7 +24552,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse S – Schwarz",
 "on_sale": false,
 "price": "7490",
@@ -24566,7 +24566,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse XL – Schwarz",
 "on_sale": false,
 "price": "7490",
@@ -24580,7 +24580,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse 2XL- Coyote",
 "on_sale": false,
 "price": "7490",
@@ -24594,7 +24594,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse L- Coyote",
 "on_sale": false,
 "price": "7490",
@@ -24608,7 +24608,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse M- Coyote",
 "on_sale": false,
 "price": "7490",
@@ -24622,7 +24622,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse S- Coyote",
 "on_sale": false,
 "price": "7490",
@@ -24636,7 +24636,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Breach Glove 2.0 – Grösse XL- Coyote",
 "on_sale": false,
 "price": "7490",
@@ -25140,7 +25140,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Essential Wallet Schwarz Minimalistisches Portemonnaie",
 "on_sale": false,
 "price": "2390",
@@ -25154,7 +25154,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Essential Wallet FDE Minimalistisches Portemonnaie",
 "on_sale": false,
 "price": "2390",
@@ -25168,7 +25168,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Everyday Wallet Schwarz",
 "on_sale": false,
 "price": "3490",
@@ -25182,7 +25182,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Everyday Wallet Grau",
 "on_sale": false,
 "price": "3490",
@@ -25196,7 +25196,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Everyday Wallet FDE",
 "on_sale": false,
 "price": "3490",
@@ -25210,7 +25210,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Gear Straps, 4 Pack",
 "on_sale": false,
 "price": "1890",
@@ -25224,7 +25224,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Pelican 1700 Protector",
 "on_sale": false,
 "price": "13990",
@@ -25238,7 +25238,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Pelican 1720 Protector",
 "on_sale": false,
 "price": "17790",
@@ -25252,7 +25252,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Pelican 1750 Protector",
 "on_sale": false,
 "price": "19990",
@@ -25266,7 +25266,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA GRID Organizer for Pelican V700 Vault",
 "on_sale": false,
 "price": "13990",
@@ -25280,7 +25280,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Pelican V730 Vault",
 "on_sale": false,
 "price": "17790",
@@ -25294,7 +25294,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA GRID Organizer for Pelican V770 Vault",
 "on_sale": false,
 "price": "14990",
@@ -25308,7 +25308,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Pelican V800 Vault",
 "on_sale": false,
 "price": "19990",
@@ -25322,7 +25322,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Plano All Weather 2 36″",
 "on_sale": false,
 "price": "13990",
@@ -25336,7 +25336,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Plano All Weather 2 42″",
 "on_sale": false,
 "price": "17790",
@@ -25350,7 +25350,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer for Plano All Weather 2 52″",
 "on_sale": false,
 "price": "19990",
@@ -25364,7 +25364,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer Replacement End Panel",
 "on_sale": false,
 "price": "3190",
@@ -25378,7 +25378,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA GRID Organizer Replacement Middle Panel",
 "on_sale": false,
 "price": "2490",
@@ -25462,7 +25462,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Large Schwarz",
 "on_sale": false,
 "price": "3190",
@@ -25476,7 +25476,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Large Grey",
 "on_sale": false,
 "price": "3190",
@@ -25490,7 +25490,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Large FDE",
 "on_sale": false,
 "price": "3190",
@@ -25504,7 +25504,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Medium Schwarz",
 "on_sale": false,
 "price": "2690",
@@ -25518,7 +25518,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Medium Grey",
 "on_sale": false,
 "price": "2690",
@@ -25532,7 +25532,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Medium FDE",
 "on_sale": false,
 "price": "2690",
@@ -25546,7 +25546,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Small Schwarz",
 "on_sale": false,
 "price": "2090",
@@ -25560,7 +25560,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Small Grey",
 "on_sale": false,
 "price": "2090",
@@ -25574,7 +25574,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Lite Pouch, Small FDE",
 "on_sale": false,
 "price": "2090",
@@ -25588,7 +25588,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Magnetic Field Tray, Large Schwarz",
 "on_sale": false,
 "price": "3890",
@@ -25602,7 +25602,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul DAKA Magnetic Field Tray, Large FDE",
 "on_sale": false,
 "price": "3890",
@@ -25616,7 +25616,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Magnetic Field Tray, Small Schwarz",
 "on_sale": false,
 "price": "2790",
@@ -25630,7 +25630,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Magnetic Field Tray, Small FDE",
 "on_sale": false,
 "price": "2790",
@@ -25644,7 +25644,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Large Schwarz",
 "on_sale": false,
 "price": "3890",
@@ -25658,7 +25658,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Large Grau",
 "on_sale": false,
 "price": "3890",
@@ -25672,7 +25672,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Pouch, Large FDE",
 "on_sale": false,
 "price": "3890",
@@ -25686,7 +25686,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Large ODG",
 "on_sale": false,
 "price": "3890",
@@ -25700,7 +25700,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Medium Schwarz",
 "on_sale": false,
 "price": "3190",
@@ -25714,7 +25714,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Pouch Medium Grau Organisationstasche",
 "on_sale": false,
 "price": "3190",
@@ -25728,7 +25728,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Pouch, Medium FDE",
 "on_sale": false,
 "price": "3190",
@@ -25742,7 +25742,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Pouch, Medium ODG",
 "on_sale": false,
 "price": "3190",
@@ -25756,7 +25756,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Medium Gelb",
 "on_sale": false,
 "price": "3190",
@@ -25770,7 +25770,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Pouch, Medium Orange",
 "on_sale": false,
 "price": "3190",
@@ -25784,7 +25784,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small Schwarz",
 "on_sale": false,
 "price": "2790",
@@ -25798,7 +25798,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small Grau",
 "on_sale": false,
 "price": "2790",
@@ -25812,7 +25812,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small FDE",
 "on_sale": false,
 "price": "2790",
@@ -25826,7 +25826,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small ODG",
 "on_sale": false,
 "price": "2790",
@@ -25840,7 +25840,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small Gelb",
 "on_sale": false,
 "price": "2790",
@@ -25854,7 +25854,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, Small Orange",
 "on_sale": false,
 "price": "2790",
@@ -25868,7 +25868,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, XL Schwarz",
 "on_sale": false,
 "price": "4890",
@@ -25882,7 +25882,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, XL Grau",
 "on_sale": false,
 "price": "4890",
@@ -25896,7 +25896,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Pouch, XL FDE",
 "on_sale": false,
 "price": "4890",
@@ -25938,7 +25938,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Single Pistol Case Schwarz",
 "on_sale": false,
 "price": "5490",
@@ -25952,7 +25952,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Single Pistol Case FDE",
 "on_sale": false,
 "price": "5490",
@@ -25966,7 +25966,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Soft Rifle Case 35 Zoll Gewehrtasche",
 "on_sale": false,
 "price": "19990",
@@ -25980,7 +25980,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Soft Rifle Case 44 Zoll Gewehrtasche",
 "on_sale": false,
 "price": "23990",
@@ -25994,7 +25994,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Soft Rifle Case 53 Zoll Gewehrtasche",
 "on_sale": false,
 "price": "26490",
@@ -26008,7 +26008,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Suppressor Storage Pouch, Large Schwarz",
 "on_sale": false,
 "price": "3490",
@@ -26022,7 +26022,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Suppressor Storage Pouch, Medium Schwarz",
 "on_sale": false,
 "price": "2990",
@@ -26036,7 +26036,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Suppressor Storage Pouch, Small Schwarz",
 "on_sale": false,
 "price": "2490",
@@ -26078,7 +26078,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Takeout, Large Schwarz",
 "on_sale": false,
 "price": "6290",
@@ -26092,7 +26092,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Takeout, Large FDE",
 "on_sale": false,
 "price": "6290",
@@ -26120,7 +26120,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul DAKA Universal GRID Organizer – Replacement Panel",
 "on_sale": false,
 "price": "2490",
@@ -26204,7 +26204,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Utility Organizer, Large Schwarz",
 "on_sale": false,
 "price": "6290",
@@ -26218,7 +26218,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Utility Organizer, Large FDE",
 "on_sale": false,
 "price": "6290",
@@ -26246,7 +26246,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Volume Pouch Schwarz",
 "on_sale": false,
 "price": "3990",
@@ -26260,7 +26260,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Volume Pouch Grau",
 "on_sale": false,
 "price": "3990",
@@ -26274,7 +26274,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul DAKA Volume Pouch FDE",
 "on_sale": false,
 "price": "3990",
@@ -26288,7 +26288,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Volume Pouch",
 "on_sale": false,
 "price": "3990",
@@ -26302,7 +26302,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Volume Pouch, Large Schwarz",
 "on_sale": false,
 "price": "4890",
@@ -26316,7 +26316,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Volume Pouch Large FDE Ausrüstungstasche",
 "on_sale": false,
 "price": "4890",
@@ -26330,7 +26330,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Waterproof Window Pouch, Large Schwarz",
 "on_sale": false,
 "price": "4890",
@@ -26344,7 +26344,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Waterproof Window Pouch, Large FDE",
 "on_sale": false,
 "price": "4890",
@@ -26358,7 +26358,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Waterproof Window Pouch, Large Orange",
 "on_sale": false,
 "price": "4890",
@@ -26372,7 +26372,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Waterproof Window Pouch, Medium Schwarz",
 "on_sale": false,
 "price": "3990",
@@ -26386,7 +26386,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Waterproof Window Pouch, Medium FDE",
 "on_sale": false,
 "price": "3990",
@@ -26400,7 +26400,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Waterproof Window Pouch, Medium Orange",
 "on_sale": false,
 "price": "3990",
@@ -26414,7 +26414,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Waterproof Window Pouch, Small",
 "on_sale": false,
 "price": "3490",
@@ -26428,7 +26428,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul DAKA Waterproof Window Pouch, Small FDE",
 "on_sale": false,
 "price": "3490",
@@ -26442,7 +26442,7 @@
 "Magpul",
 "Rucksack / Taschen"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Waterproof Window Pouch, Small Orange",
 "on_sale": false,
 "price": "3490",
@@ -26456,7 +26456,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Large – Schwarz",
 "on_sale": false,
 "price": "4290",
@@ -26470,7 +26470,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Large – FDE",
 "on_sale": false,
 "price": "4290",
@@ -26484,7 +26484,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Large – ODG",
 "on_sale": false,
 "price": "4290",
@@ -26498,7 +26498,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Medium – Schwarz",
 "on_sale": false,
 "price": "3490",
@@ -26512,7 +26512,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Medium – FDE",
 "on_sale": false,
 "price": "3490",
@@ -26526,7 +26526,7 @@
 "Behälter",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Medium – ODG",
 "on_sale": false,
 "price": "3490",
@@ -26540,7 +26540,7 @@
 "Aufbewahrung",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Small Schwarz",
 "on_sale": false,
 "price": "2990",
@@ -26554,7 +26554,7 @@
 "Aufbewahrung",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Small FDE",
 "on_sale": false,
 "price": "2990",
@@ -26568,7 +26568,7 @@
 "Aufbewahrung",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul DAKA Window Pouch Small OD Green",
 "on_sale": false,
 "price": "2990",
@@ -27464,7 +27464,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Schwarz 2XL",
 "on_sale": false,
 "price": "6390",
@@ -27478,7 +27478,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Schwarz L",
 "on_sale": false,
 "price": "6390",
@@ -27492,7 +27492,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Schwarz M",
 "on_sale": false,
 "price": "6390",
@@ -27506,7 +27506,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Schwarz S",
 "on_sale": false,
 "price": "6390",
@@ -27520,7 +27520,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Schwarz XL",
 "on_sale": false,
 "price": "6390",
@@ -27604,7 +27604,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Grün 2XL",
 "on_sale": false,
 "price": "6390",
@@ -27618,7 +27618,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Grün L",
 "on_sale": false,
 "price": "6390",
@@ -27632,7 +27632,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Grün M",
 "on_sale": false,
 "price": "6390",
@@ -27646,7 +27646,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Grün S",
 "on_sale": false,
 "price": "6390",
@@ -27660,7 +27660,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 5,
 "name": "Magpul Flight Glove 2.0 Grün XL",
 "on_sale": false,
 "price": "6390",
@@ -27772,7 +27772,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Go Bang Trucker Cap Grau – Snapback Kappe",
 "on_sale": false,
 "price": "2990",
@@ -27786,7 +27786,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Go Bang Trucker Cap FDE – Snapback Kappe",
 "on_sale": false,
 "price": "2990",
@@ -27800,7 +27800,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Go Bang Trucker Cap OD Green – Snapback Kappe",
 "on_sale": false,
 "price": "2990",
@@ -28318,7 +28318,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Icon Trucker schwarz/rot",
 "on_sale": false,
 "price": "2990",
@@ -28332,7 +28332,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 2,
 "name": "Magpul Icon Trucker OD-Green",
 "on_sale": false,
 "price": "2990",
@@ -31958,7 +31958,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Patrol Glove 2.0 Schwarz 2XL",
 "on_sale": false,
 "price": "5390",
@@ -31972,7 +31972,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Patrol Glove 2.0 Schwarz L",
 "on_sale": false,
 "price": "5390",
@@ -31986,7 +31986,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Patrol Glove 2.0 Schwarz M",
 "on_sale": false,
 "price": "5390",
@@ -32000,7 +32000,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Patrol Glove 2.0 Schwarz S",
 "on_sale": false,
 "price": "5390",
@@ -32014,7 +32014,7 @@
 "Handschuhe",
 "Magpul"
 ],
-"images": 1,
+"images": 4,
 "name": "Magpul Patrol Glove 2.0 Schwarz XL",
 "on_sale": false,
 "price": "5390",
@@ -34316,7 +34316,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Wordmark Patch Trucker Schwarz",
 "on_sale": false,
 "price": "2990",
@@ -34344,7 +34344,7 @@
 "Kopfbedeckung",
 "Magpul"
 ],
-"images": 1,
+"images": 3,
 "name": "Magpul Wordmark Patch Trucker – OD Green",
 "on_sale": false,
 "price": "2990",
@@ -43565,7 +43565,7 @@
 "Gehörschutz",
 "SureFire"
 ],
-"images": 2,
+"images": 3,
 "name": "SureFire Ersatz-Ohrstöpsel EP7 & EP10 Gr. L",
 "on_sale": false,
 "price": "2090",
@@ -43579,7 +43579,7 @@
 "Gehörschutz",
 "SureFire"
 ],
-"images": 2,
+"images": 3,
 "name": "SureFire Comply Ersatz-Ohrstöpsel EP7 & EP10 Medium – Memory Foam Ersatzaufsätze",
 "on_sale": false,
 "price": "2090",
@@ -43593,7 +43593,7 @@
 "Gehörschutz",
 "SureFire"
 ],
-"images": 2,
+"images": 3,
 "name": "SureFire Comply Ersatz-Ohrstöpsel EP7 & EP10 Grösse S",
 "on_sale": false,
 "price": "2090",
@@ -43607,7 +43607,7 @@
 "Gehörschutz",
 "SureFire"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire EP4 Sonic Defenders Plus Medium Schwarz",
 "on_sale": false,
 "price": "2290",
@@ -43621,7 +43621,7 @@
 "Gehörschutz",
 "SureFire"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire EP7 Sonic Defenders Ultra Medium Schwarz",
 "on_sale": false,
 "price": "2690",
@@ -43677,7 +43677,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire Nalgene Trinkflasche 1 Liter Wide Mouth Braun",
 "on_sale": false,
 "price": "3490",
@@ -43691,7 +43691,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 4,
 "name": "SureFire 1979 Cardinal T-Shirt Rot Grösse L",
 "on_sale": false,
 "price": "3490",
@@ -43705,7 +43705,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 4,
 "name": "Tshirt SureFire 1979 cardinal Gr. M",
 "on_sale": false,
 "price": "3490",
@@ -43761,7 +43761,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire Nalgene Trinkflasche 1 Liter Wide Mouth Grau",
 "on_sale": false,
 "price": "3490",
@@ -43775,7 +43775,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 4,
 "name": "Tshirt SureFire Button Logo grün Gr. L",
 "on_sale": false,
 "price": "2790",
@@ -43789,7 +43789,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 4,
 "name": "Tshirt SureFire Shooting Club Grün Gr. 2XL",
 "on_sale": false,
 "price": "3990",
@@ -43803,7 +43803,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 4,
 "name": "Tshirt SureFire Shooting Club Grün Gr. S",
 "on_sale": false,
 "price": "3890",
@@ -43817,7 +43817,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 5,
 "name": "Tshirt SureFire Sunset Mint Gr. L",
 "on_sale": false,
 "price": "3490",
@@ -43831,7 +43831,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 5,
 "name": "Tshirt SureFire Sunset Mint Gr. S",
 "on_sale": false,
 "price": "3490",
@@ -43845,7 +43845,7 @@
 "Merchandise",
 "SureFire"
 ],
-"images": 1,
+"images": 5,
 "name": "Tshirt SureFire Sunset Mint Gr. XL",
 "on_sale": false,
 "price": "3490",
@@ -44041,7 +44041,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 2,
+"images": 4,
 "name": "SureFire EDC1-DFT Grau LED-Taschenlampe Dual Fuel Turbo 650 Lumen",
 "on_sale": false,
 "price": "28990",
@@ -44055,7 +44055,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 2,
+"images": 4,
 "name": "SureFire EDC2-DFT Grau LED-Taschenlampe Dual Fuel Turbo 700 Lumen",
 "on_sale": false,
 "price": "33900",
@@ -44307,7 +44307,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 4,
 "name": "SureFire EDC1-DFT Turbo Schwarz LED-Taschenlampe Dual Fuel 650 Lumen",
 "on_sale": false,
 "price": "28990",
@@ -44335,7 +44335,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire EDCL2-T Schwarz LED-Taschenlampe 1200 Lumen",
 "on_sale": false,
 "price": "27900",
@@ -44391,7 +44391,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire G2ZX CombatLight Schwarz LED-Taschenlampe 600 Lumen",
 "on_sale": false,
 "price": "14490",
@@ -44419,7 +44419,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 5,
 "name": "SureFire Fury IntelliBeam Dual Fuel Schwarz LED-Taschenlampe 1500 Lumen",
 "on_sale": false,
 "price": "31490",
@@ -44531,7 +44531,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 2,
 "name": "SureFire V1-B Vampire Schwarz – Dual Spectrum LED Taschenlampe Weisslicht & IR",
 "on_sale": false,
 "price": "34990",
@@ -44965,7 +44965,7 @@
 "SureFire",
 "Taschenlampen"
 ],
-"images": 1,
+"images": 3,
 "name": "SureFire Everyday Carry Turbo Tan – Dual Fuel EDC Taschenlampe 700 Lume",
 "on_sale": false,
 "price": "36990",
@@ -45175,7 +45175,7 @@
 "Kopfbedeckung",
 "SureFire"
 ],
-"images": 2,
+"images": 5,
 "name": "SureFire Tiger Camo High Profile Cap",
 "on_sale": false,
 "price": "3990",
@@ -47648,7 +47648,7 @@
 "Lampen / Laser",
 "Streamlight"
 ],
-"images": 1,
+"images": 3,
 "name": "Streamlight TLR-7 HL-X USB Waffenlampe Flat Dark Earth",
 "on_sale": false,
 "price": "29500",
@@ -59011,7 +59011,7 @@
 "Katadyn",
 "Pumpfilter"
 ],
-"images": 1,
+"images": 6,
 "name": "Katadyn Pocket Filter – Keramik-Wasserfilter für Expeditionen",
 "on_sale": false,
 "price": "39900",
@@ -59179,7 +59179,7 @@
 "Ersatzfilter und Kartuschen",
 "Katadyn"
 ],
-"images": 2,
+"images": 3,
 "name": "Katadyn Vario Filter Ersatzelement",
 "on_sale": false,
 "price": "7490",
@@ -59235,7 +59235,7 @@
 "Ersatzteile und Wartungssets",
 "Katadyn"
 ],
-"images": 1,
+"images": 2,
 "name": "Katadyn Vario – Pumpkopf Set (Set 3)",
 "on_sale": false,
 "price": "3900",
@@ -59543,7 +59543,7 @@
 "Ersatzteile und Wartungssets",
 "Katadyn"
 ],
-"images": 2,
+"images": 3,
 "name": "Katadyn Explorer Pumpengehäuse",
 "on_sale": false,
 "price": "6290",
@@ -59613,7 +59613,7 @@
 "Ersatzteile und Wartungssets",
 "Katadyn"
 ],
-"images": 1,
+"images": 2,
 "name": "Katadyn Pocket Pumpenstössel (Set 2)",
 "on_sale": false,
 "price": "6900",
@@ -63504,7 +63504,7 @@
 "price": "17000",
 "regular": "17000",
 "short": "Gebrauchte Star Target Pistole im Kaliber .22 LR für Rechtshänder, Zustand gut, inklusive zwei Magazinen.",
-"stock": "out-of-stock",
+"stock": "in-stock",
 "url": "https://armatum.ch/produkt/star-target-pistole-22-lr-gebraucht-fuer-rechtshaender/"
 },
 "32589": {
@@ -66592,7 +66592,7 @@
 "Area 419",
 "Werkzeuge"
 ],
-"images": 2,
+"images": 3,
 "name": "Area 419 HELLFIRE Wrench Montageschlüssel",
 "on_sale": false,
 "price": "3980",
@@ -66606,7 +66606,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE MATCH Mündungsbremse 6mm (.22-6mm) 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "32480",
@@ -66620,7 +66620,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 4,
+"images": 6,
 "name": "Area 419 HELLFIRE MATCH Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "18500",
@@ -66634,7 +66634,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE MATCH Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "18500",
@@ -66732,7 +66732,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Mündungsbremse .30 Kaliber (7mm-.30) 5/8-24 Mattschwarz",
 "on_sale": false,
 "price": "15000",
@@ -66746,7 +66746,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Mündungsbremse 6mm (.22-6mm) 5/8-24 Mattschwarz",
 "on_sale": false,
 "price": "15000",
@@ -66760,7 +66760,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Mündungsbremse 6.5mm (.25-6.5mm) 5/8-24 Mattschwarz",
 "on_sale": false,
 "price": "15000",
@@ -66774,7 +66774,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Universal Adapter 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "5000",
@@ -66788,7 +66788,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Universal Adapter 1/2-28 Black Nitride",
 "on_sale": false,
 "price": "5000",
@@ -66802,7 +66802,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 HELLFIRE Universal Adapter 3/4-24 Black Nitride",
 "on_sale": false,
 "price": "7480",
@@ -66816,7 +66816,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 HELLFIRE Universal Adapter 5/8-32 Black Nitride",
 "on_sale": false,
 "price": "6980",
@@ -66830,7 +66830,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 HELLFIRE Universal Adapter 9/16-24 Black Nitride",
 "on_sale": false,
 "price": "6980",
@@ -66844,7 +66844,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 HELLFIRE Universal Adapter M18x1 Black Nitride",
 "on_sale": false,
 "price": "5000",
@@ -66858,7 +66858,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 HELLFIRE Universal Adapter M18x1.5 Black Nitride",
 "on_sale": false,
 "price": "5000",
@@ -66872,7 +66872,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 2,
+"images": 4,
 "name": "Area 419 HELLFIRE Taper & Thread Protector Gewindeschutz",
 "on_sale": false,
 "price": "5480",
@@ -66886,7 +66886,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 HELLFIRE 2P Mündungsbremse 6mm (.22-6mm) 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "13000",
@@ -66900,7 +66900,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 HELLFIRE 2P Mündungsbremse .30 Kaliber (6.5mm-.30) 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "13000",
@@ -66914,7 +66914,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 HELLFIRE 2P Mündungsbremse 9mm 1/2-28 Black Nitride",
 "on_sale": false,
 "price": "23480",
@@ -66928,7 +66928,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 1,
+"images": 2,
 "name": "Area 419 HELLFIRE Linear Flash Suppressor Linearkompensator 5/8-24 Black Nitride",
 "on_sale": false,
 "price": "13500",
@@ -66942,7 +66942,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 1,
+"images": 2,
 "name": "Area 419 HELLFIRE Linear Flash Suppressor Linearkompensator 1/2-28 Black Nitride",
 "on_sale": false,
 "price": "13500",
@@ -66956,7 +66956,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 3,
+"images": 4,
 "name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .30 und kleiner Grau",
 "on_sale": false,
 "price": "31980",
@@ -66970,7 +66970,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 4,
+"images": 5,
 "name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .40 und kleiner Grau",
 "on_sale": false,
 "price": "33980",
@@ -66984,7 +66984,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 4,
+"images": 5,
 "name": "Area 419 HELLFIRE Ti Mündungsbremse Titan .50 und kleiner Grau",
 "on_sale": false,
 "price": "33980",
@@ -66998,7 +66998,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 Sidewinder Thread & Taper Protector Gewindeschutz",
 "on_sale": false,
 "price": "5480",
@@ -67012,7 +67012,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 Sidewinder Magnum Mündungsbremse .338 3/4-24 Mattschwarz",
 "on_sale": false,
 "price": "18000",
@@ -67026,7 +67026,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 Sidewinder Magnum Mündungsbremse .22-.30 5/8-24 Mattschwarz",
 "on_sale": false,
 "price": "18000",
@@ -67040,7 +67040,7 @@
 "Area 419",
 "Mündungsfeuerdämpfer"
 ],
-"images": 1,
+"images": 3,
 "name": "Area 419 Sidewinder Magnum Mündungsbremse .22-.30 5/8-24 Edelstahl",
 "on_sale": false,
 "price": "31480",
@@ -67054,7 +67054,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 Sidewinder Universal Adapter 5/8-24",
 "on_sale": false,
 "price": "7980",
@@ -67068,7 +67068,7 @@
 "Adapter",
 "Area 419"
 ],
-"images": 3,
+"images": 5,
 "name": "Area 419 Sidewinder Universal Adapter M18x1",
 "on_sale": false,
 "price": "7980",
@@ -67488,7 +67488,7 @@
 "Acheron",
 "Schalldämpfer"
 ],
-"images": 3,
+"images": 4,
 "name": "Acheron SPR E5 Schalldämpfer 5.56 mm (Mk 12 SPR)",
 "on_sale": false,
 "price": "98490",
@@ -72246,5 +72246,315 @@
 "short": "Feste Schafterhöhung für den Standardkolben des Stgw 90, Grundausstattung mit 15-mm-Backe.",
 "stock": "available-on-backorder",
 "url": "https://armatum.ch/produkt/ge-stgw-90-schafterhoehung-fest-standardkolben-set/"
+},
+"36181": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 2.5 mm Standardkolben",
+"on_sale": true,
+"price": "1550",
+"regular": "3100",
+"short": "Zusatzerhöhung 2,5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-2-5-mm-standardkolben/"
+},
+"36182": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 5 mm Standardkolben",
+"on_sale": true,
+"price": "1800",
+"regular": "3600",
+"short": "Zusatzerhöhung 5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-5-mm-standardkolben/"
+},
+"36183": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 7.5 mm Standardkolben",
+"on_sale": true,
+"price": "2100",
+"regular": "4200",
+"short": "Zusatzerhöhung 7,5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-7-5-mm-standardkolben/"
+},
+"36184": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 10 mm Standardkolben",
+"on_sale": true,
+"price": "2500",
+"regular": "5000",
+"short": "Zusatzerhöhung 10 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-10-mm-standardkolben/"
+},
+"36185": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 12.5 mm Standardkolben",
+"on_sale": true,
+"price": "2950",
+"regular": "5900",
+"short": "Zusatzerhöhung 12,5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-12-5-mm-standardkolben/"
+},
+"36186": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 15 mm Standardkolben",
+"on_sale": true,
+"price": "3450",
+"regular": "6900",
+"short": "Zusatzerhöhung 15 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-15-mm-standardkolben/"
+},
+"36187": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 17.5 mm Standardkolben",
+"on_sale": true,
+"price": "3700",
+"regular": "7400",
+"short": "Zusatzerhöhung 17,5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-17-5-mm-standardkolben/"
+},
+"36188": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 20 mm Standardkolben",
+"on_sale": true,
+"price": "3900",
+"regular": "7800",
+"short": "Zusatzerhöhung 20 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-20-mm-standardkolben/"
+},
+"36189": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 22.5 mm Standardkolben",
+"on_sale": true,
+"price": "4150",
+"regular": "8300",
+"short": "Zusatzerhöhung 22,5 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-22-5-mm-standardkolben/"
+},
+"36190": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Zusatzerhöhung 25 mm Standardkolben",
+"on_sale": true,
+"price": "4300",
+"regular": "8600",
+"short": "Zusatzerhöhung 25 mm für die G+E Schafterhöhung am Standardkolben des Stgw 90.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-zusatzerhoehung-25-mm-standardkolben/"
+},
+"36660": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Schafterhöhung fest Schiebekolben Set",
+"on_sale": true,
+"price": "8900",
+"regular": "17800",
+"short": "Feste Schafterhöhung für den Schiebekolben des Stgw 90, Grundausstattung mit 15-mm-Backe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-schafterhoehung-fest-schiebekolben-set/"
+},
+"36661": {
+"cats": [
+"Grünig + Elmiger",
+"Ordonanz"
+],
+"images": 1,
+"name": "G+E Stgw 90 Schafterhöhung fest Schiebekolben +20 mm",
+"on_sale": true,
+"price": "9250",
+"regular": "18500",
+"short": "Feste Schafterhöhung für den Schiebekolben +20 mm des Stgw 90, Grundausstattung mit 15-mm-Backe.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/ge-stgw-90-schafterhoehung-fest-schiebekolben-20-mm/"
+},
+"36816": {
+"cats": [
+"Burris",
+"Visiere / Optik",
+"Zielfernrohre / Scopes"
+],
+"images": 4,
+"name": "Burris Six Xe 1-6×24, 3P#4 ILLUM",
+"on_sale": false,
+"price": "77000",
+"regular": "77000",
+"short": "Kompaktes Zielfernrohr mit sechsfachem Zoom von 1–6x, beleuchtetem 3P#4 Fiber-Dot-Absehen, Push/Pull-Türmen mit Zero-Stop und Auto-Off. Ideal für Bewegungsjagd und dynamisches Schiessen.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/burris-six-xe-1-6x24-beleuchtetes-zielfernrohr/"
+},
+"36817": {
+"cats": [
+"Burris",
+"Visiere / Optik",
+"Zielfernrohre / Scopes"
+],
+"images": 3,
+"name": "Burris Six Xe 3-18×56, 3P#4 ILLUM",
+"on_sale": false,
+"price": "104400",
+"regular": "104400",
+"short": "Lichtstarkes 56-mm-Zielfernrohr mit sechsfachem Zoom von 3–18x, beleuchtetem 3P#4 Fiber-Dot-Absehen, Seitenparallaxe und Push/Pull-Türmen mit Zero-Stop. Für Ansitz, Pirsch und weite Schüsse.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/burris-six-xe-3-18x56-beleuchtetes-zielfernrohr/"
+},
+"36871": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "B&T HUB Adapter QDN SCAR 5.56 – für Print-X (FN SCAR 5.56)",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "B&T HUB Adapter QDN SCAR 5.56 – Adapter zur Montage von Print-X Schalldämpfer oder Blast Deflektor auf FN SCAR 5.56. Edelstahl, HUB-Gewinde 1.375×24 UNEF.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-qdn-scar-5-56-fuer-print-x-fn-scar-5-56/"
+},
+"36872": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "B&T HUB Adapter QDN SCAR 7.62 – für Print-X (FN SCAR 7.62)",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "B&T HUB Adapter QDN SCAR 7.62 – Adapter zur Montage von Print-X Schalldämpfer oder Blast Deflektor auf FN SCAR 7.62. Edelstahl, HUB-Gewinde 1.375×24 UNEF.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-qdn-scar-7-62-fuer-print-x-fn-scar-7-62/"
+},
+"36873": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "B&T HUB Adapter QDLMT – für Print-X (LMT 2-Lug)",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "B&T HUB Adapter QDLMT – Adapter zur Montage von Print-X Schalldämpfer oder Blast Deflektor auf LMT 2-Lug. Edelstahl, HUB-Gewinde 1.375×24 UNEF.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-qdlmt-fuer-print-x-lmt-2-lug/"
+},
+"36874": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "B&T HUB Adapter QDAU 7.62 – für Print-X (Ase Utra BoreLock)",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "B&T HUB Adapter QDAU 7.62 – Adapter zur Montage von Print-X Schalldämpfer oder Blast Deflektor auf Ase Utra BoreLock 7.62. Edelstahl, HUB-Gewinde 1.375×24 UNEF.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-qdau-7-62-fuer-print-x-ase-utra-borelock/"
+},
+"36875": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 1,
+"name": "B&T HUB Adapter QDAAC – für Print-X (AAC Feuerdämpfer)",
+"on_sale": false,
+"price": "26990",
+"regular": "26990",
+"short": "B&T HUB Adapter QDAAC – Adapter zur Montage von Print-X Schalldämpfer oder Blast Deflektor auf AAC Mündungsfeuerdämpfer. Edelstahl, HUB-Gewinde 1.375×24 UNEF.",
+"stock": "in-stock",
+"url": "https://armatum.ch/produkt/bt-hub-adapter-qdaac-fuer-print-x-aac-feuerdaempfer/"
+},
+"36891": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 4,
+"name": "B&T Adapter zu Impuls-IIA Schalldämpfer für Pistole mit feststehendem Lauf",
+"on_sale": false,
+"price": "8300",
+"regular": "8300",
+"short": "Original B&T Adapter für den Pistolenschalldämpfer Impuls-IIA zur Verwendung auf Pistolen mit feststehendem Lauf. Artikelnummer SD-988006-F.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-adapter-zu-impuls-iia-schalldaempfer-fuer-pistole-mit-feststehendem-lauf/"
+},
+"36892": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 4,
+"name": "B&T Impuls-IIA & Impuls-OLS Konversions-Kit für APC9 / MP5 Three-Lug",
+"on_sale": false,
+"price": "12850",
+"regular": "12850",
+"short": "Original B&T Konversions-Kit, mit dem die Pistolenschalldämpfer Impuls-IIA und Impuls-OLS auf den Three-Lug-Anschluss von B&T APC9 und HK MP5 passen. Artikelnummer SD-988006-MP5.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-impuls-iia-impuls-ols-konversions-kit-fuer-apc9-mp5-three-lug/"
+},
+"36893": {
+"cats": [
+"Brügger & Thomet",
+"Schalldämpfer"
+],
+"images": 4,
+"name": "B&T Impuls-IIA Pistolenschalldämpfer 9mm für Beretta M9A3, 1/2″-28 UNEF",
+"on_sale": false,
+"price": "38600",
+"regular": "38600",
+"short": "Bewährter Pistolenschalldämpfer B&T Impuls-IIA im Kaliber 9×19 mm, ausgeführt für die Beretta M9A3 mit Mündungsgewinde 1/2″-28 UNEF. Erwerb nur mit kantonaler Ausnahmebewilligung.",
+"stock": "available-on-backorder",
+"url": "https://armatum.ch/produkt/bt-impuls-iia-pistolenschalldaempfer-9mm-fuer-beretta-m9a3-1-2-28-unef/"
 }
 }
