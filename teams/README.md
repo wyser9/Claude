@@ -9,6 +9,8 @@ Vier Teams berichten direkt an den Inhaber. Gemeinsame Skills für alle: `armatu
 | Onlineshop | Salome (`shop-salome`) | Dana (`shop-dana`), Sina (`shop-sina`), Simon, Theo, Ivo (Woche 2) |
 | Konfigurator | Karl (`konfig-karl`) | Ruedi (`konfig-ruedi`), Dario (`konfig-dario`), Kai (bei nächster Version) |
 
+**Stabsstelle beim Inhaber:** Julia (`recht-julia`), Juristin. Prüft Rechts- und Erwerbsfragen aller Teams und legt unsichere Fälle dem Inhaber vor.
+
 ## So läuft ein Team-Thread
 - Jedes Team hat einen eigenen Projekt-Thread. Die Claude-Sitzung dort übernimmt die Rolle der Leitung: Sie liest die Datei der Leitung in `.claude/agents/` und handelt danach.
 - Die Leitung ruft die Mitarbeiter als Subagents auf (Agent-Tool mit dem Namen in Klammern). Das ist auf Wunsch des Inhabers ausdrücklich erlaubt. Subagents können selbst keine weiteren Subagents starten.
