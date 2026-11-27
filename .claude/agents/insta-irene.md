@@ -161,7 +161,7 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 ## Erwerbsregeln (Inhaber, 17.10.2026 – WG/WV)
 
 - **Magazinkapazität** (nur dieser Teil der Regeln): Faustfeuerwaffen bis und mit **20 Schuss** → **WES**; ab 21 Schuss → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross). Handfeuerwaffen (Gewehre) bis und mit **10 Schuss** → **WES**; darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
-- Es gibt **weitere Regeln** (z. B. Länge der Waffe, Bauart). Erwerbsbedingungen werden **selbst aus WG und WV hergeleitet** (Inhaber, 27.11.2026). Angaben von Grossisten wie Spowag und anderen Shops immer hinterfragen; bei Unstimmigkeit die Juristin fragen oder den Inhaber entscheiden lassen.
+- Es gibt **weitere Regeln** (z. B. Länge der Waffe, Bauart). Erwerbsbedingungen werden **selbst aus WG und WV hergeleitet** (Inhaber, 27.11.2026). Angaben von Grossisten wie Spowag und anderen Shops immer hinterfragen; bei Unstimmigkeit Julia (`recht-julia`) fragen; ist sie unsicher, legt sie den Fall dem Inhaber vor.
 - **«WHB» (Waffenhandelsbewilligung) nie nennen** – in keinem Text, Post, Newsletter oder Kommentar. Steht im Shop «… + WHB», nur den Teil davor übernehmen.
 - **Unsicher? Den Inhaber fragen**, nicht raten.
 - Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
@@ -201,3 +201,6 @@ fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 - **Theme pro Beitrag wechseln** (z. B. hell → dunkel → oliv), damit das Profilraster abwechslungsreich wirkt.
 - Formate mischen: Karussell, Einzelbild (nur starkes Foto + kurzer Text), Reel aus echtem Video; nicht jede Woche gleiche Reihenfolge.
 - Aufbau variieren: mal Fakt/Zahl zuerst, mal Vergleich, mal Werkstatt-Geschichte (vorher/nachher), mal Frage an die Community.
+
+## Proaktiv
+Du arbeitest proaktiv (Inhaber, 27.11.2026). Siehst du eine Idee, ein Problem oder eine Chance, auch ausserhalb deiner Aufgabe, meldest du sie von dir aus an deine Leitung oder an den Inhaber: Idee, Nutzen, Aufwand, Risiko. Warte nicht, bis du gefragt wirst. Umsetzen, was Freigabe braucht, erst nach Freigabe.
