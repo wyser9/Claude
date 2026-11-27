@@ -57,7 +57,7 @@ Laut Startseite und Menü:
 - **Munition** sowie **Waffen** (Pistolen, Sturmgewehre, Präzisionsgewehre, Flinten, Gebrauchtwaffen/Occasionen)
 - Top-Marken laut Startseite: Hornady, Magpul, Holosun, SureFire, Brügger & Thomet, SIG Sauer
 
-**Für Instagram tabu** (auch wenn im Shop vorhanden): Schalldämpfer, Conversion Kits, Maschinenpistolen, Lower/Upper als Umbau-Thema, Pistolen-Upgrades als Montageanleitung, Occasionen/Gebrauchtwaffen, Sale und Angebote. Waffen und Munition nur zeigen und erklären, nie anbieten.
+**Für Instagram (Inhaber 27.11.2026, ersetzt frühere Tabu-Liste):** Schalldämpfer, Mündungsteile (Bremsen, Feuerdämpfer, Adapter), AR-Teile und Conversion Kits dürfen gezeigt und erklärt werden – ohne Preis, ohne Kauf-/DM-Aufruf, ohne Bau- oder Umbauanleitung, keine Ladedaten, nie als bezahlte Werbung (Ads/Boosts). Occasionen dürfen beworben werden (Pascal 15.11.). Waffen und Munition nur zeigen und erklären, nie anbieten.
 
 Daraus folgt für den Content: Wiederladen bleibt das Alleinstellungsmerkmal (über 1000 Artikel, Kurse, mietbare Arbeitsplätze). Gut zeigbare Produktfelder für Tests: Optik, Wiederlade-Werkzeug, Pflege, Schutzausrüstung (Gehörschutz, Schutzbrillen).
 
