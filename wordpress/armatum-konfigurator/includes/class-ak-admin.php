@@ -105,7 +105,7 @@ class AK_Admin {
 			</p>
 			<p class="ak-row">
 				<?php if ( 'zubehoer' === $v['role'] ) : ?>
-				<label class="ak-only-zubehoer">Für Waffenart (Lampe, Laser)
+				<label class="ak-only-zubehoer">Für Waffenart (Lampe, Laser, Schalldämpfer)
 					<select name="ak[waffenart]">
 						<option value="">automatisch (<?php echo esc_html( AK_Data::PART_WEAPON_TYPES[ AK_Data::detect_part_weapon_type( $post->post_title ) ] ); ?>)</option>
 						<?php foreach ( AK_Data::PART_WEAPON_TYPES as $tk => $tl ) : ?>

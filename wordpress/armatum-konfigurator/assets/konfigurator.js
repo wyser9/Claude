@@ -20,10 +20,40 @@
 		return [item.flip ? item.imgW - p[0] : p[0], p[1]];
 	}
 
-	/** Rechteck eines Bildes in Millimetern, wenn sein Punkt p auf (x, y) liegen soll. */
+	/** Länge des Platzhalters in mm: Länge des Teils (Messpunkte bzw. Feld Länge), sonst Bildbreite im Massstab. */
+	function phLength(item) {
+		return item.length > 0 ? item.length : item.imgW * item.mmPerPx;
+	}
+
+	/** Höhe des Platzhalters in mm (geschätzt, die Länge stimmt). */
+	function phHeight(item) {
+		var len = phLength(item);
+		if (item.group === 'adapterschiene' && item.anchor && item.tubeAnchor) {
+			var h = Math.abs(item.tubeAnchor[1] - item.anchor[1]) * item.mmPerPx;
+			if (h > 2) { return h; }
+		}
+		if (item.tube > 0) { return item.tube * 1.5; }
+		if (item.group === 'schalldaempfer') { return Math.min(50, Math.max(25, len * 0.25)); }
+		return Math.min(60, Math.max(8, len * 0.3));
+	}
+
+	/**
+	 * Rechteck eines Bildes in Millimetern, wenn sein Punkt p auf (x, y) liegen soll.
+	 * Platzhalter (Teil hat nur eine Schrägansicht): Lage wie der Punkt im Bild liegt
+	 * (Punkt hinten = Teil ragt nach vorne, Punkt unten = Teil steht darauf, sonst mittig).
+	 */
 	function place(item, p, x, y) {
 		var s = item.mmPerPx;
 		var a = pt(item, p);
+		if (item.ph) {
+			var len = phLength(item), hgt = phHeight(item);
+			var fx = item.imgW ? a[0] / item.imgW : 0.5, fy = item.imgH ? a[1] / item.imgH : 0.5;
+			return {
+				item: item, ph: true, w: len, h: hgt,
+				left: fx < 0.3 ? x : (fx > 0.7 ? x - len : x - len / 2),
+				top: fy < 0.35 ? y : (fy > 0.65 ? y - hgt : y - hgt / 2)
+			};
+		}
 		return { item: item, left: x - a[0] * s, top: y - a[1] * s, w: item.imgW * s, h: item.imgH * s };
 	}
 
@@ -564,7 +594,7 @@
 					list.push({ mask: true, left: wl.left, top: wl.top, w: at[0] - wl.left, h: wl.h, z: 1 });
 				}
 			}
-			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer, autocut: AUTOCUT.indexOf(x.g.key) >= 0 && !x.item.cutout }));
+			list.push($.extend(place(x.item, x.item.anchor, at[0], at[1]), { z: x.g.layer, autocut: AUTOCUT.indexOf(x.g.key) >= 0 && !x.item.cutout && !x.item.ph }));
 		});
 		// Mit Magnifier: Rotpunkt nach vorne, Magnifier dahinter.
 		var off = this.optic && this.mag ? this.pairOffsets(this.mag, this.magMount) : null;
@@ -606,12 +636,21 @@
 				html += '<div class="ak-mask" style="' + box + 'height:' + (l.h * k).toFixed(1) + 'px;z-index:' + l.z + '"></div>';
 				return;
 			}
+			if (l.ph) {
+				// Platzhalter statt Schrägbild: grau, in richtiger Länge, mit kurzem Namen.
+				var hpx = l.h * k;
+				html += '<div class="ak-ph" title="' + esc(l.item.name + ' (kein Seitenbild, Platzhalter in Originallänge)') + '" style="' + box +
+					'height:' + hpx.toFixed(1) + 'px;font-size:' + Math.max(8, Math.min(13, hpx * 0.45)).toFixed(1) + 'px;z-index:' + (l.z || (i + 1)) + '">' +
+					'<span>' + esc(l.item.short || l.item.name) + '</span></div>';
+				return;
+			}
 			var src = l.autocut && CUT_CACHE[l.item.img] ? CUT_CACHE[l.item.img] : l.item.img;
 			var cut = l.item.cutout || (l.autocut && CUT_CACHE[l.item.img]);
 			html += '<img class="ak-layer' + (l.item.flip ? ' ak-flip' : '') + (cut ? ' ak-cutout' : '') + (l.autocut && !cut ? ' ak-autocut' : '') +
 				'" alt="' + esc(l.item.name) + '" src="' + esc(src) + '" data-src="' + esc(l.item.img) + '" style="' + box + 'z-index:' + (l.z || (i + 1)) + '">';
 		});
 		$stage.css('height', ((maxY - minY) * k).toFixed(0) + 'px').html(html);
+		this.$root.find('.ak-ph-note').prop('hidden', !layers.some(function (l) { return l.ph; }));
 		$stage.find('img.ak-autocut').each(function () { autoCut(this); });
 	};
 

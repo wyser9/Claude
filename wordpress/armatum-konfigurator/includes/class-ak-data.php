@@ -24,7 +24,22 @@ class AK_Data {
 	private static $role_memo    = array();
 	private static $bumped       = false;
 
-	/** Cache leeren, sobald sich Produkte, Lager oder Konfigurator-Felder ändern. */
+	/** So viele meistbesuchte Waffen werden nach einer Änderung im Hintergrund vorgerechnet. */
+	const WARM_TOP = 30;
+
+	/** _ak_-Felder, die die Auswahl nicht beeinflussen (nur Anzeige oder Prüfliste): kein Leeren des Caches. */
+	const CACHE_IGNORE_META = array( '_ak_warn', '_ak_checked', '_ak_auto', '_ak_hinweis', '_ak_freigestellt' );
+
+	/** Shop-Felder (ausser _ak_), die bei Konfigurator-Produkten die Auswahl ändern: Preis (kaufbar), Lager, Bild, Attribute. */
+	const CACHE_SHOP_META = array( '_price', '_stock_status', '_thumbnail_id', '_product_attributes' );
+
+	/**
+	 * Cache gezielt leeren (ab 1.0.8):
+	 *  - Waffe geändert: nur der Eintrag dieser Waffe.
+	 *  - Teil (Optik, Montage, Zubehör …) geändert: alle Waffen (das Teil kann bei jeder Waffe vorkommen).
+	 *  - Produkte ohne Konfigurator-Rolle: nichts.
+	 * Auslöser: _ak_-Felder, Rolle, Status (veröffentlicht, Papierkorb), Name, Preis, Lager, Bild, Attribute, Kategorie.
+	 */
 	public static function cache_hooks() {
 		// Neue Plugin-Version: Regeln können sich geändert haben, Auswahl neu berechnen.
 		if ( defined( 'AK_VERSION' ) && get_option( 'ak_code_ver' ) !== AK_VERSION ) {
@@ -32,33 +47,149 @@ class AK_Data {
 			self::bump_cache();
 		}
 		$meta = function ( $meta_id, $object_id, $meta_key ) {
-			if ( 0 === strpos( (string) $meta_key, '_ak_' ) ) {
-				self::bump_cache();
+			$key = (string) $meta_key;
+			if ( 0 === strpos( $key, '_ak_' ) ) {
+				if ( ! in_array( $key, self::CACHE_IGNORE_META, true ) ) {
+					self::product_changed( (int) $object_id, $key );
+				}
+			} elseif ( in_array( $key, self::CACHE_SHOP_META, true ) || 0 === strpos( $key, 'attribute_' ) ) {
+				self::product_changed( (int) $object_id, $key );
 			}
 		};
 		add_action( 'added_post_meta', $meta, 10, 3 );
 		add_action( 'updated_post_meta', $meta, 10, 3 );
 		add_action( 'deleted_post_meta', $meta, 10, 3 );
-		$post = function ( $post_id ) {
-			if ( in_array( get_post_type( $post_id ), array( 'product', 'product_variation' ), true ) ) {
-				self::bump_cache();
-			}
+		// Attribute (pa_*), Kategorie (Waffenart) und Produkttyp: nur wenn sich die Zuordnung wirklich ändert.
+		add_action(
+			'set_object_terms',
+			function ( $object_id, $terms, $tt_ids, $taxonomy, $append, $old_tt_ids ) {
+				if ( 0 !== strpos( (string) $taxonomy, 'pa_' ) && ! in_array( $taxonomy, array( 'product_cat', 'product_type' ), true ) ) {
+					return;
+				}
+				$new = array_map( 'intval', (array) $tt_ids );
+				$old = array_map( 'intval', (array) $old_tt_ids );
+				sort( $new );
+				sort( $old );
+				if ( $new !== $old ) {
+					self::product_changed( (int) $object_id, $taxonomy );
+				}
+			},
+			10,
+			6
+		);
+		add_action(
+			'transition_post_status',
+			function ( $new_status, $old_status, $post ) {
+				if ( $new_status !== $old_status && $post instanceof WP_Post ) {
+					self::product_changed( (int) $post->ID, 'status' );
+				}
+			},
+			10,
+			3
+		);
+		add_action(
+			'post_updated',
+			function ( $post_id, $after, $before ) {
+				// Name: Kaliber, Lampen-Art und Schalldämpfer-Art werden auch aus dem Namen erkannt.
+				if ( $after instanceof WP_Post && $before instanceof WP_Post && $after->post_title !== $before->post_title ) {
+					self::product_changed( (int) $post_id, 'title' );
+				}
+			},
+			10,
+			3
+		);
+		$gone = function ( $post_id ) {
+			self::product_changed( (int) $post_id, 'delete' );
 		};
-		add_action( 'save_post', $post );
-		add_action( 'before_delete_post', $post );
-		add_action( 'trashed_post', $post );
-		add_action( 'woocommerce_product_set_stock_status', array( __CLASS__, 'bump_cache' ) );
-		add_action( 'woocommerce_variation_set_stock_status', array( __CLASS__, 'bump_cache' ) );
+		add_action( 'before_delete_post', $gone );
+		add_action( 'trashed_post', $gone );
+		$stock = function ( $product_id ) {
+			self::product_changed( (int) $product_id, 'stock' );
+		};
+		add_action( 'woocommerce_product_set_stock_status', $stock );
+		add_action( 'woocommerce_variation_set_stock_status', $stock );
 		add_action( 'ak_warm_cache', array( __CLASS__, 'warm_cache' ) );
 	}
 
-	/** Hintergrund (WP-Cron): Optionen aller Waffen vorrechnen, in Etappen von höchstens 20 Sekunden. */
-	public static function warm_cache() {
-		if ( ! class_exists( 'AK_Frontend' ) ) {
+	/**
+	 * Ein Produkt hat sich geändert: Cache je nach Rolle leeren.
+	 * Änderung der Rolle selbst oder Unklarheit: ganzer Cache (sicher).
+	 */
+	public static function product_changed( $product_id, $what = '' ) {
+		if ( ! $product_id || ! in_array( get_post_type( $product_id ), array( 'product', 'product_variation' ), true ) ) {
 			return;
 		}
+		if ( '_ak_role' === $what ) {
+			self::bump_cache();
+			return;
+		}
+		$role = self::role( $product_id );
+		if ( '' === $role ) {
+			return; // Kein Konfigurator-Produkt: Auswahl unverändert.
+		}
+		if ( 'waffe' === $role ) {
+			$parent = self::parent_of( $product_id );
+			self::drop_weapon( $parent ? $parent : $product_id );
+			return;
+		}
+		self::bump_cache();
+	}
+
+	/** Nur den Eintrag einer Waffe verwerfen (Teile-Listen bleiben gültig). */
+	public static function drop_weapon( $weapon_id ) {
+		$weapon_id = (int) $weapon_id;
+		unset( self::$options_memo[ $weapon_id ] );
+		delete_transient( 'ak_opt_' . $weapon_id );
+		self::schedule_warm();
+	}
+
+	private static function schedule_warm() {
+		if ( function_exists( 'wp_next_scheduled' ) && ! wp_next_scheduled( 'ak_warm_cache' ) ) {
+			wp_schedule_single_event( time() + 60, 'ak_warm_cache' );
+		}
+	}
+
+	/** Besuch einer Waffe im Konfigurator zählen (für das Vorwärmen der meistbesuchten Waffen). */
+	public static function note_visit( $weapon_id ) {
+		$ua = isset( $_SERVER['HTTP_USER_AGENT'] ) ? (string) $_SERVER['HTTP_USER_AGENT'] : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		if ( '' === $ua || preg_match( '/bot|crawl|spider|slurp|preview|monitor/i', $ua ) ) {
+			return;
+		}
+		$visits = get_option( 'ak_visits', array() );
+		$visits = is_array( $visits ) ? $visits : array();
+		$id     = (int) $weapon_id;
+		$visits[ $id ] = ( isset( $visits[ $id ] ) ? (int) $visits[ $id ] : 0 ) + 1;
+		if ( count( $visits ) > 300 ) {
+			arsort( $visits );
+			$visits = array_slice( $visits, 0, 200, true );
+		}
+		update_option( 'ak_visits', $visits, false );
+	}
+
+	/** Waffen zum Vorwärmen: die meistbesuchten zuerst, aufgefüllt mit weiteren Waffen bis WARM_TOP. */
+	public static function warm_list() {
+		if ( ! class_exists( 'AK_Frontend' ) ) {
+			return array();
+		}
+		$weapons = AK_Frontend::weapons();
+		$visits  = get_option( 'ak_visits', array() );
+		$visits  = is_array( $visits ) ? $visits : array();
+		$order   = array_flip( $weapons ); // Bei gleich vielen Besuchen: alphabetisch wie in der Waffenauswahl.
+		usort(
+			$weapons,
+			function ( $a, $b ) use ( $visits, $order ) {
+				$va = isset( $visits[ $a ] ) ? (int) $visits[ $a ] : 0;
+				$vb = isset( $visits[ $b ] ) ? (int) $visits[ $b ] : 0;
+				return $va !== $vb ? $vb - $va : $order[ $a ] - $order[ $b ];
+			}
+		);
+		return array_slice( $weapons, 0, self::WARM_TOP );
+	}
+
+	/** Hintergrund (WP-Cron): Optionen der meistbesuchten Waffen vorrechnen, in Etappen von höchstens 20 Sekunden. */
+	public static function warm_cache() {
 		$start = microtime( true );
-		foreach ( AK_Frontend::weapons() as $w ) {
+		foreach ( self::warm_list() as $w ) {
 			if ( ( microtime( true ) - $start ) > 20 ) {
 				wp_schedule_single_event( time() + 30, 'ak_warm_cache' );
 				return;
@@ -92,6 +223,9 @@ class AK_Data {
 	/** Gruppen, die nach Waffenart getrennt werden. */
 	const TYPED_GROUPS = array( 'lampe', 'laser' );
 
+	/** Gruppen nur für Langwaffen (Pistolen haben keinen Handschutz für Frontgriff oder Zweibein). */
+	const LONG_ONLY_GROUPS = array( 'handgriff', 'zweibein' );
+
 	/** Plattformen (Waffe: eine, Teil: eine oder mehrere, leer = passt auf alle). */
 	const PLATFORMS = array(
 		'ar15'   => 'AR-15 / M4',
@@ -108,23 +242,30 @@ class AK_Data {
 	 * Mündungsteile passen nur, wenn ihre Bohrung mindestens so gross ist wie das Kaliber der Waffe.
 	 */
 	const CALIBERS = array(
-		'/\.50\b|\.50\s*bmg|12[.,]7\s*x/i'                                  => 12.95,
-		'/\.45\b|\.45\s*acp|11[.,]43/i'                                      => 11.5,
-		'/\.416\b/i'                                                             => 10.6,
-		'/\.40\b|\.40\s*s\s*&?\s*w|\b10\s*mm\b|10x25/i'                  => 10.2,
-		'/\.375\b|9[.,]3\s*x/i'                                                 => 9.5,
-		'/\.35[5-8]\b|\.38\b|\.380\b|\b9\s*mm\b|\b9\s*x\s*(19|21|18|17)\b|\b9mm/i' => 9.1,
-		'/\.338\b|8[.,]6\s*(x|mm|blk)/i'                                        => 8.6,
-		'/\b8\s*x\s*(57|68|60)|\.32[3-5]\b|\b8\s*mm\b/i'                  => 8.2,
-		'/\.303\b|7[.,]62\s*x\s*54|7[.,]7\s*x/i'                             => 7.9,
-		'/\.30\b|\.30-|\.30\s*cal|\.30[0-9]\b|7[.,]62|7[.,]5\s*x\s*55|\.300\b/i' => 7.8,
-		'/\b7\s*mm\b|\b7mm|\.28[04]\b|\b7\s*x\s*(57|64|65)|7-08/i'      => 7.2,
-		'/\.270\b|6[.,]8\s*(x|mm|spc|blk)?/i'                                  => 7.0,
-		'/6[.,]5\s*(x|mm|creed|prc|grendel)?|\.26[04]\b/i'                     => 6.7,
-		'/\.25\b|\.25-|\.257\b/i'                                            => 6.5,
-		'/\b6\s*mm\b|\b6mm|\.243\b|\.24\b|6\s*arc|6\s*creedmoor/i'     => 6.2,
-		'/\.22\b|\.22[0-9]\b|\.22-|5[.,]56|5[.,]45|\.204\b|\.17\b/i'    => 5.7,
+		'/\.50(?!\d)|\.50\s*bmg|12[.,]7\s*x/i'                              => 12.95,
+		'/\.45(?!\d)|\.45\s*acp|11[.,]43/i'                                  => 11.5,
+		'/\.416(?!\d)/i'                                                     => 10.6,
+		'/\.40(?!\d)|\.40\s*s\s*&?\s*w|(?<![.,])\b10\s*mm\b|(?<![.,])\b10mm|10x25/i' => 10.2,
+		'/\.375(?!\d)|9[.,]3\s*x/i'                                          => 9.5,
+		'/\.35[5-8](?!\d)|\.38(?!\d)|\.380(?!\d)|(?<![.,])\b9\s*mm|(?<![.,])\b9\s*x\s*(19|21|18|17)(?!\d)/i' => 9.1,
+		'/\.338(?!\d)|8[.,]6\s*(x|mm|blk)/i'                                 => 8.6,
+		'/\b8\s*x\s*(57|68|60)|\.32[3-5](?!\d)|(?<![.,])\b8\s*mm\b/i'                 => 8.2,
+		'/\.303(?!\d)|7[.,]62\s*x\s*54|7[.,]7\s*x/i'                         => 7.9,
+		'/\.30(?!\d)|\.30\s*cal|\.30[0-9](?!\d)|7[.,]62|7[.,]5\s*x\s*55/i'   => 7.8,
+		'/(?<![.,])\b7\s*mm\b|\.28[04](?!\d)|\b7\s*x\s*(57|64|65)|7-08/i'       => 7.2,
+		'/\.270(?!\d)|6[.,]8\s*(x|mm|spc|blk)?/i'                            => 7.0,
+		'/6[.,]5\s*(x|mm|creed|prc|grendel)?|\.26[04](?!\d)/i'               => 6.7,
+		'/\.25(?!\d)|\.25-|\.257(?!\d)/i'                                    => 6.5,
+		'/(?<![.,])\b6\s*mm\b|\.243(?!\d)|\.24(?!\d)|6\s*arc|6\s*creedmoor/i'   => 6.2,
+		'/\.22(?!\d)|\.22[0-9](?!\d)|5[.,]56|5[.,]45|5[.,]6\s*mm|5[.,]7\s*x\s*28|\b22\s*lr\b|\.204(?!\d)|\.17(?!\d)/i' => 5.7,
 	);
+
+	/**
+	 * Kaliberklassen (für Schalldämpfer ab 1.0.8): Randfeuer (KK) und Pistolenkaliber.
+	 * Alles andere Erkannte gilt als Gewehrkaliber (Zentralfeuer).
+	 */
+	const RIMFIRE_RE = '/\.22\s*(?:l\.?\s*r\b|long\s*rifle|wmr|win\.?\s*mag|magnum|mag\b|short|kurz)|\b22\s*(?:lr|wmr)\b|\.22(?!\d|\s*(?:-|hornet|k\s*-?\s*hornet|rem|win(?!\.?\s*mag)|swift|br\b|ppc|arc\b|nosler|creed|grendel|wylde|cal))|\.17\s*(?:hmr|hm2|mach|wsm)|5[.,]6\s*mm\s*l\.?\s*f\.?\s*b|\blfb\b|randfeuer|rimfire|kleinkaliber|\bkk\b/i';
+	const PISTOL_RE  = '/(?<![.,])\b9\s*(?:x\s*(?:19|21|18|17)(?!\d)|mm(?![.,]?\d)|(?:para|luger|pb|kurz|makarov|browning))|\.380(?!\d)|\.38(?![\d-])|\.357(?!\d)|\.40(?![\d-])|(?<![.,])\b10\s*mm|\b10x25|\.45(?![\d-])|\.44(?![\d-])|\.32\s*(?:acp|auto|s\s*&\s*w)|7[.,]65\s*(?:mm\s*)?(?:br|browning|para|x\s*(?:17|21))|5[.,]7\s*x\s*28|4[.,]6\s*x\s*30|7[.,]62\s*x\s*25|\.30\s*super|\.25\s*acp|6[.,]35\s*(?:mm|br|browning)/i';
 
 	/** Abstand Rotpunkt – Magnifier in mm und erlaubte Abweichung der Achshöhe. */
 	const MAG_GAP = 10;
@@ -367,13 +508,101 @@ class AK_Data {
 		return self::detect_part_weapon_type( get_the_title( $pid ) );
 	}
 
-	/** Passt Lampe/Laser zur Waffenart (Pistole/Langwaffe)? Andere Teile immer. */
+	/**
+	 * Passt das Teil zur Waffenart (Pistole/Langwaffe)?
+	 *  - Lampe/Laser: nach Feld «Für Waffenart» bzw. Name.
+	 *  - Frontgriff, Zweibein: nur Langwaffen.
+	 *  - Schalldämpfer: Pistolen- und KK-Dämpfer nur an passenden Waffen (suppressor_ok).
+	 * Andere Teile immer.
+	 */
 	public static function weapon_type_ok( $weapon_id, $part_id ) {
-		if ( ! in_array( self::group( $part_id ), self::TYPED_GROUPS, true ) ) {
+		$g = self::group( $part_id );
+		if ( in_array( $g, self::LONG_ONLY_GROUPS, true ) ) {
+			return 'langwaffe' === self::weapon_type( $weapon_id );
+		}
+		if ( 'schalldaempfer' === $g ) {
+			return self::suppressor_ok( $weapon_id, $part_id );
+		}
+		if ( ! in_array( $g, self::TYPED_GROUPS, true ) ) {
 			return true;
 		}
 		$t = self::part_weapon_type( $part_id );
 		return 'beide' === $t || self::weapon_type( $weapon_id ) === $t;
+	}
+
+	/**
+	 * Kaliberklassen eines Textes: 'kk' (Randfeuer), 'pistole' (Pistolenkaliber), 'gewehr' (übrige Zentralfeuer).
+	 * Mehrere Kaliber (Komma, Schrägstrich, «und», Bereich «7mm - .30», «bis .30») ergeben mehrere Klassen.
+	 * Reine Zahlen («9», «bis 9.3 mm») sind keine Angabe einer Klasse.
+	 */
+	public static function caliber_classes_from_text( $text, $loose = true ) {
+		$text = str_replace( '×', 'x', wp_specialchars_decode( (string) $text ) );
+		$out  = array();
+		foreach ( preg_split( '/\s*(?:,|;|\||\/|\bund\b|\s[-–]\s|\bbis\b)\s*/iu', $text ) as $part ) {
+			$part = trim( $part );
+			if ( '' === $part ) {
+				continue;
+			}
+			// Erkannte Randfeuer- und Pistolenkaliber herausnehmen, der Rest kann noch ein Gewehrkaliber sein («.224 and 9mm»).
+			$rest = $part;
+			if ( preg_match( self::RIMFIRE_RE, $rest ) ) {
+				$out[] = 'kk';
+				$rest  = preg_replace( self::RIMFIRE_RE, ' ', $rest );
+			}
+			if ( preg_match( self::PISTOL_RE, $rest ) ) {
+				$out[] = 'pistole';
+				$rest  = preg_replace( self::PISTOL_RE, ' ', $rest );
+			}
+			if ( self::caliber_pattern_mm( $rest ) > 0 || ( $loose && ! preg_match( '/^\s*\d+(?:[.,]\d+)?\s*(?:mm)?\s*$/i', $rest ) && self::caliber_from_text( $rest, true ) > 0 ) ) {
+				$out[] = 'gewehr';
+			}
+		}
+		return array_values( array_unique( $out ) );
+	}
+
+	/** Kaliberklassen eines Produkts: Feld «kaliber», sonst Attribut «Kaliber», sonst Produktname. */
+	public static function caliber_classes( $product_id ) {
+		$text = self::caliber_text( $product_id );
+		if ( '' !== $text ) {
+			return self::caliber_classes_from_text( $text, true );
+		}
+		$pid  = self::parent_of( $product_id ) ? self::parent_of( $product_id ) : $product_id;
+		$name = function_exists( 'wc_get_product' ) && wc_get_product( $product_id ) ? wc_get_product( $product_id )->get_name() : get_the_title( $pid );
+		return self::caliber_classes_from_text( $name, false );
+	}
+
+	/**
+	 * Für welche Kaliberklassen ist der Schalldämpfer bestimmt, wenn er ein Kurzwaffen- oder KK-Dämpfer ist?
+	 * Leer = Gewehrdämpfer oder unbekannt: dann gilt nur die Bohrungsregel (caliber_ok).
+	 * Kurzwaffen-Dämpfer: Plattform nur «pistole», Feld «Für Waffenart» = Kurzwaffe,
+	 * oder Kaliberangabe nur Pistolen-/KK-Kaliber (z.B. «9x19 mm», «.22 LR»).
+	 */
+	public static function suppressor_short_classes( $part_id ) {
+		$platforms  = self::platforms( $part_id );
+		$for_pistol = ( $platforms && ! array_diff( $platforms, array( 'pistole' ) ) ) || 'pistole' === (string) self::meta( $part_id, 'waffenart' );
+		$classes    = self::caliber_classes( $part_id );
+		if ( ! $for_pistol && ( in_array( 'gewehr', $classes, true ) || ! $classes ) ) {
+			return array(); // Gewehrdämpfer (darf z.B. als .243-Dämpfer auch an .22) oder ohne Angabe.
+		}
+		$short = array_values( array_intersect( $classes, array( 'pistole', 'kk' ) ) );
+		return $short ? $short : array( 'pistole' );
+	}
+
+	/**
+	 * Pistolen- und KK-Schalldämpfer nur an Waffen derselben Kaliberklasse
+	 * (Pistole oder Pistolenkaliber-Karabiner bzw. Randfeuerwaffe), nie an Zentralfeuer-Gewehren.
+	 * Waffe ohne erkanntes Kaliber: Kurzwaffen-Dämpfer nur an Pistolen, KK-Dämpfer gar nicht (im Zweifel nicht anbieten).
+	 */
+	public static function suppressor_ok( $weapon_id, $part_id ) {
+		$short = self::suppressor_short_classes( $part_id );
+		if ( ! $short ) {
+			return true;
+		}
+		$w = self::caliber_classes( $weapon_id );
+		if ( $w ) {
+			return (bool) array_intersect( $w, $short );
+		}
+		return in_array( 'pistole', $short, true ) && 'pistole' === self::weapon_type( $weapon_id );
 	}
 
 	/** Plattformen eines Produkts (Feld «plattform», kommagetrennt), leer = keine Einschränkung. */
@@ -390,17 +619,23 @@ class AK_Data {
 
 	/** Grösster Geschossdurchmesser in mm aus einem Text, 0 = unbekannt. */
 	public static function caliber_from_text( $text, $loose = false ) {
-		$text = wp_specialchars_decode( (string) $text );
+		$text = str_replace( '×', 'x', wp_specialchars_decode( (string) $text ) );
 		if ( preg_match( '/^\s*(\d+(?:[.,]\d+)?)\s*$/', $text, $m ) ) {
 			return (float) str_replace( ',', '.', $m[1] ); // Zahl = mm.
 		}
+		$best = self::caliber_pattern_mm( $text );
+		return ( $best > 0 || ! $loose ) ? $best : self::caliber_loose( $text );
+	}
+
+	/** Grösster Geschossdurchmesser aus der Liste CALIBERS (nur bekannte Schreibweisen), 0 = keine. */
+	public static function caliber_pattern_mm( $text ) {
 		$best = 0.0;
 		foreach ( self::CALIBERS as $re => $mm ) {
-			if ( preg_match( $re, $text ) ) {
+			if ( preg_match( $re, (string) $text ) ) {
 				$best = max( $best, $mm );
 			}
 		}
-		return ( $best > 0 || ! $loose ) ? $best : self::caliber_loose( $text );
+		return $best;
 	}
 
 	/**
@@ -936,8 +1171,18 @@ class AK_Data {
 		if ( isset( self::$role_memo[ $role ] ) ) {
 			return self::$role_memo[ $role ];
 		}
-		self::$role_memo[ $role ] = self::query_role( $role );
-		return self::$role_memo[ $role ];
+		// Liste je Rolle zwischenspeichern (gleiche Version wie die Optionen): spart bei der ersten Berechnung
+		// je Waffe das Laden und Prüfen aller Teile. Änderungen an Teilen erhöhen die Version.
+		$ver = self::cache_version();
+		$hit = get_transient( 'ak_role_' . $role );
+		if ( is_array( $hit ) && isset( $hit['v'], $hit['ids'] ) && $ver === (int) $hit['v'] && is_array( $hit['ids'] ) ) {
+			$ids = array_map( 'intval', $hit['ids'] );
+		} else {
+			$ids = self::query_role( $role );
+			set_transient( 'ak_role_' . $role, array( 'v' => $ver, 'ids' => $ids ), 12 * HOUR_IN_SECONDS );
+		}
+		self::$role_memo[ $role ] = $ids;
+		return $ids;
 	}
 
 	private static function query_role( $role ) {
@@ -998,7 +1243,7 @@ class AK_Data {
 		return is_array( $hit ) && isset( $hit['v'] ) && self::cache_version() === (int) $hit['v'];
 	}
 
-	/** Cache-Version: jede Änderung an Produkten oder _ak_-Feldern macht alle Einträge ungültig. */
+	/** Cache-Version: eine Änderung an einem Teil (oder neue Plugin-Version) macht alle Einträge ungültig. */
 	public static function cache_version() {
 		return (int) get_option( 'ak_cache_ver', 1 );
 	}
@@ -1011,9 +1256,7 @@ class AK_Data {
 		self::$options_memo = array();
 		self::$role_memo    = array();
 		update_option( 'ak_cache_ver', self::cache_version() + 1, false );
-		if ( ! wp_next_scheduled( 'ak_warm_cache' ) ) {
-			wp_schedule_single_event( time() + 120, 'ak_warm_cache' );
-		}
+		self::schedule_warm();
 	}
 
 	public static function compute_options_for_weapon( $weapon_id ) {
@@ -1381,6 +1624,41 @@ class AK_Data {
 		return 'andere';
 	}
 
+	/**
+	 * Hersteller für den Filter: Marke (Taxonomie product_brand) wie im Shop, sonst Attribut «Hersteller» (pa_hersteller).
+	 * Varianten nehmen die Marke des Hauptprodukts.
+	 */
+	public static function brand( $product_id ) {
+		$pid = self::parent_of( $product_id ) ? self::parent_of( $product_id ) : $product_id;
+		if ( taxonomy_exists( 'product_brand' ) ) {
+			$names = wp_get_post_terms( $pid, 'product_brand', array( 'fields' => 'names' ) );
+			if ( $names && ! is_wp_error( $names ) ) {
+				return trim( implode( ', ', array_map( 'wp_specialchars_decode', $names ) ) );
+			}
+		}
+		$product = wc_get_product( $product_id );
+		return $product ? trim( wp_specialchars_decode( (string) $product->get_attribute( 'pa_hersteller' ) ) ) : '';
+	}
+
+	/** Teil mit Bildhinweis «winkel» (nur Schrägansicht): in der Vorschau grauer Platzhalter statt Foto. Waffen nie. */
+	public static function shows_placeholder( $product_id ) {
+		if ( 'waffe' === self::role( $product_id ) ) {
+			return false;
+		}
+		return in_array( 'winkel', preg_split( '/\s+/', (string) self::meta( $product_id, 'warn' ) ), true );
+	}
+
+	/** Kurzer Name für den Platzhalter: höchstens 4 Wörter bzw. 28 Zeichen. */
+	public static function short_name( $name ) {
+		$name  = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( wp_specialchars_decode( (string) $name ) ) ) );
+		$words = explode( ' ', $name );
+		$short = implode( ' ', array_slice( $words, 0, 4 ) );
+		if ( function_exists( 'mb_strlen' ) && mb_strlen( $short ) > 28 ) {
+			$short = rtrim( mb_substr( $short, 0, 27 ) ) . '…';
+		}
+		return $short;
+	}
+
 	/** Daten eines Produkts für die Vorschau (JavaScript). */
 	public static function item_payload( $product_id ) {
 		$product  = wc_get_product( $product_id );
@@ -1416,7 +1694,9 @@ class AK_Data {
 			'outs'       => self::outputs( $product_id ),
 			'hinweis'    => (string) self::meta( $product_id, 'hinweis' ),
 			'cutout'     => 'yes' === self::meta( $product_id, 'freigestellt', 'no' ),
-			'brand'      => trim( (string) $product->get_attribute( 'pa_hersteller' ) ),
+			'brand'      => self::brand( $product_id ),
+			'ph'         => self::shows_placeholder( $product_id ),
+			'short'      => self::short_name( $product->get_name() ),
 			'length'     => self::length_mm( $product_id ),
 			'axis'       => self::own_axis( $product_id ),
 			'axisHeight' => 'montage' === self::role( $product_id ) ? self::axis_height( $product_id ) : 0,

@@ -301,6 +301,7 @@ class AK_Frontend {
 	}
 
 	public static function render( $weapon_id, $part_id = 0 ) {
+		AK_Data::note_visit( $weapon_id ); // Für das Vorwärmen der meistbesuchten Waffen.
 		$options = AK_Data::options_for_weapon( $weapon_id );
 		if ( empty( $options['optics'] ) && empty( $options['parts'] ) ) {
 			return '<p>Für diese Waffe ist noch kein Zubehör im Konfigurator erfasst.</p>';
@@ -395,6 +396,7 @@ class AK_Frontend {
 				<div class="ak-stage-wrap">
 					<div class="ak-stage" aria-live="polite"></div>
 					<p class="ak-note">Vorschau mit Herstellerbildern. Proportionen sind massstabsgetreu, Farben und Details können abweichen.</p>
+					<p class="ak-note ak-ph-note" hidden>Grau dargestellt: Teil ohne Seitenbild, als Platzhalter in Originallänge.</p>
 					<details class="ak-report">
 						<summary>Passt etwas nicht? Melden</summary>
 						<textarea class="ak-report-text" rows="3" maxlength="2000" aria-label="Was stimmt nicht?" placeholder="Was stimmt nicht? Zum Beispiel: Teil passt in Wirklichkeit nicht, Bild sitzt schief."></textarea>

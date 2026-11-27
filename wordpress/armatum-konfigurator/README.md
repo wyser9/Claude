@@ -4,7 +4,7 @@ WordPress-Plugin für armatum.ch (WooCommerce). Der Konfigurator läuft auf eine
 
 - Produktseite einer Waffe: Knopf «Diese Waffe konfigurieren» (öffnet die Seite mit `?waffe=ID`).
 - Produktseite von Optik, Montage oder Zubehör: Knopf «Im Konfigurator ansehen» (`?teil=ID`). Passt das Teil nur auf eine Waffe, ist sie gleich gewählt, sonst wählt der Kunde zuerst unter den passenden Waffen. Beim Schalldämpfer wählt der Konfigurator einen passenden HUB (und falls nötig Mündungsaufsatz) mit.
-- Jede Gruppe ist ein aufklappbarer Schritt. Ab 7 Artikeln gibt es eine Suche und einen Herstellerfilter (Attribut «Hersteller», `pa_hersteller`).
+- Jede Gruppe ist ein aufklappbarer Schritt. Ab 7 Artikeln gibt es eine Suche und einen Herstellerfilter (Marke `product_brand` wie im Shop, ohne Marke Attribut «Hersteller» `pa_hersteller`).
 
 - Jede Komponente ist eine **eigene Warenkorbposition** (Lager, bexio, Versandcodes bleiben korrekt).
 - Die **Montage** erscheint als eigene Position «Montage Optik (gratis im Paket)» mit CHF 0.00. Das Produkt legt das Plugin beim ersten Paket im Warenkorb an (SKU `AK-MONTAGE`, im Katalog versteckt). Einzeln kann man es nicht kaufen. Fehlt im Warenkorb die Waffe oder die Optik des Pakets, wird die Montage automatisch entfernt.
@@ -144,3 +144,12 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 - **Achshöhe von Hand bei Montagen:** überschreibt die Bildmessung (bei Schrägbildern oft zu hoch). Status zeigt «von Hand» oder «gemessen».
 - **Vorbelegung aus Attributen:** Schnittstelle, Ausgang, Mündungsgewinde der Waffe und Kaliber zeigen im Produkt-Editor als Platzhalter, was das Plugin aus den Attributen nimmt. Schienenteile nehmen die Schnittstelle aus dem Attribut «Montage» (Picatinny, M-LOK), wenn das Feld leer ist.
 - **REST ak/v1/setup:** setzt jetzt auch Bildpunkte (anchor, p1, p2, tube_anchor, bottom, muzzle_device_anchor, slot_*_anchor als «x,y»), Steckplätze slot_*_if, muzzle_device_if, ref_mm, gesperrt, waffenart, plattform, kaliber. Der Status liefert Steckplätze, Punkte mit Bildgrösse, Waffenart, Plattform, Kaliber und gemessene Achshöhe.
+
+## Neu in 1.0.8
+
+- **Frontgriff und Zweibein nur bei Langwaffen:** Pistolen (Waffenart Pistole, auch automatisch aus der Kategorie) bekommen diese Gruppen nicht mehr angeboten.
+- **Pistolen- und KK-Schalldämpfer:** Ein Schalldämpfer gilt als Kurzwaffen-Dämpfer, wenn seine Plattform nur `pistole` ist, das Feld «Für Waffenart» auf Kurzwaffe steht oder sein Kaliber nur Pistolenkaliber nennt (z.B. «9x19 mm», «.45 ACP»). Er erscheint nur an Waffen mit Pistolenkaliber (Pistole oder Pistolenkaliber-Karabiner); an Pistolen ohne erkanntes Kaliber ebenfalls. Ein KK-Dämpfer (nur «.22 LR», «.22 WMR», «.17 HMR», «5.6 mm lfB», Randfeuer) erscheint nur an Randfeuerwaffen. Nennt der Dämpfer ein Gewehrkaliber (z.B. «.243 Win», «5.56 / 9mm»), gilt wie bisher nur die Bohrungsregel (Bohrung ≥ Kaliber der Waffe), ein .243-Dämpfer passt also weiter an .22-Waffen. Status (REST) zeigt `kaliber_klasse`, `sd_fuer` und `platzhalter`.
+- **Platzhalter für Schrägbilder:** Teile mit Bildhinweis «wohl keine gerade Seitenansicht» (`winkel` in `_ak_warn`) zeigt die Vorschau als grauen Platzhalter in Originallänge (Länge aus den Messpunkten bzw. Feld Länge) mit kurzem Namen statt als Foto. Auswahl, Karte und Warenkorb bleiben normal. Waffen nie als Platzhalter.
+- **Herstellerfilter auf Marke:** Der Filter in den Schritten nimmt die Marke (`product_brand`), ohne Marke weiter das Attribut «Hersteller».
+- **Cache gezielter:** Nur Änderungen an Konfigurator-Produkten leeren den Cache: `_ak_`-Felder (ausser Bildhinweis, Prüfvermerk, Hinweis, freigestellt), Rolle, Status, Name, Preis, Lager, Bild, Attribute, Kategorie. Änderung an einer Waffe leert nur diese Waffe, Änderung an einem Teil alle. Die Teile-Listen je Rolle sind jetzt auch zwischengespeichert (schnellere erste Berechnung je Waffe). Im Hintergrund werden die 30 meistbesuchten Waffen vorgerechnet (Besuche in Option `ak_visits`).
+- **Kaliber-Erkennung:** auch «9x19mm», «9×19 mm», «5.6 mm lfB», «5.7x28»; «5.6 mm» wird nicht mehr als 6 mm gelesen. Tests: `php wordpress/tests/ak-kaliber-test.php` (ohne WordPress).
