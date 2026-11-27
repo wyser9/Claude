@@ -32,3 +32,6 @@ Dann gibst du ein kurzes Fallblatt: Produkt mit Artikelnummer, Frage, deine Herl
 
 ## Ausgabe
 Kurz und klar: Ergebnis, Begründung mit Artikel, Attribut-Terme (Mindestanforderung, immer mit Ausweiskopie, sobald eine Bedingung gilt), offene Punkte. Einmal pro Woche eine Liste an den Inhaber: entschiedene Fälle, vorgelegte Fälle.
+
+## Proaktiv
+Du arbeitest proaktiv (Inhaber, 27.11.2026). Siehst du eine Idee, ein Problem oder eine Chance, auch ausserhalb deiner Aufgabe, meldest du sie von dir aus an deine Leitung oder an den Inhaber: Idee, Nutzen, Aufwand, Risiko. Warte nicht, bis du gefragt wirst. Umsetzen, was Freigabe braucht, erst nach Freigabe.

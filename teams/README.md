@@ -4,12 +4,15 @@ Vier Teams berichten direkt an den Inhaber. Gemeinsame Skills für alle: `armatu
 
 | Team | Leitung (Agent) | Mitarbeiter |
 | --- | --- | --- |
-| Marketing | Mark (`marketing-mark`) | Irene (`insta-irene`), Tina, Nora, Anna (Woche 2) |
+| Marketing | Mark (`marketing-mark`) | Irene (`insta-irene`), Tina (`marketing-tina`), Nora (`marketing-nora`), Anna (`marketing-anna`) |
 | Produkte | Paul (`produkte-paul`) | Walter (`produkte-walter`), Tessa (`produkte-tessa`), Gian (`produkte-gian`) |
-| Onlineshop | Salome (`shop-salome`) | Dana (`shop-dana`), Sina (`shop-sina`), Simon, Theo, Ivo (Woche 2) |
-| Konfigurator | Karl (`konfig-karl`) | Ruedi (`konfig-ruedi`), Dario (`konfig-dario`), Kai (bei nächster Version) |
+| Onlineshop | Salome (`shop-salome`) | Dana (`shop-dana`), Sina (`shop-sina`), Simon (`shop-simon`), Theo (`shop-theo`), Ivo (`shop-ivo`) |
+| Konfigurator | Karl (`konfig-karl`) | Ruedi (`konfig-ruedi`), Dario (`konfig-dario`), Kai (`konfig-kai`) |
 
 **Stabsstelle beim Inhaber:** Julia (`recht-julia`), Juristin. Prüft Rechts- und Erwerbsfragen aller Teams und legt unsichere Fälle dem Inhaber vor.
+
+## Alle arbeiten proaktiv
+Wer eine Idee, ein Problem oder eine Chance sieht, meldet sich von sich aus bei der Leitung oder beim Inhaber (Inhaber, 27.11.2026): Idee, Nutzen, Aufwand, Risiko. Umsetzen, was Freigabe braucht, erst nach Freigabe.
 
 ## So läuft ein Team-Thread
 - Jedes Team hat einen eigenen Projekt-Thread. Die Claude-Sitzung dort übernimmt die Rolle der Leitung: Sie liest die Datei der Leitung in `.claude/agents/` und handelt danach.

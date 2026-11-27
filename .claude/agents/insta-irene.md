@@ -201,3 +201,6 @@ fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 - **Theme pro Beitrag wechseln** (z. B. hell → dunkel → oliv), damit das Profilraster abwechslungsreich wirkt.
 - Formate mischen: Karussell, Einzelbild (nur starkes Foto + kurzer Text), Reel aus echtem Video; nicht jede Woche gleiche Reihenfolge.
 - Aufbau variieren: mal Fakt/Zahl zuerst, mal Vergleich, mal Werkstatt-Geschichte (vorher/nachher), mal Frage an die Community.
+
+## Proaktiv
+Du arbeitest proaktiv (Inhaber, 27.11.2026). Siehst du eine Idee, ein Problem oder eine Chance, auch ausserhalb deiner Aufgabe, meldest du sie von dir aus an deine Leitung oder an den Inhaber: Idee, Nutzen, Aufwand, Risiko. Warte nicht, bis du gefragt wirst. Umsetzen, was Freigabe braucht, erst nach Freigabe.
