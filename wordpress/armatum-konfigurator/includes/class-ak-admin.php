@@ -9,7 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Admin {
 
-	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear', 'waffenart', 'plattform', 'kaliber' );
+	const FIELDS = array( 'role', 'image_id', 'flip', 'p1', 'p2', 'ref_mm', 'anchor', 'tube_anchor', 'schnittstelle', 'mittelrohr', 'direkt', 'gesperrt', 'gruppe', 'hinweis', 'freigestellt', 'ausgang', 'muzzle_device_if', 'muzzle_device_anchor', 'laenge', 'bottom', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear', 'waffenart', 'plattform', 'kaliber',
+		'funktion', 'laenge_ohne_schaft', 'magazin', 'schaft_art', 'brace', 'laenge_eingeklappt', 'eingeklappt_funktion', 'laser', 'magazin_plus' );
 
 	/** Alle gespeicherten Felder inkl. Steckplätze der Waffe. */
 	public static function fields() {
@@ -155,6 +156,71 @@ class AK_Admin {
 			<p class="description ak-only-optik">Achshöhe nur bei Rotpunkt und Magnifier mit Halterung: Höhe der optischen Achse über der Auflagefläche (Schiene oder Footprint), z.B. 39 mm (absolute co-witness) oder 49 mm (lower 1/3). Magnifier und Rotpunkt passen nur zusammen, wenn sie höchstens <?php echo esc_html( (string) AK_Data::MAG_TOL ); ?> mm auseinanderliegen. Leer = nicht geprüft.</p>
 			<p class="description ak-only-montage">Achshöhe bei Montage: von Hand eingetragen überschreibt sie die Messung aus dem Bild (Mitte Unterseite bis Rohrmitte). Bei Schrägbildern ist die Messung oft zu hoch, dann die Herstellerangabe eintragen.</p>
 			<p class="description ak-only-montage">Art «nur Magnifier»: Ringe für einen Magnifier, erscheint nicht bei Zielfernrohren. Art «Adapterplatte»: Schnittstelle = Schiene (picatinny), Ausgang = Footprint des Rotpunkts (z.B. rmr, acro, micro), Rohrmitte = Mitte der Oberseite.</p>
+			<?php
+			// Ab 1.0.9: Angaben für die Erwerbs-Zusammenfassung (AK_Erwerb). Leer = automatisch.
+			$ak_w_len = AK_Erwerb::length_without_stock( $post->ID );
+			?>
+			<p class="ak-row ak-only-waffe">
+				<label>Funktionsweise
+					<select name="ak[funktion]">
+						<option value="">automatisch (<?php echo esc_html( AK_Erwerb::FUNKTIONEN[ AK_Erwerb::function_type( $post->ID ) ] ?? 'unbekannt' ); ?>)</option>
+						<?php foreach ( AK_Erwerb::FUNKTIONEN as $fk => $fl ) : ?>
+							<option value="<?php echo esc_attr( $fk ); ?>" <?php selected( $v['funktion'], $fk ); ?>><?php echo esc_html( $fl ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<label>Länge ohne Schaft [mm]
+					<input type="text" name="ak[laenge_ohne_schaft]" value="<?php echo esc_attr( $v['laenge_ohne_schaft'] ); ?>" size="6" placeholder="<?php echo esc_attr( $ak_w_len[0] > 0 ? 'geschätzt ' . round( $ak_w_len[0] ) : '' ); ?>">
+				</label>
+				<?php if ( 'zubehoer' !== $v['role'] ) : // Gleicher Schlüssel wie beim Schaft, darum nur ein Feld je Rolle. ?>
+				<label class="ak-w-eingeklappt">Gesamtlänge mit eingeklapptem Originalschaft [mm]
+					<input type="text" name="ak[laenge_eingeklappt]" value="<?php echo esc_attr( $v['laenge_eingeklappt'] ); ?>" size="6" placeholder="nur bei Klapp-/Teleskopschaft">
+				</label>
+				<?php endif; ?>
+				<label>Magazin [Schuss]
+					<input type="text" name="ak[magazin]" value="<?php echo esc_attr( $v['magazin'] ); ?>" size="4" placeholder="<?php echo esc_attr( (string) ( AK_Erwerb::magazine( $post->ID ) ?: '' ) ); ?>">
+				</label>
+				<span class="description">Für die Erwerbs-Zusammenfassung. Länge ohne Schaft = Mündung bis Schaftaufnahme (hinteres Gehäuseende bzw. Ende Buffer Tube, Punkt «Schaftaufnahme»), inkl. fest montiertem Mündungsaufsatz. Leer = aus Messpunkten geschätzt (dann entscheidet das Plugin nur mit 10 cm Abstand zu 60 cm, sonst «Abklärung durch Armatum»). Gesamtlänge mit eingeklapptem Originalschaft: nur bei Klapp-/Teleskopschaft, Wert laut Waffenhersteller (eingeschoben bzw. eingeklappt). Magazin leer = Attribut «Magazinkapazität».</span>
+			</p>
+			<p class="ak-row ak-only-zubehoer">
+				<label>Schulterstütze: Bauart
+					<select name="ak[schaft_art]">
+						<option value="">automatisch (<?php echo esc_html( AK_Erwerb::SCHAFT_ARTEN[ AK_Erwerb::stock_type( $post->ID ) ] ?? 'unbekannt' ); ?>)</option>
+						<?php foreach ( AK_Erwerb::SCHAFT_ARTEN as $sk2 => $sl2 ) : ?>
+							<option value="<?php echo esc_attr( $sk2 ); ?>" <?php selected( $v['schaft_art'], $sk2 ); ?>><?php echo esc_html( $sl2 ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
+				<?php if ( 'zubehoer' === $v['role'] ) : ?>
+				<label>Länge eingeklappt [mm]
+					<input type="text" name="ak[laenge_eingeklappt]" value="<?php echo esc_attr( $v['laenge_eingeklappt'] ); ?>" size="5">
+				</label>
+				<?php endif; ?>
+				<label>eingeklappt schussfähig
+					<select name="ak[eingeklappt_funktion]">
+						<option value="" <?php selected( $v['eingeklappt_funktion'], '' ); ?>>ja</option>
+						<option value="nein" <?php selected( $v['eingeklappt_funktion'], 'nein' ); ?>>nein</option>
+					</select>
+				</label>
+				<label>Brace
+					<select name="ak[brace]">
+						<option value="">automatisch (Name)</option>
+						<option value="yes" <?php selected( $v['brace'], 'yes' ); ?>>ja</option>
+						<option value="no" <?php selected( $v['brace'], 'no' ); ?>>nein</option>
+					</select>
+				</label>
+				<label>Laser
+					<select name="ak[laser]">
+						<option value="">automatisch (Gruppe/Name)</option>
+						<option value="yes" <?php selected( $v['laser'], 'yes' ); ?>>mit Laser</option>
+						<option value="no" <?php selected( $v['laser'], 'no' ); ?>>ohne Laser</option>
+					</select>
+				</label>
+				<label>Magazin +Schuss
+					<input type="text" name="ak[magazin_plus]" value="<?php echo esc_attr( $v['magazin_plus'] ); ?>" size="3" placeholder="z.B. 5">
+				</label>
+				<span class="description">Länge eingeklappt = belegte Zusatzlänge ab Puffer-/Gehäuseende bis Schaftkappe, ganz eingeschoben bzw. eingeklappt (Herstellerangabe, z.B. Strike FSA Dual Folder 26 mm). Ohne Wert zeigt der Konfigurator an Halbautomaten «Abklärung durch Armatum». Gesamtlänge eingeklappt = Länge ohne Schaft (Waffe) + Länge eingeklappt; unter 60 cm an Halbautomaten = kantonale Ausnahmebewilligung. Laser: Lampen mit Laser brauchen eine kantonale Ausnahmebewilligung. Magazin +Schuss: Magazinverlängerung (zählt zur Kapazität der Waffe).</span>
+			</p>
 			<p class="ak-row ak-only-zubehoer">
 				<label>Hinweis für Kunden (z.B. «Bewilligungspflichtig»)
 					<input type="text" name="ak[hinweis]" value="<?php echo esc_attr( $v['hinweis'] ); ?>" size="40">
@@ -287,6 +353,21 @@ class AK_Admin {
 			}
 			if ( 'waffenart' === $f && ! isset( AK_Data::WEAPON_TYPES[ $val ] ) && ! isset( AK_Data::PART_WEAPON_TYPES[ $val ] ) ) {
 				$val = '';
+			}
+			if ( 'funktion' === $f && ! isset( AK_Erwerb::FUNKTIONEN[ $val ] ) ) {
+				$val = '';
+			}
+			if ( 'schaft_art' === $f && ! isset( AK_Erwerb::SCHAFT_ARTEN[ $val ] ) ) {
+				$val = '';
+			}
+			if ( in_array( $f, array( 'brace', 'laser' ), true ) && ! in_array( $val, array( 'yes', 'no' ), true ) ) {
+				$val = '';
+			}
+			if ( 'eingeklappt_funktion' === $f && 'nein' !== $val ) {
+				$val = '';
+			}
+			if ( in_array( $f, array( 'laenge_ohne_schaft', 'magazin', 'laenge_eingeklappt', 'magazin_plus' ), true ) ) {
+				$val = preg_match( '/\d+([.,]\d+)?/', $val, $num ) ? str_replace( ',', '.', $num[0] ) : '';
 			}
 			if ( 'plattform' === $f ) {
 				$val = implode( ', ', array_intersect( array_map( 'trim', explode( ',', strtolower( $val ) ) ), array_keys( AK_Data::PLATFORMS ) ) );

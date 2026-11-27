@@ -2,7 +2,8 @@
 /**
  * Frontend:
  *  - Konfigurator-Seite mit Shortcode [armatum_konfigurator] (ohne Waffe: Waffenauswahl).
- *    URL-Parameter: ?waffe=ID (Waffe vorwählen), ?teil=ID (Zubehör vorwählen).
+ *    URL-Parameter: ?waffe=ID (Waffe vorwählen), ?teil=ID (Zubehör vorwählen),
+ *    ?teile=ID,ID,… (ganze Zusammenstellung wiederherstellen, Teilen-Link ab 1.0.9), ?einstieg=… (Einstieg für GA4).
  *  - Knopf auf Produktseiten: Waffe → «Diese Waffe konfigurieren», Zubehör → «Im Konfigurator ansehen».
  */
 
@@ -13,7 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class AK_Frontend {
 
 	public static function init() {
-		add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'product_button' ), 35 );
+		// Priorität 34: vor dem Knopf «Vorneigung berechnen» (Snippet 89, Priorität 35).
+		add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'product_button' ), 34 );
+		add_action( 'wc_ajax_ak_erwerb', array( __CLASS__, 'ajax_erwerb' ) );
 		add_shortcode( 'armatum_konfigurator', array( __CLASS__, 'shortcode' ) );
 	}
 
@@ -98,12 +101,19 @@ class AK_Frontend {
 			return;
 		}
 		if ( 'waffe' === $role ) {
-			$url   = self::page_url( array( 'waffe' => $id ) );
+			// Ab 1.0.9: kein Knopf, wenn die (zwischengespeicherte) Auswahl der Waffe leer ist.
+			if ( AK_Data::options_cached( $id ) ) {
+				$o = AK_Data::options_for_weapon( $id );
+				if ( empty( $o['optics'] ) && empty( $o['parts'] ) ) {
+					return;
+				}
+			}
+			$url   = self::page_url( array( 'waffe' => $id, 'einstieg' => 'produkt' ) );
 			$label = 'Diese Waffe konfigurieren';
 		} else {
 			// Zubehör: nur zwischengespeicherte Ergebnisse verwenden, damit die Produktseite schnell bleibt.
 			// Die Waffenauswahl im Konfigurator zeigt danach nur passende Waffen.
-			$args   = array( 'teil' => $id );
+			$args   = array( 'teil' => $id, 'einstieg' => 'produkt' );
 			$fits   = array();
 			$all    = true;
 			foreach ( self::weapons() as $w ) {
@@ -135,7 +145,7 @@ class AK_Frontend {
 	 * Waffen, auf die das Teil passt. Rechnet höchstens $budget Sekunden neu;
 	 * Waffen, die danach noch nicht geprüft sind, werden mit angezeigt (Prüfung beim Öffnen der Waffe).
 	 */
-	public static function weapons_for_part( $weapons, $part_id, $budget = 8 ) {
+	public static function weapons_for_part( $weapons, $part_id, $budget = 3 ) {
 		$start = microtime( true );
 		$out   = array();
 		foreach ( $weapons as $w ) {
@@ -160,11 +170,42 @@ class AK_Frontend {
 			$weapon_id = absint( $_GET['waffe'] ); // phpcs:ignore WordPress.Security.NonceVerification
 		}
 		$part_id = isset( $_GET['teil'] ) ? absint( $_GET['teil'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
+		$restore = isset( $_GET['teile'] ) ? self::parse_ids( sanitize_text_field( wp_unslash( $_GET['teile'] ) ) ) : array(); // phpcs:ignore WordPress.Security.NonceVerification
 
 		if ( $weapon_id && 'waffe' === AK_Data::role( $weapon_id ) && AK_Data::is_ready( $weapon_id ) ) {
-			return self::render( $weapon_id, $part_id );
+			return self::render( $weapon_id, $part_id, $restore );
 		}
 		return self::render_picker( $part_id );
+	}
+
+	/** «12,34,56» → array( 12, 34, 56 ), höchstens 30 IDs. */
+	public static function parse_ids( $raw ) {
+		$ids = array_values( array_unique( array_filter( array_map( 'absint', explode( ',', (string) $raw ) ) ) ) );
+		return array_slice( $ids, 0, 30 );
+	}
+
+	/**
+	 * Erwerbs-Zusammenfassung zur aktuellen Auswahl (wc-ajax=ak_erwerb, ab 1.0.9).
+	 * Ohne Personenbezug, ändert nichts. Ungültige IDs fliessen nur als Teile ohne Bedingung ein.
+	 */
+	public static function ajax_erwerb() {
+		if ( ! AK_Data::visible_for_current_user() ) {
+			wp_send_json_error( array( 'message' => 'Der Konfigurator ist noch nicht freigeschaltet.' ), 403 );
+		}
+		$weapon_id = isset( $_POST['weapon'] ) ? absint( $_POST['weapon'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
+		if ( 'waffe' !== AK_Data::role( $weapon_id ) ) {
+			wp_send_json_error( array( 'message' => 'Unbekannte Waffe.' ), 400 );
+		}
+		$ids = isset( $_POST['ids'] ) ? self::parse_ids( sanitize_text_field( wp_unslash( $_POST['ids'] ) ) ) : array(); // phpcs:ignore WordPress.Security.NonceVerification
+		$ids = array_values( array_filter( $ids, array( 'AK_Data', 'role' ) ) );
+		$r   = AK_Erwerb::for_selection( $weapon_id, $ids );
+		wp_send_json_success(
+			array(
+				'html'   => AK_Erwerb::html( $r ),
+				'satz'   => $r['satz'],
+				'sperre' => (bool) $r['sperre'],
+			)
+		);
 	}
 
 	private static function testmode_badge() {
@@ -181,7 +222,7 @@ class AK_Frontend {
 		}
 		ob_start();
 		?>
-		<section class="ak-konfigurator ak-picker">
+		<section class="ak-konfigurator ak-picker" data-anzahl="<?php echo (int) count( $weapons ); ?>" data-teil="<?php echo (int) $part_id; ?>">
 			<?php echo self::testmode_badge(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 			<h2>Waffe wählen</h2>
 			<?php if ( $part ) : ?>
@@ -300,7 +341,7 @@ class AK_Frontend {
 		);
 	}
 
-	public static function render( $weapon_id, $part_id = 0 ) {
+	public static function render( $weapon_id, $part_id = 0, $restore = array() ) {
 		AK_Data::note_visit( $weapon_id ); // Für das Vorwärmen der meistbesuchten Waffen.
 		$options = AK_Data::options_for_weapon( $weapon_id );
 		if ( empty( $options['optics'] ) && empty( $options['parts'] ) ) {
@@ -374,7 +415,9 @@ class AK_Frontend {
 			'groups'    => $groups,
 			'adapters'  => $rails,
 			'preselect' => $part_id ? self::resolve_part( $weapon_id, $part_id ) : 0,
+			'restore'   => array_map( 'intval', (array) $restore ),
 			'ajaxUrl'   => WC_AJAX::get_endpoint( 'ak_add_package' ),
+			'erwerbUrl' => WC_AJAX::get_endpoint( 'ak_erwerb' ),
 			'reportUrl' => WC_AJAX::get_endpoint( 'ak_report' ),
 			'cartUrl'   => wc_get_cart_url(),
 			'currency'  => get_woocommerce_currency_symbol(),
@@ -382,7 +425,8 @@ class AK_Frontend {
 		);
 
 		self::assets();
-		$change_url = remove_query_arg( array( 'waffe', 'teil' ) );
+		$change_url = remove_query_arg( array( 'waffe', 'teil', 'teile' ) );
+		$erwerb     = AK_Erwerb::for_selection( $weapon_id, array() );
 
 		ob_start();
 		?>
@@ -412,8 +456,10 @@ class AK_Frontend {
 					<div class="ak-summary">
 						<ul class="ak-lines"></ul>
 						<p class="ak-total"></p>
+						<div class="ak-erwerb" aria-live="polite"><?php echo AK_Erwerb::html( $erwerb ); // phpcs:ignore WordPress.Security.EscapeOutput ?></div>
 						<button type="button" class="button alt ak-add" disabled>Paket in den Warenkorb</button>
 						<p class="ak-msg" role="status"></p>
+						<p class="ak-share"><button type="button" class="button ak-share-copy">Link kopieren</button> <span class="ak-share-msg" role="status"></span></p>
 						<p class="ak-legal">Die Waffe wird erst nach Prüfung der Erwerbsdokumente ausgeliefert. Im Paket montieren wir Optik und Zubehör kostenlos.</p>
 					</div>
 				</div>

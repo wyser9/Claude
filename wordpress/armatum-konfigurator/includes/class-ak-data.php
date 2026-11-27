@@ -24,6 +24,12 @@ class AK_Data {
 	private static $role_memo    = array();
 	private static $bumped       = false;
 
+	/** Aufbewahrung der zwischengespeicherten Auswahl (Gültigkeit regelt ak_cache_ver), ab 1.0.9 7 Tage statt 12 h. */
+	const CACHE_TTL = 604800;
+
+	/** Sperre gegen gleichzeitiges Neuberechnen: nach so vielen Sekunden gilt sie als verwaist. */
+	const LOCK_TTL = 60;
+
 	/** So viele meistbesuchte Waffen werden nach einer Änderung im Hintergrund vorgerechnet. */
 	const WARM_TOP = 30;
 
@@ -1179,7 +1185,7 @@ class AK_Data {
 			$ids = array_map( 'intval', $hit['ids'] );
 		} else {
 			$ids = self::query_role( $role );
-			set_transient( 'ak_role_' . $role, array( 'v' => $ver, 'ids' => $ids ), 12 * HOUR_IN_SECONDS );
+			set_transient( 'ak_role_' . $role, array( 'v' => $ver, 'ids' => $ids ), self::CACHE_TTL );
 		}
 		self::$role_memo[ $role ] = $ids;
 		return $ids;
@@ -1217,21 +1223,58 @@ class AK_Data {
 	 *
 	 * @return array{optics: array, mounts: array}
 	 */
-	public static function options_for_weapon( $weapon_id ) {
+	public static function options_for_weapon( $weapon_id, $allow_stale = true ) {
 		$weapon_id = (int) $weapon_id;
 		if ( isset( self::$options_memo[ $weapon_id ] ) ) {
 			return self::$options_memo[ $weapon_id ];
 		}
-		$ver = self::cache_version();
-		$hit = get_transient( 'ak_opt_' . $weapon_id ); // Ein Eintrag pro Waffe, mit Version (kein Anwachsen der Tabelle).
+		$ver    = self::cache_version();
+		$locked = false;
+		$hit    = get_transient( 'ak_opt_' . $weapon_id ); // Ein Eintrag pro Waffe, mit Version (kein Anwachsen der Tabelle).
 		if ( is_array( $hit ) && isset( $hit['v'], $hit['o'] ) && $ver === (int) $hit['v'] ) {
 			$o = $hit['o'];
+		} elseif ( $allow_stale && is_array( $hit ) && isset( $hit['o'] ) && ! ( $locked = self::lock( $weapon_id ) ) ) { // phpcs:ignore Squiz.PHP.DisallowMultipleAssignments
+			// Ab 1.0.9: Ein anderer Prozess rechnet diese Waffe gerade neu. Bis er fertig ist, die letzte Auswahl zeigen
+			// (statt dass viele Besucher gleichzeitig dasselbe rechnen). Der Warenkorb prüft frisch (validate_selection).
+			return $hit['o'];
 		} else {
 			$o = self::compute_options_for_weapon( $weapon_id );
-			set_transient( 'ak_opt_' . $weapon_id, array( 'v' => $ver, 'o' => $o ), 12 * HOUR_IN_SECONDS );
+			// Gültigkeit regelt die Version; die Ablaufzeit ist nur Aufräumen (7 Tage statt 12 h, damit nichts von selbst kalt wird).
+			set_transient( 'ak_opt_' . $weapon_id, array( 'v' => $ver, 'o' => $o ), self::CACHE_TTL );
+			if ( ! empty( $locked ) ) {
+				self::unlock( $weapon_id );
+			}
 		}
 		self::$options_memo[ $weapon_id ] = $o;
 		return $o;
+	}
+
+	/**
+	 * Sperre gegen gleichzeitiges Neuberechnen derselben Waffe (ab 1.0.9).
+	 * add_option ist atomar (eindeutiger Schlüssel): nur ein Prozess bekommt die Sperre. Nach LOCK_TTL Sekunden gilt sie als verwaist.
+	 *
+	 * @return bool true = Sperre erhalten (selbst rechnen), false = ein anderer Prozess rechnet.
+	 */
+	public static function lock( $weapon_id ) {
+		if ( ! function_exists( 'add_option' ) ) {
+			return true;
+		}
+		$key = 'ak_lock_' . (int) $weapon_id;
+		if ( add_option( $key, time(), '', 'no' ) ) {
+			return true;
+		}
+		$since = (int) get_option( $key, 0 );
+		if ( $since && time() - $since < self::LOCK_TTL ) {
+			return false;
+		}
+		update_option( $key, time(), false );
+		return true;
+	}
+
+	public static function unlock( $weapon_id ) {
+		if ( function_exists( 'delete_option' ) ) {
+			delete_option( 'ak_lock_' . (int) $weapon_id );
+		}
 	}
 
 	/** Liegen die Optionen dieser Waffe schon im Cache? */
@@ -1524,7 +1567,7 @@ class AK_Data {
 		if ( 'waffe' !== self::role( $weapon_id ) || ! self::is_ready( $weapon_id ) ) {
 			return new WP_Error( 'ak_weapon', 'Diese Waffe ist nicht für den Konfigurator eingerichtet.' );
 		}
-		$options = self::options_for_weapon( $weapon_id );
+		$options = self::options_for_weapon( $weapon_id, false ); // Warenkorb: nie die alte Auswahl während des Neuberechnens.
 		if ( $optic_id ) {
 			if ( ! array_key_exists( $optic_id, $options['optics'] ) ) {
 				return new WP_Error( 'ak_optic', 'Diese Optik passt nicht auf die gewählte Waffe.' );
@@ -1580,6 +1623,11 @@ class AK_Data {
 		}
 		if ( ! $optic_id && ! $parts ) {
 			return new WP_Error( 'ak_empty', 'Bitte mindestens ein Zubehör wählen.' );
+		}
+		// Ab 1.0.9: gesperrte Kombinationen (z.B. Langwaffe ohne Schulterstütze, Art. 33 Abs. 3 WV).
+		$erwerb = AK_Erwerb::for_selection( $weapon_id, array_merge( array( $optic_id, $mount_id, $mag_id, $mag_mount_id ), array_values( $parts ), array_values( $adapters ) ) );
+		if ( $erwerb['sperre'] ) {
+			return new WP_Error( 'ak_sperre', implode( ' ', $erwerb['sperre'] ) );
 		}
 		return true;
 	}
@@ -1675,6 +1723,8 @@ class AK_Data {
 		return array(
 			'id'         => $product_id,
 			'name'       => $product->get_name(),
+			'sku'        => (string) $product->get_sku(),
+			'erwerb'     => class_exists( 'AK_Erwerb' ) ? AK_Erwerb::product_text( $product_id ) : '',
 			'price'      => (float) wc_get_price_to_display( $product ),
 			'priceHtml'  => $product->get_price_html(),
 			'stock'      => $product->is_on_backorder() ? 'Lieferbar auf Bestellung' : 'An Lager',

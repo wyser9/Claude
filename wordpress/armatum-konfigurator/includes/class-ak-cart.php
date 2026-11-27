@@ -25,6 +25,7 @@ class AK_Cart {
 		add_action( 'woocommerce_cart_loaded_from_session', array( __CLASS__, 'cleanup' ) );
 		add_filter( 'woocommerce_cart_item_quantity', array( __CLASS__, 'lock_montage_qty' ), 10, 3 );
 		add_action( 'woocommerce_checkout_create_order_line_item', array( __CLASS__, 'order_item_meta' ), 10, 3 );
+		add_action( 'woocommerce_thankyou', array( __CLASS__, 'ga_purchase' ), 20 );
 	}
 
 	/** Legt das versteckte Produkt "Montage" an (Preis 0), falls es fehlt. */
@@ -102,6 +103,9 @@ class AK_Cart {
 
 		$montage_id = self::ensure_montage_product();
 		$package    = substr( md5( uniqid( '', true ) ), 0, 10 );
+		// Erwerbs-Zusammenfassung des Pakets (ab 1.0.9): steht im Warenkorb und in der Bestellung bei der Waffe.
+		$erwerb     = AK_Erwerb::for_selection( $weapon_id, array_merge( array( $optic_id, $mount_id, $mag_id, $mag_mount ), array_values( $parts ), array_values( $adapters ) ) );
+		$erwerb_txt = $erwerb['satz'] . ( $erwerb['abklaerung'] ? ' ' . AK_Erwerb::ABKLAERUNG . ': ' . implode( ' ', $erwerb['abklaerung'] ) : '' );
 		$lines      = array( 'waffe' => $weapon_id );
 		if ( $mount_id ) {
 			$lines['montage'] = $mount_id;
@@ -133,17 +137,15 @@ class AK_Cart {
 				$variation = wc_get_product( $pid );
 				$attrs     = $variation ? $variation->get_variation_attributes() : array();
 			}
-			$key = WC()->cart->add_to_cart(
-				$parent ? $parent : $pid,
-				1,
-				$parent ? $pid : 0,
-				$attrs,
-				array(
-					'ak_group'  => $package,
-					'ak_role'   => $role,
-					'ak_weapon' => $weapon_id,
-				)
+			$data = array(
+				'ak_group'  => $package,
+				'ak_role'   => $role,
+				'ak_weapon' => $weapon_id,
 			);
+			if ( 'waffe' === $role ) {
+				$data['ak_erwerb'] = $erwerb_txt;
+			}
+			$key = WC()->cart->add_to_cart( $parent ? $parent : $pid, 1, $parent ? $pid : 0, $attrs, $data );
 			if ( ! $key ) {
 				$failed = true;
 				break;
@@ -163,10 +165,32 @@ class AK_Cart {
 		}
 
 		wc_clear_notices();
+		// Für GA4 (add_to_cart, paket_in_warenkorb): Positionen mit Preis, wie sie im Warenkorb liegen. Ohne Personenbezug.
+		$out   = array();
+		$value = 0.0;
+		foreach ( $lines as $role => $pid ) {
+			$p = wc_get_product( $pid );
+			if ( ! $p ) {
+				continue;
+			}
+			$price  = 'service' === $role ? 0.0 : (float) wc_get_price_to_display( $p );
+			$value += $price;
+			$out[]  = array(
+				'id'    => (int) $pid,
+				'sku'   => (string) $p->get_sku(),
+				'name'  => $p->get_name(),
+				'price' => $price,
+				'role'  => $role,
+			);
+		}
 		wp_send_json_success(
 			array(
 				'message' => 'Paket liegt im Warenkorb.',
 				'count'   => WC()->cart->get_cart_contents_count(),
+				'package' => $package,
+				'value'   => round( $value, 2 ),
+				'lines'   => $out,
+				'erwerb'  => $erwerb['satz'],
 			)
 		);
 	}
@@ -177,6 +201,12 @@ class AK_Cart {
 				'key'   => 'Paket',
 				'value' => esc_html( get_the_title( (int) $item['ak_weapon'] ) ),
 			);
+			if ( ! empty( $item['ak_erwerb'] ) ) {
+				$data[] = array(
+					'key'   => 'Erwerb (Paket)',
+					'value' => esc_html( $item['ak_erwerb'] ),
+				);
+			}
 			$hinweis = (string) get_post_meta( (int) $item['product_id'], '_ak_hinweis', true );
 			if ( '' !== $hinweis ) {
 				$data[] = array(
@@ -239,6 +269,51 @@ class AK_Cart {
 	public static function order_item_meta( $order_item, $key, $values ) {
 		if ( ! empty( $values['ak_group'] ) ) {
 			$order_item->add_meta_data( 'Paket', get_the_title( (int) $values['ak_weapon'] ) . ' (' . $values['ak_group'] . ')', true );
+			// Maschinenlesbar (verborgen, Unterstrich): für konfigurator_kauf und Auswertungen.
+			$order_item->add_meta_data( '_ak_group', (string) $values['ak_group'], true );
+			$order_item->add_meta_data( '_ak_role', isset( $values['ak_role'] ) ? (string) $values['ak_role'] : '', true );
+			if ( ! empty( $values['ak_erwerb'] ) ) {
+				$order_item->add_meta_data( 'Erwerb (Paket)', (string) $values['ak_erwerb'], true );
+			}
 		}
+	}
+
+	/**
+	 * GA4 «konfigurator_kauf» auf der Bestätigungsseite (ab 1.0.9), einmal je Bestellung.
+	 * Nur Bestellnummer, Summe der Paket-Positionen, Anzahl Pakete und Teile, kein Personenbezug.
+	 * Feuert nur, wenn gtag auf der Seite vorhanden ist (GA-Plugin, Einwilligung nach Snippet 52).
+	 */
+	public static function ga_purchase( $order_id ) {
+		$order = $order_id ? wc_get_order( $order_id ) : false;
+		if ( ! $order || $order->get_meta( '_ak_ga_gesendet' ) ) {
+			return;
+		}
+		$packages = array();
+		$parts    = 0;
+		$value    = 0.0;
+		foreach ( $order->get_items() as $item ) {
+			$group = (string) $item->get_meta( '_ak_group' );
+			if ( '' === $group ) {
+				continue;
+			}
+			$packages[ $group ] = true;
+			$value             += (float) $item->get_total() + (float) $item->get_total_tax();
+			if ( 'service' !== (string) $item->get_meta( '_ak_role' ) ) {
+				$parts++;
+			}
+		}
+		if ( ! $packages ) {
+			return;
+		}
+		$order->update_meta_data( '_ak_ga_gesendet', gmdate( 'c' ) );
+		$order->save();
+		$params = array(
+			'transaction_id' => (string) $order->get_order_number(),
+			'value'          => round( $value, 2 ),
+			'currency'       => $order->get_currency(),
+			'pakete'         => count( $packages ),
+			'anzahl_teile'   => $parts,
+		);
+		echo '<script>if(typeof window.gtag==="function"){window.gtag("event","konfigurator_kauf",' . wp_json_encode( $params ) . ');}</script>';
 	}
 }

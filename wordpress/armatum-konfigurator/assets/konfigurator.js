@@ -63,6 +63,22 @@
 
 	var CHAIN = ['muendungsaufsatz', 'hub', 'schalldaempfer'];
 
+	/** Einstieg (z.B. produkt, startseite, teilen) aus der URL, für alle GA4-Ereignisse. */
+	var EINSTIEG = (function () {
+		try { return (new URLSearchParams(window.location.search).get('einstieg') || '').slice(0, 40); } catch (e) { return ''; }
+	})();
+
+	/**
+	 * GA4-Ereignis (ab 1.0.9). Nur wenn gtag auf der Seite ist (GA-Plugin, Einwilligung nach Snippet 52).
+	 * Kein Personenbezug: nur Produkt-IDs, Artikelnummern, Namen, Preise.
+	 */
+	function track(name, params) {
+		if (typeof window.gtag !== 'function') { return; }
+		params = params || {};
+		if (EINSTIEG && !params.einstieg) { params.einstieg = EINSTIEG; }
+		try { window.gtag('event', name, params); } catch (e) { /* Messung darf den Konfigurator nie stören */ }
+	}
+
 	/** Teile, deren Shop-Bild im Browser freigestellt wird, damit sie das Originalteil der Waffe verdecken. */
 	var AUTOCUT = ['schaft', 'griff'];
 	var CUT_CACHE = {};
@@ -117,7 +133,7 @@
 
 	var NONE = {
 		optik: 'Keine Optik',
-		schaft: 'Keine Schulterstütze',
+		schaft: 'Original-Schulterstütze behalten',
 		hub: 'Kein HUB',
 		muendungsaufsatz: 'Original-Mündungsaufsatz behalten',
 		griff: 'Original-Griff behalten',
@@ -147,12 +163,141 @@
 		this.magMount = null;
 		this.parts = {};
 		this.groups = this.cfg.groups || [];
+		this.erwerbSeq = 0;
+		this.erwerbKey = ''; // Zusammenfassung ohne Teile kommt schon fertig vom Server.
+		this.sperre = false;
 		this.renderSteps();
 		this.bind();
-		this.preselect(parseInt(this.cfg.preselect, 10) || 0);
+		if (this.cfg.restore && this.cfg.restore.length) {
+			this.restore(this.cfg.restore);
+		} else {
+			this.preselect(parseInt(this.cfg.preselect, 10) || 0);
+		}
 		this.update();
 		$(window).on('resize', function () { self.draw(); });
+		var w = this.cfg.weapon;
+		track('konfigurator_start', {
+			waffe_id: w.id, waffe_name: w.name, artikelnummer: w.sku || '',
+			waffenart: w.art === 'pistole' ? 'kurzwaffe' : 'langwaffe',
+			teil_id: parseInt(this.cfg.preselect, 10) || 0
+		});
 	}
+
+	/** GA4 komponente_gewaehlt: nur bei Klick des Kunden (nicht bei Vorwahl, Wiederherstellen oder automatischer Auswahl). */
+	Konfigurator.prototype.trackPick = function (typ, item) {
+		if (!item) { return; }
+		track('komponente_gewaehlt', {
+			typ: typ, artikelnummer: item.sku || '', item_id: item.id, item_name: item.name,
+			preis: item.price, waffe_id: this.cfg.weapon.id
+		});
+	};
+
+	/**
+	 * Teilen-Link wiederherstellen (?teile=ID,ID,…, ab 1.0.9). Reihenfolge: Optik mit Montage und Magnifier,
+	 * dann die Gruppen (Mündungskette zuerst), dann Adapterschienen. Was nicht (mehr) passt, fällt still weg.
+	 */
+	Konfigurator.prototype.restore = function (ids) {
+		var self = this;
+		var want = {};
+		$.each(ids, function (_, id) { want[parseInt(id, 10)] = true; });
+		var pick = function (list) { return (list || []).filter(function (id) { return want[id]; })[0] || 0; };
+		var optic = this.cfg.optics.filter(function (o) { return want[o.id]; })[0];
+		if (optic) {
+			this.setOptic(optic.id, pick(optic.mounts));
+			var magId = pick(optic.mags);
+			if (magId && this.magsById[magId]) {
+				this.renderMags(magId, pick(this.magsById[magId].mounts));
+			}
+		}
+		$.each(this.groups, function (_, g) {
+			var it = g.items.filter(function (x) { return want[x.id]; })[0];
+			if (!it) { return; }
+			if (CHAIN.indexOf(g.key) >= 0) {
+				self.filterMuzzle();
+				if (!self.chainFits(g.key, it.id)) { return; }
+			}
+			self.setPart(g.key, it.id);
+			if (it.adapters && it.adapters.length) { self.renderRails(g.key, pick(it.adapters)); }
+		});
+	};
+
+	/** Alle gewählten Produkt-IDs (für Teilen-Link und Erwerbs-Zusammenfassung). */
+	Konfigurator.prototype.selectedIds = function () {
+		var self = this;
+		var ids = [];
+		if (this.optic) {
+			ids.push(this.optic.id);
+			if (this.mount) { ids.push(this.mount.id); }
+			if (this.mag) { ids.push(this.mag.id); }
+			if (this.mag && this.magMount) { ids.push(this.magMount.id); }
+		}
+		$.each(this.selectedParts(), function (_, x) {
+			ids.push(x.item.id);
+			if (self.rails[x.g.key]) { ids.push(self.rails[x.g.key].id); }
+		});
+		return ids;
+	};
+
+	/** Link auf die aktuelle Zusammenstellung. */
+	Konfigurator.prototype.shareUrl = function (forShare) {
+		var u = new URL(window.location.href);
+		u.searchParams.set('waffe', this.cfg.weapon.id);
+		u.searchParams.delete('teil');
+		var ids = this.selectedIds();
+		if (ids.length) { u.searchParams.set('teile', ids.join(',')); } else { u.searchParams.delete('teile'); }
+		if (forShare) { u.searchParams.set('einstieg', 'teilen'); }
+		u.hash = '';
+		return u.toString();
+	};
+
+	Konfigurator.prototype.copyLink = function () {
+		var url = this.shareUrl(true);
+		var $msg = this.$root.find('.ak-share-msg');
+		var done = function () { $msg.text('Link kopiert.'); };
+		var fallback = function () {
+			var ta = document.createElement('textarea');
+			ta.value = url;
+			ta.setAttribute('readonly', '');
+			ta.style.position = 'absolute';
+			ta.style.left = '-9999px';
+			document.body.appendChild(ta);
+			ta.select();
+			var ok = false;
+			try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+			document.body.removeChild(ta);
+			if (ok) { done(); } else { $msg.text(url); }
+		};
+		if (navigator.clipboard && window.isSecureContext) {
+			navigator.clipboard.writeText(url).then(done, fallback);
+		} else {
+			fallback();
+		}
+		track('konfigurator_link_kopiert', { waffe_id: this.cfg.weapon.id, anzahl_teile: this.selectedIds().length });
+	};
+
+	/** Erwerbs-Zusammenfassung vom Server holen (Regeln stehen zentral in AK_Erwerb). */
+	Konfigurator.prototype.loadErwerb = function () {
+		var self = this;
+		var key = this.selectedIds().join(',');
+		if (key === this.erwerbKey) { return; }
+		this.erwerbKey = key;
+		var seq = ++this.erwerbSeq;
+		clearTimeout(this.erwerbTimer);
+		var $box = this.$root.find('.ak-erwerb').addClass('ak-loading');
+		this.erwerbTimer = setTimeout(function () {
+			$.post(self.cfg.erwerbUrl, { weapon: self.cfg.weapon.id, ids: key }).done(function (res) {
+				if (seq !== self.erwerbSeq || !res || !res.data) { return; }
+				$box.html(res.data.html);
+				self.sperre = !!res.data.sperre;
+				self.updateButton();
+			}).fail(function () {
+				if (seq !== self.erwerbSeq) { return; }
+				$box.html('<p class="ak-erwerb-abkl"><strong>Abklärung durch Armatum:</strong> Die Erwerbsbedingungen konnten gerade nicht berechnet werden. Wir prüfen die Zusammenstellung vor der Montage.</p>');
+			}).always(function () {
+				if (seq === self.erwerbSeq) { $box.removeClass('ak-loading'); }
+			});
+		}, 200);
+	};
 
 	Konfigurator.prototype.card = function (item, name, extra) {
 		return '<label class="ak-card" data-id="' + item.id + '" data-search="' + esc((item.name + ' ' + (item.brand || '')).toLowerCase()) + '" data-brand="' + esc(item.brand || '') + '">' +
@@ -161,7 +306,8 @@
 			'<span class="ak-card-text"><span class="ak-card-name">' + esc(item.name) + '</span>' +
 			'<span class="ak-card-price">' + item.priceHtml + '</span>' +
 			'<span class="ak-card-stock">' + esc(item.stock) + (extra ? ' · ' + esc(extra) : '') + '</span>' +
-			(item.hinweis ? '<span class="ak-card-hint">' + esc(item.hinweis) + '</span>' : '') + '</span>' +
+			(item.hinweis ? '<span class="ak-card-hint">' + esc(item.hinweis) + '</span>' : '') +
+			(item.erwerb ? '<span class="ak-card-erwerb">Erwerb: ' + esc(item.erwerb) + '</span>' : '') + '</span>' +
 			'</label>';
 	};
 
@@ -232,27 +378,35 @@
 		var $steps = this.$root.find('.ak-steps');
 		$steps.on('change', '.ak-step[data-group="optik"] > .ak-step-body > .ak-list input', function () {
 			self.setOptic(parseInt(this.value, 10));
+			self.trackPick('optik', self.optic);
 			self.update();
 		});
 		$steps.on('change', '.ak-mounts input', function () {
 			self.mount = self.mountsById[parseInt(this.value, 10)] || null;
+			self.trackPick('montage', self.mount);
 			self.renderMags(self.mag ? self.mag.id : 0, self.magMount ? self.magMount.id : 0);
 			self.update();
 		});
 		$steps.on('change', '.ak-mags input', function () {
 			self.setMag(parseInt(this.value, 10));
+			self.trackPick('magnifier', self.mag);
 			self.update();
 		});
 		$steps.on('change', '.ak-magmounts input', function () {
 			self.magMount = self.magMountsById[parseInt(this.value, 10)] || null;
+			self.trackPick('magnifier_montage', self.magMount);
 			self.update();
 		});
 		$steps.on('change', '.ak-step:not([data-group="optik"]) > .ak-step-body > .ak-list input', function () {
-			self.setPart($(this).closest('.ak-step').data('group'), parseInt(this.value, 10));
+			var key = $(this).closest('.ak-step').data('group');
+			self.setPart(key, parseInt(this.value, 10));
+			self.trackPick(key, self.parts[key]);
 			self.update();
 		});
 		$steps.on('change', '.ak-adapters input', function () {
-			self.rails[$(this).closest('.ak-step').data('group')] = self.railsById[parseInt(this.value, 10)] || null;
+			var key = $(this).closest('.ak-step').data('group');
+			self.rails[key] = self.railsById[parseInt(this.value, 10)] || null;
+			self.trackPick('adapter_' + key, self.rails[key]);
 			self.update();
 		});
 		$steps.on('input change', '.ak-search, .ak-brand', function () {
@@ -260,6 +414,7 @@
 		});
 		this.$root.find('.ak-add').on('click', function () { self.add(); });
 		this.$root.find('.ak-report-send').on('click', function () { self.report(); });
+		this.$root.find('.ak-share-copy').on('click', function () { self.copyLink(); });
 	};
 
 	Konfigurator.prototype.applyFilter = function ($step) {
@@ -682,9 +837,20 @@
 		this.$root.find('.ak-lines').html(html);
 		this.$root.find('.ak-total').html('Total <strong>' + fmt(total, cfg) + '</strong>');
 		var opticOk = (!this.optic || !this.optic.mounts.length || this.mount) && (!this.mag || !this.mag.mounts.length || this.magMount);
-		var ready = opticOk && !railMissing && lines.length > 1;
-		this.$root.find('.ak-add').prop('disabled', !ready);
+		this.ready = opticOk && !railMissing && lines.length > 1;
+		this.total = total;
+		this.lineCount = lines.length;
+		this.updateButton();
 		this.draw();
+		this.loadErwerb();
+		// Adresszeile zeigt die Zusammenstellung (Teilen über den Browser, Neuladen behält die Auswahl).
+		if (window.history && window.history.replaceState) {
+			try { window.history.replaceState(null, '', this.shareUrl(false)); } catch (e) { /* z.B. file:// */ }
+		}
+	};
+
+	Konfigurator.prototype.updateButton = function () {
+		this.$root.find('.ak-add').prop('disabled', !this.ready || this.sperre);
 	};
 
 	/** Auswahl als Formulardaten (für Warenkorb und Meldung). */
@@ -713,8 +879,10 @@
 		var data = $.extend(this.selection(), {
 			text: text, email: $r.find('.ak-report-mail').val(), website: $r.find('.ak-report-hp').val(), url: window.location.href
 		});
+		var self = this;
 		$.post(this.cfg.reportUrl, data).done(function (res) {
 			$msg.text(res.data.message);
+			track('konfigurator_meldung', { waffe_id: self.cfg.weapon.id });
 			$r.find('.ak-report-text').val('');
 		}).fail(function (xhr) {
 			$msg.addClass('ak-error').text(xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data.message : 'Senden fehlgeschlagen.');
@@ -728,12 +896,37 @@
 		var data = this.selection();
 		$.post(this.cfg.ajaxUrl, data).done(function (res) {
 			$msg.html(esc(res.data.message) + ' <a href="' + esc(self.cfg.cartUrl) + '">Zum Warenkorb</a>');
+			// Kein added_to_cart auslösen: sonst sendet das GA-Plugin add_to_cart doppelt.
 			$(document.body).trigger('wc_fragment_refresh');
+			self.trackCart(res.data);
 		}).fail(function (xhr) {
 			var m = xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data.message : 'Fehler beim Hinzufügen.';
 			$msg.addClass('ak-error').text(m);
+			track('paket_fehler', { fehler: String(m).slice(0, 100), waffe_id: self.cfg.weapon.id });
 		}).always(function () {
 			$btn.prop('disabled', false).removeClass('loading');
+		});
+	};
+
+	/** GA4 nach erfolgreichem Hinzufügen: paket_in_warenkorb (eigenes) und add_to_cart (Standard, alle Positionen). */
+	Konfigurator.prototype.trackCart = function (d) {
+		var cfg = this.cfg;
+		var lines = (d && d.lines) || [];
+		var value = d && typeof d.value === 'number' ? d.value : this.total;
+		var parts = lines.filter(function (l) { return l.role !== 'service'; });
+		track('paket_in_warenkorb', {
+			value: value, currency: 'CHF', anzahl_teile: parts.length || this.lineCount,
+			waffe_id: cfg.weapon.id, paket_id: (d && d.package) || ''
+		});
+		if (!parts.length) { return; }
+		track('add_to_cart', {
+			currency: 'CHF', value: value,
+			items: parts.map(function (l) {
+				return {
+					item_id: String(l.id), item_name: l.name, price: l.price, quantity: 1,
+					item_category: l.role, item_list_id: 'konfigurator', item_list_name: 'Konfigurator'
+				};
+			})
 		});
 	};
 
@@ -763,6 +956,7 @@
 			$none.prop('hidden', n > 0);
 		}
 		$root.on('input change', '.ak-pf-q, .ak-pf-sel', apply);
+		track('konfigurator_auswahl', { anzahl_waffen: parseInt($root.data('anzahl'), 10) || $cards.length, teil_id: parseInt($root.data('teil'), 10) || 0 });
 		$root.on('click', '.ak-pf-chips button', function () {
 			$(this).addClass('is-active').siblings().removeClass('is-active');
 			apply();

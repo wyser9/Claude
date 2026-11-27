@@ -78,3 +78,18 @@
 .ak-picker-filter .ak-pf-sel { flex: 1 1 140px; min-width: 0; max-width: 100%; padding: .45em; border: 1px solid #ccc; border-radius: 4px; background: #fff; }
 .ak-picker-filter .ak-pf-count { flex: 1 1 100%; color: #666; font-size: .9em; }
 .ak-weapon-card[hidden] { display: none; }
+/* 1.0.9: Erwerbs-Zusammenfassung, Teilen-Link, Erwerb je Teil */
+.ak-card-erwerb { color: #555; font-size: .8em; }
+.ak-erwerb { margin: .6em 0 .8em; padding: .6em .8em; border-left: 3px solid #b45309; background: #fffaf3; font-size: .9em; transition: opacity .2s; }
+.ak-erwerb.ak-loading { opacity: .6; }
+.ak-erwerb p { margin: 0 0 .4em; }
+.ak-erwerb p:last-child { margin-bottom: 0; }
+.ak-erwerb-satz { font-weight: 600; }
+.ak-erwerb-sperre { color: #b32d2e; font-weight: 600; }
+.ak-erwerb-abkl { color: #664d03; }
+.ak-erwerb-details summary { cursor: pointer; color: #555; }
+.ak-erwerb-details ul { margin: .4em 0 0 1.1em; padding: 0; }
+.ak-erwerb-details li { margin: .2em 0; }
+.ak-erwerb-details small { color: #666; }
+.ak-share { margin: .5em 0 0; font-size: .9em; }
+.ak-share-msg { color: #2e7d32; margin-left: .4em; word-break: break-all; }

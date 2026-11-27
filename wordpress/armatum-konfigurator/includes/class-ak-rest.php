@@ -18,7 +18,8 @@ class AK_Rest {
 
 	/** Felder, die über /setup gesetzt werden dürfen. */
 	const SETTABLE = array( 'role', 'gruppe', 'direkt', 'schnittstelle', 'ausgang', 'laenge', 'mittelrohr', 'hinweis', 'freigestellt', 'flip', 'image_id', 'freiraum', 'montage_art', 'achshoehe', 'rail_front', 'rail_rear',
-		'anchor', 'p1', 'p2', 'ref_mm', 'tube_anchor', 'bottom', 'muzzle_device_if', 'muzzle_device_anchor', 'gesperrt', 'waffenart', 'plattform', 'kaliber' );
+		'anchor', 'p1', 'p2', 'ref_mm', 'tube_anchor', 'bottom', 'muzzle_device_if', 'muzzle_device_anchor', 'gesperrt', 'waffenart', 'plattform', 'kaliber',
+		'funktion', 'laenge_ohne_schaft', 'magazin', 'schaft_art', 'brace', 'laenge_eingeklappt', 'eingeklappt_funktion', 'laser', 'magazin_plus' );
 
 	/** Erlaubte Felder inkl. Steckplätze der Waffe. */
 	public static function settable() {
@@ -97,6 +98,7 @@ class AK_Rest {
 			'kaliber_klasse' => in_array( $role, array( 'waffe', 'zubehoer' ), true ) ? AK_Data::caliber_classes( $id ) : array(),
 			'sd_fuer'     => 'schalldaempfer' === $g ? AK_Data::suppressor_short_classes( $id ) : array(),
 			'platzhalter' => AK_Data::shows_placeholder( $id ),
+			'erwerb'      => self::erwerb_status( $id, $role, $g ),
 			'plattform'   => AK_Data::platforms( $id ),
 			'kaliber_mm'  => AK_Data::caliber_mm( $id ),
 			'slots'       => 'waffe' === $role ? self::slots( $id ) : array(),
@@ -121,6 +123,26 @@ class AK_Rest {
 			) : array(),
 			'sku'      => $p ? $p->get_sku() : '',
 		);
+	}
+
+	/** Angaben für die Erwerbs-Zusammenfassung (ab 1.0.9), damit Ruedi fehlende Längen findet. */
+	public static function erwerb_status( $id, $role, $g ) {
+		$out = array( 'text' => AK_Erwerb::product_text( $id ) );
+		if ( 'waffe' === $role ) {
+			$len                       = AK_Erwerb::length_without_stock( $id );
+			$out['funktion']           = AK_Erwerb::function_type( $id );
+			$out['magazin']            = AK_Erwerb::magazine( $id );
+			$out['laenge_ohne_schaft'] = round( $len[0] );
+			$out['laenge_geschaetzt']  = $len[1];
+		} elseif ( 'schaft' === $g ) {
+			$f                         = AK_Erwerb::part_facts( $id );
+			$out['schaft_art']         = $f['schaft_art'];
+			$out['brace']              = $f['brace'];
+			$out['laenge_eingeklappt'] = $f['laenge_eingeklappt'];
+		} elseif ( in_array( $g, array( 'lampe', 'laser' ), true ) ) {
+			$out['laser'] = AK_Erwerb::is_laser( $id );
+		}
+		return $out;
 	}
 
 	/** Steckplätze der Waffe: Schnittstellen (auch aus Attribut) und Punkt. */
@@ -216,6 +238,21 @@ class AK_Rest {
 			}
 			if ( 'waffenart' === $k && ! isset( AK_Data::WEAPON_TYPES[ $v ] ) && ! isset( AK_Data::PART_WEAPON_TYPES[ $v ] ) ) {
 				$v = '';
+			}
+			if ( 'funktion' === $k && ! isset( AK_Erwerb::FUNKTIONEN[ $v ] ) ) {
+				$v = '';
+			}
+			if ( 'schaft_art' === $k && ! isset( AK_Erwerb::SCHAFT_ARTEN[ $v ] ) ) {
+				$v = '';
+			}
+			if ( in_array( $k, array( 'brace', 'laser' ), true ) && ! in_array( $v, array( 'yes', 'no' ), true ) ) {
+				$v = '';
+			}
+			if ( 'eingeklappt_funktion' === $k && 'nein' !== $v ) {
+				$v = '';
+			}
+			if ( in_array( $k, array( 'laenge_ohne_schaft', 'magazin', 'laenge_eingeklappt', 'magazin_plus' ), true ) ) {
+				$v = preg_match( '/\d+([.,]\d+)?/', $v, $num ) ? str_replace( ',', '.', $num[0] ) : '';
 			}
 			if ( 'plattform' === $k ) {
 				$v = implode( ', ', array_intersect( array_map( 'trim', explode( ',', strtolower( $v ) ) ), array_keys( AK_Data::PLATFORMS ) ) );
