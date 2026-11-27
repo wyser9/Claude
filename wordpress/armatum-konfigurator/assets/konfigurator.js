@@ -167,6 +167,7 @@
 		this.erwerbKey = ''; // Zusammenfassung ohne Teile kommt schon fertig vom Server.
 		this.sperre = false;
 		this.renderSteps();
+		this.initBar();
 		this.bind();
 		if (this.cfg.restore && this.cfg.restore.length) {
 			this.restore(this.cfg.restore);
@@ -290,9 +291,11 @@
 				$box.html(res.data.html);
 				self.sperre = !!res.data.sperre;
 				self.updateButton();
+				self.barHint();
 			}).fail(function () {
 				if (seq !== self.erwerbSeq) { return; }
 				$box.html('<p class="ak-erwerb-abkl"><strong>Abklärung durch Armatum:</strong> Die Erwerbsbedingungen konnten gerade nicht berechnet werden. Wir prüfen die Zusammenstellung vor der Montage.</p>');
+				self.barHint();
 			}).always(function () {
 				if (seq === self.erwerbSeq) { $box.removeClass('ak-loading'); }
 			});
@@ -412,9 +415,65 @@
 		$steps.on('input change', '.ak-search, .ak-brand', function () {
 			self.applyFilter($(this).closest('.ak-step'));
 		});
-		this.$root.find('.ak-add').on('click', function () { self.add(); });
+		this.$add.on('click', function () { self.add(); });
 		this.$root.find('.ak-report-send').on('click', function () { self.report(); });
 		this.$root.find('.ak-share-copy').on('click', function () { self.copyLink(); });
+	};
+
+	/**
+	 * Handy-Leiste (ab 1.0.11): fest unten bis 860 px (CSS), Total, Erwerbs-Kurzhinweis, derselbe Paket-Knopf
+	 * (gleiche Funktion add(), GA4 nur dort) und Warenkorb-Link mit Anzahl. Hängt am body, damit kein Theme-Container
+	 * mit transform die feste Position bricht. body.ak-has-bar reserviert unten die Leistenhöhe (--ak-bar-h).
+	 */
+	Konfigurator.prototype.initBar = function () {
+		var self = this;
+		var cfg = this.cfg;
+		var svg = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5.2 4l.6 2H21l-2.6 8.4a2 2 0 0 1-1.9 1.4H8.2a2 2 0 0 1-1.9-1.5L3.7 4H2V2h3a1 1 0 0 1 .9.7L6.3 4z"/></svg>';
+		this.$bar = $('<div class="ak-bar" role="region" aria-label="Paket">' +
+			'<p class="ak-bar-hint" role="status"></p>' +
+			'<div class="ak-bar-row">' +
+			'<span class="ak-bar-total"></span>' +
+			'<button type="button" class="button alt ak-add ak-bar-add" disabled>Paket in den Warenkorb</button>' +
+			'<a class="ak-bar-cart" href="' + esc(cfg.cartUrl) + '">' + svg + '<span class="ak-bar-count">0</span></a>' +
+			'</div></div>').appendTo(document.body);
+		this.$add = this.$root.find('.ak-add').add(this.$bar.find('.ak-add'));
+		$(document.body).addClass('ak-konfigurator-seite ak-has-bar');
+		var root = document.documentElement;
+		var bar = this.$bar[0];
+		var measure = function () {
+			var h = bar.offsetHeight;
+			if (h) { root.style.setProperty('--ak-bar-h', h + 'px'); }
+		};
+		if (window.ResizeObserver) { new ResizeObserver(measure).observe(bar); }
+		$(window).on('resize', measure);
+		measure();
+		// Anzahl: Zähler des Fly-Cart-Plugins (#wcspc-count-number) mitlesen, sonst Wert vom Server bzw. aus dem Paket-Aufruf.
+		this.setCount(cfg.cartCount || 0);
+		var fc = document.getElementById('wcspc-count-number');
+		if (fc) {
+			var sync = function () { var n = parseInt(fc.textContent, 10); if (!isNaN(n)) { self.setCount(n); } };
+			sync();
+			if (window.MutationObserver) { new MutationObserver(sync).observe(fc, { childList: true, characterData: true, subtree: true }); }
+		}
+	};
+
+	Konfigurator.prototype.setCount = function (n) {
+		n = parseInt(n, 10) || 0;
+		this.$bar.find('.ak-bar-count').text(n).prop('hidden', !n);
+		this.$bar.find('.ak-bar-cart').attr('aria-label', 'Warenkorb, ' + n + ' Artikel');
+	};
+
+	/** Eine Zeile in der Leiste: Meldung nach dem Hinzufügen, sonst Erwerbs-Kurzhinweis. */
+	Konfigurator.prototype.barHint = function (text, cls) {
+		if (!this.$bar) { return; }
+		var $box = this.$root.find('.ak-erwerb');
+		if (text === undefined) {
+			if (this.barMsgUntil && Date.now() < this.barMsgUntil) { return; }
+			var $s = $box.find('.ak-erwerb-sperre').first();
+			cls = $s.length ? 'ak-bar-sperre' : '';
+			text = $.trim(($s.length ? $s : $box.find('.ak-erwerb-satz, .ak-erwerb-abkl').first()).text());
+		}
+		this.$bar.find('.ak-bar-hint').attr('class', 'ak-bar-hint' + (cls ? ' ' + cls : '')).text(text).prop('hidden', !text).attr('title', text);
 	};
 
 	Konfigurator.prototype.applyFilter = function ($step) {
@@ -836,6 +895,10 @@
 		}
 		this.$root.find('.ak-lines').html(html);
 		this.$root.find('.ak-total').html('Total <strong>' + fmt(total, cfg) + '</strong>');
+		if (this.$bar) {
+			this.$bar.find('.ak-bar-total').html('<small>Total</small> <strong>' + fmt(total, cfg) + '</strong>');
+			this.barHint();
+		}
 		var opticOk = (!this.optic || !this.optic.mounts.length || this.mount) && (!this.mag || !this.mag.mounts.length || this.magMount);
 		this.ready = opticOk && !railMissing && lines.length > 1;
 		this.total = total;
@@ -850,7 +913,7 @@
 	};
 
 	Konfigurator.prototype.updateButton = function () {
-		this.$root.find('.ak-add').prop('disabled', !this.ready || this.sperre);
+		this.$add.prop('disabled', !this.ready || this.sperre);
 	};
 
 	/** Auswahl als Formulardaten (für Warenkorb und Meldung). */
@@ -891,20 +954,31 @@
 
 	Konfigurator.prototype.add = function () {
 		var self = this;
-		var $btn = this.$root.find('.ak-add').prop('disabled', true).addClass('loading');
+		if (this.adding) { return; } // Doppeltipp oder beide Knöpfe: nur ein Aufruf, GA4 nur einmal.
+		this.adding = true;
+		var $btn = this.$add.prop('disabled', true).addClass('loading');
 		var $msg = this.$root.find('.ak-msg').removeClass('ak-error').text('');
 		var data = this.selection();
 		$.post(this.cfg.ajaxUrl, data).done(function (res) {
 			$msg.html(esc(res.data.message) + ' <a href="' + esc(self.cfg.cartUrl) + '">Zum Warenkorb</a>');
+			if (typeof res.data.count === 'number') { self.setCount(res.data.count); }
+			self.barMsgUntil = Date.now() + 5000;
+			self.barHint(res.data.message, 'ak-bar-ok');
+			setTimeout(function () { self.barHint(); }, 5100);
 			// Kein added_to_cart auslösen: sonst sendet das GA-Plugin add_to_cart doppelt.
 			$(document.body).trigger('wc_fragment_refresh');
 			self.trackCart(res.data);
 		}).fail(function (xhr) {
 			var m = xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data.message : 'Fehler beim Hinzufügen.';
 			$msg.addClass('ak-error').text(m);
+			self.barMsgUntil = Date.now() + 8000;
+			self.barHint(m, 'ak-bar-sperre');
+			setTimeout(function () { self.barHint(); }, 8100);
 			track('paket_fehler', { fehler: String(m).slice(0, 100), waffe_id: self.cfg.weapon.id });
 		}).always(function () {
-			$btn.prop('disabled', false).removeClass('loading');
+			self.adding = false;
+			$btn.removeClass('loading');
+			self.updateButton();
 		});
 	};
 

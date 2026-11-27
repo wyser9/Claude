@@ -5,6 +5,8 @@
  *    URL-Parameter: ?waffe=ID (Waffe vorwählen), ?teil=ID (Zubehör vorwählen),
  *    ?teile=ID,ID,… (ganze Zusammenstellung wiederherstellen, Teilen-Link ab 1.0.9), ?einstieg=… (Einstieg für GA4).
  *  - Knopf auf Produktseiten: Waffe → «Diese Waffe konfigurieren», Zubehör → «Im Konfigurator ansehen».
+ *  - Ab 1.0.11: feste Handy-Leiste (bis 860 px) mit Total, Paket-Knopf und Warenkorb-Link; der schwebende
+ *    Warenkorb-Knopf des Fly-Cart-Plugins wird auf der Konfigurator-Seite ausgeblendet oder über die Leiste geschoben.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,11 +15,74 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class AK_Frontend {
 
+	/**
+	 * Vorgabe «CSS-Selektor schwebender Warenkorb» (ab 1.0.11). Plugin «WooCommerce Modal Fly Cart + Ajax Add to Cart PRO»
+	 * (aThemeArt, Ordner woocommerce-modal-fly-cart-pro, 2.0.3): Knopf <div id="wcspc-count" class="wcspc-count wcspc-count-bottom-left">,
+	 * so im Quelltext von armatum.ch am 27.11.2026. Das Fly-Cart-Fenster selbst (#wcspc-area) bleibt unberührt.
+	 */
+	const FLYCART_DEFAULT = '#wcspc-count, .wcspc-count';
+
+	/** Breite, bis zu der die Handy-Leiste erscheint (gleich wie das einspaltige Layout). */
+	const BAR_MAX = 860;
+
 	public static function init() {
+		add_filter( 'body_class', array( __CLASS__, 'body_class' ) );
+		add_filter( 'woocommerce_add_to_cart_fragments', array( __CLASS__, 'cart_fragment' ) );
 		// Priorität 34: vor dem Knopf «Vorneigung berechnen» (Snippet 89, Priorität 35).
 		add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'product_button' ), 34 );
 		add_action( 'wc_ajax_ak_erwerb', array( __CLASS__, 'ajax_erwerb' ) );
 		add_shortcode( 'armatum_konfigurator', array( __CLASS__, 'shortcode' ) );
+	}
+
+	/** Body-Klasse ak-konfigurator-seite auf der Konfigurator-Seite bzw. jeder Seite mit dem Shortcode (JS setzt sie zusätzlich). */
+	public static function body_class( $classes ) {
+		if ( is_singular() ) {
+			$post = get_queried_object();
+			if ( $post instanceof WP_Post && ( (int) get_option( 'ak_page_id' ) === (int) $post->ID || has_shortcode( (string) $post->post_content, 'armatum_konfigurator' ) ) ) {
+				$classes[] = 'ak-konfigurator-seite';
+			}
+		}
+		return $classes;
+	}
+
+	/** Anzahl im Warenkorb (0, wenn kein Warenkorb geladen ist). */
+	public static function cart_count() {
+		return function_exists( 'WC' ) && WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
+	}
+
+	/** WooCommerce-Fragment: Zähler im Warenkorb-Link der Handy-Leiste. */
+	public static function cart_fragment( $fragments ) {
+		$fragments['span.ak-bar-count'] = '<span class="ak-bar-count">' . (int) self::cart_count() . '</span>';
+		return $fragments;
+	}
+
+	/** Selektor des schwebenden Warenkorb-Knopfs (Einstellung, sonst Vorgabe). Leer = nichts anpassen. */
+	public static function flycart_selector() {
+		$sel = get_option( 'ak_flycart_sel', null );
+		return null === $sel || false === $sel ? self::FLYCART_DEFAULT : self::clean_selector( $sel );
+	}
+
+	/** Nur Zeichen, die in einem Selektor vorkommen; nichts, was die Regel oder das style-Element verlassen könnte. */
+	public static function clean_selector( $sel ) {
+		$sel = preg_replace( '#[{}<;@/\\\\\r\n]#', '', (string) $sel );
+		return trim( preg_replace( '/\s+/', ' ', $sel ), " \t," );
+	}
+
+	/** CSS für die Handy-Leiste: schwebenden Warenkorb ausblenden (Vorgabe) oder über die Leiste schieben. */
+	public static function bar_css() {
+		$sel  = self::flycart_selector();
+		$mode = get_option( 'ak_flycart_mode', 'hide' );
+		$body = 'body.ak-konfigurator-seite.ak-has-bar';
+		$css  = '@media (max-width: ' . self::BAR_MAX . 'px) {';
+		if ( '' !== $sel ) {
+			// :is() übernimmt die Spezifität des Selektors (#wcspc-count) und schlägt damit die !important-Regeln des Plugins.
+			$css .= 'lift' === $mode
+				? $body . ' :is(' . $sel . ') { bottom: calc(var(--ak-bar-h, 96px) + 12px) !important; top: auto !important; transition: none !important; }'
+				: $body . ' :is(' . $sel . ') { display: none !important; }';
+		}
+		// Blocksy «Nach oben»-Knopf ebenfalls über die Leiste.
+		$css .= $body . ' .ct-back-to-top { bottom: calc(var(--ak-bar-h, 96px) + 12px) !important; }';
+		return $css . '}';
 	}
 
 	public static function page_url( $args = array() ) {
@@ -420,11 +485,13 @@ class AK_Frontend {
 			'erwerbUrl' => WC_AJAX::get_endpoint( 'ak_erwerb' ),
 			'reportUrl' => WC_AJAX::get_endpoint( 'ak_report' ),
 			'cartUrl'   => wc_get_cart_url(),
+			'cartCount' => self::cart_count(),
 			'currency'  => get_woocommerce_currency_symbol(),
 			'decimals'  => wc_get_price_decimals(),
 		);
 
 		self::assets();
+		wp_add_inline_style( 'ak-front', self::bar_css() );
 		$change_url = remove_query_arg( array( 'waffe', 'teil', 'teile' ) );
 		$erwerb     = AK_Erwerb::for_selection( $weapon_id, array() );
 

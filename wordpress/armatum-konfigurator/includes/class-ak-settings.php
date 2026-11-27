@@ -1,6 +1,7 @@
 <?php
 /**
- * Einstellungen unter WooCommerce → Konfigurator: Konfigurator-Seite und Testmodus.
+ * Einstellungen unter WooCommerce → Konfigurator: Konfigurator-Seite, Testmodus, Vorwärm-Liste,
+ * schwebender Warenkorb auf dem Handy (ab 1.0.11).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -54,6 +55,12 @@ class AK_Settings {
 		// Ab 1.0.9: feste Vorwärm-Liste (z.B. Kampagnenwaffen), wird immer zuerst vorgerechnet.
 		$warm = isset( $_POST['ak_warm_fixed'] ) ? AK_Data::parse_warm_ids( sanitize_text_field( wp_unslash( $_POST['ak_warm_fixed'] ) ) ) : array();
 		update_option( 'ak_warm_fixed', $warm, false );
+		// Ab 1.0.11: schwebender Warenkorb-Knopf (Fly Cart) auf der Konfigurator-Seite neben der Handy-Leiste.
+		if ( isset( $_POST['ak_flycart_sel'] ) ) {
+			update_option( 'ak_flycart_sel', AK_Frontend::clean_selector( sanitize_text_field( wp_unslash( $_POST['ak_flycart_sel'] ) ) ) );
+		}
+		$mode = isset( $_POST['ak_flycart_mode'] ) ? sanitize_key( $_POST['ak_flycart_mode'] ) : 'hide';
+		update_option( 'ak_flycart_mode', 'lift' === $mode ? 'lift' : 'hide' );
 		$map = array();
 		$raw = isset( $_POST['ak_cat'] ) && is_array( $_POST['ak_cat'] ) ? wp_unslash( $_POST['ak_cat'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 		foreach ( array_keys( AK_Auto::TARGETS ) as $t ) {
@@ -148,6 +155,19 @@ class AK_Settings {
 							}
 							?>
 							</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ak_flycart_sel">CSS-Selektor schwebender Warenkorb</label></th>
+						<td>
+							<?php $ak_mode = get_option( 'ak_flycart_mode', 'hide' ); ?>
+							<input type="text" class="regular-text code" id="ak_flycart_sel" name="ak_flycart_sel" value="<?php echo esc_attr( AK_Frontend::flycart_selector() ); ?>" placeholder="<?php echo esc_attr( AK_Frontend::FLYCART_DEFAULT ); ?>">
+							<p>
+								<label><input type="radio" name="ak_flycart_mode" value="hide" <?php checked( 'lift' !== $ak_mode ); ?>> ausblenden</label>
+								&nbsp; <label><input type="radio" name="ak_flycart_mode" value="lift" <?php checked( 'lift' === $ak_mode ); ?>> über die Leiste schieben</label>
+							</p>
+							<p class="description">Nur auf der Konfigurator-Seite und nur auf dem Handy (bis <?php echo (int) AK_Frontend::BAR_MAX; ?> px), solange die feste Leiste mit Total, «Paket in den Warenkorb» und Warenkorb-Link sichtbar ist.
+							Vorgabe <code><?php echo esc_html( AK_Frontend::FLYCART_DEFAULT ); ?></code> = Knopf des Plugins «WooCommerce Modal Fly Cart PRO» (aThemeArt). Mehrere Selektoren mit Komma trennen, leer = nichts anpassen. Wechselt das Plugin: im Browser Rechtsklick auf den Knopf → Untersuchen, id oder class hier eintragen.</p>
 						</td>
 					</tr>
 				</table>

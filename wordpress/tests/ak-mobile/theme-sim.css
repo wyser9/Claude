@@ -16,4 +16,10 @@ textarea { height: auto; padding: 12px; }
 input[type="radio"] { width: 16px; height: 16px; margin: 0; }
 .button, button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 5px 20px; border: none; border-radius: 3px; background: #2872fa; color: #fff; font-size: 15px; font-weight: 500; cursor: pointer; }
 .button:disabled { opacity: .5; }
-.ct-floating-cart { position: fixed; left: 45px; bottom: 50px; z-index: 50; width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; background: #4b5a3d; color: #fff; border-radius: 4px; text-decoration: none; }
+/* Nachbau Fly-Cart-Knopf (Plugin woocommerce-modal-fly-cart-pro 2.0.3, Werte wie live: unten links 40 px, 60x60, Farben aus der Plugin-Einstellung) */
+.wcspc-area { display: none; }
+.wcspc-count { position: fixed; left: 40px; bottom: 40px; z-index: 99999997; display: block; width: 60px; height: 60px; border-radius: 4px; box-shadow: rgba(0, 0, 0, .15) 0 0 20px; }
+.wcspc-count i::before { content: '\1F6D2'; display: block; font-style: normal; font-size: 24px; line-height: 60px; text-align: center; filter: grayscale(1) brightness(3); }
+.wcspc-count span { position: absolute; top: -10px; right: -10px; width: 28px; height: 28px; border-radius: 50%; font-size: 12px; line-height: 28px; text-align: center; }
+#wcspc-count.wcspc-count { background: #4e5743 !important; color: #fff !important; }
+#wcspc-count.wcspc-count span { background: #a7a7a7 !important; color: #fff !important; }

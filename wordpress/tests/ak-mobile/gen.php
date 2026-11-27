@@ -6,6 +6,8 @@
  *   NODE_PATH=$(npm root -g) node wordpress/tests/ak-mobile/check.js /tmp/ak-mobile.html nachher /tmp
  * Drittes Argument 1 = mit theme-sim.css (Nachbildung typischer Blocksy-/WooCommerce-Regeln, nicht das Original).
  * jQuery: /usr/share/javascript/jquery/jquery.min.js oder Umgebungsvariable AK_JQUERY.
+ * Optionen als JSON in AK_OPTS, z.B. AK_OPTS='{"ak_flycart_mode":"lift"}'.
+ * Ab 1.0.11: Nachbau des schwebenden Warenkorb-Knopfs von «WooCommerce Modal Fly Cart PRO» (Markup wie live, CSS in theme-sim.css).
  */
 define( 'ABSPATH', __DIR__ . '/' );
 $plugin = realpath( $argv[1] );
@@ -16,6 +18,9 @@ define( 'AK_URL', '' );
 define( 'AK_T', 'file://' . __DIR__ . '/' );
 define( 'AK_VERSION', 'x' );
 function add_action() {}
+function add_filter() {}
+$GLOBALS['inline_css'] = '';
+function wp_add_inline_style( $h, $css ) { $GLOBALS['inline_css'] .= $css; }
 function add_shortcode() {}
 function wp_enqueue_style() {}
 function wp_enqueue_script() {}
@@ -28,7 +33,7 @@ function remove_query_arg() { return '?'; }
 function wc_get_cart_url() { return '/warenkorb/'; }
 function get_woocommerce_currency_symbol() { return 'CHF'; }
 function wc_get_price_decimals() { return 2; }
-function get_option( $k, $d = false ) { return 'yes'; }
+function get_option( $k, $d = false ) { $o = array( 'ak_testmode' => 'yes' ); $o = array_merge( $o, json_decode( (string) getenv( 'AK_OPTS' ), true ) ?: array() ); return array_key_exists( $k, $o ) ? $o[ $k ] : $d; }
 class WC_AJAX { public static function get_endpoint( $e ) { return '/?wc-ajax=' . $e; } }
 
 function price_html( $reg, $sale = null ) {
@@ -142,9 +147,13 @@ $html  = AK_Frontend::render( 1, 0, array( 102 ) );
 
 $theme_css = $theme ? file_get_contents( __DIR__ . '/theme-sim.css' ) : '';
 $page      = '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' .
-	'<link rel="stylesheet" href="file://' . $plugin . '/assets/konfigurator.css"><style>' . $theme_css . '</style></head><body>' .
+	'<link rel="stylesheet" href="file://' . $plugin . '/assets/konfigurator.css"><style>' . $theme_css . '</style><style id="ak-front-inline-css">' . $GLOBALS['inline_css'] . '</style></head><body>' .
 	'<main class="site-main"><div class="ct-container"><article class="entry-content"><h1>Konfigurator</h1>' . $html . '</article></div></main>' .
-	'<a class="ct-floating-cart" href="#">10</a>' .
-	'<script src="file://' . ( getenv( 'AK_JQUERY' ) ?: '/usr/share/javascript/jquery/jquery.min.js' ) . '"></script><script src="file://' . $plugin . '/assets/konfigurator.js"></script></body></html>';
+	'<div id="wcspc-area" class="wcspc-area wcspc-effect-01"></div><div id="wcspc-count" class="wcspc-count wcspc-count-bottom-left"><i class="wcspc-icon-cart1"></i><span id="wcspc-count-number">10</span></div>' .
+	'<script src="file://' . ( getenv( 'AK_JQUERY' ) ?: '/usr/share/javascript/jquery/jquery.min.js' ) . '"></script>' .
+	// Server-Antworten nachgebildet (asynchron wie echt): Erwerb und Paket in den Warenkorb.
+	'<script>(function($){var o=$.post;window.__akPosts=0;$.post=function(u){var d=$.Deferred();if(/ak_erwerb/.test(u)){setTimeout(function(){d.resolve({success:true,data:{html:' . json_encode( AK_Erwerb::html( array() ) ) . ',satz:"",sperre:false}});},30);return d.promise();}' .
+	'if(/ak_add_package/.test(u)){window.__akPosts++;setTimeout(function(){d.resolve({success:true,data:{message:"Paket liegt im Warenkorb.",count:13,package:"p1",value:3389,lines:[{id:1,name:"Waffe",price:2490,role:"waffe"},{id:102,name:"Optik",price:899,role:"optik"}]}});},80);return d.promise();}return o.apply(this,arguments);};})(jQuery);</script>' .
+	'<script src="file://' . $plugin . '/assets/konfigurator.js"></script></body></html>';
 file_put_contents( $out, $page );
 echo "ok\n";
