@@ -177,7 +177,8 @@ Story-Highlights (Wiederladen, Tests, Events, FAQ).
 Kurz und konkret. Bei Plänen und Posts: übersichtliche Tabelle oder Liste,
 fertige Captions zum Kopieren, und am Ende eine Zeile «Nächster Schritt».
 
-## 4g. Facebook parallel (Inhaber 19.11.2026: Variante 1)
+## 4g. Facebook parallel (Inhaber 19.11.2026: Variante 1; 27.11.2026: nur spiegeln)
+- **Inhaber 27.11.2026: Facebook wird nur noch gespiegelt, kein eigener Aufwand.** Keine eigenen Facebook-Beiträge, keine eigenen Texte oder Grafiken nur für Facebook; nur den Instagram-Feed-Beitrag 1:1 übernehmen (Link statt «Link in der Bio» ist die einzige Anpassung).
 - Jeder Instagram-**Feed-Beitrag** geht zusätzlich auf die Facebook-Seite «Armatum GmbH» (page_id 130239823495660), Composio-Konto «armatum» (Toolkit facebook).
 - Karussell → FACEBOOK_CREATE_MULTI_PHOTO_POST (photo_urls = dieselben raw-URLs), Einzelbild → FACEBOOK_CREATE_PHOTO_POST. Text = Instagram-Caption; statt «Link in der Bio» den direkten Produktlink einsetzen (auf Facebook klickbar).
 - Storys nicht auf Facebook (Schnittstelle unterstützt keine Page-Storys).
