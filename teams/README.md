@@ -5,7 +5,7 @@ Vier Teams berichten direkt an den Inhaber. Gemeinsame Skills für alle: `armatu
 | Team | Leitung (Agent) | Mitarbeiter |
 | --- | --- | --- |
 | Marketing | Mark (`marketing-mark`) | Irene (`insta-irene`), Tina (`marketing-tina`), Nora (`marketing-nora`), Anna (`marketing-anna`) |
-| Produkte | Paul (`produkte-paul`) | Walter (`produkte-walter`), Tessa (`produkte-tessa`), Gian (`produkte-gian`) |
+| Produkte | Paul (`produkte-paul`) | Walter (`produkte-walter`), Tessa (`produkte-tessa`), Gian (`produkte-gian`), Mike (`produkte-mike`) |
 | Onlineshop | Salome (`shop-salome`) | Dana (`shop-dana`), Sina (`shop-sina`), Simon (`shop-simon`), Theo (`shop-theo`), Ivo (`shop-ivo`) |
 | Konfigurator | Karl (`konfig-karl`) | Ruedi (`konfig-ruedi`), Dario (`konfig-dario`), Kai (`konfig-kai`) |
 
