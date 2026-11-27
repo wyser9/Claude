@@ -161,7 +161,7 @@ Der Inhaber will, dass neue Produkte und Änderungen im Shop geprüft und – wo
 ## Erwerbsregeln (Inhaber, 17.10.2026 – WG/WV)
 
 - **Magazinkapazität** (nur dieser Teil der Regeln): Faustfeuerwaffen bis und mit **20 Schuss** → **WES**; ab 21 Schuss → Sportschützen-Nachweis bzw. Ausnahmebewilligung (klein oder gross). Handfeuerwaffen (Gewehre) bis und mit **10 Schuss** → **WES**; darüber → Sportschützen-Nachweis bzw. Ausnahmebewilligung.
-- Es gibt **weitere Regeln** (z. B. Länge der Waffe, Bauart). Nicht selbst herleiten: Die Angabe **«Erwerbsbedingungen» im Shop stammt von Spowag und gilt als verlässlich** – diese übernehmen.
+- Es gibt **weitere Regeln** (z. B. Länge der Waffe, Bauart). Erwerbsbedingungen werden **selbst aus WG und WV hergeleitet** (Inhaber, 27.11.2026). Angaben von Grossisten wie Spowag und anderen Shops immer hinterfragen; bei Unstimmigkeit die Juristin fragen oder den Inhaber entscheiden lassen.
 - **«WHB» (Waffenhandelsbewilligung) nie nennen** – in keinem Text, Post, Newsletter oder Kommentar. Steht im Shop «… + WHB», nur den Teil davor übernehmen.
 - **Unsicher? Den Inhaber fragen**, nicht raten.
 - Gesetzestexte im Repo: `recht/WG-SR-514.54-2023-09-01.pdf` (Waffengesetz) und `recht/WV-SR-514.541-2026-10-01.pdf` (Waffenverordnung), Volltext als `recht/WG.txt` / `recht/WV.txt`.
