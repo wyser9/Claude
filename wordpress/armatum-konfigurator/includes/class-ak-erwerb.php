@@ -20,7 +20,11 @@
  *         Fehlt ein Wert (oder ist die Waffenlänge nur aus dem Bild geschätzt und nicht klar unter 60 cm):
  *         «Abklärung durch Armatum». Nie stillschweigend erlauben.
  *      R5 Langwaffe ohne Schulterstütze (Art. 33 Abs. 3 WV): gesperrt.
- *      R6 Klapp-/Teleskopschaft an Repetierer: «Abklärung durch Armatum» (Pascal 17.11.: dann WES, mit Julia klären).
+ *      R6 Repetierer mit Klapp-/Teleskopschaft oder Brace (Fremd- oder Originalschaft, Waffenfeld «schaft_art»):
+ *         WES + Ausweiskopie (Pascal 17.11., Julia C5: ohne WES nur Handrepetierer nach Art. 10 Abs. 1 Bst. b WG,
+ *         Art. 19 Abs. 1 WV). Bauart unbekannt: «Abklärung durch Armatum».
+ *      R4/R6 gelten auch für die Waffe selbst, wenn ihr Feld «schaft_art» klapp/teleskop sagt (z.B. AXSR).
+ *  IR-Strahler, Laserrail-Montagen und Fernschalter sind kein Laser (Julia C1).
  *  - Alle übrigen Teile: ihre eigene Bedingung aus dem Attribut.
  *
  * Die Zusammenfassung zeigt nie weniger als die strengste Bedingung eines Teils (UWG Art. 3 Abs. 1 Bst. b).
@@ -59,6 +63,7 @@ class AK_Erwerb {
 	const TEXT_AUSWEIS = 'gültige Ausweiskopie (Pass/ID)';
 	const TEXT_AB      = 'Ausnahmebewilligung (Sportschützen: Kleine Ausn.-Bewilligung Sportschütze, Sammler: Ausnahmebewilligung klein)';
 	const TEXT_KANTON  = 'kantonale Ausnahmebewilligung';
+	const TEXT_WES     = 'WES (Waffenerwerbschein)';
 	const ABKLAERUNG   = 'Abklärung durch Armatum';
 
 	/** Art. 5 Abs. 1 Bst. d WG: 60 cm. */
@@ -85,7 +90,7 @@ class AK_Erwerb {
 	);
 
 	/** Lampen mit Laser am Namen erkennen (Feld «laser» geht vor). */
-	const LASER_RE = '/laser|\bX400|\bTLR[- ]?(2|4|6|8)(?!\d)|\bDBAL|\bPEQ|\bNGAL|\bMAWL|\bLA-5|\bPERST/i';
+	const LASER_RE = '/laser(?!\s*-?\s*(rail|schiene))|\bX400|\bTLR[- ]?(2|4|6|8)(?!\d)|\bDBAL|\bPEQ|\bNGAL|\bMAWL|\bLA-5|\bPERST/i';
 	/** Nachtsicht-/Wärmebildzielgeräte (Optik): gleich wie Laser (Julia Ziffer 1). */
 	const NACHTSICHT_RE = '/nachtsicht|w(ä|ae)rmebild|thermal|night\s*vision/i';
 
@@ -305,6 +310,8 @@ class AK_Erwerb {
 			'laenge_ohne_schaft' => $len,
 			'laenge_geschaetzt'  => $est,
 			'laenge_eingeklappt' => self::mm( $weapon_id, 'laenge_eingeklappt' ),
+			// Originalschaft der Waffe: nur das Feld (kein Raten aus dem Namen der Waffe).
+			'schaft_art'         => isset( self::SCHAFT_ARTEN[ (string) AK_Data::meta( $weapon_id, 'schaft_art' ) ] ) ? (string) AK_Data::meta( $weapon_id, 'schaft_art' ) : '',
 		);
 	}
 
@@ -438,11 +445,24 @@ class AK_Erwerb {
 			}
 		}
 
-		// R4 / R6: Klapp- oder Teleskopschaft.
-		if ( $stock && $hand && in_array( $stock['schaft_art'], array( 'klapp', 'teleskop', '' ), true ) ) {
-			if ( 'repetierer' === $w['funktion'] && '' !== $stock['schaft_art'] ) {
-				$abkl[] = 'Klapp- oder Teleskopschaft an einem Repetierer.';
-			} elseif ( $semi ) {
+		// R6: Repetierer mit Klapp-/Teleskopschaft oder Brace = WES (fremder oder eigener Schaft).
+		$folding = in_array( $stock ? $stock['schaft_art'] : '', array( 'klapp', 'teleskop' ), true ) || ( $stock && $stock['brace'] );
+		$wes_why = 'Repetierer mit Klapp- oder Teleskopschaft: ohne WES gibt es nur Handrepetierer mit festem Schaft (Art. 10 Abs. 1 Bst. b WG, Art. 19 Abs. 1 WV).';
+		if ( 'repetierer' === $w['funktion'] ) {
+			if ( $stock && 'ohne' !== $stock['schaft_art'] ) {
+				if ( $folding ) {
+					$raise( self::WES, self::TEXT_WES, $wes_why );
+				} elseif ( '' === $stock['schaft_art'] ) {
+					$abkl[] = 'Bauart der Schulterstütze (fest, Teleskop, Klapp) ist nicht erfasst.';
+				}
+			} elseif ( ! $stock && in_array( $w['schaft_art'], array( 'klapp', 'teleskop' ), true ) ) {
+				$raise( self::WES, self::TEXT_WES, $wes_why );
+			}
+		}
+
+		// R4: Klapp- oder Teleskopschaft (Fremdschaft) an Halbautomat.
+		if ( $stock && $hand && in_array( $stock['schaft_art'], array( 'klapp', 'teleskop', '' ), true ) && 'repetierer' !== $w['funktion'] ) {
+			if ( $semi ) {
 				if ( '' === $stock['schaft_art'] ) {
 					$abkl[] = 'Bauart der Schulterstütze (fest, Teleskop, Klapp) ist nicht erfasst.';
 				} elseif ( ! $stock['eingeklappt_funktion'] ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement
@@ -472,6 +492,8 @@ class AK_Erwerb {
 		// R4 Originalschaft: Waffe mit eigenem Klapp-/Teleskopschaft, eingeklappt laut Hersteller unter 60 cm.
 		if ( ! $stock && $hand && $semi && $w['laenge_eingeklappt'] > 0 && $w['laenge_eingeklappt'] < self::MIN_LAENGE ) {
 			$raise( self::KANTON, self::TEXT_KANTON, 'Mit eingeklapptem bzw. eingeschobenem Originalschaft ist die Waffe ' . round( $w['laenge_eingeklappt'] / 10 ) . ' cm lang, kürzer als 60 cm (Art. 5 Abs. 1 Bst. d WG). Die Ausnahme für Sportschützen gilt dafür nicht.' );
+		} elseif ( ! $stock && $hand && $semi && $w['laenge_eingeklappt'] <= 0 && in_array( $w['schaft_art'], array( 'klapp', 'teleskop' ), true ) ) {
+			$abkl[] = 'Die Gesamtlänge mit eingeklapptem bzw. eingeschobenem Originalschaft ist nicht erfasst (Grenze 60 cm).';
 		}
 		if ( $brace_note && '' === $waffe['grund'] ) {
 			$waffe['grund'] = trim( $brace_note );

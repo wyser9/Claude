@@ -15,6 +15,7 @@ function wp_specialchars_decode( $s ) { return html_entity_decode( (string) $s, 
 function wp_strip_all_tags( $s ) { return strip_tags( (string) $s ); }
 function esc_html( $s ) { return htmlspecialchars( (string) $s, ENT_QUOTES, 'UTF-8' ); }
 function is_wp_error( $x ) { return false; }
+function absint( $x ) { return abs( (int) $x ); }
 function get_post_type( $id ) { return isset( $GLOBALS['ak_test_products'][ $id ] ) ? 'product' : false; }
 function wp_get_post_parent_id( $id ) { return 0; }
 function get_the_title( $id ) { return $GLOBALS['ak_test_products'][ $id ]['name'] ?? ''; }
@@ -180,11 +181,20 @@ check( 'Fremdschaft +26 mm an 640 mm: 67 cm, keine Abklärung', run( 14, array( 
 check( 'Fremdschaft +26 mm an 520 mm: kantonal', run( 3, array( 118 ) )['stufe'], AK_Erwerb::KANTON );
 check( 'Fremdschaft ohne Wert an Waffe mit Originallänge: Abklärung', has( run( 13, array( 109 ) )['abklaerung'], 'keine belegte Länge' ), true );
 
-// 5. Repetierer + Klapp/Teleskop: Abklärung, keine Längenregel.
+// 5. Repetierer mit Klapp-/Teleskopschaft oder Brace = WES (Julia C5), auch Originalschaft (Waffenfeld schaft_art).
 $r = run( 4, array( 108 ) );
-check( 'AXSR + Teleskop: Abklärung Repetierer', has( $r['abklaerung'], 'Repetierer' ), true );
-check( 'AXSR + Teleskop: Stufe Strafregister', $r['stufe'], AK_Erwerb::STRAF );
+check( 'AXSR + Teleskop: WES', $r['stufe'], AK_Erwerb::WES );
+check( 'AXSR + Teleskop: keine Abklärung', $r['abklaerung'], array() );
+check( 'AXSR + Teleskop: Satz', $r['satz'], 'Für diese Zusammenstellung brauchst du mindestens: WES (Waffenerwerbschein) + gültige Ausweiskopie (Pass/ID).' );
+check( 'AXSR + Brace (fest): WES', run( 4, array( 112 ) )['stufe'], AK_Erwerb::WES );
+check( 'AXSR + PRS fest: bleibt Strafregister', run( 4, array( 110 ) )['stufe'], AK_Erwerb::STRAF );
+check( 'AXSR + Schaft unbekannt: Abklärung', has( run( 4, array( 111 ) )['abklaerung'], 'Bauart' ), true );
 check( 'AXSR ohne Schaft: Satz mit Vertrag + Strafregister', run( 4, array( 117 ) )['satz'], 'Für diese Zusammenstellung brauchst du mindestens: Auszug aus dem zentralen Strafregister (nicht älter als 3 Monate) + schriftlicher Vertrag, ab 18 Jahren + gültige Ausweiskopie (Pass/ID).' );
+product( 15, 'Accuracy AXSR (Originalschaft klappbar)', array( 'role' => 'waffe', 'plattform' => 'repetierer', 'schaft_art' => 'klapp' ), array( 'pa_kaliber' => '.338 Lapua Magnum' ), array( 'Repetierer' ), array( 11242, 271, 272 ) );
+check( 'AXSR Originalklappschaft: WES', run( 15, array( 117 ) )['stufe'], AK_Erwerb::WES );
+check( 'AXSR Originalklappschaft + fester Fremdschaft: Strafregister', run( 15, array( 110 ) )['stufe'], AK_Erwerb::STRAF );
+product( 16, 'Halbautomat mit Originalklappschaft ohne Länge', array( 'role' => 'waffe', 'plattform' => 'ak', 'schaft_art' => 'klapp' ), array( 'pa_kaliber' => '7.62x39 mm', 'pa_magazinkapazitaet' => '10 Schuss' ), $semi, array( 617, 272 ) );
+check( 'Halbautomat Originalklappschaft ohne Länge: Abklärung', has( run( 16, array( 202 ) )['abklaerung'], 'Originalschaft ist nicht erfasst' ), true );
 
 // 6. Brace/Schaft an Faustfeuerwaffe = Handfeuerwaffe; Magazin > 10 = AB.
 $r = run( 2, array( 112 ) );
@@ -213,6 +223,25 @@ $r = run( 2, array( 116 ) );
 check( 'Teil mit WES: eigene Zeile', count( $r['zeilen'] ), 2 );
 $r = run( 8, array( 202 ) );
 check( 'Waffe ohne Attribut: Abklärung', has( $r['abklaerung'], 'keine Erwerbsbedingung' ), true );
+
+// 9b. IR-Strahler, Laserrail, Fernschalter und Lampen ohne Laser sind kein Laser (Julia C1); Namen wie im Shop.
+foreach ( array(
+	301 => 'SureFire X300V-B Hybrid Weisslicht & IR Waffenlampe Schwarz',
+	302 => 'SureFire Mini Infrared Scout Light Pro Schwarz – Waffenlampe Weisslicht & Infrarot',
+	303 => 'SureFire M640V Infrared Scout Light Pro Waffenlampe Schwarz Weisslicht & Infrarot',
+	304 => 'Lampenkopf IR / Weiss SureFire KM1 3V Schwarz',
+	305 => 'Holosun P.ID',
+	306 => 'Glock Tactical Lampe GTL II',
+	307 => 'Acheron M-LOK Laserrail 85 mm',
+	308 => 'SureFire Fernschalter SR07-D-IT',
+) as $id => $name ) {
+	$z( $id, $name, 'lampe' );
+	check( "kein Laser: {$name}", AK_Erwerb::is_laser( $id ), false );
+}
+$z( 309, 'Holosun IRIS-3-GR-IR – Dual Laser Zielgerät Grün & IR', 'lampe' );
+check( 'IRIS-3 Dual Laser = Laser', AK_Erwerb::is_laser( 309 ), true );
+check( 'IR-Strahler an Glock: bleibt WES', run( 2, array( 301 ) )['stufe'], AK_Erwerb::WES );
+check( 'Vorwärm-IDs', AK_Data::parse_warm_ids( '13269, 32948;13269 abc 0' ), array( 13269, 32948 ) );
 
 // 10. Texte je Teil und Terms.
 check( 'Text Sportschütze oder Sammler', AK_Erwerb::terms_text( array( 649 => AK_TEST_TERMS[649], 10794 => AK_TEST_TERMS[10794], 272 => AK_TEST_TERMS[272] ) ), 'Kleine Ausn.-Bewilligung Sportschütze oder Ausnahmebewilligung klein (Sammler)' );

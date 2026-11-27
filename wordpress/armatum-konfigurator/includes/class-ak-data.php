@@ -172,12 +172,35 @@ class AK_Data {
 		update_option( 'ak_visits', $visits, false );
 	}
 
-	/** Waffen zum Vorwärmen: die meistbesuchten zuerst, aufgefüllt mit weiteren Waffen bis WARM_TOP. */
+	/** Feste Vorwärm-Liste (Option ak_warm_fixed, Einstellungen), ab 1.0.9. */
+	public static function warm_fixed() {
+		$ids = get_option( 'ak_warm_fixed', array() );
+		return is_array( $ids ) ? array_values( array_filter( array_map( 'intval', $ids ) ) ) : array();
+	}
+
+	/** «13269, 32948» → array( 13269, 32948 ), höchstens 50 IDs. */
+	public static function parse_warm_ids( $raw ) {
+		$ids = array_values( array_unique( array_filter( array_map( 'absint', preg_split( '/[\s,;]+/', (string) $raw ) ) ) ) );
+		return array_slice( $ids, 0, 50 );
+	}
+
+	/**
+	 * Waffen zum Vorwärmen: zuerst die feste Liste (Kampagnenwaffen), dann die meistbesuchten,
+	 * aufgefüllt mit weiteren Waffen bis WARM_TOP.
+	 */
 	public static function warm_list() {
 		if ( ! class_exists( 'AK_Frontend' ) ) {
 			return array();
 		}
-		$weapons = AK_Frontend::weapons();
+		$fixed = array_values(
+			array_filter(
+				self::warm_fixed(),
+				function ( $id ) {
+					return 'waffe' === self::role( $id ) && self::is_ready( $id );
+				}
+			)
+		);
+		$weapons = array_values( array_diff( AK_Frontend::weapons(), $fixed ) );
 		$visits  = get_option( 'ak_visits', array() );
 		$visits  = is_array( $visits ) ? $visits : array();
 		$order   = array_flip( $weapons ); // Bei gleich vielen Besuchen: alphabetisch wie in der Waffenauswahl.
@@ -189,7 +212,7 @@ class AK_Data {
 				return $va !== $vb ? $vb - $va : $order[ $a ] - $order[ $b ];
 			}
 		);
-		return array_slice( $weapons, 0, self::WARM_TOP );
+		return array_merge( $fixed, array_slice( $weapons, 0, self::WARM_TOP ) );
 	}
 
 	/** Hintergrund (WP-Cron): Optionen der meistbesuchten Waffen vorrechnen, in Etappen von höchstens 20 Sekunden. */

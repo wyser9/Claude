@@ -134,6 +134,8 @@ class AK_Rest {
 			$out['magazin']            = AK_Erwerb::magazine( $id );
 			$out['laenge_ohne_schaft'] = round( $len[0] );
 			$out['laenge_geschaetzt']  = $len[1];
+			$out['laenge_eingeklappt'] = (string) AK_Data::meta( $id, 'laenge_eingeklappt' );
+			$out['schaft_art']         = (string) AK_Data::meta( $id, 'schaft_art' );
 		} elseif ( 'schaft' === $g ) {
 			$f                         = AK_Erwerb::part_facts( $id );
 			$out['schaft_art']         = $f['schaft_art'];

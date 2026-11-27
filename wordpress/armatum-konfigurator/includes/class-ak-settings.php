@@ -51,6 +51,9 @@ class AK_Settings {
 		check_admin_referer( 'ak_settings' );
 		update_option( 'ak_page_id', isset( $_POST['ak_page_id'] ) ? absint( $_POST['ak_page_id'] ) : 0 );
 		update_option( 'ak_testmode', empty( $_POST['ak_testmode'] ) ? 'no' : 'yes' );
+		// Ab 1.0.9: feste Vorwärm-Liste (z.B. Kampagnenwaffen), wird immer zuerst vorgerechnet.
+		$warm = isset( $_POST['ak_warm_fixed'] ) ? AK_Data::parse_warm_ids( sanitize_text_field( wp_unslash( $_POST['ak_warm_fixed'] ) ) ) : array();
+		update_option( 'ak_warm_fixed', $warm, false );
 		$map = array();
 		$raw = isset( $_POST['ak_cat'] ) && is_array( $_POST['ak_cat'] ) ? wp_unslash( $_POST['ak_cat'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 		foreach ( array_keys( AK_Auto::TARGETS ) as $t ) {
@@ -131,6 +134,20 @@ class AK_Settings {
 						<td>
 							<label><input type="checkbox" name="ak_testmode" value="1" <?php checked( $testmode ); ?>> Nur Admins und Shop-Manager sehen den Konfigurator</label>
 							<p class="description">Zum Freischalten für alle: Haken entfernen und die Seite veröffentlichen.</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="ak_warm_fixed">Immer zuerst vorrechnen</label></th>
+						<td>
+							<?php $ak_warm = AK_Data::warm_fixed(); ?>
+							<input type="text" class="regular-text" id="ak_warm_fixed" name="ak_warm_fixed" value="<?php echo esc_attr( implode( ', ', $ak_warm ) ); ?>" placeholder="z.B. 13269, 32948">
+							<p class="description">Produkt-IDs von Waffen (kommagetrennt), z.B. die Kampagnenwaffen. Sie werden nach jeder Änderung vor den meistbesuchten Waffen vorgerechnet.
+							<?php
+							foreach ( $ak_warm as $ak_wid ) {
+								echo '<br>' . (int) $ak_wid . ': ' . esc_html( get_the_title( $ak_wid ) ) . ( 'waffe' === AK_Data::role( $ak_wid ) ? ( AK_Data::options_cached( $ak_wid ) ? ' (vorgerechnet)' : ' (noch nicht vorgerechnet)' ) : ' (keine Waffe im Konfigurator, wird übersprungen)' );
+							}
+							?>
+							</p>
 						</td>
 					</tr>
 				</table>

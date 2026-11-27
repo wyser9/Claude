@@ -172,7 +172,15 @@ class AK_Admin {
 				<label>Länge ohne Schaft [mm]
 					<input type="text" name="ak[laenge_ohne_schaft]" value="<?php echo esc_attr( $v['laenge_ohne_schaft'] ); ?>" size="6" placeholder="<?php echo esc_attr( $ak_w_len[0] > 0 ? 'geschätzt ' . round( $ak_w_len[0] ) : '' ); ?>">
 				</label>
-				<?php if ( 'zubehoer' !== $v['role'] ) : // Gleicher Schlüssel wie beim Schaft, darum nur ein Feld je Rolle. ?>
+				<?php if ( 'zubehoer' !== $v['role'] ) : // Gleiche Schlüssel wie beim Schaft, darum nur ein Feld je Rolle. ?>
+				<label class="ak-only-waffe">Originalschaft
+					<select name="ak[schaft_art]">
+						<option value="">nicht angegeben</option>
+						<?php foreach ( array( 'fest', 'teleskop', 'klapp' ) as $sk3 ) : ?>
+							<option value="<?php echo esc_attr( $sk3 ); ?>" <?php selected( $v['schaft_art'], $sk3 ); ?>><?php echo esc_html( AK_Erwerb::SCHAFT_ARTEN[ $sk3 ] ); ?></option>
+						<?php endforeach; ?>
+					</select>
+				</label>
 				<label class="ak-w-eingeklappt">Gesamtlänge mit eingeklapptem Originalschaft [mm]
 					<input type="text" name="ak[laenge_eingeklappt]" value="<?php echo esc_attr( $v['laenge_eingeklappt'] ); ?>" size="6" placeholder="nur bei Klapp-/Teleskopschaft">
 				</label>
@@ -180,9 +188,10 @@ class AK_Admin {
 				<label>Magazin [Schuss]
 					<input type="text" name="ak[magazin]" value="<?php echo esc_attr( $v['magazin'] ); ?>" size="4" placeholder="<?php echo esc_attr( (string) ( AK_Erwerb::magazine( $post->ID ) ?: '' ) ); ?>">
 				</label>
-				<span class="description">Für die Erwerbs-Zusammenfassung. Länge ohne Schaft = Mündung bis Schaftaufnahme (hinteres Gehäuseende bzw. Ende Buffer Tube, Punkt «Schaftaufnahme»), inkl. fest montiertem Mündungsaufsatz. Leer = aus Messpunkten geschätzt (dann entscheidet das Plugin nur mit 10 cm Abstand zu 60 cm, sonst «Abklärung durch Armatum»). Gesamtlänge mit eingeklapptem Originalschaft: nur bei Klapp-/Teleskopschaft, Wert laut Waffenhersteller (eingeschoben bzw. eingeklappt). Magazin leer = Attribut «Magazinkapazität».</span>
+				<span class="description">Für die Erwerbs-Zusammenfassung. Länge ohne Schaft = Mündung bis Schaftaufnahme (hinteres Gehäuseende bzw. Ende Buffer Tube, Punkt «Schaftaufnahme»), inkl. fest montiertem Mündungsaufsatz. Leer = aus Messpunkten geschätzt (dann entscheidet das Plugin nur mit 10 cm Abstand zu 60 cm, sonst «Abklärung durch Armatum»). Originalschaft und Gesamtlänge eingeklappt: nur bei Klapp-/Teleskopschaft, Wert laut Waffenhersteller (eingeschoben bzw. eingeklappt). Repetierer mit Klapp-/Teleskopschaft = WES; Halbautomat ohne Längenangabe = «Abklärung durch Armatum». Magazin leer = Attribut «Magazinkapazität».</span>
 			</p>
 			<p class="ak-row ak-only-zubehoer">
+				<?php if ( 'zubehoer' === $v['role'] ) : ?>
 				<label>Schulterstütze: Bauart
 					<select name="ak[schaft_art]">
 						<option value="">automatisch (<?php echo esc_html( AK_Erwerb::SCHAFT_ARTEN[ AK_Erwerb::stock_type( $post->ID ) ] ?? 'unbekannt' ); ?>)</option>
@@ -191,6 +200,7 @@ class AK_Admin {
 						<?php endforeach; ?>
 					</select>
 				</label>
+				<?php endif; ?>
 				<?php if ( 'zubehoer' === $v['role'] ) : ?>
 				<label>Länge eingeklappt [mm]
 					<input type="text" name="ak[laenge_eingeklappt]" value="<?php echo esc_attr( $v['laenge_eingeklappt'] ); ?>" size="5">
