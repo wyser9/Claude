@@ -173,3 +173,13 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 - **Produktseiten-Knopf**: Priorität 34 (vor «Vorneigung berechnen»), Links mit `einstieg=produkt`, bei Waffen kein Knopf mehr, wenn die zwischengespeicherte Auswahl leer ist.
 - **Feste Vorwärm-Liste**: WooCommerce → Konfigurator → «Immer zuerst vorrechnen» (Option `ak_warm_fixed`, Waffen-IDs), z.B. Kampagnenwaffen. Sie werden nach jeder Änderung vor den 30 meistbesuchten Waffen vorgerechnet, die Einstellungsseite zeigt je ID, ob sie schon vorgerechnet ist.
 - **Last**: Sperre gegen gleichzeitiges Neuberechnen derselben Waffe; während ein Prozess rechnet, sehen andere die letzte Auswahl (der Warenkorb prüft immer frisch). Cache-Einträge 7 Tage statt 12 h (Gültigkeit regelt die Version). `?teil=` rechnet höchstens 3 s statt 8 s.
+
+## Neu in 1.0.10
+
+- **Handy-Layout** (Meldung Inhaber 27.11.: «Mobile ist es nicht optimal», Android 412 px):
+  - **Keine Überbreite mehr:** Ein langer Name im Schritt-Kopf (z.B. gewählte Optik, einzeilig mit «…») gab dem einspaltigen Raster seine volle Textbreite (`1fr` = mindestens Inhaltsbreite). Die Seite wurde dadurch bis rund 630 px breit, Suchfeld, Herstellerfilter und Karten waren rechts abgeschnitten (auch am Desktop ragte die rechte Spalte leicht über den Rahmen). Neu überall `minmax(0, 1fr)` bzw. `min-width: 0`, Kartentexte brechen um.
+  - **Vorschau nicht mehr über Karten und Preisen:** Die Vorschau war auch auf dem Handy `sticky`. Beim Scrollen liefen die Karten darunter durch; durchgestrichene Preise (`del`, vom Theme halbtransparent und damit in eigener Ebene) und der Text unter der Vorschau lagen übereinander. Bis 860 px steht die Vorschau jetzt fest oben in voller Breite, darunter die Schritte einspaltig. Die Bildebenen der Vorschau bleiben in ihrem eigenen Bereich (`isolation`), Vorschau-Block mit weissem Hintergrund.
+  - **Filterleiste** (Suchen, Alle Hersteller) bricht um statt zu überlaufen.
+  - **Bedienelemente mind. 44 px hoch:** Knöpfe, Suchfeld, Auswahl, Schritt-Köpfe, Karten, «Passt etwas nicht? Melden», «Je Teil»; «Link kopieren» und Meldung brechen um.
+  - Auf dem Handy weniger Innenabstand und 6em Abstand nach unten, damit schwebende Theme-Knöpfe (z.B. Warenkorb unten links) am Ende nichts verdecken.
+  - Prüfung: `wordpress/tests/ak-mobile/` (Testseite aus `AK_Frontend::render()` mit Beispieldaten, Playwright auf Pixel 7, 360×740 und Desktop 1440: keine Überbreite, keine Überlappung mit der Vorschau, Bedienelemente ≥ 44 px).
