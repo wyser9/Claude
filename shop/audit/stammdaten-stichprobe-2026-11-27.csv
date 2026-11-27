@@ -1,0 +1,331 @@
+﻿sku;name;befund
+SOT61000;Sig Sauer TANGO-MSR LPVO 1-6X24MM (SFP) Schwarz;Einheit/Schreibweise: 1-6X24MM statt 1-6x24 (gross X und MM)
+BMSMIL;MISSION FIRST TACTICAL AR-15 BATTLELINK MINIMALIST STOCK;"Titel komplett in GROSSBUCHSTABEN; englischer Titel"
+26811;AIM FIELD SPORTS Mod. 40 Gewehrfutteral grün;Markenname in GROSSBUCHSTABEN (AIM FIELD SPORTS, 7 Artikel in Stichprobe)
+(leer);German Tactical Systems Scout Stock;ohne SKU
+(leer);German Tactical Systems Breacher Stock;ohne SKU
+SORX14-;Sig Sauer Romeo-X Enclosed Compact;SKU endet mit Bindestrich (Tippfehler?)
+SOR21XXX;Sig Sauer Romeo 2;SKU mit Platzhalter XXX, nicht Hersteller-Nr.
+SOR21XXX-1;Sig Sauer Romeo 3 Max Pro;SKU mit Platzhalter XXX, nicht Hersteller-Nr.
+Shotkamgen4minischienenhalterung;Shotkam Gen4 Mini Schienenhalterung;SKU ist Freitext statt Hersteller-Nr.
+KO;Gummikappe für Ladehebel Stgw90;SKU nur 2 Zeichen, vermutlich keine Hersteller-Nr.
+SOR43X31;Sig Sauer Romeo4T;Schreibweise uneinheitlich (Romeo4T vs. Romeo 2)
+S540219130;Tikka Ace Handguard Weight Pair;englischer Titel (Tikka Ace Serie, mehrere)
+KN9069B;Springfield Armory Kuna 9mm Pistol;"englischer Titel; Gewicht 2.8 kg wie Standardwert B&T, prüfen"
+SOT65113;Sig Sauer TANGO6 5-30x56 FFP MRAD Milling Zielfernrohr;Marke im Titel «Sig Sauer», andere Titel «SIG Sauer» (Gross-/Kleinschreibung)
+546338;Matrize Hornady Match Grade Full Length Die 300 Prc (.308);Kaliberkürzel falsch geschrieben: «Prc» statt «PRC» (ebenso Wsm, Stw, Tcu, Arc, Ppc)
+546242;Matrize Hornady Match Grade Full Length Die 300 Wsm (.308);Kaliberkürzel falsch geschrieben: «Wsm» statt «WSM»
+546312;Hornady Series IV Specialty 2-Die Rifle Set 7X64 (.284);Kaliber mit gross X: «7X64» statt «7x64» (auch 7X61, 7X65R, 8X68S, 6.5X47)
+546358;Hornady Matrizensatz Series I 2-Die Rifle Set 308 Win (.308);Namensschema uneinheitlich: «Hornady Matrizensatz … 308 Win» vs. «Hornady 270 Win Matrizensatz …» vs. «Matrize Hornady …»
+046204;Hornady Match Grade Full Length Die 6mm Creedmoor (.243);Namensschema: ohne «Matrize», englischer Titel, Nachbarartikel mit «Matrize Hornady …»
+78006027;Holosun HE407C-GR X2 Reflexvisier – Green Dot  2 MOA  Solar Failsafe  Titanium Housing;doppelte Leerzeichen (Trennzeichen beim Import verloren, viele Holosun-Titel)
+78005945;Holosun HE407K-GR X2 Micro Reflexvisier – Green Dot  6 MOA  RMSc Footprint  Subcompact Pistolen;doppelte Leerzeichen
+78003552;Holosun HE503C-U-GR Elite Micro Red Dot Visier – Green Circle Dot  Solar Failsafe  Shake Awake;doppelte Leerzeichen
+78004016;Holosun HE530C-GR Green Circle Dot Reflexvisier Large Window Solar;mögliche Doublette zu 78004023 (gleiches Modell HE530C-GR, andere SKU)
+78004023;Holosun HE530C-GR Green Circle Dot Reflexvisier Solar Large Window;mögliche Doublette zu 78004016
+DB10BGFDE;"Diamond Back DB10 Sniper 18"" .308Win FDE";"Kaliber ohne Leerzeichen «.308Win» statt «.308 Win»; Gewicht 3.31 kg Standardwert"
+JACK545X39TAC;"WBP AK47 Jack Tactical 16"" 5.45x39mm";Gewicht 3.31 kg identisch bei allen WBP Jack/MiniJack/MidiJack (Standardwert, nicht Herstellerwert)
+7031028;Swiss P 9X19  ID-1 124gr/8.0g;"doppelte Leerzeichen; Kaliber «9X19» statt «9x19»"
+(leer);KRISS Vector SBR Gen2 Enhanced 9x19;ohne SKU (Waffe, Elternartikel)
+7800843;Holosun HM6X Magnifier 6x Vergrößerung Flip Mount;ß im Titel, richtig «Vergrösserung»
+78004122;Holosun HM3X Magnifier 3x Vergrößerung Flip Mount;ß im Titel, richtig «Vergrösserung»
+546336;Hornady Series IV Specialty 2-Die Handgun Set30 Luger (.308);Tippfehler «Set30 Luger» (fehlendes Leerzeichen)
+8604;Hornady Hülsen 204 RUGER;Kaliber in GROSSBUCHSTABEN («204 RUGER» statt «204 Ruger»)
+8618;Hornady Hülsen 224 VALKYRIE;"Kaliber in GROSSBUCHSTABEN; Grosspackung 8618B schreibt «224 Valkyrie»"
+86105;Hornady Hülsen 250 SAVAGE;Kaliber in GROSSBUCHSTABEN
+86725;Hornady Hülsen 300 H&H MAG;"Kaliber in GROSSBUCHSTABEN; 8685 schreibt «375 H&H Mag»"
+7020;Hornady Gas Checks 6MM;Einheit «6MM» statt «6mm» (ebenso 6.5MM, 7MM, 32 CAL/8MM, 22 CAL)
+6400;Hornady Gas Checks 00 BUCKSHOT .330 DIAMETER;Titel teilweise GROSSBUCHSTABEN, englisch
+86263;Hornady Hülsen 6.5X55;Kaliber «6.5X55» statt «6.5x55»
+8784;Hornady Hülsen 45-70 Govt, 50 Stück;Packungsangabe uneinheitlich («, 50 Stück» vs. «(50)» bei 8640, 86751)
+69455;Streamlight TLR-7 X USB Waffenlampe Schwarz;mögliche Doublette zu SL-69455-X «Streamlight TLR-7X mit wiederaufladbarer Batterie - Schwarz»
+SL-69455-X;Streamlight TLR-7X mit wiederaufladbarer Batterie - Schwarz;"mögliche Doublette zu 69455; SKU mit Präfix SL- und Suffix -X statt Hersteller-Nr."
+BT-69456-X;Streamlight TLR-7X mit wiederaufladbarer Batterie;SKU mit falschem Präfix BT- (B&T) bei Streamlight-Artikel
+BH 419001BBR;Blackhawk Omnivore Multifit Level 2 Holster für SureFire X300 RH;Doublette zu BH-419001BBR (SKU nur durch Leerzeichen/Bindestrich verschieden)
+BH-419001BBR;Blackhawk Omnivore Multifit Holster;Doublette zu «BH 419001BBR»
+DB200623;Burris Six Xe 3-18x56, 3P#4 ILLUM;Titelteil in GROSSBUCHSTABEN («ILLUM»)
+STPCP50013Z;Stoeger Airguns Magazin XM1 Bullpup 5.5mm, 9 Schuss;Gewicht 6666 = alter Platzhalterwert (wieder aufgetaucht)
+STPCP50012Z;Stoeger Airguns Magazin XM1 Bullpup 4.5mm, 11 Schuss;Gewicht 6666 = Platzhalterwert
+STPCP30012Z;Stoeger Airguns Magazin XM1 PCP 4.5mm, 9 Schuss;Gewicht 6666 = Platzhalterwert
+ST40103;Stoeger Airguns Zielscheiben 14x14cm, 100 Stück;Gewicht 6666 = Platzhalterwert
+T5700-1005;ERATAC ARCA-Rail für M-LOK Handschutz, 10 Nuten;gleiches Hauptbild bei 12 ERATAC-Artikeln (Sammelbild statt Artikelbild)
+390541;Hornady Hülsenhalter #1 - 308 Win, 30-06 Springfield, 8x57, 8x57JS, 8x57IS, 6.5x47;"gleiches Hauptbild bei 13 Hülsenhaltern; Gedankenstrich uneinheitlich (- vs. –)"
+T0540-0355;ERATAC Notvisierung Picatinny komplett, Standard, Korn 1.8mm;Einheit ohne Leerzeichen «1.8mm», andere Titel «25 mm» (G+E)
+WARRIOR-TACO-SINGLE-MC-OCC;Warrior Assault Systems Taco Gewehrmagazintasche, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-TACO-MC-OCC;Warrior Assault Systems Taco Doppel-Magazintasche Gewehr + Pistole, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-POUCH-FLAP-MC-OCC;Warrior Assault Systems Utility Pouch mit Klettdeckel MOLLE, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-RIFLEMAG-OPEN-MC-OCC;Warrior Assault Systems Gewehrmagazintasche offen MOLLE, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-DUMPPOUCH-COMPACT-MC-OCC;Warrior Assault Systems Dump Pouch kompakt (Abwurfsack), Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-UTILPOUCH-M-MC-OCC;Warrior Assault Systems Utility Pouch mittel MOLLE, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-UTILPOUCH-L-MC-OCC;Warrior Assault Systems Utility Pouch gross MOLLE, Multicam, gebraucht;ohne Marke (product_brand)
+WARRIOR-DUMPPOUCH-MC-OCC;Warrior Assault Systems Dump Pouch (Abwurfsack), Multicam, gebraucht;ohne Marke (product_brand)
+STREAMLIGHT-HOLSTER-BLK-OCC;Streamlight Taschenlampen-Holster Nylon, Schwarz, 21 cm, gebraucht;ohne Marke (product_brand)
+OLIGHT-HOLSTER-BLK-OCC;Olight Taschenlampen-Tasche (Holster), Schwarz, gebraucht;ohne Marke (product_brand)
+CHAMELEON-LAMPPOUCH-BLK-OCC;Chameleon Fabrics Taschenlampen-Tasche, Schwarz, gebraucht;ohne Marke (product_brand)
+IDOGEAR-TQHOLDER-BLK-OCC;IDOGEAR Tourniquet-Halter MOLLE, Schwarz, neu;ohne Marke (product_brand)
+IDOGEAR-DROPPOUCH-BLK-OCC;IDOGEAR Drop Pouch (Abwurfsack) MOLLE, Schwarz, neu;ohne Marke (product_brand)
+IDOGEAR-PISTOLPOUCH-MOLLE-BLK-OCC;IDOGEAR Pistolenmagazintasche MOLLE, Schwarz, neu;ohne Marke (product_brand)
+IDOGEAR-BELT-COBRA-BLK-M-OCC;IDOGEAR Waffengürtel (Battle Belt) mit Cobra-Schnalle, Schwarz, Grösse M, neu;ohne Marke (product_brand)
+IDOGEAR-PISTOLMAG-BLK-OCC;IDOGEAR Pistolenmagazinhalter Schwarz mit Gürtelclip, neu;ohne Marke (product_brand)
+BH-SERPA-TACTICAL-RH-OCC;Blackhawk SERPA Tactical Oberschenkelholster rechts, gebraucht;ohne Marke (product_brand)
+W-EO-LPC-V1-M-MC-OCC;Warrior Assault Systems Low Profile Carrier V1 Multicam Grösse M mit Triple Mag Pouch, gebraucht;ohne Marke (product_brand)
+ROLLBLOCK-PISTOLE-OCC;Einschüssige Scheibenpistole mit Rollblockverschluss, antik, gebraucht;ohne Marke (product_brand)
+(SKU nicht abgefragt);Armatum Geschenkgutschein;"ohne Marke (product_brand); Sonderartikel, Marke evtl. nicht nötig"
+(SKU nicht abgefragt);Montage (gratis im Paket);"ohne Marke (product_brand); Sonderartikel, Marke evtl. nicht nötig"
+SD-988006-M9A3;"B&T Impuls-IIA Pistolenschalldämpfer 9mm für Beretta M9A3, 1/2""-28 UNEF";ohne Gewicht (neu seit 16.11.)
+SD-988006-MP5;B&T Impuls-IIA & Impuls-OLS Konversions-Kit für APC9 / MP5 Three-Lug;ohne Gewicht (neu seit 16.11.)
+SD-988006-F;B&T Adapter zu Impuls-IIA Schalldämpfer für Pistole mit feststehendem Lauf;ohne Gewicht (neu seit 16.11.)
+14.9745;G+E Stgw 90 Schafterhöhung fest Schiebekolben +20 mm;ohne Gewicht (neu seit 16.11.)
+14.9744;G+E Stgw 90 Schafterhöhung fest Schiebekolben Set;ohne Gewicht (neu seit 16.11.)
+14.9746.10;G+E Stgw 90 Zusatzerhöhung 25 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.09;G+E Stgw 90 Zusatzerhöhung 22.5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.08;G+E Stgw 90 Zusatzerhöhung 20 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.07;G+E Stgw 90 Zusatzerhöhung 17.5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.06;G+E Stgw 90 Zusatzerhöhung 15 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.05;G+E Stgw 90 Zusatzerhöhung 12.5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.04;G+E Stgw 90 Zusatzerhöhung 10 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.03;G+E Stgw 90 Zusatzerhöhung 7.5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.02;G+E Stgw 90 Zusatzerhöhung 5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9746.01;G+E Stgw 90 Zusatzerhöhung 2.5 mm Standardkolben;ohne Gewicht (neu seit 16.11.)
+14.9743;G+E Stgw 90 Schafterhöhung fest Standardkolben Set;ohne Gewicht (neu seit 16.11.)
+14.9742;G+E Stgw 90 Kornträger extended;ohne Gewicht (neu seit 16.11.)
+14.9739;G+E Stgw 90 Diopterplatte;ohne Gewicht (neu seit 16.11.)
+14.9510;G+E Korntunnel kurz mit Fuss M18, Länge 30 mm;ohne Gewicht (neu seit 16.11.)
+16.3295;Centra Irisringkorn Vario M18 2.3-3.3, 1.2 Rot;ohne Gewicht (neu seit 16.11.)
+17.0020;Gehmann 566 Irisblende mit 6 Farbfiltern;ohne Gewicht (neu seit 16.11.)
+17.3000;Gehmann 590 Kompakt Diopter aus Alu-Vollmaterial;ohne Gewicht (neu seit 16.11.)
+STPCP30010Z;Stoeger Airguns Zweibein für XM1 PCP und RX20 Tac;ohne Gewicht (neu seit 16.11.)
+ST40102;Stoeger Airguns Kugelfang für Zielscheiben 14x14cm;ohne Gewicht (neu seit 16.11.)
+ST40011;Stoeger Airguns Montageringe 1 Zoll für 11mm-Prismenschiene;ohne Gewicht (neu seit 16.11.)
+T0700-0003;ERATAC Picatinny-Schiene #17 für ARCA-Slider;ohne Gewicht (neu seit 16.11.)
+T0700-0002;ERATAC Picatinny-Schiene #17S für ARCA-Slider;ohne Gewicht (neu seit 16.11.)
+T5700-1005;ERATAC ARCA-Rail für M-LOK Handschutz, 10 Nuten;ohne Gewicht (neu seit 16.11.)
+T5700-0805;ERATAC ARCA-Rail für M-LOK Handschutz, 8 Nuten;ohne Gewicht (neu seit 16.11.)
+T5700-0605;ERATAC ARCA-Rail für M-LOK Handschutz, 6 Nuten;ohne Gewicht (neu seit 16.11.)
+T5700-0405;ERATAC ARCA-Rail für M-LOK Handschutz, 4 Nuten;ohne Gewicht (neu seit 16.11.)
+T5700-0205;ERATAC ARCA-Rail für M-LOK Handschutz, 2 Nuten;ohne Gewicht (neu seit 16.11.)
+ST002-5824;"ERATAC Mündungsfeuerdämpfer 5/8""-24 UNEF für ERATAC LOC";ohne Gewicht (neu seit 16.11.)
+ST002-151S;ERATAC Mündungsfeuerdämpfer M15x1 Spigot für ERATAC LOC;ohne Gewicht (neu seit 16.11.)
+ST002-1228;"ERATAC Mündungsfeuerdämpfer 1/2""-28 UNEF für ERATAC LOC";ohne Gewicht (neu seit 16.11.)
+ST001-0000;ERATAC LOC Gewindeschutzmutter;ohne Gewicht (neu seit 16.11.)
+T0561-0001;ERATAC Sicherungswelle für H&K Sicherungshebel;ohne Gewicht (neu seit 16.11.)
+T0561-0000;ERATAC Sicherungswelle 45°/90° für ERATAC Trigger;ohne Gewicht (neu seit 16.11.)
+T0540-3355;ERATAC Offset-Visierung 45° komplett, HK-Style, Korn 1.8mm;ohne Gewicht (neu seit 16.11.)
+T0541-1355;ERATAC Offset-Visierung 45° komplett, Standard, Korn 1.35mm;ohne Gewicht (neu seit 16.11.)
+T0540-1355;ERATAC Offset-Visierung 45° komplett, Standard, Korn 1.8mm;ohne Gewicht (neu seit 16.11.)
+00000-9320;ERATAC Korn 1.8mm für Notvisierung;ohne Gewicht (neu seit 16.11.)
+00000-9630;ERATAC Korn 1.6mm für Notvisierung;ohne Gewicht (neu seit 16.11.)
+00000-9430;ERATAC Korn 1.35mm für Notvisierung;ohne Gewicht (neu seit 16.11.)
+T0544-0355;ERATAC Klappvisier für Picatinny-Schiene;ohne Gewicht (neu seit 16.11.)
+T0543-2355;ERATAC Klappkorn HK-Style, Korn 1.35mm;ohne Gewicht (neu seit 16.11.)
+T0542-2355;ERATAC Klappkorn HK-Style, Korn 1.8mm;ohne Gewicht (neu seit 16.11.)
+T0543-0355;ERATAC Klappkorn Standard, Korn 1.35mm;ohne Gewicht (neu seit 16.11.)
+T0542-0355;ERATAC Klappkorn Standard, Korn 1.8mm;ohne Gewicht (neu seit 16.11.)
+T0541-2355;ERATAC Notvisierung Picatinny komplett, HK-Style, Korn 1.35mm;ohne Gewicht (neu seit 16.11.)
+T0540-2355;ERATAC Notvisierung Picatinny komplett, HK-Style, Korn 1.8mm;ohne Gewicht (neu seit 16.11.)
+T0541-0355;ERATAC Notvisierung Picatinny komplett, Standard, Korn 1.35mm;ohne Gewicht (neu seit 16.11.)
+T0530-0000;ERATAC Offset-Montage 45° für Picatinny-Schiene;ohne Gewicht (neu seit 16.11.)
+T0991-0001;ERATAC Reduzierringe 30mm auf 1 Zoll für T3 Ultralight, 1 Paar;ohne Gewicht (neu seit 16.11.)
+T0991-0000;ERATAC Reduzierringe 30mm auf 1 Zoll für T4/T5, 1 Paar;ohne Gewicht (neu seit 16.11.)
+03680-5762;ERATAC Klemmring mit Universal-Schnittstelle Ø 62mm;ohne Gewicht (neu seit 16.11.)
+03680-5757;ERATAC Klemmring mit Universal-Schnittstelle Ø 57mm;ohne Gewicht (neu seit 16.11.)
+03680-5756;ERATAC Klemmring mit Universal-Schnittstelle Ø 56mm;ohne Gewicht (neu seit 16.11.)
+03680-5748;ERATAC Klemmring mit Universal-Schnittstelle Ø 48mm;ohne Gewicht (neu seit 16.11.)
+03680-5736;ERATAC Klemmring mit Universal-Schnittstelle Ø 36mm;ohne Gewicht (neu seit 16.11.)
+03680-5734;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+03680-5726;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6122-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6122-0028;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6160-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6180-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6121-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6190-0057;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6190-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6120-0057;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T6120-0039;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+00000-4870;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0001-423A;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+23057-1000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0510-0002;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0510-0003;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0510-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0500-0002;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0500-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0500-0001;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0510-0001;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+23000-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0800-0005;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0800-0004;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0940-0001;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0940-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0941-0001;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0941-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5076-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5074-0030;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5074-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5074-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5073-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5073-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4076-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4074-0030;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4074-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4074-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4073-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4073-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4023-0034;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5066-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5064-0030;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5063-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5063-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5034-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5033-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5023-0034;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5023-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5016-2031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5016-2021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-2033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-2027;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-0031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-0021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-2035;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-2025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-0033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-0023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-0015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-0010;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4033-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4024-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4023-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4016-2031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4016-2021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-2033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-2027;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-2023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-2019;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-2013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-0031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-0025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-0021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-0017;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4014-0013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-2035;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-2025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-2022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-0033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-0023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-0015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-0010;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-2022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-2023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5014-2019;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T3024-2020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T3023-2022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T3022-0024;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T3023-0022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5013-2015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T4013-2015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5004-0013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5003-0017;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5003-0013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T5064-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0990-0010;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0990-0005;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0908-0013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0550-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7026-2022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7024-2033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7024-2023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7023-2025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0952-0016;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0953-0016;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0970-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0960-0005;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0940-0002;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0930-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0913-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T0810-0000;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7026-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7024-0031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7024-0021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7023-0033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7023-0023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7016-2022;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7016-0020;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-2033;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-2023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-2015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-0031;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-0021;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7014-0013;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7013-2025;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7013-2017;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7013-0015;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+T7013-0023;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+71022632;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+RCBS-09088-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+LEE-90198-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+046043-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+RL-50-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+LEE-90600-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+C4-412884;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+M419280;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+1151375;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+708090;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+MOSSBERG-500-BULLPUP-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WALTHER-TPH-22LR-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-TACO-SINGLE-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-TACO-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-POUCH-FLAP-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-RIFLEMAG-OPEN-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-DUMPPOUCH-COMPACT-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-UTILPOUCH-M-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-UTILPOUCH-L-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+WARRIOR-DUMPPOUCH-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+STREAMLIGHT-HOLSTER-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+OLIGHT-HOLSTER-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+CHAMELEON-LAMPPOUCH-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+IDOGEAR-TQHOLDER-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+IDOGEAR-DROPPOUCH-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+IDOGEAR-PISTOLPOUCH-MOLLE-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+IDOGEAR-BELT-COBRA-BLK-M-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+IDOGEAR-PISTOLMAG-BLK-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+BH-SERPA-TACTICAL-RH-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+8061RNG1SZ-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+W-EO-LPC-V1-M-MC-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+8048RNG1SZ-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+150-003-062-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+150-001-06X-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+130-005-060-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+130-002-06X-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+115-008-001;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+707911;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+115-003-06X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-020-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-40X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-42X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+MX-TR-A;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+TPR-2U;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+ROLLBLOCK-PISTOLE-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+ROEHM-RG4S-OCC;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+61-06-211727-17;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-023-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-10X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-12X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-11X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-000-13X;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-004;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-007;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-005-060-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-003-060-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-014-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-013-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-012-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-016-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-017-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-011-060-B;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-008-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-009-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+110-006-060;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+BARN9;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
+AC500.246;;"ohne Gewicht (neu seit 16.11.; bei variablen Artikeln evtl. Gewicht nur in Varianten)"
