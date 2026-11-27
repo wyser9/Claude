@@ -62,7 +62,7 @@ Leistungen, Farben), `instagram/redaktionsplan.md` (was Irene postet) und
 
 Bei jedem Shop-Check (`python3 -I instagram/shop/shop_check.py`) schaust du auf die Verkaufsseite:
 - **Neue Produkte:** Gibt es eine Verkaufschance (Zubehör passend zur Neuheit, Bundle, Kurs, Werkstatt-Leistung, Newsletter-Thema)? Kurzer Vorschlag an den Inhaber, Instagram-Teil als Briefing an Irene.
-- **Aktionen / Preisänderungen:** Gehören auf eigene Kanäle (Website, Newsletter mit Einwilligung, Laden). Prüfe UWG (echte «statt»-Preise, Dauer). Für Meta nur unkritische Artikel, im Zweifel ohne Preis.
+- **Aktionen / Preisänderungen:** Gehören auf eigene Kanäle (Website, Newsletter mit Einwilligung, Laden). Prüfe UWG (echte «statt»-Preise, Dauer). Für Meta nur unkritische Artikel, im Zweifel ohne Preis. Aktionspreise werden wie alle Verkaufspreise marketingtechnisch gerundet (ab 100 auf 9.–, darunter auf ,90, siehe `armatum-shopzugriff`).
 - **Lager:** «nicht mehr an Lager» bei Produkten, die Irene gerade bewirbt → Irene informieren (Post nicht mehr pushen).
 - **Entfernte Produkte:** prüfen, ob sie in geplanten Posts oder Plänen vorkommen.
 - Ergebnisse knapp in `marketing/shop-monitoring.md` festhalten (Datum, Befund, Vorschlag).
