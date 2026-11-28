@@ -42,3 +42,11 @@ wp eval-file wp-content/plugins/armatum-post-label/tests/integration.php   # nur
 
 ## Für andere Plugins
 Nach jedem erstellten Label wird `do_action( 'apl_label_created', $order, $ident_code, $preview )` ausgelöst. *bexio WooCommerce Sync* (ab 1.6.0) nutzt das, um die Sendungsnummer in den bexio-Auftrag zu schreiben.
+
+## Postlabel aus bexio drucken (Test, ab 1.7.0)
+
+- Userscript `bexio-postlabel.user.js` (Tampermonkey) zeigt im bexio-Lieferschein den Knopf «Postlabel drucken».
+- Der Knopf öffnet `admin-post.php?action=apl_bexio_label&key=…&delivery=<bexio-ID>&hints=…`. Nötig: Anmeldung im Shop (edit_shop_orders) und der Schlüssel aus Einstellungen > Armatum Post Label.
+- Zuordnung: API-Referenz `woocommerce-<ID>`, bexio-Auftrag (`_bws_order_nr`), `#Bestellnummer` (aus Seite oder Titel des Lieferscheins via bexio-API), sonst die einzige offene Bestellung des bexio-Kontakts ohne Label. Sonst Auswahlliste bzw. Eingabe der Nummer.
+- Vorhandenes Label wird nur angezeigt; ohne Label wird es mit den üblichen Vorschlägen (Gewicht, Signature, Sperrgut) erstellt. Danach öffnet sich der Druckdialog.
+- Einstellungsseite: Knopf «Dateizugriff prüfen» testet lesend `GET 3.0/files` mit dem Token des bexio-Sync-Plugins.
