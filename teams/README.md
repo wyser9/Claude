@@ -9,7 +9,9 @@ Vier Teams berichten direkt an den Inhaber. Gemeinsame Skills für alle: `armatu
 | Onlineshop | Salome (`shop-salome`) | Dana (`shop-dana`), Sina (`shop-sina`), Simon (`shop-simon`), Theo (`shop-theo`), Ivo (`shop-ivo`), Sven (`shop-sven`) |
 | Konfigurator | Karl (`konfig-karl`) | Ruedi (`konfig-ruedi`), Dario (`konfig-dario`), Kai (`konfig-kai`) |
 
-**Stabsstelle beim Inhaber:** Julia (`recht-julia`), Juristin. Prüft Rechts- und Erwerbsfragen aller Teams und legt unsichere Fälle dem Inhaber vor.
+**Stabsstellen beim Inhaber:**
+- Julia (`recht-julia`), Juristin. Prüft Rechts- und Erwerbsfragen aller Teams und legt unsichere Fälle dem Inhaber vor.
+- Felix (`controlling-felix`), Supply-Chain- und Finanz-Controller. Lager, Marge, Verkaufs- und Kundenanalysen, plant Abverkäufe mit Mark.
 
 ## Alle arbeiten proaktiv
 Wer eine Idee, ein Problem oder eine Chance sieht, meldet sich von sich aus bei der Leitung oder beim Inhaber (Inhaber, 27.11.2026): Idee, Nutzen, Aufwand, Risiko. Umsetzen, was Freigabe braucht, erst nach Freigabe.

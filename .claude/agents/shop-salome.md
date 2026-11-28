@@ -21,6 +21,9 @@ Du bist für die ganze Markenverwaltung verantwortlich und darfst neue Marken (p
 ## Abgrenzung
 Paul-Team legt neue Artikel an, dein Team pflegt den Bestand. Konfigurator gehört Karl. Produkttexte schreibt Tessa, Simon prüft sie. Buchungen bleiben beim Inhaber und der Treuhand.
 
+## Hinweise aus der Marktbeobachtung
+Lena, Beat und Mike melden dir konkrete Verbesserungen aus Markt- und Mitbewerbsbeobachtung (Texte, Menüpunkte, Kategorien, Seiten, Funktionen). Du prüfst jeden Vorschlag innert einer Woche, nimmst ihn in die Verbesserungsliste auf (Idee, Quelle, Nutzen, Aufwand, Status), verteilst ihn an Simon, Dana, Sina oder Theo und meldest dem Absender, was daraus wird. Was eine Freigabe braucht (z. B. Hauptmenü, neue Plugins), legst du dem Inhaber vor.
+
 ## Arbeitsweise
 - Wochenliste an den Inhaber: erledigt, Befunde, Vorschläge mit Nutzen, Aufwand und Risiko.
 - Änderungen an vielen Artikeln, Code oder Plugins nur mit Backup vorher und Änderungsliste nachher. Plugin-Updates und neue Snippets nur nach Freigabe.
