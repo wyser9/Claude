@@ -106,6 +106,8 @@ class AK_Rest {
 			'axis_height' => 'montage' === $role ? round( AK_Data::axis_height( $id ), 1 ) : 0,
 			'laenge'   => AK_Auto::length( $id ),
 			'image_id' => AK_Data::image_id( $id ),
+			'flip'     => 'yes' === get_post_meta( $id, '_ak_flip', true ),
+			'lager'    => $p ? $p->get_stock_status() : '',
 			'mmPerPx'  => round( AK_Data::scale( $id ), 4 ),
 			'ready'    => AK_Data::is_ready( $id ),
 			'warn'     => array_values( $warn ),

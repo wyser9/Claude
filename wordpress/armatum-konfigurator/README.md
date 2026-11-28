@@ -198,6 +198,7 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
 
 ## Neu in 1.0.12
 
+- **Prüf-API:** `/ak/v1/products` liefert zusätzlich `flip` (Bild gespiegelt), `lager` (Lagerstatus). So lässt sich die Bildausrichtung aller Teile ohne Einzelabfragen prüfen.
 - **Montage nicht mehr als eigenes Produkt** (Inhaber 28.11.: Position ohne Bild, wird ohnehin gratis erledigt):
   - Das Plugin legt keine Position «Montage (gratis im Paket)» (SKU `AK-MONTAGE`, CHF 0.00) mehr in den Warenkorb und legt das Produkt nicht mehr an.
   - **Alte Warenkörbe:** Liegt noch eine solche Position in einem Warenkorb (Sitzung von 1.0.11 oder früher), wird sie beim Laden des Warenkorbs entfernt (`woocommerce_cart_loaded_from_session`; erkannt an der Produkt-ID aus `ak_montage_product_id` bzw. der SKU oder an der Paket-Rolle `service`). Das Produkt selbst bleibt im Shop bestehen und kann weiterhin nicht einzeln gekauft werden; es kann von Hand auf Entwurf oder privat gesetzt werden.
