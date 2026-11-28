@@ -141,12 +141,21 @@ class BWS_Invoice {
 
 			$positions = array();
 			foreach ( (array) ( $kb['positions'] ?? array() ) as $p ) {
-				if ( ! empty( $p['id'] ) && ! empty( $p['type'] ) ) {
-					$positions[] = array(
-						'id'   => (int) $p['id'],
-						'type' => (string) $p['type'],
-					);
+				if ( empty( $p['id'] ) || empty( $p['type'] ) ) {
+					continue;
 				}
+				$pos = array(
+					'id'   => (int) $p['id'],
+					'type' => (string) $p['type'],
+				);
+				// bexio verlangt bei Artikel- und Eigenpositionen die zu verrechnende Menge (sonst 422 «amount Pflichtfeld»).
+				// Volle Menge aus dem Auftrag übernehmen; Text-, Zwischensummen- und Rabattpositionen haben keine Menge.
+				if ( isset( $p['amount'] ) && '' !== (string) $p['amount'] ) {
+					$pos['amount'] = (string) $p['amount'];
+				} elseif ( in_array( $pos['type'], array( 'KbPositionArticle', 'KbPositionCustom' ), true ) ) {
+					$pos['amount'] = '1';
+				}
+				$positions[] = $pos;
 			}
 			$body    = $positions ? array( 'positions' => $positions ) : array();
 			$invoice = $client->post( '2.0/kb_order/' . $kb_id . '/invoice', $body );

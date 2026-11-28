@@ -203,8 +203,15 @@ class BWS_Product_Sync {
 					bws_log( 'notice', sprintf( 'Produkt #%d: Artikelnummer %s gehört in bexio zu Artikel %d – Verknüpfung von %d auf %d geändert.', $product->get_id(), $payload['intern_code'], $taken, $article_id, $taken ) );
 					$result = $client->post( '2.0/article/' . $taken, $update );
 				} elseif ( 404 === $e->getCode() ) {
-					// In bexio gelöscht -> neu anlegen.
-					$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
+					// Verknüpfter Artikel in bexio gelöscht: zuerst einen anderen Artikel mit derselben Artikelnummer suchen
+					// (z. B. nach Doubletten-Bereinigung), erst wenn keiner existiert neu anlegen.
+					$found = self::find_article_id( $payload['intern_code'] );
+					if ( $found && $found !== $article_id ) {
+						bws_log( 'notice', sprintf( 'Produkt #%d: bexio-Artikel %d gelöscht, Artikelnummer %s gehört zu Artikel %d – neu verknüpft.', $product->get_id(), $article_id, $payload['intern_code'], $found ) );
+						$result = $client->post( '2.0/article/' . $found, $update );
+					} else {
+						$result = $client->post( '2.0/article', $payload + self::create_only_fields( $product ) );
+					}
 				} else {
 					throw $e;
 				}

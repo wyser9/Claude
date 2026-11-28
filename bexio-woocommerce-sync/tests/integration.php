@@ -28,11 +28,12 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	}
 	if ( 'POST' === $m && '2.0/article/search' === $path ) {
 		if ( 'KAPUTT-1' === $body[0]['value'] ) return resp( array( 'message' => 'Serverfehler' ), 400 );
-		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575, 'VIS-TAKEN' => 6001 );
+		$known = array( 'EXIST-1' => 55, 'BEXIO-2575' => 2575, 'VIS-TAKEN' => 6001, 'DEL-1' => 1980 );
 		return resp( isset( $known[ $body[0]['value'] ] ) ? array( array( 'id' => $known[ $body[0]['value'] ], 'intern_code' => $body[0]['value'] ) ) : array() );
 	}
 	if ( 'POST' === $m && '2.0/article' === $path ) return resp( array_merge( $body, array( 'id' => ++$GLOBALS['bws_next_id'] ) ) );
 	if ( 'POST' === $m && preg_match( '#^2\.0/article/(\d+)$#', $path, $mm ) ) {
+		if ( 9404 === (int) $mm[1] ) return resp( array( 'message' => 'not found' ), 404 );
 		// Wie das echte bexio: Artikelart ist beim Bearbeiten nicht erlaubt.
 		if ( isset( $body['intern_code'] ) && 'VIS-TAKEN' === $body['intern_code'] && 4327 === (int) $mm[1] ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'intern_code: Produktcode bereits in Gebrauch' ) ), 422 );
 		if ( isset( $body['article_type_id'] ) ) return resp( array( 'error_code' => 422, 'message' => 'The form could not be saved due to the following errors:', 'errors' => array( 'Widget schema does not include the following field(s): article_type_id' ) ), 422 );
@@ -62,6 +63,11 @@ add_filter( 'pre_http_request', function ( $pre, $args, $url ) {
 	}
 	if ( 'POST' === $m && '2.0/kb_invoice/search' === $path ) {
 		return resp( array_values( array_filter( $GLOBALS['bws_invoices'] ?? array(), function ( $i ) use ( $body ) { return (int) $i['contact_id'] === (int) $body[0]['value']; } ) ) );
+	}
+	if ( 'POST' === $m && preg_match( '#^2\.0/kb_order/(\d+)/invoice$#', $path, $mm ) ) {
+		foreach ( (array) ( $body['positions'] ?? array() ) as $bp ) {
+			if ( in_array( $bp['type'], array( 'KbPositionArticle', 'KbPositionCustom' ), true ) && ! isset( $bp['amount'] ) ) return resp( array( 'message' => 'positions: ' . $bp['type'] . '_' . $bp['id'] . ' [amount [Pflichtfeld]]' ), 422 );
+		}
 	}
 	if ( 'POST' === $m && preg_match( '#^2\.0/kb_order/(\d+)/invoice$#', $path, $mm ) ) return resp( array( 'id' => 7000 + (int) $mm[1], 'document_nr' => 'RE-' . $mm[1], 'kb_item_status_id' => 7, 'total' => $GLOBALS['bws_kb'][ (int) $mm[1] ]['total'] ?? '0' ) );
 	if ( 'POST' === $m && preg_match( '#^2\.0/kb_invoice/(\d+)/issue$#', $path ) ) return ! empty( $GLOBALS['bws_issue_fail'] ) ? resp( array( 'message' => 'Rechnung kann nicht ausgestellt werden' ), 422 ) : resp( array( 'success' => true ) );
@@ -922,7 +928,7 @@ $GLOBALS['bws_invoices'] = array();
 $mkinv = function ( $kb_id, $method = 'twint_regular', $status = 'processing' ) {
 	$o = wc_create_order(); $o->set_payment_method( $method ); $o->set_billing_first_name( 'Rita' ); $o->set_billing_last_name( 'Rechnung' ); $o->set_total( 89.9 );
 	$o->set_date_paid( time() ); $o->set_status( $status ); $o->update_meta_data( '_bws_order_id', $kb_id ); $o->update_meta_data( '_bws_order_nr', 'AU-' . $kb_id ); $o->save();
-	$GLOBALS['bws_kb'][ $kb_id ] = array( 'id' => $kb_id, 'document_nr' => 'AU-' . $kb_id, 'contact_id' => 77, 'title' => (string) $o->get_order_number(), 'total' => '89.90', 'is_valid_from' => gmdate( 'Y-m-d' ), 'positions' => array( array( 'id' => 1, 'type' => 'KbPositionArticle' ), array( 'id' => 2, 'type' => 'KbPositionCustom' ) ) );
+	$GLOBALS['bws_kb'][ $kb_id ] = array( 'id' => $kb_id, 'document_nr' => 'AU-' . $kb_id, 'contact_id' => 77, 'title' => (string) $o->get_order_number(), 'total' => '89.90', 'is_valid_from' => gmdate( 'Y-m-d' ), 'positions' => array( array( 'id' => 1, 'type' => 'KbPositionArticle', 'amount' => '2.000000' ), array( 'id' => 2, 'type' => 'KbPositionCustom', 'amount' => '1.000000' ), array( 'id' => 3, 'type' => 'KbPositionText' ) ) );
 	return $o;
 };
 $invreq = function () { return array_values( array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0] && ( preg_match( '#/invoice$#', $r[1] ) || preg_match( '#/issue$#', $r[1] ) ); } ) ); };
@@ -933,7 +939,7 @@ t( 'TWINT-Rechnung: nach Übertragung eingeplant', as_has_scheduled_action( BWS_
 $GLOBALS['bws_requests'] = array();
 BWS_Invoice::run_job( $ti->get_id() );
 $ti = wc_get_order( $ti->get_id() ); $ir = $invreq();
-t( 'TWINT-Rechnung: aus Auftrag mit allen Positionen erstellt und ausgestellt', 2 === count( $ir ) && '2.0/kb_order/950/invoice' === $ir[0][1] && 2 === count( $ir[0][2]['positions'] ) && 'KbPositionCustom' === $ir[0][2]['positions'][1]['type'] && '2.0/kb_invoice/7950/issue' === $ir[1][1], wp_json_encode( $ir ) );
+t( 'TWINT-Rechnung: aus Auftrag mit allen Positionen erstellt und ausgestellt', 2 === count( $ir ) && '2.0/kb_order/950/invoice' === $ir[0][1] && 3 === count( $ir[0][2]['positions'] ) && 'KbPositionCustom' === $ir[0][2]['positions'][1]['type'] && '2.000000' === $ir[0][2]['positions'][0]['amount'] && '1.000000' === $ir[0][2]['positions'][1]['amount'] && ! isset( $ir[0][2]['positions'][2]['amount'] ) && '2.0/kb_invoice/7950/issue' === $ir[1][1], wp_json_encode( $ir ) );
 $notes = wp_list_pluck( wc_get_order_notes( array( 'order_id' => $ti->get_id() ) ), 'content' );
 t( 'TWINT-Rechnung: Nummer am Auftrag und in der Notiz', 7950 === (int) $ti->get_meta( '_bws_invoice_id' ) && 'RE-950' === $ti->get_meta( '_bws_invoice_nr' ) && false !== strpos( implode( ' ', $notes ), 'Rechnung RE-950 aus Auftrag AU-950 erstellt (TWINT) und ausgestellt' ), wp_json_encode( $notes ) );
 $GLOBALS['bws_requests'] = array();
@@ -969,5 +975,14 @@ t( 'TWINT-Rechnung: Ausstellen scheitert -> Entwurf vermerkt, ID gespeichert', 7
 $GLOBALS['bws_requests'] = array();
 BWS_Invoice::run_job( $tf->get_id() );
 t( 'TWINT-Rechnung: danach keine zweite Rechnung', ! $invreq() );
+
+// --- Verknüpfter bexio-Artikel gelöscht, Artikelnummer gehört anderem Artikel ---
+$pdel = new WC_Product_Simple(); $pdel->set_name( 'Adapter gelöscht' ); $pdel->set_sku( 'DEL-1' ); $pdel->set_regular_price( '19.90' ); $pdel->save();
+update_post_meta( $pdel->get_id(), '_bws_article_id', 9404 );
+$GLOBALS['bws_requests'] = array();
+$rid = BWS_Product_Sync::sync( wc_get_product( $pdel->get_id() ) );
+$creates = array_filter( $GLOBALS['bws_requests'], function ( $r ) { return 'POST' === $r[0] && '2.0/article' === $r[1]; } );
+t( 'Gelöschter bexio-Artikel: mit bestehendem Artikel gleicher Nummer verknüpft statt neu angelegt', 1980 === (int) $rid && 1980 === (int) get_post_meta( $pdel->get_id(), '_bws_article_id', true ) && ! $creates, wp_json_encode( $GLOBALS['bws_requests'] ) );
+$pdel->delete( true );
 
 echo $GLOBALS["fail"] ? "\n" . $GLOBALS["fail"] . " FEHLER\n" : "\nAlle Integrationstests bestanden.\n";

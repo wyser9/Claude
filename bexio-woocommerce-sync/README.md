@@ -39,6 +39,8 @@ WooCommerce führt die Artikel-Stammdaten (Texte, Bilder, Preise), **bexio führ
 **Preis:** In bexio steht der aktuelle Verkaufspreis. Während eine Aktion läuft, ist das der **Aktionspreis**, sonst der reguläre Preis. Geplante Aktionen berücksichtigt das Plugin mit Beginn und Ende, denn WooCommerce speichert das Produkt dabei per Cron, und das löst den Abgleich aus. In Aufträgen steht ohnehin der Preis, den der Kunde bezahlt hat.
 
 ### Neue Artikel in bexio
+**Ab 1.13.1:** Ist der verknüpfte bexio-Artikel gelöscht (z. B. nach einer Doubletten-Bereinigung), sucht das Plugin zuerst einen anderen bexio-Artikel mit derselben Artikelnummer und verknüpft das Produkt damit. Erst wenn keiner existiert, legt es einen neuen an (vorher: Fehler 422 «Produktcode bereits in Gebrauch»).
+
 Nur beim **Neuanlegen** eines Artikels setzt das Plugin zusätzlich:
 - **„Ist ein Produkt mit Lager“** (Lagerbestand und Mindestbestand 0, Lagerort und Lagerplatz aus den bexio-Zuordnungen), abschaltbar mit „Neue Artikel als Lagerartikel“. Virtuelle Produkte werden ohne Lager angelegt.
 - **Aufwandkonto**: automatisch Konto **4200 – Einkauf Handelsware** (oder das in den Einstellungen gewählte Konto).
@@ -153,6 +155,7 @@ Bei Bestellungen, die mit TWINT bezahlt sind, erstellt das Plugin in bexio direk
 - **Keine Doppel-Rechnungen:** Gibt es zum Auftrag schon eine Rechnung (gleiche Suche wie beim Statusabgleich), wird sie nur verknüpft. Die Rechnungs-ID steht in der Bestellnotiz.
 - Lässt sich die Rechnung nicht ausstellen, bleibt sie in bexio als Entwurf, und die Bestellnotiz sagt das. Scheitert das Erstellen, versucht es das Plugin bei bexio-Störungen später erneut. Sonst steht der Fehler in der Bestellnotiz, und die Warn-Mail meldet den fehlgeschlagenen Job.
 - Einstellung: *TWINT: Rechnung automatisch*.
+- **Fix 1.13.1:** bexio verlangt bei jeder Artikel- und Eigenposition die Menge (`amount`). 1.13.0 hat sie nicht mitgeschickt, deshalb scheiterte jede Rechnung mit Fehler 422 «amount Pflichtfeld». Jetzt wird die volle Menge aus dem Auftrag übernommen.
 
 ### TWINT-Abrechnung (Sammelgutschrift → Bestellungen)
 **Ohne TWINT-Portal:** Das TWINT-Plugin protokolliert jede Zahlung samt der Kommission, die TWINT meldet. Daraus berechnet das Plugin die Sammelgutschriften selbst. TWINT überweist am nächsten Werktag, Wochenend-Zahlungen kommen am Montag. Rückerstattungen werden abgezogen, ihre Kommission wird zurückgerechnet.
