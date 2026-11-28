@@ -176,6 +176,7 @@
 		}
 		this.update();
 		$(window).on('resize', function () { self.draw(); });
+		this.initStickyTop();
 		var w = this.cfg.weapon;
 		track('konfigurator_start', {
 			waffe_id: w.id, waffe_name: w.name, artikelnummer: w.sku || '',
@@ -455,6 +456,56 @@
 			sync();
 			if (window.MutationObserver) { new MutationObserver(sync).observe(fc, { childList: true, characterData: true, subtree: true }); }
 		}
+	};
+
+	/**
+	 * 1.0.12: Sticky-Vorschau auf dem Handy. Misst, ob oben ein fester/sticky Theme-Header (Blocksy, Admin-Leiste o.ä.)
+	 * steht, und setzt dessen Unterkante als --ak-sticky-top, damit die Vorschau darunter und nicht dahinter klebt.
+	 * Ohne festen Header bleibt der Wert 0. Neu gemessen bei Scrollen (Blocksy macht den Header erst beim Scrollen fest)
+	 * und bei Grössenänderung.
+	 */
+	Konfigurator.prototype.initStickyTop = function () {
+		var root = document.documentElement;
+		var konf = this.$root[0];
+		var mq = window.matchMedia ? window.matchMedia('(max-width: 860px)') : null;
+		var last = -1;
+		var pending = false;
+		var fixed = function (el) {
+			var p = window.getComputedStyle(el).position;
+			return p === 'fixed' || p === 'sticky';
+		};
+		var measure = function () {
+			pending = false;
+			var top = 0;
+			if (mq && mq.matches) {
+				var seen = [];
+				var add = function (el) {
+					for (; el && el !== document.body && el !== root; el = el.parentElement) {
+						if (seen.indexOf(el) >= 0 || konf.contains(el) || (el.closest && el.closest('.ak-bar'))) { continue; }
+						seen.push(el);
+						if (!fixed(el)) { continue; }
+						var r = el.getBoundingClientRect();
+						if (r.top <= 1 && r.bottom > 0 && r.height < window.innerHeight / 2 && r.width >= window.innerWidth / 2) {
+							top = Math.max(top, Math.round(r.bottom));
+						}
+					}
+				};
+				var pts = document.elementsFromPoint ? document.elementsFromPoint(window.innerWidth / 2, 1) : [];
+				for (var i = 0; i < pts.length; i++) { add(pts[i]); }
+				$('#wpadminbar, #header [data-sticky], .ct-sticky-container > *, header.site-header').each(function () { add(this); });
+			}
+			if (top !== last) {
+				last = top;
+				root.style.setProperty('--ak-sticky-top', top + 'px');
+			}
+		};
+		var queue = function () {
+			if (pending) { return; }
+			pending = true;
+			(window.requestAnimationFrame || setTimeout)(measure);
+		};
+		$(window).on('scroll resize', queue);
+		measure();
 	};
 
 	Konfigurator.prototype.setCount = function (n) {
@@ -842,9 +893,17 @@
 		});
 		var width = $stage.width() || 600;
 		var k = width / (maxX - minX);
+		// 1.0.12: Auf dem Handy ist die Vorschau sticky und in der Höhe begrenzt (CSS max-height). Dann das Bild in diese
+		// Höhe einpassen (Seitenverhältnis bleibt) und waagrecht mitteln, statt es unten abzuschneiden.
+		var maxH = $stage[0] ? parseFloat(window.getComputedStyle($stage[0]).maxHeight) : NaN;
+		var dx = 0;
+		if (maxH > 0 && (maxY - minY) * k > maxH) {
+			k = maxH / (maxY - minY);
+			dx = (width - (maxX - minX) * k) / 2;
+		}
 		var html = '';
 		$.each(layers, function (i, l) {
-			var box = 'left:' + ((l.left - minX) * k).toFixed(1) + 'px;top:' + ((l.top - minY) * k).toFixed(1) + 'px;' +
+			var box = 'left:' + (dx + (l.left - minX) * k).toFixed(1) + 'px;top:' + ((l.top - minY) * k).toFixed(1) + 'px;' +
 				'width:' + (l.w * k).toFixed(1) + 'px;';
 			if (l.mask) {
 				html += '<div class="ak-mask" style="' + box + 'height:' + (l.h * k).toFixed(1) + 'px;z-index:' + l.z + '"></div>';
@@ -864,6 +923,7 @@
 				'" alt="' + esc(l.item.name) + '" src="' + esc(src) + '" data-src="' + esc(l.item.img) + '" style="' + box + 'z-index:' + (l.z || (i + 1)) + '">';
 		});
 		$stage.css('height', ((maxY - minY) * k).toFixed(0) + 'px').html(html);
+		if (this.$root[0] && $stage[0]) { this.$root[0].style.setProperty('--ak-stage-h', $stage[0].offsetHeight + 'px'); }
 		this.$root.find('.ak-ph-note').prop('hidden', !layers.some(function (l) { return l.ph; }));
 		$stage.find('img.ak-autocut').each(function () { autoCut(this); });
 	};

@@ -2,6 +2,10 @@
 // Prüft je Pixel 7, 360x740, Desktop 1440: keine Überbreite, keine Überlappung mit der Vorschau, Handy-Bedienelemente >= 44 px.
 // Ab 1.0.11 zusätzlich: schwebender Fly-Cart-Knopf (#wcspc-count) verdeckt keine Schritt-Zeile/Karte, Handy-Leiste sichtbar
 // (nur Handy), Knopf >= 44 px, am Seitenende nichts unter der Leiste, Leisten-Knopf löst GA4 genau einmal aus.
+// Ab 1.0.12 (Handy): Vorschau (.ak-stage) ist sticky und bleibt beim Scrollen durch die Auswahl ganz im Fenster, nichts
+// liegt über ihr (Hit-Test: oberstes Element an Punkten der Vorschau gehört zur Vorschau), Karten unter ihr bleiben
+// antippbar, Hinweistext und «Melden» sind nicht sticky, Leiste unten frei, fester Theme-Header wird berücksichtigt,
+// Querformat (Höhe < 500 px): nicht sticky. Desktop: Vorschau-Block wie bisher sticky (top 1em).
 const { chromium, devices } = require('playwright');
 const path = require('path');
 const page_ = path.resolve(process.argv[2]);
@@ -30,7 +34,6 @@ const views = [
 		const vw = (v.opts.viewport || {}).width;
 		const res = await page.evaluate((vw) => {
 			const out = { vw, iw: innerWidth, sw: document.documentElement.scrollWidth, overlaps: [], small: [], wide: [] };
-			const wrap = document.querySelector('.ak-stage-wrap').getBoundingClientRect();
 			const inter = (a, b) => a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1;
 			// zu breite Elemente
 			document.querySelectorAll('.ak-konfigurator *').forEach(el => {
@@ -40,8 +43,23 @@ const views = [
 			// Überlappung mit der Vorschau an mehreren Scroll-Positionen
 			const sels = '.ak-panel .ak-card, .ak-panel .ak-card-price, .ak-panel del, .ak-panel ins, .ak-step > summary, .ak-summary';
 			const H = document.documentElement.scrollHeight;
+			const stage = document.querySelector('.ak-stage');
+			const sticky = getComputedStyle(stage).position === 'sticky';
 			for (let y = 0; y < H; y += 150) {
 				window.scrollTo(0, y);
+				if (sticky) {
+					// Sticky: Karten laufen absichtlich unter der Vorschau durch. Geprüft wird, dass nichts darüber gemalt wird.
+					const w = stage.getBoundingClientRect();
+					if (w.bottom <= 0 || w.top >= innerHeight) { continue; }
+					for (let fx = 0.05; fx < 1; fx += 0.15) {
+						for (let fy = 0.05; fy < 1; fy += 0.3) {
+							const px = w.left + w.width * fx, py = Math.max(0, w.top) + (Math.min(innerHeight, w.bottom) - Math.max(0, w.top)) * fy;
+							const top = document.elementFromPoint(px, py);
+							if (top && !stage.contains(top)) { out.overlaps.push(y + ':' + (top.className || top.tagName)); }
+						}
+					}
+					continue;
+				}
 				const w = document.querySelector('.ak-stage-wrap').getBoundingClientRect();
 				document.querySelectorAll(sels).forEach(el => {
 					const r = el.getBoundingClientRect();
@@ -60,6 +78,95 @@ const views = [
 			return out;
 		}, vw);
 		const mobile = v.name !== 'desktop1440';
+		// 1.0.12: Sticky-Vorschau
+		const st = await page.evaluate(async (mobile) => {
+			const out = { fails: [] };
+			const tick = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+			const stage = document.querySelector('.ak-stage');
+			const layout = document.querySelector('.ak-layout');
+			const barEl = document.querySelector('.ak-bar');
+			const pos = el => getComputedStyle(el).position;
+			out.stagePos = pos(stage);
+			out.wrapPos = pos(document.querySelector('.ak-stage-wrap'));
+			if (!mobile) {
+				if (out.wrapPos !== 'sticky') { out.fails.push('desktop: Vorschau-Block nicht mehr sticky'); }
+				return out;
+			}
+			if (out.stagePos !== 'sticky') { out.fails.push('Vorschau nicht sticky'); return out; }
+			// Hinweistext und «Melden» gehören nicht zum sticky Teil
+			['.ak-note', '.ak-report'].forEach(sel => { const el = document.querySelector(sel); if (stage.contains(el)) { out.fails.push(sel + ' im sticky Teil'); } });
+			const cs = getComputedStyle(stage);
+			out.bg = cs.backgroundColor;
+			if (!/rgb\(255, 255, 255\)/.test(cs.backgroundColor)) { out.fails.push('Hintergrund nicht deckend weiss: ' + cs.backgroundColor); }
+			out.z = cs.zIndex;
+			out.stageH = Math.round(stage.getBoundingClientRect().height);
+			out.maxH = Math.round(innerHeight * 0.38);
+			if (out.stageH > out.maxH + 1) { out.fails.push('Vorschau höher als 38vh: ' + out.stageH); }
+			// Bild skaliert mit: alle Bild-Ebenen innerhalb der Vorschau
+			stage.querySelectorAll('.ak-layer, .ak-ph').forEach(l => {
+				const r = l.getBoundingClientRect(), s = stage.getBoundingClientRect();
+				if (r.bottom > s.bottom + 1.5 || r.left < s.left - 1.5 || r.right > s.right + 1.5) { out.fails.push('Bild ragt aus der Vorschau'); }
+			});
+			// Scrollen durch die ganze Auswahl: Vorschau bleibt ganz sichtbar, oben angeheftet, über der Leiste
+			const L = layout.getBoundingClientRect().top + scrollY;
+			const end = L + layout.offsetHeight - stage.offsetHeight - innerHeight * 0.2;
+			const st0 = stage.getBoundingClientRect().top + scrollY;
+			let n = 0;
+			for (let y = st0 + 20; y < end; y += 120) {
+				window.scrollTo(0, y); await tick(); n++;
+				const r = stage.getBoundingClientRect();
+				const topPx = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ak-sticky-top')) || 0;
+				if (Math.abs(r.top - topPx) > 1.5) { out.fails.push(Math.round(y) + ': Vorschau nicht oben (' + Math.round(r.top) + ')'); }
+				if (r.bottom > innerHeight || r.top < 0) { out.fails.push(Math.round(y) + ': Vorschau nicht ganz im Fenster'); }
+				const b = barEl.getBoundingClientRect();
+				if (r.bottom > b.top - 1) { out.fails.push(Math.round(y) + ': Vorschau überlappt Leiste'); }
+			}
+			out.scrollSteps = n;
+			// Mindestens 2 Auswahlzeilen zwischen Vorschau und Leiste (Kartenhöhe aus der Optik-Liste)
+			const card = document.querySelector('.ak-step[open] .ak-card');
+			const free = barEl.getBoundingClientRect().top - stage.getBoundingClientRect().bottom;
+			out.free = Math.round(free);
+			if (card && free < 2 * Math.min(card.offsetHeight, 90)) { out.fails.push('zu wenig Platz unter der Vorschau: ' + Math.round(free)); }
+			// Aufgeklappte Auswahl: eine Karte unter der Vorschau ist verdeckt (läuft drunter durch), eine darunter antippbar
+			const cards = [...document.querySelectorAll('.ak-step[open] .ak-card')].filter(c => c.offsetParent);
+			const c3 = cards[3];
+			if (c3) {
+				const sR = stage.getBoundingClientRect();
+				window.scrollTo(0, c3.getBoundingClientRect().top + scrollY - sR.bottom - 10); await tick();
+				let r = c3.getBoundingClientRect();
+				const hit = document.elementFromPoint(r.left + r.width / 2, Math.min(r.top + 20, innerHeight - 1));
+				out.cardTappable = !!hit && c3.contains(hit);
+				if (!out.cardTappable) { out.fails.push('Karte unter der Vorschau nicht antippbar: ' + (hit && hit.className)); }
+				window.scrollTo(0, scrollY + 60); await tick();
+				r = c3.getBoundingClientRect();
+				const hid = document.elementFromPoint(r.left + r.width / 2, r.top + 5);
+				out.cardUnderStage = r.top < stage.getBoundingClientRect().bottom && !!hid && stage.contains(hid);
+				if (!out.cardUnderStage) { out.fails.push('Karte läuft nicht unter der Vorschau durch: ' + (hid && hid.className)); }
+			}
+			// Fester Theme-Header (Nachbildung Blocksy, 60 px): Vorschau klebt darunter
+			const hd = document.createElement('header');
+			hd.id = 'header';
+			hd.innerHTML = '<div data-sticky="yes" style="position:fixed;top:0;left:0;right:0;height:60px;z-index:50;background:#192a3d"></div>';
+			document.body.prepend(hd);
+			window.scrollTo(0, st0 + 300); window.dispatchEvent(new Event('scroll')); await tick(); await tick();
+			out.headerTop = Math.round(stage.getBoundingClientRect().top);
+			if (Math.abs(out.headerTop - 60) > 1.5) { out.fails.push('Vorschau nicht unter festem Header: ' + out.headerTop); }
+			hd.remove(); window.dispatchEvent(new Event('scroll')); await tick(); await tick();
+			out.headerTopAfter = Math.round(stage.getBoundingClientRect().top);
+			if (out.headerTopAfter !== 0) { out.fails.push('Header-Abstand bleibt nach Entfernen: ' + out.headerTopAfter); }
+			window.scrollTo(0, 0);
+			return out;
+		}, mobile);
+		res.sticky = st;
+		if (v.name === 'pixel7') {
+			// Querformat (Höhe < 500 px, schmaler als 861 px): nicht sticky
+			await page.setViewportSize({ width: 800, height: 380 });
+			await page.waitForTimeout(200);
+			st.quer = await page.evaluate(() => getComputedStyle(document.querySelector('.ak-stage')).position);
+			if (st.quer === 'sticky') { st.fails.push('Querformat: Vorschau sticky'); }
+			await page.setViewportSize(v.opts.viewport);
+			await page.waitForTimeout(200);
+		}
 		// Screenshots: oben, und gescrollt in die Kartenliste (wie Pascals Bild)
 		await page.screenshot({ path: path.join(shotdir, `${label}-${v.name}-oben.png`) });
 		await page.evaluate(() => { const c = document.querySelectorAll('.ak-step[data-group="optik"] .ak-card')[3]; if (c) { window.scrollTo(0, c.getBoundingClientRect().top + scrollY - innerHeight * 0.55); } });
@@ -135,7 +242,7 @@ const views = [
 			? bar.bar && !bar.flycart && bar.coveredCount === 0 && bar.endFree && bar.btnH >= 44 && bar.cartH >= 44 && bar.barInside
 			: !bar.bar && bar.flycart;
 		const gaOk = !ga.missing && !ga.disabled && ga.posts === 1 && ga.paket === 1 && ga.add === 1 && (!mobile || ga.count === '13');
-		const ok = res.sw <= res.vw && res.iw <= res.vw && res.overlapCount === 0 && (!mobile || res.small.length === 0) && !errors.length && barOk && gaOk;
+		const ok = st.fails.length === 0 && res.sw <= res.vw && res.iw <= res.vw && res.overlapCount === 0 && (!mobile || res.small.length === 0) && !errors.length && barOk && gaOk;
 		if (!ok) { fail++; }
 		console.log(label, v.name, ok ? 'OK' : 'FEHLER', JSON.stringify({ ...res, errors }));
 		await ctx.close();
