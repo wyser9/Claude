@@ -210,7 +210,7 @@ class AKD_Admin {
 		echo '<div class="wrap"><h1>Kundendokumente (bexio)</h1>';
 		echo '<p>Bei Bestellungen mit Erwerbsbedingung wird anhand der Dateien beim bexio-Kontakt geprüft: <strong>Ausweiskopie gültig</strong> und <strong>Waffenerwerbsschein max. 2 Jahre</strong> oder <strong>Strafregisterauszug max. 3 Monate</strong>. Das Ergebnis steht in der Bestellung (Kasten «Kundendokumente») und in der Bestellliste (Spalte «Dokumente»).</p>';
 		echo '<h2>Dateinamen in bexio</h2><ul style="list-style:disc;margin-left:20px">';
-		echo '<li>Die Art wird aus dem Dateinamen erkannt: <code>Ausweis</code>, <code>ID</code>, <code>Pass</code>, <code>Identitätskarte</code> · <code>WES</code>, <code>Waffenerwerbsschein</code> · <code>Strafregister</code> · <code>Jagdschein</code>.</li>';
+		echo '<li>Die Art wird aus dem Dateinamen erkannt: <code>Ausweis</code>, <code>ID</code>, <code>Pass</code>, <code>Identitätskarte</code>, <code>Ausländerausweis</code> · <code>WES</code>, <code>Waffenerwerbsschein</code> · <code>Strafregister</code> · <code>Jagdschein</code>.</li>';
 		echo '<li>Ausweis: ein Datum im Namen gilt als <strong>gültig bis</strong>, z.B. <code>Ausweis bis 31.05.2031.pdf</code>. Ohne Datum: «bitte prüfen».</li>';
 		echo '<li>WES und Strafregister: ein Datum im Namen gilt als <strong>Ausstelldatum</strong>, z.B. <code>WES 12.03.2025.pdf</code>. Ohne Datum zählt das Upload-Datum in bexio.</li>';
 		echo '<li>Datumsformate: 31.05.2031, 2031-05-31, 20310531, 05.2031.</li></ul>';

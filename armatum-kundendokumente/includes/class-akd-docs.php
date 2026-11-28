@@ -40,7 +40,7 @@ class AKD_Docs {
 			self::STRAF   => array( 'strafregister', 'registerauszug', 'casier', 'straf' ),
 			self::WES     => array( 'waffenerwerb', 'erwerbsschein', 'erwerbsbewilligung', 'wes', 'wbs', 'permis d acquisition', 'pada' ),
 			self::JAGD    => array( 'jagd', 'jagdschein', 'jagdpass', 'chasse' ),
-			self::AUSWEIS => array( 'ausweis', 'identitaetskarte', 'identitatskarte', 'identitat', 'identitaet', 'identity', 'id karte', 'idkarte', 'id', 'idk', 'pass', 'reisepass', 'passport', 'carte d identite', 'fuehrerausweis', 'auslaenderausweis', 'aufenthaltsbewilligung' ),
+			self::AUSWEIS => array( 'ausweis', 'identitaetskarte', 'identitatskarte', 'identitat', 'identitaet', 'identity', 'id karte', 'idkarte', 'id', 'idk', 'pass', 'reisepass', 'passport', 'carte d identite', 'auslaenderausweis', 'aufenthaltsbewilligung', 'niederlassungsbewilligung', 'aufenthaltstitel', 'permis de sejour', 'titre de sejour', 'permis b', 'permis c' ),
 		);
 	}
 
@@ -67,6 +67,10 @@ class AKD_Docs {
 	 */
 	public static function classify( $name ) {
 		$n = self::normalize( $name );
+		// Führerausweis ist kein Ausweis für den Waffenkauf.
+		if ( false !== strpos( $n, 'fuehrer' ) && false === strpos( $n, 'pass' ) && false === strpos( $n, 'identit' ) ) {
+			$n = str_replace( 'ausweis', '', $n );
+		}
 		foreach ( self::keywords() as $type => $words ) {
 			foreach ( $words as $w ) {
 				// Kurze Wörter (id, wes, pass ...) nur als ganzes Wort, lange auch als Wortteil.
@@ -252,7 +256,7 @@ class AKD_Docs {
 
 		$missing = array();
 		if ( self::OK !== $a ) {
-			$missing[] = isset( $docs[ self::AUSWEIS ]['until'] ) ? 'eine Kopie deines gültigen Ausweises (die vorhandene Kopie ist abgelaufen)' : ( self::PRUEFEN === $a ? 'eine Kopie deines gültigen Ausweises (Pass oder Identitätskarte, Vorder- und Rückseite)' : 'eine Kopie deines Ausweises (Pass oder Identitätskarte, Vorder- und Rückseite)' );
+			$missing[] = isset( $docs[ self::AUSWEIS ]['until'] ) ? 'eine Kopie deines gültigen Ausweises (die vorhandene Kopie ist abgelaufen)' : ( self::PRUEFEN === $a ? 'eine Kopie deines gültigen Ausweises (Pass, Identitätskarte oder Ausländerausweis, Vorder- und Rückseite)' : 'eine Kopie deines Ausweises (Pass, Identitätskarte oder Ausländerausweis, Vorder- und Rückseite)' );
 		}
 		if ( self::OK !== $proof ) {
 			$missing[] = 'einen Waffenerwerbsschein (nicht älter als 2 Jahre, er darf noch leer sein) oder einen Strafregisterauszug (nicht älter als 3 Monate)';

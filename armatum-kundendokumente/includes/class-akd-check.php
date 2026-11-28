@@ -8,6 +8,7 @@ class AKD_Check {
 
 	const META_RESULT   = '_akd_result';
 	const META_REMINDED = '_akd_reminded';
+	const META_COMMENT  = '_akd_bexio_comment';
 	const HOOK          = 'akd_check_order';
 	const TAXONOMY      = 'pa_erwerbsbedingungen';
 
@@ -116,7 +117,45 @@ class AKD_Check {
 		if ( 'warten' !== $result['status'] && ( ! is_array( $old ) || ( $old['status'] ?? '' ) !== $result['status'] ) ) {
 			$order->add_order_note( self::note_text( $result ) );
 		}
+		if ( 'ok' === $result['status'] ) {
+			self::bexio_comment( $order, $result );
+		}
 		return $result;
+	}
+
+	/** Text für den Kommentar im bexio-Auftrag. */
+	public static function comment_text( array $r ) {
+		$a     = $r['docs'][ AKD_Docs::AUSWEIS ];
+		$parts = array( 'Ausweiskopie gültig bis ' . gmdate( 'd.m.Y', $a['until'] ) . ' (' . $a['name'] . ')' );
+		foreach ( array( AKD_Docs::WES => 'Waffenerwerbsschein', AKD_Docs::STRAF => 'Strafregisterauszug' ) as $t => $label ) {
+			$d = $r['docs'][ $t ];
+			if ( AKD_Docs::OK === $d['status'] ) {
+				$parts[] = sprintf( '%s vom %s%s, gültig bis %s (%s)', $label, gmdate( 'd.m.Y', $d['date'] ), 'Upload-Datum' === $d['date_source'] ? ' (Upload-Datum)' : '', gmdate( 'd.m.Y', $d['until'] ), $d['name'] );
+			}
+		}
+		return 'Kundendokumente vorhanden (automatisch geprüft ' . wp_date( 'd.m.Y H:i' ) . '): ' . implode( '; ', $parts ) . '.';
+	}
+
+	/**
+	 * Einmal je Bestellung einen internen Kommentar in den bexio-Auftrag schreiben, wenn alles vorhanden ist.
+	 *
+	 * @param WC_Order $order Bestellung.
+	 * @param array    $r     Ergebnis.
+	 */
+	public static function bexio_comment( WC_Order $order, array $r ) {
+		if ( $order->get_meta( self::META_COMMENT ) || ! $order->get_meta( '_bws_order_id' ) || ! is_callable( array( 'BWS_Order_Events', 'comment' ) ) ) {
+			return;
+		}
+		$text = self::comment_text( $r );
+		try {
+			BWS_Order_Events::comment( $order, $text );
+			$order->update_meta_data( self::META_COMMENT, time() );
+			$order->save();
+			$order->add_order_note( 'Kommentar im bexio-Auftrag ' . $order->get_meta( '_bws_order_nr' ) . ' eingetragen: ' . $text );
+		} catch ( Exception $e ) {
+			akd_log( 'error', sprintf( 'Bestellung #%s: bexio-Kommentar fehlgeschlagen: %s', $order->get_order_number(), $e->getMessage() ) );
+			$order->add_order_note( 'Kommentar «Dokumente vorhanden» im bexio-Auftrag fehlgeschlagen: ' . $e->getMessage() . ' (wird bei der nächsten Prüfung erneut versucht).' );
+		}
 	}
 
 	/** Kurztext für die Bestellnotiz. */

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Armatum Kundendokumente
  * Description:       Prüft bei Bestellungen mit Erwerbsbedingungen anhand der Dateien beim bexio-Kontakt, ob Ausweiskopie (gültig) und Waffenerwerbsschein (max. 2 Jahre) oder Strafregisterauszug (max. 3 Monate) vorliegen. Nutzt den bexio-Zugang des bexio-Sync-Plugins (nur lesend).
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Armatum GmbH
  * Requires at least: 6.0
  * Requires PHP:      7.4
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'AKD_VERSION', '1.0.0' );
+define( 'AKD_VERSION', '1.1.0' );
 define( 'AKD_FILE', __FILE__ );
 
 require_once __DIR__ . '/includes/class-akd-docs.php';

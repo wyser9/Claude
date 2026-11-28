@@ -16,10 +16,12 @@ function akd_test() {
 	$files[] = array( 'id' => 203, 'name' => 'Scan_0001', 'extension' => 'jpg', 'created_at' => '2025-02-01T10:00:00+00:00' );
 	$files[] = array( 'id' => 301, 'name' => 'Strafregisterauszug', 'extension' => 'pdf', 'created_at' => gmdate( 'c', strtotime( '-5 months' ) ) );
 	$GLOBALS['akd_files'] = $files;
-	$GLOBALS['akd_calls'] = array();
+	$GLOBALS['akd_calls'] = array(); $GLOBALS['akd_comments'] = array();
 	add_filter( 'pre_http_request', function ( $pre, $args, $url ) use ( $r ) {
 		if ( false === strpos( $url, 'api.bexio.com' ) ) return $pre;
 		$GLOBALS['akd_calls'][] = $args['method'] . ' ' . $url;
+		if ( 'POST' === $args['method'] && preg_match( '#kb_order/(\d+)/comment#', $url ) ) { $GLOBALS['akd_comments'][] = array( $url, json_decode( $args['body'], true ) ); return $r( 201, array( 'id' => 1 ) ); }
+		if ( false !== strpos( $url, '3.0/users/me' ) ) return $r( 200, array( 'id' => 1, 'firstname' => 'Pascal', 'lastname' => 'W' ) );
 		if ( 'GET' !== $args['method'] ) return $r( 405, array() );
 		if ( preg_match( '#3\.0/files/(\d+)/usage#', $url, $m ) ) {
 			$id = (int) $m[1];
@@ -50,7 +52,7 @@ function akd_test() {
 		$o = wc_create_order();
 		foreach ( $products as $p ) $o->add_product( wc_get_product( $p ), 1 );
 		$o->set_billing_first_name( 'Hans' ); $o->set_billing_email( 'hans@example.com' );
-		if ( $contact ) $o->update_meta_data( '_bws_contact_id', $contact );
+		if ( $contact ) { $o->update_meta_data( '_bws_contact_id', $contact ); $o->update_meta_data( '_bws_order_id', 900 + $contact ); $o->update_meta_data( '_bws_order_nr', 'AU2026' . $contact ); }
 		$o->calculate_totals(); $o->save();
 		return wc_get_order( $o->get_id() );
 	};
@@ -72,13 +74,18 @@ function akd_test() {
 	$t( 'betroffener Artikel', array( 'Pistole' ) === $res['items'] );
 	$o1 = wc_get_order( $o1->get_id() );
 	$notes = wc_get_order_notes( array( 'order_id' => $o1->get_id() ) );
-	$t( 'Notiz vollständig', $notes && 0 === strpos( $notes[0]->content, 'Kundendokumente vollständig' ) && ! $notes[0]->customer_note );
-	$t( 'nur gelesen (nur GET)', ! preg_grep( '#^(POST|PUT|DELETE)#', $GLOBALS['akd_calls'] ) );
+	$t( 'Notiz vollständig', $notes && 0 === strpos( $notes[1]->content, 'Kundendokumente vollständig' ) && ! $notes[1]->customer_note );
+	$t( 'sonst nur gelesen', ! preg_grep( '#^(PUT|DELETE)#', $GLOBALS['akd_calls'] ) && 1 === count( preg_grep( '#^POST#', $GLOBALS['akd_calls'] ) ) );
+	$c = $GLOBALS['akd_comments'][0] ?? null;
+	$t( 'Kommentar im bexio-Auftrag 977', $c && false !== strpos( $c[0], 'kb_order/977/comment' ) && false === $c[1]['is_public'] && false !== strpos( $c[1]['text'], 'Kundendokumente vorhanden' ) && false !== strpos( $c[1]['text'], 'gültig bis 31.05.2031' ) && false !== strpos( $c[1]['text'], 'Waffenerwerbsschein vom' ), print_r( $c, true ) );
+	$t( 'Notiz zum Kommentar', false !== strpos( wc_get_order_notes( array( 'order_id' => $o1->get_id() ) )[0]->content, 'AU202677' ) );
 	$sample = get_option( AKD_Index::OPTION_RAW );
 	$t( 'Beispielantwort ohne Namen', is_array( $sample ) && false === strpos( wp_json_encode( $sample ), 'Muster' ) && false === strpos( wp_json_encode( $sample ), 'RE' ) );
 
 	// Erneut prüfen: keine doppelte Notiz.
+	$notes = wc_get_order_notes( array( 'order_id' => $o1->get_id() ) );
 	AKD_Check::run( wc_get_order( $o1->get_id() ) );
+	$t( 'Kommentar nur einmal', 1 === count( $GLOBALS['akd_comments'] ) );
 	$t( 'gleicher Status -> keine neue Notiz', count( wc_get_order_notes( array( 'order_id' => $o1->get_id() ) ) ) === count( $notes ) );
 
 	// Verzeichnis vervollständigen.
@@ -92,6 +99,7 @@ function akd_test() {
 	// Kunde 88: Strafregister 5 Monate (Upload), kein Ausweis -> fehlt.
 	$o2  = $mk( array( $gun->get_id() ), 88 );
 	$res = AKD_Check::run( $o2 );
+	$t( 'fehlt: kein bexio-Kommentar', 1 === count( $GLOBALS['akd_comments'] ) );
 	$t( 'Kunde 88 fehlt', 'fehlt' === $res['status'] && 2 === count( $res['missing'] ), print_r( $res, true ) );
 	$t( 'Strafregister zu alt (Upload-Datum)', 'fehlt' === $res['docs']['strafregister']['status'] && false !== strpos( $res['docs']['strafregister']['note'], 'Upload-Datum' ) );
 	$t( 'kein Hinweis mehr auf Aufbau', empty( $res['note'] ) );
@@ -115,6 +123,7 @@ function akd_test() {
 	$uid = wp_create_user( 'eva', 'pw', 'eva@example.com' );
 	update_user_meta( $uid, '_bws_contact_id', 88 );
 	$o4 = $mk( array( $gun->get_id() ), 0 ); $o4->set_customer_id( $uid ); $o4->save();
+	$t( 'Ausländerausweis im Mailtext', false !== strpos( $text, 'Ausländerausweis' ) );
 	$t( 'Kontakt aus Kundenkonto', 88 === AKD_Check::contact_id( wc_get_order( $o4->get_id() ) ) );
 
 	// Hook nach bexio-Übertragung plant Prüfung ein.

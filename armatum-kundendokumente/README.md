@@ -10,7 +10,7 @@ Ergebnis: Kasten «Kundendokumente (bexio)» in der Bestellung, Spalte «Dokumen
 ## Ablauf
 - Nach der Übertragung an bexio (`bws_order_synced`) und bei Status «In Bearbeitung»/«In Wartestellung» wird die Prüfung eingeplant.
 - Dateiverzeichnis: stündlich `GET 3.0/files` und für neue Dateien einmal `GET 3.0/files/{id}/usage` (Zuordnung Datei → Kontakt). Nur lesend, bexio-Token aus dem bexio-Sync-Plugin.
-- Erkennung über den Dateinamen (Ausweis/ID/Pass/Identitätskarte, WES/Waffenerwerbsschein, Strafregister, Jagdschein).
+- Erkennung über den Dateinamen (Ausweis/ID/Pass/Identitätskarte/Ausländerausweis, WES/Waffenerwerbsschein, Strafregister, Jagdschein).
 - Datum im Dateinamen: beim Ausweis = gültig bis, bei WES/Strafregister = Ausstelldatum. Ohne Datum: Ausweis «prüfen», WES/Strafregister nach Upload-Datum.
 
 Einstellungsseite: WooCommerce → Kundendokumente (Verzeichnisstand, Kontakt testen).
@@ -18,3 +18,4 @@ Einstellungsseite: WooCommerce → Kundendokumente (Verzeichnisstand, Kontakt te
 ## Tests
 - `php tests/test-docs.php` (ohne WordPress)
 - `wp eval-file wp-content/plugins/armatum-kundendokumente/tests/integration.php` (nur Testinstallation)
+- Ist alles vorhanden, schreibt das Plugin einmal einen internen Kommentar «Kundendokumente vorhanden …» in den bexio-Auftrag (über BWS_Order_Events::comment).
