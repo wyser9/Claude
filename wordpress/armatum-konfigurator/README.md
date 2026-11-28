@@ -7,7 +7,7 @@ WordPress-Plugin für armatum.ch (WooCommerce). Der Konfigurator läuft auf eine
 - Jede Gruppe ist ein aufklappbarer Schritt. Ab 7 Artikeln gibt es eine Suche und einen Herstellerfilter (Marke `product_brand` wie im Shop, ohne Marke Attribut «Hersteller» `pa_hersteller`).
 
 - Jede Komponente ist eine **eigene Warenkorbposition** (Lager, bexio, Versandcodes bleiben korrekt).
-- Die **Montage** erscheint als eigene Position «Montage Optik (gratis im Paket)» mit CHF 0.00. Das Produkt legt das Plugin beim ersten Paket im Warenkorb an (SKU `AK-MONTAGE`, im Katalog versteckt). Einzeln kann man es nicht kaufen. Fehlt im Warenkorb die Waffe oder die Optik des Pakets, wird die Montage automatisch entfernt.
+- Die **Montage** ist im Paket gratis und ab 1.0.12 **keine eigene Warenkorbposition** mehr: Jede Paket-Position trägt den Vermerk «Montage im Paket: gratis» (Warenkorb, Bestellung, Mails), und die Bestellung erhält eine interne Notiz für die Werkstatt. Fehlt im Warenkorb die Waffe oder fehlen alle Teile des Pakets, entfällt der Vermerk.
 - Einschiessen ist nicht Teil des Pakets.
 - Austauschteile (Schulterstütze, Griff) überdecken das Originalteil nur sauber, wenn ihr Bild freigestellt ist (PNG mit transparentem Hintergrund) und gross genug ist.
 - Nur passende Artikel werden angezeigt (Regeln siehe unten). Der Server prüft die Auswahl beim Hinzufügen nochmals.
@@ -195,3 +195,14 @@ Eine Montage passt nur, wenn die Optik nicht auf der Waffe aufsteht:
   - **Abstandsreserve:** `body.ak-has-bar` erhält unten `padding-bottom` = gemessene Leistenhöhe (`--ak-bar-h`, ResizeObserver), damit am Seitenende nichts unter der Leiste liegt. Blocksy-«Nach oben»-Knopf (`.ct-back-to-top`) wird über die Leiste geschoben. Der 6em-Zusatzabstand aus 1.0.10 entfällt mit Leiste.
   - Desktop (> 860 px): keine Leiste, Fly-Cart-Knopf unverändert.
 - **Prüfung** `wordpress/tests/ak-mobile/`: Testseite mit Nachbau des Fly-Cart-Knopfs (Markup wie live, Lage 40/40 px unten links), nachgebildete Server-Antworten (Erwerb, Paket). `check.js` prüft zusätzlich: Knopf verdeckt keine Schritt-Zeile oder Karte, Leiste sichtbar (nur Handy) mit Knöpfen ≥ 44 px, am Seitenende nichts unter der Leiste, Doppeltipp auf den Leisten-Knopf = ein Aufruf, GA4 je einmal. Optionen der Testseite über `AK_OPTS` (JSON). Screenshots vorher/nachher: `/mnt/project-files/konfigurator/screenshots/1.0.11-*`.
+
+## Neu in 1.0.12
+
+- **Montage nicht mehr als eigenes Produkt** (Inhaber 28.11.: Position ohne Bild, wird ohnehin gratis erledigt):
+  - Das Plugin legt keine Position «Montage (gratis im Paket)» (SKU `AK-MONTAGE`, CHF 0.00) mehr in den Warenkorb und legt das Produkt nicht mehr an.
+  - **Alte Warenkörbe:** Liegt noch eine solche Position in einem Warenkorb (Sitzung von 1.0.11 oder früher), wird sie beim Laden des Warenkorbs entfernt (`woocommerce_cart_loaded_from_session`; erkannt an der Produkt-ID aus `ak_montage_product_id` bzw. der SKU oder an der Paket-Rolle `service`). Das Produkt selbst bleibt im Shop bestehen und kann weiterhin nicht einzeln gekauft werden; es kann von Hand auf Entwurf oder privat gesetzt werden.
+  - **Vermerk an jeder Paket-Position** (Waffe und Teile): «Montage im Paket: gratis» im Warenkorb und Checkout (`woocommerce_get_item_data`, auch Block-Warenkorb) und als Positions-Meta in Bestellung und Mails (`woocommerce_checkout_create_order_line_item`). Die Paket-ID steht wie bisher in «Paket» (sichtbar) und `_ak_group` (verborgen). Der Vermerk gilt nur, solange Waffe und mindestens ein Teil des Pakets im Warenkorb liegen.
+  - **Interne Bestellnotiz für die Werkstatt** (nicht an den Kunden), eine je Paket: «Konfigurator-Paket: Montage gratis. Waffe: <Name> (Art.-Nr. <SKU>). Montieren: <Teil (SKU)>, … (Paket <ID>)». Hooks `woocommerce_checkout_order_created` (klassischer Checkout) und `woocommerce_store_api_checkout_order_processed` (Block-Checkout). Doppelschutz über Order-Meta `_ak_werkstatt_notiz` (Hash des Inhalts): gleiche Notiz wird nie zweimal geschrieben, auch nicht bei erneutem Zahlversuch.
+  - GA4 `add_to_cart`/`paket_in_warenkorb` enthielt die Montage schon bisher nicht als Artikel; die Antwort von `ak_add_package` enthält jetzt nur noch Waffe und Teile. `konfigurator_kauf` zählt alte Bestellungen mit Montage-Position unverändert richtig.
+  - Konfigurator-Oberfläche unverändert: Zeile «Montage gratis» in der Zusammenstellung und der Hinweis «Die Montage ist im Paket gratis» bleiben (Hinweis, kein Produkt).
+- **Prüfung** `wordpress/tests/ak-cart-test.php` (CLI, ohne WordPress): Aufräumen alter Positionen, Vermerk im Warenkorb und in der Bestellung, Werkstatt-Notiz (Text, intern, keine Doppelnotiz bei beiden Hooks, kein Paket ohne Waffe).

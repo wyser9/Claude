@@ -1,7 +1,9 @@
 <?php
 /**
- * Warenkorb: Paket hinzufügen (jede Komponente als eigene Position),
- * Gratis-Montage als eigene Position mit CHF 0.00, Aufräumen bei Entfernen.
+ * Warenkorb: Paket hinzufügen (jede Komponente als eigene Position).
+ * Gratis-Montage ab 1.0.12 nicht mehr als eigene Position, sondern als Vermerk
+ * «Montage im Paket: gratis» an jeder Paket-Position und als interne Bestellnotiz für die Werkstatt.
+ * Alte Positionen des Produkts AK-MONTAGE (bis 1.0.11) werden beim Laden des Warenkorbs entfernt.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,6 +14,9 @@ class AK_Cart {
 
 	const OPTION_MONTAGE = 'ak_montage_product_id';
 	const MONTAGE_SKU    = 'AK-MONTAGE';
+	const MONTAGE_KEY    = 'Montage im Paket';
+	const MONTAGE_VAL    = 'gratis';
+	const NOTE_META      = '_ak_werkstatt_notiz';
 
 	/** true, solange das Plugin selbst Positionen hinzufügt. */
 	private static $adding = false;
@@ -20,48 +25,39 @@ class AK_Cart {
 		add_action( 'wc_ajax_ak_add_package', array( __CLASS__, 'ajax_add_package' ) );
 		add_filter( 'woocommerce_add_to_cart_validation', array( __CLASS__, 'block_manual_montage' ), 10, 2 );
 		add_filter( 'woocommerce_get_item_data', array( __CLASS__, 'item_data' ), 10, 2 );
-		add_action( 'woocommerce_before_calculate_totals', array( __CLASS__, 'before_totals' ), 20 );
-		add_action( 'woocommerce_cart_item_removed', array( __CLASS__, 'cleanup' ) );
 		add_action( 'woocommerce_cart_loaded_from_session', array( __CLASS__, 'cleanup' ) );
-		add_filter( 'woocommerce_cart_item_quantity', array( __CLASS__, 'lock_montage_qty' ), 10, 3 );
 		add_action( 'woocommerce_checkout_create_order_line_item', array( __CLASS__, 'order_item_meta' ), 10, 3 );
+		// Interne Werkstatt-Notiz: klassischer Checkout und Block-Checkout (Store API), Doppelschutz über Order-Meta.
+		add_action( 'woocommerce_checkout_order_created', array( __CLASS__, 'workshop_note' ) );
+		add_action( 'woocommerce_store_api_checkout_order_processed', array( __CLASS__, 'workshop_note' ) );
 		add_action( 'woocommerce_thankyou', array( __CLASS__, 'ga_purchase' ), 20 );
 	}
 
-	/** Legt das versteckte Produkt "Montage" an (Preis 0), falls es fehlt. */
-	public static function ensure_montage_product() {
-		if ( ! function_exists( 'wc_get_product' ) ) {
-			return 0;
-		}
-		$id = (int) get_option( self::OPTION_MONTAGE );
-		if ( $id && wc_get_product( $id ) ) {
-			return $id;
-		}
-		$existing = wc_get_product_id_by_sku( self::MONTAGE_SKU );
-		if ( $existing ) {
-			update_option( self::OPTION_MONTAGE, $existing );
-			return (int) $existing;
-		}
-		$p = new WC_Product_Simple();
-		$p->set_name( 'Montage (gratis im Paket)' );
-		$p->set_sku( self::MONTAGE_SKU );
-		$p->set_status( 'publish' );
-		$p->set_catalog_visibility( 'hidden' );
-		$p->set_virtual( true );
-		$p->set_regular_price( '0' );
-		$p->set_tax_status( 'none' );
-		$p->set_short_description( '<p>Fachgerechte Montage von Optik und Zubehör auf die Waffe. Kostenlos beim Kauf eines Pakets aus dem Konfigurator.</p>' );
-		$id = $p->save();
-		update_option( self::OPTION_MONTAGE, $id );
-		return (int) $id;
-	}
-
+	/**
+	 * ID des alten Montage-Produkts (bis 1.0.11 als eigene Position, SKU AK-MONTAGE). 0, wenn es keins gibt.
+	 * Das Plugin legt das Produkt nicht mehr an und löscht es nicht; es dient nur noch zum Aufräumen alter Warenkörbe.
+	 */
 	public static function montage_id() {
-		return (int) get_option( self::OPTION_MONTAGE );
+		static $id = null;
+		if ( null === $id ) {
+			$id = (int) get_option( self::OPTION_MONTAGE );
+			if ( ! $id && function_exists( 'wc_get_product_id_by_sku' ) ) {
+				$id = (int) wc_get_product_id_by_sku( self::MONTAGE_SKU );
+			}
+		}
+		return $id;
 	}
 
+	/** Ist die Warenkorb-/Bestellposition die alte Montage-Position? */
+	private static function is_legacy_montage( $product_id, $role ) {
+		$mid = self::montage_id();
+		return 'service' === (string) $role || ( $mid && (int) $product_id === $mid );
+	}
+
+	/** Das alte Montage-Produkt kann man nicht einzeln in den Warenkorb legen. */
 	public static function block_manual_montage( $passed, $product_id ) {
-		if ( ! self::$adding && (int) $product_id === self::montage_id() ) {
+		$mid = self::montage_id();
+		if ( ! self::$adding && $mid && (int) $product_id === $mid ) {
 			wc_add_notice( 'Die Montage gibt es nur zusammen mit einem Paket aus dem Konfigurator.', 'error' );
 			return false;
 		}
@@ -101,7 +97,6 @@ class AK_Cart {
 			wp_send_json_error( array( 'message' => $valid->get_error_message() ), 400 );
 		}
 
-		$montage_id = self::ensure_montage_product();
 		$package    = substr( md5( uniqid( '', true ) ), 0, 10 );
 		// Erwerbs-Zusammenfassung des Pakets (ab 1.0.9): steht im Warenkorb und in der Bestellung bei der Waffe.
 		$erwerb     = AK_Erwerb::for_selection( $weapon_id, array_merge( array( $optic_id, $mount_id, $mag_id, $mag_mount ), array_values( $parts ), array_values( $adapters ) ) );
@@ -125,7 +120,6 @@ class AK_Cart {
 				$lines[ 'adapter_' . $part_group ] = $adapters[ $part_group ];
 			}
 		}
-		$lines['service'] = $montage_id;
 
 		self::$adding = true;
 		$added        = array();
@@ -173,7 +167,7 @@ class AK_Cart {
 			if ( ! $p ) {
 				continue;
 			}
-			$price  = 'service' === $role ? 0.0 : (float) wc_get_price_to_display( $p );
+			$price  = (float) wc_get_price_to_display( $p );
 			$value += $price;
 			$out[]  = array(
 				'id'    => (int) $pid,
@@ -201,6 +195,12 @@ class AK_Cart {
 				'key'   => 'Paket',
 				'value' => esc_html( get_the_title( (int) $item['ak_weapon'] ) ),
 			);
+			if ( self::package_complete( (string) $item['ak_group'] ) ) {
+				$data[] = array(
+					'key'   => self::MONTAGE_KEY,
+					'value' => self::MONTAGE_VAL,
+				);
+			}
 			if ( ! empty( $item['ak_erwerb'] ) ) {
 				$data[] = array(
 					'key'   => 'Erwerb (Paket)',
@@ -218,52 +218,49 @@ class AK_Cart {
 		return $data;
 	}
 
-	/** Montage immer 0 und Menge 1. */
-	public static function before_totals( $cart ) {
-		$montage_id = self::montage_id();
-		foreach ( $cart->get_cart() as $key => $item ) {
-			if ( (int) $item['product_id'] === $montage_id ) {
-				$item['data']->set_price( 0 );
-				if ( 1 !== (int) $item['quantity'] ) {
-					$cart->cart_contents[ $key ]['quantity'] = 1;
-				}
+	/**
+	 * Gratis-Montage gilt, solange vom Paket die Waffe und mindestens ein Teil im Warenkorb liegen.
+	 * Ohne Warenkorb (z.B. Bestellung im Backend) gilt sie.
+	 */
+	public static function package_complete( $group ) {
+		$cart = function_exists( 'WC' ) && WC() ? WC()->cart : null;
+		if ( ! $cart || '' === $group ) {
+			return true;
+		}
+		$waffe = false;
+		$teile = 0;
+		foreach ( $cart->get_cart() as $item ) {
+			if ( empty( $item['ak_group'] ) || (string) $item['ak_group'] !== $group ) {
+				continue;
+			}
+			$role = isset( $item['ak_role'] ) ? (string) $item['ak_role'] : '';
+			if ( self::is_legacy_montage( $item['product_id'] ?? 0, $role ) ) {
+				continue;
+			}
+			if ( 'waffe' === $role ) {
+				$waffe = true;
+			} else {
+				$teile++;
 			}
 		}
+		return $waffe && $teile > 0;
 	}
 
-	/** Entfernt die Montage, wenn die Waffe oder alle Zubehörteile des Pakets fehlen. */
+	/** Entfernt alte Montage-Positionen (bis 1.0.11) aus Warenkörben, die noch in der Sitzung liegen. */
 	public static function cleanup() {
 		static $running = false;
-		$cart = WC()->cart;
+		$cart = function_exists( 'WC' ) && WC() ? WC()->cart : null;
 		if ( ! $cart || $running ) {
 			return;
 		}
 		$running = true;
-		$montage_id = self::montage_id();
-		$present    = array();
-		foreach ( $cart->get_cart() as $item ) {
-			if ( ! empty( $item['ak_group'] ) ) {
-				$present[ $item['ak_group'] ][ $item['ak_role'] ] = true;
-			}
-		}
 		foreach ( $cart->get_cart() as $key => $item ) {
-			if ( (int) $item['product_id'] !== $montage_id ) {
-				continue;
-			}
-			$g = isset( $item['ak_group'] ) ? $item['ak_group'] : '';
-			$others = $g && isset( $present[ $g ] ) ? array_diff( array_keys( $present[ $g ] ), array( 'waffe', 'service' ) ) : array();
-			if ( ! $g || empty( $present[ $g ]['waffe'] ) || ! $others ) {
+			$role = isset( $item['ak_role'] ) ? (string) $item['ak_role'] : '';
+			if ( self::is_legacy_montage( $item['product_id'] ?? 0, $role ) ) {
 				$cart->remove_cart_item( $key );
 			}
 		}
 		$running = false;
-	}
-
-	public static function lock_montage_qty( $html, $key, $item ) {
-		if ( (int) $item['product_id'] === self::montage_id() ) {
-			return '1';
-		}
-		return $html;
 	}
 
 	public static function order_item_meta( $order_item, $key, $values ) {
@@ -272,10 +269,78 @@ class AK_Cart {
 			// Maschinenlesbar (verborgen, Unterstrich): für konfigurator_kauf und Auswertungen.
 			$order_item->add_meta_data( '_ak_group', (string) $values['ak_group'], true );
 			$order_item->add_meta_data( '_ak_role', isset( $values['ak_role'] ) ? (string) $values['ak_role'] : '', true );
+			if ( self::package_complete( (string) $values['ak_group'] ) ) {
+				$order_item->add_meta_data( self::MONTAGE_KEY, self::MONTAGE_VAL, true );
+			}
 			if ( ! empty( $values['ak_erwerb'] ) ) {
 				$order_item->add_meta_data( 'Erwerb (Paket)', (string) $values['ak_erwerb'], true );
 			}
 		}
+	}
+
+	/**
+	 * Interne Bestellnotiz für die Werkstatt (nicht an den Kunden), eine je Paket:
+	 * «Konfigurator-Paket: Montage gratis. Waffe: <Name> (Art.-Nr. <SKU>). Montieren: <Teil (SKU)>, …»
+	 * Läuft im klassischen und im Block-Checkout. Gleicher Inhalt wird nur einmal notiert
+	 * (Block-Checkout kann bei erneutem Zahlversuch nochmals auslösen).
+	 */
+	public static function workshop_note( $order ) {
+		if ( is_numeric( $order ) ) {
+			$order = wc_get_order( (int) $order );
+		}
+		if ( ! $order || ! is_object( $order ) || ! method_exists( $order, 'add_order_note' ) ) {
+			return;
+		}
+		$notes = self::workshop_notes( $order );
+		if ( ! $notes ) {
+			return;
+		}
+		$hash = md5( implode( "\n", $notes ) );
+		if ( (string) $order->get_meta( self::NOTE_META ) === $hash ) {
+			return;
+		}
+		foreach ( $notes as $text ) {
+			$order->add_order_note( $text, 0, false );
+		}
+		$order->update_meta_data( self::NOTE_META, $hash );
+		$order->save();
+	}
+
+	/** Notiztexte je Paket aus den Bestellpositionen (Meta _ak_group, _ak_role). */
+	public static function workshop_notes( $order ) {
+		$packages = array();
+		foreach ( $order->get_items() as $item ) {
+			$group = (string) $item->get_meta( '_ak_group' );
+			if ( '' === $group ) {
+				continue;
+			}
+			$role = (string) $item->get_meta( '_ak_role' );
+			$pid  = method_exists( $item, 'get_product_id' ) ? (int) $item->get_product_id() : 0;
+			if ( self::is_legacy_montage( $pid, $role ) ) {
+				continue;
+			}
+			$product = method_exists( $item, 'get_product' ) ? $item->get_product() : null;
+			$sku     = $product ? (string) $product->get_sku() : '';
+			$qty     = (int) $item->get_quantity();
+			$label   = wp_strip_all_tags( $item->get_name() );
+			$label   = ( $qty > 1 ? $qty . '× ' : '' ) . $label;
+			if ( ! isset( $packages[ $group ] ) ) {
+				$packages[ $group ] = array( 'waffe' => '', 'teile' => array() );
+			}
+			if ( 'waffe' === $role && '' === $packages[ $group ]['waffe'] ) {
+				$packages[ $group ]['waffe'] = $label . ' (Art.-Nr. ' . ( '' !== $sku ? $sku : '–' ) . ')';
+			} else {
+				$packages[ $group ]['teile'][] = $label . ( '' !== $sku ? ' (' . $sku . ')' : '' );
+			}
+		}
+		$out = array();
+		foreach ( $packages as $group => $p ) {
+			if ( '' === $p['waffe'] || ! $p['teile'] ) {
+				continue; // Ohne Waffe oder ohne Teile keine Paket-Montage.
+			}
+			$out[] = 'Konfigurator-Paket: Montage gratis. Waffe: ' . $p['waffe'] . '. Montieren: ' . implode( ', ', $p['teile'] ) . '. (Paket ' . $group . ')';
+		}
+		return $out;
 	}
 
 	/**
