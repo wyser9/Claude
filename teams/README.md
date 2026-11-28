@@ -11,7 +11,7 @@ Vier Teams berichten direkt an den Inhaber. Gemeinsame Skills für alle: `armatu
 
 **Stabsstellen beim Inhaber:**
 - Julia (`recht-julia`), Juristin. Prüft Rechts- und Erwerbsfragen aller Teams und legt unsichere Fälle dem Inhaber vor.
-- Felix (`controlling-felix`), Supply-Chain- und Finanz-Controller. Lager, Marge, Verkaufs- und Kundenanalysen, plant Abverkäufe mit Mark.
+- Felix (`controlling-felix`), Supply-Chain- und Finanz-Controller. Liefert konkrete Massnahmen zu Lager, Marge, Abverkauf und Kundenförderung, plant Aktionen mit Mark.
 
 ## Alle arbeiten proaktiv
 Wer eine Idee, ein Problem oder eine Chance sieht, meldet sich von sich aus bei der Leitung oder beim Inhaber (Inhaber, 27.11.2026): Idee, Nutzen, Aufwand, Risiko. Umsetzen, was Freigabe braucht, erst nach Freigabe.
