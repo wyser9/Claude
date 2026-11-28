@@ -1,4 +1,6 @@
 <?php
+// Nur für die Kommandozeile: im Browser nie ausführen.
+if ( 'cli' !== PHP_SAPI ) { http_response_code( 404 ); exit; }
 /**
  * Tests für BWS_Util (ohne WordPress): php tests/test-util.php
  */

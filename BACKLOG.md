@@ -4,6 +4,8 @@ Vereinbarte Erweiterungen, die später umgesetzt werden.
 
 ## Vorgemerkt
 
+- **Nächste bexio-Sync-Version**: ZIP nur noch mit tools/build-zip.sh bauen (ohne tests/). Testdateien sind zusätzlich nur per Kommandozeile ausführbar (Hinweis Sicherheitsprüfung 28.11.).
+
 - **Restliche Gewichte**: Rund 1545 Artikel haben noch kein Gewicht. Die wichtigsten (oft verkauft, schwer oder sperrig) zuerst nachtragen.
 
 ## Erledigt

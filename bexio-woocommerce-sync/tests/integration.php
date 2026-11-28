@@ -1,4 +1,6 @@
 <?php
+// Nur für die Kommandozeile: im Browser nie ausführen.
+if ( 'cli' !== PHP_SAPI ) { http_response_code( 404 ); exit; }
 /**
  * Integrationstest mit gemockter bexio-API (verändert die Datenbank – nur in einer Test-Installation ausführen!):
  *   wp eval-file wp-content/plugins/bexio-woocommerce-sync/tests/integration.php
